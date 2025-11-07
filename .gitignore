@@ -1,0 +1,18 @@
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# VS Code
+/.vscode/
+
+# Node
+node_modules/
+dist/
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+
+# Logs
+*.log
