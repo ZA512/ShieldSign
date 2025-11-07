@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShieldSign</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🛡️ ShieldSign</h1>
+    </header>
+    
+    <main>
+      <div class="status-section">
+        <div class="status-indicator" id="statusIndicator">
+          <span class="status-icon" id="statusIcon">⏳</span>
+          <span class="status-text" id="statusText">Vérification en cours...</span>
+        </div>
+        
+        <div class="status-details" id="statusDetails" style="display: none;">
+          <p class="validation-source" id="validationSource"></p>
+        </div>
+      </div>
+      
+      <div class="action-section" id="actionSection" style="display: none;">
+        <button class="btn btn-primary" id="approveDomainBtn">
+          ✅ Approuver ce domaine
+        </button>
+      </div>
+      
+      <div class="lists-section">
+        <h2>Sources actives</h2>
+        <div class="lists-container" id="listsContainer">
+          <p class="no-lists" id="noLists">Aucune liste configurée</p>
+        </div>
+      </div>
+      
+      <div class="personal-list-section">
+        <h2>Liste personnelle</h2>
+        <div class="personal-domains" id="personalDomains">
+          <p class="no-domains">Aucun domaine personnel</p>
+        </div>
+      </div>
+    </main>
+    
+    <footer>
+      <button class="btn btn-secondary" id="openOptionsBtn">⚙️ Paramètres</button>
+      <button class="btn btn-secondary" id="refreshBtn">🔄 Actualiser</button>
+    </footer>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

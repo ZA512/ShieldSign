@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paramètres - ShieldSign</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🛡️ ShieldSign - Paramètres</h1>
+    </header>
+    
+    <nav class="tabs">
+      <button class="tab-btn active" data-tab="sources">Sources</button>
+      <button class="tab-btn" data-tab="personal">Liste personnelle</button>
+      <button class="tab-btn" data-tab="settings">Paramètres</button>
+      <button class="tab-btn" data-tab="about">À propos</button>
+    </nav>
+    
+    <main>
+      <!-- Onglet Sources -->
+      <div class="tab-content active" id="sources">
+        <section class="section">
+          <h2>Liste entreprise</h2>
+          <p class="section-description">Une seule liste entreprise peut être configurée (priorité la plus élevée)</p>
+          
+          <div class="input-group">
+            <input type="url" id="enterpriseUrl" placeholder="https://exemple.com/liste-entreprise.json" class="input-field">
+            <button id="addEnterpriseBtn" class="btn btn-primary">Ajouter</button>
+          </div>
+          
+          <div class="enterprise-list" id="enterpriseList">
+            <p class="no-list">Aucune liste entreprise configurée</p>
+          </div>
+        </section>
+        
+        <section class="section">
+          <h2>Listes communautaires</h2>
+          <p class="section-description">Listes publiques maintenues par la communauté</p>
+          
+          <div class="input-group">
+            <input type="url" id="communityUrl" placeholder="https://exemple.com/liste-communautaire.json" class="input-field">
+            <button id="addCommunityBtn" class="btn btn-primary">Ajouter</button>
+          </div>
+          
+          <div class="community-lists" id="communityLists">
+            <p class="no-list">Aucune liste communautaire configurée</p>
+          </div>
+        </section>
+      </div>
+      
+      <!-- Onglet Liste personnelle -->
+      <div class="tab-content" id="personal">
+        <section class="section">
+          <h2>Gestion de la liste personnelle</h2>
+          <p class="section-description">Ajoutez ou supprimez des domaines de confiance</p>
+          
+          <div class="input-group">
+            <input type="text" id="personalDomain" placeholder="login.exemple.com" class="input-field">
+            <button id="addPersonalDomainBtn" class="btn btn-primary">Ajouter</button>
+          </div>
+          
+          <div class="personal-domains-list" id="personalDomainsList">
+            <p class="no-list">Aucun domaine personnel configuré</p>
+          </div>
+        </section>
+      </div>
+      
+      <!-- Onglet Paramètres -->
+      <div class="tab-content" id="settings">
+        <section class="section">
+          <h2>Paramètres généraux</h2>
+          
+          <div class="setting-item">
+            <label class="setting-label">
+              <input type="checkbox" id="checkCN" class="checkbox">
+              <span>Vérifier la correspondance du certificat CN</span>
+            </label>
+            <p class="setting-description">Affiche un avertissement si le CN du certificat ne correspond pas au domaine (Firefox uniquement)</p>
+          </div>
+          
+          <div class="setting-item">
+            <label class="setting-label">
+              <span>Durée de cache des listes (heures)</span>
+            </label>
+            <input type="number" id="ttl" min="1" max="168" value="24" class="input-field">
+            <p class="setting-description">Fréquence de mise à jour automatique des listes distantes (par défaut: 24h)</p>
+          </div>
+        </section>
+        
+        <section class="section">
+          <h2>Couleurs des bandeaux</h2>
+          
+          <div class="color-setting">
+            <label class="color-label">
+              <span>Liste entreprise</span>
+              <input type="color" id="colorEnterprise" value="#2ECC71" class="color-input">
+            </label>
+          </div>
+          
+          <div class="color-setting">
+            <label class="color-label">
+              <span>Liste communautaire</span>
+              <input type="color" id="colorCommunity" value="#3498DB" class="color-input">
+            </label>
+          </div>
+          
+          <div class="color-setting">
+            <label class="color-label">
+              <span>Liste personnelle</span>
+              <input type="color" id="colorPersonal" value="#9B59B6" class="color-input">
+            </label>
+          </div>
+        </section>
+        
+        <div class="save-section">
+          <button id="saveSettingsBtn" class="btn btn-success">💾 Enregistrer les paramètres</button>
+          <button id="resetSettingsBtn" class="btn btn-secondary">🔄 Réinitialiser</button>
+        </div>
+      </div>
+      
+      <!-- Onglet À propos -->
+      <div class="tab-content" id="about">
+        <section class="section">
+          <h2>À propos de ShieldSign</h2>
+          
+          <div class="about-info">
+            <p><strong>Version:</strong> 1.0.0</p>
+            <p><strong>Licence:</strong> MIT</p>
+            <p><strong>Description:</strong> Extension de validation visuelle des pages de connexion sûres via listes blanches de domaines</p>
+          </div>
+          
+          <div class="about-links">
+            <a href="https://github.com/ZA512/ShieldSign" target="_blank" class="btn btn-link">
+              📦 Dépôt GitHub
+            </a>
+            <a href="https://github.com/ZA512/ShieldSign/issues" target="_blank" class="btn btn-link">
+              🐛 Signaler un bug
+            </a>
+            <a href="https://github.com/ZA512/ShieldSign/blob/main/README.md" target="_blank" class="btn btn-link">
+              📖 Documentation
+            </a>
+          </div>
+          
+          <div class="about-section">
+            <h3>Contributeurs</h3>
+            <p>Merci à tous les contributeurs du projet ShieldSign</p>
+          </div>
+          
+          <div class="about-section">
+            <h3>Confidentialité</h3>
+            <p>ShieldSign ne collecte aucune donnée utilisateur. Toutes les vérifications sont effectuées localement dans votre navigateur.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+    
+    <div id="toast" class="toast"></div>
+  </div>
+  
+  <script src="options.js"></script>
+</body>
+</html>
