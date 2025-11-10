@@ -5,6 +5,7 @@ const DEFAULT_SETTINGS = {
   checkCN: false,
   ttl: 86400000, // 24h en millisecondes
   trainingMode: false,
+  enterpriseMode: false, // Mode entreprise pour afficher l'onglet Source entreprise
   bannerColors: {
     enterprise: '#2ECC71',
     community: '#3498DB',
@@ -17,8 +18,6 @@ const OFFICIAL_LIST_URL = 'https://raw.githubusercontent.com/ZA512/ShieldSign/re
 
 // Initialisation au démarrage
 chrome.runtime.onInstalled.addListener(async () => {
-  console.log('[ShieldSign] Extension installée');
-  
   // Initialiser le storage si vide
   const data = await chrome.storage.local.get(['lists', 'user_whitelist', 'settings']);
   
@@ -48,8 +47,8 @@ chrome.runtime.onInstalled.addListener(async () => {
     await chrome.storage.local.set({ settings: DEFAULT_SETTINGS });
   }
   
-  // Lancer la première mise à jour des listes
-  updateLists();
+  // Lancer la première mise à jour des listes (avec await pour garantir le téléchargement)
+  await updateLists();
 });
 
 // Vérification si un domaine correspond exactement
@@ -116,8 +115,6 @@ async function checkDomain(hostname) {
 
 // Mise à jour des listes distantes
 async function updateLists() {
-  console.log('[ShieldSign] Mise à jour des listes...');
-  
   const { lists, settings } = await chrome.storage.local.get(['lists', 'settings']);
   const ttl = settings?.ttl || DEFAULT_SETTINGS.ttl;
   const now = Date.now();
@@ -139,9 +136,8 @@ async function updateLists() {
       const response = await fetch(url, { headers });
       
       if (response.status === 304) {
-        // Non modifié, mettre à jour uniquement lastFetch
+        // Non modifié, mettre à jour lastFetch seulement (préserver enabled et isOfficial)
         lists[url].lastFetch = now;
-        console.log(`[ShieldSign] Liste non modifiée: ${url}`);
       } else if (response.ok) {
         const data = await response.json();
         
@@ -151,15 +147,14 @@ async function updateLists() {
             etag: response.headers.get('ETag') || listData.etag,
             lastFetch: now,
             data: data,
-            localType: listData.localType || 'community'
+            localType: listData.localType || 'community',
+            // enabled et isOfficial seront préservés lors de la fusion finale
+            isOfficial: listData.isOfficial,
+            enabled: listData.enabled
           };
-          console.log(`[ShieldSign] Liste mise à jour: ${url}`);
-        } else {
-          console.error(`[ShieldSign] Schéma invalide pour: ${url}`);
         }
       }
     } catch (error) {
-      console.error(`[ShieldSign] Erreur lors de la mise à jour de ${url}:`, error);
       
       // Retry après 5 secondes
       setTimeout(async () => {
@@ -172,19 +167,35 @@ async function updateLists() {
                 etag: response.headers.get('ETag'),
                 lastFetch: now,
                 data: data,
-                localType: listData.localType || 'community'
+                localType: listData.localType || 'community',
+                isOfficial: listData.isOfficial || false,
+                enabled: 'enabled' in listData ? listData.enabled : true
               };
               await chrome.storage.local.set({ lists });
             }
           }
         } catch (retryError) {
-          console.error(`[ShieldSign] Échec du retry pour ${url}:`, retryError);
         }
       }, 5000);
     }
   }
   
-  await chrome.storage.local.set({ lists });
+  // Re-lire le storage avant de sauvegarder pour éviter d'écraser les modifications concurrentes
+  const { lists: freshLists } = await chrome.storage.local.get(['lists']);
+  
+  // Fusionner les mises à jour (lastFetch, data) avec les propriétés actuelles (enabled, isOfficial)
+  for (const [url, updatedData] of Object.entries(lists)) {
+    if (freshLists[url]) {
+      // Préserver enabled et isOfficial de la version fraîche
+      freshLists[url] = {
+        ...updatedData,
+        enabled: freshLists[url].enabled !== undefined ? freshLists[url].enabled : updatedData.enabled,
+        isOfficial: freshLists[url].isOfficial !== undefined ? freshLists[url].isOfficial : updatedData.isOfficial
+      };
+    }
+  }
+  
+  await chrome.storage.local.set({ lists: freshLists });
 }
 
 // Validation du schéma d'une liste
@@ -282,7 +293,6 @@ async function addPersonalDomain(domain) {
   if (!list.includes(domain)) {
     list.push(domain);
     await chrome.storage.local.set({ user_whitelist: list });
-    console.log(`[ShieldSign] Domaine ajouté à la liste personnelle: ${domain}`);
   }
 }
 
@@ -295,7 +305,6 @@ async function removePersonalDomain(domain) {
   if (index > -1) {
     list.splice(index, 1);
     await chrome.storage.local.set({ user_whitelist: list });
-    console.log(`[ShieldSign] Domaine retiré de la liste personnelle: ${domain}`);
   }
 }
 
@@ -332,11 +341,9 @@ async function addList(url, type = 'community') {
     };
     
     await chrome.storage.local.set({ lists: allLists });
-    console.log(`[ShieldSign] Liste ajoutée: ${url} (${type})`);
     
     return { success: true };
   } catch (error) {
-    console.error(`[ShieldSign] Erreur lors de l'ajout de la liste ${url}:`, error);
     return { success: false, error: error.message };
   }
 }
@@ -348,13 +355,11 @@ async function removeList(url) {
   if (lists && lists[url]) {
     // Empêcher la suppression de la liste officielle
     if (lists[url].isOfficial) {
-      console.warn('[ShieldSign] Impossible de supprimer la liste officielle');
       return { success: false, error: 'La liste officielle ne peut pas être supprimée.' };
     }
     
     delete lists[url];
     await chrome.storage.local.set({ lists });
-    console.log(`[ShieldSign] Liste supprimée: ${url}`);
     return { success: true };
   }
   
@@ -366,10 +371,15 @@ async function toggleList(url, enabled) {
   const { lists } = await chrome.storage.local.get(['lists']);
   
   if (lists && lists[url]) {
+    // Si enabled n'est pas fourni, inverser l'état actuel
+    if (enabled === undefined) {
+      enabled = !(lists[url].enabled !== false);
+    }
+    
     lists[url].enabled = enabled;
     await chrome.storage.local.set({ lists });
-    console.log(`[ShieldSign] Liste ${enabled ? 'activée' : 'désactivée'}: ${url}`);
-    return { success: true };
+    
+    return { success: true, enabled };
   }
   
   return { success: false, error: 'Liste non trouvée.' };

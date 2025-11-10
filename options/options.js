@@ -4,6 +4,7 @@ const DEFAULT_SETTINGS = {
   checkCN: false,
   ttl: 86400000, // 24h en millisecondes
   trainingMode: false,
+  enterpriseMode: false, // Mode entreprise pour afficher l'onglet Source entreprise
   bannerColors: {
     enterprise: '#2ECC71',
     community: '#3498DB',
@@ -15,13 +16,20 @@ const DEFAULT_SETTINGS = {
 document.addEventListener('DOMContentLoaded', async () => {
   setupTabs();
   await loadSettings();
+  await loadOfficialList();
   await loadLists();
   await loadPersonalDomains();
   
   // Gestionnaires d'événements
+  document.getElementById('officialListToggle').addEventListener('click', toggleOfficialList);
+  document.getElementById('reinstallOfficialBtn').addEventListener('click', reinstallOfficialList);
   document.getElementById('addEnterpriseBtn').addEventListener('click', () => addList('enterprise'));
   document.getElementById('addCommunityBtn').addEventListener('click', () => addList('community'));
   document.getElementById('addPersonalDomainBtn').addEventListener('click', addPersonalDomain);
+  document.getElementById('exportPersonalBtn').addEventListener('click', exportPersonalList);
+  document.getElementById('importPersonalBtn').addEventListener('click', () => document.getElementById('importFileInput').click());
+  document.getElementById('importFileInput').addEventListener('change', importPersonalList);
+  document.getElementById('enterpriseMode').addEventListener('change', toggleEnterpriseMode);
   document.getElementById('saveSettingsBtn').addEventListener('click', saveSettings);
   document.getElementById('resetSettingsBtn').addEventListener('click', resetSettings);
 });
@@ -54,11 +62,14 @@ async function loadSettings() {
     
     document.getElementById('checkCN').checked = currentSettings.checkCN || false;
     document.getElementById('ttl').value = (currentSettings.ttl || DEFAULT_SETTINGS.ttl) / 3600000; // Convertir ms en heures
+    document.getElementById('enterpriseMode').checked = currentSettings.enterpriseMode || false;
     document.getElementById('colorEnterprise').value = currentSettings.bannerColors?.enterprise || DEFAULT_SETTINGS.bannerColors.enterprise;
     document.getElementById('colorCommunity').value = currentSettings.bannerColors?.community || DEFAULT_SETTINGS.bannerColors.community;
     document.getElementById('colorPersonal').value = currentSettings.bannerColors?.personal || DEFAULT_SETTINGS.bannerColors.personal;
+    
+    // Afficher/masquer l'onglet entreprise
+    updateEnterpriseTabVisibility(currentSettings.enterpriseMode || false);
   } catch (error) {
-    console.error('[ShieldSign] Erreur lors du chargement des paramètres:', error);
     showToast('Erreur lors du chargement des paramètres', true);
   }
 }
@@ -70,6 +81,7 @@ async function saveSettings() {
       checkCN: document.getElementById('checkCN').checked,
       ttl: parseInt(document.getElementById('ttl').value) * 3600000, // Convertir heures en ms
       trainingMode: false,
+      enterpriseMode: document.getElementById('enterpriseMode').checked,
       bannerColors: {
         enterprise: document.getElementById('colorEnterprise').value,
         community: document.getElementById('colorCommunity').value,
@@ -78,9 +90,9 @@ async function saveSettings() {
     };
     
     await chrome.storage.local.set({ settings });
+    updateEnterpriseTabVisibility(settings.enterpriseMode);
     showToast('Paramètres enregistrés avec succès');
   } catch (error) {
-    console.error('[ShieldSign] Erreur lors de la sauvegarde des paramètres:', error);
     showToast('Erreur lors de la sauvegarde des paramètres', true);
   }
 }
@@ -92,7 +104,6 @@ async function resetSettings() {
     await loadSettings();
     showToast('Paramètres réinitialisés');
   } catch (error) {
-    console.error('[ShieldSign] Erreur lors de la réinitialisation:', error);
     showToast('Erreur lors de la réinitialisation', true);
   }
 }
@@ -102,32 +113,33 @@ async function loadLists() {
   try {
     const { lists } = await chrome.storage.local.get(['lists']);
     
-    const officialList = document.getElementById('officialList');
     const enterpriseList = document.getElementById('enterpriseList');
     const communityLists = document.getElementById('communityLists');
     
-    officialList.innerHTML = '<p class="no-list">Aucune liste officielle configurée</p>';
+    if (!enterpriseList || !communityLists) {
+      return;
+    }
+    
     enterpriseList.innerHTML = '<p class="no-list">Aucune liste entreprise configurée</p>';
-    communityLists.innerHTML = '<p class="no-list">Aucune liste communautaire configurée</p>';
+    communityLists.innerHTML = '<p class="no-list">Aucune liste additionnelle configurée</p>';
     
     if (!lists || Object.keys(lists).length === 0) {
       return;
     }
     
-    let hasOfficial = false;
+    const OFFICIAL_URL = 'https://raw.githubusercontent.com/ZA512/ShieldSign/refs/heads/main/shieldsign_public_list_v1.json';
     let hasEnterprise = false;
     let hasCommunity = false;
     
     for (const [url, listData] of Object.entries(lists)) {
+      // Ignorer la liste officielle (elle est gérée en dur)
+      if (listData.isOfficial || url === OFFICIAL_URL) {
+        continue;
+      }
+      
       const listItem = createListItem(url, listData);
       
-      if (listData.isOfficial) {
-        if (!hasOfficial) {
-          officialList.innerHTML = '';
-          hasOfficial = true;
-        }
-        officialList.appendChild(listItem);
-      } else if (listData.localType === 'enterprise') {
+      if (listData.localType === 'enterprise') {
         if (!hasEnterprise) {
           enterpriseList.innerHTML = '';
           hasEnterprise = true;
@@ -142,7 +154,6 @@ async function loadLists() {
       }
     }
   } catch (error) {
-    console.error('[ShieldSign] Erreur lors du chargement des listes:', error);
     showToast('Erreur lors du chargement des listes', true);
   }
 }
@@ -231,7 +242,6 @@ async function addList(type) {
       showToast(response.error || 'Erreur lors de l\'ajout de la liste', true);
     }
   } catch (error) {
-    console.error('[ShieldSign] Erreur lors de l\'ajout de la liste:', error);
     showToast('Erreur lors de l\'ajout de la liste', true);
   }
 }
@@ -251,7 +261,6 @@ async function removeList(url) {
       showToast(response.error || 'Erreur lors de la suppression de la liste', true);
     }
   } catch (error) {
-    console.error('[ShieldSign] Erreur lors de la suppression de la liste:', error);
     showToast('Erreur lors de la suppression de la liste', true);
   }
 }
@@ -272,7 +281,6 @@ async function toggleList(url, enabled) {
       showToast(response.error || 'Erreur lors de la modification de la liste', true);
     }
   } catch (error) {
-    console.error('[ShieldSign] Erreur lors de la modification de la liste:', error);
     showToast('Erreur lors de la modification de la liste', true);
   }
 }
@@ -315,7 +323,6 @@ async function loadPersonalDomains() {
       personalDomainsList.appendChild(listItem);
     }
   } catch (error) {
-    console.error('[ShieldSign] Erreur lors du chargement de la liste personnelle:', error);
     showToast('Erreur lors du chargement de la liste personnelle', true);
   }
 }
@@ -345,7 +352,6 @@ async function addPersonalDomain() {
     input.value = '';
     await loadPersonalDomains();
   } catch (error) {
-    console.error('[ShieldSign] Erreur lors de l\'ajout du domaine:', error);
     showToast('Erreur lors de l\'ajout du domaine', true);
   }
 }
@@ -361,7 +367,6 @@ async function removePersonalDomain(domain) {
     showToast('Domaine supprimé avec succès');
     await loadPersonalDomains();
   } catch (error) {
-    console.error('[ShieldSign] Erreur lors de la suppression du domaine:', error);
     showToast('Erreur lors de la suppression du domaine', true);
   }
 }
@@ -392,4 +397,197 @@ function showToast(message, isError = false) {
   setTimeout(() => {
     toast.classList.remove('show');
   }, 3000);
+}
+
+// Gérer la liste officielle en dur
+async function loadOfficialList() {
+  const toggle = document.getElementById('officialListToggle');
+  
+  if (!toggle) {
+    return;
+  }
+  
+  try {
+    const { lists } = await chrome.storage.local.get(['lists']);
+    
+    // lists est un objet {url: listData}, pas un tableau
+    const officialUrl = 'https://raw.githubusercontent.com/ZA512/ShieldSign/refs/heads/main/shieldsign_public_list_v1.json';
+    let officialList = null;
+    
+    if (lists) {
+      // Chercher par URL directement
+      if (lists[officialUrl]) {
+        officialList = lists[officialUrl];
+      } else {
+        // Sinon chercher par isOfficial
+        for (const [url, listData] of Object.entries(lists)) {
+          if (listData.isOfficial) {
+            officialList = listData;
+            break;
+          }
+        }
+      }
+    }
+    
+    // Déterminer l'état (par défaut activée si pas trouvée ou si enabled n'est pas false)
+    const isEnabled = officialList ? (officialList.enabled !== false) : true;
+    
+    // Retirer les deux classes d'abord
+    toggle.classList.remove('enabled', 'disabled');
+    
+    // Ajouter la bonne classe
+    if (isEnabled) {
+      toggle.classList.add('enabled');
+      toggle.textContent = '✓';
+      toggle.title = 'Désactiver';
+    } else {
+      toggle.classList.add('disabled');
+      toggle.textContent = '✗';
+      toggle.title = 'Activer';
+    }
+  } catch (error) {
+  }
+}
+
+// Toggle liste officielle
+async function toggleOfficialList() {
+  const toggle = document.getElementById('officialListToggle');
+  
+  try {
+    // Envoyer le toggle (le background.js gère l'inversion automatique)
+    const response = await chrome.runtime.sendMessage({
+      action: 'TOGGLE_LIST',
+      url: 'https://raw.githubusercontent.com/ZA512/ShieldSign/refs/heads/main/shieldsign_public_list_v1.json'
+    });
+    
+    if (response && response.success) {
+      // Mettre à jour l'affichage avec le nouvel état
+      const newEnabled = response.enabled;
+      toggle.classList.toggle('enabled', newEnabled);
+      toggle.classList.toggle('disabled', !newEnabled);
+      toggle.textContent = newEnabled ? '✓' : '✗';
+      toggle.title = newEnabled ? 'Désactiver' : 'Activer';
+      
+      showToast(newEnabled ? 'Liste officielle activée' : 'Liste officielle désactivée');
+    } else {
+      showToast('Erreur lors de la mise à jour', true);
+    }
+  } catch (error) {
+    showToast('Erreur lors de la mise à jour', true);
+  }
+}
+
+// Réinstaller la liste officielle
+async function reinstallOfficialList() {
+  try {
+    const url = 'https://raw.githubusercontent.com/ZA512/ShieldSign/refs/heads/main/shieldsign_public_list_v1.json';
+    
+    // Récupérer les listes actuelles
+    const { lists } = await chrome.storage.local.get(['lists']);
+    const currentLists = lists || {};
+    
+    // Réinstaller la liste officielle
+    currentLists[url] = {
+      etag: null,
+      lastFetch: 0,
+      data: null,
+      localType: 'community',
+      isOfficial: true,
+      enabled: true
+    };
+    
+    await chrome.storage.local.set({ lists: currentLists });
+    
+    // Forcer la mise à jour immédiate
+    await chrome.runtime.sendMessage({ action: 'UPDATE_LISTS' });
+    
+    // Recharger l'affichage
+    await loadOfficialList();
+    
+    showToast('Liste officielle réinstallée et mise à jour !');
+  } catch (error) {
+    showToast('Erreur lors de la réinstallation', true);
+  }
+}
+
+// Gérer l'affichage de l'onglet entreprise
+function updateEnterpriseTabVisibility(show) {
+  const tab = document.getElementById('enterpriseTab');
+  if (tab) {
+    tab.style.display = show ? 'block' : 'none';
+  }
+}
+
+// Toggle mode entreprise
+async function toggleEnterpriseMode(e) {
+  updateEnterpriseTabVisibility(e.target.checked);
+  showToast(e.target.checked ? 'Mode entreprise activé' : 'Mode entreprise désactivé');
+}
+
+// Exporter la liste personnelle
+async function exportPersonalList() {
+  try {
+    const { personalDomains } = await chrome.storage.local.get(['personalDomains']);
+    
+    if (!personalDomains || personalDomains.length === 0) {
+      showToast('Aucun domaine personnel à exporter', true);
+      return;
+    }
+    
+    const exportData = {
+      name: 'Ma liste personnelle ShieldSign',
+      version: '1.0',
+      exportDate: new Date().toISOString(),
+      domains: personalDomains
+    };
+    
+    const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `shieldsign-personal-${Date.now()}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+    
+    showToast('Liste exportée avec succès');
+  } catch (error) {
+    showToast('Erreur lors de l\'export', true);
+  }
+}
+
+// Importer la liste personnelle
+async function importPersonalList(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  
+  try {
+    const text = await file.text();
+    const data = JSON.parse(text);
+    
+    if (!data.domains || !Array.isArray(data.domains)) {
+      showToast('Format de fichier invalide', true);
+      return;
+    }
+    
+    // Valider tous les domaines
+    const validDomains = data.domains.filter(d => isValidDomain(d));
+    
+    if (validDomains.length === 0) {
+      showToast('Aucun domaine valide trouvé', true);
+      return;
+    }
+    
+    // Fusionner avec les domaines existants
+    const { personalDomains = [] } = await chrome.storage.local.get(['personalDomains']);
+    const mergedDomains = [...new Set([...personalDomains, ...validDomains])];
+    
+    await chrome.storage.local.set({ personalDomains: mergedDomains });
+    await loadPersonalDomains();
+    
+    showToast(`${validDomains.length} domaine(s) importé(s)`);
+  } catch (error) {
+    showToast('Erreur lors de l\'import', true);
+  } finally {
+    e.target.value = ''; // Reset file input
+  }
 }

@@ -13,41 +13,37 @@
     </header>
     
     <nav class="tabs">
-      <button class="tab-btn active" data-tab="sources">Sources</button>
-      <button class="tab-btn" data-tab="personal">Liste personnelle</button>
+      <button class="tab-btn active" data-tab="community">Sources communautaires</button>
+      <button class="tab-btn" data-tab="enterprise" id="enterpriseTab" style="display: none;">Source entreprise</button>
+      <button class="tab-btn" data-tab="personal">Sources personnelles</button>
       <button class="tab-btn" data-tab="settings">Paramètres</button>
       <button class="tab-btn" data-tab="about">À propos</button>
     </nav>
     
     <main>
-      <!-- Onglet Sources -->
-      <div class="tab-content active" id="sources">
+      <!-- Onglet Sources communautaires -->
+      <div class="tab-content active" id="community">
         <section class="section">
           <h2>Liste officielle ShieldSign</h2>
-          <p class="section-description">Liste officielle maintenue par ShieldSign (activée par défaut, non supprimable)</p>
+          <p class="section-description">Liste officielle maintenue par l'équipe ShieldSign, incluant les services web et cloud les plus populaires. Activée par défaut.</p>
           
-          <div class="official-list" id="officialList">
-            <p class="no-list">Chargement...</p>
+          <div class="official-list-container">
+            <div class="list-item" id="officialListItem">
+              <div class="list-info">
+                <div class="list-name">ShieldSign Official List</div>
+                <div class="list-url">Liste officielle (65+ domaines validés)</div>
+              </div>
+              <div style="display: flex; gap: 8px;">
+                <button class="toggle-btn enabled" id="officialListToggle" title="Désactiver">✓</button>
+                <button class="btn btn-secondary" id="reinstallOfficialBtn" title="Réinstaller la liste officielle">🔄</button>
+              </div>
+            </div>
           </div>
         </section>
         
         <section class="section">
-          <h2>Liste entreprise</h2>
-          <p class="section-description">Une seule liste entreprise peut être configurée (priorité la plus élevée)</p>
-          
-          <div class="input-group">
-            <input type="url" id="enterpriseUrl" placeholder="https://exemple.com/liste-entreprise.json" class="input-field">
-            <button id="addEnterpriseBtn" class="btn btn-primary">Ajouter</button>
-          </div>
-          
-          <div class="enterprise-list" id="enterpriseList">
-            <p class="no-list">Aucune liste entreprise configurée</p>
-          </div>
-        </section>
-        
-        <section class="section">
-          <h2>Listes communautaires</h2>
-          <p class="section-description">Listes publiques maintenues par la communauté</p>
+          <h2>Listes communautaires additionnelles</h2>
+          <p class="section-description">Ajoutez d'autres listes publiques maintenues par la communauté (optionnel)</p>
           
           <div class="input-group">
             <input type="url" id="communityUrl" placeholder="https://exemple.com/liste-communautaire.json" class="input-field">
@@ -55,16 +51,49 @@
           </div>
           
           <div class="community-lists" id="communityLists">
-            <p class="no-list">Aucune liste communautaire configurée</p>
+            <p class="no-list">Aucune liste additionnelle configurée</p>
           </div>
         </section>
       </div>
       
-      <!-- Onglet Liste personnelle -->
+      <!-- Onglet Source entreprise -->
+      <div class="tab-content" id="enterprise">
+        <section class="section">
+          <div class="info-box">
+            <h3>ℹ️ À propos de la source entreprise</h3>
+            <p>Cette fonctionnalité est destinée aux <strong>administrateurs d'entreprise</strong> qui souhaitent déployer une liste de domaines validés pour leurs collaborateurs.</p>
+            <p><strong>Format des domaines :</strong> Utilisez le format complet incluant le sous-domaine et le domaine principal (ce qui se trouve entre <code>https://</code> et le premier <code>/</code>).</p>
+            <p><strong>Exemples :</strong></p>
+            <ul>
+              <li>✅ <code>login.monentreprise.com</code></li>
+              <li>✅ <code>sso.monentreprise.fr</code></li>
+              <li>✅ <code>auth.intranet.monentreprise.net</code></li>
+              <li>❌ <code>https://login.monentreprise.com/auth</code> (ne pas inclure https:// ni le chemin)</li>
+            </ul>
+            <p class="warning">⚠️ <strong>Sécurité :</strong> Hébergez votre liste sur un serveur interne ou privé, <strong>pas sur une URL publique</strong>.</p>
+          </div>
+        </section>
+        
+        <section class="section">
+          <h2>Liste entreprise</h2>
+          <p class="section-description">Une seule liste entreprise peut être configurée (priorité maximale sur toutes les autres sources)</p>
+          
+          <div class="input-group">
+            <input type="url" id="enterpriseUrl" placeholder="https://intranet.monentreprise.com/shieldsign-list.json" class="input-field">
+            <button id="addEnterpriseBtn" class="btn btn-primary">Ajouter</button>
+          </div>
+          
+          <div class="enterprise-list" id="enterpriseList">
+            <p class="no-list">Aucune liste entreprise configurée</p>
+          </div>
+        </section>
+      </div>
+      
+      <!-- Onglet Sources personnelles -->
       <div class="tab-content" id="personal">
         <section class="section">
-          <h2>Gestion de la liste personnelle</h2>
-          <p class="section-description">Ajoutez ou supprimez des domaines de confiance</p>
+          <h2>Gestion des domaines personnels</h2>
+          <p class="section-description">Ajoutez vos propres domaines de confiance (priorité supérieure aux listes communautaires)</p>
           
           <div class="input-group">
             <input type="text" id="personalDomain" placeholder="login.exemple.com" class="input-field">
@@ -75,12 +104,32 @@
             <p class="no-list">Aucun domaine personnel configuré</p>
           </div>
         </section>
+        
+        <section class="section">
+          <h2>Import / Export</h2>
+          <p class="section-description">Exportez votre liste pour la sauvegarder ou l'importer sur un autre navigateur</p>
+          
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <button id="exportPersonalBtn" class="btn btn-secondary">📥 Exporter la liste</button>
+            <button id="importPersonalBtn" class="btn btn-secondary">📤 Importer une liste</button>
+          </div>
+          
+          <input type="file" id="importFileInput" accept=".json" style="display: none;">
+        </section>
       </div>
       
       <!-- Onglet Paramètres -->
       <div class="tab-content" id="settings">
         <section class="section">
           <h2>Paramètres généraux</h2>
+          
+          <div class="setting-item">
+            <label class="setting-label">
+              <input type="checkbox" id="enterpriseMode" class="checkbox">
+              <span>Mode entreprise</span>
+            </label>
+            <p class="setting-description">Activez cette option si vous êtes administrateur et souhaitez gérer une liste de domaines pour votre organisation. Cela affichera l'onglet "Source entreprise".</p>
+          </div>
           
           <div class="setting-item">
             <label class="setting-label">
