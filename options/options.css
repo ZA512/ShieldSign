@@ -21,16 +21,28 @@ body {
 }
 
 header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1a2a6c 0%, #159957 100%);
   color: white;
-  padding: 24px 32px;
-  text-align: center;
+  padding: 0px 32px;
+  border-bottom: 2px solid #159957;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-logo {
+  width: 128px;
+  height: 128px;
 }
 
 header h1 {
   font-size: 24px;
   font-weight: 600;
   margin: 0;
+  color: white;
 }
 
 .tabs {
@@ -253,34 +265,62 @@ main {
   border: none;
   color: #dc3545;
   cursor: pointer;
-  font-size: 18px;
-  padding: 4px 8px;
-  transition: opacity 0.2s ease;
+  font-size: 16px;
+  padding: 8px 12px;
+  transition: all 0.2s ease;
+  border-radius: 6px;
 }
 
 .remove-btn:hover {
-  opacity: 0.7;
+  background: rgba(220, 53, 69, 0.1);
+  color: #c82333;
 }
 
 .toggle-btn {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 18px;
-  padding: 4px 8px;
-  transition: opacity 0.2s ease;
+  font-size: 20px;
+  padding: 8px 12px;
+  transition: all 0.2s ease;
+  border-radius: 6px;
 }
 
 .toggle-btn:hover {
-  opacity: 0.7;
+  background: rgba(102, 126, 234, 0.1);
 }
 
 .toggle-btn.enabled {
   color: #2ECC71;
 }
 
+.toggle-btn.enabled:hover {
+  color: #27ae60;
+}
+
 .toggle-btn.disabled {
   color: #95a5a6;
+}
+
+.toggle-btn.disabled:hover {
+  color: #7f8c8d;
+}
+
+.btn-icon {
+  background: transparent;
+  border: 2px solid #667eea;
+  color: #667eea;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-icon:hover {
+  background: #667eea;
+  color: white;
+  transform: rotate(180deg);
 }
 
 .list-item.disabled {

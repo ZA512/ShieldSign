@@ -59,7 +59,7 @@ async function injectBanner(listName, type) {
     left: 0;
     right: 0;
     width: 100%;
-    background-color: ${color};
+    background: linear-gradient(135deg, #1a2a6c 0%, #159957 100%);
     color: white;
     padding: 12px 20px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -71,13 +71,16 @@ async function injectBanner(listName, type) {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 10px;
   `;
   
-  // Texte du bandeau
+  // Icône du phare
   const icon = document.createElement('span');
-  icon.textContent = '✅';
-  icon.style.fontSize = '16px';
+  icon.innerHTML = '🗼';
+  icon.style.cssText = `
+    font-size: 18px;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+  `;
   
   const text = document.createElement('span');
   text.textContent = `Page validée par : ${getListDisplayName(listName, type)}`;

@@ -189,7 +189,7 @@ function createListItem(url, listData) {
   // Bouton activer/désactiver
   const toggleBtn = document.createElement('button');
   toggleBtn.className = `toggle-btn ${listData.enabled !== false ? 'enabled' : 'disabled'}`;
-  toggleBtn.textContent = listData.enabled !== false ? '✓' : '✗';
+  toggleBtn.innerHTML = listData.enabled !== false ? '<i class="fas fa-check-circle"></i>' : '<i class="fas fa-times-circle"></i>';
   toggleBtn.title = listData.enabled !== false ? 'Désactiver' : 'Activer';
   toggleBtn.addEventListener('click', () => toggleList(url, listData.enabled === false));
   
@@ -199,7 +199,7 @@ function createListItem(url, listData) {
   if (!listData.isOfficial) {
     const removeBtn = document.createElement('button');
     removeBtn.className = 'remove-btn';
-    removeBtn.textContent = '🗑️';
+    removeBtn.innerHTML = '<i class="fas fa-times"></i>';
     removeBtn.title = 'Supprimer';
     removeBtn.addEventListener('click', () => removeList(url));
     actions.appendChild(removeBtn);
@@ -313,7 +313,7 @@ async function loadPersonalDomains() {
       
       const removeBtn = document.createElement('button');
       removeBtn.className = 'remove-btn';
-      removeBtn.textContent = '🗑️';
+      removeBtn.innerHTML = '<i class="fas fa-times"></i>';
       removeBtn.title = 'Supprimer';
       removeBtn.addEventListener('click', () => removePersonalDomain(domain));
       
@@ -438,11 +438,11 @@ async function loadOfficialList() {
     // Ajouter la bonne classe
     if (isEnabled) {
       toggle.classList.add('enabled');
-      toggle.textContent = '✓';
+      toggle.innerHTML = '<i class="fas fa-check-circle"></i>';
       toggle.title = 'Désactiver';
     } else {
       toggle.classList.add('disabled');
-      toggle.textContent = '✗';
+      toggle.innerHTML = '<i class="fas fa-times-circle"></i>';
       toggle.title = 'Activer';
     }
   } catch (error) {
@@ -465,7 +465,7 @@ async function toggleOfficialList() {
       const newEnabled = response.enabled;
       toggle.classList.toggle('enabled', newEnabled);
       toggle.classList.toggle('disabled', !newEnabled);
-      toggle.textContent = newEnabled ? '✓' : '✗';
+      toggle.innerHTML = newEnabled ? '<i class="fas fa-check-circle"></i>' : '<i class="fas fa-times-circle"></i>';
       toggle.title = newEnabled ? 'Désactiver' : 'Activer';
       
       showToast(newEnabled ? 'Liste officielle activée' : 'Liste officielle désactivée');
