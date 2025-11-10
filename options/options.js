@@ -527,9 +527,9 @@ async function toggleEnterpriseMode(e) {
 // Exporter la liste personnelle
 async function exportPersonalList() {
   try {
-    const { personalDomains } = await chrome.storage.local.get(['personalDomains']);
+    const { user_whitelist } = await chrome.storage.local.get(['user_whitelist']);
     
-    if (!personalDomains || personalDomains.length === 0) {
+    if (!user_whitelist || user_whitelist.length === 0) {
       showToast('Aucun domaine personnel à exporter', true);
       return;
     }
@@ -538,7 +538,7 @@ async function exportPersonalList() {
       name: 'Ma liste personnelle ShieldSign',
       version: '1.0',
       exportDate: new Date().toISOString(),
-      domains: personalDomains
+      domains: user_whitelist
     };
     
     const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
@@ -578,10 +578,10 @@ async function importPersonalList(e) {
     }
     
     // Fusionner avec les domaines existants
-    const { personalDomains = [] } = await chrome.storage.local.get(['personalDomains']);
-    const mergedDomains = [...new Set([...personalDomains, ...validDomains])];
+    const { user_whitelist = [] } = await chrome.storage.local.get(['user_whitelist']);
+    const mergedDomains = [...new Set([...user_whitelist, ...validDomains])];
     
-    await chrome.storage.local.set({ personalDomains: mergedDomains });
+    await chrome.storage.local.set({ user_whitelist: mergedDomains });
     await loadPersonalDomains();
     
     showToast(`${validDomains.length} domaine(s) importé(s)`);
