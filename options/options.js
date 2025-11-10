@@ -5,6 +5,7 @@ const DEFAULT_SETTINGS = {
   ttl: 86400000, // 24h en millisecondes
   trainingMode: false,
   enterpriseMode: false, // Mode entreprise pour afficher l'onglet Source entreprise
+  language: 'auto', // auto, en, fr, etc.
   bannerColors: {
     enterprise: '#2ECC71',
     community: '#3498DB',
@@ -12,8 +13,39 @@ const DEFAULT_SETTINGS = {
   }
 };
 
+// Fonction d'internationalisation
+function translatePage() {
+  // Traduire tous les éléments avec data-i18n
+  document.querySelectorAll('[data-i18n]').forEach(element => {
+    const key = element.getAttribute('data-i18n');
+    const message = chrome.i18n.getMessage(key);
+    if (message) {
+      element.textContent = message;
+    }
+  });
+  
+  // Traduire les placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+    const key = element.getAttribute('data-i18n-placeholder');
+    const message = chrome.i18n.getMessage(key);
+    if (message) {
+      element.placeholder = message;
+    }
+  });
+  
+  // Traduire les titres
+  document.querySelectorAll('[data-i18n-title]').forEach(element => {
+    const key = element.getAttribute('data-i18n-title');
+    const message = chrome.i18n.getMessage(key);
+    if (message) {
+      element.title = message;
+    }
+  });
+}
+
 // Initialisation
 document.addEventListener('DOMContentLoaded', async () => {
+  translatePage();
   setupTabs();
   await loadSettings();
   await loadOfficialList();
@@ -29,6 +61,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('exportPersonalBtn').addEventListener('click', exportPersonalList);
   document.getElementById('importPersonalBtn').addEventListener('click', () => document.getElementById('importFileInput').click());
   document.getElementById('importFileInput').addEventListener('change', importPersonalList);
+  document.getElementById('languageSelect').addEventListener('change', changeLanguage);
   document.getElementById('enterpriseMode').addEventListener('change', toggleEnterpriseMode);
   document.getElementById('saveSettingsBtn').addEventListener('click', saveSettings);
   document.getElementById('resetSettingsBtn').addEventListener('click', resetSettings);
@@ -63,6 +96,7 @@ async function loadSettings() {
     document.getElementById('checkCN').checked = currentSettings.checkCN || false;
     document.getElementById('ttl').value = (currentSettings.ttl || DEFAULT_SETTINGS.ttl) / 3600000; // Convertir ms en heures
     document.getElementById('enterpriseMode').checked = currentSettings.enterpriseMode || false;
+    document.getElementById('languageSelect').value = currentSettings.language || DEFAULT_SETTINGS.language;
     document.getElementById('colorEnterprise').value = currentSettings.bannerColors?.enterprise || DEFAULT_SETTINGS.bannerColors.enterprise;
     document.getElementById('colorCommunity').value = currentSettings.bannerColors?.community || DEFAULT_SETTINGS.bannerColors.community;
     document.getElementById('colorPersonal').value = currentSettings.bannerColors?.personal || DEFAULT_SETTINGS.bannerColors.personal;
@@ -82,6 +116,7 @@ async function saveSettings() {
       ttl: parseInt(document.getElementById('ttl').value) * 3600000, // Convertir heures en ms
       trainingMode: false,
       enterpriseMode: document.getElementById('enterpriseMode').checked,
+      language: document.getElementById('languageSelect').value,
       bannerColors: {
         enterprise: document.getElementById('colorEnterprise').value,
         community: document.getElementById('colorCommunity').value,
@@ -522,6 +557,24 @@ function updateEnterpriseTabVisibility(show) {
 async function toggleEnterpriseMode(e) {
   updateEnterpriseTabVisibility(e.target.checked);
   showToast(e.target.checked ? 'Mode entreprise activé' : 'Mode entreprise désactivé');
+}
+
+// Changer la langue
+async function changeLanguage() {
+  const languageSelect = document.getElementById('languageSelect');
+  const selectedLanguage = languageSelect.value;
+  
+  try {
+    // Sauvegarder immédiatement la langue sélectionnée
+    const { settings = DEFAULT_SETTINGS } = await chrome.storage.local.get(['settings']);
+    settings.language = selectedLanguage;
+    await chrome.storage.local.set({ settings });
+    
+    // Recharger la page pour appliquer la nouvelle langue
+    window.location.reload();
+  } catch (error) {
+    showToast('Erreur lors du changement de langue', true);
+  }
 }
 
 // Exporter la liste personnelle

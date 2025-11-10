@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "ShieldSign",
+  "name": "__MSG_extName__",
   "version": "1.0.0",
-  "description": "Extension de validation visuelle des pages de connexion sûres via listes blanches de domaines",
+  "description": "__MSG_extDescription__",
+  "default_locale": "en",
   "author": "ShieldSign Contributors",
   "permissions": [
     "storage",

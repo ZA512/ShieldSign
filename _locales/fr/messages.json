@@ -1,0 +1,429 @@
+{
+  "extName": {
+    "message": "ShieldSign",
+    "description": "Nom de l'extension"
+  },
+  "extDescription": {
+    "message": "Validation visuelle des pages de connexion sûres via listes blanches de domaines",
+    "description": "Description de l'extension"
+  },
+  
+  "appTitle": {
+    "message": "ShieldSign"
+  },
+  "settings": {
+    "message": "Paramètres"
+  },
+  "refresh": {
+    "message": "Actualiser"
+  },
+  
+  "tabCommunity": {
+    "message": "Sources communautaires"
+  },
+  "tabEnterprise": {
+    "message": "Source entreprise"
+  },
+  "tabPersonal": {
+    "message": "Sources personnelles"
+  },
+  "tabSettings": {
+    "message": "Paramètres"
+  },
+  "tabAbout": {
+    "message": "À propos"
+  },
+  
+  "officialListTitle": {
+    "message": "Liste officielle ShieldSign"
+  },
+  "officialListDescription": {
+    "message": "Liste officielle maintenue par l'équipe ShieldSign, incluant les services web et cloud les plus populaires. Activée par défaut."
+  },
+  "officialListName": {
+    "message": "ShieldSign Official List"
+  },
+  "officialListInfo": {
+    "message": "Liste officielle (65+ domaines validés)"
+  },
+  "disable": {
+    "message": "Désactiver"
+  },
+  "enable": {
+    "message": "Activer"
+  },
+  "reinstallOfficialList": {
+    "message": "Réinstaller la liste officielle"
+  },
+  
+  "communityListsTitle": {
+    "message": "Listes communautaires additionnelles"
+  },
+  "communityListsDescription": {
+    "message": "Ajoutez d'autres listes publiques maintenues par la communauté (optionnel)"
+  },
+  "communityUrlPlaceholder": {
+    "message": "https://exemple.com/liste-communautaire.json"
+  },
+  "add": {
+    "message": "Ajouter"
+  },
+  "noAdditionalList": {
+    "message": "Aucune liste additionnelle configurée"
+  },
+  
+  "enterpriseInfoTitle": {
+    "message": "ℹ️ À propos de la source entreprise"
+  },
+  "enterpriseInfoText1": {
+    "message": "Cette fonctionnalité est destinée aux <strong>administrateurs d'entreprise</strong> qui souhaitent déployer une liste de domaines validés pour leurs collaborateurs."
+  },
+  "enterpriseInfoText2": {
+    "message": "<strong>Format des domaines :</strong> Utilisez le format complet incluant le sous-domaine et le domaine principal (ce qui se trouve entre <code>https://</code> et le premier <code>/</code>)."
+  },
+  "enterpriseInfoExamples": {
+    "message": "<strong>Exemples :</strong>"
+  },
+  "enterpriseInfoSecurity": {
+    "message": "⚠️ <strong>Sécurité :</strong> Hébergez votre liste sur un serveur interne ou privé, <strong>pas sur une URL publique</strong>."
+  },
+  
+  "enterpriseListTitle": {
+    "message": "Configurer la liste entreprise"
+  },
+  "enterpriseListDescription": {
+    "message": "Ajoutez une unique liste de validation de domaines à l'échelle de l'entreprise (priorité maximale)"
+  },
+  "enterpriseUrlPlaceholder": {
+    "message": "https://intranet.entreprise.com/domaines-valides.json"
+  },
+  "noEnterpriseList": {
+    "message": "Aucune liste entreprise configurée"
+  },
+  
+  "personalDomainsTitle": {
+    "message": "Gestion des domaines personnels"
+  },
+  "personalDomainsDescription": {
+    "message": "Ajoutez vos propres domaines de confiance (priorité supérieure aux listes communautaires)"
+  },
+  "personalDomainPlaceholder": {
+    "message": "login.exemple.com"
+  },
+  "noPersonalDomain": {
+    "message": "Aucun domaine personnel configuré"
+  },
+  
+  "importExportTitle": {
+    "message": "Import / Export"
+  },
+  "importExportDescription": {
+    "message": "Exportez votre liste pour la sauvegarder ou l'importer sur un autre navigateur"
+  },
+  "exportList": {
+    "message": "Exporter la liste"
+  },
+  "importList": {
+    "message": "Importer une liste"
+  },
+  
+  "generalSettingsTitle": {
+    "message": "Paramètres généraux"
+  },
+  "language": {
+    "message": "Langue"
+  },
+  "languageDescription": {
+    "message": "Choisissez la langue de l'interface"
+  },
+  "languageAuto": {
+    "message": "Automatique (langue du navigateur)"
+  },
+  "languageEn": {
+    "message": "English"
+  },
+  "languageFr": {
+    "message": "Français"
+  },
+  "enterpriseMode": {
+    "message": "Mode entreprise"
+  },
+  "enterpriseModeDescription": {
+    "message": "Activez cette option si vous êtes administrateur et souhaitez gérer une liste de domaines pour votre organisation. Cela affichera l'onglet \"Source entreprise\"."
+  },
+  "checkCN": {
+    "message": "Vérifier la correspondance du certificat CN"
+  },
+  "checkCNDescription": {
+    "message": "Affiche un avertissement si le CN du certificat ne correspond pas au domaine (Firefox uniquement)"
+  },
+  "cacheDuration": {
+    "message": "Durée de cache des listes (heures)"
+  },
+  "cacheDurationDescription": {
+    "message": "Fréquence de mise à jour automatique des listes distantes (par défaut: 24h)"
+  },
+  
+  "bannerColorsTitle": {
+    "message": "Couleurs des bandeaux"
+  },
+  "enterpriseList": {
+    "message": "Liste entreprise"
+  },
+  "communityList": {
+    "message": "Liste communautaire"
+  },
+  "personalList": {
+    "message": "Liste personnelle"
+  },
+  
+  "saveSettings": {
+    "message": "Enregistrer les paramètres"
+  },
+  "resetSettings": {
+    "message": "Réinitialiser"
+  },
+  
+  "aboutTitle": {
+    "message": "À propos de ShieldSign"
+  },
+  "version": {
+    "message": "Version"
+  },
+  "license": {
+    "message": "Licence"
+  },
+  "description": {
+    "message": "Description"
+  },
+  "aboutDescription": {
+    "message": "Extension de validation visuelle des pages de connexion sûres via listes blanches de domaines"
+  },
+  "githubRepo": {
+    "message": "Dépôt GitHub"
+  },
+  "reportBug": {
+    "message": "Signaler un bug"
+  },
+  "documentation": {
+    "message": "Documentation"
+  },
+  "contributorsTitle": {
+    "message": "Contributeurs"
+  },
+  "contributorsText": {
+    "message": "Merci à tous les contributeurs du projet ShieldSign"
+  },
+  
+  "pageValidated": {
+    "message": "Page validée par : $LIST_NAME$",
+    "placeholders": {
+      "list_name": {
+        "content": "$1",
+        "example": "ShieldSign Official List"
+      }
+    }
+  },
+  "personalListDisplay": {
+    "message": "Liste personnelle"
+  },
+  "enterpriseListDisplay": {
+    "message": "Liste entreprise"
+  },
+  
+  "verifying": {
+    "message": "Vérification en cours..."
+  },
+  "pageNotContainPasswordField": {
+    "message": "Cette page ne contient pas de champ mot de passe"
+  },
+  "approveDomain": {
+    "message": "Approuver ce domaine"
+  },
+  
+  "settingsSaved": {
+    "message": "Paramètres enregistrés avec succès"
+  },
+  "settingsReset": {
+    "message": "Paramètres réinitialisés"
+  },
+  "listAdded": {
+    "message": "Liste ajoutée avec succès"
+  },
+  "listRemoved": {
+    "message": "Liste supprimée avec succès"
+  },
+  "listEnabled": {
+    "message": "Liste activée"
+  },
+  "listDisabled": {
+    "message": "Liste désactivée"
+  },
+  "domainAdded": {
+    "message": "Domaine ajouté avec succès"
+  },
+  "domainRemoved": {
+    "message": "Domaine supprimé avec succès"
+  },
+  "officialListReinstalled": {
+    "message": "Liste officielle réinstallée et mise à jour !"
+  },
+  "listExported": {
+    "message": "Liste exportée avec succès"
+  },
+  "domainsImported": {
+    "message": "$COUNT$ domaine(s) importé(s)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  
+  "errorInvalidUrl": {
+    "message": "URL invalide"
+  },
+  "errorInvalidDomain": {
+    "message": "Format de domaine invalide"
+  },
+  "errorAddingList": {
+    "message": "Erreur lors de l'ajout de la liste"
+  },
+  "errorRemovingList": {
+    "message": "Erreur lors de la suppression de la liste"
+  },
+  "errorModifyingList": {
+    "message": "Erreur lors de la modification de la liste"
+  },
+  "errorAddingDomain": {
+    "message": "Erreur lors de l'ajout du domaine"
+  },
+  "errorRemovingDomain": {
+    "message": "Erreur lors de la suppression du domaine"
+  },
+  "errorLoadingSettings": {
+    "message": "Erreur lors du chargement des paramètres"
+  },
+  "errorSavingSettings": {
+    "message": "Erreur lors de la sauvegarde des paramètres"
+  },
+  "errorResetting": {
+    "message": "Erreur lors de la réinitialisation"
+  },
+  "errorReinstalling": {
+    "message": "Erreur lors de la réinstallation"
+  },
+  "errorExporting": {
+    "message": "Erreur lors de l'export"
+  },
+  "errorImporting": {
+    "message": "Erreur lors de l'import"
+  },
+  "errorInvalidFile": {
+    "message": "Format de fichier invalide"
+  },
+  "errorNoValidDomain": {
+    "message": "Aucun domaine valide trouvé"
+  },
+  "errorNoPersonalDomain": {
+    "message": "Aucun domaine personnel à exporter"
+  },
+  "errorEnterValidUrl": {
+    "message": "Veuillez entrer une URL valide"
+  },
+  "errorEnterValidDomain": {
+    "message": "Veuillez entrer un domaine valide"
+  },
+  "errorUpdating": {
+    "message": "Erreur lors de la mise à jour"
+  },
+  
+  "settingsTitle": {
+    "message": "Paramètres - ShieldSign"
+  },
+  "headerTitle": {
+    "message": "ShieldSign - Paramètres"
+  },
+  "officialListSubtitle": {
+    "message": "Liste officielle (65+ domaines validés)"
+  },
+  "toggleDisable": {
+    "message": "Désactiver"
+  },
+  "toggleEnable": {
+    "message": "Activer"
+  },
+  "reinstallOfficial": {
+    "message": "Réinstaller la liste officielle"
+  },
+  "communityListTitle": {
+    "message": "Listes communautaires additionnelles"
+  },
+  "communityListDescription": {
+    "message": "Ajoutez d'autres listes publiques maintenues par la communauté (optionnel)"
+  },
+  "noListCommunity": {
+    "message": "Aucune liste additionnelle configurée"
+  },
+  "noListEnterprise": {
+    "message": "Aucune liste entreprise configurée"
+  },
+  "noListPersonal": {
+    "message": "Aucun domaine personnel configuré"
+  },
+  "btnAdd": {
+    "message": "Ajouter"
+  },
+  "btnSave": {
+    "message": "Enregistrer les paramètres"
+  },
+  "btnReset": {
+    "message": "Réinitialiser"
+  },
+  "btnExport": {
+    "message": "Exporter la liste"
+  },
+  "btnImport": {
+    "message": "Importer une liste"
+  },
+  "colorEnterprise": {
+    "message": "Liste entreprise"
+  },
+  "colorCommunity": {
+    "message": "Liste communautaire"
+  },
+  "colorPersonal": {
+    "message": "Liste personnelle"
+  },
+  "aboutVersion": {
+    "message": "Version :"
+  },
+  "aboutLicense": {
+    "message": "Licence :"
+  },
+  "aboutDescriptionText": {
+    "message": "Extension de validation visuelle des pages de connexion sûres via listes blanches de domaines"
+  },
+  "aboutGithub": {
+    "message": "Dépôt GitHub"
+  },
+  "aboutBugReport": {
+    "message": "Signaler un bug"
+  },
+  "aboutDocumentation": {
+    "message": "Documentation"
+  },
+  "aboutContributors": {
+    "message": "Contributeurs"
+  },
+  "aboutContributorsText": {
+    "message": "Merci à tous les contributeurs du projet ShieldSign"
+  },
+  "aboutPrivacy": {
+    "message": "Confidentialité"
+  },
+  "aboutPrivacyText": {
+    "message": "ShieldSign ne collecte aucune donnée utilisateur. Toutes les vérifications sont effectuées localement dans votre navigateur."
+  }
+}

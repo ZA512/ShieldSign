@@ -6,6 +6,7 @@ const DEFAULT_SETTINGS = {
   ttl: 86400000, // 24h en millisecondes
   trainingMode: false,
   enterpriseMode: false, // Mode entreprise pour afficher l'onglet Source entreprise
+  language: 'auto', // auto, en, fr, etc.
   bannerColors: {
     enterprise: '#2ECC71',
     community: '#3498DB',

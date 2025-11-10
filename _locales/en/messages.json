@@ -1,0 +1,429 @@
+{
+  "extName": {
+    "message": "ShieldSign",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "Visual validation of secure login pages via domain whitelists",
+    "description": "Extension description"
+  },
+  
+  "appTitle": {
+    "message": "ShieldSign"
+  },
+  "settings": {
+    "message": "Settings"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  
+  "tabCommunity": {
+    "message": "Community Sources"
+  },
+  "tabEnterprise": {
+    "message": "Enterprise Source"
+  },
+  "tabPersonal": {
+    "message": "Personal Sources"
+  },
+  "tabSettings": {
+    "message": "Settings"
+  },
+  "tabAbout": {
+    "message": "About"
+  },
+  
+  "officialListTitle": {
+    "message": "ShieldSign Official List"
+  },
+  "officialListDescription": {
+    "message": "Official list maintained by the ShieldSign team, including the most popular web and cloud services. Enabled by default."
+  },
+  "officialListName": {
+    "message": "ShieldSign Official List"
+  },
+  "officialListInfo": {
+    "message": "Official list (65+ validated domains)"
+  },
+  "disable": {
+    "message": "Disable"
+  },
+  "enable": {
+    "message": "Enable"
+  },
+  "reinstallOfficialList": {
+    "message": "Reinstall official list"
+  },
+  
+  "communityListsTitle": {
+    "message": "Additional Community Lists"
+  },
+  "communityListsDescription": {
+    "message": "Add other public lists maintained by the community (optional)"
+  },
+  "communityUrlPlaceholder": {
+    "message": "https://example.com/community-list.json"
+  },
+  "add": {
+    "message": "Add"
+  },
+  "noAdditionalList": {
+    "message": "No additional list configured"
+  },
+  
+  "enterpriseInfoTitle": {
+    "message": "ℹ️ About the enterprise source"
+  },
+  "enterpriseInfoText1": {
+    "message": "This feature is intended for <strong>enterprise administrators</strong> who wish to deploy a validated domain list for their collaborators."
+  },
+  "enterpriseInfoText2": {
+    "message": "<strong>Domain format:</strong> Use the full format including subdomain and main domain (what appears between <code>https://</code> and the first <code>/</code>)."
+  },
+  "enterpriseInfoExamples": {
+    "message": "<strong>Examples:</strong>"
+  },
+  "enterpriseInfoSecurity": {
+    "message": "⚠️ <strong>Security:</strong> Host your list on an internal or private server, <strong>not on a public URL</strong>."
+  },
+  
+  "enterpriseListTitle": {
+    "message": "Configure Enterprise List"
+  },
+  "enterpriseListDescription": {
+    "message": "Add a single company-wide domain validation list (highest priority)"
+  },
+  "enterpriseUrlPlaceholder": {
+    "message": "https://intranet.company.com/validated-domains.json"
+  },
+  "noEnterpriseList": {
+    "message": "No enterprise list configured"
+  },
+  
+  "personalDomainsTitle": {
+    "message": "Personal Domain Management"
+  },
+  "personalDomainsDescription": {
+    "message": "Add your own trusted domains (higher priority than community lists)"
+  },
+  "personalDomainPlaceholder": {
+    "message": "login.example.com"
+  },
+  "noPersonalDomain": {
+    "message": "No personal domain configured"
+  },
+  
+  "importExportTitle": {
+    "message": "Import / Export"
+  },
+  "importExportDescription": {
+    "message": "Export your list to save it or import it on another browser"
+  },
+  "exportList": {
+    "message": "Export list"
+  },
+  "importList": {
+    "message": "Import list"
+  },
+  
+  "generalSettingsTitle": {
+    "message": "General Settings"
+  },
+  "language": {
+    "message": "Language"
+  },
+  "languageDescription": {
+    "message": "Choose the interface language"
+  },
+  "languageAuto": {
+    "message": "Automatic (browser language)"
+  },
+  "languageEn": {
+    "message": "English"
+  },
+  "languageFr": {
+    "message": "Français"
+  },
+  "enterpriseMode": {
+    "message": "Enterprise mode"
+  },
+  "enterpriseModeDescription": {
+    "message": "Enable this option if you are an administrator and want to manage a domain list for your organization. This will display the \"Enterprise Source\" tab."
+  },
+  "checkCN": {
+    "message": "Verify certificate CN correspondence"
+  },
+  "checkCNDescription": {
+    "message": "Display a warning if the certificate CN does not match the domain (Firefox only)"
+  },
+  "cacheDuration": {
+    "message": "List cache duration (hours)"
+  },
+  "cacheDurationDescription": {
+    "message": "Frequency of automatic updates of remote lists (default: 24h)"
+  },
+  
+  "bannerColorsTitle": {
+    "message": "Banner Colors"
+  },
+  "enterpriseList": {
+    "message": "Enterprise list"
+  },
+  "communityList": {
+    "message": "Community list"
+  },
+  "personalList": {
+    "message": "Personal list"
+  },
+  
+  "saveSettings": {
+    "message": "Save settings"
+  },
+  "resetSettings": {
+    "message": "Reset"
+  },
+  
+  "aboutTitle": {
+    "message": "About ShieldSign"
+  },
+  "version": {
+    "message": "Version"
+  },
+  "license": {
+    "message": "License"
+  },
+  "description": {
+    "message": "Description"
+  },
+  "aboutDescription": {
+    "message": "Visual validation extension for secure login pages via domain whitelists"
+  },
+  "githubRepo": {
+    "message": "GitHub Repository"
+  },
+  "reportBug": {
+    "message": "Report a bug"
+  },
+  "documentation": {
+    "message": "Documentation"
+  },
+  "contributorsTitle": {
+    "message": "Contributors"
+  },
+  "contributorsText": {
+    "message": "Thanks to all ShieldSign project contributors"
+  },
+  
+  "pageValidated": {
+    "message": "Page validated by: $LIST_NAME$",
+    "placeholders": {
+      "list_name": {
+        "content": "$1",
+        "example": "ShieldSign Official List"
+      }
+    }
+  },
+  "personalListDisplay": {
+    "message": "Personal list"
+  },
+  "enterpriseListDisplay": {
+    "message": "Enterprise list"
+  },
+  
+  "verifying": {
+    "message": "Verifying..."
+  },
+  "pageNotContainPasswordField": {
+    "message": "This page does not contain a password field"
+  },
+  "approveDomain": {
+    "message": "Approve this domain"
+  },
+  
+  "settingsSaved": {
+    "message": "Settings saved successfully"
+  },
+  "settingsReset": {
+    "message": "Settings reset"
+  },
+  "listAdded": {
+    "message": "List added successfully"
+  },
+  "listRemoved": {
+    "message": "List removed successfully"
+  },
+  "listEnabled": {
+    "message": "List enabled"
+  },
+  "listDisabled": {
+    "message": "List disabled"
+  },
+  "domainAdded": {
+    "message": "Domain added successfully"
+  },
+  "domainRemoved": {
+    "message": "Domain removed successfully"
+  },
+  "officialListReinstalled": {
+    "message": "Official list reinstalled and updated!"
+  },
+  "listExported": {
+    "message": "List exported successfully"
+  },
+  "domainsImported": {
+    "message": "$COUNT$ domain(s) imported",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  
+  "errorInvalidUrl": {
+    "message": "Invalid URL"
+  },
+  "errorInvalidDomain": {
+    "message": "Invalid domain format"
+  },
+  "errorAddingList": {
+    "message": "Error adding list"
+  },
+  "errorRemovingList": {
+    "message": "Error removing list"
+  },
+  "errorModifyingList": {
+    "message": "Error modifying list"
+  },
+  "errorAddingDomain": {
+    "message": "Error adding domain"
+  },
+  "errorRemovingDomain": {
+    "message": "Error removing domain"
+  },
+  "errorLoadingSettings": {
+    "message": "Error loading settings"
+  },
+  "errorSavingSettings": {
+    "message": "Error saving settings"
+  },
+  "errorResetting": {
+    "message": "Error resetting"
+  },
+  "errorReinstalling": {
+    "message": "Error reinstalling"
+  },
+  "errorExporting": {
+    "message": "Error exporting"
+  },
+  "errorImporting": {
+    "message": "Error importing"
+  },
+  "errorInvalidFile": {
+    "message": "Invalid file format"
+  },
+  "errorNoValidDomain": {
+    "message": "No valid domain found"
+  },
+  "errorNoPersonalDomain": {
+    "message": "No personal domain to export"
+  },
+  "errorEnterValidUrl": {
+    "message": "Please enter a valid URL"
+  },
+  "errorEnterValidDomain": {
+    "message": "Please enter a valid domain"
+  },
+  "errorUpdating": {
+    "message": "Error updating"
+  },
+  
+  "settingsTitle": {
+    "message": "Settings - ShieldSign"
+  },
+  "headerTitle": {
+    "message": "ShieldSign - Settings"
+  },
+  "officialListSubtitle": {
+    "message": "Official list (65+ validated domains)"
+  },
+  "toggleDisable": {
+    "message": "Disable"
+  },
+  "toggleEnable": {
+    "message": "Enable"
+  },
+  "reinstallOfficial": {
+    "message": "Reinstall official list"
+  },
+  "communityListTitle": {
+    "message": "Additional Community Lists"
+  },
+  "communityListDescription": {
+    "message": "Add other public lists maintained by the community (optional)"
+  },
+  "noListCommunity": {
+    "message": "No additional list configured"
+  },
+  "noListEnterprise": {
+    "message": "No enterprise list configured"
+  },
+  "noListPersonal": {
+    "message": "No personal domain configured"
+  },
+  "btnAdd": {
+    "message": "Add"
+  },
+  "btnSave": {
+    "message": "Save settings"
+  },
+  "btnReset": {
+    "message": "Reset"
+  },
+  "btnExport": {
+    "message": "Export list"
+  },
+  "btnImport": {
+    "message": "Import list"
+  },
+  "colorEnterprise": {
+    "message": "Enterprise list"
+  },
+  "colorCommunity": {
+    "message": "Community list"
+  },
+  "colorPersonal": {
+    "message": "Personal list"
+  },
+  "aboutVersion": {
+    "message": "Version:"
+  },
+  "aboutLicense": {
+    "message": "License:"
+  },
+  "aboutDescriptionText": {
+    "message": "Visual validation extension for secure login pages via domain whitelists"
+  },
+  "aboutGithub": {
+    "message": "GitHub Repository"
+  },
+  "aboutBugReport": {
+    "message": "Report a bug"
+  },
+  "aboutDocumentation": {
+    "message": "Documentation"
+  },
+  "aboutContributors": {
+    "message": "Contributors"
+  },
+  "aboutContributorsText": {
+    "message": "Thanks to all contributors of the ShieldSign project"
+  },
+  "aboutPrivacy": {
+    "message": "Privacy"
+  },
+  "aboutPrivacyText": {
+    "message": "ShieldSign does not collect any user data. All verifications are performed locally in your browser."
+  }
+}

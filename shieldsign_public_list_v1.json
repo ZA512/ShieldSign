@@ -13,8 +13,16 @@
     "adobeid.adobe.com",
     "id.atlassian.com",
     "login.salesforce.com",
+    "idp.okta.com",
+    "login.okta.com",
+    "login.aws.amazon.com",
+    "mfa.duosecurity.com",
+    "sso.pingidentity.com",
+    "accounts.ibm.com",
+    "login.sap.com",
+    "portal.azure.com",
+    "auth0.com",
     "github.com",
-
     "www.paypal.com",
     "dashboard.stripe.com",
     "signin.ebay.com",
@@ -23,7 +31,6 @@
     "www.americanexpress.com",
     "secure.ing.com",
     "secure.bnpparibas.com",
-
     "www.facebook.com",
     "accounts.google.com", 
     "login.linkedin.com",
@@ -33,7 +40,6 @@
     "id.tiktok.com",
     "discord.com",
     "login.skype.com",
-
     "www.netflix.com",
     "accounts.spotify.com",
     "account.hbomax.com",
@@ -42,7 +48,6 @@
     "login.epicgames.com",
     "store.steampowered.com",
     "login.ubisoft.com",
-
     "login.orange.fr",
     "compte.free.fr",
     "login.laposte.net",
@@ -52,7 +57,6 @@
     "auth.proton.me",
     "login.qonto.com",
     "auth.scaleway.com",
-
     "login.zoom.us",
     "login.slack.com",
     "id.trello.com",
@@ -60,7 +64,6 @@
     "login.figma.com",
     "accounts.miro.com",
     "login.airtable.com",
-
     "outlook.live.com",
     "mail.proton.me",
     "mail.yahoo.com",
