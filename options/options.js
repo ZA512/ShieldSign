@@ -20,7 +20,8 @@ function translatePage() {
     const key = element.getAttribute('data-i18n');
     const message = chrome.i18n.getMessage(key);
     if (message) {
-      element.textContent = message;
+      // Utiliser innerHTML pour supporter les balises HTML dans les traductions
+      element.innerHTML = message;
     }
   });
   
@@ -65,6 +66,17 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('enterpriseMode').addEventListener('change', toggleEnterpriseMode);
   document.getElementById('saveSettingsBtn').addEventListener('click', saveSettings);
   document.getElementById('resetSettingsBtn').addEventListener('click', resetSettings);
+  document.getElementById('learnMoreBtn').addEventListener('click', showLearnMoreModal);
+  document.getElementById('downloadExampleBtn').addEventListener('click', downloadExample);
+  document.getElementById('closeModal').addEventListener('click', closeLearnMoreModal);
+  
+  // Fermer la modal en cliquant en dehors
+  window.addEventListener('click', (e) => {
+    const modal = document.getElementById('learnMoreModal');
+    if (e.target === modal) {
+      closeLearnMoreModal();
+    }
+  });
 });
 
 // Gestion des onglets
@@ -104,7 +116,7 @@ async function loadSettings() {
     // Afficher/masquer l'onglet entreprise
     updateEnterpriseTabVisibility(currentSettings.enterpriseMode || false);
   } catch (error) {
-    showToast('Erreur lors du chargement des paramètres', true);
+    showToast(chrome.i18n.getMessage('errorLoading'), true);
   }
 }
 
@@ -126,9 +138,9 @@ async function saveSettings() {
     
     await chrome.storage.local.set({ settings });
     updateEnterpriseTabVisibility(settings.enterpriseMode);
-    showToast('Paramètres enregistrés avec succès');
+    showToast(chrome.i18n.getMessage('toastSettingsSaved'));
   } catch (error) {
-    showToast('Erreur lors de la sauvegarde des paramètres', true);
+    showToast(chrome.i18n.getMessage('errorSaving'), true);
   }
 }
 
@@ -137,9 +149,9 @@ async function resetSettings() {
   try {
     await chrome.storage.local.set({ settings: DEFAULT_SETTINGS });
     await loadSettings();
-    showToast('Paramètres réinitialisés');
+    showToast(chrome.i18n.getMessage('toastSettingsReset'));
   } catch (error) {
-    showToast('Erreur lors de la réinitialisation', true);
+    showToast(chrome.i18n.getMessage('errorResetting'), true);
   }
 }
 
@@ -155,8 +167,8 @@ async function loadLists() {
       return;
     }
     
-    enterpriseList.innerHTML = '<p class="no-list">Aucune liste entreprise configurée</p>';
-    communityLists.innerHTML = '<p class="no-list">Aucune liste additionnelle configurée</p>';
+    enterpriseList.innerHTML = `<p class="no-list">${chrome.i18n.getMessage('noListEnterprise')}</p>`;
+    communityLists.innerHTML = `<p class="no-list">${chrome.i18n.getMessage('noListCommunity')}</p>`;
     
     if (!lists || Object.keys(lists).length === 0) {
       return;
@@ -189,7 +201,7 @@ async function loadLists() {
       }
     }
   } catch (error) {
-    showToast('Erreur lors du chargement des listes', true);
+    showToast(chrome.i18n.getMessage('errorLoadingLists'), true);
   }
 }
 
@@ -225,7 +237,7 @@ function createListItem(url, listData) {
   const toggleBtn = document.createElement('button');
   toggleBtn.className = `toggle-btn ${listData.enabled !== false ? 'enabled' : 'disabled'}`;
   toggleBtn.innerHTML = listData.enabled !== false ? '<i class="fas fa-check-circle"></i>' : '<i class="fas fa-times-circle"></i>';
-  toggleBtn.title = listData.enabled !== false ? 'Désactiver' : 'Activer';
+  toggleBtn.title = listData.enabled !== false ? chrome.i18n.getMessage('toggleDisable') : chrome.i18n.getMessage('toggleEnable');
   toggleBtn.addEventListener('click', () => toggleList(url, listData.enabled === false));
   
   actions.appendChild(toggleBtn);
@@ -235,7 +247,7 @@ function createListItem(url, listData) {
     const removeBtn = document.createElement('button');
     removeBtn.className = 'remove-btn';
     removeBtn.innerHTML = '<i class="fas fa-times"></i>';
-    removeBtn.title = 'Supprimer';
+    removeBtn.title = chrome.i18n.getMessage('btnRemove') || 'Supprimer';
     removeBtn.addEventListener('click', () => removeList(url));
     actions.appendChild(removeBtn);
   }
@@ -253,12 +265,12 @@ async function addList(type) {
   const url = input.value.trim();
   
   if (!url) {
-    showToast('Veuillez entrer une URL valide', true);
+    showToast(chrome.i18n.getMessage('errorEnterValidUrl'), true);
     return;
   }
   
   if (!isValidUrl(url)) {
-    showToast('URL invalide', true);
+    showToast(chrome.i18n.getMessage('errorInvalidUrl'), true);
     return;
   }
   
@@ -270,14 +282,14 @@ async function addList(type) {
     });
     
     if (response.success) {
-      showToast('Liste ajoutée avec succès');
+      showToast(chrome.i18n.getMessage('toastListAdded'));
       input.value = '';
       await loadLists();
     } else {
-      showToast(response.error || 'Erreur lors de l\'ajout de la liste', true);
+      showToast(response.error || chrome.i18n.getMessage('errorAddingList'), true);
     }
   } catch (error) {
-    showToast('Erreur lors de l\'ajout de la liste', true);
+    showToast(chrome.i18n.getMessage('errorAddingList'), true);
   }
 }
 
@@ -290,13 +302,13 @@ async function removeList(url) {
     });
     
     if (response.success) {
-      showToast('Liste supprimée avec succès');
+      showToast(chrome.i18n.getMessage('toastListRemoved'));
       await loadLists();
     } else {
-      showToast(response.error || 'Erreur lors de la suppression de la liste', true);
+      showToast(response.error || chrome.i18n.getMessage('errorRemovingList'), true);
     }
   } catch (error) {
-    showToast('Erreur lors de la suppression de la liste', true);
+    showToast(chrome.i18n.getMessage('errorRemovingList'), true);
   }
 }
 
@@ -310,13 +322,13 @@ async function toggleList(url, enabled) {
     });
     
     if (response.success) {
-      showToast(enabled ? 'Liste activée' : 'Liste désactivée');
+      showToast(enabled ? chrome.i18n.getMessage('toastListEnabled') : chrome.i18n.getMessage('toastListDisabled'));
       await loadLists();
     } else {
-      showToast(response.error || 'Erreur lors de la modification de la liste', true);
+      showToast(response.error || chrome.i18n.getMessage('errorTogglingList'), true);
     }
   } catch (error) {
-    showToast('Erreur lors de la modification de la liste', true);
+    showToast(chrome.i18n.getMessage('errorTogglingList'), true);
   }
 }
 
@@ -329,7 +341,7 @@ async function loadPersonalDomains() {
     personalDomainsList.innerHTML = '';
     
     if (!user_whitelist || user_whitelist.length === 0) {
-      personalDomainsList.innerHTML = '<p class="no-list">Aucun domaine personnel configuré</p>';
+      personalDomainsList.innerHTML = `<p class="no-list">${chrome.i18n.getMessage('noListPersonal')}</p>`;
       return;
     }
     
@@ -349,7 +361,7 @@ async function loadPersonalDomains() {
       const removeBtn = document.createElement('button');
       removeBtn.className = 'remove-btn';
       removeBtn.innerHTML = '<i class="fas fa-times"></i>';
-      removeBtn.title = 'Supprimer';
+      removeBtn.title = chrome.i18n.getMessage('btnRemove') || 'Supprimer';
       removeBtn.addEventListener('click', () => removePersonalDomain(domain));
       
       listItem.appendChild(listInfo);
@@ -358,7 +370,7 @@ async function loadPersonalDomains() {
       personalDomainsList.appendChild(listItem);
     }
   } catch (error) {
-    showToast('Erreur lors du chargement de la liste personnelle', true);
+    showToast(chrome.i18n.getMessage('errorLoadingPersonal'), true);
   }
 }
 
@@ -368,12 +380,12 @@ async function addPersonalDomain() {
   const domain = input.value.trim().toLowerCase();
   
   if (!domain) {
-    showToast('Veuillez entrer un domaine valide', true);
+    showToast(chrome.i18n.getMessage('errorEnterValidDomain'), true);
     return;
   }
   
   if (!isValidDomain(domain)) {
-    showToast('Format de domaine invalide', true);
+    showToast(chrome.i18n.getMessage('errorInvalidDomain'), true);
     return;
   }
   
@@ -383,11 +395,11 @@ async function addPersonalDomain() {
       domain: domain
     });
     
-    showToast('Domaine ajouté avec succès');
+    showToast(chrome.i18n.getMessage('toastDomainAdded'));
     input.value = '';
     await loadPersonalDomains();
   } catch (error) {
-    showToast('Erreur lors de l\'ajout du domaine', true);
+    showToast(chrome.i18n.getMessage('errorAddingDomain'), true);
   }
 }
 
@@ -399,10 +411,10 @@ async function removePersonalDomain(domain) {
       domain: domain
     });
     
-    showToast('Domaine supprimé avec succès');
+    showToast(chrome.i18n.getMessage('toastDomainRemoved'));
     await loadPersonalDomains();
   } catch (error) {
-    showToast('Erreur lors de la suppression du domaine', true);
+    showToast(chrome.i18n.getMessage('errorRemovingDomain'), true);
   }
 }
 
@@ -474,11 +486,11 @@ async function loadOfficialList() {
     if (isEnabled) {
       toggle.classList.add('enabled');
       toggle.innerHTML = '<i class="fas fa-check-circle"></i>';
-      toggle.title = 'Désactiver';
+      toggle.title = chrome.i18n.getMessage('toggleDisable');
     } else {
       toggle.classList.add('disabled');
       toggle.innerHTML = '<i class="fas fa-times-circle"></i>';
-      toggle.title = 'Activer';
+      toggle.title = chrome.i18n.getMessage('toggleEnable');
     }
   } catch (error) {
   }
@@ -501,14 +513,14 @@ async function toggleOfficialList() {
       toggle.classList.toggle('enabled', newEnabled);
       toggle.classList.toggle('disabled', !newEnabled);
       toggle.innerHTML = newEnabled ? '<i class="fas fa-check-circle"></i>' : '<i class="fas fa-times-circle"></i>';
-      toggle.title = newEnabled ? 'Désactiver' : 'Activer';
+      toggle.title = newEnabled ? chrome.i18n.getMessage('toggleDisable') : chrome.i18n.getMessage('toggleEnable');
       
-      showToast(newEnabled ? 'Liste officielle activée' : 'Liste officielle désactivée');
+      showToast(newEnabled ? chrome.i18n.getMessage('toastOfficialEnabled') : chrome.i18n.getMessage('toastOfficialDisabled'));
     } else {
-      showToast('Erreur lors de la mise à jour', true);
+      showToast(chrome.i18n.getMessage('errorUpdating'), true);
     }
   } catch (error) {
-    showToast('Erreur lors de la mise à jour', true);
+    showToast(chrome.i18n.getMessage('errorUpdating'), true);
   }
 }
 
@@ -539,9 +551,9 @@ async function reinstallOfficialList() {
     // Recharger l'affichage
     await loadOfficialList();
     
-    showToast('Liste officielle réinstallée et mise à jour !');
+    showToast(chrome.i18n.getMessage('toastOfficialReinstalled'));
   } catch (error) {
-    showToast('Erreur lors de la réinstallation', true);
+    showToast(chrome.i18n.getMessage('errorReinstalling'), true);
   }
 }
 
@@ -556,7 +568,7 @@ function updateEnterpriseTabVisibility(show) {
 // Toggle mode entreprise
 async function toggleEnterpriseMode(e) {
   updateEnterpriseTabVisibility(e.target.checked);
-  showToast(e.target.checked ? 'Mode entreprise activé' : 'Mode entreprise désactivé');
+  showToast(e.target.checked ? chrome.i18n.getMessage('toastEnterpriseModeEnabled') : chrome.i18n.getMessage('toastEnterpriseModeDisabled'));
 }
 
 // Changer la langue
@@ -583,7 +595,7 @@ async function exportPersonalList() {
     const { user_whitelist } = await chrome.storage.local.get(['user_whitelist']);
     
     if (!user_whitelist || user_whitelist.length === 0) {
-      showToast('Aucun domaine personnel à exporter', true);
+      showToast(chrome.i18n.getMessage('errorNoPersonalDomain'), true);
       return;
     }
     
@@ -602,9 +614,9 @@ async function exportPersonalList() {
     a.click();
     URL.revokeObjectURL(url);
     
-    showToast('Liste exportée avec succès');
+    showToast(chrome.i18n.getMessage('toastListExported'));
   } catch (error) {
-    showToast('Erreur lors de l\'export', true);
+    showToast(chrome.i18n.getMessage('errorExporting'), true);
   }
 }
 
@@ -618,7 +630,7 @@ async function importPersonalList(e) {
     const data = JSON.parse(text);
     
     if (!data.domains || !Array.isArray(data.domains)) {
-      showToast('Format de fichier invalide', true);
+      showToast(chrome.i18n.getMessage('errorInvalidFile'), true);
       return;
     }
     
@@ -626,7 +638,7 @@ async function importPersonalList(e) {
     const validDomains = data.domains.filter(d => isValidDomain(d));
     
     if (validDomains.length === 0) {
-      showToast('Aucun domaine valide trouvé', true);
+      showToast(chrome.i18n.getMessage('errorNoValidDomain'), true);
       return;
     }
     
@@ -637,10 +649,46 @@ async function importPersonalList(e) {
     await chrome.storage.local.set({ user_whitelist: mergedDomains });
     await loadPersonalDomains();
     
-    showToast(`${validDomains.length} domaine(s) importé(s)`);
+    showToast(chrome.i18n.getMessage('toastDomainsImported').replace('{count}', validDomains.length));
   } catch (error) {
-    showToast('Erreur lors de l\'import', true);
+    showToast(chrome.i18n.getMessage('errorImporting'), true);
   } finally {
     e.target.value = ''; // Reset file input
   }
+}
+
+// Afficher la modal "En savoir plus"
+function showLearnMoreModal() {
+  const modal = document.getElementById('learnMoreModal');
+  modal.classList.add('show');
+}
+
+// Fermer la modal "En savoir plus"
+function closeLearnMoreModal() {
+  const modal = document.getElementById('learnMoreModal');
+  modal.classList.remove('show');
+}
+
+// Télécharger un exemple de fichier JSON
+function downloadExample() {
+  const exampleData = {
+    "list_name": "Ma liste entreprise",
+    "version": "1.0",
+    "last_update": new Date().toISOString().split('T')[0],
+    "domains": [
+      "login.example.com",
+      "sso.example.com",
+      "auth.intranet.example.com"
+    ]
+  };
+  
+  const blob = new Blob([JSON.stringify(exampleData, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'shieldsign-enterprise-example.json';
+  a.click();
+  URL.revokeObjectURL(url);
+  
+  showToast(chrome.i18n.getMessage('toastExampleDownloaded') || 'Exemple téléchargé');
 }

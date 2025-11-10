@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,7 @@
       <div class="status-section">
         <div class="status-indicator" id="statusIndicator">
           <span class="status-icon" id="statusIcon">⏳</span>
-          <span class="status-text" id="statusText">Vérification en cours...</span>
+          <span class="status-text" id="statusText" data-i18n="popupCheckingStatus">Vérification en cours...</span>
         </div>
         
         <div class="status-details" id="statusDetails" style="display: none;">
@@ -29,7 +29,7 @@
       </div>
       
       <div class="action-section" id="actionSection" style="display: none;">
-        <button class="btn btn-primary" id="approveDomainBtn">
+        <button class="btn btn-primary" id="approveDomainBtn" data-i18n="popupApproveButton">
           ✅ Approuver ce domaine
         </button>
       </div>
@@ -37,10 +37,10 @@
     
     <footer>
       <button class="btn btn-secondary" id="openOptionsBtn">
-        <i class="fas fa-cog"></i> Paramètres
+        <i class="fas fa-cog"></i> <span data-i18n="popupSettingsButton">Paramètres</span>
       </button>
       <button class="btn btn-secondary" id="refreshBtn">
-        <i class="fas fa-sync-alt"></i> Actualiser
+        <i class="fas fa-sync-alt"></i> <span data-i18n="popupRefreshButton">Actualiser</span>
       </button>
     </footer>
   </div>

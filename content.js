@@ -83,7 +83,7 @@ async function injectBanner(listName, type) {
   `;
   
   const text = document.createElement('span');
-  text.textContent = `Page validée par : ${getListDisplayName(listName, type)}`;
+  text.textContent = chrome.i18n.getMessage('contentBannerValidated', [getListDisplayName(listName, type)]);
   
   banner.appendChild(icon);
   banner.appendChild(text);
@@ -103,9 +103,9 @@ async function injectBanner(listName, type) {
 // Nom d'affichage de la liste
 function getListDisplayName(listName, type) {
   if (type === 'personal') {
-    return 'Liste personnelle';
+    return chrome.i18n.getMessage('contentPersonalList');
   } else if (type === 'enterprise') {
-    return 'Liste entreprise';
+    return chrome.i18n.getMessage('contentEnterpriseList');
   } else {
     // Pour les listes communautaires, utiliser directement le nom de la liste
     return listName;

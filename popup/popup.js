@@ -3,8 +3,26 @@
 let currentHostname = '';
 let currentStatus = null;
 
+// Fonction de traduction des éléments avec data-i18n
+function translatePage() {
+  document.querySelectorAll('[data-i18n]').forEach(element => {
+    const key = element.getAttribute('data-i18n');
+    const message = chrome.i18n.getMessage(key);
+    if (message) {
+      if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+        element.placeholder = message;
+      } else if (element.tagName === 'OPTION') {
+        element.textContent = message;
+      } else {
+        element.innerHTML = message;
+      }
+    }
+  });
+}
+
 // Initialisation au chargement
 document.addEventListener('DOMContentLoaded', async () => {
+  translatePage();
   await loadCurrentPageStatus();
   
   // Gestionnaires d'événements
@@ -19,7 +37,7 @@ async function loadCurrentPageStatus() {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     
     if (!tab || !tab.url) {
-      updateStatus('none', 'Aucune page active', null, false);
+      updateStatus('none', chrome.i18n.getMessage('popupNoActivePage'), null, false);
       return;
     }
     
@@ -30,7 +48,7 @@ async function loadCurrentPageStatus() {
     const hasPassword = await checkForPasswordField(tab.id);
     
     if (!hasPassword) {
-      updateStatus('none', 'Cette page ne contient pas de champ mot de passe', null, false);
+      updateStatus('none', chrome.i18n.getMessage('popupNoPasswordField'), null, false);
       document.getElementById('actionSection').style.display = 'none';
       return;
     }
@@ -46,16 +64,16 @@ async function loadCurrentPageStatus() {
     if (response.status === 'VALIDATED') {
       // Récupérer toutes les listes qui valident ce domaine
       const allValidatingLists = await getAllValidatingLists(currentHostname);
-      updateStatus('validated', 'Cette page est validée', allValidatingLists, true);
+      updateStatus('validated', chrome.i18n.getMessage('popupValidated'), allValidatingLists, true);
       document.getElementById('actionSection').style.display = 'none';
     } else {
-      updateStatus('unknown', 'Cette page contient un champ mot de passe mais n\'est listée dans aucune source de confiance', null, true);
+      updateStatus('unknown', chrome.i18n.getMessage('popupUnknown'), null, true);
       document.getElementById('actionSection').style.display = 'block';
     }
     
   } catch (error) {
     console.error('[ShieldSign] Erreur lors du chargement du statut:', error);
-    updateStatus('none', 'Erreur de chargement', null, false);
+    updateStatus('none', chrome.i18n.getMessage('popupLoadError'), null, false);
   }
 }
 
@@ -67,7 +85,7 @@ async function getAllValidatingLists(hostname) {
     
     // Vérifier la liste personnelle
     if (user_whitelist && user_whitelist.includes(hostname)) {
-      validatingLists.push({ name: 'Liste personnelle', type: 'personal' });
+      validatingLists.push({ name: chrome.i18n.getMessage('contentPersonalList'), type: 'personal' });
     }
     
     // Vérifier toutes les listes distantes
@@ -143,7 +161,7 @@ function updateStatus(type, text, validatingLists = null, hasPassword = false) {
         if (community.length > 0) parts.push(...community.map(l => l.name));
         
         const listNames = parts.join(', ');
-        validationSource.textContent = `Validé par : ${listNames}`;
+        validationSource.textContent = chrome.i18n.getMessage('popupValidatedBy', [listNames]);
       }
       break;
       

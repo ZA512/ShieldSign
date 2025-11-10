@@ -87,6 +87,27 @@
   "enterpriseInfoSecurity": {
     "message": "⚠️ <strong>Security:</strong> Host your list on an internal or private server, <strong>not on a public URL</strong>."
   },
+  "enterpriseInfoFormatLabel": {
+    "message": "Domain format:"
+  },
+  "enterpriseInfoFormatText": {
+    "message": "Use the full format including subdomain and main domain (what appears between <code>https://</code> and the first <code>/</code>)."
+  },
+  "enterpriseInfoExamplesLabel": {
+    "message": "Examples:"
+  },
+  "enterpriseInfoExample1": {
+    "message": "✅ <code>login.mycompany.com</code>"
+  },
+  "enterpriseInfoExample2": {
+    "message": "✅ <code>sso.mycompany.fr</code>"
+  },
+  "enterpriseInfoExample3": {
+    "message": "✅ <code>auth.intranet.mycompany.net</code>"
+  },
+  "enterpriseInfoExample4": {
+    "message": "❌ <code>https://login.mycompany.com/auth</code> (do not include https:// or path)"
+  },
   
   "enterpriseListTitle": {
     "message": "Configure Enterprise List"
@@ -425,5 +446,173 @@
   },
   "aboutPrivacyText": {
     "message": "ShieldSign does not collect any user data. All verifications are performed locally in your browser."
+  },
+  "btnRemove": {
+    "message": "Remove"
+  },
+  "toastOfficialEnabled": {
+    "message": "Official list enabled"
+  },
+  "toastOfficialDisabled": {
+    "message": "Official list disabled"
+  },
+  "toastOfficialReinstalled": {
+    "message": "Official list reinstalled and updated!"
+  },
+  "toastEnterpriseModeEnabled": {
+    "message": "Enterprise mode enabled"
+  },
+  "toastEnterpriseModeDisabled": {
+    "message": "Enterprise mode disabled"
+  },
+  "errorLoading": {
+    "message": "Error loading settings"
+  },
+  "toastSettingsSaved": {
+    "message": "Settings saved successfully"
+  },
+  "errorSaving": {
+    "message": "Error saving settings"
+  },
+  "toastSettingsReset": {
+    "message": "Settings reset"
+  },
+  "errorLoadingLists": {
+    "message": "Error loading lists"
+  },
+  "toastListAdded": {
+    "message": "List added successfully"
+  },
+  "toastListRemoved": {
+    "message": "List removed successfully"
+  },
+  "toastListEnabled": {
+    "message": "List enabled"
+  },
+  "toastListDisabled": {
+    "message": "List disabled"
+  },
+  "errorTogglingList": {
+    "message": "Error toggling list"
+  },
+  "errorLoadingPersonal": {
+    "message": "Error loading personal list"
+  },
+  "toastDomainAdded": {
+    "message": "Domain added successfully"
+  },
+  "toastDomainRemoved": {
+    "message": "Domain removed successfully"
+  },
+  "toastListExported": {
+    "message": "List exported successfully"
+  },
+  "toastDomainsImported": {
+    "message": "{count} domain(s) imported"
+  },
+  "enterpriseInfoShort": {
+    "message": "Deploy a validated domain list for your teams. This list will have maximum priority and strengthen your employees' confidence."
+  },
+  "btnLearnMore": {
+    "message": "Learn more"
+  },
+  "btnDownloadExample": {
+    "message": "Download example"
+  },
+  "toastExampleDownloaded": {
+    "message": "Example downloaded"
+  },
+  "modalEnterpriseTitle": {
+    "message": "🛡️ Enterprise Source: Secure Your Employees"
+  },
+  "modalWhyTitle": {
+    "message": "Why use this feature?"
+  },
+  "modalWhyText": {
+    "message": "As an administrator, you can deploy a list of validated login domains for your organization. This list will have <strong>maximum priority</strong> over all other sources (community, personal). Your employees will see a distinctive green banner on pages validated by the enterprise, strengthening their trust."
+  },
+  "modalSecurityTitle": {
+    "message": "🔒 Protect Against Phishing and MITM"
+  },
+  "modalSecurityText": {
+    "message": "This feature helps fight against:"
+  },
+  "modalSecurityPoint1": {
+    "message": "<strong>Phishing:</strong> Your employees will not see the validation banner on fake sites"
+  },
+  "modalSecurityPoint2": {
+    "message": "<strong>Man-in-the-Middle:</strong> Only authentic domains from your list will be validated"
+  },
+  "modalSecurityPoint3": {
+    "message": "<strong>Identity Spoofing:</strong> The enterprise banner clearly indicates this is an approved site"
+  },
+  "modalFormatTitle": {
+    "message": "📝 Domain Format"
+  },
+  "modalFormatText": {
+    "message": "Use only the full domain (subdomain + main domain), without protocol or path:"
+  },
+  "modalHostingTitle": {
+    "message": "🔐 Secure Hosting (CRITICAL)"
+  },
+  "modalHostingWarning": {
+    "message": "<strong>⚠️ DO NOT host on GitHub, GitLab, or any public service!</strong>"
+  },
+  "modalHostingText": {
+    "message": "To maximize security, host your JSON list on:"
+  },
+  "modalHostingOption1": {
+    "message": "<strong>Internal server only</strong> (accessible only from your enterprise network)"
+  },
+  "modalHostingOption2": {
+    "message": "<strong>Obfuscated URL</strong>: Use a GUID for the filename and folder"
+  },
+  "modalHostingExample": {
+    "message": "Example: <code>https://cdn.example.com/a3f2e8b1-4c5d-6e7f-8a9b-0c1d2e3f4a5b/d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a.json</code>"
+  },
+  "modalMaintenanceTitle": {
+    "message": "🔧 Maintenance"
+  },
+  "modalMaintenanceText": {
+    "message": "Keep your list up to date by adding new login domains used by your organization (SSO, internal portals, SaaS applications, etc.)."
+  },
+  "popupCheckingStatus": {
+    "message": "Checking..."
+  },
+  "popupApproveButton": {
+    "message": "✅ Approve this domain"
+  },
+  "popupSettingsButton": {
+    "message": "Settings"
+  },
+  "popupRefreshButton": {
+    "message": "Refresh"
+  },
+  "popupNoActivePage": {
+    "message": "No active page"
+  },
+  "popupNoPasswordField": {
+    "message": "This page does not contain a password field"
+  },
+  "popupValidated": {
+    "message": "This page is validated"
+  },
+  "popupUnknown": {
+    "message": "This page contains a password field but is not listed in any trusted source"
+  },
+  "popupLoadError": {
+    "message": "Loading error"
+  },
+  "popupValidatedBy": {
+    "message": "Validated by: {0}"
+  },
+  "contentBannerValidated": {
+    "message": "Page validated by: {0}"
+  },
+  "contentPersonalList": {
+    "message": "Personal list"
+  },
+  "contentEnterpriseList": {
+    "message": "Enterprise list"
   }
 }

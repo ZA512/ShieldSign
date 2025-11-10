@@ -87,6 +87,27 @@
   "enterpriseInfoSecurity": {
     "message": "⚠️ <strong>Sécurité :</strong> Hébergez votre liste sur un serveur interne ou privé, <strong>pas sur une URL publique</strong>."
   },
+  "enterpriseInfoFormatLabel": {
+    "message": "Format des domaines :"
+  },
+  "enterpriseInfoFormatText": {
+    "message": "Utilisez le format complet incluant le sous-domaine et le domaine principal (ce qui se trouve entre <code>https://</code> et le premier <code>/</code>)."
+  },
+  "enterpriseInfoExamplesLabel": {
+    "message": "Exemples :"
+  },
+  "enterpriseInfoExample1": {
+    "message": "✅ <code>login.monentreprise.com</code>"
+  },
+  "enterpriseInfoExample2": {
+    "message": "✅ <code>sso.monentreprise.fr</code>"
+  },
+  "enterpriseInfoExample3": {
+    "message": "✅ <code>auth.intranet.monentreprise.net</code>"
+  },
+  "enterpriseInfoExample4": {
+    "message": "❌ <code>https://login.monentreprise.com/auth</code> (ne pas inclure https:// ni le chemin)"
+  },
   
   "enterpriseListTitle": {
     "message": "Configurer la liste entreprise"
@@ -425,5 +446,173 @@
   },
   "aboutPrivacyText": {
     "message": "ShieldSign ne collecte aucune donnée utilisateur. Toutes les vérifications sont effectuées localement dans votre navigateur."
+  },
+  "btnRemove": {
+    "message": "Supprimer"
+  },
+  "toastOfficialEnabled": {
+    "message": "Liste officielle activée"
+  },
+  "toastOfficialDisabled": {
+    "message": "Liste officielle désactivée"
+  },
+  "toastOfficialReinstalled": {
+    "message": "Liste officielle réinstallée et mise à jour !"
+  },
+  "toastEnterpriseModeEnabled": {
+    "message": "Mode entreprise activé"
+  },
+  "toastEnterpriseModeDisabled": {
+    "message": "Mode entreprise désactivé"
+  },
+  "errorLoading": {
+    "message": "Erreur lors du chargement des paramètres"
+  },
+  "toastSettingsSaved": {
+    "message": "Paramètres enregistrés avec succès"
+  },
+  "errorSaving": {
+    "message": "Erreur lors de la sauvegarde des paramètres"
+  },
+  "toastSettingsReset": {
+    "message": "Paramètres réinitialisés"
+  },
+  "errorLoadingLists": {
+    "message": "Erreur lors du chargement des listes"
+  },
+  "toastListAdded": {
+    "message": "Liste ajoutée avec succès"
+  },
+  "toastListRemoved": {
+    "message": "Liste supprimée avec succès"
+  },
+  "toastListEnabled": {
+    "message": "Liste activée"
+  },
+  "toastListDisabled": {
+    "message": "Liste désactivée"
+  },
+  "errorTogglingList": {
+    "message": "Erreur lors de la modification de la liste"
+  },
+  "errorLoadingPersonal": {
+    "message": "Erreur lors du chargement de la liste personnelle"
+  },
+  "toastDomainAdded": {
+    "message": "Domaine ajouté avec succès"
+  },
+  "toastDomainRemoved": {
+    "message": "Domaine supprimé avec succès"
+  },
+  "toastListExported": {
+    "message": "Liste exportée avec succès"
+  },
+  "toastDomainsImported": {
+    "message": "{count} domaine(s) importé(s)"
+  },
+  "enterpriseInfoShort": {
+    "message": "Déployez une liste de domaines validés pour vos collaborateurs. Cette liste aura la priorité maximale et renforcera la confiance de vos équipes."
+  },
+  "btnLearnMore": {
+    "message": "En savoir plus"
+  },
+  "btnDownloadExample": {
+    "message": "Télécharger un exemple"
+  },
+  "toastExampleDownloaded": {
+    "message": "Exemple téléchargé"
+  },
+  "modalEnterpriseTitle": {
+    "message": "🛡️ Source entreprise : Sécurisez vos collaborateurs"
+  },
+  "modalWhyTitle": {
+    "message": "Pourquoi utiliser cette fonctionnalité ?"
+  },
+  "modalWhyText": {
+    "message": "En tant qu'administrateur, vous pouvez déployer une liste de domaines de connexion validés pour votre organisation. Cette liste aura <strong>la priorité maximale</strong> sur toutes les autres sources (communautaires, personnelles). Vos collaborateurs verront un bandeau vert distinctif sur les pages validées par l'entreprise, renforçant leur confiance."
+  },
+  "modalSecurityTitle": {
+    "message": "🔒 Protégez contre le phishing et le MITM"
+  },
+  "modalSecurityText": {
+    "message": "Cette fonctionnalité permet de lutter contre :"
+  },
+  "modalSecurityPoint1": {
+    "message": "<strong>Phishing :</strong> Vos collaborateurs ne verront pas le bandeau de validation sur les faux sites"
+  },
+  "modalSecurityPoint2": {
+    "message": "<strong>Man-in-the-Middle :</strong> Seuls les domaines authentiques de votre liste seront validés"
+  },
+  "modalSecurityPoint3": {
+    "message": "<strong>Usurpation d'identité :</strong> Le bandeau entreprise indique clairement qu'il s'agit d'un site approuvé"
+  },
+  "modalFormatTitle": {
+    "message": "📝 Format des domaines"
+  },
+  "modalFormatText": {
+    "message": "Utilisez uniquement le domaine complet (sous-domaine + domaine principal), sans protocole ni chemin :"
+  },
+  "modalHostingTitle": {
+    "message": "🔐 Hébergement sécurisé (CRITIQUE)"
+  },
+  "modalHostingWarning": {
+    "message": "<strong>⚠️ NE PAS héberger sur GitHub, GitLab ou tout service public !</strong>"
+  },
+  "modalHostingText": {
+    "message": "Pour maximiser la sécurité, hébergez votre liste JSON sur :"
+  },
+  "modalHostingOption1": {
+    "message": "<strong>Serveur interne uniquement</strong> (accessible uniquement depuis votre réseau d'entreprise)"
+  },
+  "modalHostingOption2": {
+    "message": "<strong>URL obscurcie</strong> : Utilisez un GUID pour le nom de fichier et le dossier"
+  },
+  "modalHostingExample": {
+    "message": "Exemple : <code>https://cdn.example.com/a3f2e8b1-4c5d-6e7f-8a9b-0c1d2e3f4a5b/d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a.json</code>"
+  },
+  "modalMaintenanceTitle": {
+    "message": "🔧 Maintenance"
+  },
+  "modalMaintenanceText": {
+    "message": "Gardez votre liste à jour en ajoutant les nouveaux domaines de connexion utilisés par votre organisation (SSO, portails internes, applications SaaS, etc.)."
+  },
+  "popupCheckingStatus": {
+    "message": "Vérification en cours..."
+  },
+  "popupApproveButton": {
+    "message": "✅ Approuver ce domaine"
+  },
+  "popupSettingsButton": {
+    "message": "Paramètres"
+  },
+  "popupRefreshButton": {
+    "message": "Actualiser"
+  },
+  "popupNoActivePage": {
+    "message": "Aucune page active"
+  },
+  "popupNoPasswordField": {
+    "message": "Cette page ne contient pas de champ mot de passe"
+  },
+  "popupValidated": {
+    "message": "Cette page est validée"
+  },
+  "popupUnknown": {
+    "message": "Cette page contient un champ mot de passe mais n'est listée dans aucune source de confiance"
+  },
+  "popupLoadError": {
+    "message": "Erreur de chargement"
+  },
+  "popupValidatedBy": {
+    "message": "Validé par : {0}"
+  },
+  "contentBannerValidated": {
+    "message": "Page validée par : {0}"
+  },
+  "contentPersonalList": {
+    "message": "Liste personnelle"
+  },
+  "contentEnterpriseList": {
+    "message": "Liste entreprise"
   }
 }

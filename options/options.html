@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +34,7 @@
           <div class="official-list-container">
             <div class="list-item" id="officialListItem">
               <div class="list-info">
-                <div class="list-name">ShieldSign Official List</div>
+                <div class="list-name" data-i18n="officialListName">ShieldSign Official List</div>
                 <div class="list-url" data-i18n="officialListSubtitle">Liste officielle (65+ domaines validés)</div>
               </div>
               <div style="display: flex; gap: 8px;">
@@ -68,17 +68,16 @@
       <div class="tab-content" id="enterprise">
         <section class="section">
           <div class="info-box">
-            <h3>ℹ️ À propos de la source entreprise</h3>
-            <p>Cette fonctionnalité est destinée aux <strong>administrateurs d'entreprise</strong> qui souhaitent déployer une liste de domaines validés pour leurs collaborateurs.</p>
-            <p><strong>Format des domaines :</strong> Utilisez le format complet incluant le sous-domaine et le domaine principal (ce qui se trouve entre <code>https://</code> et le premier <code>/</code>).</p>
-            <p><strong>Exemples :</strong></p>
-            <ul>
-              <li>✅ <code>login.monentreprise.com</code></li>
-              <li>✅ <code>sso.monentreprise.fr</code></li>
-              <li>✅ <code>auth.intranet.monentreprise.net</code></li>
-              <li>❌ <code>https://login.monentreprise.com/auth</code> (ne pas inclure https:// ni le chemin)</li>
-            </ul>
-            <p class="warning">⚠️ <strong>Sécurité :</strong> Hébergez votre liste sur un serveur interne ou privé, <strong>pas sur une URL publique</strong>.</p>
+            <h3 data-i18n="enterpriseInfoTitle">ℹ️ Source entreprise</h3>
+            <p data-i18n="enterpriseInfoShort">Déployez une liste de domaines validés pour vos collaborateurs. Cette liste aura la priorité maximale et renforcera la confiance de vos équipes.</p>
+            <div style="display: flex; gap: 12px; margin-top: 12px;">
+              <button id="learnMoreBtn" class="btn btn-secondary">
+                <i class="fas fa-info-circle"></i> <span data-i18n="btnLearnMore">En savoir plus</span>
+              </button>
+              <button id="downloadExampleBtn" class="btn btn-secondary">
+                <i class="fas fa-download"></i> <span data-i18n="btnDownloadExample">Télécharger un exemple</span>
+              </button>
+            </div>
           </div>
         </section>
         
@@ -244,6 +243,52 @@
     </main>
     
     <div id="toast" class="toast"></div>
+    
+    <!-- Modal En savoir plus -->
+    <div id="learnMoreModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 data-i18n="modalEnterpriseTitle">🛡️ Source entreprise : Sécurisez vos collaborateurs</h2>
+          <button class="modal-close" id="closeModal"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body">
+          <h3 data-i18n="modalWhyTitle">Pourquoi utiliser cette fonctionnalité ?</h3>
+          <p data-i18n="modalWhyText">En tant qu'administrateur, vous pouvez déployer une liste de domaines de connexion validés pour votre organisation. Cette liste aura <strong>la priorité maximale</strong> sur toutes les autres sources (communautaires, personnelles). Vos collaborateurs verront un bandeau vert distinctif sur les pages validées par l'entreprise, renforçant leur confiance.</p>
+          
+          <h3 data-i18n="modalSecurityTitle">🔒 Protégez contre le phishing et le MITM</h3>
+          <p data-i18n="modalSecurityText">Cette fonctionnalité permet de lutter contre :</p>
+          <ul>
+            <li data-i18n="modalSecurityPoint1"><strong>Phishing :</strong> Vos collaborateurs ne verront pas le bandeau de validation sur les faux sites</li>
+            <li data-i18n="modalSecurityPoint2"><strong>Man-in-the-Middle :</strong> Seuls les domaines authentiques de votre liste seront validés</li>
+            <li data-i18n="modalSecurityPoint3"><strong>Usurpation d'identité :</strong> Le bandeau entreprise indique clairement qu'il s'agit d'un site approuvé</li>
+          </ul>
+          
+          <h3 data-i18n="modalFormatTitle">📝 Format des domaines</h3>
+          <p data-i18n="modalFormatText">Utilisez uniquement le domaine complet (sous-domaine + domaine principal), sans protocole ni chemin :</p>
+          <ul>
+            <li>✅ <code>login.example.com</code></li>
+            <li>✅ <code>sso.example.com</code></li>
+            <li>✅ <code>auth.intranet.example.com</code></li>
+            <li>❌ <code>https://login.example.com</code></li>
+            <li>❌ <code>login.example.com/auth</code></li>
+          </ul>
+          
+          <h3 data-i18n="modalHostingTitle">🔐 Hébergement sécurisé (CRITIQUE)</h3>
+          <div class="warning-box">
+            <p data-i18n="modalHostingWarning"><strong>⚠️ NE PAS héberger sur GitHub, GitLab ou tout service public !</strong></p>
+            <p data-i18n="modalHostingText">Pour maximiser la sécurité, hébergez votre liste JSON sur :</p>
+            <ul>
+              <li data-i18n="modalHostingOption1"><strong>Serveur interne uniquement</strong> (accessible uniquement depuis votre réseau d'entreprise)</li>
+              <li data-i18n="modalHostingOption2"><strong>URL obscurcie</strong> : Utilisez un GUID pour le nom de fichier et le dossier</li>
+            </ul>
+            <p data-i18n="modalHostingExample">Exemple : <code>https://cdn.example.com/a3f2e8b1-4c5d-6e7f-8a9b-0c1d2e3f4a5b/d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a.json</code></p>
+          </div>
+          
+          <h3 data-i18n="modalMaintenanceTitle">🔧 Maintenance</h3>
+          <p data-i18n="modalMaintenanceText">Maintenez votre liste à jour en ajoutant les nouveaux domaines de connexion utilisés par votre organisation (SSO, portails internes, applications SaaS, etc.).</p>
+        </div>
+      </div>
+    </div>
   </div>
   
   <script src="options.js"></script>
