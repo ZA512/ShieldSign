@@ -12,6 +12,9 @@ const DEFAULT_SETTINGS = {
   }
 };
 
+// Liste officielle ShieldSign (non supprimable)
+const OFFICIAL_LIST_URL = 'https://raw.githubusercontent.com/ZA512/ShieldSign/refs/heads/main/shieldsign_public_list_v1.json';
+
 // Initialisation au démarrage
 chrome.runtime.onInstalled.addListener(async () => {
   console.log('[ShieldSign] Extension installée');
@@ -21,6 +24,20 @@ chrome.runtime.onInstalled.addListener(async () => {
   
   if (!data.lists) {
     await chrome.storage.local.set({ lists: {} });
+  }
+  
+  // Ajouter la liste officielle si pas déjà présente
+  const lists = data.lists || {};
+  if (!lists[OFFICIAL_LIST_URL]) {
+    lists[OFFICIAL_LIST_URL] = {
+      etag: null,
+      lastFetch: 0,
+      data: null,
+      localType: 'community',
+      isOfficial: true,
+      enabled: true
+    };
+    await chrome.storage.local.set({ lists });
   }
   
   if (!data.user_whitelist) {
@@ -44,41 +61,53 @@ function isDomainMatch(hostname, domain) {
 async function getAllActiveDomains() {
   const { lists, user_whitelist } = await chrome.storage.local.get(['lists', 'user_whitelist']);
   
-  const domains = {
-    enterprise: [],
-    personal: user_whitelist || [],
-    community: []
+  const domainsMap = {
+    enterprise: new Map(),
+    personal: new Map(),
+    community: new Map()
   };
+  
+  // Ajouter la liste personnelle
+  if (user_whitelist && user_whitelist.length > 0) {
+    for (const domain of user_whitelist) {
+      domainsMap.personal.set(domain, 'Liste personnelle');
+    }
+  }
   
   // Parcourir toutes les listes
   if (lists) {
     for (const [url, listData] of Object.entries(lists)) {
-      if (listData.data && listData.data.domains) {
+      // Vérifier si la liste est activée (par défaut true si non spécifié)
+      const enabled = listData.enabled !== false;
+      
+      if (enabled && listData.data && listData.data.domains) {
         const type = listData.localType || 'community';
-        domains[type] = domains[type].concat(listData.data.domains);
+        const listName = listData.data.list_name || url;
+        
+        for (const domain of listData.data.domains) {
+          domainsMap[type].set(domain, listName);
+        }
       }
     }
   }
   
-  return domains;
+  return domainsMap;
 }
 
 // Vérification d'un domaine avec gestion des priorités
 async function checkDomain(hostname) {
-  const domains = await getAllActiveDomains();
+  const domainsMap = await getAllActiveDomains();
   
   // Ordre de priorité: enterprise > personal > community
   const priorities = ['enterprise', 'personal', 'community'];
   
   for (const type of priorities) {
-    for (const domain of domains[type]) {
-      if (isDomainMatch(hostname, domain)) {
-        return {
-          status: 'VALIDATED',
-          listName: type === 'personal' ? 'Liste personnelle' : domain,
-          type: type
-        };
-      }
+    if (domainsMap[type].has(hostname)) {
+      return {
+        status: 'VALIDATED',
+        listName: domainsMap[type].get(hostname),
+        type: type
+      };
     }
   }
   
@@ -210,8 +239,15 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
   
   if (message.action === 'REMOVE_LIST') {
-    removeList(message.url).then(() => {
-      sendResponse({ success: true });
+    removeList(message.url).then(result => {
+      sendResponse(result);
+    });
+    return true;
+  }
+  
+  if (message.action === 'TOGGLE_LIST') {
+    toggleList(message.url, message.enabled).then(result => {
+      sendResponse(result);
     });
     return true;
   }
@@ -310,10 +346,33 @@ async function removeList(url) {
   const { lists } = await chrome.storage.local.get(['lists']);
   
   if (lists && lists[url]) {
+    // Empêcher la suppression de la liste officielle
+    if (lists[url].isOfficial) {
+      console.warn('[ShieldSign] Impossible de supprimer la liste officielle');
+      return { success: false, error: 'La liste officielle ne peut pas être supprimée.' };
+    }
+    
     delete lists[url];
     await chrome.storage.local.set({ lists });
     console.log(`[ShieldSign] Liste supprimée: ${url}`);
+    return { success: true };
   }
+  
+  return { success: false, error: 'Liste non trouvée.' };
+}
+
+// Activer/désactiver une liste
+async function toggleList(url, enabled) {
+  const { lists } = await chrome.storage.local.get(['lists']);
+  
+  if (lists && lists[url]) {
+    lists[url].enabled = enabled;
+    await chrome.storage.local.set({ lists });
+    console.log(`[ShieldSign] Liste ${enabled ? 'activée' : 'désactivée'}: ${url}`);
+    return { success: true };
+  }
+  
+  return { success: false, error: 'Liste non trouvée.' };
 }
 
 // Mise à jour périodique des listes (toutes les heures)

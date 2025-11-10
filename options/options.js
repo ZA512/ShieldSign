@@ -102,9 +102,11 @@ async function loadLists() {
   try {
     const { lists } = await chrome.storage.local.get(['lists']);
     
+    const officialList = document.getElementById('officialList');
     const enterpriseList = document.getElementById('enterpriseList');
     const communityLists = document.getElementById('communityLists');
     
+    officialList.innerHTML = '<p class="no-list">Aucune liste officielle configurée</p>';
     enterpriseList.innerHTML = '<p class="no-list">Aucune liste entreprise configurée</p>';
     communityLists.innerHTML = '<p class="no-list">Aucune liste communautaire configurée</p>';
     
@@ -112,13 +114,20 @@ async function loadLists() {
       return;
     }
     
+    let hasOfficial = false;
     let hasEnterprise = false;
     let hasCommunity = false;
     
     for (const [url, listData] of Object.entries(lists)) {
       const listItem = createListItem(url, listData);
       
-      if (listData.localType === 'enterprise') {
+      if (listData.isOfficial) {
+        if (!hasOfficial) {
+          officialList.innerHTML = '';
+          hasOfficial = true;
+        }
+        officialList.appendChild(listItem);
+      } else if (listData.localType === 'enterprise') {
         if (!hasEnterprise) {
           enterpriseList.innerHTML = '';
           hasEnterprise = true;
@@ -143,6 +152,11 @@ function createListItem(url, listData) {
   const listItem = document.createElement('div');
   listItem.className = 'list-item';
   
+  // Ajouter la classe disabled si la liste est désactivée
+  if (listData.enabled === false) {
+    listItem.classList.add('disabled');
+  }
+  
   const listInfo = document.createElement('div');
   listInfo.className = 'list-info';
   
@@ -157,14 +171,31 @@ function createListItem(url, listData) {
   listInfo.appendChild(listName);
   listInfo.appendChild(listUrl);
   
-  const removeBtn = document.createElement('button');
-  removeBtn.className = 'remove-btn';
-  removeBtn.textContent = '🗑️';
-  removeBtn.title = 'Supprimer';
-  removeBtn.addEventListener('click', () => removeList(url));
+  const actions = document.createElement('div');
+  actions.style.display = 'flex';
+  actions.style.gap = '8px';
+  
+  // Bouton activer/désactiver
+  const toggleBtn = document.createElement('button');
+  toggleBtn.className = `toggle-btn ${listData.enabled !== false ? 'enabled' : 'disabled'}`;
+  toggleBtn.textContent = listData.enabled !== false ? '✓' : '✗';
+  toggleBtn.title = listData.enabled !== false ? 'Désactiver' : 'Activer';
+  toggleBtn.addEventListener('click', () => toggleList(url, listData.enabled === false));
+  
+  actions.appendChild(toggleBtn);
+  
+  // Bouton supprimer (seulement si ce n'est pas la liste officielle)
+  if (!listData.isOfficial) {
+    const removeBtn = document.createElement('button');
+    removeBtn.className = 'remove-btn';
+    removeBtn.textContent = '🗑️';
+    removeBtn.title = 'Supprimer';
+    removeBtn.addEventListener('click', () => removeList(url));
+    actions.appendChild(removeBtn);
+  }
   
   listItem.appendChild(listInfo);
-  listItem.appendChild(removeBtn);
+  listItem.appendChild(actions);
   
   return listItem;
 }
@@ -208,16 +239,41 @@ async function addList(type) {
 // Supprimer une liste
 async function removeList(url) {
   try {
-    await chrome.runtime.sendMessage({
+    const response = await chrome.runtime.sendMessage({
       action: 'REMOVE_LIST',
       url: url
     });
     
-    showToast('Liste supprimée avec succès');
-    await loadLists();
+    if (response.success) {
+      showToast('Liste supprimée avec succès');
+      await loadLists();
+    } else {
+      showToast(response.error || 'Erreur lors de la suppression de la liste', true);
+    }
   } catch (error) {
     console.error('[ShieldSign] Erreur lors de la suppression de la liste:', error);
     showToast('Erreur lors de la suppression de la liste', true);
+  }
+}
+
+// Activer/désactiver une liste
+async function toggleList(url, enabled) {
+  try {
+    const response = await chrome.runtime.sendMessage({
+      action: 'TOGGLE_LIST',
+      url: url,
+      enabled: enabled
+    });
+    
+    if (response.success) {
+      showToast(enabled ? 'Liste activée' : 'Liste désactivée');
+      await loadLists();
+    } else {
+      showToast(response.error || 'Erreur lors de la modification de la liste', true);
+    }
+  } catch (error) {
+    console.error('[ShieldSign] Erreur lors de la modification de la liste:', error);
+    showToast('Erreur lors de la modification de la liste', true);
   }
 }
 

@@ -104,6 +104,7 @@ function getListDisplayName(listName, type) {
   } else if (type === 'enterprise') {
     return 'Liste entreprise';
   } else {
+    // Pour les listes communautaires, utiliser directement le nom de la liste
     return listName;
   }
 }

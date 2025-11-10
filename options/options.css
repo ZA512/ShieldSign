@@ -169,7 +169,8 @@ main {
 
 .enterprise-list,
 .community-lists,
-.personal-domains-list {
+.personal-domains-list,
+.official-list {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -212,6 +213,31 @@ main {
 
 .remove-btn:hover {
   opacity: 0.7;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px 8px;
+  transition: opacity 0.2s ease;
+}
+
+.toggle-btn:hover {
+  opacity: 0.7;
+}
+
+.toggle-btn.enabled {
+  color: #2ECC71;
+}
+
+.toggle-btn.disabled {
+  color: #95a5a6;
+}
+
+.list-item.disabled {
+  opacity: 0.5;
 }
 
 .no-list {
