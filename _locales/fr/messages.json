@@ -614,5 +614,98 @@
   },
   "contentEnterpriseList": {
     "message": "Liste entreprise"
+  },
+  "validationSecurityTitle": {
+    "message": "🛡️ Validation de sécurité anti-phishing"
+  },
+  "validationSecurityDescription": {
+    "message": "Choisissez comment vérifier l'authenticité de la validation. Ces options rendent impossible l'imitation du bandeau par un attaquant."
+  },
+  "whyTheseOptions": {
+    "message": "💡 Pourquoi ces options ?"
+  },
+  "antiPhishingExplanation": {
+    "message": "Si ShieldSign devient populaire, un attaquant pourrait créer un faux bandeau vert sur sa page de phishing. Ces options rendent l'imitation <strong>impossible</strong> car seule VOTRE extension connaît votre mot-clé personnel, votre code du jour, ou vos couleurs personnalisées."
+  },
+  "imageComingSoon": {
+    "message": "[Image d'illustration à venir]"
+  },
+  "modeBadgeOnlyTitle": {
+    "message": "🔵 Badge uniquement (discret)"
+  },
+  "modeBadgeOnlyDescription": {
+    "message": "Aucun bandeau visible. Un point de couleur apparaît sur l'icône de l'extension dans la barre d'outils. Simple et non-intrusif."
+  },
+  "modeBadgeOnlyPro1": {
+    "message": "✅ Discret, n'encombre pas la page"
+  },
+  "modeBadgeOnlyCon1": {
+    "message": "⚠️ Nécessite de regarder l'icône de l'extension"
+  },
+  "modeBannerKeywordTitle": {
+    "message": "🔑 Bandeau avec mot-clé personnel"
+  },
+  "modeBannerKeywordDescription": {
+    "message": "Le bandeau affiche votre mot-clé ou phrase personnalisée. Seul vous connaissez ce mot-clé, un attaquant ne peut pas le deviner."
+  },
+  "customKeywordLabel": {
+    "message": "Votre mot-clé personnel :"
+  },
+  "customKeywordPlaceholder": {
+    "message": "Ex: MonPhareDeConfiance2025"
+  },
+  "customKeywordHelp": {
+    "message": "Choisissez un mot ou une phrase facile à retenir mais difficile à deviner (5 caractères minimum recommandés)"
+  },
+  "modeBannerKeywordPro1": {
+    "message": "✅ Validation immédiate et personnalisée"
+  },
+  "modeBannerKeywordPro2": {
+    "message": "✅ Impossible à imiter sans connaître votre mot-clé"
+  },
+  "modeBannerKeywordCon1": {
+    "message": "⚠️ Nécessite de mémoriser votre mot-clé"
+  },
+  "warningKeywordTooShort": {
+    "message": "Le mot-clé doit contenir au moins 5 caractères"
+  },
+  "modeBannerCodeTitle": {
+    "message": "🎲 Bandeau avec code aléatoire (recommandé)"
+  },
+  "modeBannerCodeDescription": {
+    "message": "Un code alphanumérique de 2 caractères (ex: A7, H4, 8R) est généré quotidiennement et affiché dans le bandeau ET sur l'icône de l'extension. Vérifiez simplement que les deux correspondent."
+  },
+  "currentCodeLabel": {
+    "message": "Code du jour :"
+  },
+  "btnRegenerateCode": {
+    "message": "Générer un nouveau code"
+  },
+  "currentCodeHelp": {
+    "message": "Le code change automatiquement chaque jour. Vous pouvez aussi le régénérer manuellement."
+  },
+  "modeBannerCodePro1": {
+    "message": "✅ Aucune mémorisation nécessaire"
+  },
+  "modeBannerCodePro2": {
+    "message": "✅ Vérification rapide (badge + bandeau)"
+  },
+  "modeBannerCodePro3": {
+    "message": "✅ Change quotidiennement automatiquement"
+  },
+  "modeBannerCodePro4": {
+    "message": "✅ Équilibre parfait sécurité/simplicité"
+  },
+  "toastCodeRegenerated": {
+    "message": "Code régénéré avec succès"
+  },
+  "errorRegeneratingCode": {
+    "message": "Erreur lors de la régénération du code"
+  },
+  "showUnknownPages": {
+    "message": "Afficher l'état pour toutes les pages"
+  },
+  "showUnknownPagesDescription": {
+    "message": "Activez pour voir un badge même sur les pages non listées : 🔴 (page suspecte avec mot de passe) ou ⚪ (page sans mot de passe)."
   }
 }

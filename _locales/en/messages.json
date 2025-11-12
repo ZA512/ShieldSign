@@ -614,5 +614,98 @@
   },
   "contentEnterpriseList": {
     "message": "Enterprise list"
+  },
+  "validationSecurityTitle": {
+    "message": "🛡️ Anti-Phishing Security Validation"
+  },
+  "validationSecurityDescription": {
+    "message": "Choose how to verify the authenticity of the validation. These options make it impossible for an attacker to imitate the banner."
+  },
+  "whyTheseOptions": {
+    "message": "💡 Why these options?"
+  },
+  "antiPhishingExplanation": {
+    "message": "If ShieldSign becomes popular, an attacker could create a fake green banner on their phishing page. These options make imitation <strong>impossible</strong> because only YOUR extension knows your personal keyword, your daily code, or your custom colors."
+  },
+  "imageComingSoon": {
+    "message": "[Illustration image coming soon]"
+  },
+  "modeBadgeOnlyTitle": {
+    "message": "🔵 Badge only (discreet)"
+  },
+  "modeBadgeOnlyDescription": {
+    "message": "No visible banner. A colored dot appears on the extension icon in the toolbar. Simple and non-intrusive."
+  },
+  "modeBadgeOnlyPro1": {
+    "message": "✅ Discreet, doesn't clutter the page"
+  },
+  "modeBadgeOnlyCon1": {
+    "message": "⚠️ Requires looking at the extension icon"
+  },
+  "modeBannerKeywordTitle": {
+    "message": "🔑 Banner with personal keyword"
+  },
+  "modeBannerKeywordDescription": {
+    "message": "The banner displays your custom keyword or phrase. Only you know this keyword, an attacker cannot guess it."
+  },
+  "customKeywordLabel": {
+    "message": "Your personal keyword:"
+  },
+  "customKeywordPlaceholder": {
+    "message": "e.g., MyTrustedLighthouse2025"
+  },
+  "customKeywordHelp": {
+    "message": "Choose a word or phrase that's easy to remember but hard to guess (minimum 5 characters recommended)"
+  },
+  "modeBannerKeywordPro1": {
+    "message": "✅ Immediate and personalized validation"
+  },
+  "modeBannerKeywordPro2": {
+    "message": "✅ Impossible to imitate without knowing your keyword"
+  },
+  "modeBannerKeywordCon1": {
+    "message": "⚠️ Requires memorizing your keyword"
+  },
+  "warningKeywordTooShort": {
+    "message": "The keyword must contain at least 5 characters"
+  },
+  "modeBannerCodeTitle": {
+    "message": "🎲 Banner with random code (recommended)"
+  },
+  "modeBannerCodeDescription": {
+    "message": "A 2-character alphanumeric code (e.g., A7, H4, 8R) is generated daily and displayed in the banner AND on the extension icon. Simply verify that both match."
+  },
+  "currentCodeLabel": {
+    "message": "Today's code:"
+  },
+  "btnRegenerateCode": {
+    "message": "Generate new code"
+  },
+  "currentCodeHelp": {
+    "message": "The code changes automatically every day. You can also regenerate it manually."
+  },
+  "modeBannerCodePro1": {
+    "message": "✅ No memorization required"
+  },
+  "modeBannerCodePro2": {
+    "message": "✅ Quick verification (badge + banner)"
+  },
+  "modeBannerCodePro3": {
+    "message": "✅ Changes daily automatically"
+  },
+  "modeBannerCodePro4": {
+    "message": "✅ Perfect balance between security and simplicity"
+  },
+  "toastCodeRegenerated": {
+    "message": "Code regenerated successfully"
+  },
+  "errorRegeneratingCode": {
+    "message": "Error regenerating code"
+  },
+  "showUnknownPages": {
+    "message": "Display status for all pages"
+  },
+  "showUnknownPagesDescription": {
+    "message": "Enable to see a badge even on unlisted pages: 🔴 (suspicious page with password) or ⚪ (page without password)."
   }
 }

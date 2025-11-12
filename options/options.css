@@ -590,3 +590,122 @@ main {
   color: #856404;
 }
 
+/* ========================================
+   VALIDATION DE SÉCURITÉ - MODES
+   ======================================== */
+
+.validation-mode-option {
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.validation-mode-option:hover {
+  border-color: #3498DB;
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.1);
+}
+
+.validation-mode-option input[type="radio"]:checked + .radio-custom {
+  background: linear-gradient(135deg, #1a2a6c 0%, #159957 100%);
+}
+
+.validation-mode-option input[type="radio"]:checked ~ strong {
+  color: #159957;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.radio {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radio-custom {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.radio:checked + .radio-custom::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+}
+
+.mode-description {
+  color: #666;
+  margin: 12px 0 12px 36px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.visual-placeholder {
+  background: #f8f9fa;
+  border: 2px dashed #dee2e6;
+  border-radius: 8px;
+  padding: 40px;
+  text-align: center;
+  color: #6c757d;
+  font-size: 18px;
+  margin: 16px 0;
+}
+
+.mode-advantages {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0 36px;
+}
+
+.mode-advantages li {
+  padding: 6px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.keyword-input-container,
+.code-display-container {
+  background: #f8f9fa;
+  padding: 16px;
+  border-radius: 8px;
+  margin-left: 36px;
+}
+
+.current-code-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a2a6c 0%, #159957 100%);
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  font-family: 'Courier New', monospace;
+  padding: 12px 24px;
+  border-radius: 8px;
+  min-width: 80px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  letter-spacing: 4px;
+}
+
+/* ========================================
+   FIN STYLES VALIDATION
+   ======================================== */

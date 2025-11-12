@@ -7,15 +7,64 @@ const DEFAULT_SETTINGS = {
   trainingMode: false,
   enterpriseMode: false, // Mode entreprise pour afficher l'onglet Source entreprise
   language: 'auto', // auto, en, fr, etc.
+  
+  // Anti-phishing validation settings
+  validationMode: 'banner-code', // 'badge-only' | 'banner-keyword' | 'banner-code'
+  customKeyword: '', // Phrase personnalisée pour mode banner-keyword
+  currentCode: '', // Code alphanumérique 2 caractères (regénéré quotidiennement)
+  showUnknownPages: false, // Afficher badge rouge/gris pour pages non listées
+  
+  // Banner colors configuration
   bannerColors: {
     enterprise: '#2ECC71',
     community: '#3498DB',
     personal: '#9B59B6'
+  },
+  
+  // Advanced banner styling
+  bannerStyle: {
+    enterprise: {
+      mode: 'solid', // 'solid' | 'gradient' | 'random'
+      solidColor: '#2ECC71',
+      textColor: '#FFFFFF',
+      gradientStart: '#2ECC71',
+      gradientEnd: '#27AE60',
+      fontFamily: 'inherit',
+      useRandom: false
+    },
+    community: {
+      mode: 'solid',
+      solidColor: '#3498DB',
+      textColor: '#FFFFFF',
+      gradientStart: '#3498DB',
+      gradientEnd: '#2980B9',
+      fontFamily: 'inherit',
+      useRandom: false
+    },
+    personal: {
+      mode: 'solid',
+      solidColor: '#9B59B6',
+      textColor: '#FFFFFF',
+      gradientStart: '#9B59B6',
+      gradientEnd: '#8E44AD',
+      fontFamily: 'inherit',
+      useRandom: false
+    }
   }
 };
 
 // Liste officielle ShieldSign (non supprimable)
 const OFFICIAL_LIST_URL = 'https://raw.githubusercontent.com/ZA512/ShieldSign/refs/heads/main/shieldsign_public_list_v1.json';
+
+// Fonction pour générer un code aléatoire de 2 caractères (lettres majuscules + chiffres)
+function generateRandomCode() {
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  let code = '';
+  for (let i = 0; i < 2; i++) {
+    code += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return code;
+}
 
 // Initialisation au démarrage
 chrome.runtime.onInstalled.addListener(async () => {
@@ -40,6 +89,12 @@ chrome.runtime.onInstalled.addListener(async () => {
     await chrome.storage.local.set({ lists });
   }
   
+  // Migrer les anciens settings et générer le premier code
+  await migrateSettings();
+  
+  // Configurer l'alarme quotidienne pour régénérer le code
+  chrome.alarms.create('regenerateCode', { periodInMinutes: 1440 }); // 24h
+  
   if (!data.user_whitelist) {
     await chrome.storage.local.set({ user_whitelist: [] });
   }
@@ -50,6 +105,68 @@ chrome.runtime.onInstalled.addListener(async () => {
   
   // Lancer la première mise à jour des listes (avec await pour garantir le téléchargement)
   await updateLists();
+});
+
+// Fonction de migration des settings pour compatibilité avec anciennes versions
+async function migrateSettings() {
+  const { settings } = await chrome.storage.local.get(['settings']);
+  let currentSettings = settings || {};
+  
+  // Fusionner avec DEFAULT_SETTINGS pour ajouter les nouveaux champs
+  const migratedSettings = { ...DEFAULT_SETTINGS, ...currentSettings };
+  
+  // Générer un code initial si pas déjà présent
+  if (!migratedSettings.currentCode) {
+    migratedSettings.currentCode = generateRandomCode();
+  }
+  
+  // Migrer anciennes couleurs vers nouveau format si nécessaire
+  if (currentSettings.bannerColors && !currentSettings.bannerStyle) {
+    migratedSettings.bannerStyle = {
+      enterprise: {
+        mode: 'solid',
+        solidColor: currentSettings.bannerColors.enterprise || DEFAULT_SETTINGS.bannerColors.enterprise,
+        textColor: '#FFFFFF',
+        gradientStart: currentSettings.bannerColors.enterprise || DEFAULT_SETTINGS.bannerColors.enterprise,
+        gradientEnd: '#27AE60',
+        fontFamily: 'inherit',
+        useRandom: false
+      },
+      community: {
+        mode: 'solid',
+        solidColor: currentSettings.bannerColors.community || DEFAULT_SETTINGS.bannerColors.community,
+        textColor: '#FFFFFF',
+        gradientStart: currentSettings.bannerColors.community || DEFAULT_SETTINGS.bannerColors.community,
+        gradientEnd: '#2980B9',
+        fontFamily: 'inherit',
+        useRandom: false
+      },
+      personal: {
+        mode: 'solid',
+        solidColor: currentSettings.bannerColors.personal || DEFAULT_SETTINGS.bannerColors.personal,
+        textColor: '#FFFFFF',
+        gradientStart: currentSettings.bannerColors.personal || DEFAULT_SETTINGS.bannerColors.personal,
+        gradientEnd: '#8E44AD',
+        fontFamily: 'inherit',
+        useRandom: false
+      }
+    };
+  }
+  
+  await chrome.storage.local.set({ settings: migratedSettings });
+  return migratedSettings;
+}
+
+// Gérer l'alarme de régénération du code quotidien
+chrome.alarms.onAlarm.addListener(async (alarm) => {
+  if (alarm.name === 'regenerateCode') {
+    const { settings } = await chrome.storage.local.get(['settings']);
+    if (settings) {
+      settings.currentCode = generateRandomCode();
+      await chrome.storage.local.set({ settings });
+      console.log('[ShieldSign] Code régénéré:', settings.currentCode);
+    }
+  }
 });
 
 // Vérification si un domaine correspond exactement
@@ -281,6 +398,24 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === 'UPDATE_SETTINGS') {
     chrome.storage.local.set({ settings: message.settings }).then(() => {
       sendResponse({ success: true });
+    });
+    return true;
+  }
+  
+  if (message.action === 'GET_CURRENT_CODE') {
+    chrome.storage.local.get(['settings']).then(data => {
+      const code = data.settings?.currentCode || generateRandomCode();
+      sendResponse({ code });
+    });
+    return true;
+  }
+  
+  if (message.action === 'REGENERATE_CODE') {
+    chrome.storage.local.get(['settings']).then(async (data) => {
+      const settings = data.settings || DEFAULT_SETTINGS;
+      settings.currentCode = generateRandomCode();
+      await chrome.storage.local.set({ settings });
+      sendResponse({ success: true, code: settings.currentCode });
     });
     return true;
   }

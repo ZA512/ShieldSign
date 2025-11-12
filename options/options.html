@@ -171,6 +171,100 @@
           </div>
         </section>
         
+        <!-- Section Anti-Phishing & Validation de Sécurité -->
+        <section class="section">
+          <h2 data-i18n="validationSecurityTitle">🛡️ Validation de sécurité anti-phishing</h2>
+          <p class="section-description" data-i18n="validationSecurityDescription">Choisissez comment vérifier l'authenticité de la validation. Ces options rendent impossible l'imitation du bandeau par un attaquant.</p>
+          
+          <!-- Encadré explicatif -->
+          <div class="info-box" style="margin-bottom: 24px;">
+            <h3 data-i18n="whyTheseOptions">💡 Pourquoi ces options ?</h3>
+            <p data-i18n="antiPhishingExplanation">Si ShieldSign devient populaire, un attaquant pourrait créer un faux bandeau vert sur sa page de phishing. Ces options rendent l'imitation <strong>impossible</strong> car seule VOTRE extension connaît votre mot-clé personnel, votre code du jour, ou vos couleurs personnalisées.</p>
+          </div>
+          
+          <!-- Mode Badge uniquement -->
+          <div class="validation-mode-option">
+            <label class="radio-label">
+              <input type="radio" name="validationMode" value="badge-only" id="modeBadgeOnly" class="radio">
+              <span class="radio-custom"></span>
+              <strong data-i18n="modeBadgeOnlyTitle">🔵 Badge uniquement (discret)</strong>
+            </label>
+            <p class="mode-description" data-i18n="modeBadgeOnlyDescription">Aucun bandeau visible. Un point de couleur apparaît sur l'icône de l'extension dans la barre d'outils. Simple et non-intrusif.</p>
+            <div class="visual-placeholder">
+              📷 <span data-i18n="imageComingSoon">[Image d'illustration à venir]</span>
+            </div>
+            <ul class="mode-advantages">
+              <li data-i18n="modeBadgeOnlyPro1">✅ Discret, n'encombre pas la page</li>
+              <li data-i18n="modeBadgeOnlyCon1">⚠️ Nécessite de regarder l'icône de l'extension</li>
+            </ul>
+          </div>
+          
+          <!-- Mode Bandeau avec mot-clé -->
+          <div class="validation-mode-option">
+            <label class="radio-label">
+              <input type="radio" name="validationMode" value="banner-keyword" id="modeBannerKeyword" class="radio">
+              <span class="radio-custom"></span>
+              <strong data-i18n="modeBannerKeywordTitle">🔑 Bandeau avec mot-clé personnel</strong>
+            </label>
+            <p class="mode-description" data-i18n="modeBannerKeywordDescription">Le bandeau affiche votre mot-clé ou phrase personnalisée. Seul vous connaissez ce mot-clé, un attaquant ne peut pas le deviner.</p>
+            <div class="keyword-input-container" id="keywordInputContainer" style="display: none; margin: 12px 0;">
+              <label class="setting-label">
+                <span data-i18n="customKeywordLabel">Votre mot-clé personnel :</span>
+              </label>
+              <input type="text" id="customKeyword" data-i18n-placeholder="customKeywordPlaceholder" placeholder="Ex: MonPhareDeConfiance2025" class="input-field" maxlength="50">
+              <p class="setting-description" data-i18n="customKeywordHelp">Choisissez un mot ou une phrase facile à retenir mais difficile à deviner (5 caractères minimum recommandés)</p>
+            </div>
+            <div class="visual-placeholder">
+              📷 <span data-i18n="imageComingSoon">[Image d'illustration à venir]</span>
+            </div>
+            <ul class="mode-advantages">
+              <li data-i18n="modeBannerKeywordPro1">✅ Validation immédiate et personnalisée</li>
+              <li data-i18n="modeBannerKeywordPro2">✅ Impossible à imiter sans connaître votre mot-clé</li>
+              <li data-i18n="modeBannerKeywordCon1">⚠️ Nécessite de mémoriser votre mot-clé</li>
+            </ul>
+          </div>
+          
+          <!-- Mode Bandeau avec code aléatoire -->
+          <div class="validation-mode-option">
+            <label class="radio-label">
+              <input type="radio" name="validationMode" value="banner-code" id="modeBannerCode" class="radio" checked>
+              <span class="radio-custom"></span>
+              <strong data-i18n="modeBannerCodeTitle">🎲 Bandeau avec code aléatoire (recommandé)</strong>
+            </label>
+            <p class="mode-description" data-i18n="modeBannerCodeDescription">Un code alphanumérique de 2 caractères (ex: A7, H4, 8R) est généré quotidiennement et affiché dans le bandeau ET sur l'icône de l'extension. Vérifiez simplement que les deux correspondent.</p>
+            <div class="code-display-container" id="codeDisplayContainer" style="margin: 12px 0;">
+              <label class="setting-label">
+                <span data-i18n="currentCodeLabel">Code du jour :</span>
+              </label>
+              <div style="display: flex; gap: 12px; align-items: center;">
+                <div class="current-code-badge" id="currentCodeDisplay">--</div>
+                <button type="button" id="regenerateCodeBtn" class="btn btn-secondary">
+                  <i class="fas fa-sync-alt"></i> <span data-i18n="btnRegenerateCode">Générer un nouveau code</span>
+                </button>
+              </div>
+              <p class="setting-description" data-i18n="currentCodeHelp">Le code change automatiquement chaque jour. Vous pouvez aussi le régénérer manuellement.</p>
+            </div>
+            <div class="visual-placeholder">
+              📷 <span data-i18n="imageComingSoon">[Image d'illustration à venir]</span>
+            </div>
+            <ul class="mode-advantages">
+              <li data-i18n="modeBannerCodePro1">✅ Aucune mémorisation nécessaire</li>
+              <li data-i18n="modeBannerCodePro2">✅ Vérification rapide (badge + bandeau)</li>
+              <li data-i18n="modeBannerCodePro3">✅ Change quotidiennement automatiquement</li>
+              <li data-i18n="modeBannerCodePro4">✅ Équilibre parfait sécurité/simplicité</li>
+            </ul>
+          </div>
+          
+          <!-- Option pages inconnues -->
+          <div class="setting-item" style="margin-top: 24px;">
+            <label class="setting-label">
+              <input type="checkbox" id="showUnknownPages" class="checkbox">
+              <span data-i18n="showUnknownPages">Afficher l'état pour toutes les pages</span>
+            </label>
+            <p class="setting-description" data-i18n="showUnknownPagesDescription">Activez pour voir un badge même sur les pages non listées : 🔴 (page suspecte avec mot de passe) ou ⚪ (page sans mot de passe).</p>
+          </div>
+        </section>
+        
         <section class="section">
           <h2 data-i18n="bannerColorsTitle">Couleurs des bandeaux</h2>
           

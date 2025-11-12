@@ -6,10 +6,49 @@ const DEFAULT_SETTINGS = {
   trainingMode: false,
   enterpriseMode: false, // Mode entreprise pour afficher l'onglet Source entreprise
   language: 'auto', // auto, en, fr, etc.
+  
+  // Anti-phishing validation settings
+  validationMode: 'banner-code', // 'badge-only' | 'banner-keyword' | 'banner-code'
+  customKeyword: '', // Phrase personnalisée pour mode banner-keyword
+  currentCode: '', // Code alphanumérique 2 caractères (regénéré quotidiennement)
+  showUnknownPages: false, // Afficher badge rouge/gris pour pages non listées
+  
+  // Banner colors configuration
   bannerColors: {
     enterprise: '#2ECC71',
     community: '#3498DB',
     personal: '#9B59B6'
+  },
+  
+  // Advanced banner styling
+  bannerStyle: {
+    enterprise: {
+      mode: 'solid', // 'solid' | 'gradient' | 'random'
+      solidColor: '#2ECC71',
+      textColor: '#FFFFFF',
+      gradientStart: '#2ECC71',
+      gradientEnd: '#27AE60',
+      fontFamily: 'inherit',
+      useRandom: false
+    },
+    community: {
+      mode: 'solid',
+      solidColor: '#3498DB',
+      textColor: '#FFFFFF',
+      gradientStart: '#3498DB',
+      gradientEnd: '#2980B9',
+      fontFamily: 'inherit',
+      useRandom: false
+    },
+    personal: {
+      mode: 'solid',
+      solidColor: '#9B59B6',
+      textColor: '#FFFFFF',
+      gradientStart: '#9B59B6',
+      gradientEnd: '#8E44AD',
+      fontFamily: 'inherit',
+      useRandom: false
+    }
   }
 };
 
@@ -70,6 +109,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('downloadExampleBtn').addEventListener('click', downloadExample);
   document.getElementById('closeModal').addEventListener('click', closeLearnMoreModal);
   
+  // Nouveaux gestionnaires pour validation de sécurité
+  setupValidationModeListeners();
+  document.getElementById('regenerateCodeBtn')?.addEventListener('click', regenerateCode);
+  
   // Fermer la modal en cliquant en dehors
   window.addEventListener('click', (e) => {
     const modal = document.getElementById('learnMoreModal');
@@ -113,6 +156,27 @@ async function loadSettings() {
     document.getElementById('colorCommunity').value = currentSettings.bannerColors?.community || DEFAULT_SETTINGS.bannerColors.community;
     document.getElementById('colorPersonal').value = currentSettings.bannerColors?.personal || DEFAULT_SETTINGS.bannerColors.personal;
     
+    // Charger les nouveaux paramètres de validation
+    const validationMode = currentSettings.validationMode || 'banner-code';
+    const modeRadio = document.querySelector(`input[name="validationMode"][value="${validationMode}"]`);
+    if (modeRadio) {
+      modeRadio.checked = true;
+    }
+    
+    if (document.getElementById('customKeyword')) {
+      document.getElementById('customKeyword').value = currentSettings.customKeyword || '';
+    }
+    
+    if (document.getElementById('showUnknownPages')) {
+      document.getElementById('showUnknownPages').checked = currentSettings.showUnknownPages || false;
+    }
+    
+    // Charger et afficher le code actuel
+    await loadCurrentCode();
+    
+    // Mettre à jour l'affichage des champs selon le mode
+    handleValidationModeChange();
+    
     // Afficher/masquer l'onglet entreprise
     updateEnterpriseTabVisibility(currentSettings.enterpriseMode || false);
   } catch (error) {
@@ -123,21 +187,44 @@ async function loadSettings() {
 // Sauvegarder les paramètres
 async function saveSettings() {
   try {
-    const settings = {
+    const { settings } = await chrome.storage.local.get(['settings']);
+    const currentSettings = settings || DEFAULT_SETTINGS;
+    
+    // Récupérer le mode de validation sélectionné
+    const validationMode = document.querySelector('input[name="validationMode"]:checked')?.value || 'banner-code';
+    
+    // Vérification du mot-clé si mode banner-keyword
+    let customKeyword = document.getElementById('customKeyword')?.value || '';
+    if (validationMode === 'banner-keyword' && customKeyword.length < 5) {
+      showToast(chrome.i18n.getMessage('warningKeywordTooShort') || 'Le mot-clé doit contenir au moins 5 caractères', true);
+      return;
+    }
+    
+    const newSettings = {
       checkCN: document.getElementById('checkCN').checked,
-      ttl: parseInt(document.getElementById('ttl').value) * 3600000, // Convertir heures en ms
+      ttl: parseInt(document.getElementById('ttl').value) * 3600000,
       trainingMode: false,
       enterpriseMode: document.getElementById('enterpriseMode').checked,
       language: document.getElementById('languageSelect').value,
+      
+      // Nouveaux paramètres de validation
+      validationMode: validationMode,
+      customKeyword: customKeyword,
+      currentCode: currentSettings.currentCode || '', // Conserver le code existant
+      showUnknownPages: document.getElementById('showUnknownPages')?.checked || false,
+      
       bannerColors: {
         enterprise: document.getElementById('colorEnterprise').value,
         community: document.getElementById('colorCommunity').value,
         personal: document.getElementById('colorPersonal').value
-      }
+      },
+      
+      // Conserver bannerStyle si présent
+      bannerStyle: currentSettings.bannerStyle || DEFAULT_SETTINGS.bannerStyle
     };
     
-    await chrome.storage.local.set({ settings });
-    updateEnterpriseTabVisibility(settings.enterpriseMode);
+    await chrome.storage.local.set({ settings: newSettings });
+    updateEnterpriseTabVisibility(newSettings.enterpriseMode);
     showToast(chrome.i18n.getMessage('toastSettingsSaved'));
   } catch (error) {
     showToast(chrome.i18n.getMessage('errorSaving'), true);
@@ -691,4 +778,156 @@ function downloadExample() {
   URL.revokeObjectURL(url);
   
   showToast(chrome.i18n.getMessage('toastExampleDownloaded') || 'Exemple téléchargé');
+}
+
+// ========================================
+// ALGORITHMES DE CONTRASTE ET COULEURS
+// ========================================
+
+// Calculer la luminance relative d'une couleur (WCAG)
+function calculateLuminance(hexColor) {
+  // Convertir hex en RGB
+  const hex = hexColor.replace('#', '');
+  const r = parseInt(hex.substring(0, 2), 16) / 255;
+  const g = parseInt(hex.substring(2, 4), 16) / 255;
+  const b = parseInt(hex.substring(4, 6), 16) / 255;
+  
+  // Appliquer la correction gamma
+  const rs = r <= 0.03928 ? r / 12.92 : Math.pow((r + 0.055) / 1.055, 2.4);
+  const gs = g <= 0.03928 ? g / 12.92 : Math.pow((g + 0.055) / 1.055, 2.4);
+  const bs = b <= 0.03928 ? b / 12.92 : Math.pow((b + 0.055) / 1.055, 2.4);
+  
+  // Calculer la luminance
+  return 0.2126 * rs + 0.7152 * gs + 0.0722 * bs;
+}
+
+// Calculer le ratio de contraste entre deux couleurs
+function calculateContrastRatio(color1, color2) {
+  const lum1 = calculateLuminance(color1);
+  const lum2 = calculateLuminance(color2);
+  
+  const lighter = Math.max(lum1, lum2);
+  const darker = Math.min(lum1, lum2);
+  
+  return (lighter + 0.05) / (darker + 0.05);
+}
+
+// S'assurer qu'une couleur de texte a un bon contraste avec le fond
+function ensureContrast(bgColor, preferredTextColor = '#FFFFFF') {
+  const ratio = calculateContrastRatio(bgColor, preferredTextColor);
+  
+  // WCAG AA requiert 4.5:1 pour le texte normal
+  if (ratio >= 4.5) {
+    return preferredTextColor;
+  }
+  
+  // Essayer blanc ou noir selon la luminance du fond
+  const bgLuminance = calculateLuminance(bgColor);
+  return bgLuminance > 0.5 ? '#000000' : '#FFFFFF';
+}
+
+// Générer une couleur aléatoire
+function generateRandomColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+// Générer un dégradé harmonieux aléatoire
+function generateRandomGradient() {
+  // Générer une couleur de base
+  const hue = Math.floor(Math.random() * 360);
+  const saturation = 60 + Math.floor(Math.random() * 30); // 60-90%
+  const lightness1 = 40 + Math.floor(Math.random() * 20); // 40-60%
+  const lightness2 = lightness1 + 10 + Math.floor(Math.random() * 15); // +10 à +25
+  
+  // Convertir HSL en HEX
+  const start = hslToHex(hue, saturation, lightness1);
+  const end = hslToHex(hue, saturation, Math.min(lightness2, 75));
+  
+  // Déterminer la couleur de texte avec bon contraste
+  const textColor = ensureContrast(start);
+  
+  return { start, end, textColor };
+}
+
+// Convertir HSL en HEX
+function hslToHex(h, s, l) {
+  l /= 100;
+  const a = s * Math.min(l, 1 - l) / 100;
+  const f = n => {
+    const k = (n + h / 30) % 12;
+    const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+    return Math.round(255 * color).toString(16).padStart(2, '0');
+  };
+  return `#${f(0)}${f(8)}${f(4)}`;
+}
+
+// Générer une couleur de texte aléatoire avec bon contraste
+function generateRandomTextColor(bgColor) {
+  return ensureContrast(bgColor, generateRandomColor());
+}
+
+// ========================================
+// GESTION DES MODES DE VALIDATION
+// ========================================
+
+// Configurer les écouteurs pour les modes de validation
+function setupValidationModeListeners() {
+  const modeRadios = document.querySelectorAll('input[name="validationMode"]');
+  modeRadios.forEach(radio => {
+    radio.addEventListener('change', handleValidationModeChange);
+  });
+  
+  // Afficher/masquer les champs selon le mode sélectionné au chargement
+  handleValidationModeChange();
+}
+
+// Gérer le changement de mode de validation
+function handleValidationModeChange() {
+  const selectedMode = document.querySelector('input[name="validationMode"]:checked')?.value || 'banner-code';
+  
+  // Afficher/masquer le champ mot-clé
+  const keywordContainer = document.getElementById('keywordInputContainer');
+  if (keywordContainer) {
+    keywordContainer.style.display = selectedMode === 'banner-keyword' ? 'block' : 'none';
+  }
+  
+  // Le code display est toujours visible pour le mode banner-code (géré par défaut dans HTML)
+  const codeContainer = document.getElementById('codeDisplayContainer');
+  if (codeContainer) {
+    codeContainer.style.display = selectedMode === 'banner-code' ? 'block' : 'none';
+  }
+}
+
+// Charger et afficher le code actuel
+async function loadCurrentCode() {
+  try {
+    const response = await chrome.runtime.sendMessage({ action: 'GET_CURRENT_CODE' });
+    const codeDisplay = document.getElementById('currentCodeDisplay');
+    if (codeDisplay && response.code) {
+      codeDisplay.textContent = response.code;
+    }
+  } catch (error) {
+    console.error('[ShieldSign] Erreur lors du chargement du code:', error);
+  }
+}
+
+// Régénérer manuellement le code
+async function regenerateCode() {
+  try {
+    const response = await chrome.runtime.sendMessage({ action: 'REGENERATE_CODE' });
+    if (response.success) {
+      const codeDisplay = document.getElementById('currentCodeDisplay');
+      if (codeDisplay) {
+        codeDisplay.textContent = response.code;
+      }
+      showToast(chrome.i18n.getMessage('toastCodeRegenerated') || 'Code régénéré avec succès');
+    }
+  } catch (error) {
+    showToast(chrome.i18n.getMessage('errorRegeneratingCode') || 'Erreur lors de la régénération du code', true);
+  }
 }
