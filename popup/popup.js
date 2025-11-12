@@ -24,12 +24,60 @@ function translatePage() {
 document.addEventListener('DOMContentLoaded', async () => {
   translatePage();
   await loadCurrentPageStatus();
+  await loadValidationCode();
   
   // Gestionnaires d'événements
   document.getElementById('approveDomainBtn').addEventListener('click', approveDomain);
   document.getElementById('openOptionsBtn').addEventListener('click', openOptions);
   document.getElementById('refreshBtn').addEventListener('click', refresh);
+  document.getElementById('popupRegenerateBtn')?.addEventListener('click', regenerateCode);
 });
+
+// Charger et afficher le code de validation
+async function loadValidationCode() {
+  try {
+    const { settings } = await chrome.storage.local.get(['settings']);
+    const validationMode = settings?.validationMode || 'banner-code';
+    
+    // Afficher la section code seulement si mode banner-code
+    const codeSection = document.getElementById('validationCodeSection');
+    if (validationMode === 'banner-code') {
+      const response = await chrome.runtime.sendMessage({ action: 'GET_CURRENT_CODE' });
+      if (response && response.code) {
+        const codeBadge = document.getElementById('popupCodeBadge');
+        if (codeBadge) {
+          codeBadge.textContent = response.code;
+        }
+      }
+      codeSection.style.display = 'block';
+    } else {
+      codeSection.style.display = 'none';
+    }
+  } catch (error) {
+    console.error('[ShieldSign] Erreur lors du chargement du code:', error);
+  }
+}
+
+// Régénérer le code de validation
+async function regenerateCode() {
+  try {
+    const response = await chrome.runtime.sendMessage({ action: 'REGENERATE_CODE' });
+    if (response && response.success) {
+      const codeBadge = document.getElementById('popupCodeBadge');
+      if (codeBadge) {
+        // Animation de changement
+        codeBadge.style.transform = 'scale(1.2)';
+        codeBadge.textContent = response.code;
+        
+        setTimeout(() => {
+          codeBadge.style.transform = 'scale(1)';
+        }, 200);
+      }
+    }
+  } catch (error) {
+    console.error('[ShieldSign] Erreur lors de la régénération du code:', error);
+  }
+}
 
 // Charger le statut de la page courante
 async function loadCurrentPageStatus() {

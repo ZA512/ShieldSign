@@ -113,6 +113,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   setupValidationModeListeners();
   document.getElementById('regenerateCodeBtn')?.addEventListener('click', regenerateCode);
   
+  // Nouveaux gestionnaires pour personnalisation des couleurs
+  setupBannerStyleListeners();
+  
   // Fermer la modal en cliquant en dehors
   window.addEventListener('click', (e) => {
     const modal = document.getElementById('learnMoreModal');
@@ -152,9 +155,11 @@ async function loadSettings() {
     document.getElementById('ttl').value = (currentSettings.ttl || DEFAULT_SETTINGS.ttl) / 3600000; // Convertir ms en heures
     document.getElementById('enterpriseMode').checked = currentSettings.enterpriseMode || false;
     document.getElementById('languageSelect').value = currentSettings.language || DEFAULT_SETTINGS.language;
-    document.getElementById('colorEnterprise').value = currentSettings.bannerColors?.enterprise || DEFAULT_SETTINGS.bannerColors.enterprise;
-    document.getElementById('colorCommunity').value = currentSettings.bannerColors?.community || DEFAULT_SETTINGS.bannerColors.community;
-    document.getElementById('colorPersonal').value = currentSettings.bannerColors?.personal || DEFAULT_SETTINGS.bannerColors.personal;
+    
+    // NE PLUS CHARGER les anciennes couleurs simples (commenté pour compatibilité)
+    // document.getElementById('colorEnterprise').value = currentSettings.bannerColors?.enterprise || DEFAULT_SETTINGS.bannerColors.enterprise;
+    // document.getElementById('colorCommunity').value = currentSettings.bannerColors?.community || DEFAULT_SETTINGS.bannerColors.community;
+    // document.getElementById('colorPersonal').value = currentSettings.bannerColors?.personal || DEFAULT_SETTINGS.bannerColors.personal;
     
     // Charger les nouveaux paramètres de validation
     const validationMode = currentSettings.validationMode || 'banner-code';
@@ -176,6 +181,9 @@ async function loadSettings() {
     
     // Mettre à jour l'affichage des champs selon le mode
     handleValidationModeChange();
+    
+    // Charger les paramètres de style des bandeaux
+    loadBannerStyleSettings(currentSettings);
     
     // Afficher/masquer l'onglet entreprise
     updateEnterpriseTabVisibility(currentSettings.enterpriseMode || false);
@@ -213,14 +221,15 @@ async function saveSettings() {
       currentCode: currentSettings.currentCode || '', // Conserver le code existant
       showUnknownPages: document.getElementById('showUnknownPages')?.checked || false,
       
-      bannerColors: {
-        enterprise: document.getElementById('colorEnterprise').value,
-        community: document.getElementById('colorCommunity').value,
-        personal: document.getElementById('colorPersonal').value
-      },
+      // Sauvegarder les nouveaux paramètres de style des bandeaux
+      bannerStyle: saveBannerStyleSettings(),
       
-      // Conserver bannerStyle si présent
-      bannerStyle: currentSettings.bannerStyle || DEFAULT_SETTINGS.bannerStyle
+      // Anciennes couleurs (conservées pour rétrocompatibilité mais non utilisées)
+      bannerColors: {
+        enterprise: '#2ECC71',
+        community: '#3498DB',
+        personal: '#9B59B6'
+      }
     };
     
     await chrome.storage.local.set({ settings: newSettings });
@@ -931,3 +940,172 @@ async function regenerateCode() {
     showToast(chrome.i18n.getMessage('errorRegeneratingCode') || 'Erreur lors de la régénération du code', true);
   }
 }
+
+/* ========================================
+   GESTION DE L'INTERFACE DE PERSONNALISATION DES COULEURS
+   ======================================== */
+
+// Configuration des listeners pour les 3 types de bandeaux
+function setupBannerStyleListeners() {
+  const types = ['enterprise', 'community', 'personal'];
+  
+  types.forEach(type => {
+    // Radio buttons pour le mode (solid/gradient/random)
+    const radios = document.querySelectorAll(`input[name="${type}Mode"]`);
+    radios.forEach(radio => {
+      radio.addEventListener('change', () => handleBannerModeChange(type, radio.value));
+    });
+    
+    // Color pickers
+    const solidColor = document.getElementById(`${type}SolidColor`);
+    const gradientStart = document.getElementById(`${type}GradientStart`);
+    const gradientEnd = document.getElementById(`${type}GradientEnd`);
+    const textColor = document.getElementById(`${type}TextColor`);
+    
+    if (solidColor) solidColor.addEventListener('input', () => updateBannerPreview(type));
+    if (gradientStart) gradientStart.addEventListener('input', () => updateBannerPreview(type));
+    if (gradientEnd) gradientEnd.addEventListener('input', () => updateBannerPreview(type));
+    if (textColor) textColor.addEventListener('input', () => updateBannerPreview(type));
+    
+    // Font select
+    const fontSelect = document.getElementById(`${type}FontFamily`);
+    if (fontSelect) fontSelect.addEventListener('change', () => updateBannerPreview(type));
+  });
+}
+
+// Gérer le changement de mode (solid/gradient/random)
+function handleBannerModeChange(type, mode) {
+  const container = document.getElementById(`${type}ColorInputs`);
+  if (!container) return;
+  
+  const solidInputs = container.querySelectorAll('.solid-mode');
+  const gradientInputs = container.querySelectorAll('.gradient-mode');
+  const randomNote = container.querySelector('.random-mode-note');
+  
+  // Cacher tous les éléments
+  solidInputs.forEach(el => el.style.display = 'none');
+  gradientInputs.forEach(el => el.style.display = 'none');
+  if (randomNote) randomNote.style.display = 'none';
+  
+  // Afficher les éléments appropriés
+  switch (mode) {
+    case 'solid':
+      solidInputs.forEach(el => el.style.display = 'flex');
+      break;
+    case 'gradient':
+      gradientInputs.forEach(el => el.style.display = 'flex');
+      break;
+    case 'random':
+      if (randomNote) randomNote.style.display = 'block';
+      break;
+  }
+  
+  updateBannerPreview(type);
+}
+
+// Mettre à jour l'aperçu du bandeau en temps réel
+function updateBannerPreview(type) {
+  const preview = document.getElementById(`${type}Preview`);
+  if (!preview) return;
+  
+  // Animation de mise à jour
+  preview.classList.add('updating');
+  
+  setTimeout(() => {
+    const mode = document.querySelector(`input[name="${type}Mode"]:checked`)?.value || 'solid';
+    const textColor = document.getElementById(`${type}TextColor`)?.value || '#FFFFFF';
+    const fontFamily = document.getElementById(`${type}FontFamily`)?.value || 'Arial, sans-serif';
+    
+    let background;
+    
+    switch (mode) {
+      case 'solid':
+        const solidColor = document.getElementById(`${type}SolidColor`)?.value || '#2ECC71';
+        background = solidColor;
+        break;
+      
+      case 'gradient':
+        const gradientStart = document.getElementById(`${type}GradientStart`)?.value || '#27AE60';
+        const gradientEnd = document.getElementById(`${type}GradientEnd`)?.value || '#2ECC71';
+        background = `linear-gradient(135deg, ${gradientStart}, ${gradientEnd})`;
+        break;
+      
+      case 'random':
+        // Générer un exemple aléatoire pour l'aperçu
+        const randomGradient = generateRandomGradient();
+        background = randomGradient;
+        break;
+    }
+    
+    preview.style.background = background;
+    preview.style.color = textColor;
+    preview.style.fontFamily = fontFamily;
+    
+    preview.classList.remove('updating');
+  }, 150);
+}
+
+// Charger les paramètres de style dans l'interface
+function loadBannerStyleSettings(settings) {
+  const types = ['enterprise', 'community', 'personal'];
+  
+  types.forEach(type => {
+    const style = settings.bannerStyle?.[type];
+    if (!style) return;
+    
+    // Charger le mode (solid/gradient/random)
+    const modeRadio = document.querySelector(`input[name="${type}Mode"][value="${style.mode}"]`);
+    if (modeRadio) {
+      modeRadio.checked = true;
+      handleBannerModeChange(type, style.mode);
+    }
+    
+    // Charger les couleurs
+    const solidColorInput = document.getElementById(`${type}SolidColor`);
+    const gradientStartInput = document.getElementById(`${type}GradientStart`);
+    const gradientEndInput = document.getElementById(`${type}GradientEnd`);
+    const textColorInput = document.getElementById(`${type}TextColor`);
+    
+    if (solidColorInput && style.solidColor) solidColorInput.value = style.solidColor;
+    if (gradientStartInput && style.gradientStart) gradientStartInput.value = style.gradientStart;
+    if (gradientEndInput && style.gradientEnd) gradientEndInput.value = style.gradientEnd;
+    if (textColorInput && style.textColor) textColorInput.value = style.textColor;
+    
+    // Charger la police
+    const fontSelect = document.getElementById(`${type}FontFamily`);
+    if (fontSelect && style.fontFamily) {
+      fontSelect.value = style.fontFamily;
+    }
+    
+    // Mettre à jour l'aperçu
+    updateBannerPreview(type);
+  });
+}
+
+// Sauvegarder les paramètres de style
+function saveBannerStyleSettings() {
+  const types = ['enterprise', 'community', 'personal'];
+  const bannerStyle = {};
+  
+  types.forEach(type => {
+    const mode = document.querySelector(`input[name="${type}Mode"]:checked`)?.value || 'solid';
+    const solidColor = document.getElementById(`${type}SolidColor`)?.value || '#2ECC71';
+    const gradientStart = document.getElementById(`${type}GradientStart`)?.value || '#27AE60';
+    const gradientEnd = document.getElementById(`${type}GradientEnd`)?.value || '#2ECC71';
+    const textColor = document.getElementById(`${type}TextColor`)?.value || '#FFFFFF';
+    const fontFamily = document.getElementById(`${type}FontFamily`)?.value || 'Arial, sans-serif';
+    
+    bannerStyle[type] = {
+      mode,
+      solidColor,
+      gradientStart,
+      gradientEnd,
+      textColor,
+      fontFamily,
+      useRandom: mode === 'random'
+    };
+  });
+  
+  return bannerStyle;
+}
+

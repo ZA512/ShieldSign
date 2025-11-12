@@ -234,3 +234,75 @@ footer {
 footer .btn {
   flex: 1;
 }
+
+/* Section code de validation */
+.validation-code-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  text-align: center;
+}
+
+.code-header {
+  margin-bottom: 12px;
+}
+
+.code-label {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  display: block;
+}
+
+.code-display {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 16px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.code-badge {
+  font-family: 'Courier New', monospace;
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 8px;
+  color: #667eea;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.btn-regenerate {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-regenerate:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+.btn-regenerate:active {
+  transform: translateY(0);
+}
+
+.code-info {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 12px;
+  line-height: 1.4;
+}
+

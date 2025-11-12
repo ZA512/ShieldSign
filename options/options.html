@@ -266,27 +266,220 @@
         </section>
         
         <section class="section">
-          <h2 data-i18n="bannerColorsTitle">Couleurs des bandeaux</h2>
+          <h2 data-i18n="bannerStyleTitle">Style du bandeau</h2>
+          <p class="section-description" data-i18n="bannerStyleDescription">Personnalisez l'apparence de chaque type de bandeau (Entreprise, Communautaire, Personnel).</p>
           
-          <div class="color-setting">
-            <label class="color-label">
-              <span data-i18n="colorEnterprise">Liste entreprise</span>
-              <input type="color" id="colorEnterprise" value="#2ECC71" class="color-input">
-            </label>
+          <!-- Style bandeau Entreprise -->
+          <div class="banner-style-container">
+            <h3 class="banner-type-title">
+              <i class="fas fa-building"></i> <span data-i18n="bannerTypeEnterprise">Entreprise</span>
+            </h3>
+            
+            <div class="banner-style-controls">
+              <div class="form-group">
+                <label data-i18n="bannerStyleModeLabel">Mode de couleur :</label>
+                <div class="radio-group">
+                  <label class="radio-inline">
+                    <input type="radio" name="enterpriseMode" value="solid" checked>
+                    <span data-i18n="bannerStyleModeSolid">Couleur unie</span>
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="enterpriseMode" value="gradient">
+                    <span data-i18n="bannerStyleModeGradient">Dégradé</span>
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="enterpriseMode" value="random">
+                    <span data-i18n="bannerStyleModeRandom">Aléatoire</span>
+                  </label>
+                </div>
+              </div>
+              
+              <div class="color-inputs-container" id="enterpriseColorInputs">
+                <div class="color-input-group solid-mode">
+                  <label data-i18n="bannerStyleSolidColorLabel">Couleur unie :</label>
+                  <input type="color" id="enterpriseSolidColor" value="#2ECC71" class="color-picker">
+                </div>
+                
+                <div class="color-input-group gradient-mode" style="display: none;">
+                  <label data-i18n="bannerStyleGradientStartLabel">Début du dégradé :</label>
+                  <input type="color" id="enterpriseGradientStart" value="#27AE60" class="color-picker">
+                </div>
+                
+                <div class="color-input-group gradient-mode" style="display: none;">
+                  <label data-i18n="bannerStyleGradientEndLabel">Fin du dégradé :</label>
+                  <input type="color" id="enterpriseGradientEnd" value="#2ECC71" class="color-picker">
+                </div>
+                
+                <div class="random-mode-note" style="display: none;">
+                  <p data-i18n="bannerStyleRandomNote">ℹ️ En mode aléatoire, une nouvelle couleur/dégradé est généré à chaque affichage du bandeau.</p>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label data-i18n="bannerStyleTextColorLabel">Couleur du texte :</label>
+                <input type="color" id="enterpriseTextColor" value="#FFFFFF" class="color-picker">
+              </div>
+              
+              <div class="form-group">
+                <label data-i18n="bannerStyleFontFamilyLabel">Police :</label>
+                <select id="enterpriseFontFamily" class="font-select">
+                  <option value="Arial, sans-serif" data-i18n="bannerStyleFontArial">Arial</option>
+                  <option value="Verdana, sans-serif" data-i18n="bannerStyleFontVerdana">Verdana</option>
+                  <option value="Georgia, serif" data-i18n="bannerStyleFontGeorgia">Georgia</option>
+                  <option value="'Courier New', monospace" data-i18n="bannerStyleFontCourier">Courier New</option>
+                  <option value="'Times New Roman', serif" data-i18n="bannerStyleFontTimes">Times New Roman</option>
+                </select>
+              </div>
+              
+              <div class="banner-preview-container">
+                <label data-i18n="bannerStylePreviewLabel">Aperçu :</label>
+                <div class="banner-preview" id="enterprisePreview">
+                  <span>🔒 Ce site est validé - Liste Entreprise</span>
+                </div>
+              </div>
+            </div>
           </div>
           
-          <div class="color-setting">
-            <label class="color-label">
-              <span data-i18n="colorCommunity">Liste communautaire</span>
-              <input type="color" id="colorCommunity" value="#3498DB" class="color-input">
-            </label>
+          <!-- Style bandeau Communautaire -->
+          <div class="banner-style-container">
+            <h3 class="banner-type-title">
+              <i class="fas fa-users"></i> <span data-i18n="bannerTypeCommunity">Communautaire</span>
+            </h3>
+            
+            <div class="banner-style-controls">
+              <div class="form-group">
+                <label data-i18n="bannerStyleModeLabel">Mode de couleur :</label>
+                <div class="radio-group">
+                  <label class="radio-inline">
+                    <input type="radio" name="communityMode" value="solid" checked>
+                    <span data-i18n="bannerStyleModeSolid">Couleur unie</span>
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="communityMode" value="gradient">
+                    <span data-i18n="bannerStyleModeGradient">Dégradé</span>
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="communityMode" value="random">
+                    <span data-i18n="bannerStyleModeRandom">Aléatoire</span>
+                  </label>
+                </div>
+              </div>
+              
+              <div class="color-inputs-container" id="communityColorInputs">
+                <div class="color-input-group solid-mode">
+                  <label data-i18n="bannerStyleSolidColorLabel">Couleur unie :</label>
+                  <input type="color" id="communitySolidColor" value="#3498DB" class="color-picker">
+                </div>
+                
+                <div class="color-input-group gradient-mode" style="display: none;">
+                  <label data-i18n="bannerStyleGradientStartLabel">Début du dégradé :</label>
+                  <input type="color" id="communityGradientStart" value="#2980B9" class="color-picker">
+                </div>
+                
+                <div class="color-input-group gradient-mode" style="display: none;">
+                  <label data-i18n="bannerStyleGradientEndLabel">Fin du dégradé :</label>
+                  <input type="color" id="communityGradientEnd" value="#3498DB" class="color-picker">
+                </div>
+                
+                <div class="random-mode-note" style="display: none;">
+                  <p data-i18n="bannerStyleRandomNote">ℹ️ En mode aléatoire, une nouvelle couleur/dégradé est généré à chaque affichage du bandeau.</p>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label data-i18n="bannerStyleTextColorLabel">Couleur du texte :</label>
+                <input type="color" id="communityTextColor" value="#FFFFFF" class="color-picker">
+              </div>
+              
+              <div class="form-group">
+                <label data-i18n="bannerStyleFontFamilyLabel">Police :</label>
+                <select id="communityFontFamily" class="font-select">
+                  <option value="Arial, sans-serif" data-i18n="bannerStyleFontArial">Arial</option>
+                  <option value="Verdana, sans-serif" data-i18n="bannerStyleFontVerdana">Verdana</option>
+                  <option value="Georgia, serif" data-i18n="bannerStyleFontGeorgia">Georgia</option>
+                  <option value="'Courier New', monospace" data-i18n="bannerStyleFontCourier">Courier New</option>
+                  <option value="'Times New Roman', serif" data-i18n="bannerStyleFontTimes">Times New Roman</option>
+                </select>
+              </div>
+              
+              <div class="banner-preview-container">
+                <label data-i18n="bannerStylePreviewLabel">Aperçu :</label>
+                <div class="banner-preview" id="communityPreview">
+                  <span>🔒 Ce site est validé - Liste Communautaire</span>
+                </div>
+              </div>
+            </div>
           </div>
           
-          <div class="color-setting">
-            <label class="color-label">
-              <span data-i18n="colorPersonal">Liste personnelle</span>
-              <input type="color" id="colorPersonal" value="#9B59B6" class="color-input">
-            </label>
+          <!-- Style bandeau Personnel -->
+          <div class="banner-style-container">
+            <h3 class="banner-type-title">
+              <i class="fas fa-user"></i> <span data-i18n="bannerTypePersonal">Personnel</span>
+            </h3>
+            
+            <div class="banner-style-controls">
+              <div class="form-group">
+                <label data-i18n="bannerStyleModeLabel">Mode de couleur :</label>
+                <div class="radio-group">
+                  <label class="radio-inline">
+                    <input type="radio" name="personalMode" value="solid" checked>
+                    <span data-i18n="bannerStyleModeSolid">Couleur unie</span>
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="personalMode" value="gradient">
+                    <span data-i18n="bannerStyleModeGradient">Dégradé</span>
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="personalMode" value="random">
+                    <span data-i18n="bannerStyleModeRandom">Aléatoire</span>
+                  </label>
+                </div>
+              </div>
+              
+              <div class="color-inputs-container" id="personalColorInputs">
+                <div class="color-input-group solid-mode">
+                  <label data-i18n="bannerStyleSolidColorLabel">Couleur unie :</label>
+                  <input type="color" id="personalSolidColor" value="#9B59B6" class="color-picker">
+                </div>
+                
+                <div class="color-input-group gradient-mode" style="display: none;">
+                  <label data-i18n="bannerStyleGradientStartLabel">Début du dégradé :</label>
+                  <input type="color" id="personalGradientStart" value="#8E44AD" class="color-picker">
+                </div>
+                
+                <div class="color-input-group gradient-mode" style="display: none;">
+                  <label data-i18n="bannerStyleGradientEndLabel">Fin du dégradé :</label>
+                  <input type="color" id="personalGradientEnd" value="#9B59B6" class="color-picker">
+                </div>
+                
+                <div class="random-mode-note" style="display: none;">
+                  <p data-i18n="bannerStyleRandomNote">ℹ️ En mode aléatoire, une nouvelle couleur/dégradé est généré à chaque affichage du bandeau.</p>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label data-i18n="bannerStyleTextColorLabel">Couleur du texte :</label>
+                <input type="color" id="personalTextColor" value="#FFFFFF" class="color-picker">
+              </div>
+              
+              <div class="form-group">
+                <label data-i18n="bannerStyleFontFamilyLabel">Police :</label>
+                <select id="personalFontFamily" class="font-select">
+                  <option value="Arial, sans-serif" data-i18n="bannerStyleFontArial">Arial</option>
+                  <option value="Verdana, sans-serif" data-i18n="bannerStyleFontVerdana">Verdana</option>
+                  <option value="Georgia, serif" data-i18n="bannerStyleFontGeorgia">Georgia</option>
+                  <option value="'Courier New', monospace" data-i18n="bannerStyleFontCourier">Courier New</option>
+                  <option value="'Times New Roman', serif" data-i18n="bannerStyleFontTimes">Times New Roman</option>
+                </select>
+              </div>
+              
+              <div class="banner-preview-container">
+                <label data-i18n="bannerStylePreviewLabel">Aperçu :</label>
+                <div class="banner-preview" id="personalPreview">
+                  <span>🔒 Ce site est validé - Liste Personnelle</span>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         

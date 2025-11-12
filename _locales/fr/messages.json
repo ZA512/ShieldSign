@@ -616,10 +616,10 @@
     "message": "Liste entreprise"
   },
   "validationSecurityTitle": {
-    "message": "🛡️ Validation de sécurité anti-phishing"
+    "message": "🛡️ Validation anti-phishing"
   },
   "validationSecurityDescription": {
-    "message": "Choisissez comment vérifier l'authenticité de la validation. Ces options rendent impossible l'imitation du bandeau par un attaquant."
+    "message": "ShieldSign affiche un bandeau sur les pages de connexion pour les rendre visibles. Attention : un site de phishing peut également afficher un faux bandeau. Pour vous permettre de vérifier en 1 seconde que le bandeau est bien authentique, choisissez ci-dessous une méthode de vérification."
   },
   "whyTheseOptions": {
     "message": "💡 Pourquoi ces options ?"
@@ -707,5 +707,74 @@
   },
   "showUnknownPagesDescription": {
     "message": "Activez pour voir un badge même sur les pages non listées : 🔴 (page suspecte avec mot de passe) ou ⚪ (page sans mot de passe)."
+  },
+  "bannerStyleTitle": {
+    "message": "Style du bandeau"
+  },
+  "bannerStyleDescription": {
+    "message": "Personnalisez l'apparence de chaque type de bandeau (Entreprise, Communautaire, Personnel)."
+  },
+  "bannerStyleModeLabel": {
+    "message": "Mode de couleur :"
+  },
+  "bannerStyleModeSolid": {
+    "message": "Couleur unie"
+  },
+  "bannerStyleModeGradient": {
+    "message": "Dégradé"
+  },
+  "bannerStyleModeRandom": {
+    "message": "Aléatoire"
+  },
+  "bannerStyleSolidColorLabel": {
+    "message": "Couleur unie :"
+  },
+  "bannerStyleGradientStartLabel": {
+    "message": "Début du dégradé :"
+  },
+  "bannerStyleGradientEndLabel": {
+    "message": "Fin du dégradé :"
+  },
+  "bannerStyleTextColorLabel": {
+    "message": "Couleur du texte :"
+  },
+  "bannerStyleFontFamilyLabel": {
+    "message": "Police :"
+  },
+  "bannerStyleFontArial": {
+    "message": "Arial"
+  },
+  "bannerStyleFontVerdana": {
+    "message": "Verdana"
+  },
+  "bannerStyleFontGeorgia": {
+    "message": "Georgia"
+  },
+  "bannerStyleFontCourier": {
+    "message": "Courier New"
+  },
+  "bannerStyleFontTimes": {
+    "message": "Times New Roman"
+  },
+  "bannerStylePreviewLabel": {
+    "message": "Aperçu :"
+  },
+  "bannerStyleRandomNote": {
+    "message": "ℹ️ En mode aléatoire, une nouvelle couleur/dégradé est généré à chaque affichage du bandeau."
+  },
+  "bannerTypeEnterprise": {
+    "message": "Entreprise"
+  },
+  "bannerTypeCommunity": {
+    "message": "Communautaire"
+  },
+  "bannerTypePersonal": {
+    "message": "Personnel"
+  },
+  "popupValidationCodeLabel": {
+    "message": "🔐 Code de validation du jour :"
+  },
+  "popupCodeInfo": {
+    "message": "Ce code s'affiche dans le badge et le bandeau pour confirmer l'authenticité."
   }
 }

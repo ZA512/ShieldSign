@@ -28,8 +28,13 @@ async function checkPageSecurity() {
       hostname: hostname
     });
     
-    if (response.status === 'VALIDATED') {
-      injectBanner(response.listName, response.type);
+    if (response.status === 'VALIDATED' && response.settings) {
+      const validationMode = response.settings.validationMode || 'banner-code';
+      
+      // N'injecter le bandeau que si le mode n'est pas badge-only
+      if (validationMode !== 'badge-only') {
+        injectBanner(response.listName, response.type, response.settings);
+      }
     }
   } catch (error) {
     console.error('[ShieldSign] Erreur lors de la vérification:', error);
@@ -37,18 +42,37 @@ async function checkPageSecurity() {
 }
 
 // Injection du bandeau de validation
-async function injectBanner(listName, type) {
+async function injectBanner(listName, type, settings) {
   if (bannerInjected) return;
   
-  // Récupérer les couleurs configurées
-  const settings = await chrome.runtime.sendMessage({ action: 'GET_SETTINGS' });
-  const colors = settings?.bannerColors || {
-    enterprise: '#2ECC71',
-    community: '#3498DB',
-    personal: '#9B59B6'
+  const validationMode = settings?.validationMode || 'banner-code';
+  const customKeyword = settings?.customKeyword || '';
+  const currentCode = settings?.currentCode || '';
+  
+  // Récupérer les paramètres de style configurés
+  const bannerStyle = settings?.bannerStyle || {
+    enterprise: { mode: 'solid', solidColor: '#2ECC71', textColor: '#FFFFFF', fontFamily: 'Arial, sans-serif' },
+    community: { mode: 'solid', solidColor: '#3498DB', textColor: '#FFFFFF', fontFamily: 'Arial, sans-serif' },
+    personal: { mode: 'solid', solidColor: '#9B59B6', textColor: '#FFFFFF', fontFamily: 'Arial, sans-serif' }
   };
   
-  const color = colors[type] || colors.community;
+  const style = bannerStyle[type] || bannerStyle.community;
+  
+  // Générer le background selon le mode
+  let background;
+  if (style.mode === 'solid') {
+    background = style.solidColor;
+  } else if (style.mode === 'gradient') {
+    background = `linear-gradient(135deg, ${style.gradientStart}, ${style.gradientEnd})`;
+  } else if (style.mode === 'random' || style.useRandom) {
+    // En mode aléatoire, générer une couleur/dégradé aléatoire
+    background = generateRandomBannerBackground();
+  } else {
+    background = style.solidColor; // Fallback
+  }
+  
+  const textColor = style.textColor || '#FFFFFF';
+  const fontFamily = style.fontFamily || 'Arial, sans-serif';
   
   // Créer le bandeau
   const banner = document.createElement('div');
@@ -59,10 +83,10 @@ async function injectBanner(listName, type) {
     left: 0;
     right: 0;
     width: 100%;
-    background: linear-gradient(135deg, #1a2a6c 0%, #159957 100%);
-    color: white;
+    background: ${background};
+    color: ${textColor};
     padding: 12px 20px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: ${fontFamily};
     font-size: 14px;
     font-weight: 500;
     text-align: center;
@@ -87,6 +111,36 @@ async function injectBanner(listName, type) {
   
   banner.appendChild(icon);
   banner.appendChild(text);
+  
+  // Ajouter le code ou le mot-clé selon le mode
+  if (validationMode === 'banner-code' && currentCode) {
+    const codeBadge = document.createElement('span');
+    codeBadge.textContent = currentCode;
+    codeBadge.style.cssText = `
+      background: rgba(255, 255, 255, 0.3);
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      font-weight: bold;
+      font-size: 16px;
+      letter-spacing: 2px;
+      margin-left: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    `;
+    banner.appendChild(codeBadge);
+  } else if (validationMode === 'banner-keyword' && customKeyword) {
+    const keywordBadge = document.createElement('span');
+    keywordBadge.textContent = `🔑 ${customKeyword}`;
+    keywordBadge.style.cssText = `
+      background: rgba(255, 255, 255, 0.3);
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-weight: bold;
+      margin-left: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    `;
+    banner.appendChild(keywordBadge);
+  }
   
   // Injecter dans la page
   document.body.insertBefore(banner, document.body.firstChild);
@@ -140,6 +194,31 @@ function startObserving() {
       console.log('[ShieldSign] Observer déconnecté après injection du bandeau');
     }
   }, 30000);
+}
+
+// Fonction pour générer un background aléatoire (couleur ou dégradé)
+function generateRandomBannerBackground() {
+  const useGradient = Math.random() > 0.5;
+  
+  if (useGradient) {
+    // Générer un dégradé aléatoire harmonieux
+    const hue1 = Math.floor(Math.random() * 360);
+    const hue2 = (hue1 + 30 + Math.random() * 60) % 360; // Hue décalé de 30-90°
+    const saturation = 60 + Math.random() * 30; // 60-90%
+    const lightness = 40 + Math.random() * 20; // 40-60%
+    
+    const color1 = `hsl(${hue1}, ${saturation}%, ${lightness}%)`;
+    const color2 = `hsl(${hue2}, ${saturation}%, ${lightness}%)`;
+    
+    return `linear-gradient(135deg, ${color1}, ${color2})`;
+  } else {
+    // Générer une couleur unie aléatoire
+    const hue = Math.floor(Math.random() * 360);
+    const saturation = 60 + Math.random() * 30;
+    const lightness = 45 + Math.random() * 15;
+    
+    return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+  }
 }
 
 // Initialisation après chargement du DOM

@@ -231,6 +231,135 @@ async function checkDomain(hostname) {
   return { status: 'UNKNOWN' };
 }
 
+// ========================================
+// SYSTÈME DE BADGE DYNAMIQUE
+// ========================================
+
+// Mettre à jour le badge de l'extension
+async function updateBadge(tabId, status, listType = null) {
+  const { settings } = await chrome.storage.local.get(['settings']);
+  const currentSettings = settings || DEFAULT_SETTINGS;
+  const validationMode = currentSettings.validationMode || 'banner-code';
+  const showUnknownPages = currentSettings.showUnknownPages || false;
+  
+  try {
+    if (status === 'VALIDATED') {
+      // Page validée
+      if (validationMode === 'badge-only') {
+        // Mode badge uniquement : afficher un point de couleur
+        const color = getBadgeColorForType(listType, currentSettings);
+        await chrome.action.setBadgeBackgroundColor({ color: color, tabId: tabId });
+        await chrome.action.setBadgeText({ text: '●', tabId: tabId });
+      } else if (validationMode === 'banner-code') {
+        // Mode code : afficher le code sur fond coloré
+        const color = getBadgeColorForType(listType, currentSettings);
+        await chrome.action.setBadgeBackgroundColor({ color: color, tabId: tabId });
+        await chrome.action.setBadgeText({ text: currentSettings.currentCode || '--', tabId: tabId });
+      } else {
+        // Mode keyword ou autre : afficher un point de couleur
+        const color = getBadgeColorForType(listType, currentSettings);
+        await chrome.action.setBadgeBackgroundColor({ color: color, tabId: tabId });
+        await chrome.action.setBadgeText({ text: '●', tabId: tabId });
+      }
+    } else if (status === 'UNKNOWN' && showUnknownPages) {
+      // Page non listée avec option activée
+      await chrome.action.setBadgeBackgroundColor({ color: '#DC3545', tabId: tabId }); // Rouge
+      await chrome.action.setBadgeText({ text: '?', tabId: tabId });
+    } else if (status === 'NO_PASSWORD' && showUnknownPages) {
+      // Page sans password avec option activée
+      await chrome.action.setBadgeBackgroundColor({ color: '#6C757D', tabId: tabId }); // Gris
+      await chrome.action.setBadgeText({ text: '○', tabId: tabId });
+    } else {
+      // Pas de badge
+      await chrome.action.setBadgeText({ text: '', tabId: tabId });
+    }
+  } catch (error) {
+    console.error('[ShieldSign] Erreur lors de la mise à jour du badge:', error);
+  }
+}
+
+// Obtenir la couleur du badge selon le type de liste
+function getBadgeColorForType(listType, settings) {
+  const colors = settings.bannerColors || DEFAULT_SETTINGS.bannerColors;
+  
+  switch (listType) {
+    case 'enterprise':
+      return colors.enterprise || '#2ECC71';
+    case 'personal':
+      return colors.personal || '#9B59B6';
+    case 'community':
+    default:
+      return colors.community || '#3498DB';
+  }
+}
+
+// Écouter les changements d'onglets pour mettre à jour le badge
+chrome.tabs.onActivated.addListener(async (activeInfo) => {
+  try {
+    const tab = await chrome.tabs.get(activeInfo.tabId);
+    if (tab.url) {
+      await updateBadgeForTab(tab);
+    }
+  } catch (error) {
+    console.error('[ShieldSign] Erreur lors de la mise à jour du badge:', error);
+  }
+});
+
+// Écouter les mises à jour d'URL dans les onglets
+chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
+  if (changeInfo.status === 'complete' && tab.url) {
+    await updateBadgeForTab(tab);
+  }
+});
+
+// Mettre à jour le badge pour un onglet spécifique
+async function updateBadgeForTab(tab) {
+  try {
+    const url = new URL(tab.url);
+    const hostname = url.hostname;
+    
+    // Vérifier si la page a un champ password
+    const hasPassword = await checkForPasswordField(tab.id);
+    
+    if (!hasPassword) {
+      await updateBadge(tab.id, 'NO_PASSWORD');
+      return;
+    }
+    
+    // Vérifier le domaine
+    const result = await checkDomain(hostname);
+    
+    if (result.status === 'VALIDATED') {
+      await updateBadge(tab.id, 'VALIDATED', result.type);
+    } else {
+      await updateBadge(tab.id, 'UNKNOWN');
+    }
+  } catch (error) {
+    // URL invalide ou autre erreur, pas de badge
+    await updateBadge(tab.id, 'NO_PASSWORD');
+  }
+}
+
+// Vérifier si un onglet a un champ password
+async function checkForPasswordField(tabId) {
+  try {
+    const results = await chrome.scripting.executeScript({
+      target: { tabId: tabId },
+      func: () => {
+        return !!document.querySelector('input[type="password"]');
+      }
+    });
+    
+    return results && results[0] && results[0].result;
+  } catch (error) {
+    return false;
+  }
+}
+
+// ========================================
+// FIN SYSTÈME DE BADGE
+// ========================================
+
 // Mise à jour des listes distantes
 async function updateLists() {
   const { lists, settings } = await chrome.storage.local.get(['lists', 'settings']);
@@ -340,7 +469,10 @@ function validateListSchema(data) {
 // Écoute des messages depuis content.js et popup.js
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === 'CHECK_PAGE') {
-    checkDomain(message.hostname).then(result => {
+    checkDomain(message.hostname).then(async (result) => {
+      // Ajouter les informations de settings pour le content script
+      const { settings } = await chrome.storage.local.get(['settings']);
+      result.settings = settings || DEFAULT_SETTINGS;
       sendResponse(result);
     });
     return true; // Permet la réponse asynchrone

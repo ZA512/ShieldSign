@@ -616,10 +616,10 @@
     "message": "Enterprise list"
   },
   "validationSecurityTitle": {
-    "message": "🛡️ Anti-Phishing Security Validation"
+    "message": "🛡️ Anti-Phishing Validation"
   },
   "validationSecurityDescription": {
-    "message": "Choose how to verify the authenticity of the validation. These options make it impossible for an attacker to imitate the banner."
+    "message": "ShieldSign displays a banner on login pages to make them visible. Warning: a phishing site can also display a fake banner. To allow you to verify in 1 second that the banner is authentic, choose a verification method below."
   },
   "whyTheseOptions": {
     "message": "💡 Why these options?"
@@ -700,12 +700,81 @@
     "message": "Code regenerated successfully"
   },
   "errorRegeneratingCode": {
-    "message": "Error regenerating code"
+    "message": "⚠️ Error regenerating code."
   },
   "showUnknownPages": {
-    "message": "Display status for all pages"
+    "message": "Show status for all pages"
   },
   "showUnknownPagesDescription": {
     "message": "Enable to see a badge even on unlisted pages: 🔴 (suspicious page with password) or ⚪ (page without password)."
+  },
+  "bannerStyleTitle": {
+    "message": "Banner Style"
+  },
+  "bannerStyleDescription": {
+    "message": "Customize the appearance of each banner type (Enterprise, Community, Personal)."
+  },
+  "bannerStyleModeLabel": {
+    "message": "Color mode:"
+  },
+  "bannerStyleModeSolid": {
+    "message": "Solid color"
+  },
+  "bannerStyleModeGradient": {
+    "message": "Gradient"
+  },
+  "bannerStyleModeRandom": {
+    "message": "Random"
+  },
+  "bannerStyleSolidColorLabel": {
+    "message": "Solid color:"
+  },
+  "bannerStyleGradientStartLabel": {
+    "message": "Gradient start:"
+  },
+  "bannerStyleGradientEndLabel": {
+    "message": "Gradient end:"
+  },
+  "bannerStyleTextColorLabel": {
+    "message": "Text color:"
+  },
+  "bannerStyleFontFamilyLabel": {
+    "message": "Font:"
+  },
+  "bannerStyleFontArial": {
+    "message": "Arial"
+  },
+  "bannerStyleFontVerdana": {
+    "message": "Verdana"
+  },
+  "bannerStyleFontGeorgia": {
+    "message": "Georgia"
+  },
+  "bannerStyleFontCourier": {
+    "message": "Courier New"
+  },
+  "bannerStyleFontTimes": {
+    "message": "Times New Roman"
+  },
+  "bannerStylePreviewLabel": {
+    "message": "Preview:"
+  },
+  "bannerStyleRandomNote": {
+    "message": "ℹ️ In random mode, a new color/gradient is generated each time the banner is displayed."
+  },
+  "bannerTypeEnterprise": {
+    "message": "Enterprise"
+  },
+  "bannerTypeCommunity": {
+    "message": "Community"
+  },
+  "bannerTypePersonal": {
+    "message": "Personal"
+  },
+  "popupValidationCodeLabel": {
+    "message": "🔐 Validation code of the day:"
+  },
+  "popupCodeInfo": {
+    "message": "This code appears in the badge and banner to confirm authenticity."
   }
 }
