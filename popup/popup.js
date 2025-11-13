@@ -24,58 +24,24 @@ function translatePage() {
 document.addEventListener('DOMContentLoaded', async () => {
   translatePage();
   await loadCurrentPageStatus();
-  await loadValidationCode();
+  await loadValidationInfo();
   
   // Gestionnaires d'événements
   document.getElementById('approveDomainBtn').addEventListener('click', approveDomain);
   document.getElementById('openOptionsBtn').addEventListener('click', openOptions);
   document.getElementById('refreshBtn').addEventListener('click', refresh);
-  document.getElementById('popupRegenerateBtn')?.addEventListener('click', regenerateCode);
 });
 
-// Charger et afficher le code de validation
-async function loadValidationCode() {
+// Afficher les informations de validation
+async function loadValidationInfo() {
   try {
-    const { settings } = await chrome.storage.local.get(['settings']);
-    const validationMode = settings?.validationMode || 'banner-code';
-    
-    // Afficher la section code seulement si mode banner-code
+    // Ne plus afficher le pavé de validation code
     const codeSection = document.getElementById('validationCodeSection');
-    if (validationMode === 'banner-code') {
-      const response = await chrome.runtime.sendMessage({ action: 'GET_CURRENT_CODE' });
-      if (response && response.code) {
-        const codeBadge = document.getElementById('popupCodeBadge');
-        if (codeBadge) {
-          codeBadge.textContent = response.code;
-        }
-      }
-      codeSection.style.display = 'block';
-    } else {
+    if (codeSection) {
       codeSection.style.display = 'none';
     }
   } catch (error) {
-    console.error('[ShieldSign] Erreur lors du chargement du code:', error);
-  }
-}
-
-// Régénérer le code de validation
-async function regenerateCode() {
-  try {
-    const response = await chrome.runtime.sendMessage({ action: 'REGENERATE_CODE' });
-    if (response && response.success) {
-      const codeBadge = document.getElementById('popupCodeBadge');
-      if (codeBadge) {
-        // Animation de changement
-        codeBadge.style.transform = 'scale(1.2)';
-        codeBadge.textContent = response.code;
-        
-        setTimeout(() => {
-          codeBadge.style.transform = 'scale(1)';
-        }, 200);
-      }
-    }
-  } catch (error) {
-    console.error('[ShieldSign] Erreur lors de la régénération du code:', error);
+    console.error('[ShieldSign] Erreur lors du chargement des infos:', error);
   }
 }
 
@@ -196,6 +162,9 @@ function updateStatus(type, text, validatingLists = null, hasPassword = false) {
       statusIcon.textContent = '✅';
       statusIndicator.classList.add('status-validated');
       statusDetails.style.display = 'block';
+      // Masquer la section code si page validée
+      const codeSection = document.getElementById('validationCodeSection');
+      if (codeSection) codeSection.style.display = 'none';
       
       if (validatingLists && validatingLists.length > 0) {
         // Grouper par type pour l'affichage
@@ -209,7 +178,7 @@ function updateStatus(type, text, validatingLists = null, hasPassword = false) {
         if (community.length > 0) parts.push(...community.map(l => l.name));
         
         const listNames = parts.join(', ');
-        validationSource.textContent = chrome.i18n.getMessage('popupValidatedBy', [listNames]);
+        validationSource.textContent = chrome.i18n.getMessage('popupValidatedBy').replace('{0}', listNames);
       }
       break;
       

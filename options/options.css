@@ -878,5 +878,90 @@ main {
 }
 
 /* ========================================
+   COMPACT BANNER STYLE CONTROLS
+   ======================================== */
+.form-group-compact {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.form-group-compact label {
+  min-width: 80px;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.radio-group-inline {
+  display: flex;
+  gap: 16px;
+}
+
+.color-controls-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.color-input-compact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.color-picker-compact {
+  width: 50px;
+  height: 35px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.color-picker-compact:hover {
+  border-color: #3498DB;
+}
+
+.btn-random {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: white;
+  font-size: 20px;
+  width: 35px;
+  height: 35px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-random:hover {
+  transform: scale(1.1) rotate(15deg);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-random:active {
+  transform: scale(0.95) rotate(-15deg);
+}
+
+.font-select-compact {
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 13px;
+  min-width: 150px;
+}
+
+.form-group-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+/* ========================================
    FIN STYLES VALIDATION
    ======================================== */

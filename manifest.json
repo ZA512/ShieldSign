@@ -10,7 +10,8 @@
     "activeTab",
     "scripting",
     "declarativeNetRequest",
-    "webRequest"
+    "webRequest",
+    "alarms"
   ],
   "host_permissions": [
     "<all_urls>"
@@ -43,5 +44,11 @@
     "32": "icons/icon32.png",
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
-  }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/icon56ssf.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }

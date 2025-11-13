@@ -1,5 +1,18 @@
 // ShieldSign - Options Script
 
+// Fonction utilitaire pour débouncer les sauvegardes
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
 const DEFAULT_SETTINGS = {
   checkCN: false,
   ttl: 86400000, // 24h en millisecondes
@@ -12,6 +25,7 @@ const DEFAULT_SETTINGS = {
   customKeyword: '', // Phrase personnalisée pour mode banner-keyword
   currentCode: '', // Code alphanumérique 2 caractères (regénéré quotidiennement)
   showUnknownPages: false, // Afficher badge rouge/gris pour pages non listées
+  autoAddUnknown: 'prompt', // 'never' | 'always' | 'prompt' - Comportement lors de la soumission d'un formulaire sur un site inconnu
   
   // Banner colors configuration
   bannerColors: {
@@ -109,6 +123,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('downloadExampleBtn').addEventListener('click', downloadExample);
   document.getElementById('closeModal').addEventListener('click', closeLearnMoreModal);
   
+  // Auto-sauvegarde sur changements
+  document.getElementById('checkCN')?.addEventListener('change', saveSettings);
+  document.getElementById('trainingMode')?.addEventListener('change', saveSettings);
+  document.getElementById('showUnknownPages')?.addEventListener('change', saveSettings);
+  document.getElementById('cacheDuration')?.addEventListener('change', saveSettings);
+  document.getElementById('customKeyword')?.addEventListener('input', debounce(saveSettings, 500));
+  document.getElementById('autoAddUnknown')?.addEventListener('change', saveSettings);
+  
   // Nouveaux gestionnaires pour validation de sécurité
   setupValidationModeListeners();
   document.getElementById('regenerateCodeBtn')?.addEventListener('click', regenerateCode);
@@ -176,6 +198,10 @@ async function loadSettings() {
       document.getElementById('showUnknownPages').checked = currentSettings.showUnknownPages || false;
     }
     
+    if (document.getElementById('autoAddUnknown')) {
+      document.getElementById('autoAddUnknown').value = currentSettings.autoAddUnknown || 'prompt';
+    }
+    
     // Charger et afficher le code actuel
     await loadCurrentCode();
     
@@ -220,6 +246,7 @@ async function saveSettings() {
       customKeyword: customKeyword,
       currentCode: currentSettings.currentCode || '', // Conserver le code existant
       showUnknownPages: document.getElementById('showUnknownPages')?.checked || false,
+      autoAddUnknown: document.getElementById('autoAddUnknown')?.value || 'prompt',
       
       // Sauvegarder les nouveaux paramètres de style des bandeaux
       bannerStyle: saveBannerStyleSettings(),
@@ -659,6 +686,12 @@ function updateEnterpriseTabVisibility(show) {
   if (tab) {
     tab.style.display = show ? 'block' : 'none';
   }
+  
+  // Masquer aussi la section de personnalisation du bandeau Enterprise
+  const bannerSection = document.getElementById('enterpriseBannerStyle');
+  if (bannerSection) {
+    bannerSection.style.display = show ? 'block' : 'none';
+  }
 }
 
 // Toggle mode entreprise
@@ -910,6 +943,9 @@ function handleValidationModeChange() {
   if (codeContainer) {
     codeContainer.style.display = selectedMode === 'banner-code' ? 'block' : 'none';
   }
+  
+  // Auto-sauvegarde
+  saveSettings();
 }
 
 // Charger et afficher le code actuel
@@ -953,7 +989,10 @@ function setupBannerStyleListeners() {
     // Radio buttons pour le mode (solid/gradient/random)
     const radios = document.querySelectorAll(`input[name="${type}Mode"]`);
     radios.forEach(radio => {
-      radio.addEventListener('change', () => handleBannerModeChange(type, radio.value));
+      radio.addEventListener('change', () => {
+        handleBannerModeChange(type, radio.value);
+        saveSettings();
+      });
     });
     
     // Color pickers
@@ -962,30 +1001,125 @@ function setupBannerStyleListeners() {
     const gradientEnd = document.getElementById(`${type}GradientEnd`);
     const textColor = document.getElementById(`${type}TextColor`);
     
-    if (solidColor) solidColor.addEventListener('input', () => updateBannerPreview(type));
-    if (gradientStart) gradientStart.addEventListener('input', () => updateBannerPreview(type));
-    if (gradientEnd) gradientEnd.addEventListener('input', () => updateBannerPreview(type));
-    if (textColor) textColor.addEventListener('input', () => updateBannerPreview(type));
+    if (solidColor) solidColor.addEventListener('input', () => { updateBannerPreview(type); saveSettings(); });
+    if (gradientStart) gradientStart.addEventListener('input', () => { updateBannerPreview(type); saveSettings(); });
+    if (gradientEnd) gradientEnd.addEventListener('input', () => { updateBannerPreview(type); saveSettings(); });
+    if (textColor) textColor.addEventListener('input', () => { updateBannerPreview(type); saveSettings(); });
     
     // Font select
     const fontSelect = document.getElementById(`${type}FontFamily`);
-    if (fontSelect) fontSelect.addEventListener('change', () => updateBannerPreview(type));
+    if (fontSelect) fontSelect.addEventListener('change', () => { updateBannerPreview(type); saveSettings(); });
+    
+    // Boutons aléatoires
+    const randomBtn = document.getElementById(`${type}RandomBtn`);
+    const randomGradientBtn = document.getElementById(`${type}RandomGradientBtn`);
+    
+    if (randomBtn) {
+      randomBtn.addEventListener('click', () => generateRandomColor(type, 'solid'));
+    }
+    
+    if (randomGradientBtn) {
+      randomGradientBtn.addEventListener('click', () => generateRandomColor(type, 'gradient'));
+    }
   });
 }
 
-// Gérer le changement de mode (solid/gradient/random)
+// Générer une couleur aléatoire harmonieuse
+function generateRandomColor(type, mode) {
+  if (mode === 'solid') {
+    // Générer une couleur vive et saturée
+    const hue = Math.floor(Math.random() * 360);
+    const saturation = 60 + Math.floor(Math.random() * 40); // 60-100%
+    const lightness = 45 + Math.floor(Math.random() * 15); // 45-60%
+    const color = hslToHex(hue, saturation, lightness);
+    
+    // Appliquer la couleur
+    const solidColorInput = document.getElementById(`${type}SolidColor`);
+    if (solidColorInput) {
+      solidColorInput.value = color;
+      
+      // Choisir automatiquement une couleur de texte contrastée
+      const textColor = getContrastColor(color);
+      const textColorInput = document.getElementById(`${type}TextColor`);
+      if (textColorInput) {
+        textColorInput.value = textColor;
+      }
+      
+      updateBannerPreview(type);
+      saveSettings();
+    }
+  } else if (mode === 'gradient') {
+    // Générer un dégradé harmonieux
+    const baseHue = Math.floor(Math.random() * 360);
+    const hueShift = 20 + Math.floor(Math.random() * 40); // Décalage de 20-60°
+    
+    const saturation1 = 60 + Math.floor(Math.random() * 30);
+    const lightness1 = 40 + Math.floor(Math.random() * 15);
+    
+    const saturation2 = 60 + Math.floor(Math.random() * 30);
+    const lightness2 = 45 + Math.floor(Math.random() * 15);
+    
+    const color1 = hslToHex(baseHue, saturation1, lightness1);
+    const color2 = hslToHex((baseHue + hueShift) % 360, saturation2, lightness2);
+    
+    // Appliquer les couleurs
+    const startInput = document.getElementById(`${type}GradientStart`);
+    const endInput = document.getElementById(`${type}GradientEnd`);
+    
+    if (startInput && endInput) {
+      startInput.value = color1;
+      endInput.value = color2;
+      
+      // Choisir automatiquement une couleur de texte contrastée (basée sur la première couleur)
+      const textColor = getContrastColor(color1);
+      const textColorInput = document.getElementById(`${type}TextColor`);
+      if (textColorInput) {
+        textColorInput.value = textColor;
+      }
+      
+      updateBannerPreview(type);
+      saveSettings();
+    }
+  }
+}
+
+// Convertir HSL en HEX
+function hslToHex(h, s, l) {
+  l /= 100;
+  const a = s * Math.min(l, 1 - l) / 100;
+  const f = n => {
+    const k = (n + h / 30) % 12;
+    const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+    return Math.round(255 * color).toString(16).padStart(2, '0');
+  };
+  return `#${f(0)}${f(8)}${f(4)}`;
+}
+
+// Obtenir une couleur de texte contrastée (blanc ou noir)
+function getContrastColor(hexColor) {
+  // Convertir hex en RGB
+  const r = parseInt(hexColor.substr(1, 2), 16);
+  const g = parseInt(hexColor.substr(3, 2), 16);
+  const b = parseInt(hexColor.substr(5, 2), 16);
+  
+  // Calculer la luminance relative
+  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+  
+  // Retourner blanc pour les couleurs sombres, noir pour les claires
+  return luminance > 0.5 ? '#000000' : '#FFFFFF';
+}
+
+// Gérer le changement de mode (solid/gradient)
 function handleBannerModeChange(type, mode) {
   const container = document.getElementById(`${type}ColorInputs`);
   if (!container) return;
   
   const solidInputs = container.querySelectorAll('.solid-mode');
   const gradientInputs = container.querySelectorAll('.gradient-mode');
-  const randomNote = container.querySelector('.random-mode-note');
   
   // Cacher tous les éléments
   solidInputs.forEach(el => el.style.display = 'none');
   gradientInputs.forEach(el => el.style.display = 'none');
-  if (randomNote) randomNote.style.display = 'none';
   
   // Afficher les éléments appropriés
   switch (mode) {
@@ -994,9 +1128,6 @@ function handleBannerModeChange(type, mode) {
       break;
     case 'gradient':
       gradientInputs.forEach(el => el.style.display = 'flex');
-      break;
-    case 'random':
-      if (randomNote) randomNote.style.display = 'block';
       break;
   }
   

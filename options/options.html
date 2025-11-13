@@ -190,8 +190,8 @@
               <strong data-i18n="modeBadgeOnlyTitle">🔵 Badge uniquement (discret)</strong>
             </label>
             <p class="mode-description" data-i18n="modeBadgeOnlyDescription">Aucun bandeau visible. Un point de couleur apparaît sur l'icône de l'extension dans la barre d'outils. Simple et non-intrusif.</p>
-            <div class="visual-placeholder">
-              📷 <span data-i18n="imageComingSoon">[Image d'illustration à venir]</span>
+            <div class="visual-example">
+              <img src="../icons/capture-badge-r.png" alt="Exemple de badge simple" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: 12px 0;">
             </div>
             <ul class="mode-advantages">
               <li data-i18n="modeBadgeOnlyPro1">✅ Discret, n'encombre pas la page</li>
@@ -214,8 +214,8 @@
               <input type="text" id="customKeyword" data-i18n-placeholder="customKeywordPlaceholder" placeholder="Ex: MonPhareDeConfiance2025" class="input-field" maxlength="50">
               <p class="setting-description" data-i18n="customKeywordHelp">Choisissez un mot ou une phrase facile à retenir mais difficile à deviner (5 caractères minimum recommandés)</p>
             </div>
-            <div class="visual-placeholder">
-              📷 <span data-i18n="imageComingSoon">[Image d'illustration à venir]</span>
+            <div class="visual-example">
+              <img src="../icons/capture-cle-r.png" alt="Exemple de validation par mot-clé" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: 12px 0;">
             </div>
             <ul class="mode-advantages">
               <li data-i18n="modeBannerKeywordPro1">✅ Validation immédiate et personnalisée</li>
@@ -231,26 +231,14 @@
               <span class="radio-custom"></span>
               <strong data-i18n="modeBannerCodeTitle">🎲 Bandeau avec code aléatoire (recommandé)</strong>
             </label>
-            <p class="mode-description" data-i18n="modeBannerCodeDescription">Un code alphanumérique de 2 caractères (ex: A7, H4, 8R) est généré quotidiennement et affiché dans le bandeau ET sur l'icône de l'extension. Vérifiez simplement que les deux correspondent.</p>
-            <div class="code-display-container" id="codeDisplayContainer" style="margin: 12px 0;">
-              <label class="setting-label">
-                <span data-i18n="currentCodeLabel">Code du jour :</span>
-              </label>
-              <div style="display: flex; gap: 12px; align-items: center;">
-                <div class="current-code-badge" id="currentCodeDisplay">--</div>
-                <button type="button" id="regenerateCodeBtn" class="btn btn-secondary">
-                  <i class="fas fa-sync-alt"></i> <span data-i18n="btnRegenerateCode">Générer un nouveau code</span>
-                </button>
-              </div>
-              <p class="setting-description" data-i18n="currentCodeHelp">Le code change automatiquement chaque jour. Vous pouvez aussi le régénérer manuellement.</p>
-            </div>
-            <div class="visual-placeholder">
-              📷 <span data-i18n="imageComingSoon">[Image d'illustration à venir]</span>
+            <p class="mode-description" data-i18n="modeBannerCodeDescription">Un code alphanumérique unique de 2 caractères (ex: A7, H4, 8R) est généré à chaque connexion et affiché dans le bandeau ET sur l'icône de l'extension. Vérifiez simplement que les deux correspondent.</p>
+            <div class="visual-example">
+              <img src="../icons/capture-code-r.png" alt="Exemple de validation par code" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: 12px 0;">
             </div>
             <ul class="mode-advantages">
               <li data-i18n="modeBannerCodePro1">✅ Aucune mémorisation nécessaire</li>
               <li data-i18n="modeBannerCodePro2">✅ Vérification rapide (badge + bandeau)</li>
-              <li data-i18n="modeBannerCodePro3">✅ Change quotidiennement automatiquement</li>
+              <li data-i18n="modeBannerCodePro3">✅ Code unique à chaque visite</li>
               <li data-i18n="modeBannerCodePro4">✅ Équilibre parfait sécurité/simplicité</li>
             </ul>
           </div>
@@ -263,6 +251,19 @@
             </label>
             <p class="setting-description" data-i18n="showUnknownPagesDescription">Activez pour voir un badge même sur les pages non listées : 🔴 (page suspecte avec mot de passe) ou ⚪ (page sans mot de passe).</p>
           </div>
+          
+          <!-- Option ajout automatique sites inconnus -->
+          <div class="setting-item" style="margin-top: 24px;">
+            <label class="setting-label">
+              <span data-i18n="autoAddUnknownLabel">🔐 Lors de la soumission d'un formulaire sur un site inconnu :</span>
+            </label>
+            <select id="autoAddUnknown" class="select-field" style="margin-top: 8px;">
+              <option value="never" data-i18n="autoAddUnknownNever">Ne rien faire</option>
+              <option value="always" data-i18n="autoAddUnknownAlways">Ajouter automatiquement à ma liste personnelle</option>
+              <option value="prompt" data-i18n="autoAddUnknownPrompt" selected>Me demander si je veux l'ajouter</option>
+            </select>
+            <p class="setting-description" data-i18n="autoAddUnknownDescription">Choisissez comment ShieldSign doit réagir lorsque vous vous connectez sur un site qui n'est dans aucune liste.</p>
+          </div>
         </section>
         
         <section class="section">
@@ -270,71 +271,60 @@
           <p class="section-description" data-i18n="bannerStyleDescription">Personnalisez l'apparence de chaque type de bandeau (Entreprise, Communautaire, Personnel).</p>
           
           <!-- Style bandeau Entreprise -->
-          <div class="banner-style-container">
+          <div class="banner-style-container" id="enterpriseBannerStyle">
             <h3 class="banner-type-title">
               <i class="fas fa-building"></i> <span data-i18n="bannerTypeEnterprise">Entreprise</span>
             </h3>
             
             <div class="banner-style-controls">
-              <div class="form-group">
-                <label data-i18n="bannerStyleModeLabel">Mode de couleur :</label>
-                <div class="radio-group">
+              <div class="form-group-compact">
+                <label data-i18n="bannerStyleModeLabel">Color mode:</label>
+                <div class="radio-group-inline">
                   <label class="radio-inline">
                     <input type="radio" name="enterpriseMode" value="solid" checked>
-                    <span data-i18n="bannerStyleModeSolid">Couleur unie</span>
+                    <span data-i18n="bannerStyleModeSolid">Solid color</span>
                   </label>
                   <label class="radio-inline">
                     <input type="radio" name="enterpriseMode" value="gradient">
-                    <span data-i18n="bannerStyleModeGradient">Dégradé</span>
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="enterpriseMode" value="random">
-                    <span data-i18n="bannerStyleModeRandom">Aléatoire</span>
+                    <span data-i18n="bannerStyleModeGradient">Gradient</span>
                   </label>
                 </div>
               </div>
               
-              <div class="color-inputs-container" id="enterpriseColorInputs">
-                <div class="color-input-group solid-mode">
-                  <label data-i18n="bannerStyleSolidColorLabel">Couleur unie :</label>
-                  <input type="color" id="enterpriseSolidColor" value="#2ECC71" class="color-picker">
+              <div class="color-controls-row" id="enterpriseColorInputs">
+                <div class="color-input-compact solid-mode">
+                  <input type="color" id="enterpriseSolidColor" value="#2ECC71" class="color-picker-compact">
+                  <button type="button" class="btn-random" id="enterpriseRandomBtn" title="Random color">🎲</button>
                 </div>
                 
-                <div class="color-input-group gradient-mode" style="display: none;">
-                  <label data-i18n="bannerStyleGradientStartLabel">Début du dégradé :</label>
-                  <input type="color" id="enterpriseGradientStart" value="#27AE60" class="color-picker">
-                </div>
-                
-                <div class="color-input-group gradient-mode" style="display: none;">
-                  <label data-i18n="bannerStyleGradientEndLabel">Fin du dégradé :</label>
-                  <input type="color" id="enterpriseGradientEnd" value="#2ECC71" class="color-picker">
-                </div>
-                
-                <div class="random-mode-note" style="display: none;">
-                  <p data-i18n="bannerStyleRandomNote">ℹ️ En mode aléatoire, une nouvelle couleur/dégradé est généré à chaque affichage du bandeau.</p>
+                <div class="color-input-compact gradient-mode" style="display: none;">
+                  <input type="color" id="enterpriseGradientStart" value="#27AE60" class="color-picker-compact">
+                  <input type="color" id="enterpriseGradientEnd" value="#2ECC71" class="color-picker-compact">
+                  <button type="button" class="btn-random" id="enterpriseRandomGradientBtn" title="Random gradient">🎲</button>
                 </div>
               </div>
               
-              <div class="form-group">
-                <label data-i18n="bannerStyleTextColorLabel">Couleur du texte :</label>
-                <input type="color" id="enterpriseTextColor" value="#FFFFFF" class="color-picker">
-              </div>
-              
-              <div class="form-group">
-                <label data-i18n="bannerStyleFontFamilyLabel">Police :</label>
-                <select id="enterpriseFontFamily" class="font-select">
-                  <option value="Arial, sans-serif" data-i18n="bannerStyleFontArial">Arial</option>
-                  <option value="Verdana, sans-serif" data-i18n="bannerStyleFontVerdana">Verdana</option>
-                  <option value="Georgia, serif" data-i18n="bannerStyleFontGeorgia">Georgia</option>
-                  <option value="'Courier New', monospace" data-i18n="bannerStyleFontCourier">Courier New</option>
-                  <option value="'Times New Roman', serif" data-i18n="bannerStyleFontTimes">Times New Roman</option>
-                </select>
+              <div class="form-group-row">
+                <div class="form-group-compact" style="flex: 1;">
+                  <label data-i18n="bannerStyleTextColorLabel">Text color:</label>
+                  <input type="color" id="enterpriseTextColor" value="#FFFFFF" class="color-picker-compact">
+                </div>
+                <div class="form-group-compact" style="flex: 1;">
+                  <label data-i18n="bannerStyleFontFamilyLabel">Font:</label>
+                  <select id="enterpriseFontFamily" class="font-select-compact">
+                    <option value="Arial, sans-serif">Arial</option>
+                    <option value="Verdana, sans-serif">Verdana</option>
+                    <option value="Georgia, serif">Georgia</option>
+                    <option value="'Courier New', monospace">Courier New</option>
+                    <option value="'Times New Roman', serif">Times New Roman</option>
+                  </select>
+                </div>
               </div>
               
               <div class="banner-preview-container">
-                <label data-i18n="bannerStylePreviewLabel">Aperçu :</label>
+                <label data-i18n="bannerStylePreviewLabel">Preview:</label>
                 <div class="banner-preview" id="enterprisePreview">
-                  <span>🔒 Ce site est validé - Liste Entreprise</span>
+                  <span><img src="../icons/icon56ssf.png" alt="ShieldSign" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 4px;">Page validated by: Enterprise List</span>
                 </div>
               </div>
             </div>
@@ -347,65 +337,54 @@
             </h3>
             
             <div class="banner-style-controls">
-              <div class="form-group">
-                <label data-i18n="bannerStyleModeLabel">Mode de couleur :</label>
-                <div class="radio-group">
+              <div class="form-group-compact">
+                <label data-i18n="bannerStyleModeLabel">Color mode:</label>
+                <div class="radio-group-inline">
                   <label class="radio-inline">
                     <input type="radio" name="communityMode" value="solid" checked>
-                    <span data-i18n="bannerStyleModeSolid">Couleur unie</span>
+                    <span data-i18n="bannerStyleModeSolid">Solid color</span>
                   </label>
                   <label class="radio-inline">
                     <input type="radio" name="communityMode" value="gradient">
-                    <span data-i18n="bannerStyleModeGradient">Dégradé</span>
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="communityMode" value="random">
-                    <span data-i18n="bannerStyleModeRandom">Aléatoire</span>
+                    <span data-i18n="bannerStyleModeGradient">Gradient</span>
                   </label>
                 </div>
               </div>
               
-              <div class="color-inputs-container" id="communityColorInputs">
-                <div class="color-input-group solid-mode">
-                  <label data-i18n="bannerStyleSolidColorLabel">Couleur unie :</label>
-                  <input type="color" id="communitySolidColor" value="#3498DB" class="color-picker">
+              <div class="color-controls-row" id="communityColorInputs">
+                <div class="color-input-compact solid-mode">
+                  <input type="color" id="communitySolidColor" value="#3498DB" class="color-picker-compact">
+                  <button type="button" class="btn-random" id="communityRandomBtn" title="Random color">🎲</button>
                 </div>
                 
-                <div class="color-input-group gradient-mode" style="display: none;">
-                  <label data-i18n="bannerStyleGradientStartLabel">Début du dégradé :</label>
-                  <input type="color" id="communityGradientStart" value="#2980B9" class="color-picker">
-                </div>
-                
-                <div class="color-input-group gradient-mode" style="display: none;">
-                  <label data-i18n="bannerStyleGradientEndLabel">Fin du dégradé :</label>
-                  <input type="color" id="communityGradientEnd" value="#3498DB" class="color-picker">
-                </div>
-                
-                <div class="random-mode-note" style="display: none;">
-                  <p data-i18n="bannerStyleRandomNote">ℹ️ En mode aléatoire, une nouvelle couleur/dégradé est généré à chaque affichage du bandeau.</p>
+                <div class="color-input-compact gradient-mode" style="display: none;">
+                  <input type="color" id="communityGradientStart" value="#2980B9" class="color-picker-compact">
+                  <input type="color" id="communityGradientEnd" value="#3498DB" class="color-picker-compact">
+                  <button type="button" class="btn-random" id="communityRandomGradientBtn" title="Random gradient">🎲</button>
                 </div>
               </div>
               
-              <div class="form-group">
-                <label data-i18n="bannerStyleTextColorLabel">Couleur du texte :</label>
-                <input type="color" id="communityTextColor" value="#FFFFFF" class="color-picker">
-              </div>
-              
-              <div class="form-group">
-                <label data-i18n="bannerStyleFontFamilyLabel">Police :</label>
-                <select id="communityFontFamily" class="font-select">
-                  <option value="Arial, sans-serif" data-i18n="bannerStyleFontArial">Arial</option>
-                  <option value="Verdana, sans-serif" data-i18n="bannerStyleFontVerdana">Verdana</option>
-                  <option value="Georgia, serif" data-i18n="bannerStyleFontGeorgia">Georgia</option>
-                  <option value="'Courier New', monospace" data-i18n="bannerStyleFontCourier">Courier New</option>
-                  <option value="'Times New Roman', serif" data-i18n="bannerStyleFontTimes">Times New Roman</option>
-                </select>
+              <div class="form-group-row">
+                <div class="form-group-compact" style="flex: 1;">
+                  <label data-i18n="bannerStyleTextColorLabel">Text color:</label>
+                  <input type="color" id="communityTextColor" value="#FFFFFF" class="color-picker-compact">
+                </div>
+                <div class="form-group-compact" style="flex: 1;">
+                  <label data-i18n="bannerStyleFontFamilyLabel">Font:</label>
+                  <select id="communityFontFamily" class="font-select-compact">
+                    <option value="Arial, sans-serif">Arial</option>
+                    <option value="Verdana, sans-serif">Verdana</option>
+                    <option value="Georgia, serif">Georgia</option>
+                    <option value="'Courier New', monospace">Courier New</option>
+                    <option value="'Times New Roman', serif">Times New Roman</option>
+                  </select>
+                </div>
               </div>
               
               <div class="banner-preview-container">
-                <label data-i18n="bannerStylePreviewLabel">Aperçu :</label>
+                <label data-i18n="bannerStylePreviewLabel">Preview:</label>
                 <div class="banner-preview" id="communityPreview">
-                  <span>🔒 Ce site est validé - Liste Communautaire</span>
+                  <span><img src="../icons/icon56ssf.png" alt="ShieldSign" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 4px;">Page validated by: Community List</span>
                 </div>
               </div>
             </div>
@@ -418,65 +397,54 @@
             </h3>
             
             <div class="banner-style-controls">
-              <div class="form-group">
-                <label data-i18n="bannerStyleModeLabel">Mode de couleur :</label>
-                <div class="radio-group">
+              <div class="form-group-compact">
+                <label data-i18n="bannerStyleModeLabel">Color mode:</label>
+                <div class="radio-group-inline">
                   <label class="radio-inline">
                     <input type="radio" name="personalMode" value="solid" checked>
-                    <span data-i18n="bannerStyleModeSolid">Couleur unie</span>
+                    <span data-i18n="bannerStyleModeSolid">Solid color</span>
                   </label>
                   <label class="radio-inline">
                     <input type="radio" name="personalMode" value="gradient">
-                    <span data-i18n="bannerStyleModeGradient">Dégradé</span>
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="personalMode" value="random">
-                    <span data-i18n="bannerStyleModeRandom">Aléatoire</span>
+                    <span data-i18n="bannerStyleModeGradient">Gradient</span>
                   </label>
                 </div>
               </div>
               
-              <div class="color-inputs-container" id="personalColorInputs">
-                <div class="color-input-group solid-mode">
-                  <label data-i18n="bannerStyleSolidColorLabel">Couleur unie :</label>
-                  <input type="color" id="personalSolidColor" value="#9B59B6" class="color-picker">
+              <div class="color-controls-row" id="personalColorInputs">
+                <div class="color-input-compact solid-mode">
+                  <input type="color" id="personalSolidColor" value="#9B59B6" class="color-picker-compact">
+                  <button type="button" class="btn-random" id="personalRandomBtn" title="Random color">🎲</button>
                 </div>
                 
-                <div class="color-input-group gradient-mode" style="display: none;">
-                  <label data-i18n="bannerStyleGradientStartLabel">Début du dégradé :</label>
-                  <input type="color" id="personalGradientStart" value="#8E44AD" class="color-picker">
-                </div>
-                
-                <div class="color-input-group gradient-mode" style="display: none;">
-                  <label data-i18n="bannerStyleGradientEndLabel">Fin du dégradé :</label>
-                  <input type="color" id="personalGradientEnd" value="#9B59B6" class="color-picker">
-                </div>
-                
-                <div class="random-mode-note" style="display: none;">
-                  <p data-i18n="bannerStyleRandomNote">ℹ️ En mode aléatoire, une nouvelle couleur/dégradé est généré à chaque affichage du bandeau.</p>
+                <div class="color-input-compact gradient-mode" style="display: none;">
+                  <input type="color" id="personalGradientStart" value="#8E44AD" class="color-picker-compact">
+                  <input type="color" id="personalGradientEnd" value="#9B59B6" class="color-picker-compact">
+                  <button type="button" class="btn-random" id="personalRandomGradientBtn" title="Random gradient">🎲</button>
                 </div>
               </div>
               
-              <div class="form-group">
-                <label data-i18n="bannerStyleTextColorLabel">Couleur du texte :</label>
-                <input type="color" id="personalTextColor" value="#FFFFFF" class="color-picker">
-              </div>
-              
-              <div class="form-group">
-                <label data-i18n="bannerStyleFontFamilyLabel">Police :</label>
-                <select id="personalFontFamily" class="font-select">
-                  <option value="Arial, sans-serif" data-i18n="bannerStyleFontArial">Arial</option>
-                  <option value="Verdana, sans-serif" data-i18n="bannerStyleFontVerdana">Verdana</option>
-                  <option value="Georgia, serif" data-i18n="bannerStyleFontGeorgia">Georgia</option>
-                  <option value="'Courier New', monospace" data-i18n="bannerStyleFontCourier">Courier New</option>
-                  <option value="'Times New Roman', serif" data-i18n="bannerStyleFontTimes">Times New Roman</option>
-                </select>
+              <div class="form-group-row">
+                <div class="form-group-compact" style="flex: 1;">
+                  <label data-i18n="bannerStyleTextColorLabel">Text color:</label>
+                  <input type="color" id="personalTextColor" value="#FFFFFF" class="color-picker-compact">
+                </div>
+                <div class="form-group-compact" style="flex: 1;">
+                  <label data-i18n="bannerStyleFontFamilyLabel">Font:</label>
+                  <select id="personalFontFamily" class="font-select-compact">
+                    <option value="Arial, sans-serif">Arial</option>
+                    <option value="Verdana, sans-serif">Verdana</option>
+                    <option value="Georgia, serif">Georgia</option>
+                    <option value="'Courier New', monospace">Courier New</option>
+                    <option value="'Times New Roman', serif">Times New Roman</option>
+                  </select>
+                </div>
               </div>
               
               <div class="banner-preview-container">
-                <label data-i18n="bannerStylePreviewLabel">Aperçu :</label>
+                <label data-i18n="bannerStylePreviewLabel">Preview:</label>
                 <div class="banner-preview" id="personalPreview">
-                  <span>🔒 Ce site est validé - Liste Personnelle</span>
+                  <span><img src="../icons/icon56ssf.png" alt="ShieldSign" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 4px;">Page validated by: Personal List</span>
                 </div>
               </div>
             </div>
@@ -484,7 +452,7 @@
         </section>
         
         <div class="save-section">
-          <button id="saveSettingsBtn" class="btn btn-success">
+          <button id="saveSettingsBtn" class="btn btn-success" style="display: none;">
             <i class="fas fa-save"></i> <span data-i18n="btnSave">Enregistrer les paramètres</span>
           </button>
           <button id="resetSettingsBtn" class="btn btn-secondary">

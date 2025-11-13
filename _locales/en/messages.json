@@ -673,7 +673,7 @@
     "message": "🎲 Banner with random code (recommended)"
   },
   "modeBannerCodeDescription": {
-    "message": "A 2-character alphanumeric code (e.g., A7, H4, 8R) is generated daily and displayed in the banner AND on the extension icon. Simply verify that both match."
+    "message": "A unique 2-character alphanumeric code (e.g., A7, H4, 8R) is generated on each visit and displayed in the banner AND on the extension icon. Simply verify that both match."
   },
   "currentCodeLabel": {
     "message": "Today's code:"
@@ -691,7 +691,7 @@
     "message": "✅ Quick verification (badge + banner)"
   },
   "modeBannerCodePro3": {
-    "message": "✅ Changes daily automatically"
+    "message": "✅ Unique code on each visit"
   },
   "modeBannerCodePro4": {
     "message": "✅ Perfect balance between security and simplicity"
@@ -772,9 +772,36 @@
     "message": "Personal"
   },
   "popupValidationCodeLabel": {
-    "message": "🔐 Validation code of the day:"
+    "message": "🔐 Validation code:"
   },
   "popupCodeInfo": {
-    "message": "This code appears in the badge and banner to confirm authenticity."
+    "message": "A unique random code appears in the badge and banner on each visit to confirm authenticity."
+  },
+  "autoAddUnknownLabel": {
+    "message": "🔐 When submitting a form on an unknown site:"
+  },
+  "autoAddUnknownNever": {
+    "message": "Do nothing"
+  },
+  "autoAddUnknownAlways": {
+    "message": "Automatically add to my personal list"
+  },
+  "autoAddUnknownPrompt": {
+    "message": "Ask me if I want to add it"
+  },
+  "autoAddUnknownDescription": {
+    "message": "Choose how ShieldSign should react when you log in to a site that is not in any list."
+  },
+  "notificationAddToPersonal": {
+    "message": "Add this site to your personal list?"
+  },
+  "notificationAddToPersonalYes": {
+    "message": "Yes, add it"
+  },
+  "notificationAddToPersonalNo": {
+    "message": "No"
+  },
+  "notificationSiteAdded": {
+    "message": "Site added to your personal list"
   }
 }

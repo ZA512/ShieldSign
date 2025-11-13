@@ -673,7 +673,7 @@
     "message": "🎲 Bandeau avec code aléatoire (recommandé)"
   },
   "modeBannerCodeDescription": {
-    "message": "Un code alphanumérique de 2 caractères (ex: A7, H4, 8R) est généré quotidiennement et affiché dans le bandeau ET sur l'icône de l'extension. Vérifiez simplement que les deux correspondent."
+    "message": "Un code alphanumérique unique de 2 caractères (ex: A7, H4, 8R) est généré à chaque connexion et affiché dans le bandeau ET sur l'icône de l'extension. Vérifiez simplement que les deux correspondent."
   },
   "currentCodeLabel": {
     "message": "Code du jour :"
@@ -691,7 +691,7 @@
     "message": "✅ Vérification rapide (badge + bandeau)"
   },
   "modeBannerCodePro3": {
-    "message": "✅ Change quotidiennement automatiquement"
+    "message": "✅ Code unique à chaque visite"
   },
   "modeBannerCodePro4": {
     "message": "✅ Équilibre parfait sécurité/simplicité"
@@ -772,9 +772,36 @@
     "message": "Personnel"
   },
   "popupValidationCodeLabel": {
-    "message": "🔐 Code de validation du jour :"
+    "message": "🔐 Code de validation :"
   },
   "popupCodeInfo": {
-    "message": "Ce code s'affiche dans le badge et le bandeau pour confirmer l'authenticité."
+    "message": "Un code aléatoire unique s'affiche dans le badge et le bandeau à chaque visite pour confirmer l'authenticité."
+  },
+  "autoAddUnknownLabel": {
+    "message": "🔐 Lors de la soumission d'un formulaire sur un site inconnu :"
+  },
+  "autoAddUnknownNever": {
+    "message": "Ne rien faire"
+  },
+  "autoAddUnknownAlways": {
+    "message": "Ajouter automatiquement à ma liste personnelle"
+  },
+  "autoAddUnknownPrompt": {
+    "message": "Me demander si je veux l'ajouter"
+  },
+  "autoAddUnknownDescription": {
+    "message": "Choisissez comment ShieldSign doit réagir lorsque vous vous connectez sur un site qui n'est dans aucune liste."
+  },
+  "notificationAddToPersonal": {
+    "message": "Ajouter ce site à votre liste personnelle ?"
+  },
+  "notificationAddToPersonalYes": {
+    "message": "Oui, ajouter"
+  },
+  "notificationAddToPersonalNo": {
+    "message": "Non"
+  },
+  "notificationSiteAdded": {
+    "message": "Site ajouté à votre liste personnelle"
   }
 }
