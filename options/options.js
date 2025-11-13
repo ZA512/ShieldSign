@@ -115,7 +115,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('exportPersonalBtn').addEventListener('click', exportPersonalList);
   document.getElementById('importPersonalBtn').addEventListener('click', () => document.getElementById('importFileInput').click());
   document.getElementById('importFileInput').addEventListener('change', importPersonalList);
-  document.getElementById('languageSelect').addEventListener('change', changeLanguage);
   document.getElementById('enterpriseMode').addEventListener('change', toggleEnterpriseMode);
   document.getElementById('saveSettingsBtn').addEventListener('click', saveSettings);
   document.getElementById('resetSettingsBtn').addEventListener('click', resetSettings);
@@ -176,7 +175,6 @@ async function loadSettings() {
     document.getElementById('checkCN').checked = currentSettings.checkCN || false;
     document.getElementById('ttl').value = (currentSettings.ttl || DEFAULT_SETTINGS.ttl) / 3600000; // Convertir ms en heures
     document.getElementById('enterpriseMode').checked = currentSettings.enterpriseMode || false;
-    document.getElementById('languageSelect').value = currentSettings.language || DEFAULT_SETTINGS.language;
     
     // NE PLUS CHARGER les anciennes couleurs simples (commenté pour compatibilité)
     // document.getElementById('colorEnterprise').value = currentSettings.bannerColors?.enterprise || DEFAULT_SETTINGS.bannerColors.enterprise;
@@ -239,7 +237,7 @@ async function saveSettings() {
       ttl: parseInt(document.getElementById('ttl').value) * 3600000,
       trainingMode: false,
       enterpriseMode: document.getElementById('enterpriseMode').checked,
-      language: document.getElementById('languageSelect').value,
+      language: currentSettings.language || 'auto', // Conserver la langue existante ou auto
       
       // Nouveaux paramètres de validation
       validationMode: validationMode,
@@ -698,24 +696,6 @@ function updateEnterpriseTabVisibility(show) {
 async function toggleEnterpriseMode(e) {
   updateEnterpriseTabVisibility(e.target.checked);
   showToast(e.target.checked ? chrome.i18n.getMessage('toastEnterpriseModeEnabled') : chrome.i18n.getMessage('toastEnterpriseModeDisabled'));
-}
-
-// Changer la langue
-async function changeLanguage() {
-  const languageSelect = document.getElementById('languageSelect');
-  const selectedLanguage = languageSelect.value;
-  
-  try {
-    // Sauvegarder immédiatement la langue sélectionnée
-    const { settings = DEFAULT_SETTINGS } = await chrome.storage.local.get(['settings']);
-    settings.language = selectedLanguage;
-    await chrome.storage.local.set({ settings });
-    
-    // Recharger la page pour appliquer la nouvelle langue
-    window.location.reload();
-  } catch (error) {
-    showToast('Erreur lors du changement de langue', true);
-  }
 }
 
 // Exporter la liste personnelle
