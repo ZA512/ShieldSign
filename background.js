@@ -244,7 +244,7 @@ async function updateBadge(tabId, status, listType = null, uniqueCode = null) {
 
         // Mode badge uniquement : badge vert sans texte (juste la couleur verte visible)
         await chrome.action.setBadgeBackgroundColor({ color: '#28A745', tabId: tabId }); // Vert vif
-        await chrome.action.setBadgeText({ text: '', tabId: tabId }); // Chaîne vide pour badge de couleur pure
+        await chrome.action.setBadgeText({ text: '✓', tabId: tabId }); // Check mark pour badge visible
       } else if (validationMode === 'banner-code') {
 
         // Mode code : afficher le code unique avec badge vert (toujours vert)
@@ -256,7 +256,7 @@ async function updateBadge(tabId, status, listType = null, uniqueCode = null) {
 
         // Mode keyword : badge vert uni sans texte
         await chrome.action.setBadgeBackgroundColor({ color: '#28A745', tabId: tabId }); // Vert vif
-        await chrome.action.setBadgeText({ text: '', tabId: tabId }); // Chaîne vide pour badge de couleur pure
+        await chrome.action.setBadgeText({ text: '✓', tabId: tabId }); // Check mark pour badge visible
       }
 
     } else if (status === 'UNKNOWN' && showUnknownPages) {
