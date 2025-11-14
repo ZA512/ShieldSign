@@ -777,6 +777,9 @@
   "popupCodeInfo": {
     "message": "Ainutlaatuinen satunnainen koodi näkyy merkissä ja bannerissa jokaisella vierailulla aitoutta vahvistaakseen"
   },
+  "popupSupportLink": {
+    "message": "Tue projektia"
+  },
   "autoAddUnknownLabel": {
     "message": "🔐 Lomakkeen lähetyksessä tuntemattomalla sivulla:"
   },

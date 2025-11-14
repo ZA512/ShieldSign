@@ -777,6 +777,9 @@
   "popupCodeInfo": {
     "message": "Her ziyarette benzersiz bir rastgele kod, özgünlüğü onaylamak için rozet ve bannerde görünür."
   },
+  "popupSupportLink": {
+    "message": "Projeyi destekle"
+  },
   "autoAddUnknownLabel": {
     "message": "🔐 Bilinmeyen bir sitede form gönderildiğinde:"
   },

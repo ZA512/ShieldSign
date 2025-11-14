@@ -413,17 +413,25 @@ main {
 }
 
 .about-section {
-  margin-bottom: 24px;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.about-section:last-child {
+  border-bottom: none;
 }
 
 .about-section h3 {
   font-size: 16px;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .about-section p {
   color: #666;
+  margin-bottom: 12px;
+  line-height: 1.6;
 }
 
 .toast {

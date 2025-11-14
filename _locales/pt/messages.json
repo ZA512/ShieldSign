@@ -775,7 +775,10 @@
     "message": "🔐 Código de validação:"
   },
   "popupCodeInfo": {
-    "message": "Um código aleatório único aparece no badge e no banner a cada visita para confirmar a autenticidade."
+    "message": "Um código aleatório único aparece no emblema e no banner a cada visita para confirmar a autenticidade."
+  },
+  "popupSupportLink": {
+    "message": "Apoiar o projeto"
   },
   "autoAddUnknownLabel": {
     "message": "🔐 Ao enviar um formulário em um site desconhecido:"

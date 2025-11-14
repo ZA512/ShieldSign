@@ -777,6 +777,9 @@
   "popupCodeInfo": {
     "message": "Unikalny losowy kod pojawia się w odznace i banerze przy każdej wizycie, aby potwierdzić autentyczność"
   },
+  "popupSupportLink": {
+    "message": "Wesprzyj projekt"
+  },
   "autoAddUnknownLabel": {
     "message": "🔐 Przy wysyłaniu formularza na nieznanej stronie:"
   },

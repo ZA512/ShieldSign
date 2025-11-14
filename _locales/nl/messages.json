@@ -777,6 +777,9 @@
   "popupCodeInfo": {
     "message": "Een unieke willekeurige code verschijnt in de badge en banner bij elk bezoek om authenticiteit te bevestigen"
   },
+  "popupSupportLink": {
+    "message": "Ondersteun het project"
+  },
   "autoAddUnknownLabel": {
     "message": "🔐 Bij het indienen van een formulier op een onbekende website:"
   },

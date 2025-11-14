@@ -777,6 +777,9 @@
   "popupCodeInfo": {
     "message": "En unik tilfeldig kode vises i merket og banneret ved hvert besøk for å bekrefte ektheten"
   },
+  "popupSupportLink": {
+    "message": "Støtt prosjektet"
+  },
   "autoAddUnknownLabel": {
     "message": "🔐 Ved skjemainnsending på en ukjent side:"
   },

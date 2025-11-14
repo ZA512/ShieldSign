@@ -777,6 +777,9 @@
   "popupCodeInfo": {
     "message": "Un código aleatorio único aparece en la insignia y el banner en cada visita para confirmar la autenticidad."
   },
+  "popupSupportLink": {
+    "message": "Apoyar el proyecto"
+  },
   "autoAddUnknownLabel": {
     "message": "🔐 Al enviar un formulario en un sitio desconocido:"
   },

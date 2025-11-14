@@ -777,6 +777,9 @@
   "popupCodeInfo": {
     "message": "訪問するたびに一意のランダムコードがバッジとバナーに表示され、真正性を確認します"
   },
+  "popupSupportLink": {
+    "message": "プロジェクトを支援"
+  },
   "autoAddUnknownLabel": {
     "message": "🔐 未知のウェブサイトでフォームを送信する場合："
   },

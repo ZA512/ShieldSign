@@ -803,5 +803,17 @@
   },
   "notificationSiteAdded": {
     "message": "Site added to your personal list"
+  },
+  "supportTitle": {
+    "message": "Support the project"
+  },
+  "supportDescription": {
+    "message": "ShieldSign is a free and open source project. If you find this tool useful, you can support its development."
+  },
+  "btnDonate": {
+    "message": "☕ Donate"
+  },
+  "popupSupportLink": {
+    "message": "Support the project"
   }
 }

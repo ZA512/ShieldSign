@@ -777,6 +777,9 @@
   "popupCodeInfo": {
     "message": "Unieke willekeurige kode wat op kenteken en banier by elke besoek verskyn om egtheid te verifieer"
   },
+  "popupSupportLink": {
+    "message": "Ondersteun die projek"
+  },
   "autoAddUnknownLabel": {
     "message": "🔐 Wanneer 'n vorm op 'n onbekende bladsy ingedien word:"
   },

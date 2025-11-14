@@ -775,7 +775,10 @@
     "message": "🔐 Lambar tabbatarwa:"
   },
   "popupCodeInfo": {
-    "message": "Lambar bazuwa ta musamman tana bayyana a cikin lamba da tuta a kowane ziyara don tabbatar da gaskiya"
+    "message": "Lambar bazuwar na musamman tana bayyana a cikin alama da banner a kowane ziyara don tabbatar da sahihanci."
+  },
+  "popupSupportLink": {
+    "message": "Tallafa wa aikin"
   },
   "autoAddUnknownLabel": {
     "message": "🔐 Lokacin ƙaddamar da fom a kan shafi maras sani:"

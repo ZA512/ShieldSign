@@ -775,7 +775,10 @@
     "message": "🔐 Mã xác thực:"
   },
   "popupCodeInfo": {
-    "message": "Một mã ngẫu nhiên duy nhất xuất hiện trong huy hiệu và banner mỗi lần truy cập để xác nhận tính xác thực."
+    "message": "Một mã ngẫu nhiên duy nhất xuất hiện trong huy hiệu và biển ngữ ở mỗi lần truy cập để xác nhận tính xác thực."
+  },
+  "popupSupportLink": {
+    "message": "Hỗ trợ dự án"
   },
   "autoAddUnknownLabel": {
     "message": "🔐 Khi gửi biểu mẫu trên trang web không xác định:"

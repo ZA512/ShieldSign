@@ -775,7 +775,10 @@
     "message": "🔐 Kod pengesahan:"
   },
   "popupCodeInfo": {
-    "message": "Kod rawak unik muncul pada lencana dan sepanduk pada setiap lawatan untuk mengesahkan keaslian"
+    "message": "Kod rawak unik muncul pada lencana dan sepanduk pada setiap lawatan untuk mengesahkan ketulenan."
+  },
+  "popupSupportLink": {
+    "message": "Sokong projek"
   },
   "autoAddUnknownLabel": {
     "message": "🔐 Apabila menghantar borang pada halaman tidak diketahui:"

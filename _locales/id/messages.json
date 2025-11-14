@@ -775,7 +775,10 @@
     "message": "🔐 Kode validasi:"
   },
   "popupCodeInfo": {
-    "message": "Kode acak unik muncul di lencana dan banner setiap kunjungan untuk mengonfirmasi keaslian."
+    "message": "Kode acak unik muncul di lencana dan banner pada setiap kunjungan untuk mengonfirmasi keaslian."
+  },
+  "popupSupportLink": {
+    "message": "Dukung proyek"
   },
   "autoAddUnknownLabel": {
     "message": "🔐 Saat mengirim formulir di situs yang tidak dikenal:"

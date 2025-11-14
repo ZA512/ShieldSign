@@ -777,6 +777,9 @@
   "popupCodeInfo": {
     "message": "Bei jedem Besuch erscheint ein eindeutiger Zufallscode im Abzeichen und Banner, um die Echtheit zu bestätigen."
   },
+  "popupSupportLink": {
+    "message": "Projekt unterstützen"
+  },
   "autoAddUnknownLabel": {
     "message": "🔐 Beim Absenden eines Formulars auf einer unbekannten Website:"
   },

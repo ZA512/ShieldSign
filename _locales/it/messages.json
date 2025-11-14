@@ -777,6 +777,9 @@
   "popupCodeInfo": {
     "message": "Un codice casuale univoco appare nel badge e nel banner ad ogni visita per confermare l'autenticità."
   },
+  "popupSupportLink": {
+    "message": "Supporta il progetto"
+  },
   "autoAddUnknownLabel": {
     "message": "🔐 Quando si invia un modulo su un sito sconosciuto:"
   },

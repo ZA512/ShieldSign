@@ -225,14 +225,34 @@ main {
 
 footer {
   display: flex;
-  gap: 8px;
+  flex-direction: column;
+  gap: 10px;
   padding: 12px 16px;
   border-top: 1px solid #e0e0e0;
   background: white;
 }
 
-footer .btn {
+.footer-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.footer-buttons .btn {
   flex: 1;
+}
+
+.support-link {
+  text-align: right;
+  color: #7b68ee;
+  font-size: 12px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-weight: 500;
+}
+
+.support-link:hover {
+  color: #5a4dbd;
+  text-decoration: underline;
 }
 
 /* Section code de validation */

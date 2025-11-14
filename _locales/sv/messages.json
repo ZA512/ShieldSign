@@ -775,7 +775,10 @@
     "message": "🔐 Valideringskod:"
   },
   "popupCodeInfo": {
-    "message": "En unik slumpmässig kod visas i märket och banderollen vid varje besök för att bekräfta äktheten"
+    "message": "En unik slumpmässig kod visas i märket och bannern vid varje besök för att bekräfta äktheten."
+  },
+  "popupSupportLink": {
+    "message": "Stöd projektet"
   },
   "autoAddUnknownLabel": {
     "message": "🔐 Vid formulärinlämning på en okänd sida:"
