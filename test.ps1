@@ -1,79 +1,83 @@
 # Script de test rapide pour ShieldSign
-# Charge l'extension dans Chrome et ouvre des pages de test
+# Ouvre tous les domaines de la liste officielle dans Firefox (ou Chrome)
 
-Write-Host "🛡️  ShieldSign - Script de test" -ForegroundColor Cyan
+param(
+    [switch]$Chrome,
+    [int]$Delay = 2
+)
+
+Write-Host "=====================================" -ForegroundColor Cyan
+Write-Host "  🛡️  ShieldSign - Test Firefox" -ForegroundColor Cyan
+Write-Host "=====================================" -ForegroundColor Cyan
 Write-Host ""
 
-# Vérifier si Chrome est installé
-$chromePath = "C:\Program Files\Google\Chrome\Application\chrome.exe"
-if (-not (Test-Path $chromePath)) {
-    $chromePath = "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
+# Charger la liste des domaines
+$jsonPath = ".\shieldsign_public_list_v1.json"
+if (-not (Test-Path $jsonPath)) {
+    Write-Host "❌ Erreur: $jsonPath introuvable!" -ForegroundColor Red
+    exit 1
 }
 
-if (-not (Test-Path $chromePath)) {
-    Write-Host "❌ Chrome n'est pas installé ou n'a pas été trouvé" -ForegroundColor Red
-    Write-Host "Veuillez charger manuellement l'extension dans chrome://extensions/" -ForegroundColor Yellow
-    exit
-}
+$json = Get-Content $jsonPath | ConvertFrom-Json
+$domains = $json.domains | Select-Object -Unique
 
-# Chemin de l'extension
-$extensionPath = $PSScriptRoot
-
-Write-Host "📂 Chemin de l'extension : $extensionPath" -ForegroundColor Green
+Write-Host "📋 Domaines trouvés: $($domains.Count)" -ForegroundColor Green
+Write-Host "⏱️  Délai entre les ouvertures: $Delay secondes" -ForegroundColor Gray
 Write-Host ""
 
-# Instructions
-Write-Host "📋 Instructions :" -ForegroundColor Yellow
-Write-Host "1. Chrome va s'ouvrir avec la page chrome://extensions/"
-Write-Host "2. Activez le 'Mode développeur' (toggle en haut à droite)"
-Write-Host "3. Cliquez sur 'Charger l'extension non empaquetée'"
-Write-Host "4. Sélectionnez le dossier : $extensionPath"
-Write-Host ""
-
-# Demander confirmation
-$response = Read-Host "Appuyez sur Entrée pour ouvrir Chrome..."
-
-# Ouvrir Chrome avec la page des extensions
-Start-Process $chromePath "chrome://extensions/"
-
-Write-Host ""
-Write-Host "✅ Chrome ouvert !" -ForegroundColor Green
-Write-Host ""
-
-# Attendre un peu
-Start-Sleep -Seconds 3
-
-# Proposer d'ouvrir des pages de test
-Write-Host "🧪 Voulez-vous ouvrir des pages de test ? (o/n)" -ForegroundColor Cyan
-$testResponse = Read-Host
-
-if ($testResponse -eq "o" -or $testResponse -eq "O") {
-    Write-Host ""
-    Write-Host "📝 Ouverture des pages de test..." -ForegroundColor Green
-    
-    # Liste des pages de test
-    $testPages = @(
-        "https://accounts.google.com",
-        "https://login.microsoftonline.com",
-        "https://www.facebook.com",
-        "https://github.com/login"
+# Détecter le navigateur
+if ($Chrome) {
+    $browserName = "Chrome"
+    $browserPaths = @(
+        "$env:ProgramFiles\Google\Chrome\Application\chrome.exe",
+        "$env:ProgramFiles(x86)\Google\Chrome\Application\chrome.exe",
+        "$env:LOCALAPPDATA\Google\Chrome\Application\chrome.exe"
     )
-    
-    foreach ($page in $testPages) {
-        Write-Host "  → $page" -ForegroundColor Gray
-        Start-Process $chromePath $page
-        Start-Sleep -Milliseconds 500
-    }
-    
-    Write-Host ""
-    Write-Host "✨ Pages de test ouvertes !" -ForegroundColor Green
-    Write-Host ""
-    Write-Host "🔍 Comportement attendu :" -ForegroundColor Yellow
-    Write-Host "  • Google, Microsoft, Facebook : Bandeau bleu 'Page validée par...'"
-    Write-Host "  • GitHub : Pas de bandeau (cliquez sur l'icône ShieldSign pour approuver)"
-    Write-Host ""
+} else {
+    $browserName = "Firefox"
+    $browserPaths = @(
+        "$env:ProgramFiles\Mozilla Firefox\firefox.exe",
+        "$env:ProgramFiles(x86)\Mozilla Firefox\firefox.exe"
+    )
 }
 
-Write-Host "📖 Consultez TESTING.md pour plus d'informations sur les tests" -ForegroundColor Cyan
+$browserPath = $browserPaths | Where-Object { Test-Path $_ } | Select-Object -First 1
+
+if (-not $browserPath) {
+    Write-Host "❌ Erreur: $browserName introuvable!" -ForegroundColor Red
+    Write-Host "Chemins vérifiés:" -ForegroundColor Yellow
+    $browserPaths | ForEach-Object { Write-Host "  $_" -ForegroundColor Gray }
+    exit 1
+}
+
+Write-Host "🌐 Navigateur: $browserPath" -ForegroundColor Green
 Write-Host ""
-Write-Host "Terminé ! 🎉" -ForegroundColor Green
+Write-Host "⚠️  Assurez-vous d'avoir chargé l'extension dans $browserName avant de continuer!" -ForegroundColor Yellow
+Write-Host ""
+Write-Host "Appuyez sur ENTER pour commencer le test..." -ForegroundColor Cyan
+Read-Host
+
+$count = 0
+foreach ($domain in $domains) {
+    $count++
+    $url = "https://$domain"
+    
+    Write-Host "[$count/$($domains.Count)] 🔗 $url" -ForegroundColor Cyan
+    
+    Start-Process -FilePath $browserPath -ArgumentList $url
+    
+    if ($count -lt $domains.Count) {
+        Start-Sleep -Seconds $Delay
+    }
+}
+
+Write-Host ""
+Write-Host "=====================================" -ForegroundColor Green
+Write-Host "  ✅ Test terminé!" -ForegroundColor Green
+Write-Host "  $count onglets ouverts" -ForegroundColor Green
+Write-Host "=====================================" -ForegroundColor Green
+Write-Host ""
+Write-Host "🔍 Vérifiez que le banner ShieldSign s'affiche sur les pages avec champ mot de passe" -ForegroundColor Yellow
+Write-Host ""
+Write-Host "💡 Astuce: Utilisez -Chrome pour tester avec Chrome au lieu de Firefox" -ForegroundColor Gray
+Write-Host "   Exemple: .\test.ps1 -Chrome -Delay 1" -ForegroundColor Gray

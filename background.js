@@ -233,36 +233,32 @@ async function updateBadge(tabId, status, listType = null, uniqueCode = null) {
   const validationMode = currentSettings.validationMode || 'banner-code';
   const showUnknownPages = currentSettings.showUnknownPages || false;
   
-  console.log('[ShieldSign] updateBadge:', { tabId, status, listType, validationMode, showUnknownPages, uniqueCode });
+
   
   try {
     if (status === 'VALIDATED') {
       // Page validée
-      console.log('[ShieldSign] ===== BADGE UPDATE - VALIDATED =====');
-      console.log('[ShieldSign] validationMode:', validationMode);
-      console.log('[ShieldSign] listType:', listType);
-      console.log('[ShieldSign] uniqueCode:', uniqueCode);
+
       
       if (validationMode === 'badge-only') {
-        console.log('[ShieldSign] MODE: badge-only - Couleur verte fixe');
+
         // Mode badge uniquement : badge vert sans texte (juste la couleur verte visible)
         await chrome.action.setBadgeBackgroundColor({ color: '#28A745', tabId: tabId }); // Vert vif
-        await chrome.action.setBadgeText({ text: ' ', tabId: tabId }); // Espace pour afficher le badge sans texte
+        await chrome.action.setBadgeText({ text: '', tabId: tabId }); // Chaîne vide pour badge de couleur pure
       } else if (validationMode === 'banner-code') {
-        console.log('[ShieldSign] MODE: banner-code - Couleur VERTE avec code');
+
         // Mode code : afficher le code unique avec badge vert (toujours vert)
         const code = uniqueCode || generateRandomCode();
-        console.log('[ShieldSign] Code affiché:', code);
-        console.log('[ShieldSign] Couleur appliquée: #28A745 (VERT)');
+
         await chrome.action.setBadgeBackgroundColor({ color: '#28A745', tabId: tabId }); // Vert vif
         await chrome.action.setBadgeText({ text: code, tabId: tabId });
       } else {
-        console.log('[ShieldSign] MODE: keyword - Badge VERT sans texte');
+
         // Mode keyword : badge vert uni sans texte
         await chrome.action.setBadgeBackgroundColor({ color: '#28A745', tabId: tabId }); // Vert vif
-        await chrome.action.setBadgeText({ text: ' ', tabId: tabId }); // Espace pour badge sans texte
+        await chrome.action.setBadgeText({ text: '', tabId: tabId }); // Chaîne vide pour badge de couleur pure
       }
-      console.log('[ShieldSign] ===== FIN BADGE UPDATE =====');
+
     } else if (status === 'UNKNOWN' && showUnknownPages) {
       // Page non listée avec option activée
       await chrome.action.setBadgeBackgroundColor({ color: '#DC3545', tabId: tabId }); // Rouge
@@ -322,12 +318,12 @@ async function updateBadgeForTab(tab) {
     const url = new URL(tab.url);
     const hostname = url.hostname;
     
-    console.log('[ShieldSign] updateBadgeForTab:', hostname);
+
     
     // Vérifier si la page a un champ password
     const hasPassword = await checkForPasswordField(tab.id);
     
-    console.log('[ShieldSign] hasPassword:', hasPassword);
+ 
     
     if (!hasPassword) {
       await updateBadge(tab.id, 'NO_PASSWORD');
@@ -338,7 +334,7 @@ async function updateBadgeForTab(tab) {
     // Vérifier le domaine
     const result = await checkDomain(hostname);
     
-    console.log('[ShieldSign] checkDomain result:', result);
+
     
     if (result.status === 'VALIDATED') {
       // Récupérer le code déjà généré pour cet onglet, sinon en générer un nouveau
@@ -346,9 +342,9 @@ async function updateBadgeForTab(tab) {
       if (!uniqueCode) {
         uniqueCode = generateRandomCode();
         tabCodes.set(tab.id, uniqueCode);
-        console.log('[ShieldSign] Nouveau code généré pour onglet', tab.id, ':', uniqueCode);
+
       } else {
-        console.log('[ShieldSign] Réutilisation code existant pour onglet', tab.id, ':', uniqueCode);
+
       }
       await updateBadge(tab.id, 'VALIDATED', result.type, uniqueCode);
     } else {
@@ -483,7 +479,7 @@ async function handleFormSubmission(hostname) {
     const { settings } = await chrome.storage.local.get(['settings']);
     const autoAddUnknown = settings?.autoAddUnknown || 'prompt';
     
-    console.log('[ShieldSign] Soumission formulaire sur site inconnu:', hostname, '- Mode:', autoAddUnknown);
+
     
     switch (autoAddUnknown) {
       case 'never':
@@ -493,7 +489,7 @@ async function handleFormSubmission(hostname) {
       case 'always':
         // Ajouter automatiquement à la liste personnelle
         await addPersonalDomain(hostname);
-        console.log('[ShieldSign] Site ajouté automatiquement:', hostname);
+
         return { shouldPrompt: false, added: true };
         
       case 'prompt':
@@ -543,7 +539,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       // Stocker le code pour cet onglet (pour le badge)
       if (sender.tab && sender.tab.id) {
         tabCodes.set(sender.tab.id, uniqueCode);
-        console.log('[ShieldSign] Code généré et stocké pour onglet', sender.tab.id, ':', uniqueCode);
+
         
         // Mettre à jour le badge avec ce code
         if (result.status === 'VALIDATED') {

@@ -163,7 +163,7 @@ async function injectBanner(listName, type, settings, uniqueCode) {
   const originalPadding = window.getComputedStyle(document.body).paddingTop;
   document.body.style.paddingTop = `${parseInt(originalPadding) + bannerHeight}px`;
   
-  console.log(`[ShieldSign] Bandeau injecté pour: ${listName} (${type})`);
+
 }
 
 // Nom d'affichage de la liste
@@ -203,7 +203,7 @@ function startObserving() {
   setTimeout(() => {
     if (bannerInjected) {
       observer.disconnect();
-      console.log('[ShieldSign] Observer déconnecté après injection du bandeau');
+
     }
   }, 30000);
 }
@@ -257,7 +257,7 @@ document.addEventListener('submit', async (event) => {
   const hasPassword = form.querySelector('input[type="password"]');
   
   if (hasPassword) {
-    console.log('[ShieldSign] Soumission de formulaire avec mot de passe détectée');
+
     
     try {
       const response = await chrome.runtime.sendMessage({
