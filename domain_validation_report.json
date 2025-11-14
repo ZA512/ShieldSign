@@ -1,0 +1,1416 @@
+{
+  "Results": [
+    {
+      "Warnings": [
+        "Redirection vers: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Faccounts.google.com%2F&dsh=S-2061494083%3A1763141779267085&followup=https%3A%2F%2Faccounts.google.com%2F&ifkv=ARESoU3onGLbv1jzcxC94dZ3E2VL8LlKYieNDDWzRYq5MwdizaddPxqMyJinc6OBH_4JreMqbFi0bA&passive=1209600&flowName=WebLiteSignIn&flowEntry=ServiceLogin"
+      ],
+      "ResponseTime": 528,
+      "RedirectCount": 1,
+      "Domain": "accounts.google.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Faccounts.google.com%2F&dsh=S-2061494083%3A1763141779267085&followup=https%3A%2F%2Faccounts.google.com%2F&ifkv=ARESoU3onGLbv1jzcxC94dZ3E2VL8LlKYieNDDWzRYq5MwdizaddPxqMyJinc6OBH_4JreMqbFi0bA&passive=1209600&flowName=WebLiteSignIn&flowEntry=ServiceLogin",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html; charset=utf-8",
+      "Status": "OK",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": true
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=4765445b-32c6-49b0-83e6-1d93765276ca&redirect_uri=https%3A%2F%2Fwww.office.com%2Flandingv2&response_type=code id_token&scope=openid profile https%3A%2F%2Fwww.office.com%2Fv2%2FOfficeHome.All&response_mode=form_post&nonce=638987385798908058.MWY2MzMwY2UtMzYzYS00MmVkLWJkNjMtMDVkZTQ2MGU3MDc3MjI1MWUzYjAtNjMwNC00ZDBmLWJmZDEtODU0YzRkYWM0YmM1&ui_locales=en-US&mkt=en-US&client-request-id=a9653310-a91e-4d07-a3a7-b9ea3f2846b1&state=6KaMpiixP6ik5FWkOSORjMjIX6_tqmbVy9eZjekbG2thnwFXUFtLD4KVi3JCjs5NYbRyC5A95Ehr9uzHoJxgAhkWG0GVm68jb4b4wnV0FgS9ruviVIndBQCc6ZsIJ2l1QQGIpiKBFA90TZpg5xVCidNH2h2yef0EU0M3F90ojlBNFk-GQCQv1met69cw0sh8G6G3a4u4pwzxV-Q7FNa1noco7tg-LBxUdUj9cCFFM87UpSyiDqWgVddWaI7mGkD_7_LHCncPisM2g9o-DM9r2BM4RorwHdjDIqAm2jAWzf8&x-client-SKU=ID_NET8_0&x-client-ver=8.5.0.0#",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 466,
+      "RedirectCount": 1,
+      "Domain": "login.microsoftonline.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=4765445b-32c6-49b0-83e6-1d93765276ca&redirect_uri=https%3A%2F%2Fwww.office.com%2Flandingv2&response_type=code id_token&scope=openid profile https%3A%2F%2Fwww.office.com%2Fv2%2FOfficeHome.All&response_mode=form_post&nonce=638987385798908058.MWY2MzMwY2UtMzYzYS00MmVkLWJkNjMtMDVkZTQ2MGU3MDc3MjI1MWUzYjAtNjMwNC00ZDBmLWJmZDEtODU0YzRkYWM0YmM1&ui_locales=en-US&mkt=en-US&client-request-id=a9653310-a91e-4d07-a3a7-b9ea3f2846b1&state=6KaMpiixP6ik5FWkOSORjMjIX6_tqmbVy9eZjekbG2thnwFXUFtLD4KVi3JCjs5NYbRyC5A95Ehr9uzHoJxgAhkWG0GVm68jb4b4wnV0FgS9ruviVIndBQCc6ZsIJ2l1QQGIpiKBFA90TZpg5xVCidNH2h2yef0EU0M3F90ojlBNFk-GQCQv1met69cw0sh8G6G3a4u4pwzxV-Q7FNa1noco7tg-LBxUdUj9cCFFM87UpSyiDqWgVddWaI7mGkD_7_LHCncPisM2g9o-DM9r2BM4RorwHdjDIqAm2jAWzf8&x-client-SKU=ID_NET8_0&x-client-ver=8.5.0.0#",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html; charset=utf-8",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://appleid.apple.com/",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 1432,
+      "RedirectCount": 1,
+      "Domain": "appleid.apple.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://appleid.apple.com/",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html; charset=UTF-8",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://login.live.com/",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 646,
+      "RedirectCount": 1,
+      "Domain": "login.live.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://login.live.com/",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html; charset=utf-8",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 53,
+      "RedirectCount": 0,
+      "Domain": "auth.dropbox.com",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (auth.dropbox.com:443)\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (auth.dropbox.com:80)\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://login.slack.com/",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 753,
+      "RedirectCount": 1,
+      "Domain": "login.slack.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://login.slack.com/",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html; charset=utf-8",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://id.atlassian.com/login",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 364,
+      "RedirectCount": 1,
+      "Domain": "auth.atlassian.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://id.atlassian.com/login",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 53,
+      "RedirectCount": 0,
+      "Domain": "login.zoom.us",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (login.zoom.us:443)\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (login.zoom.us:80)\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 44,
+      "RedirectCount": 0,
+      "Domain": "adobeid.adobe.com",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (adobeid.adobe.com:443)\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (adobeid.adobe.com:80)\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://id.atlassian.com/login",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 153,
+      "RedirectCount": 1,
+      "Domain": "id.atlassian.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://id.atlassian.com/login",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://login.salesforce.com/"
+      ],
+      "ResponseTime": 1536,
+      "RedirectCount": 1,
+      "Domain": "login.salesforce.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://login.salesforce.com/",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html; charset=UTF-8",
+      "Status": "OK",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": true
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://idp.okta.com/",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 1255,
+      "RedirectCount": 1,
+      "Domain": "idp.okta.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://idp.okta.com/",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html; charset=utf-8",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://login.okta.com/",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 261,
+      "RedirectCount": 1,
+      "Domain": "login.okta.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://login.okta.com/",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 41,
+      "RedirectCount": 0,
+      "Domain": "login.aws.amazon.com",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (login.aws.amazon.com:443)\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (login.aws.amazon.com:80)\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://duo.com/",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 2250,
+      "RedirectCount": 1,
+      "Domain": "mfa.duosecurity.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://duo.com/",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html; charset=utf-8",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 1008,
+      "RedirectCount": 0,
+      "Domain": "sso.pingidentity.com",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"The remote server returned an error: (403) Forbidden.\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"The remote server returned an error: (403) Forbidden.\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 42,
+      "RedirectCount": 0,
+      "Domain": "accounts.ibm.com",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (accounts.ibm.com:443)\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (accounts.ibm.com:80)\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 48,
+      "RedirectCount": 0,
+      "Domain": "login.sap.com",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (login.sap.com:443)\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (login.sap.com:80)\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://portal.azure.com/",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 304,
+      "RedirectCount": 1,
+      "Domain": "portal.azure.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://portal.azure.com/",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html; charset=utf-8",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://auth0.com/",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 374,
+      "RedirectCount": 1,
+      "Domain": "auth0.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://auth0.com/",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html; charset=utf-8",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://github.com/",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 458,
+      "RedirectCount": 1,
+      "Domain": "github.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://github.com/",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html; charset=utf-8",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://www.paypal.com/fr/home",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 611,
+      "RedirectCount": 1,
+      "Domain": "www.paypal.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://www.paypal.com/fr/home",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html; charset=utf-8",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://dashboard.stripe.com/login",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 1080,
+      "RedirectCount": 1,
+      "Domain": "dashboard.stripe.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://dashboard.stripe.com/login",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html; charset=utf-8",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://signin.ebay.com/signin/",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 964,
+      "RedirectCount": 1,
+      "Domain": "signin.ebay.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://signin.ebay.com/signin/",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html; charset=utf-8",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://developer.amazon.com/apps-and-games/login-with-amazon",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 2682,
+      "RedirectCount": 1,
+      "Domain": "login.amazon.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://developer.amazon.com/apps-and-games/login-with-amazon",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html; charset=utf-8",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 46,
+      "RedirectCount": 0,
+      "Domain": "secure.etrade.com",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (secure.etrade.com:443)\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (secure.etrade.com:80)\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://www.americanexpress.com/fr-fr/",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 476,
+      "RedirectCount": 1,
+      "Domain": "www.americanexpress.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://www.americanexpress.com/fr-fr/",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html; charset=UTF-8",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 42,
+      "RedirectCount": 0,
+      "Domain": "secure.ing.com",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (secure.ing.com:443)\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (secure.ing.com:80)\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 45,
+      "RedirectCount": 0,
+      "Domain": "secure.bnpparibas.com",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (secure.bnpparibas.com:443)\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (secure.bnpparibas.com:80)\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://www.facebook.com/"
+      ],
+      "ResponseTime": 484,
+      "RedirectCount": 1,
+      "Domain": "www.facebook.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://www.facebook.com/",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html; charset=\"utf-8\"",
+      "Status": "OK",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": true
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 46,
+      "RedirectCount": 0,
+      "Domain": "login.linkedin.com",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (login.linkedin.com:443)\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (login.linkedin.com:80)\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 63,
+      "RedirectCount": 0,
+      "Domain": "auth.x.com",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (auth.x.com:443)\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (auth.x.com:80)\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://x.com/",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 825,
+      "RedirectCount": 1,
+      "Domain": "twitter.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://x.com/",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html; charset=utf-8",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://accounts.snapchat.com/v2/login",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 699,
+      "RedirectCount": 1,
+      "Domain": "accounts.snapchat.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://accounts.snapchat.com/v2/login",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html; charset=utf-8",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 41,
+      "RedirectCount": 0,
+      "Domain": "id.tiktok.com",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (id.tiktok.com:443)\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (id.tiktok.com:80)\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://discord.com/",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 242,
+      "RedirectCount": 1,
+      "Domain": "discord.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://discord.com/",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=180&ct=1763141799&rver=7.5.2156.0&wp=MBI_SSL&wreply=https%3A%2F%2Flw.skype.com%2Flogin%2Foauth%2Fproxy&lc=1033&id=293290&mkt=en-US&psi=skype&lw=1&cobrandid=2befc4b5-19e3-46e8-8347-77317a16a5a5&client_flight=ReservedFlight33%2CReservedFlight67",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 488,
+      "RedirectCount": 1,
+      "Domain": "login.skype.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=180&ct=1763141799&rver=7.5.2156.0&wp=MBI_SSL&wreply=https%3A%2F%2Flw.skype.com%2Flogin%2Foauth%2Fproxy&lc=1033&id=293290&mkt=en-US&psi=skype&lw=1&cobrandid=2befc4b5-19e3-46e8-8347-77317a16a5a5&client_flight=ReservedFlight33%2CReservedFlight67",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html; charset=utf-8",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://www.netflix.com/fr-en/",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 2120,
+      "RedirectCount": 1,
+      "Domain": "www.netflix.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://www.netflix.com/fr-en/",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html; charset=utf-8",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://accounts.spotify.com/",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 304,
+      "RedirectCount": 1,
+      "Domain": "accounts.spotify.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://accounts.spotify.com/",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html; charset=utf-8",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 49,
+      "RedirectCount": 0,
+      "Domain": "account.hbomax.com",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (account.hbomax.com:443)\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (account.hbomax.com:80)\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 40,
+      "RedirectCount": 0,
+      "Domain": "login.disneyplus.com",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (login.disneyplus.com:443)\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (login.disneyplus.com:80)\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 40,
+      "RedirectCount": 0,
+      "Domain": "signin.twitch.tv",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (signin.twitch.tv:443)\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (signin.twitch.tv:80)\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 40,
+      "RedirectCount": 0,
+      "Domain": "login.epicgames.com",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (login.epicgames.com:443)\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (login.epicgames.com:80)\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://store.steampowered.com/",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 867,
+      "RedirectCount": 1,
+      "Domain": "store.steampowered.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://store.steampowered.com/",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html; charset=UTF-8",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 42,
+      "RedirectCount": 0,
+      "Domain": "login.ubisoft.com",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (login.ubisoft.com:443)\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (login.ubisoft.com:80)\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://login.orange.fr/",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 234,
+      "RedirectCount": 1,
+      "Domain": "login.orange.fr",
+      "HasHTTPS": true,
+      "FinalURL": "https://login.orange.fr/",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 48,
+      "RedirectCount": 0,
+      "Domain": "compte.free.fr",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (compte.free.fr:443)\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (compte.free.fr:80)\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 43,
+      "RedirectCount": 0,
+      "Domain": "login.laposte.net",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (login.laposte.net:443)\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (login.laposte.net:80)\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 43,
+      "RedirectCount": 0,
+      "Domain": "secure.sfr.fr",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (secure.sfr.fr:443)\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (secure.sfr.fr:80)\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://www.ovhcloud.com/fr/",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 620,
+      "RedirectCount": 1,
+      "Domain": "www.ovh.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://www.ovhcloud.com/fr/",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://login.infomaniak.com/en/login?client=a0047b4a-7f65-444d-854d-91feadcd7651&oa2=1&r=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImtpZCI6ImxvYTItMSJ9.eyJpc3MiOiJodHRwczovL2xvZ2luLmluZm9tYW5pYWsuY29tIiwiYXVkIjoiaHR0cHM6Ly9sb2dpbi5pbmZvbWFuaWFrLmNvbSIsInUiOiJodHRwczovL2xvZ2luLmluZm9tYW5pYWsuY29tL2F1dGhvcml6ZT9hY2Nlc3NfdHlwZT1vZmZsaW5lJmNvZGVfY2hhbGxlbmdlPU9EdlU5TDVfRW1qelA1MDhRRy1vTVhRYUtPZThtcGJwQWd5OWZWdm80YkUmY29kZV9jaGFsbGVuZ2VfbWV0aG9kPVMyNTYmcz1hJnNjb3BlPWFjY291bnRzJTIwYWZmaWxpYXRpb24lMjBhaS10b29scyUyMGNlcnRpZmljYXRlcyUyMGNoYXRib3QlMjBjaGslMjBjbG91ZC1oZCUyMGNyeXB0X2tleSUyMGRucyUzQXJlYWQlMjBkbnMlM0F3cml0ZSUyMGRvY3VtZW50JTIwZG9tYWluJTIwZG9tYWluJTNBcmVhZCUyMGRvbWFpbiUzQXdyaXRlJTIwZHJpdmUlMjBkcml2ZSUzQWZpbGUlM0FyZWFkJTIwZHJpdmUlM0FmaWxlJTNBc2hhcmUlMjBkcml2ZSUzQWZpbGUlM0F3cml0ZSUyMGRyaXZlJTNBbWFuYWdlbWVudCUzQXJlYWQlMjBkcml2ZSUzQW1hbmFnZW1lbnQlM0F3cml0ZSUyMGV2ZW50JTIwaG91c2luZyUyMGluZm9tYW5pYWslMjBqZWxhc3RpYyUyMGtjaGF0JTIwa21lZXQlMjBtYWlsJTIwbWVtbyUyMG5hcyUyMG5ld3NsZXR0ZXIlMjBwcml2YXRlJTIwcHJvZHVjdHMlM0FyZWFkJTIwcHJvZmlsZV91cGRhdGUlMjBwdWJsaWNfY2xvdWQlMjByYWRpbyUyMHJlY292ZXJ5JTIwc2FmZXRyYWNpbmclMjBzaG9wX3B1YmxpYyUyMHNtcyUyMHN3aXNzLWJhY2t1cCUyMHVzZXJfZW1haWwlMjB1c2VyX2luZm8lMjB1c2VyX2luZm9fY29udGFjdCUyMHVzZXJfcGFzc3dvcmQlMjB1c2VycyUyMHZpZGVvJTIwdm9kJTIwdnBzJTIwd2ViJTIwd2Vic2l0ZV9idWlsZGVyJTIwd29ya3NwYWNlJTNBY2FsZW5kYXIlMjB3b3Jrc3BhY2UlM0Fjb250YWN0JTIwd29ya3NwYWNlJTNBbWFpbCZzdGF0ZT0lMjFZT1h6REwwNG11YmRkSVVCYVFmdSJ9.Apatz395gu7JK5DU1PphyWMiG_8BDD68pDqaTorqDX8",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 553,
+      "RedirectCount": 1,
+      "Domain": "manager.infomaniak.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://login.infomaniak.com/en/login?client=a0047b4a-7f65-444d-854d-91feadcd7651&oa2=1&r=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImtpZCI6ImxvYTItMSJ9.eyJpc3MiOiJodHRwczovL2xvZ2luLmluZm9tYW5pYWsuY29tIiwiYXVkIjoiaHR0cHM6Ly9sb2dpbi5pbmZvbWFuaWFrLmNvbSIsInUiOiJodHRwczovL2xvZ2luLmluZm9tYW5pYWsuY29tL2F1dGhvcml6ZT9hY2Nlc3NfdHlwZT1vZmZsaW5lJmNvZGVfY2hhbGxlbmdlPU9EdlU5TDVfRW1qelA1MDhRRy1vTVhRYUtPZThtcGJwQWd5OWZWdm80YkUmY29kZV9jaGFsbGVuZ2VfbWV0aG9kPVMyNTYmcz1hJnNjb3BlPWFjY291bnRzJTIwYWZmaWxpYXRpb24lMjBhaS10b29scyUyMGNlcnRpZmljYXRlcyUyMGNoYXRib3QlMjBjaGslMjBjbG91ZC1oZCUyMGNyeXB0X2tleSUyMGRucyUzQXJlYWQlMjBkbnMlM0F3cml0ZSUyMGRvY3VtZW50JTIwZG9tYWluJTIwZG9tYWluJTNBcmVhZCUyMGRvbWFpbiUzQXdyaXRlJTIwZHJpdmUlMjBkcml2ZSUzQWZpbGUlM0FyZWFkJTIwZHJpdmUlM0FmaWxlJTNBc2hhcmUlMjBkcml2ZSUzQWZpbGUlM0F3cml0ZSUyMGRyaXZlJTNBbWFuYWdlbWVudCUzQXJlYWQlMjBkcml2ZSUzQW1hbmFnZW1lbnQlM0F3cml0ZSUyMGV2ZW50JTIwaG91c2luZyUyMGluZm9tYW5pYWslMjBqZWxhc3RpYyUyMGtjaGF0JTIwa21lZXQlMjBtYWlsJTIwbWVtbyUyMG5hcyUyMG5ld3NsZXR0ZXIlMjBwcml2YXRlJTIwcHJvZHVjdHMlM0FyZWFkJTIwcHJvZmlsZV91cGRhdGUlMjBwdWJsaWNfY2xvdWQlMjByYWRpbyUyMHJlY292ZXJ5JTIwc2FmZXRyYWNpbmclMjBzaG9wX3B1YmxpYyUyMHNtcyUyMHN3aXNzLWJhY2t1cCUyMHVzZXJfZW1haWwlMjB1c2VyX2luZm8lMjB1c2VyX2luZm9fY29udGFjdCUyMHVzZXJfcGFzc3dvcmQlMjB1c2VycyUyMHZpZGVvJTIwdm9kJTIwdnBzJTIwd2ViJTIwd2Vic2l0ZV9idWlsZGVyJTIwd29ya3NwYWNlJTNBY2FsZW5kYXIlMjB3b3Jrc3BhY2UlM0Fjb250YWN0JTIwd29ya3NwYWNlJTNBbWFpbCZzdGF0ZT0lMjFZT1h6REwwNG11YmRkSVVCYVFmdSJ9.Apatz395gu7JK5DU1PphyWMiG_8BDD68pDqaTorqDX8",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html; charset=UTF-8",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 52,
+      "RedirectCount": 0,
+      "Domain": "auth.proton.me",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (auth.proton.me:443)\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (auth.proton.me:80)\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 52,
+      "RedirectCount": 0,
+      "Domain": "login.qonto.com",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (login.qonto.com:443)\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (login.qonto.com:80)\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 55,
+      "RedirectCount": 0,
+      "Domain": "auth.scaleway.com",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (auth.scaleway.com:443)\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (auth.scaleway.com:80)\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 53,
+      "RedirectCount": 0,
+      "Domain": "id.trello.com",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (id.trello.com:443)\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (id.trello.com:80)\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 1413,
+      "RedirectCount": 0,
+      "Domain": "login.notion.so",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"The SSL connection could not be established, see inner exception.\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"The SSL connection could not be established, see inner exception.\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 41,
+      "RedirectCount": 0,
+      "Domain": "login.figma.com",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (login.figma.com:443)\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"Hôte inconnu. (login.figma.com:80)\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 801,
+      "RedirectCount": 0,
+      "Domain": "accounts.miro.com",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"The remote server returned an error: (404) Not Found.\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"The remote server returned an error: (404) Not Found.\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "HTTPS non disponible, utilise HTTP (INSECURE!)"
+      ],
+      "ResponseTime": 28260,
+      "RedirectCount": 0,
+      "Domain": "airtable.com",
+      "HasHTTPS": false,
+      "FinalURL": "https://www.airtable.com/",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": null,
+      "Status": "NO_PASSWORD",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"The operation has timed out.\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [],
+      "ResponseTime": 311,
+      "RedirectCount": 0,
+      "Domain": "outlook.live.com",
+      "HasHTTPS": false,
+      "FinalURL": null,
+      "IsAccessible": false,
+      "HTTPStatus": null,
+      "ContentType": null,
+      "Status": "UNREACHABLE",
+      "Errors": [
+        "HTTPS failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"The remote server returned an error: (417) Expectation Failed.\"",
+        "HTTP failed: Exception calling \"GetResponse\" with \"0\" argument(s): \"The remote server returned an error: (417) Expectation Failed.\""
+      ],
+      "Certificate": null,
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://mail.proton.me/",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 400,
+      "RedirectCount": 1,
+      "Domain": "mail.proton.me",
+      "HasHTTPS": true,
+      "FinalURL": "https://mail.proton.me/",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html; charset=UTF-8",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    },
+    {
+      "Warnings": [
+        "Redirection vers: https://mail.yahoo.com/",
+        "Aucun champ password détecté dans le HTML"
+      ],
+      "ResponseTime": 363,
+      "RedirectCount": 1,
+      "Domain": "mail.yahoo.com",
+      "HasHTTPS": true,
+      "FinalURL": "https://mail.yahoo.com/",
+      "IsAccessible": true,
+      "HTTPStatus": 200,
+      "ContentType": "text/html; charset=utf-8",
+      "Status": "NO_PASSWORD",
+      "Errors": [],
+      "Certificate": {
+        "Warnings": [],
+        "IsTrusted": false,
+        "Issuer": null,
+        "Subject": null,
+        "ValidFrom": null,
+        "IsValid": false,
+        "DaysUntilExpiry": null,
+        "ValidTo": null
+      },
+      "HasPasswordField": false
+    }
+  ],
+  "SourceFile": ".\\shieldsign_public_list_v1.json",
+  "GeneratedAt": "2025-11-14 18:37:17",
+  "Statistics": {
+    "Insecure": 0,
+    "OK": 3,
+    "Total": 62,
+    "Error": 0,
+    "NoPassword": 30,
+    "Unreachable": 29
+  }
+}
