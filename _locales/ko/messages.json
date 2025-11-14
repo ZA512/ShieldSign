@@ -1,0 +1,807 @@
+{
+  "extName": {
+    "message": "ShieldSign",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "도메인 화이트리스트를 통한 안전한 로그인 페이지의 시각적 검증",
+    "description": "Extension description"
+  },
+  
+  "appTitle": {
+    "message": "ShieldSign"
+  },
+  "settings": {
+    "message": "설정"
+  },
+  "refresh": {
+    "message": "새로고침"
+  },
+  
+  "tabCommunity": {
+    "message": "커뮤니티 소스"
+  },
+  "tabEnterprise": {
+    "message": "기업 소스"
+  },
+  "tabPersonal": {
+    "message": "개인 소스"
+  },
+  "tabSettings": {
+    "message": "설정"
+  },
+  "tabAbout": {
+    "message": "정보"
+  },
+  
+  "officialListTitle": {
+    "message": "ShieldSign 공식 목록"
+  },
+  "officialListDescription": {
+    "message": "ShieldSign 팀이 유지 관리하는 공식 목록으로 가장 인기 있는 웹 및 클라우드 서비스를 포함합니다. 기본적으로 활성화되어 있습니다."
+  },
+  "officialListName": {
+    "message": "ShieldSign 공식 목록"
+  },
+  "officialListInfo": {
+    "message": "공식 목록 (65개 이상의 검증된 도메인)"
+  },
+  "disable": {
+    "message": "비활성화"
+  },
+  "enable": {
+    "message": "활성화"
+  },
+  "reinstallOfficialList": {
+    "message": "공식 목록 재설치"
+  },
+  
+  "communityListsTitle": {
+    "message": "추가 커뮤니티 목록"
+  },
+  "communityListsDescription": {
+    "message": "커뮤니티가 유지 관리하는 다른 공개 목록 추가 (선택사항)"
+  },
+  "communityUrlPlaceholder": {
+    "message": "https://example.com/community-list.json"
+  },
+  "add": {
+    "message": "추가"
+  },
+  "noAdditionalList": {
+    "message": "구성된 추가 목록이 없습니다"
+  },
+  
+  "enterpriseInfoTitle": {
+    "message": "ℹ️ 기업 소스 정보"
+  },
+  "enterpriseInfoText1": {
+    "message": "이 기능은 직원에게 검증된 도메인 목록을 제공하려는 <strong>기업 관리자</strong>를 위한 것입니다."
+  },
+  "enterpriseInfoText2": {
+    "message": "<strong>도메인 형식:</strong> 서브도메인과 메인 도메인을 포함한 전체 형식을 사용하세요 (<code>https://</code>와 첫 번째 <code>/</code> 사이에 나타나는 것)."
+  },
+  "enterpriseInfoExamples": {
+    "message": "<strong>예시:</strong>"
+  },
+  "enterpriseInfoSecurity": {
+    "message": "⚠️ <strong>보안:</strong> 목록을 <strong>공개 URL이 아닌</strong> 내부 또는 개인 서버에 호스팅하세요."
+  },
+  "enterpriseInfoFormatLabel": {
+    "message": "도메인 형식:"
+  },
+  "enterpriseInfoFormatText": {
+    "message": "서브도메인과 메인 도메인을 포함한 전체 형식을 사용하세요 (<code>https://</code>와 첫 번째 <code>/</code> 사이에 나타나는 것)."
+  },
+  "enterpriseInfoExamplesLabel": {
+    "message": "예시:"
+  },
+  "enterpriseInfoExample1": {
+    "message": "✅ <code>login.mycompany.com</code>"
+  },
+  "enterpriseInfoExample2": {
+    "message": "✅ <code>sso.mycompany.com</code>"
+  },
+  "enterpriseInfoExample3": {
+    "message": "✅ <code>auth.intranet.mycompany.net</code>"
+  },
+  "enterpriseInfoExample4": {
+    "message": "❌ <code>https://login.mycompany.com/auth</code> (https:// 또는 경로 포함 안 됨)"
+  },
+  
+  "enterpriseListTitle": {
+    "message": "기업 목록 구성"
+  },
+  "enterpriseListDescription": {
+    "message": "회사 전체 도메인 검증 목록 추가 (최우선 순위)"
+  },
+  "enterpriseUrlPlaceholder": {
+    "message": "https://intranet.company.com/validated-domains.json"
+  },
+  "noEnterpriseList": {
+    "message": "구성된 기업 목록이 없습니다"
+  },
+  
+  "personalDomainsTitle": {
+    "message": "개인 도메인 관리"
+  },
+  "personalDomainsDescription": {
+    "message": "신뢰할 수 있는 자신만의 도메인 추가 (커뮤니티 목록보다 높은 우선순위)"
+  },
+  "personalDomainPlaceholder": {
+    "message": "login.example.com"
+  },
+  "noPersonalDomain": {
+    "message": "구성된 개인 도메인이 없습니다"
+  },
+  
+  "importExportTitle": {
+    "message": "가져오기 / 내보내기"
+  },
+  "importExportDescription": {
+    "message": "백업을 위해 목록을 내보내거나 다른 브라우저로 가져오기"
+  },
+  "exportList": {
+    "message": "목록 내보내기"
+  },
+  "importList": {
+    "message": "목록 가져오기"
+  },
+  
+  "generalSettingsTitle": {
+    "message": "일반 설정"
+  },
+  "language": {
+    "message": "언어"
+  },
+  "languageDescription": {
+    "message": "인터페이스 언어 선택"
+  },
+  "languageAuto": {
+    "message": "자동 (브라우저 언어)"
+  },
+  "languageEn": {
+    "message": "English"
+  },
+  "languageFr": {
+    "message": "Français"
+  },
+  "enterpriseMode": {
+    "message": "기업 모드"
+  },
+  "enterpriseModeDescription": {
+    "message": "관리자이고 조직의 도메인 목록을 관리하려면 이 옵션을 활성화하세요. \"기업 소스\" 탭이 표시됩니다."
+  },
+  "checkCN": {
+    "message": "인증서 CN 일치 확인"
+  },
+  "checkCNDescription": {
+    "message": "인증서 CN이 도메인과 일치하지 않으면 경고 표시 (Firefox만 해당)"
+  },
+  "cacheDuration": {
+    "message": "목록 캐시 기간 (시간)"
+  },
+  "cacheDurationDescription": {
+    "message": "원격 목록 자동 업데이트 빈도 (기본값: 24시간)"
+  },
+  
+  "bannerColorsTitle": {
+    "message": "배너 색상"
+  },
+  "enterpriseList": {
+    "message": "기업 목록"
+  },
+  "communityList": {
+    "message": "커뮤니티 목록"
+  },
+  "personalList": {
+    "message": "개인 목록"
+  },
+  
+  "saveSettings": {
+    "message": "설정 저장"
+  },
+  "resetSettings": {
+    "message": "재설정"
+  },
+  
+  "aboutTitle": {
+    "message": "ShieldSign 정보"
+  },
+  "version": {
+    "message": "버전"
+  },
+  "license": {
+    "message": "라이선스"
+  },
+  "description": {
+    "message": "설명"
+  },
+  "aboutDescription": {
+    "message": "도메인 화이트리스트를 통한 안전한 로그인 페이지의 시각적 검증 확장 프로그램"
+  },
+  "githubRepo": {
+    "message": "GitHub 저장소"
+  },
+  "reportBug": {
+    "message": "버그 신고"
+  },
+  "documentation": {
+    "message": "문서"
+  },
+  "contributorsTitle": {
+    "message": "기여자"
+  },
+  "contributorsText": {
+    "message": "ShieldSign 프로젝트의 모든 기여자에게 감사드립니다"
+  },
+  
+  "pageValidated": {
+    "message": "다음에 의해 검증된 페이지: $LIST_NAME$",
+    "placeholders": {
+      "list_name": {
+        "content": "$1",
+        "example": "ShieldSign 공식 목록"
+      }
+    }
+  },
+  "personalListDisplay": {
+    "message": "개인 목록"
+  },
+  "enterpriseListDisplay": {
+    "message": "기업 목록"
+  },
+  
+  "verifying": {
+    "message": "검증 중..."
+  },
+  "pageNotContainPasswordField": {
+    "message": "이 페이지에는 비밀번호 필드가 없습니다"
+  },
+  "approveDomain": {
+    "message": "이 도메인 승인"
+  },
+  
+  "settingsSaved": {
+    "message": "설정이 성공적으로 저장되었습니다"
+  },
+  "settingsReset": {
+    "message": "설정이 재설정되었습니다"
+  },
+  "listAdded": {
+    "message": "목록이 성공적으로 추가되었습니다"
+  },
+  "listRemoved": {
+    "message": "목록이 성공적으로 제거되었습니다"
+  },
+  "listEnabled": {
+    "message": "목록이 활성화되었습니다"
+  },
+  "listDisabled": {
+    "message": "목록이 비활성화되었습니다"
+  },
+  "domainAdded": {
+    "message": "도메인이 성공적으로 추가되었습니다"
+  },
+  "domainRemoved": {
+    "message": "도메인이 성공적으로 제거되었습니다"
+  },
+  "officialListReinstalled": {
+    "message": "공식 목록이 재설치 및 업데이트되었습니다!"
+  },
+  "listExported": {
+    "message": "목록이 성공적으로 내보내기되었습니다"
+  },
+  "domainsImported": {
+    "message": "$COUNT$개의 도메인을 가져왔습니다",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  
+  "errorInvalidUrl": {
+    "message": "잘못된 URL"
+  },
+  "errorInvalidDomain": {
+    "message": "잘못된 도메인 형식"
+  },
+  "errorAddingList": {
+    "message": "목록 추가 중 오류 발생"
+  },
+  "errorRemovingList": {
+    "message": "목록 제거 중 오류 발생"
+  },
+  "errorModifyingList": {
+    "message": "목록 수정 중 오류 발생"
+  },
+  "errorAddingDomain": {
+    "message": "도메인 추가 중 오류 발생"
+  },
+  "errorRemovingDomain": {
+    "message": "도메인 제거 중 오류 발생"
+  },
+  "errorLoadingSettings": {
+    "message": "설정 로드 중 오류 발생"
+  },
+  "errorSavingSettings": {
+    "message": "설정 저장 중 오류 발생"
+  },
+  "errorResetting": {
+    "message": "재설정 중 오류 발생"
+  },
+  "errorReinstalling": {
+    "message": "재설치 중 오류 발생"
+  },
+  "errorExporting": {
+    "message": "내보내기 중 오류 발생"
+  },
+  "errorImporting": {
+    "message": "가져오기 중 오류 발생"
+  },
+  "errorInvalidFile": {
+    "message": "잘못된 파일 형식"
+  },
+  "errorNoValidDomain": {
+    "message": "유효한 도메인을 찾을 수 없습니다"
+  },
+  "errorNoPersonalDomain": {
+    "message": "내보낼 개인 도메인이 없습니다"
+  },
+  "errorEnterValidUrl": {
+    "message": "유효한 URL을 입력하세요"
+  },
+  "errorEnterValidDomain": {
+    "message": "유효한 도메인을 입력하세요"
+  },
+  "errorUpdating": {
+    "message": "업데이트 중 오류 발생"
+  },
+  
+  "settingsTitle": {
+    "message": "설정 - ShieldSign"
+  },
+  "headerTitle": {
+    "message": "ShieldSign - 설정"
+  },
+  "officialListSubtitle": {
+    "message": "공식 목록 (65개 이상의 검증된 도메인)"
+  },
+  "toggleDisable": {
+    "message": "비활성화"
+  },
+  "toggleEnable": {
+    "message": "활성화"
+  },
+  "reinstallOfficial": {
+    "message": "공식 목록 재설치"
+  },
+  "communityListTitle": {
+    "message": "추가 커뮤니티 목록"
+  },
+  "communityListDescription": {
+    "message": "커뮤니티가 유지 관리하는 다른 공개 목록 추가 (선택사항)"
+  },
+  "noListCommunity": {
+    "message": "구성된 추가 목록이 없습니다"
+  },
+  "noListEnterprise": {
+    "message": "구성된 기업 목록이 없습니다"
+  },
+  "noListPersonal": {
+    "message": "구성된 개인 도메인이 없습니다"
+  },
+  "btnAdd": {
+    "message": "추가"
+  },
+  "btnSave": {
+    "message": "설정 저장"
+  },
+  "btnReset": {
+    "message": "재설정"
+  },
+  "btnExport": {
+    "message": "목록 내보내기"
+  },
+  "btnImport": {
+    "message": "목록 가져오기"
+  },
+  "colorEnterprise": {
+    "message": "기업 목록"
+  },
+  "colorCommunity": {
+    "message": "커뮤니티 목록"
+  },
+  "colorPersonal": {
+    "message": "개인 목록"
+  },
+  "aboutVersion": {
+    "message": "버전:"
+  },
+  "aboutLicense": {
+    "message": "라이선스:"
+  },
+  "aboutDescriptionText": {
+    "message": "도메인 화이트리스트를 통한 안전한 로그인 페이지의 시각적 검증 확장 프로그램"
+  },
+  "aboutGithub": {
+    "message": "GitHub 저장소"
+  },
+  "aboutBugReport": {
+    "message": "버그 신고"
+  },
+  "aboutDocumentation": {
+    "message": "문서"
+  },
+  "aboutContributors": {
+    "message": "기여자"
+  },
+  "aboutContributorsText": {
+    "message": "ShieldSign 프로젝트의 모든 기여자에게 감사드립니다"
+  },
+  "aboutPrivacy": {
+    "message": "개인정보 보호"
+  },
+  "aboutPrivacyText": {
+    "message": "ShieldSign은 사용자 데이터를 수집하지 않습니다. 모든 검증은 브라우저에서 로컬로 수행됩니다."
+  },
+  "btnRemove": {
+    "message": "제거"
+  },
+  "toastOfficialEnabled": {
+    "message": "공식 목록이 활성화되었습니다"
+  },
+  "toastOfficialDisabled": {
+    "message": "공식 목록이 비활성화되었습니다"
+  },
+  "toastOfficialReinstalled": {
+    "message": "공식 목록이 재설치 및 업데이트되었습니다!"
+  },
+  "toastEnterpriseModeEnabled": {
+    "message": "기업 모드가 활성화되었습니다"
+  },
+  "toastEnterpriseModeDisabled": {
+    "message": "기업 모드가 비활성화되었습니다"
+  },
+  "errorLoading": {
+    "message": "설정 로드 중 오류 발생"
+  },
+  "toastSettingsSaved": {
+    "message": "설정이 성공적으로 저장되었습니다"
+  },
+  "errorSaving": {
+    "message": "설정 저장 중 오류 발생"
+  },
+  "toastSettingsReset": {
+    "message": "설정이 재설정되었습니다"
+  },
+  "errorLoadingLists": {
+    "message": "목록 로드 중 오류 발생"
+  },
+  "toastListAdded": {
+    "message": "목록이 성공적으로 추가되었습니다"
+  },
+  "toastListRemoved": {
+    "message": "목록이 성공적으로 제거되었습니다"
+  },
+  "toastListEnabled": {
+    "message": "목록이 활성화되었습니다"
+  },
+  "toastListDisabled": {
+    "message": "목록이 비활성화되었습니다"
+  },
+  "errorTogglingList": {
+    "message": "목록 전환 중 오류 발생"
+  },
+  "errorLoadingPersonal": {
+    "message": "개인 목록 로드 중 오류 발생"
+  },
+  "toastDomainAdded": {
+    "message": "도메인이 성공적으로 추가되었습니다"
+  },
+  "toastDomainRemoved": {
+    "message": "도메인이 성공적으로 제거되었습니다"
+  },
+  "toastListExported": {
+    "message": "목록이 성공적으로 내보내기되었습니다"
+  },
+  "toastDomainsImported": {
+    "message": "{count}개의 도메인을 가져왔습니다"
+  },
+  "enterpriseInfoShort": {
+    "message": "팀에 검증된 도메인 목록을 제공하세요. 이 목록은 최우선 순위를 가지며 직원의 신뢰를 강화합니다."
+  },
+  "btnLearnMore": {
+    "message": "자세히 알아보기"
+  },
+  "btnDownloadExample": {
+    "message": "예제 다운로드"
+  },
+  "toastExampleDownloaded": {
+    "message": "예제가 다운로드되었습니다"
+  },
+  "modalEnterpriseTitle": {
+    "message": "🛡️ 기업 소스: 직원 보호"
+  },
+  "modalWhyTitle": {
+    "message": "이 기능을 사용하는 이유는?"
+  },
+  "modalWhyText": {
+    "message": "관리자로서 조직의 검증된 로그인 도메인 목록을 제공할 수 있습니다. 이 목록은 다른 모든 소스(커뮤니티, 개인)보다 <strong>최우선 순위</strong>를 갖습니다. 직원들은 회사에서 검증한 페이지에서 특별한 녹색 배너를 보게 되어 신뢰도가 높아집니다."
+  },
+  "modalSecurityTitle": {
+    "message": "🔒 피싱 및 MITM 방지"
+  },
+  "modalSecurityText": {
+    "message": "이 기능은 다음을 방지합니다:"
+  },
+  "modalSecurityPoint1": {
+    "message": "<strong>피싱:</strong> 직원들은 가짜 웹사이트에서 검증 배너를 볼 수 없습니다"
+  },
+  "modalSecurityPoint2": {
+    "message": "<strong>중간자 공격:</strong> 목록의 정품 도메인만 검증됩니다"
+  },
+  "modalSecurityPoint3": {
+    "message": "<strong>신원 도용:</strong> 기업 배너는 이것이 승인된 웹사이트임을 명확하게 나타냅니다"
+  },
+  "modalFormatTitle": {
+    "message": "📝 도메인 형식"
+  },
+  "modalFormatText": {
+    "message": "프로토콜이나 경로 없이 전체 도메인(서브도메인 + 메인 도메인)만 사용하세요:"
+  },
+  "modalHostingTitle": {
+    "message": "🔐 안전한 호스팅 (중요)"
+  },
+  "modalHostingWarning": {
+    "message": "<strong>⚠️ GitHub, GitLab 또는 공개 서비스에 호스팅하지 마세요!</strong>"
+  },
+  "modalHostingText": {
+    "message": "보안을 최대화하려면 JSON 목록을 다음에 호스팅하세요:"
+  },
+  "modalHostingOption1": {
+    "message": "<strong>내부 서버만</strong> (회사 네트워크에서만 접근 가능)"
+  },
+  "modalHostingOption2": {
+    "message": "<strong>숨겨진 URL</strong>: 파일 및 폴더 이름에 GUID 사용"
+  },
+  "modalHostingExample": {
+    "message": "예: <code>https://cdn.example.com/a3f2e8b1-4c5d-6e7f-8a9b-0c1d2e3f4a5b/d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a.json</code>"
+  },
+  "modalMaintenanceTitle": {
+    "message": "🔧 유지 관리"
+  },
+  "modalMaintenanceText": {
+    "message": "조직에서 사용하는 새 로그인 도메인(SSO, 내부 포털, SaaS 앱 등)을 추가하여 목록을 최신 상태로 유지하세요."
+  },
+  "popupCheckingStatus": {
+    "message": "검증 중..."
+  },
+  "popupApproveButton": {
+    "message": "✅ 이 도메인 승인"
+  },
+  "popupSettingsButton": {
+    "message": "설정"
+  },
+  "popupRefreshButton": {
+    "message": "새로고침"
+  },
+  "popupNoActivePage": {
+    "message": "활성 페이지 없음"
+  },
+  "popupNoPasswordField": {
+    "message": "이 페이지에는 비밀번호 필드가 없습니다"
+  },
+  "popupValidated": {
+    "message": "이 페이지는 검증되었습니다"
+  },
+  "popupUnknown": {
+    "message": "이 페이지에는 비밀번호 필드가 있지만 신뢰할 수 있는 소스에 없습니다"
+  },
+  "popupLoadError": {
+    "message": "로드 오류"
+  },
+  "popupValidatedBy": {
+    "message": "검증자: {0}"
+  },
+  "contentBannerValidated": {
+    "message": "다음에 의해 검증된 페이지: {0}"
+  },
+  "contentPersonalList": {
+    "message": "개인 목록"
+  },
+  "contentEnterpriseList": {
+    "message": "기업 목록"
+  },
+  "validationSecurityTitle": {
+    "message": "🛡️ 피싱 방지 검증"
+  },
+  "validationSecurityDescription": {
+    "message": "ShieldSign은 로그인 페이지에 배너를 표시하여 가시성을 높입니다. 경고: 피싱 페이지도 가짜 배너를 표시할 수 있습니다. 배너가 진짜인지 1초 안에 확인할 수 있도록 아래에서 검증 방법을 선택하세요."
+  },
+  "whyTheseOptions": {
+    "message": "💡 왜 이러한 옵션이 필요한가요?"
+  },
+  "antiPhishingExplanation": {
+    "message": "ShieldSign이 인기를 얻으면 공격자가 피싱 페이지에 가짜 녹색 배너를 만들 수 있습니다. 이러한 옵션을 사용하면 개인 키워드, 일일 코드 또는 사용자 지정 색상을 확장 프로그램만 알 수 있으므로 모방이 <strong>불가능</strong>합니다."
+  },
+  "imageComingSoon": {
+    "message": "[설명 이미지 곧 제공]"
+  },
+  "modeBadgeOnlyTitle": {
+    "message": "🔵 배지만 (눈에 띄지 않음)"
+  },
+  "modeBadgeOnlyDescription": {
+    "message": "배너가 표시되지 않습니다. 도구 모음의 확장 프로그램 아이콘에 색상 점이 나타납니다. 간단하고 방해가 되지 않습니다."
+  },
+  "modeBadgeOnlyPro1": {
+    "message": "✅ 눈에 띄지 않고 페이지를 어지럽히지 않음"
+  },
+  "modeBadgeOnlyCon1": {
+    "message": "⚠️ 확장 프로그램 아이콘을 확인해야 함"
+  },
+  "modeBannerKeywordTitle": {
+    "message": "🔑 개인 키워드가 있는 배너"
+  },
+  "modeBannerKeywordDescription": {
+    "message": "배너에 사용자 지정 키워드나 문구가 표시됩니다. 이 키워드는 본인만 알고 있으며 공격자는 추측할 수 없습니다."
+  },
+  "customKeywordLabel": {
+    "message": "개인 키워드:"
+  },
+  "customKeywordPlaceholder": {
+    "message": "예: 나의빨간원숭이두마리2025"
+  },
+  "customKeywordHelp": {
+    "message": "기억하기 쉽지만 추측하기 어려운 단어나 문구를 선택하세요 (최소 5자 권장)"
+  },
+  "modeBannerKeywordPro1": {
+    "message": "✅ 즉각적이고 개인화된 검증"
+  },
+  "modeBannerKeywordPro2": {
+    "message": "✅ 키워드를 모르면 모방 불가능"
+  },
+  "modeBannerKeywordCon1": {
+    "message": "⚠️ 키워드를 기억해야 함"
+  },
+  "warningKeywordTooShort": {
+    "message": "키워드는 최소 5자 이상이어야 합니다"
+  },
+  "modeBannerCodeTitle": {
+    "message": "🎲 무작위 코드가 있는 배너 (권장)"
+  },
+  "modeBannerCodeDescription": {
+    "message": "방문할 때마다 고유한 2자리 영숫자 코드(예: A7, H4, 8R)가 생성되어 배너와 확장 프로그램 아이콘에 표시됩니다. 둘이 일치하는지 확인하기만 하면 됩니다."
+  },
+  "currentCodeLabel": {
+    "message": "오늘의 코드:"
+  },
+  "btnRegenerateCode": {
+    "message": "새 코드 생성"
+  },
+  "currentCodeHelp": {
+    "message": "코드는 매일 자동으로 변경됩니다. 수동으로 재생성할 수도 있습니다."
+  },
+  "modeBannerCodePro1": {
+    "message": "✅ 기억할 필요 없음"
+  },
+  "modeBannerCodePro2": {
+    "message": "✅ 빠른 검증 (배지 + 배너)"
+  },
+  "modeBannerCodePro3": {
+    "message": "✅ 방문마다 고유한 코드"
+  },
+  "modeBannerCodePro4": {
+    "message": "✅ 보안과 단순성 사이의 완벽한 균형"
+  },
+  "toastCodeRegenerated": {
+    "message": "코드가 성공적으로 재생성되었습니다"
+  },
+  "errorRegeneratingCode": {
+    "message": "⚠️ 코드 재생성 중 오류 발생"
+  },
+  "showUnknownPages": {
+    "message": "모든 페이지의 상태 표시"
+  },
+  "showUnknownPagesDescription": {
+    "message": "목록에 없는 페이지에서도 배지를 보려면 활성화: 🔴 (비밀번호가 있는 의심스러운 페이지) 또는 ⚪ (비밀번호가 없는 페이지)"
+  },
+  "bannerStyleTitle": {
+    "message": "배너 스타일"
+  },
+  "bannerStyleDescription": {
+    "message": "각 배너 유형(기업, 커뮤니티, 개인)의 모양 사용자 지정"
+  },
+  "bannerStyleModeLabel": {
+    "message": "색상 모드:"
+  },
+  "bannerStyleModeSolid": {
+    "message": "단색"
+  },
+  "bannerStyleModeGradient": {
+    "message": "그라디언트"
+  },
+  "bannerStyleModeRandom": {
+    "message": "무작위"
+  },
+  "bannerStyleSolidColorLabel": {
+    "message": "단색:"
+  },
+  "bannerStyleGradientStartLabel": {
+    "message": "그라디언트 시작:"
+  },
+  "bannerStyleGradientEndLabel": {
+    "message": "그라디언트 끝:"
+  },
+  "bannerStyleTextColorLabel": {
+    "message": "텍스트 색상:"
+  },
+  "bannerStyleFontFamilyLabel": {
+    "message": "글꼴:"
+  },
+  "bannerStyleFontArial": {
+    "message": "Arial"
+  },
+  "bannerStyleFontVerdana": {
+    "message": "Verdana"
+  },
+  "bannerStyleFontGeorgia": {
+    "message": "Georgia"
+  },
+  "bannerStyleFontCourier": {
+    "message": "Courier New"
+  },
+  "bannerStyleFontTimes": {
+    "message": "Times New Roman"
+  },
+  "bannerStylePreviewLabel": {
+    "message": "미리보기:"
+  },
+  "bannerStyleRandomNote": {
+    "message": "ℹ️ 무작위 모드에서는 배너가 표시될 때마다 새 색상/그라디언트가 생성됩니다"
+  },
+  "bannerTypeEnterprise": {
+    "message": "기업"
+  },
+  "bannerTypeCommunity": {
+    "message": "커뮤니티"
+  },
+  "bannerTypePersonal": {
+    "message": "개인"
+  },
+  "popupValidationCodeLabel": {
+    "message": "🔐 검증 코드:"
+  },
+  "popupCodeInfo": {
+    "message": "방문할 때마다 고유한 무작위 코드가 배지와 배너에 나타나 진위를 확인합니다"
+  },
+  "autoAddUnknownLabel": {
+    "message": "🔐 알 수 없는 웹사이트에서 양식을 제출할 때:"
+  },
+  "autoAddUnknownNever": {
+    "message": "아무것도 하지 않음"
+  },
+  "autoAddUnknownAlways": {
+    "message": "자동으로 개인 목록에 추가"
+  },
+  "autoAddUnknownPrompt": {
+    "message": "추가할지 물어봄"
+  },
+  "autoAddUnknownDescription": {
+    "message": "목록에 없는 웹사이트에 로그인할 때 ShieldSign이 반응하는 방식 선택"
+  },
+  "notificationAddToPersonal": {
+    "message": "이 웹사이트를 개인 목록에 추가하시겠습니까?"
+  },
+  "notificationAddToPersonalYes": {
+    "message": "예, 추가"
+  },
+  "notificationAddToPersonalNo": {
+    "message": "아니오"
+  },
+  "notificationSiteAdded": {
+    "message": "웹사이트가 개인 목록에 추가되었습니다"
+  }
+}

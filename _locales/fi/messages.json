@@ -1,0 +1,807 @@
+{
+  "extName": {
+    "message": "ShieldSign",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "Turvallisten kirjautumissivujen visuaalinen validointi verkkotunnusten valkoisella listalla",
+    "description": "Extension description"
+  },
+  
+  "appTitle": {
+    "message": "ShieldSign"
+  },
+  "settings": {
+    "message": "Asetukset"
+  },
+  "refresh": {
+    "message": "Päivitä"
+  },
+  
+  "tabCommunity": {
+    "message": "Yhteisölähteet"
+  },
+  "tabEnterprise": {
+    "message": "Yrityslähteet"
+  },
+  "tabPersonal": {
+    "message": "Henkilökohtaiset lähteet"
+  },
+  "tabSettings": {
+    "message": "Asetukset"
+  },
+  "tabAbout": {
+    "message": "Tietoja"
+  },
+  
+  "officialListTitle": {
+    "message": "Virallinen ShieldSign-lista"
+  },
+  "officialListDescription": {
+    "message": "ShieldSign-tiimin ylläpitämä virallinen lista, joka sisältää suosituimmat verkko- ja pilvipalvelut. Oletuksena käytössä."
+  },
+  "officialListName": {
+    "message": "Virallinen ShieldSign-lista"
+  },
+  "officialListInfo": {
+    "message": "Virallinen lista (65+ vahvistettua verkkotunnusta)"
+  },
+  "disable": {
+    "message": "Poista käytöstä"
+  },
+  "enable": {
+    "message": "Ota käyttöön"
+  },
+  "reinstallOfficialList": {
+    "message": "Asenna virallinen lista uudelleen"
+  },
+  
+  "communityListsTitle": {
+    "message": "Lisäyhteisölistat"
+  },
+  "communityListsDescription": {
+    "message": "Lisää muita yhteisön ylläpitämiä julkisia listoja (valinnainen)"
+  },
+  "communityUrlPlaceholder": {
+    "message": "https://example.com/community-list.json"
+  },
+  "add": {
+    "message": "Lisää"
+  },
+  "noAdditionalList": {
+    "message": "Ei määritettyjä lisälistoja"
+  },
+  
+  "enterpriseInfoTitle": {
+    "message": "ℹ️ Tietoja yrityslähteistä"
+  },
+  "enterpriseInfoText1": {
+    "message": "Tämä ominaisuus on tarkoitettu <strong>yrityksen järjestelmänvalvojille</strong>, jotka haluavat tarjota työntekijöilleen luettelon vahvistetuista verkkotunnuksista."
+  },
+  "enterpriseInfoText2": {
+    "message": "<strong>Verkkotunnuksen muoto:</strong> Käytä täydellistä muotoa, joka sisältää aliverkkotunnuksen ja pääverkkotunnuksen (se, mikä näkyy <code>https://</code>:n ja ensimmäisen <code>/</code>:n välissä)."
+  },
+  "enterpriseInfoExamples": {
+    "message": "<strong>Esimerkit:</strong>"
+  },
+  "enterpriseInfoSecurity": {
+    "message": "⚠️ <strong>Turvallisuus:</strong> Isännöi listasi sisäisellä tai yksityisellä palvelimella, <strong>ei julkisella URL-osoitteella</strong>."
+  },
+  "enterpriseInfoFormatLabel": {
+    "message": "Verkkotunnuksen muoto:"
+  },
+  "enterpriseInfoFormatText": {
+    "message": "Käytä täydellistä muotoa, joka sisältää aliverkkotunnuksen ja pääverkkotunnuksen (se, mikä näkyy <code>https://</code>:n ja ensimmäisen <code>/</code>:n välissä)."
+  },
+  "enterpriseInfoExamplesLabel": {
+    "message": "Esimerkit:"
+  },
+  "enterpriseInfoExample1": {
+    "message": "✅ <code>login.yritys.com</code>"
+  },
+  "enterpriseInfoExample2": {
+    "message": "✅ <code>sso.yritys.com</code>"
+  },
+  "enterpriseInfoExample3": {
+    "message": "✅ <code>auth.intranet.yritys.net</code>"
+  },
+  "enterpriseInfoExample4": {
+    "message": "❌ <code>https://login.yritys.com/auth</code> (ilman https:// tai polkua)"
+  },
+  
+  "enterpriseListTitle": {
+    "message": "Yrityslistan määritys"
+  },
+  "enterpriseListDescription": {
+    "message": "Lisää koko yrityksen kattava verkkotunnusten validointilista (korkein prioriteetti)"
+  },
+  "enterpriseUrlPlaceholder": {
+    "message": "https://intranet.yritys.com/vahvistetut-verkkotunnukset.json"
+  },
+  "noEnterpriseList": {
+    "message": "Ei määritettyä yrityslistaa"
+  },
+  
+  "personalDomainsTitle": {
+    "message": "Hallitse henkilökohtaisia verkkotunnuksia"
+  },
+  "personalDomainsDescription": {
+    "message": "Lisää omat luotetut verkkotunnuksesi (korkeampi prioriteetti kuin yhteisölistat)"
+  },
+  "personalDomainPlaceholder": {
+    "message": "login.esimerkki.com"
+  },
+  "noPersonalDomain": {
+    "message": "Ei määritettyjä henkilökohtaisia verkkotunnuksia"
+  },
+  
+  "importExportTitle": {
+    "message": "Tuonti / Vienti"
+  },
+  "importExportDescription": {
+    "message": "Vie listasi varmuuskopiota varten tai tuo toiseen selaimeen"
+  },
+  "exportList": {
+    "message": "Vie lista"
+  },
+  "importList": {
+    "message": "Tuo lista"
+  },
+  
+  "generalSettingsTitle": {
+    "message": "Yleiset asetukset"
+  },
+  "language": {
+    "message": "Kieli"
+  },
+  "languageDescription": {
+    "message": "Valitse käyttöliittymän kieli"
+  },
+  "languageAuto": {
+    "message": "Automaattinen (selaimen kieli)"
+  },
+  "languageEn": {
+    "message": "English"
+  },
+  "languageFr": {
+    "message": "Français"
+  },
+  "enterpriseMode": {
+    "message": "Yritystila"
+  },
+  "enterpriseModeDescription": {
+    "message": "Ota tämä käyttöön, jos olet järjestelmänvalvoja ja haluat hallita verkkotunnuslistoja organisaatiollesi. Tämä näyttää \"Yrityslähteet\"-välilehden."
+  },
+  "checkCN": {
+    "message": "Tarkista varmenteen CN-vastaavuus"
+  },
+  "checkCNDescription": {
+    "message": "Näytä varoitus, jos varmenteen CN ei vastaa verkkotunnusta (vain Firefox)"
+  },
+  "cacheDuration": {
+    "message": "Listan välimuistin kesto (tunnit)"
+  },
+  "cacheDurationDescription": {
+    "message": "Etälistojen automaattisten päivitysten tiheys (oletus: 24h)"
+  },
+  
+  "bannerColorsTitle": {
+    "message": "Bannerin värit"
+  },
+  "enterpriseList": {
+    "message": "Yrityslista"
+  },
+  "communityList": {
+    "message": "Yhteisölista"
+  },
+  "personalList": {
+    "message": "Henkilökohtainen lista"
+  },
+  
+  "saveSettings": {
+    "message": "Tallenna asetukset"
+  },
+  "resetSettings": {
+    "message": "Nollaa"
+  },
+  
+  "aboutTitle": {
+    "message": "Tietoja ShieldSignista"
+  },
+  "version": {
+    "message": "Versio"
+  },
+  "license": {
+    "message": "Lisenssi"
+  },
+  "description": {
+    "message": "Kuvaus"
+  },
+  "aboutDescription": {
+    "message": "Visuaalinen validointilaajennus turvallisille kirjautumissivuille verkkotunnusten valkoisella listalla"
+  },
+  "githubRepo": {
+    "message": "GitHub-repositorio"
+  },
+  "reportBug": {
+    "message": "Ilmoita virheestä"
+  },
+  "documentation": {
+    "message": "Dokumentaatio"
+  },
+  "contributorsTitle": {
+    "message": "Osallistujat"
+  },
+  "contributorsText": {
+    "message": "Kiitos kaikille ShieldSign-projektiin osallistuville"
+  },
+  
+  "pageValidated": {
+    "message": "Sivu vahvistettu: $LIST_NAME$",
+    "placeholders": {
+      "list_name": {
+        "content": "$1",
+        "example": "Virallinen ShieldSign-lista"
+      }
+    }
+  },
+  "personalListDisplay": {
+    "message": "Henkilökohtainen lista"
+  },
+  "enterpriseListDisplay": {
+    "message": "Yrityslista"
+  },
+  
+  "verifying": {
+    "message": "Vahvistetaan..."
+  },
+  "pageNotContainPasswordField": {
+    "message": "Tämä sivu ei sisällä salasanakenttää"
+  },
+  "approveDomain": {
+    "message": "Hyväksy tämä verkkotunnus"
+  },
+  
+  "settingsSaved": {
+    "message": "Asetukset on tallennettu"
+  },
+  "settingsReset": {
+    "message": "Asetukset on nollattu"
+  },
+  "listAdded": {
+    "message": "Lista on lisätty"
+  },
+  "listRemoved": {
+    "message": "Lista on poistettu"
+  },
+  "listEnabled": {
+    "message": "Lista on otettu käyttöön"
+  },
+  "listDisabled": {
+    "message": "Lista on poistettu käytöstä"
+  },
+  "domainAdded": {
+    "message": "Verkkotunnus on lisätty"
+  },
+  "domainRemoved": {
+    "message": "Verkkotunnus on poistettu"
+  },
+  "officialListReinstalled": {
+    "message": "Virallinen lista on asennettu uudelleen ja päivitetty!"
+  },
+  "listExported": {
+    "message": "Lista on viety"
+  },
+  "domainsImported": {
+    "message": "$COUNT$ verkkotunnusta tuotu",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  
+  "errorInvalidUrl": {
+    "message": "Virheellinen URL"
+  },
+  "errorInvalidDomain": {
+    "message": "Virheellinen verkkotunnuksen muoto"
+  },
+  "errorAddingList": {
+    "message": "Virhe listan lisäämisessä"
+  },
+  "errorRemovingList": {
+    "message": "Virhe listan poistamisessa"
+  },
+  "errorModifyingList": {
+    "message": "Virhe listan muokkaamisessa"
+  },
+  "errorAddingDomain": {
+    "message": "Virhe verkkotunnuksen lisäämisessä"
+  },
+  "errorRemovingDomain": {
+    "message": "Virhe verkkotunnuksen poistamisessa"
+  },
+  "errorLoadingSettings": {
+    "message": "Virhe asetusten lataamisessa"
+  },
+  "errorSavingSettings": {
+    "message": "Virhe asetusten tallentamisessa"
+  },
+  "errorResetting": {
+    "message": "Virhe nollaamisessa"
+  },
+  "errorReinstalling": {
+    "message": "Virhe uudelleenasennuksessa"
+  },
+  "errorExporting": {
+    "message": "Virhe viennissä"
+  },
+  "errorImporting": {
+    "message": "Virhe tuonnissa"
+  },
+  "errorInvalidFile": {
+    "message": "Virheellinen tiedostomuoto"
+  },
+  "errorNoValidDomain": {
+    "message": "Kelvollista verkkotunnusta ei löytynyt"
+  },
+  "errorNoPersonalDomain": {
+    "message": "Ei henkilökohtaisia verkkotunnuksia vietäväksi"
+  },
+  "errorEnterValidUrl": {
+    "message": "Anna kelvollinen URL"
+  },
+  "errorEnterValidDomain": {
+    "message": "Anna kelvollinen verkkotunnus"
+  },
+  "errorUpdating": {
+    "message": "Virhe päivityksessä"
+  },
+  
+  "settingsTitle": {
+    "message": "Asetukset - ShieldSign"
+  },
+  "headerTitle": {
+    "message": "ShieldSign - Asetukset"
+  },
+  "officialListSubtitle": {
+    "message": "Virallinen lista (65+ vahvistettua verkkotunnusta)"
+  },
+  "toggleDisable": {
+    "message": "Poista käytöstä"
+  },
+  "toggleEnable": {
+    "message": "Ota käyttöön"
+  },
+  "reinstallOfficial": {
+    "message": "Asenna virallinen lista uudelleen"
+  },
+  "communityListTitle": {
+    "message": "Lisäyhteisölistat"
+  },
+  "communityListDescription": {
+    "message": "Lisää muita yhteisön ylläpitämiä julkisia listoja (valinnainen)"
+  },
+  "noListCommunity": {
+    "message": "Ei määritettyjä lisälistoja"
+  },
+  "noListEnterprise": {
+    "message": "Ei määritettyä yrityslistaa"
+  },
+  "noListPersonal": {
+    "message": "Ei määritettyjä henkilökohtaisia verkkotunnuksia"
+  },
+  "btnAdd": {
+    "message": "Lisää"
+  },
+  "btnSave": {
+    "message": "Tallenna asetukset"
+  },
+  "btnReset": {
+    "message": "Nollaa"
+  },
+  "btnExport": {
+    "message": "Vie lista"
+  },
+  "btnImport": {
+    "message": "Tuo lista"
+  },
+  "colorEnterprise": {
+    "message": "Yrityslista"
+  },
+  "colorCommunity": {
+    "message": "Yhteisölista"
+  },
+  "colorPersonal": {
+    "message": "Henkilökohtainen lista"
+  },
+  "aboutVersion": {
+    "message": "Versio:"
+  },
+  "aboutLicense": {
+    "message": "Lisenssi:"
+  },
+  "aboutDescriptionText": {
+    "message": "Visuaalinen validointilaajennus turvallisille kirjautumissivuille verkkotunnusten valkoisella listalla"
+  },
+  "aboutGithub": {
+    "message": "GitHub-repositorio"
+  },
+  "aboutBugReport": {
+    "message": "Ilmoita virheestä"
+  },
+  "aboutDocumentation": {
+    "message": "Dokumentaatio"
+  },
+  "aboutContributors": {
+    "message": "Osallistujat"
+  },
+  "aboutContributorsText": {
+    "message": "Kiitos kaikille ShieldSign-projektiin osallistuville"
+  },
+  "aboutPrivacy": {
+    "message": "Tietosuoja"
+  },
+  "aboutPrivacyText": {
+    "message": "ShieldSign ei kerää käyttäjätietoja. Kaikki validointi tapahtuu paikallisesti selaimessasi."
+  },
+  "btnRemove": {
+    "message": "Poista"
+  },
+  "toastOfficialEnabled": {
+    "message": "Virallinen lista on otettu käyttöön"
+  },
+  "toastOfficialDisabled": {
+    "message": "Virallinen lista on poistettu käytöstä"
+  },
+  "toastOfficialReinstalled": {
+    "message": "Virallinen lista on asennettu uudelleen ja päivitetty!"
+  },
+  "toastEnterpriseModeEnabled": {
+    "message": "Yritystila on otettu käyttöön"
+  },
+  "toastEnterpriseModeDisabled": {
+    "message": "Yritystila on poistettu käytöstä"
+  },
+  "errorLoading": {
+    "message": "Virhe asetusten lataamisessa"
+  },
+  "toastSettingsSaved": {
+    "message": "Asetukset on tallennettu"
+  },
+  "errorSaving": {
+    "message": "Virhe asetusten tallentamisessa"
+  },
+  "toastSettingsReset": {
+    "message": "Asetukset on nollattu"
+  },
+  "errorLoadingLists": {
+    "message": "Virhe listojen lataamisessa"
+  },
+  "toastListAdded": {
+    "message": "Lista on lisätty"
+  },
+  "toastListRemoved": {
+    "message": "Lista on poistettu"
+  },
+  "toastListEnabled": {
+    "message": "Lista on otettu käyttöön"
+  },
+  "toastListDisabled": {
+    "message": "Lista on poistettu käytöstä"
+  },
+  "errorTogglingList": {
+    "message": "Virhe listan vaihtamisessa"
+  },
+  "errorLoadingPersonal": {
+    "message": "Virhe henkilökohtaisen listan lataamisessa"
+  },
+  "toastDomainAdded": {
+    "message": "Verkkotunnus on lisätty"
+  },
+  "toastDomainRemoved": {
+    "message": "Verkkotunnus on poistettu"
+  },
+  "toastListExported": {
+    "message": "Lista on viety"
+  },
+  "toastDomainsImported": {
+    "message": "{count} verkkotunnusta tuotu"
+  },
+  "enterpriseInfoShort": {
+    "message": "Tarjoa tiimeillesi luettelo vahvistetuista verkkotunnuksista. Tällä listalla on korkein prioriteetti ja se lisää työntekijöiden luottamusta."
+  },
+  "btnLearnMore": {
+    "message": "Lue lisää"
+  },
+  "btnDownloadExample": {
+    "message": "Lataa esimerkki"
+  },
+  "toastExampleDownloaded": {
+    "message": "Esimerkki on ladattu"
+  },
+  "modalEnterpriseTitle": {
+    "message": "🛡️ Yrityslähteet: Suojaa työntekijöitäsi"
+  },
+  "modalWhyTitle": {
+    "message": "Miksi käyttää tätä ominaisuutta?"
+  },
+  "modalWhyText": {
+    "message": "Järjestelmänvalvojana voit tarjota luettelon vahvistetuista kirjautumisverkkotunnuksista organisaatiollesi. Tällä listalla on <strong>korkein prioriteetti</strong> kaikkiin muihin lähteisiin nähden (yhteisö, henkilökohtaiset). Työntekijäsi näkevät erityisen vihreän bannerin yritysvahvistetuilla sivuilla, mikä lisää heidän luottamustaan."
+  },
+  "modalSecurityTitle": {
+    "message": "🔒 Suojaus tietojenkalastelua ja MITM vastaan"
+  },
+  "modalSecurityText": {
+    "message": "Tämä ominaisuus auttaa torjumaan:"
+  },
+  "modalSecurityPoint1": {
+    "message": "<strong>Tietojenkalastelu:</strong> Työntekijäsi eivät näe validointibanneria väärennetyillä sivuilla"
+  },
+  "modalSecurityPoint2": {
+    "message": "<strong>Man-in-the-Middle-hyökkäys:</strong> Vain aitojen verkkotunnusten listallasi vahvistetaan"
+  },
+  "modalSecurityPoint3": {
+    "message": "<strong>Identiteettivarkaus:</strong> Yritysbanneri osoittaa selvästi, että kyseessä on hyväksytty sivu"
+  },
+  "modalFormatTitle": {
+    "message": "📝 Verkkotunnuksen muoto"
+  },
+  "modalFormatText": {
+    "message": "Käytä vain täydellistä verkkotunnusta (aliverkkotunnus + pääverkkotunnus), ilman protokollaa tai polkua:"
+  },
+  "modalHostingTitle": {
+    "message": "🔐 Turvallinen isännöinti (tärkeää)"
+  },
+  "modalHostingWarning": {
+    "message": "<strong>⚠️ ÄLÄ isännöi GitHubissa, GitLabissa tai julkisissa palveluissa!</strong>"
+  },
+  "modalHostingText": {
+    "message": "Maksimaalisen turvallisuuden takaamiseksi isännöi JSON-listasi:"
+  },
+  "modalHostingOption1": {
+    "message": "<strong>Vain sisäinen palvelin</strong> (saatavilla vain yritysverkosta)"
+  },
+  "modalHostingOption2": {
+    "message": "<strong>Piilotettu URL</strong>: Käytä GUID:tä tiedosto- ja kansionimille"
+  },
+  "modalHostingExample": {
+    "message": "Esimerkki: <code>https://cdn.esimerkki.com/a3f2e8b1-4c5d-6e7f-8a9b-0c1d2e3f4a5b/d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a.json</code>"
+  },
+  "modalMaintenanceTitle": {
+    "message": "🔧 Ylläpito"
+  },
+  "modalMaintenanceText": {
+    "message": "Pidä listasi ajan tasalla lisäämällä uusia organisaatiosi käyttämiä kirjautumisverkkotunnuksia (SSO, sisäiset portaalit, SaaS-sovellukset jne.)."
+  },
+  "popupCheckingStatus": {
+    "message": "Vahvistetaan..."
+  },
+  "popupApproveButton": {
+    "message": "✅ Hyväksy tämä verkkotunnus"
+  },
+  "popupSettingsButton": {
+    "message": "Asetukset"
+  },
+  "popupRefreshButton": {
+    "message": "Päivitä"
+  },
+  "popupNoActivePage": {
+    "message": "Ei aktiivista sivua"
+  },
+  "popupNoPasswordField": {
+    "message": "Tämä sivu ei sisällä salasanakenttää"
+  },
+  "popupValidated": {
+    "message": "Tämä sivu on vahvistettu"
+  },
+  "popupUnknown": {
+    "message": "Tämä sivu sisältää salasanakentän, mutta sitä ei ole missään luotetussa lähteessä"
+  },
+  "popupLoadError": {
+    "message": "Latausvirhe"
+  },
+  "popupValidatedBy": {
+    "message": "Vahvistanut: {0}"
+  },
+  "contentBannerValidated": {
+    "message": "Sivu vahvistettu: {0}"
+  },
+  "contentPersonalList": {
+    "message": "Henkilökohtainen lista"
+  },
+  "contentEnterpriseList": {
+    "message": "Yrityslista"
+  },
+  "validationSecurityTitle": {
+    "message": "🛡️ Tietojenkalastelun vastainen validointi"
+  },
+  "validationSecurityDescription": {
+    "message": "ShieldSign näyttää bannerin kirjautumissivuilla tehdäkseen ne näkyviksi. Varoitus: tietojenkalastelusivu voi myös näyttää väärennetyn bannerin. Jotta voit vahvistaa 1 sekunnissa, onko banneri aito, valitse validointimenetelmä alla."
+  },
+  "whyTheseOptions": {
+    "message": "💡 Miksi nämä vaihtoehdot?"
+  },
+  "antiPhishingExplanation": {
+    "message": "Jos ShieldSignista tulee suosittu, hyökkääjät voivat luoda väärennetyn vihreän bannerin tietojenkalastelusivolleen. Nämä vaihtoehdot tekevät jäljittelystä <strong>mahdotonta</strong>, koska vain SINUN laajennuksesi tietää henkilökohtaisen salasanasi, päivittäisen koodisi tai mukautetun värisi."
+  },
+  "imageComingSoon": {
+    "message": "[Kuvitus tulossa pian]"
+  },
+  "modeBadgeOnlyTitle": {
+    "message": "🔵 Vain merkki (huomaamaton)"
+  },
+  "modeBadgeOnlyDescription": {
+    "message": "Ei näkyvää banneria. Värillinen piste näkyy laajennuskuvakkeessa työkalurivissä. Yksinkertainen ja huomaamaton."
+  },
+  "modeBadgeOnlyPro1": {
+    "message": "✅ Huomaamaton, ei kuormita sivua"
+  },
+  "modeBadgeOnlyCon1": {
+    "message": "⚠️ Vaatii laajennuskuvakkeen tarkistamista"
+  },
+  "modeBannerKeywordTitle": {
+    "message": "🔑 Banneri henkilökohtaisella salasanalla"
+  },
+  "modeBannerKeywordDescription": {
+    "message": "Banneri näyttää mukautetun salasanasi tai lauseesi. Vain sinä tiedät tämän salasanan, hyökkääjät eivät voi arvata sitä."
+  },
+  "customKeywordLabel": {
+    "message": "Henkilökohtainen salasanasi:"
+  },
+  "customKeywordPlaceholder": {
+    "message": "esim: KaksiPunaistaApinaa2025"
+  },
+  "customKeywordHelp": {
+    "message": "Valitse sana tai lause, joka on helppo muistaa mutta vaikea arvata (vähintään 5 merkkiä suositeltu)"
+  },
+  "modeBannerKeywordPro1": {
+    "message": "✅ Välitön ja henkilökohtainen validointi"
+  },
+  "modeBannerKeywordPro2": {
+    "message": "✅ Mahdoton jäljitellä tuntematta salasanaasi"
+  },
+  "modeBannerKeywordCon1": {
+    "message": "⚠️ Vaatii salasanasi muistamista"
+  },
+  "warningKeywordTooShort": {
+    "message": "Salasanan on oltava vähintään 5 merkkiä"
+  },
+  "modeBannerCodeTitle": {
+    "message": "🎲 Banneri satunnaisella koodilla (suositeltu)"
+  },
+  "modeBannerCodeDescription": {
+    "message": "Ainutlaatuinen 2-merkkinen aakkosnumeerinen koodi (esim. A7, H4, 8R) luodaan jokaisella vierailulla ja näytetään bannerissa JA laajennuskuvakkeessa. Tarkista vain, että molemmat täsmäävät."
+  },
+  "currentCodeLabel": {
+    "message": "Tämän päivän koodi:"
+  },
+  "btnRegenerateCode": {
+    "message": "Luo uusi koodi"
+  },
+  "currentCodeHelp": {
+    "message": "Koodi vaihtuu automaattisesti joka päivä. Voit myös luoda uudelleen manuaalisesti."
+  },
+  "modeBannerCodePro1": {
+    "message": "✅ Ei mitään muistettavaa"
+  },
+  "modeBannerCodePro2": {
+    "message": "✅ Nopea validointi (merkki + banneri)"
+  },
+  "modeBannerCodePro3": {
+    "message": "✅ Ainutlaatuinen koodi jokaisella vierailulla"
+  },
+  "modeBannerCodePro4": {
+    "message": "✅ Täydellinen tasapaino turvallisuuden ja yksinkertaisuuden välillä"
+  },
+  "toastCodeRegenerated": {
+    "message": "Koodi on luotu uudelleen"
+  },
+  "errorRegeneratingCode": {
+    "message": "⚠️ Virhe koodin uudelleenluonnissa"
+  },
+  "showUnknownPages": {
+    "message": "Näytä tila kaikille sivuille"
+  },
+  "showUnknownPagesDescription": {
+    "message": "Ota käyttöön nähdäksesi merkki myös listaamattomilla sivuilla: 🔴 (epäilyttävä sivu salasanalla) tai ⚪ (sivu ilman salasanaa)"
+  },
+  "bannerStyleTitle": {
+    "message": "Bannerin tyyli"
+  },
+  "bannerStyleDescription": {
+    "message": "Mukauta kunkin bannerityypin ulkoasua (Yritys, Yhteisö, Henkilökohtainen)"
+  },
+  "bannerStyleModeLabel": {
+    "message": "Väritila:"
+  },
+  "bannerStyleModeSolid": {
+    "message": "Yhtenäinen väri"
+  },
+  "bannerStyleModeGradient": {
+    "message": "Liukuväri"
+  },
+  "bannerStyleModeRandom": {
+    "message": "Satunnainen"
+  },
+  "bannerStyleSolidColorLabel": {
+    "message": "Yhtenäinen väri:"
+  },
+  "bannerStyleGradientStartLabel": {
+    "message": "Liukuvärin alku:"
+  },
+  "bannerStyleGradientEndLabel": {
+    "message": "Liukuvärin loppu:"
+  },
+  "bannerStyleTextColorLabel": {
+    "message": "Tekstin väri:"
+  },
+  "bannerStyleFontFamilyLabel": {
+    "message": "Fontti:"
+  },
+  "bannerStyleFontArial": {
+    "message": "Arial"
+  },
+  "bannerStyleFontVerdana": {
+    "message": "Verdana"
+  },
+  "bannerStyleFontGeorgia": {
+    "message": "Georgia"
+  },
+  "bannerStyleFontCourier": {
+    "message": "Courier New"
+  },
+  "bannerStyleFontTimes": {
+    "message": "Times New Roman"
+  },
+  "bannerStylePreviewLabel": {
+    "message": "Esikatselu:"
+  },
+  "bannerStyleRandomNote": {
+    "message": "ℹ️ Satunnaistilassa uusi väri/liukuväri luodaan joka kerta, kun banneri näytetään"
+  },
+  "bannerTypeEnterprise": {
+    "message": "Yritys"
+  },
+  "bannerTypeCommunity": {
+    "message": "Yhteisö"
+  },
+  "bannerTypePersonal": {
+    "message": "Henkilökohtainen"
+  },
+  "popupValidationCodeLabel": {
+    "message": "🔐 Validointikoodi:"
+  },
+  "popupCodeInfo": {
+    "message": "Ainutlaatuinen satunnainen koodi näkyy merkissä ja bannerissa jokaisella vierailulla aitoutta vahvistaakseen"
+  },
+  "autoAddUnknownLabel": {
+    "message": "🔐 Lomakkeen lähetyksessä tuntemattomalla sivulla:"
+  },
+  "autoAddUnknownNever": {
+    "message": "Älä tee mitään"
+  },
+  "autoAddUnknownAlways": {
+    "message": "Lisää automaattisesti henkilökohtaiselle listalleni"
+  },
+  "autoAddUnknownPrompt": {
+    "message": "Kysy minulta, haluanko lisätä"
+  },
+  "autoAddUnknownDescription": {
+    "message": "Valitse, miten ShieldSign reagoi, kun kirjaudut sivulle, jota ei ole missään listassa"
+  },
+  "notificationAddToPersonal": {
+    "message": "Lisätäänkö tämä sivu henkilökohtaiselle listallesi?"
+  },
+  "notificationAddToPersonalYes": {
+    "message": "Kyllä, lisää"
+  },
+  "notificationAddToPersonalNo": {
+    "message": "Ei"
+  },
+  "notificationSiteAdded": {
+    "message": "Sivu on lisätty henkilökohtaiselle listallesi"
+  }
+}

@@ -1,0 +1,807 @@
+{
+  "extName": {
+    "message": "ShieldSign",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "Visuele validering van veilige aanmeldbladsye deur middel van 'n witlys van domeine",
+    "description": "Extension description"
+  },
+  
+  "appTitle": {
+    "message": "ShieldSign"
+  },
+  "settings": {
+    "message": "Instellings"
+  },
+  "refresh": {
+    "message": "Herlaai"
+  },
+  
+  "tabCommunity": {
+    "message": "Gemeenskapsbronne"
+  },
+  "tabEnterprise": {
+    "message": "Ondernemingsbronne"
+  },
+  "tabPersonal": {
+    "message": "Persoonlike bronne"
+  },
+  "tabSettings": {
+    "message": "Instellings"
+  },
+  "tabAbout": {
+    "message": "Oor"
+  },
+  
+  "officialListTitle": {
+    "message": "Amptelike ShieldSign-lys"
+  },
+  "officialListDescription": {
+    "message": "Amptelike lys wat deur die ShieldSign-span onderhou word, met die gewildste web- en wolkdienste. Standaard geaktiveer."
+  },
+  "officialListName": {
+    "message": "Amptelike ShieldSign-lys"
+  },
+  "officialListInfo": {
+    "message": "Amptelike lys (65+ geverifieerde domeine)"
+  },
+  "disable": {
+    "message": "Deaktiveer"
+  },
+  "enable": {
+    "message": "Aktiveer"
+  },
+  "reinstallOfficialList": {
+    "message": "Herinstalleer amptelike lys"
+  },
+  
+  "communityListsTitle": {
+    "message": "Addisionele gemeenskapslyste"
+  },
+  "communityListsDescription": {
+    "message": "Voeg ander openbare lyste by wat deur die gemeenskap onderhou word (opsioneel)"
+  },
+  "communityUrlPlaceholder": {
+    "message": "https://example.com/community-list.json"
+  },
+  "add": {
+    "message": "Voeg by"
+  },
+  "noAdditionalList": {
+    "message": "Geen addisionele lyste gekonfigureer nie"
+  },
+  
+  "enterpriseInfoTitle": {
+    "message": "ℹ️ Oor ondernemingsbronne"
+  },
+  "enterpriseInfoText1": {
+    "message": "Hierdie funksie is bedoel vir <strong>ondernemingsadministrateurs</strong> wat 'n lys van geverifieerde domeine aan hul werknemers wil verskaf."
+  },
+  "enterpriseInfoText2": {
+    "message": "<strong>Domeinformaat:</strong> Gebruik die volledige formaat met subdomein en hoofdomein (wat tussen <code>https://</code> en die eerste <code>/</code> verskyn)."
+  },
+  "enterpriseInfoExamples": {
+    "message": "<strong>Voorbeelde:</strong>"
+  },
+  "enterpriseInfoSecurity": {
+    "message": "⚠️ <strong>Sekuriteit:</strong> Gasheer u lys op 'n interne of privaat bediener, <strong>nie op 'n openbare URL nie</strong>."
+  },
+  "enterpriseInfoFormatLabel": {
+    "message": "Domeinformaat:"
+  },
+  "enterpriseInfoFormatText": {
+    "message": "Gebruik die volledige formaat met subdomein en hoofdomein (wat tussen <code>https://</code> en die eerste <code>/</code> verskyn)."
+  },
+  "enterpriseInfoExamplesLabel": {
+    "message": "Voorbeelde:"
+  },
+  "enterpriseInfoExample1": {
+    "message": "✅ <code>login.maatskappy.com</code>"
+  },
+  "enterpriseInfoExample2": {
+    "message": "✅ <code>sso.maatskappy.com</code>"
+  },
+  "enterpriseInfoExample3": {
+    "message": "✅ <code>auth.intranet.maatskappy.net</code>"
+  },
+  "enterpriseInfoExample4": {
+    "message": "❌ <code>https://login.maatskappy.com/auth</code> (sonder https:// of pad)"
+  },
+  
+  "enterpriseListTitle": {
+    "message": "Konfigurasie van ondernemingslys"
+  },
+  "enterpriseListDescription": {
+    "message": "Voeg 'n ondernemingswye domeinvalideringslys by (hoogste prioriteit)"
+  },
+  "enterpriseUrlPlaceholder": {
+    "message": "https://intranet.maatskappy.com/geverifieerde-domeine.json"
+  },
+  "noEnterpriseList": {
+    "message": "Geen ondernemingslys gekonfigureer nie"
+  },
+  
+  "personalDomainsTitle": {
+    "message": "Bestuur persoonlike domeine"
+  },
+  "personalDomainsDescription": {
+    "message": "Voeg u eie vertroude domeine by (hoër prioriteit as gemeenskapslyste)"
+  },
+  "personalDomainPlaceholder": {
+    "message": "login.voorbeeld.com"
+  },
+  "noPersonalDomain": {
+    "message": "Geen persoonlike domeine gekonfigureer nie"
+  },
+  
+  "importExportTitle": {
+    "message": "Invoer / Uitvoer"
+  },
+  "importExportDescription": {
+    "message": "Voer u lyste uit vir rugsteun of voer in na 'n ander blaaier"
+  },
+  "exportList": {
+    "message": "Voer lys uit"
+  },
+  "importList": {
+    "message": "Voer lys in"
+  },
+  
+  "generalSettingsTitle": {
+    "message": "Algemene instellings"
+  },
+  "language": {
+    "message": "Taal"
+  },
+  "languageDescription": {
+    "message": "Kies die koppelvlaktaal"
+  },
+  "languageAuto": {
+    "message": "Outomaties (blaaier se taal)"
+  },
+  "languageEn": {
+    "message": "English"
+  },
+  "languageFr": {
+    "message": "Français"
+  },
+  "enterpriseMode": {
+    "message": "Ondernemingsmodus"
+  },
+  "enterpriseModeDescription": {
+    "message": "Aktiveer dit indien u 'n administrateur is en domeinlyste vir u organisasie wil bestuur. Dit toon die \"Ondernemingsbronne\"-oortjie."
+  },
+  "checkCN": {
+    "message": "Kontroleer sertifikaat CN-passing"
+  },
+  "checkCNDescription": {
+    "message": "Vertoon 'n waarskuwing indien die sertifikaat se CN nie by die domein pas nie (slegs Firefox)"
+  },
+  "cacheDuration": {
+    "message": "Lysbuffer-tydperk (ure)"
+  },
+  "cacheDurationDescription": {
+    "message": "Hoe gereeld om afgeleë lyste outomaties op te dateer (standaard: 24u)"
+  },
+  
+  "bannerColorsTitle": {
+    "message": "Banierkleure"
+  },
+  "enterpriseList": {
+    "message": "Ondernemingslys"
+  },
+  "communityList": {
+    "message": "Gemeenskapslys"
+  },
+  "personalList": {
+    "message": "Persoonlike lys"
+  },
+  
+  "saveSettings": {
+    "message": "Stoor instellings"
+  },
+  "resetSettings": {
+    "message": "Herstel"
+  },
+  
+  "aboutTitle": {
+    "message": "Oor ShieldSign"
+  },
+  "version": {
+    "message": "Weergawe"
+  },
+  "license": {
+    "message": "Lisensie"
+  },
+  "description": {
+    "message": "Beskrywing"
+  },
+  "aboutDescription": {
+    "message": "Visuele valideringsuitbreiding vir veilige aanmeldbladsye deur middel van 'n witlys van domeine"
+  },
+  "githubRepo": {
+    "message": "GitHub-bewaarplek"
+  },
+  "reportBug": {
+    "message": "Rapporteer fout"
+  },
+  "documentation": {
+    "message": "Dokumentasie"
+  },
+  "contributorsTitle": {
+    "message": "Bydraers"
+  },
+  "contributorsText": {
+    "message": "Dankie aan almal wat tot die ShieldSign-projek bydra"
+  },
+  
+  "pageValidated": {
+    "message": "Bladsy geverifieer deur: $LIST_NAME$",
+    "placeholders": {
+      "list_name": {
+        "content": "$1",
+        "example": "Amptelike ShieldSign-lys"
+      }
+    }
+  },
+  "personalListDisplay": {
+    "message": "Persoonlike lys"
+  },
+  "enterpriseListDisplay": {
+    "message": "Ondernemingslys"
+  },
+  
+  "verifying": {
+    "message": "Verifieer..."
+  },
+  "pageNotContainPasswordField": {
+    "message": "Hierdie bladsy bevat nie 'n wagwoordveld nie"
+  },
+  "approveDomain": {
+    "message": "Keur hierdie domein goed"
+  },
+  
+  "settingsSaved": {
+    "message": "Instellings suksesvol gestoor"
+  },
+  "settingsReset": {
+    "message": "Instellings is herstel"
+  },
+  "listAdded": {
+    "message": "Lys suksesvol bygevoeg"
+  },
+  "listRemoved": {
+    "message": "Lys suksesvol verwyder"
+  },
+  "listEnabled": {
+    "message": "Lys is geaktiveer"
+  },
+  "listDisabled": {
+    "message": "Lys is gedeaktiveer"
+  },
+  "domainAdded": {
+    "message": "Domein suksesvol bygevoeg"
+  },
+  "domainRemoved": {
+    "message": "Domein suksesvol verwyder"
+  },
+  "officialListReinstalled": {
+    "message": "Amptelike lys is herïnstalleer en opgedateer!"
+  },
+  "listExported": {
+    "message": "Lys suksesvol uitgevoer"
+  },
+  "domainsImported": {
+    "message": "$COUNT$ domeine ingevoer",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  
+  "errorInvalidUrl": {
+    "message": "Ongeldige URL"
+  },
+  "errorInvalidDomain": {
+    "message": "Ongeldige domeinformaat"
+  },
+  "errorAddingList": {
+    "message": "Fout by byvoeging van lys"
+  },
+  "errorRemovingList": {
+    "message": "Fout by verwydering van lys"
+  },
+  "errorModifyingList": {
+    "message": "Fout by wysiging van lys"
+  },
+  "errorAddingDomain": {
+    "message": "Fout by byvoeging van domein"
+  },
+  "errorRemovingDomain": {
+    "message": "Fout by verwydering van domein"
+  },
+  "errorLoadingSettings": {
+    "message": "Fout by laai van instellings"
+  },
+  "errorSavingSettings": {
+    "message": "Fout by stoor van instellings"
+  },
+  "errorResetting": {
+    "message": "Fout by herstel"
+  },
+  "errorReinstalling": {
+    "message": "Fout by herinstallering"
+  },
+  "errorExporting": {
+    "message": "Fout by uitvoer"
+  },
+  "errorImporting": {
+    "message": "Fout by invoer"
+  },
+  "errorInvalidFile": {
+    "message": "Ongeldige lêerformaat"
+  },
+  "errorNoValidDomain": {
+    "message": "Geen geldige domeine gevind nie"
+  },
+  "errorNoPersonalDomain": {
+    "message": "Geen persoonlike domeine om uit te voer nie"
+  },
+  "errorEnterValidUrl": {
+    "message": "Voer 'n geldige URL in"
+  },
+  "errorEnterValidDomain": {
+    "message": "Voer 'n geldige domein in"
+  },
+  "errorUpdating": {
+    "message": "Fout by opdatering"
+  },
+  
+  "settingsTitle": {
+    "message": "Instellings - ShieldSign"
+  },
+  "headerTitle": {
+    "message": "ShieldSign - Instellings"
+  },
+  "officialListSubtitle": {
+    "message": "Amptelike lys (65+ geverifieerde domeine)"
+  },
+  "toggleDisable": {
+    "message": "Deaktiveer"
+  },
+  "toggleEnable": {
+    "message": "Aktiveer"
+  },
+  "reinstallOfficial": {
+    "message": "Herinstalleer amptelike lys"
+  },
+  "communityListTitle": {
+    "message": "Addisionele gemeenskapslyste"
+  },
+  "communityListDescription": {
+    "message": "Voeg ander openbare lyste by wat deur die gemeenskap onderhou word (opsioneel)"
+  },
+  "noListCommunity": {
+    "message": "Geen addisionele lyste gekonfigureer nie"
+  },
+  "noListEnterprise": {
+    "message": "Geen ondernemingslys gekonfigureer nie"
+  },
+  "noListPersonal": {
+    "message": "Geen persoonlike domeine gekonfigureer nie"
+  },
+  "btnAdd": {
+    "message": "Voeg by"
+  },
+  "btnSave": {
+    "message": "Stoor instellings"
+  },
+  "btnReset": {
+    "message": "Herstel"
+  },
+  "btnExport": {
+    "message": "Voer lys uit"
+  },
+  "btnImport": {
+    "message": "Voer lys in"
+  },
+  "colorEnterprise": {
+    "message": "Ondernemingslys"
+  },
+  "colorCommunity": {
+    "message": "Gemeenskapslys"
+  },
+  "colorPersonal": {
+    "message": "Persoonlike lys"
+  },
+  "aboutVersion": {
+    "message": "Weergawe:"
+  },
+  "aboutLicense": {
+    "message": "Lisensie:"
+  },
+  "aboutDescriptionText": {
+    "message": "Visuele valideringsuitbreiding vir veilige aanmeldbladsye deur middel van 'n witlys van domeine"
+  },
+  "aboutGithub": {
+    "message": "GitHub-bewaarplek"
+  },
+  "aboutBugReport": {
+    "message": "Rapporteer fout"
+  },
+  "aboutDocumentation": {
+    "message": "Dokumentasie"
+  },
+  "aboutContributors": {
+    "message": "Bydraers"
+  },
+  "aboutContributorsText": {
+    "message": "Dankie aan almal wat tot die ShieldSign-projek bydra"
+  },
+  "aboutPrivacy": {
+    "message": "Privaatheid"
+  },
+  "aboutPrivacyText": {
+    "message": "ShieldSign versamel nie gebruikersdata nie. Alle validering vind plaaslik in u blaaier plaas."
+  },
+  "btnRemove": {
+    "message": "Verwyder"
+  },
+  "toastOfficialEnabled": {
+    "message": "Amptelike lys is geaktiveer"
+  },
+  "toastOfficialDisabled": {
+    "message": "Amptelike lys is gedeaktiveer"
+  },
+  "toastOfficialReinstalled": {
+    "message": "Amptelike lys is herïnstalleer en opgedateer!"
+  },
+  "toastEnterpriseModeEnabled": {
+    "message": "Ondernemingsmodus is geaktiveer"
+  },
+  "toastEnterpriseModeDisabled": {
+    "message": "Ondernemingsmodus is gedeaktiveer"
+  },
+  "errorLoading": {
+    "message": "Fout by laai van instellings"
+  },
+  "toastSettingsSaved": {
+    "message": "Instellings suksesvol gestoor"
+  },
+  "errorSaving": {
+    "message": "Fout by stoor van instellings"
+  },
+  "toastSettingsReset": {
+    "message": "Instellings is herstel"
+  },
+  "errorLoadingLists": {
+    "message": "Fout by laai van lyste"
+  },
+  "toastListAdded": {
+    "message": "Lys suksesvol bygevoeg"
+  },
+  "toastListRemoved": {
+    "message": "Lys suksesvol verwyder"
+  },
+  "toastListEnabled": {
+    "message": "Lys is geaktiveer"
+  },
+  "toastListDisabled": {
+    "message": "Lys is gedeaktiveer"
+  },
+  "errorTogglingList": {
+    "message": "Fout by skakel van lys"
+  },
+  "errorLoadingPersonal": {
+    "message": "Fout by laai van persoonlike lys"
+  },
+  "toastDomainAdded": {
+    "message": "Domein suksesvol bygevoeg"
+  },
+  "toastDomainRemoved": {
+    "message": "Domein suksesvol verwyder"
+  },
+  "toastListExported": {
+    "message": "Lys suksesvol uitgevoer"
+  },
+  "toastDomainsImported": {
+    "message": "{count} domeine ingevoer"
+  },
+  "enterpriseInfoShort": {
+    "message": "Gee u span 'n lys van geverifieerde domeine. Hierdie lys het die hoogste prioriteit en verhoog werknemers se vertroue."
+  },
+  "btnLearnMore": {
+    "message": "Leer meer"
+  },
+  "btnDownloadExample": {
+    "message": "Laai voorbeeld af"
+  },
+  "toastExampleDownloaded": {
+    "message": "Voorbeeld afgelaai"
+  },
+  "modalEnterpriseTitle": {
+    "message": "🛡️ Ondernemingsbronne: Beskerm u werknemers"
+  },
+  "modalWhyTitle": {
+    "message": "Waarom hierdie funksie gebruik?"
+  },
+  "modalWhyText": {
+    "message": "As administrateur kan u 'n lys van geverifieerde aanmelddomeine vir u organisasie verskaf. Hierdie lys het <strong>die hoogste prioriteit</strong> bo alle ander bronne (gemeenskap, persoonlik). U werknemers sal 'n spesiale groen banier sien op bladsye wat deur die onderneming geverifieer is, wat hul vertroue verhoog."
+  },
+  "modalSecurityTitle": {
+    "message": "🔒 Beskerming teen phishing en MITM"
+  },
+  "modalSecurityText": {
+    "message": "Hierdie funksie help om te veg teen:"
+  },
+  "modalSecurityPoint1": {
+    "message": "<strong>Phishing:</strong> U werknemers sal nie 'n valideringsbanier op vals bladsye sien nie"
+  },
+  "modalSecurityPoint2": {
+    "message": "<strong>Man-in-the-Middle-aanvalle:</strong> Slegs regte domeine van u lys word geverifieer"
+  },
+  "modalSecurityPoint3": {
+    "message": "<strong>Identiteitsdiefstal:</strong> Die ondernemingsbanier toon duidelik dat dit 'n goedgekeurde bladsy is"
+  },
+  "modalFormatTitle": {
+    "message": "📝 Domeinformaat"
+  },
+  "modalFormatText": {
+    "message": "Gebruik slegs volledige domeine (subdomein + hoofdomein), sonder protokol of pad:"
+  },
+  "modalHostingTitle": {
+    "message": "🔐 Veilige gasheerding (belangrik)"
+  },
+  "modalHostingWarning": {
+    "message": "<strong>⚠️ MOENIE op GitHub, GitLab of openbare dienste gasheer NIE!</strong>"
+  },
+  "modalHostingText": {
+    "message": "Vir maksimum sekuriteit, gasheer u JSON-lys op:"
+  },
+  "modalHostingOption1": {
+    "message": "<strong>Slegs interne bediener</strong> (slegs toeganklik vanaf ondernemingsnetwerk)"
+  },
+  "modalHostingOption2": {
+    "message": "<strong>Versteekte URL</strong>: Gebruik GUIDs vir lêer- en gidsname"
+  },
+  "modalHostingExample": {
+    "message": "Voorbeeld: <code>https://cdn.voorbeeld.com/a3f2e8b1-4c5d-6e7f-8a9b-0c1d2e3f4a5b/d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a.json</code>"
+  },
+  "modalMaintenanceTitle": {
+    "message": "🔧 Onderhoud"
+  },
+  "modalMaintenanceText": {
+    "message": "Hou u lys op datum deur nuwe aanmelddomeine wat deur u organisasie gebruik word by te voeg (SSO, interne portale, SaaS-toepassings, ens.)."
+  },
+  "popupCheckingStatus": {
+    "message": "Verifieer..."
+  },
+  "popupApproveButton": {
+    "message": "✅ Keur hierdie domein goed"
+  },
+  "popupSettingsButton": {
+    "message": "Instellings"
+  },
+  "popupRefreshButton": {
+    "message": "Herlaai"
+  },
+  "popupNoActivePage": {
+    "message": "Geen aktiewe bladsy"
+  },
+  "popupNoPasswordField": {
+    "message": "Hierdie bladsy bevat nie 'n wagwoordveld nie"
+  },
+  "popupValidated": {
+    "message": "Hierdie bladsy is geverifieer"
+  },
+  "popupUnknown": {
+    "message": "Hierdie bladsy bevat 'n wagwoordveld maar is nie in enige vertroude bron nie"
+  },
+  "popupLoadError": {
+    "message": "Fout by laai"
+  },
+  "popupValidatedBy": {
+    "message": "Geverifieer deur: {0}"
+  },
+  "contentBannerValidated": {
+    "message": "Bladsy geverifieer deur: {0}"
+  },
+  "contentPersonalList": {
+    "message": "Persoonlike lys"
+  },
+  "contentEnterpriseList": {
+    "message": "Ondernemingslys"
+  },
+  "validationSecurityTitle": {
+    "message": "🛡️ Anti-phishing-validering"
+  },
+  "validationSecurityDescription": {
+    "message": "ShieldSign vertoon 'n banier op aanmeldbladsye om dit sigbaar te maak. Waarskuwing: phishing-bladsye kan ook vals baniere vertoon. Om u in staat te stel om in 1 sekonde te verifieer of die banier eg is, kies 'n valideringsmetode hieronder."
+  },
+  "whyTheseOptions": {
+    "message": "💡 Waarom hierdie opsies?"
+  },
+  "antiPhishingExplanation": {
+    "message": "As ShieldSign gewild word, kan aanvallers vals groen baniere op hul phishing-bladsye skep. Hierdie opsies maak nabootsing <strong>onmoontlik</strong> omdat slegs U uitbreiding u persoonlike wagwoord, daaglikse kode of pasgemaakte kleur ken."
+  },
+  "imageComingSoon": {
+    "message": "[Illustrasie binnekort]"
+  },
+  "modeBadgeOnlyTitle": {
+    "message": "🔵 Slegs kenteken (diskreetheid)"
+  },
+  "modeBadgeOnlyDescription": {
+    "message": "Geen sigbare banier nie. 'n Gekleurde kolletjie verskyn op die uitbreidingsikoon in die nutsbalk. Eenvoudig en diskreet."
+  },
+  "modeBadgeOnlyPro1": {
+    "message": "✅ Diskreet, las nie bladsye nie"
+  },
+  "modeBadgeOnlyCon1": {
+    "message": "⚠️ Vereis nakyk van uitbreidingsikoon"
+  },
+  "modeBannerKeywordTitle": {
+    "message": "🔑 Banier met persoonlike wagwoord"
+  },
+  "modeBannerKeywordDescription": {
+    "message": "Die banier vertoon u pasgemaakte wagwoord of frase. Slegs u ken hierdie wagwoord, aanvallers kan dit nie raai nie."
+  },
+  "customKeywordLabel": {
+    "message": "U persoonlike wagwoord:"
+  },
+  "customKeywordPlaceholder": {
+    "message": "bv: TweeRooiKatte2025"
+  },
+  "customKeywordHelp": {
+    "message": "Kies 'n woord of frase wat maklik onthou maar moeilik geraai kan word (ten minste 5 karakters aanbeveel)"
+  },
+  "modeBannerKeywordPro1": {
+    "message": "✅ Onmiddellike en persoonlike validering"
+  },
+  "modeBannerKeywordPro2": {
+    "message": "✅ Onmoontlik om na te boots sonder om u wagwoord te ken"
+  },
+  "modeBannerKeywordCon1": {
+    "message": "⚠️ Vereis dat u u wagwoord onthou"
+  },
+  "warningKeywordTooShort": {
+    "message": "Wagwoord moet ten minste 5 karakters wees"
+  },
+  "modeBannerCodeTitle": {
+    "message": "🎲 Banier met willekeurige kode (aanbeveel)"
+  },
+  "modeBannerCodeDescription": {
+    "message": "'n Unieke 2-karakter alfanumeriese kode (bv. A7, H4, 8R) word by elke besoek gegenereer en op die banier EN op die uitbreidingsikoon vertoon. Kontroleer net dat albei ooreenstem."
+  },
+  "currentCodeLabel": {
+    "message": "Vandag se kode:"
+  },
+  "btnRegenerateCode": {
+    "message": "Genereer nuwe kode"
+  },
+  "currentCodeHelp": {
+    "message": "Die kode verander outomaties elke dag. U kan ook handmatig regenereer."
+  },
+  "modeBannerCodePro1": {
+    "message": "✅ Niks om te onthou nie"
+  },
+  "modeBannerCodePro2": {
+    "message": "✅ Vinnige validering (kenteken + banier)"
+  },
+  "modeBannerCodePro3": {
+    "message": "✅ Unieke kode by elke besoek"
+  },
+  "modeBannerCodePro4": {
+    "message": "✅ Perfekte balans tussen sekuriteit en eenvoud"
+  },
+  "toastCodeRegenerated": {
+    "message": "Kode suksesvol geregenereer"
+  },
+  "errorRegeneratingCode": {
+    "message": "⚠️ Fout by regenereer van kode"
+  },
+  "showUnknownPages": {
+    "message": "Toon status vir alle bladsye"
+  },
+  "showUnknownPagesDescription": {
+    "message": "Aktiveer om kenteken te sien selfs op ongelysde bladsye: 🔴 (verdagte bladsy met wagwoord) of ⚪ (bladsy sonder wagwoord)"
+  },
+  "bannerStyleTitle": {
+    "message": "Banierstyl"
+  },
+  "bannerStyleDescription": {
+    "message": "Pas die voorkoms van elke baniertipe aan (Onderneming, Gemeenskap, Persoonlik)"
+  },
+  "bannerStyleModeLabel": {
+    "message": "Kleurmodus:"
+  },
+  "bannerStyleModeSolid": {
+    "message": "Soliede kleur"
+  },
+  "bannerStyleModeGradient": {
+    "message": "Gradiënt"
+  },
+  "bannerStyleModeRandom": {
+    "message": "Willekeurig"
+  },
+  "bannerStyleSolidColorLabel": {
+    "message": "Soliede kleur:"
+  },
+  "bannerStyleGradientStartLabel": {
+    "message": "Gradiënt begin:"
+  },
+  "bannerStyleGradientEndLabel": {
+    "message": "Gradiënt einde:"
+  },
+  "bannerStyleTextColorLabel": {
+    "message": "Tekskleur:"
+  },
+  "bannerStyleFontFamilyLabel": {
+    "message": "Lettertipe:"
+  },
+  "bannerStyleFontArial": {
+    "message": "Arial"
+  },
+  "bannerStyleFontVerdana": {
+    "message": "Verdana"
+  },
+  "bannerStyleFontGeorgia": {
+    "message": "Georgia"
+  },
+  "bannerStyleFontCourier": {
+    "message": "Courier New"
+  },
+  "bannerStyleFontTimes": {
+    "message": "Times New Roman"
+  },
+  "bannerStylePreviewLabel": {
+    "message": "Voorskou:"
+  },
+  "bannerStyleRandomNote": {
+    "message": "ℹ️ In willekeurige modus word 'n nuwe kleur/gradiënt gegenereer elke keer as die banier vertoon word"
+  },
+  "bannerTypeEnterprise": {
+    "message": "Onderneming"
+  },
+  "bannerTypeCommunity": {
+    "message": "Gemeenskap"
+  },
+  "bannerTypePersonal": {
+    "message": "Persoonlik"
+  },
+  "popupValidationCodeLabel": {
+    "message": "🔐 Valideringskode:"
+  },
+  "popupCodeInfo": {
+    "message": "Unieke willekeurige kode wat op kenteken en banier by elke besoek verskyn om egtheid te verifieer"
+  },
+  "autoAddUnknownLabel": {
+    "message": "🔐 Wanneer 'n vorm op 'n onbekende bladsy ingedien word:"
+  },
+  "autoAddUnknownNever": {
+    "message": "Moenie iets doen nie"
+  },
+  "autoAddUnknownAlways": {
+    "message": "Voeg outomaties by my persoonlike lys"
+  },
+  "autoAddUnknownPrompt": {
+    "message": "Vra my of ek wil byvoeg"
+  },
+  "autoAddUnknownDescription": {
+    "message": "Kies hoe ShieldSign reageer wanneer u aanmeld op 'n bladsy wat nie in enige lys is nie"
+  },
+  "notificationAddToPersonal": {
+    "message": "Voeg hierdie bladsy by u persoonlike lys?"
+  },
+  "notificationAddToPersonalYes": {
+    "message": "Ja, voeg by"
+  },
+  "notificationAddToPersonalNo": {
+    "message": "Nee"
+  },
+  "notificationSiteAdded": {
+    "message": "Bladsy is by u persoonlike lys gevoeg"
+  }
+}

@@ -1,0 +1,807 @@
+{
+  "extName": {
+    "message": "ShieldSign",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "Visuell validering av sikre påloggingssider via hviteliste for domener",
+    "description": "Extension description"
+  },
+  
+  "appTitle": {
+    "message": "ShieldSign"
+  },
+  "settings": {
+    "message": "Innstillinger"
+  },
+  "refresh": {
+    "message": "Oppdater"
+  },
+  
+  "tabCommunity": {
+    "message": "Fellesskapskilder"
+  },
+  "tabEnterprise": {
+    "message": "Bedriftskilder"
+  },
+  "tabPersonal": {
+    "message": "Personlige kilder"
+  },
+  "tabSettings": {
+    "message": "Innstillinger"
+  },
+  "tabAbout": {
+    "message": "Om"
+  },
+  
+  "officialListTitle": {
+    "message": "Offisiell ShieldSign-liste"
+  },
+  "officialListDescription": {
+    "message": "Offisiell liste vedlikeholdt av ShieldSign-teamet, som inneholder de mest populære nett- og skytjenestene. Aktivert som standard."
+  },
+  "officialListName": {
+    "message": "Offisiell ShieldSign-liste"
+  },
+  "officialListInfo": {
+    "message": "Offisiell liste (65+ verifiserte domener)"
+  },
+  "disable": {
+    "message": "Deaktiver"
+  },
+  "enable": {
+    "message": "Aktiver"
+  },
+  "reinstallOfficialList": {
+    "message": "Installer offisiell liste på nytt"
+  },
+  
+  "communityListsTitle": {
+    "message": "Ytterligere fellesskapslister"
+  },
+  "communityListsDescription": {
+    "message": "Legg til andre offentlige lister vedlikeholdt av fellesskapet (valgfritt)"
+  },
+  "communityUrlPlaceholder": {
+    "message": "https://example.com/community-list.json"
+  },
+  "add": {
+    "message": "Legg til"
+  },
+  "noAdditionalList": {
+    "message": "Ingen ytterligere lister konfigurert"
+  },
+  
+  "enterpriseInfoTitle": {
+    "message": "ℹ️ Om bedriftskilder"
+  },
+  "enterpriseInfoText1": {
+    "message": "Denne funksjonen er ment for <strong>bedriftsadministratorer</strong> som ønsker å gi sine ansatte en liste over verifiserte domener."
+  },
+  "enterpriseInfoText2": {
+    "message": "<strong>Domeneformat:</strong> Bruk det fullstendige formatet med subdomene og hoveddomene (det som vises mellom <code>https://</code> og første <code>/</code>)."
+  },
+  "enterpriseInfoExamples": {
+    "message": "<strong>Eksempler:</strong>"
+  },
+  "enterpriseInfoSecurity": {
+    "message": "⚠️ <strong>Sikkerhet:</strong> Vær vert for listen din på en intern eller privat server, <strong>ikke på en offentlig URL</strong>."
+  },
+  "enterpriseInfoFormatLabel": {
+    "message": "Domeneformat:"
+  },
+  "enterpriseInfoFormatText": {
+    "message": "Bruk det fullstendige formatet med subdomene og hoveddomene (det som vises mellom <code>https://</code> og første <code>/</code>)."
+  },
+  "enterpriseInfoExamplesLabel": {
+    "message": "Eksempler:"
+  },
+  "enterpriseInfoExample1": {
+    "message": "✅ <code>login.mittfirma.com</code>"
+  },
+  "enterpriseInfoExample2": {
+    "message": "✅ <code>sso.mittfirma.com</code>"
+  },
+  "enterpriseInfoExample3": {
+    "message": "✅ <code>auth.intranet.mittfirma.net</code>"
+  },
+  "enterpriseInfoExample4": {
+    "message": "❌ <code>https://login.mittfirma.com/auth</code> (uten https:// eller sti)"
+  },
+  
+  "enterpriseListTitle": {
+    "message": "Konfigurasjon av bedriftsliste"
+  },
+  "enterpriseListDescription": {
+    "message": "Legg til en bedriftsomfattende domenevalideringsliste (høyeste prioritet)"
+  },
+  "enterpriseUrlPlaceholder": {
+    "message": "https://intranet.firma.com/verifiserte-domener.json"
+  },
+  "noEnterpriseList": {
+    "message": "Ingen bedriftsliste konfigurert"
+  },
+  
+  "personalDomainsTitle": {
+    "message": "Administrer personlige domener"
+  },
+  "personalDomainsDescription": {
+    "message": "Legg til dine egne klarerte domener (høyere prioritet enn fellesskapslister)"
+  },
+  "personalDomainPlaceholder": {
+    "message": "login.eksempel.com"
+  },
+  "noPersonalDomain": {
+    "message": "Ingen personlige domener konfigurert"
+  },
+  
+  "importExportTitle": {
+    "message": "Import / Eksport"
+  },
+  "importExportDescription": {
+    "message": "Eksporter listen din for sikkerhetskopiering eller importer til en annen nettleser"
+  },
+  "exportList": {
+    "message": "Eksporter liste"
+  },
+  "importList": {
+    "message": "Importer liste"
+  },
+  
+  "generalSettingsTitle": {
+    "message": "Generelle innstillinger"
+  },
+  "language": {
+    "message": "Språk"
+  },
+  "languageDescription": {
+    "message": "Velg grensesnittspråk"
+  },
+  "languageAuto": {
+    "message": "Automatisk (nettleserspråk)"
+  },
+  "languageEn": {
+    "message": "English"
+  },
+  "languageFr": {
+    "message": "Français"
+  },
+  "enterpriseMode": {
+    "message": "Bedriftsmodus"
+  },
+  "enterpriseModeDescription": {
+    "message": "Aktiver dette hvis du er administrator og ønsker å administrere domenelister for organisasjonen din. Dette viser fanen \"Bedriftskilder\"."
+  },
+  "checkCN": {
+    "message": "Kontroller sertifikat CN-samsvar"
+  },
+  "checkCNDescription": {
+    "message": "Vis advarsel hvis sertifikatets CN ikke samsvarer med domenet (kun Firefox)"
+  },
+  "cacheDuration": {
+    "message": "Hurtigbuffervarighet for liste (timer)"
+  },
+  "cacheDurationDescription": {
+    "message": "Frekvens for automatiske oppdateringer av eksterne lister (standard: 24t)"
+  },
+  
+  "bannerColorsTitle": {
+    "message": "Bannerfarger"
+  },
+  "enterpriseList": {
+    "message": "Bedriftsliste"
+  },
+  "communityList": {
+    "message": "Fellesskapsliste"
+  },
+  "personalList": {
+    "message": "Personlig liste"
+  },
+  
+  "saveSettings": {
+    "message": "Lagre innstillinger"
+  },
+  "resetSettings": {
+    "message": "Tilbakestill"
+  },
+  
+  "aboutTitle": {
+    "message": "Om ShieldSign"
+  },
+  "version": {
+    "message": "Versjon"
+  },
+  "license": {
+    "message": "Lisens"
+  },
+  "description": {
+    "message": "Beskrivelse"
+  },
+  "aboutDescription": {
+    "message": "Visuelt valideringsutvidelse for sikre påloggingssider via hviteliste for domener"
+  },
+  "githubRepo": {
+    "message": "GitHub-repositorium"
+  },
+  "reportBug": {
+    "message": "Rapporter feil"
+  },
+  "documentation": {
+    "message": "Dokumentasjon"
+  },
+  "contributorsTitle": {
+    "message": "Bidragsytere"
+  },
+  "contributorsText": {
+    "message": "Takk til alle som bidrar til ShieldSign-prosjektet"
+  },
+  
+  "pageValidated": {
+    "message": "Side verifisert av: $LIST_NAME$",
+    "placeholders": {
+      "list_name": {
+        "content": "$1",
+        "example": "Offisiell ShieldSign-liste"
+      }
+    }
+  },
+  "personalListDisplay": {
+    "message": "Personlig liste"
+  },
+  "enterpriseListDisplay": {
+    "message": "Bedriftsliste"
+  },
+  
+  "verifying": {
+    "message": "Verifiserer..."
+  },
+  "pageNotContainPasswordField": {
+    "message": "Denne siden inneholder ikke et passordfelt"
+  },
+  "approveDomain": {
+    "message": "Godkjenn dette domenet"
+  },
+  
+  "settingsSaved": {
+    "message": "Innstillingene er lagret"
+  },
+  "settingsReset": {
+    "message": "Innstillingene er tilbakestilt"
+  },
+  "listAdded": {
+    "message": "Listen er lagt til"
+  },
+  "listRemoved": {
+    "message": "Listen er fjernet"
+  },
+  "listEnabled": {
+    "message": "Listen er aktivert"
+  },
+  "listDisabled": {
+    "message": "Listen er deaktivert"
+  },
+  "domainAdded": {
+    "message": "Domenet er lagt til"
+  },
+  "domainRemoved": {
+    "message": "Domenet er fjernet"
+  },
+  "officialListReinstalled": {
+    "message": "Den offisielle listen er installert på nytt og oppdatert!"
+  },
+  "listExported": {
+    "message": "Listen er eksportert"
+  },
+  "domainsImported": {
+    "message": "$COUNT$ domener importert",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  
+  "errorInvalidUrl": {
+    "message": "Ugyldig URL"
+  },
+  "errorInvalidDomain": {
+    "message": "Ugyldig domeneformat"
+  },
+  "errorAddingList": {
+    "message": "Feil ved tillegg av liste"
+  },
+  "errorRemovingList": {
+    "message": "Feil ved fjerning av liste"
+  },
+  "errorModifyingList": {
+    "message": "Feil ved endring av liste"
+  },
+  "errorAddingDomain": {
+    "message": "Feil ved tillegg av domene"
+  },
+  "errorRemovingDomain": {
+    "message": "Feil ved fjerning av domene"
+  },
+  "errorLoadingSettings": {
+    "message": "Feil ved lasting av innstillinger"
+  },
+  "errorSavingSettings": {
+    "message": "Feil ved lagring av innstillinger"
+  },
+  "errorResetting": {
+    "message": "Feil ved tilbakestilling"
+  },
+  "errorReinstalling": {
+    "message": "Feil ved ny installasjon"
+  },
+  "errorExporting": {
+    "message": "Feil ved eksport"
+  },
+  "errorImporting": {
+    "message": "Feil ved import"
+  },
+  "errorInvalidFile": {
+    "message": "Ugyldig filformat"
+  },
+  "errorNoValidDomain": {
+    "message": "Ingen gyldig domene funnet"
+  },
+  "errorNoPersonalDomain": {
+    "message": "Ingen personlige domener å eksportere"
+  },
+  "errorEnterValidUrl": {
+    "message": "Oppgi en gyldig URL"
+  },
+  "errorEnterValidDomain": {
+    "message": "Oppgi et gyldig domene"
+  },
+  "errorUpdating": {
+    "message": "Feil ved oppdatering"
+  },
+  
+  "settingsTitle": {
+    "message": "Innstillinger - ShieldSign"
+  },
+  "headerTitle": {
+    "message": "ShieldSign - Innstillinger"
+  },
+  "officialListSubtitle": {
+    "message": "Offisiell liste (65+ verifiserte domener)"
+  },
+  "toggleDisable": {
+    "message": "Deaktiver"
+  },
+  "toggleEnable": {
+    "message": "Aktiver"
+  },
+  "reinstallOfficial": {
+    "message": "Installer offisiell liste på nytt"
+  },
+  "communityListTitle": {
+    "message": "Ytterligere fellesskapslister"
+  },
+  "communityListDescription": {
+    "message": "Legg til andre offentlige lister vedlikeholdt av fellesskapet (valgfritt)"
+  },
+  "noListCommunity": {
+    "message": "Ingen ytterligere lister konfigurert"
+  },
+  "noListEnterprise": {
+    "message": "Ingen bedriftsliste konfigurert"
+  },
+  "noListPersonal": {
+    "message": "Ingen personlige domener konfigurert"
+  },
+  "btnAdd": {
+    "message": "Legg til"
+  },
+  "btnSave": {
+    "message": "Lagre innstillinger"
+  },
+  "btnReset": {
+    "message": "Tilbakestill"
+  },
+  "btnExport": {
+    "message": "Eksporter liste"
+  },
+  "btnImport": {
+    "message": "Importer liste"
+  },
+  "colorEnterprise": {
+    "message": "Bedriftsliste"
+  },
+  "colorCommunity": {
+    "message": "Fellesskapsliste"
+  },
+  "colorPersonal": {
+    "message": "Personlig liste"
+  },
+  "aboutVersion": {
+    "message": "Versjon:"
+  },
+  "aboutLicense": {
+    "message": "Lisens:"
+  },
+  "aboutDescriptionText": {
+    "message": "Visuelt valideringsutvidelse for sikre påloggingssider via hviteliste for domener"
+  },
+  "aboutGithub": {
+    "message": "GitHub-repositorium"
+  },
+  "aboutBugReport": {
+    "message": "Rapporter feil"
+  },
+  "aboutDocumentation": {
+    "message": "Dokumentasjon"
+  },
+  "aboutContributors": {
+    "message": "Bidragsytere"
+  },
+  "aboutContributorsText": {
+    "message": "Takk til alle som bidrar til ShieldSign-prosjektet"
+  },
+  "aboutPrivacy": {
+    "message": "Personvern"
+  },
+  "aboutPrivacyText": {
+    "message": "ShieldSign samler ikke inn brukerdata. All validering skjer lokalt i nettleseren din."
+  },
+  "btnRemove": {
+    "message": "Fjern"
+  },
+  "toastOfficialEnabled": {
+    "message": "Den offisielle listen er aktivert"
+  },
+  "toastOfficialDisabled": {
+    "message": "Den offisielle listen er deaktivert"
+  },
+  "toastOfficialReinstalled": {
+    "message": "Den offisielle listen er installert på nytt og oppdatert!"
+  },
+  "toastEnterpriseModeEnabled": {
+    "message": "Bedriftsmodus er aktivert"
+  },
+  "toastEnterpriseModeDisabled": {
+    "message": "Bedriftsmodus er deaktivert"
+  },
+  "errorLoading": {
+    "message": "Feil ved lasting av innstillinger"
+  },
+  "toastSettingsSaved": {
+    "message": "Innstillingene er lagret"
+  },
+  "errorSaving": {
+    "message": "Feil ved lagring av innstillinger"
+  },
+  "toastSettingsReset": {
+    "message": "Innstillingene er tilbakestilt"
+  },
+  "errorLoadingLists": {
+    "message": "Feil ved lasting av lister"
+  },
+  "toastListAdded": {
+    "message": "Listen er lagt til"
+  },
+  "toastListRemoved": {
+    "message": "Listen er fjernet"
+  },
+  "toastListEnabled": {
+    "message": "Listen er aktivert"
+  },
+  "toastListDisabled": {
+    "message": "Listen er deaktivert"
+  },
+  "errorTogglingList": {
+    "message": "Feil ved veksling av liste"
+  },
+  "errorLoadingPersonal": {
+    "message": "Feil ved lasting av personlig liste"
+  },
+  "toastDomainAdded": {
+    "message": "Domenet er lagt til"
+  },
+  "toastDomainRemoved": {
+    "message": "Domenet er fjernet"
+  },
+  "toastListExported": {
+    "message": "Listen er eksportert"
+  },
+  "toastDomainsImported": {
+    "message": "{count} domener importert"
+  },
+  "enterpriseInfoShort": {
+    "message": "Gi teamene dine en liste over verifiserte domener. Denne listen har høyeste prioritet og øker tilliten hos ansatte."
+  },
+  "btnLearnMore": {
+    "message": "Lær mer"
+  },
+  "btnDownloadExample": {
+    "message": "Last ned eksempel"
+  },
+  "toastExampleDownloaded": {
+    "message": "Eksemplet er lastet ned"
+  },
+  "modalEnterpriseTitle": {
+    "message": "🛡️ Bedriftskilder: Beskytt dine ansatte"
+  },
+  "modalWhyTitle": {
+    "message": "Hvorfor bruke denne funksjonen?"
+  },
+  "modalWhyText": {
+    "message": "Som administrator kan du gi en liste over verifiserte påloggingsdomener for organisasjonen din. Denne listen har <strong>høyeste prioritet</strong> over alle andre kilder (fellesskap, personlige). Dine ansatte vil se et spesielt grønt banner på bedriftsverifiserte sider, noe som øker deres tillit."
+  },
+  "modalSecurityTitle": {
+    "message": "🔒 Beskyttelse mot phishing og MITM"
+  },
+  "modalSecurityText": {
+    "message": "Denne funksjonen bidrar til å bekjempe:"
+  },
+  "modalSecurityPoint1": {
+    "message": "<strong>Phishing:</strong> Dine ansatte vil ikke se noe valideringsbanner på falske sider"
+  },
+  "modalSecurityPoint2": {
+    "message": "<strong>Man-in-the-Middle-angrep:</strong> Kun ekte domener fra listen din blir verifisert"
+  },
+  "modalSecurityPoint3": {
+    "message": "<strong>Identitetstyveri:</strong> Bedriftsbanneret viser tydelig at det er en godkjent side"
+  },
+  "modalFormatTitle": {
+    "message": "📝 Domeneformat"
+  },
+  "modalFormatText": {
+    "message": "Bruk kun fullstendig domene (subdomene + hoveddomene), uten protokoll eller sti:"
+  },
+  "modalHostingTitle": {
+    "message": "🔐 Sikker hosting (viktig)"
+  },
+  "modalHostingWarning": {
+    "message": "<strong>⚠️ IKKE vær vert på GitHub, GitLab eller offentlige tjenester!</strong>"
+  },
+  "modalHostingText": {
+    "message": "For maksimal sikkerhet, vær vert for JSON-listen din på:"
+  },
+  "modalHostingOption1": {
+    "message": "<strong>Kun intern server</strong> (kun tilgjengelig fra bedriftsnettverket)"
+  },
+  "modalHostingOption2": {
+    "message": "<strong>Skjult URL</strong>: Bruk GUID for fil- og mappenavn"
+  },
+  "modalHostingExample": {
+    "message": "Eksempel: <code>https://cdn.eksempel.com/a3f2e8b1-4c5d-6e7f-8a9b-0c1d2e3f4a5b/d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a.json</code>"
+  },
+  "modalMaintenanceTitle": {
+    "message": "🔧 Vedlikehold"
+  },
+  "modalMaintenanceText": {
+    "message": "Hold listen din oppdatert ved å legge til nye påloggingsdomener som brukes av organisasjonen din (SSO, interne portaler, SaaS-apper, etc.)."
+  },
+  "popupCheckingStatus": {
+    "message": "Verifiserer..."
+  },
+  "popupApproveButton": {
+    "message": "✅ Godkjenn dette domenet"
+  },
+  "popupSettingsButton": {
+    "message": "Innstillinger"
+  },
+  "popupRefreshButton": {
+    "message": "Oppdater"
+  },
+  "popupNoActivePage": {
+    "message": "Ingen aktiv side"
+  },
+  "popupNoPasswordField": {
+    "message": "Denne siden inneholder ikke et passordfelt"
+  },
+  "popupValidated": {
+    "message": "Denne siden er verifisert"
+  },
+  "popupUnknown": {
+    "message": "Denne siden inneholder et passordfelt men finnes ikke i noen klarert kilde"
+  },
+  "popupLoadError": {
+    "message": "Lastingsfeil"
+  },
+  "popupValidatedBy": {
+    "message": "Verifisert av: {0}"
+  },
+  "contentBannerValidated": {
+    "message": "Side verifisert av: {0}"
+  },
+  "contentPersonalList": {
+    "message": "Personlig liste"
+  },
+  "contentEnterpriseList": {
+    "message": "Bedriftsliste"
+  },
+  "validationSecurityTitle": {
+    "message": "🛡️ Anti-phishing-validering"
+  },
+  "validationSecurityDescription": {
+    "message": "ShieldSign viser et banner på påloggingssider for å gjøre dem synlige. Advarsel: en phishing-side kan også vise et falskt banner. For at du skal kunne verifisere på 1 sekund om banneret er ekte, velg en valideringsmetode nedenfor."
+  },
+  "whyTheseOptions": {
+    "message": "💡 Hvorfor disse alternativene?"
+  },
+  "antiPhishingExplanation": {
+    "message": "Hvis ShieldSign blir populært, kan angripere lage et falskt grønt banner på sin phishing-side. Disse alternativene gjør det <strong>umulig</strong> å imitere siden kun DITT tillegg kjenner ditt personlige passord, daglige kode eller tilpassede farge."
+  },
+  "imageComingSoon": {
+    "message": "[Illustrasjon kommer snart]"
+  },
+  "modeBadgeOnlyTitle": {
+    "message": "🔵 Kun merke (diskret)"
+  },
+  "modeBadgeOnlyDescription": {
+    "message": "Ingen synlig banner. En farget prikk vises på utvidelses-ikonet i verktøylinjen. Enkelt og diskret."
+  },
+  "modeBadgeOnlyPro1": {
+    "message": "✅ Diskret, overbelaster ikke siden"
+  },
+  "modeBadgeOnlyCon1": {
+    "message": "⚠️ Krever kontroll av utvidelses-ikonet"
+  },
+  "modeBannerKeywordTitle": {
+    "message": "🔑 Banner med personlig passord"
+  },
+  "modeBannerKeywordDescription": {
+    "message": "Banneret viser ditt tilpassede passord eller setning. Kun du kjenner dette passordet, angripere kan ikke gjette det."
+  },
+  "customKeywordLabel": {
+    "message": "Ditt personlige passord:"
+  },
+  "customKeywordPlaceholder": {
+    "message": "f.eks: MineTøRødeAper2025"
+  },
+  "customKeywordHelp": {
+    "message": "Velg et ord eller en setning som er lett å huske men vanskelig å gjette (minimum 5 tegn anbefales)"
+  },
+  "modeBannerKeywordPro1": {
+    "message": "✅ Øyeblikkelig og personlig validering"
+  },
+  "modeBannerKeywordPro2": {
+    "message": "✅ Umulig å imitere uten å kjenne passordet ditt"
+  },
+  "modeBannerKeywordCon1": {
+    "message": "⚠️ Krever at du husker passordet ditt"
+  },
+  "warningKeywordTooShort": {
+    "message": "Passordet må være minst 5 tegn"
+  },
+  "modeBannerCodeTitle": {
+    "message": "🎲 Banner med tilfeldig kode (anbefalt)"
+  },
+  "modeBannerCodeDescription": {
+    "message": "En unik 2-tegns alfanumerisk kode (f.eks. A7, H4, 8R) genereres ved hvert besøk og vises på banneret OG på utvidelses-ikonet. Kontroller bare at begge stemmer overens."
+  },
+  "currentCodeLabel": {
+    "message": "Dagens kode:"
+  },
+  "btnRegenerateCode": {
+    "message": "Generer ny kode"
+  },
+  "currentCodeHelp": {
+    "message": "Koden endres automatisk hver dag. Du kan også regenerere manuelt."
+  },
+  "modeBannerCodePro1": {
+    "message": "✅ Ingenting å huske"
+  },
+  "modeBannerCodePro2": {
+    "message": "✅ Rask validering (merke + banner)"
+  },
+  "modeBannerCodePro3": {
+    "message": "✅ Unik kode ved hvert besøk"
+  },
+  "modeBannerCodePro4": {
+    "message": "✅ Perfekt balanse mellom sikkerhet og enkelhet"
+  },
+  "toastCodeRegenerated": {
+    "message": "Koden er regenerert"
+  },
+  "errorRegeneratingCode": {
+    "message": "⚠️ Feil ved regenerering av kode"
+  },
+  "showUnknownPages": {
+    "message": "Vis status for alle sider"
+  },
+  "showUnknownPagesDescription": {
+    "message": "Aktiver for å se merke også på ulistede sider: 🔴 (mistenkelig side med passord) eller ⚪ (side uten passord)"
+  },
+  "bannerStyleTitle": {
+    "message": "Bannerstil"
+  },
+  "bannerStyleDescription": {
+    "message": "Tilpass utseendet til hver bannertype (Bedrift, Fellesskap, Personlig)"
+  },
+  "bannerStyleModeLabel": {
+    "message": "Fargemodus:"
+  },
+  "bannerStyleModeSolid": {
+    "message": "Enfarge"
+  },
+  "bannerStyleModeGradient": {
+    "message": "Gradient"
+  },
+  "bannerStyleModeRandom": {
+    "message": "Tilfeldig"
+  },
+  "bannerStyleSolidColorLabel": {
+    "message": "Enfarge farge:"
+  },
+  "bannerStyleGradientStartLabel": {
+    "message": "Gradientstart:"
+  },
+  "bannerStyleGradientEndLabel": {
+    "message": "Gradientslutt:"
+  },
+  "bannerStyleTextColorLabel": {
+    "message": "Tekstfarge:"
+  },
+  "bannerStyleFontFamilyLabel": {
+    "message": "Skrifttype:"
+  },
+  "bannerStyleFontArial": {
+    "message": "Arial"
+  },
+  "bannerStyleFontVerdana": {
+    "message": "Verdana"
+  },
+  "bannerStyleFontGeorgia": {
+    "message": "Georgia"
+  },
+  "bannerStyleFontCourier": {
+    "message": "Courier New"
+  },
+  "bannerStyleFontTimes": {
+    "message": "Times New Roman"
+  },
+  "bannerStylePreviewLabel": {
+    "message": "Forhåndsvisning:"
+  },
+  "bannerStyleRandomNote": {
+    "message": "ℹ️ I tilfeldig modus genereres en ny farge/gradient hver gang banneret vises"
+  },
+  "bannerTypeEnterprise": {
+    "message": "Bedrift"
+  },
+  "bannerTypeCommunity": {
+    "message": "Fellesskap"
+  },
+  "bannerTypePersonal": {
+    "message": "Personlig"
+  },
+  "popupValidationCodeLabel": {
+    "message": "🔐 Valideringskode:"
+  },
+  "popupCodeInfo": {
+    "message": "En unik tilfeldig kode vises i merket og banneret ved hvert besøk for å bekrefte ektheten"
+  },
+  "autoAddUnknownLabel": {
+    "message": "🔐 Ved skjemainnsending på en ukjent side:"
+  },
+  "autoAddUnknownNever": {
+    "message": "Gjør ingenting"
+  },
+  "autoAddUnknownAlways": {
+    "message": "Legg automatisk til i min personlige liste"
+  },
+  "autoAddUnknownPrompt": {
+    "message": "Spør meg om jeg vil legge til"
+  },
+  "autoAddUnknownDescription": {
+    "message": "Velg hvordan ShieldSign reagerer når du logger inn på en side som ikke finnes i noen liste"
+  },
+  "notificationAddToPersonal": {
+    "message": "Legge til denne siden i din personlige liste?"
+  },
+  "notificationAddToPersonalYes": {
+    "message": "Ja, legg til"
+  },
+  "notificationAddToPersonalNo": {
+    "message": "Nei"
+  },
+  "notificationSiteAdded": {
+    "message": "Siden er lagt til i din personlige liste"
+  }
+}

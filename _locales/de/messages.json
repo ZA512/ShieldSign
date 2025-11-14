@@ -1,0 +1,807 @@
+{
+  "extName": {
+    "message": "ShieldSign",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "Visuelle Validierung sicherer Anmeldeseiten über Domain-Whitelists",
+    "description": "Extension description"
+  },
+  
+  "appTitle": {
+    "message": "ShieldSign"
+  },
+  "settings": {
+    "message": "Einstellungen"
+  },
+  "refresh": {
+    "message": "Aktualisieren"
+  },
+  
+  "tabCommunity": {
+    "message": "Community-Quellen"
+  },
+  "tabEnterprise": {
+    "message": "Unternehmensquelle"
+  },
+  "tabPersonal": {
+    "message": "Persönliche Quellen"
+  },
+  "tabSettings": {
+    "message": "Einstellungen"
+  },
+  "tabAbout": {
+    "message": "Über"
+  },
+  
+  "officialListTitle": {
+    "message": "Offizielle ShieldSign-Liste"
+  },
+  "officialListDescription": {
+    "message": "Offizielle Liste, die vom ShieldSign-Team gepflegt wird und die beliebtesten Web- und Cloud-Dienste enthält. Standardmäßig aktiviert."
+  },
+  "officialListName": {
+    "message": "Offizielle ShieldSign-Liste"
+  },
+  "officialListInfo": {
+    "message": "Offizielle Liste (65+ validierte Domains)"
+  },
+  "disable": {
+    "message": "Deaktivieren"
+  },
+  "enable": {
+    "message": "Aktivieren"
+  },
+  "reinstallOfficialList": {
+    "message": "Offizielle Liste neu installieren"
+  },
+  
+  "communityListsTitle": {
+    "message": "Zusätzliche Community-Listen"
+  },
+  "communityListsDescription": {
+    "message": "Andere öffentliche Listen hinzufügen, die von der Community gepflegt werden (optional)"
+  },
+  "communityUrlPlaceholder": {
+    "message": "https://beispiel.de/community-liste.json"
+  },
+  "add": {
+    "message": "Hinzufügen"
+  },
+  "noAdditionalList": {
+    "message": "Keine zusätzliche Liste konfiguriert"
+  },
+  
+  "enterpriseInfoTitle": {
+    "message": "ℹ️ Über die Unternehmensquelle"
+  },
+  "enterpriseInfoText1": {
+    "message": "Diese Funktion ist für <strong>Unternehmensadministratoren</strong> gedacht, die eine validierte Domain-Liste für ihre Mitarbeiter bereitstellen möchten."
+  },
+  "enterpriseInfoText2": {
+    "message": "<strong>Domain-Format:</strong> Verwenden Sie das vollständige Format einschließlich Subdomain und Hauptdomain (was zwischen <code>https://</code> und dem ersten <code>/</code> erscheint)."
+  },
+  "enterpriseInfoExamples": {
+    "message": "<strong>Beispiele:</strong>"
+  },
+  "enterpriseInfoSecurity": {
+    "message": "⚠️ <strong>Sicherheit:</strong> Hosten Sie Ihre Liste auf einem internen oder privaten Server, <strong>nicht auf einer öffentlichen URL</strong>."
+  },
+  "enterpriseInfoFormatLabel": {
+    "message": "Domain-Format:"
+  },
+  "enterpriseInfoFormatText": {
+    "message": "Verwenden Sie das vollständige Format einschließlich Subdomain und Hauptdomain (was zwischen <code>https://</code> und dem ersten <code>/</code> erscheint)."
+  },
+  "enterpriseInfoExamplesLabel": {
+    "message": "Beispiele:"
+  },
+  "enterpriseInfoExample1": {
+    "message": "✅ <code>login.meinunternehmen.de</code>"
+  },
+  "enterpriseInfoExample2": {
+    "message": "✅ <code>sso.meinunternehmen.de</code>"
+  },
+  "enterpriseInfoExample3": {
+    "message": "✅ <code>auth.intranet.meinunternehmen.net</code>"
+  },
+  "enterpriseInfoExample4": {
+    "message": "❌ <code>https://login.meinunternehmen.de/auth</code> (https:// oder Pfad nicht einschließen)"
+  },
+  
+  "enterpriseListTitle": {
+    "message": "Unternehmensliste Konfigurieren"
+  },
+  "enterpriseListDescription": {
+    "message": "Eine einzige unternehmensweite Domain-Validierungsliste hinzufügen (höchste Priorität)"
+  },
+  "enterpriseUrlPlaceholder": {
+    "message": "https://intranet.unternehmen.de/validierte-domains.json"
+  },
+  "noEnterpriseList": {
+    "message": "Keine Unternehmensliste konfiguriert"
+  },
+  
+  "personalDomainsTitle": {
+    "message": "Verwaltung Persönlicher Domains"
+  },
+  "personalDomainsDescription": {
+    "message": "Fügen Sie Ihre eigenen vertrauenswürdigen Domains hinzu (höhere Priorität als Community-Listen)"
+  },
+  "personalDomainPlaceholder": {
+    "message": "login.beispiel.de"
+  },
+  "noPersonalDomain": {
+    "message": "Keine persönliche Domain konfiguriert"
+  },
+  
+  "importExportTitle": {
+    "message": "Importieren / Exportieren"
+  },
+  "importExportDescription": {
+    "message": "Exportieren Sie Ihre Liste zum Speichern oder Importieren in einen anderen Browser"
+  },
+  "exportList": {
+    "message": "Liste exportieren"
+  },
+  "importList": {
+    "message": "Liste importieren"
+  },
+  
+  "generalSettingsTitle": {
+    "message": "Allgemeine Einstellungen"
+  },
+  "language": {
+    "message": "Sprache"
+  },
+  "languageDescription": {
+    "message": "Wählen Sie die Sprache der Benutzeroberfläche"
+  },
+  "languageAuto": {
+    "message": "Automatisch (Browser-Sprache)"
+  },
+  "languageEn": {
+    "message": "English"
+  },
+  "languageFr": {
+    "message": "Français"
+  },
+  "enterpriseMode": {
+    "message": "Unternehmensmodus"
+  },
+  "enterpriseModeDescription": {
+    "message": "Aktivieren Sie diese Option, wenn Sie Administrator sind und eine Domain-Liste für Ihre Organisation verwalten möchten. Dies zeigt den Tab \"Unternehmensquelle\" an."
+  },
+  "checkCN": {
+    "message": "Zertifikat-CN-Übereinstimmung überprüfen"
+  },
+  "checkCNDescription": {
+    "message": "Zeigt eine Warnung an, wenn der Zertifikat-CN nicht mit der Domain übereinstimmt (nur Firefox)"
+  },
+  "cacheDuration": {
+    "message": "Listen-Cache-Dauer (Stunden)"
+  },
+  "cacheDurationDescription": {
+    "message": "Häufigkeit der automatischen Aktualisierung von Remote-Listen (Standard: 24h)"
+  },
+  
+  "bannerColorsTitle": {
+    "message": "Banner-Farben"
+  },
+  "enterpriseList": {
+    "message": "Unternehmensliste"
+  },
+  "communityList": {
+    "message": "Community-Liste"
+  },
+  "personalList": {
+    "message": "Persönliche Liste"
+  },
+  
+  "saveSettings": {
+    "message": "Einstellungen speichern"
+  },
+  "resetSettings": {
+    "message": "Zurücksetzen"
+  },
+  
+  "aboutTitle": {
+    "message": "Über ShieldSign"
+  },
+  "version": {
+    "message": "Version"
+  },
+  "license": {
+    "message": "Lizenz"
+  },
+  "description": {
+    "message": "Beschreibung"
+  },
+  "aboutDescription": {
+    "message": "Visuelle Validierungserweiterung für sichere Anmeldeseiten über Domain-Whitelists"
+  },
+  "githubRepo": {
+    "message": "GitHub-Repository"
+  },
+  "reportBug": {
+    "message": "Fehler melden"
+  },
+  "documentation": {
+    "message": "Dokumentation"
+  },
+  "contributorsTitle": {
+    "message": "Mitwirkende"
+  },
+  "contributorsText": {
+    "message": "Danke an alle Mitwirkenden des ShieldSign-Projekts"
+  },
+  
+  "pageValidated": {
+    "message": "Seite validiert von: $LIST_NAME$",
+    "placeholders": {
+      "list_name": {
+        "content": "$1",
+        "example": "Offizielle ShieldSign-Liste"
+      }
+    }
+  },
+  "personalListDisplay": {
+    "message": "Persönliche Liste"
+  },
+  "enterpriseListDisplay": {
+    "message": "Unternehmensliste"
+  },
+  
+  "verifying": {
+    "message": "Überprüfung läuft..."
+  },
+  "pageNotContainPasswordField": {
+    "message": "Diese Seite enthält kein Passwortfeld"
+  },
+  "approveDomain": {
+    "message": "Diese Domain genehmigen"
+  },
+  
+  "settingsSaved": {
+    "message": "Einstellungen erfolgreich gespeichert"
+  },
+  "settingsReset": {
+    "message": "Einstellungen zurückgesetzt"
+  },
+  "listAdded": {
+    "message": "Liste erfolgreich hinzugefügt"
+  },
+  "listRemoved": {
+    "message": "Liste erfolgreich entfernt"
+  },
+  "listEnabled": {
+    "message": "Liste aktiviert"
+  },
+  "listDisabled": {
+    "message": "Liste deaktiviert"
+  },
+  "domainAdded": {
+    "message": "Domain erfolgreich hinzugefügt"
+  },
+  "domainRemoved": {
+    "message": "Domain erfolgreich entfernt"
+  },
+  "officialListReinstalled": {
+    "message": "Offizielle Liste neu installiert und aktualisiert!"
+  },
+  "listExported": {
+    "message": "Liste erfolgreich exportiert"
+  },
+  "domainsImported": {
+    "message": "$COUNT$ Domain(s) importiert",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  
+  "errorInvalidUrl": {
+    "message": "Ungültige URL"
+  },
+  "errorInvalidDomain": {
+    "message": "Ungültiges Domain-Format"
+  },
+  "errorAddingList": {
+    "message": "Fehler beim Hinzufügen der Liste"
+  },
+  "errorRemovingList": {
+    "message": "Fehler beim Entfernen der Liste"
+  },
+  "errorModifyingList": {
+    "message": "Fehler beim Ändern der Liste"
+  },
+  "errorAddingDomain": {
+    "message": "Fehler beim Hinzufügen der Domain"
+  },
+  "errorRemovingDomain": {
+    "message": "Fehler beim Entfernen der Domain"
+  },
+  "errorLoadingSettings": {
+    "message": "Fehler beim Laden der Einstellungen"
+  },
+  "errorSavingSettings": {
+    "message": "Fehler beim Speichern der Einstellungen"
+  },
+  "errorResetting": {
+    "message": "Fehler beim Zurücksetzen"
+  },
+  "errorReinstalling": {
+    "message": "Fehler beim Neuinstallieren"
+  },
+  "errorExporting": {
+    "message": "Fehler beim Exportieren"
+  },
+  "errorImporting": {
+    "message": "Fehler beim Importieren"
+  },
+  "errorInvalidFile": {
+    "message": "Ungültiges Dateiformat"
+  },
+  "errorNoValidDomain": {
+    "message": "Keine gültige Domain gefunden"
+  },
+  "errorNoPersonalDomain": {
+    "message": "Keine persönliche Domain zum Exportieren"
+  },
+  "errorEnterValidUrl": {
+    "message": "Bitte geben Sie eine gültige URL ein"
+  },
+  "errorEnterValidDomain": {
+    "message": "Bitte geben Sie eine gültige Domain ein"
+  },
+  "errorUpdating": {
+    "message": "Fehler beim Aktualisieren"
+  },
+  
+  "settingsTitle": {
+    "message": "Einstellungen - ShieldSign"
+  },
+  "headerTitle": {
+    "message": "ShieldSign - Einstellungen"
+  },
+  "officialListSubtitle": {
+    "message": "Offizielle Liste (65+ validierte Domains)"
+  },
+  "toggleDisable": {
+    "message": "Deaktivieren"
+  },
+  "toggleEnable": {
+    "message": "Aktivieren"
+  },
+  "reinstallOfficial": {
+    "message": "Offizielle Liste neu installieren"
+  },
+  "communityListTitle": {
+    "message": "Zusätzliche Community-Listen"
+  },
+  "communityListDescription": {
+    "message": "Andere öffentliche Listen hinzufügen, die von der Community gepflegt werden (optional)"
+  },
+  "noListCommunity": {
+    "message": "Keine zusätzliche Liste konfiguriert"
+  },
+  "noListEnterprise": {
+    "message": "Keine Unternehmensliste konfiguriert"
+  },
+  "noListPersonal": {
+    "message": "Keine persönliche Domain konfiguriert"
+  },
+  "btnAdd": {
+    "message": "Hinzufügen"
+  },
+  "btnSave": {
+    "message": "Einstellungen speichern"
+  },
+  "btnReset": {
+    "message": "Zurücksetzen"
+  },
+  "btnExport": {
+    "message": "Liste exportieren"
+  },
+  "btnImport": {
+    "message": "Liste importieren"
+  },
+  "colorEnterprise": {
+    "message": "Unternehmensliste"
+  },
+  "colorCommunity": {
+    "message": "Community-Liste"
+  },
+  "colorPersonal": {
+    "message": "Persönliche Liste"
+  },
+  "aboutVersion": {
+    "message": "Version:"
+  },
+  "aboutLicense": {
+    "message": "Lizenz:"
+  },
+  "aboutDescriptionText": {
+    "message": "Visuelle Validierungserweiterung für sichere Anmeldeseiten über Domain-Whitelists"
+  },
+  "aboutGithub": {
+    "message": "GitHub-Repository"
+  },
+  "aboutBugReport": {
+    "message": "Fehler melden"
+  },
+  "aboutDocumentation": {
+    "message": "Dokumentation"
+  },
+  "aboutContributors": {
+    "message": "Mitwirkende"
+  },
+  "aboutContributorsText": {
+    "message": "Danke an alle Mitwirkenden des ShieldSign-Projekts"
+  },
+  "aboutPrivacy": {
+    "message": "Datenschutz"
+  },
+  "aboutPrivacyText": {
+    "message": "ShieldSign sammelt keine Benutzerdaten. Alle Überprüfungen werden lokal in Ihrem Browser durchgeführt."
+  },
+  "btnRemove": {
+    "message": "Entfernen"
+  },
+  "toastOfficialEnabled": {
+    "message": "Offizielle Liste aktiviert"
+  },
+  "toastOfficialDisabled": {
+    "message": "Offizielle Liste deaktiviert"
+  },
+  "toastOfficialReinstalled": {
+    "message": "Offizielle Liste neu installiert und aktualisiert!"
+  },
+  "toastEnterpriseModeEnabled": {
+    "message": "Unternehmensmodus aktiviert"
+  },
+  "toastEnterpriseModeDisabled": {
+    "message": "Unternehmensmodus deaktiviert"
+  },
+  "errorLoading": {
+    "message": "Fehler beim Laden der Einstellungen"
+  },
+  "toastSettingsSaved": {
+    "message": "Einstellungen erfolgreich gespeichert"
+  },
+  "errorSaving": {
+    "message": "Fehler beim Speichern der Einstellungen"
+  },
+  "toastSettingsReset": {
+    "message": "Einstellungen zurückgesetzt"
+  },
+  "errorLoadingLists": {
+    "message": "Fehler beim Laden der Listen"
+  },
+  "toastListAdded": {
+    "message": "Liste erfolgreich hinzugefügt"
+  },
+  "toastListRemoved": {
+    "message": "Liste erfolgreich entfernt"
+  },
+  "toastListEnabled": {
+    "message": "Liste aktiviert"
+  },
+  "toastListDisabled": {
+    "message": "Liste deaktiviert"
+  },
+  "errorTogglingList": {
+    "message": "Fehler beim Umschalten der Liste"
+  },
+  "errorLoadingPersonal": {
+    "message": "Fehler beim Laden der persönlichen Liste"
+  },
+  "toastDomainAdded": {
+    "message": "Domain erfolgreich hinzugefügt"
+  },
+  "toastDomainRemoved": {
+    "message": "Domain erfolgreich entfernt"
+  },
+  "toastListExported": {
+    "message": "Liste erfolgreich exportiert"
+  },
+  "toastDomainsImported": {
+    "message": "{count} Domain(s) importiert"
+  },
+  "enterpriseInfoShort": {
+    "message": "Stellen Sie eine validierte Domain-Liste für Ihre Teams bereit. Diese Liste hat höchste Priorität und stärkt das Vertrauen Ihrer Mitarbeiter."
+  },
+  "btnLearnMore": {
+    "message": "Mehr erfahren"
+  },
+  "btnDownloadExample": {
+    "message": "Beispiel herunterladen"
+  },
+  "toastExampleDownloaded": {
+    "message": "Beispiel heruntergeladen"
+  },
+  "modalEnterpriseTitle": {
+    "message": "🛡️ Unternehmensquelle: Schützen Sie Ihre Mitarbeiter"
+  },
+  "modalWhyTitle": {
+    "message": "Warum diese Funktion nutzen?"
+  },
+  "modalWhyText": {
+    "message": "Als Administrator können Sie eine Liste validierter Anmelde-Domains für Ihre Organisation bereitstellen. Diese Liste hat <strong>höchste Priorität</strong> über alle anderen Quellen (Community, persönlich). Ihre Mitarbeiter sehen ein markantes grünes Banner auf von der Firma validierten Seiten, was ihr Vertrauen stärkt."
+  },
+  "modalSecurityTitle": {
+    "message": "🔒 Schutz Vor Phishing und MITM"
+  },
+  "modalSecurityText": {
+    "message": "Diese Funktion hilft bei der Bekämpfung von:"
+  },
+  "modalSecurityPoint1": {
+    "message": "<strong>Phishing:</strong> Ihre Mitarbeiter sehen das Validierungsbanner nicht auf gefälschten Websites"
+  },
+  "modalSecurityPoint2": {
+    "message": "<strong>Man-in-the-Middle:</strong> Nur authentische Domains aus Ihrer Liste werden validiert"
+  },
+  "modalSecurityPoint3": {
+    "message": "<strong>Identitätsdiebstahl:</strong> Das Unternehmensbanner zeigt deutlich, dass dies eine genehmigte Website ist"
+  },
+  "modalFormatTitle": {
+    "message": "📝 Domain-Format"
+  },
+  "modalFormatText": {
+    "message": "Verwenden Sie nur die vollständige Domain (Subdomain + Hauptdomain), ohne Protokoll oder Pfad:"
+  },
+  "modalHostingTitle": {
+    "message": "🔐 Sicheres Hosting (KRITISCH)"
+  },
+  "modalHostingWarning": {
+    "message": "<strong>⚠️ NICHT auf GitHub, GitLab oder einem öffentlichen Dienst hosten!</strong>"
+  },
+  "modalHostingText": {
+    "message": "Um die Sicherheit zu maximieren, hosten Sie Ihre JSON-Liste auf:"
+  },
+  "modalHostingOption1": {
+    "message": "<strong>Nur interner Server</strong> (nur von Ihrem Unternehmensnetzwerk aus zugänglich)"
+  },
+  "modalHostingOption2": {
+    "message": "<strong>Verschleierte URL</strong>: Verwenden Sie eine GUID für Dateinamen und Ordner"
+  },
+  "modalHostingExample": {
+    "message": "Beispiel: <code>https://cdn.beispiel.de/a3f2e8b1-4c5d-6e7f-8a9b-0c1d2e3f4a5b/d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a.json</code>"
+  },
+  "modalMaintenanceTitle": {
+    "message": "🔧 Wartung"
+  },
+  "modalMaintenanceText": {
+    "message": "Halten Sie Ihre Liste aktuell, indem Sie neue Anmelde-Domains hinzufügen, die von Ihrer Organisation verwendet werden (SSO, interne Portale, SaaS-Anwendungen usw.)."
+  },
+  "popupCheckingStatus": {
+    "message": "Überprüfung läuft..."
+  },
+  "popupApproveButton": {
+    "message": "✅ Diese Domain genehmigen"
+  },
+  "popupSettingsButton": {
+    "message": "Einstellungen"
+  },
+  "popupRefreshButton": {
+    "message": "Aktualisieren"
+  },
+  "popupNoActivePage": {
+    "message": "Keine aktive Seite"
+  },
+  "popupNoPasswordField": {
+    "message": "Diese Seite enthält kein Passwortfeld"
+  },
+  "popupValidated": {
+    "message": "Diese Seite ist validiert"
+  },
+  "popupUnknown": {
+    "message": "Diese Seite enthält ein Passwortfeld, ist aber in keiner vertrauenswürdigen Quelle aufgeführt"
+  },
+  "popupLoadError": {
+    "message": "Ladefehler"
+  },
+  "popupValidatedBy": {
+    "message": "Validiert von: {0}"
+  },
+  "contentBannerValidated": {
+    "message": "Seite validiert von: {0}"
+  },
+  "contentPersonalList": {
+    "message": "Persönliche Liste"
+  },
+  "contentEnterpriseList": {
+    "message": "Unternehmensliste"
+  },
+  "validationSecurityTitle": {
+    "message": "🛡️ Anti-Phishing-Validierung"
+  },
+  "validationSecurityDescription": {
+    "message": "ShieldSign zeigt ein Banner auf Anmeldeseiten an, um sie sichtbar zu machen. Warnung: Eine Phishing-Website kann auch ein gefälschtes Banner anzeigen. Um Ihnen zu ermöglichen, in 1 Sekunde zu überprüfen, ob das Banner echt ist, wählen Sie unten eine Überprüfungsmethode."
+  },
+  "whyTheseOptions": {
+    "message": "💡 Warum diese Optionen?"
+  },
+  "antiPhishingExplanation": {
+    "message": "Wenn ShieldSign populär wird, könnte ein Angreifer ein gefälschtes grünes Banner auf seiner Phishing-Seite erstellen. Diese Optionen machen Nachahmung <strong>unmöglich</strong>, weil nur IHRE Erweiterung Ihr persönliches Stichwort, Ihren Tagescode oder Ihre benutzerdefinierten Farben kennt."
+  },
+  "imageComingSoon": {
+    "message": "[Illustrationsbild demnächst]"
+  },
+  "modeBadgeOnlyTitle": {
+    "message": "🔵 Nur Abzeichen (diskret)"
+  },
+  "modeBadgeOnlyDescription": {
+    "message": "Kein sichtbares Banner. Ein farbiger Punkt erscheint auf dem Erweiterungssymbol in der Symbolleiste. Einfach und nicht aufdringlich."
+  },
+  "modeBadgeOnlyPro1": {
+    "message": "✅ Diskret, überfüllt die Seite nicht"
+  },
+  "modeBadgeOnlyCon1": {
+    "message": "⚠️ Erfordert das Betrachten des Erweiterungssymbols"
+  },
+  "modeBannerKeywordTitle": {
+    "message": "🔑 Banner mit persönlichem Stichwort"
+  },
+  "modeBannerKeywordDescription": {
+    "message": "Das Banner zeigt Ihr benutzerdefiniertes Stichwort oder Ihre Phrase an. Nur Sie kennen dieses Stichwort, ein Angreifer kann es nicht erraten."
+  },
+  "customKeywordLabel": {
+    "message": "Ihr persönliches Stichwort:"
+  },
+  "customKeywordPlaceholder": {
+    "message": "z.B.: MeinVertrauensLeuchtturm2025"
+  },
+  "customKeywordHelp": {
+    "message": "Wählen Sie ein Wort oder eine Phrase, die leicht zu merken, aber schwer zu erraten ist (mindestens 5 Zeichen empfohlen)"
+  },
+  "modeBannerKeywordPro1": {
+    "message": "✅ Sofortige und personalisierte Validierung"
+  },
+  "modeBannerKeywordPro2": {
+    "message": "✅ Unmöglich nachzuahmen, ohne Ihr Stichwort zu kennen"
+  },
+  "modeBannerKeywordCon1": {
+    "message": "⚠️ Erfordert das Auswendiglernen Ihres Stichworts"
+  },
+  "warningKeywordTooShort": {
+    "message": "Das Stichwort muss mindestens 5 Zeichen enthalten"
+  },
+  "modeBannerCodeTitle": {
+    "message": "🎲 Banner mit Zufallscode (empfohlen)"
+  },
+  "modeBannerCodeDescription": {
+    "message": "Ein eindeutiger 2-stelliger alphanumerischer Code (z.B. A7, H4, 8R) wird bei jedem Besuch generiert und im Banner UND auf dem Erweiterungssymbol angezeigt. Überprüfen Sie einfach, ob beide übereinstimmen."
+  },
+  "currentCodeLabel": {
+    "message": "Heutiger Code:"
+  },
+  "btnRegenerateCode": {
+    "message": "Neuen Code generieren"
+  },
+  "currentCodeHelp": {
+    "message": "Der Code ändert sich automatisch jeden Tag. Sie können ihn auch manuell neu generieren."
+  },
+  "modeBannerCodePro1": {
+    "message": "✅ Keine Auswendiglernen erforderlich"
+  },
+  "modeBannerCodePro2": {
+    "message": "✅ Schnelle Überprüfung (Abzeichen + Banner)"
+  },
+  "modeBannerCodePro3": {
+    "message": "✅ Eindeutiger Code bei jedem Besuch"
+  },
+  "modeBannerCodePro4": {
+    "message": "✅ Perfekte Balance zwischen Sicherheit und Einfachheit"
+  },
+  "toastCodeRegenerated": {
+    "message": "Code erfolgreich neu generiert"
+  },
+  "errorRegeneratingCode": {
+    "message": "⚠️ Fehler beim Neugenerieren des Codes."
+  },
+  "showUnknownPages": {
+    "message": "Status für alle Seiten anzeigen"
+  },
+  "showUnknownPagesDescription": {
+    "message": "Aktivieren, um auch auf nicht gelisteten Seiten ein Abzeichen zu sehen: 🔴 (verdächtige Seite mit Passwort) oder ⚪ (Seite ohne Passwort)."
+  },
+  "bannerStyleTitle": {
+    "message": "Banner-Stil"
+  },
+  "bannerStyleDescription": {
+    "message": "Passen Sie das Aussehen jedes Banner-Typs an (Unternehmen, Community, Persönlich)."
+  },
+  "bannerStyleModeLabel": {
+    "message": "Farbmodus:"
+  },
+  "bannerStyleModeSolid": {
+    "message": "Volltonfarbe"
+  },
+  "bannerStyleModeGradient": {
+    "message": "Verlauf"
+  },
+  "bannerStyleModeRandom": {
+    "message": "Zufällig"
+  },
+  "bannerStyleSolidColorLabel": {
+    "message": "Volltonfarbe:"
+  },
+  "bannerStyleGradientStartLabel": {
+    "message": "Verlauf Start:"
+  },
+  "bannerStyleGradientEndLabel": {
+    "message": "Verlauf Ende:"
+  },
+  "bannerStyleTextColorLabel": {
+    "message": "Textfarbe:"
+  },
+  "bannerStyleFontFamilyLabel": {
+    "message": "Schriftart:"
+  },
+  "bannerStyleFontArial": {
+    "message": "Arial"
+  },
+  "bannerStyleFontVerdana": {
+    "message": "Verdana"
+  },
+  "bannerStyleFontGeorgia": {
+    "message": "Georgia"
+  },
+  "bannerStyleFontCourier": {
+    "message": "Courier New"
+  },
+  "bannerStyleFontTimes": {
+    "message": "Times New Roman"
+  },
+  "bannerStylePreviewLabel": {
+    "message": "Vorschau:"
+  },
+  "bannerStyleRandomNote": {
+    "message": "ℹ️ Im Zufallsmodus wird jedes Mal, wenn das Banner angezeigt wird, eine neue Farbe/ein neuer Verlauf generiert."
+  },
+  "bannerTypeEnterprise": {
+    "message": "Unternehmen"
+  },
+  "bannerTypeCommunity": {
+    "message": "Community"
+  },
+  "bannerTypePersonal": {
+    "message": "Persönlich"
+  },
+  "popupValidationCodeLabel": {
+    "message": "🔐 Validierungscode:"
+  },
+  "popupCodeInfo": {
+    "message": "Bei jedem Besuch erscheint ein eindeutiger Zufallscode im Abzeichen und Banner, um die Echtheit zu bestätigen."
+  },
+  "autoAddUnknownLabel": {
+    "message": "🔐 Beim Absenden eines Formulars auf einer unbekannten Website:"
+  },
+  "autoAddUnknownNever": {
+    "message": "Nichts tun"
+  },
+  "autoAddUnknownAlways": {
+    "message": "Automatisch zu meiner persönlichen Liste hinzufügen"
+  },
+  "autoAddUnknownPrompt": {
+    "message": "Mich fragen, ob ich sie hinzufügen möchte"
+  },
+  "autoAddUnknownDescription": {
+    "message": "Wählen Sie, wie ShieldSign reagieren soll, wenn Sie sich auf einer Website anmelden, die in keiner Liste enthalten ist."
+  },
+  "notificationAddToPersonal": {
+    "message": "Diese Website zu Ihrer persönlichen Liste hinzufügen?"
+  },
+  "notificationAddToPersonalYes": {
+    "message": "Ja, hinzufügen"
+  },
+  "notificationAddToPersonalNo": {
+    "message": "Nein"
+  },
+  "notificationSiteAdded": {
+    "message": "Website zu Ihrer persönlichen Liste hinzugefügt"
+  }
+}

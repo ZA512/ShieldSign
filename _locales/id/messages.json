@@ -1,0 +1,807 @@
+{
+  "extName": {
+    "message": "ShieldSign",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "Validasi visual halaman login aman melalui daftar putih domain",
+    "description": "Extension description"
+  },
+  
+  "appTitle": {
+    "message": "ShieldSign"
+  },
+  "settings": {
+    "message": "Pengaturan"
+  },
+  "refresh": {
+    "message": "Segarkan"
+  },
+  
+  "tabCommunity": {
+    "message": "Sumber Komunitas"
+  },
+  "tabEnterprise": {
+    "message": "Sumber Perusahaan"
+  },
+  "tabPersonal": {
+    "message": "Sumber Pribadi"
+  },
+  "tabSettings": {
+    "message": "Pengaturan"
+  },
+  "tabAbout": {
+    "message": "Tentang"
+  },
+  
+  "officialListTitle": {
+    "message": "Daftar Resmi ShieldSign"
+  },
+  "officialListDescription": {
+    "message": "Daftar resmi yang dikelola oleh tim ShieldSign, berisi layanan web dan cloud paling populer. Diaktifkan secara default."
+  },
+  "officialListName": {
+    "message": "Daftar Resmi ShieldSign"
+  },
+  "officialListInfo": {
+    "message": "Daftar resmi (65+ domain tervalidasi)"
+  },
+  "disable": {
+    "message": "Nonaktifkan"
+  },
+  "enable": {
+    "message": "Aktifkan"
+  },
+  "reinstallOfficialList": {
+    "message": "Instal ulang daftar resmi"
+  },
+  
+  "communityListsTitle": {
+    "message": "Daftar Komunitas Tambahan"
+  },
+  "communityListsDescription": {
+    "message": "Tambahkan daftar publik lain yang dikelola oleh komunitas (opsional)"
+  },
+  "communityUrlPlaceholder": {
+    "message": "https://contoh.com/daftar-komunitas.json"
+  },
+  "add": {
+    "message": "Tambahkan"
+  },
+  "noAdditionalList": {
+    "message": "Tidak ada daftar tambahan yang dikonfigurasi"
+  },
+  
+  "enterpriseInfoTitle": {
+    "message": "ℹ️ Tentang Sumber Perusahaan"
+  },
+  "enterpriseInfoText1": {
+    "message": "Fitur ini ditujukan untuk <strong>administrator perusahaan</strong> yang ingin menyediakan daftar domain tervalidasi untuk karyawan mereka."
+  },
+  "enterpriseInfoText2": {
+    "message": "<strong>Format domain:</strong> Gunakan format lengkap termasuk subdomain dan domain utama (yang muncul antara <code>https://</code> dan <code>/</code> pertama)."
+  },
+  "enterpriseInfoExamples": {
+    "message": "<strong>Contoh:</strong>"
+  },
+  "enterpriseInfoSecurity": {
+    "message": "⚠️ <strong>Keamanan:</strong> Host daftar Anda di server internal atau pribadi, <strong>bukan di URL publik</strong>."
+  },
+  "enterpriseInfoFormatLabel": {
+    "message": "Format domain:"
+  },
+  "enterpriseInfoFormatText": {
+    "message": "Gunakan format lengkap termasuk subdomain dan domain utama (yang muncul antara <code>https://</code> dan <code>/</code> pertama)."
+  },
+  "enterpriseInfoExamplesLabel": {
+    "message": "Contoh:"
+  },
+  "enterpriseInfoExample1": {
+    "message": "✅ <code>login.perusahaanku.com</code>"
+  },
+  "enterpriseInfoExample2": {
+    "message": "✅ <code>sso.perusahaanku.com</code>"
+  },
+  "enterpriseInfoExample3": {
+    "message": "✅ <code>auth.intranet.perusahaanku.net</code>"
+  },
+  "enterpriseInfoExample4": {
+    "message": "❌ <code>https://login.perusahaanku.com/auth</code> (jangan sertakan https:// atau path)"
+  },
+  
+  "enterpriseListTitle": {
+    "message": "Konfigurasi Daftar Perusahaan"
+  },
+  "enterpriseListDescription": {
+    "message": "Tambahkan satu daftar validasi domain seluruh perusahaan (prioritas tertinggi)"
+  },
+  "enterpriseUrlPlaceholder": {
+    "message": "https://intranet.perusahaan.com/domain-tervalidasi.json"
+  },
+  "noEnterpriseList": {
+    "message": "Tidak ada daftar perusahaan yang dikonfigurasi"
+  },
+  
+  "personalDomainsTitle": {
+    "message": "Pengelolaan Domain Pribadi"
+  },
+  "personalDomainsDescription": {
+    "message": "Tambahkan domain tepercaya Anda sendiri (prioritas lebih tinggi dari daftar komunitas)"
+  },
+  "personalDomainPlaceholder": {
+    "message": "login.contoh.com"
+  },
+  "noPersonalDomain": {
+    "message": "Tidak ada domain pribadi yang dikonfigurasi"
+  },
+  
+  "importExportTitle": {
+    "message": "Impor / Ekspor"
+  },
+  "importExportDescription": {
+    "message": "Ekspor daftar Anda untuk menyimpan atau mengimpornya ke browser lain"
+  },
+  "exportList": {
+    "message": "Ekspor daftar"
+  },
+  "importList": {
+    "message": "Impor daftar"
+  },
+  
+  "generalSettingsTitle": {
+    "message": "Pengaturan Umum"
+  },
+  "language": {
+    "message": "Bahasa"
+  },
+  "languageDescription": {
+    "message": "Pilih bahasa antarmuka"
+  },
+  "languageAuto": {
+    "message": "Otomatis (bahasa browser)"
+  },
+  "languageEn": {
+    "message": "English"
+  },
+  "languageFr": {
+    "message": "Français"
+  },
+  "enterpriseMode": {
+    "message": "Mode perusahaan"
+  },
+  "enterpriseModeDescription": {
+    "message": "Aktifkan opsi ini jika Anda adalah administrator dan ingin mengelola daftar domain untuk organisasi Anda. Ini akan menampilkan tab \"Sumber Perusahaan\"."
+  },
+  "checkCN": {
+    "message": "Periksa kecocokan CN sertifikat"
+  },
+  "checkCNDescription": {
+    "message": "Tampilkan peringatan jika CN sertifikat tidak cocok dengan domain (hanya Firefox)"
+  },
+  "cacheDuration": {
+    "message": "Durasi cache daftar (jam)"
+  },
+  "cacheDurationDescription": {
+    "message": "Frekuensi pembaruan otomatis daftar jarak jauh (default: 24j)"
+  },
+  
+  "bannerColorsTitle": {
+    "message": "Warna Banner"
+  },
+  "enterpriseList": {
+    "message": "Daftar perusahaan"
+  },
+  "communityList": {
+    "message": "Daftar komunitas"
+  },
+  "personalList": {
+    "message": "Daftar pribadi"
+  },
+  
+  "saveSettings": {
+    "message": "Simpan pengaturan"
+  },
+  "resetSettings": {
+    "message": "Atur ulang"
+  },
+  
+  "aboutTitle": {
+    "message": "Tentang ShieldSign"
+  },
+  "version": {
+    "message": "Versi"
+  },
+  "license": {
+    "message": "Lisensi"
+  },
+  "description": {
+    "message": "Deskripsi"
+  },
+  "aboutDescription": {
+    "message": "Ekstensi validasi visual untuk halaman login aman melalui daftar putih domain"
+  },
+  "githubRepo": {
+    "message": "Repositori GitHub"
+  },
+  "reportBug": {
+    "message": "Laporkan bug"
+  },
+  "documentation": {
+    "message": "Dokumentasi"
+  },
+  "contributorsTitle": {
+    "message": "Kontributor"
+  },
+  "contributorsText": {
+    "message": "Terima kasih kepada semua kontributor proyek ShieldSign"
+  },
+  
+  "pageValidated": {
+    "message": "Halaman divalidasi oleh: $LIST_NAME$",
+    "placeholders": {
+      "list_name": {
+        "content": "$1",
+        "example": "Daftar Resmi ShieldSign"
+      }
+    }
+  },
+  "personalListDisplay": {
+    "message": "Daftar pribadi"
+  },
+  "enterpriseListDisplay": {
+    "message": "Daftar perusahaan"
+  },
+  
+  "verifying": {
+    "message": "Memverifikasi..."
+  },
+  "pageNotContainPasswordField": {
+    "message": "Halaman ini tidak berisi kolom kata sandi"
+  },
+  "approveDomain": {
+    "message": "Setujui domain ini"
+  },
+  
+  "settingsSaved": {
+    "message": "Pengaturan berhasil disimpan"
+  },
+  "settingsReset": {
+    "message": "Pengaturan diatur ulang"
+  },
+  "listAdded": {
+    "message": "Daftar berhasil ditambahkan"
+  },
+  "listRemoved": {
+    "message": "Daftar berhasil dihapus"
+  },
+  "listEnabled": {
+    "message": "Daftar diaktifkan"
+  },
+  "listDisabled": {
+    "message": "Daftar dinonaktifkan"
+  },
+  "domainAdded": {
+    "message": "Domain berhasil ditambahkan"
+  },
+  "domainRemoved": {
+    "message": "Domain berhasil dihapus"
+  },
+  "officialListReinstalled": {
+    "message": "Daftar resmi diinstal ulang dan diperbarui!"
+  },
+  "listExported": {
+    "message": "Daftar berhasil diekspor"
+  },
+  "domainsImported": {
+    "message": "$COUNT$ domain diimpor",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  
+  "errorInvalidUrl": {
+    "message": "URL tidak valid"
+  },
+  "errorInvalidDomain": {
+    "message": "Format domain tidak valid"
+  },
+  "errorAddingList": {
+    "message": "Kesalahan menambahkan daftar"
+  },
+  "errorRemovingList": {
+    "message": "Kesalahan menghapus daftar"
+  },
+  "errorModifyingList": {
+    "message": "Kesalahan memodifikasi daftar"
+  },
+  "errorAddingDomain": {
+    "message": "Kesalahan menambahkan domain"
+  },
+  "errorRemovingDomain": {
+    "message": "Kesalahan menghapus domain"
+  },
+  "errorLoadingSettings": {
+    "message": "Kesalahan memuat pengaturan"
+  },
+  "errorSavingSettings": {
+    "message": "Kesalahan menyimpan pengaturan"
+  },
+  "errorResetting": {
+    "message": "Kesalahan mengatur ulang"
+  },
+  "errorReinstalling": {
+    "message": "Kesalahan menginstal ulang"
+  },
+  "errorExporting": {
+    "message": "Kesalahan mengekspor"
+  },
+  "errorImporting": {
+    "message": "Kesalahan mengimpor"
+  },
+  "errorInvalidFile": {
+    "message": "Format file tidak valid"
+  },
+  "errorNoValidDomain": {
+    "message": "Tidak ada domain valid yang ditemukan"
+  },
+  "errorNoPersonalDomain": {
+    "message": "Tidak ada domain pribadi untuk diekspor"
+  },
+  "errorEnterValidUrl": {
+    "message": "Silakan masukkan URL yang valid"
+  },
+  "errorEnterValidDomain": {
+    "message": "Silakan masukkan domain yang valid"
+  },
+  "errorUpdating": {
+    "message": "Kesalahan memperbarui"
+  },
+  
+  "settingsTitle": {
+    "message": "Pengaturan - ShieldSign"
+  },
+  "headerTitle": {
+    "message": "ShieldSign - Pengaturan"
+  },
+  "officialListSubtitle": {
+    "message": "Daftar resmi (65+ domain tervalidasi)"
+  },
+  "toggleDisable": {
+    "message": "Nonaktifkan"
+  },
+  "toggleEnable": {
+    "message": "Aktifkan"
+  },
+  "reinstallOfficial": {
+    "message": "Instal ulang daftar resmi"
+  },
+  "communityListTitle": {
+    "message": "Daftar Komunitas Tambahan"
+  },
+  "communityListDescription": {
+    "message": "Tambahkan daftar publik lain yang dikelola oleh komunitas (opsional)"
+  },
+  "noListCommunity": {
+    "message": "Tidak ada daftar tambahan yang dikonfigurasi"
+  },
+  "noListEnterprise": {
+    "message": "Tidak ada daftar perusahaan yang dikonfigurasi"
+  },
+  "noListPersonal": {
+    "message": "Tidak ada domain pribadi yang dikonfigurasi"
+  },
+  "btnAdd": {
+    "message": "Tambahkan"
+  },
+  "btnSave": {
+    "message": "Simpan pengaturan"
+  },
+  "btnReset": {
+    "message": "Atur ulang"
+  },
+  "btnExport": {
+    "message": "Ekspor daftar"
+  },
+  "btnImport": {
+    "message": "Impor daftar"
+  },
+  "colorEnterprise": {
+    "message": "Daftar perusahaan"
+  },
+  "colorCommunity": {
+    "message": "Daftar komunitas"
+  },
+  "colorPersonal": {
+    "message": "Daftar pribadi"
+  },
+  "aboutVersion": {
+    "message": "Versi:"
+  },
+  "aboutLicense": {
+    "message": "Lisensi:"
+  },
+  "aboutDescriptionText": {
+    "message": "Ekstensi validasi visual untuk halaman login aman melalui daftar putih domain"
+  },
+  "aboutGithub": {
+    "message": "Repositori GitHub"
+  },
+  "aboutBugReport": {
+    "message": "Laporkan bug"
+  },
+  "aboutDocumentation": {
+    "message": "Dokumentasi"
+  },
+  "aboutContributors": {
+    "message": "Kontributor"
+  },
+  "aboutContributorsText": {
+    "message": "Terima kasih kepada semua kontributor proyek ShieldSign"
+  },
+  "aboutPrivacy": {
+    "message": "Privasi"
+  },
+  "aboutPrivacyText": {
+    "message": "ShieldSign tidak mengumpulkan data pengguna. Semua verifikasi dilakukan secara lokal di browser Anda."
+  },
+  "btnRemove": {
+    "message": "Hapus"
+  },
+  "toastOfficialEnabled": {
+    "message": "Daftar resmi diaktifkan"
+  },
+  "toastOfficialDisabled": {
+    "message": "Daftar resmi dinonaktifkan"
+  },
+  "toastOfficialReinstalled": {
+    "message": "Daftar resmi diinstal ulang dan diperbarui!"
+  },
+  "toastEnterpriseModeEnabled": {
+    "message": "Mode perusahaan diaktifkan"
+  },
+  "toastEnterpriseModeDisabled": {
+    "message": "Mode perusahaan dinonaktifkan"
+  },
+  "errorLoading": {
+    "message": "Kesalahan memuat pengaturan"
+  },
+  "toastSettingsSaved": {
+    "message": "Pengaturan berhasil disimpan"
+  },
+  "errorSaving": {
+    "message": "Kesalahan menyimpan pengaturan"
+  },
+  "toastSettingsReset": {
+    "message": "Pengaturan diatur ulang"
+  },
+  "errorLoadingLists": {
+    "message": "Kesalahan memuat daftar"
+  },
+  "toastListAdded": {
+    "message": "Daftar berhasil ditambahkan"
+  },
+  "toastListRemoved": {
+    "message": "Daftar berhasil dihapus"
+  },
+  "toastListEnabled": {
+    "message": "Daftar diaktifkan"
+  },
+  "toastListDisabled": {
+    "message": "Daftar dinonaktifkan"
+  },
+  "errorTogglingList": {
+    "message": "Kesalahan mengubah daftar"
+  },
+  "errorLoadingPersonal": {
+    "message": "Kesalahan memuat daftar pribadi"
+  },
+  "toastDomainAdded": {
+    "message": "Domain berhasil ditambahkan"
+  },
+  "toastDomainRemoved": {
+    "message": "Domain berhasil dihapus"
+  },
+  "toastListExported": {
+    "message": "Daftar berhasil diekspor"
+  },
+  "toastDomainsImported": {
+    "message": "{count} domain diimpor"
+  },
+  "enterpriseInfoShort": {
+    "message": "Sediakan daftar domain tervalidasi untuk tim Anda. Daftar ini memiliki prioritas tertinggi dan memperkuat kepercayaan karyawan Anda."
+  },
+  "btnLearnMore": {
+    "message": "Pelajari lebih lanjut"
+  },
+  "btnDownloadExample": {
+    "message": "Unduh contoh"
+  },
+  "toastExampleDownloaded": {
+    "message": "Contoh diunduh"
+  },
+  "modalEnterpriseTitle": {
+    "message": "🛡️ Sumber Perusahaan: Lindungi Karyawan Anda"
+  },
+  "modalWhyTitle": {
+    "message": "Mengapa menggunakan fitur ini?"
+  },
+  "modalWhyText": {
+    "message": "Sebagai administrator, Anda dapat menyediakan daftar domain login tervalidasi untuk organisasi Anda. Daftar ini memiliki <strong>prioritas tertinggi</strong> di atas semua sumber lain (komunitas, pribadi). Karyawan Anda akan melihat banner hijau yang khas pada halaman yang divalidasi perusahaan, memperkuat kepercayaan mereka."
+  },
+  "modalSecurityTitle": {
+    "message": "🔒 Perlindungan terhadap Phishing dan MITM"
+  },
+  "modalSecurityText": {
+    "message": "Fitur ini membantu melawan:"
+  },
+  "modalSecurityPoint1": {
+    "message": "<strong>Phishing:</strong> Karyawan Anda tidak akan melihat banner validasi di situs web palsu"
+  },
+  "modalSecurityPoint2": {
+    "message": "<strong>Man-in-the-Middle:</strong> Hanya domain asli dari daftar Anda yang akan divalidasi"
+  },
+  "modalSecurityPoint3": {
+    "message": "<strong>Pencurian identitas:</strong> Banner perusahaan jelas menunjukkan bahwa ini adalah situs web yang disetujui"
+  },
+  "modalFormatTitle": {
+    "message": "📝 Format Domain"
+  },
+  "modalFormatText": {
+    "message": "Gunakan hanya domain lengkap (subdomain + domain utama), tanpa protokol atau path:"
+  },
+  "modalHostingTitle": {
+    "message": "🔐 Hosting Aman (KRITIS)"
+  },
+  "modalHostingWarning": {
+    "message": "<strong>⚠️ JANGAN host di GitHub, GitLab, atau layanan publik!</strong>"
+  },
+  "modalHostingText": {
+    "message": "Untuk memaksimalkan keamanan, host daftar JSON Anda di:"
+  },
+  "modalHostingOption1": {
+    "message": "<strong>Server internal saja</strong> (hanya dapat diakses dari jaringan perusahaan)"
+  },
+  "modalHostingOption2": {
+    "message": "<strong>URL yang disamarkan</strong>: Gunakan GUID untuk nama file dan folder"
+  },
+  "modalHostingExample": {
+    "message": "Contoh: <code>https://cdn.contoh.com/a3f2e8b1-4c5d-6e7f-8a9b-0c1d2e3f4a5b/d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a.json</code>"
+  },
+  "modalMaintenanceTitle": {
+    "message": "🔧 Pemeliharaan"
+  },
+  "modalMaintenanceText": {
+    "message": "Jaga daftar Anda tetap terbaru dengan menambahkan domain login baru yang digunakan oleh organisasi Anda (SSO, portal internal, aplikasi SaaS, dll.)."
+  },
+  "popupCheckingStatus": {
+    "message": "Memverifikasi..."
+  },
+  "popupApproveButton": {
+    "message": "✅ Setujui domain ini"
+  },
+  "popupSettingsButton": {
+    "message": "Pengaturan"
+  },
+  "popupRefreshButton": {
+    "message": "Segarkan"
+  },
+  "popupNoActivePage": {
+    "message": "Tidak ada halaman aktif"
+  },
+  "popupNoPasswordField": {
+    "message": "Halaman ini tidak berisi kolom kata sandi"
+  },
+  "popupValidated": {
+    "message": "Halaman ini divalidasi"
+  },
+  "popupUnknown": {
+    "message": "Halaman ini berisi kolom kata sandi tetapi tidak tercantum dalam sumber tepercaya mana pun"
+  },
+  "popupLoadError": {
+    "message": "Kesalahan memuat"
+  },
+  "popupValidatedBy": {
+    "message": "Divalidasi oleh: {0}"
+  },
+  "contentBannerValidated": {
+    "message": "Halaman divalidasi oleh: {0}"
+  },
+  "contentPersonalList": {
+    "message": "Daftar pribadi"
+  },
+  "contentEnterpriseList": {
+    "message": "Daftar perusahaan"
+  },
+  "validationSecurityTitle": {
+    "message": "🛡️ Validasi Anti-Phishing"
+  },
+  "validationSecurityDescription": {
+    "message": "ShieldSign menampilkan banner di halaman login untuk membuatnya terlihat. Peringatan: situs phishing juga dapat menampilkan banner palsu. Untuk memungkinkan Anda memverifikasi dalam 1 detik apakah banner asli, pilih metode verifikasi di bawah ini."
+  },
+  "whyTheseOptions": {
+    "message": "💡 Mengapa opsi ini?"
+  },
+  "antiPhishingExplanation": {
+    "message": "Jika ShieldSign menjadi populer, penyerang dapat membuat banner hijau palsu di halaman phishing mereka. Opsi ini membuat peniruan <strong>tidak mungkin</strong> karena hanya ekstensi ANDA yang mengetahui kata kunci pribadi, kode harian, atau warna kustom Anda."
+  },
+  "imageComingSoon": {
+    "message": "[Gambar ilustrasi segera hadir]"
+  },
+  "modeBadgeOnlyTitle": {
+    "message": "🔵 Hanya Lencana (tersembunyi)"
+  },
+  "modeBadgeOnlyDescription": {
+    "message": "Tidak ada banner yang terlihat. Titik berwarna muncul di ikon ekstensi di toolbar. Sederhana dan tidak mengganggu."
+  },
+  "modeBadgeOnlyPro1": {
+    "message": "✅ Tersembunyi, tidak memenuhi halaman"
+  },
+  "modeBadgeOnlyCon1": {
+    "message": "⚠️ Memerlukan melihat ikon ekstensi"
+  },
+  "modeBannerKeywordTitle": {
+    "message": "🔑 Banner dengan Kata Kunci Pribadi"
+  },
+  "modeBannerKeywordDescription": {
+    "message": "Banner menampilkan kata kunci atau frasa kustom Anda. Hanya Anda yang tahu kata kunci ini, penyerang tidak dapat menebaknya."
+  },
+  "customKeywordLabel": {
+    "message": "Kata kunci pribadi Anda:"
+  },
+  "customKeywordPlaceholder": {
+    "message": "mis: MercusuarKepercayaanKu2025"
+  },
+  "customKeywordHelp": {
+    "message": "Pilih kata atau frasa yang mudah diingat tetapi sulit ditebak (minimal 5 karakter disarankan)"
+  },
+  "modeBannerKeywordPro1": {
+    "message": "✅ Validasi instan dan personal"
+  },
+  "modeBannerKeywordPro2": {
+    "message": "✅ Tidak mungkin ditiru tanpa mengetahui kata kunci Anda"
+  },
+  "modeBannerKeywordCon1": {
+    "message": "⚠️ Memerlukan mengingat kata kunci Anda"
+  },
+  "warningKeywordTooShort": {
+    "message": "Kata kunci harus mengandung minimal 5 karakter"
+  },
+  "modeBannerCodeTitle": {
+    "message": "🎲 Banner dengan Kode Acak (direkomendasikan)"
+  },
+  "modeBannerCodeDescription": {
+    "message": "Kode alfanumerik unik 2 karakter (mis. A7, H4, 8R) dihasilkan setiap kunjungan dan ditampilkan di banner DAN ikon ekstensi. Cukup periksa apakah keduanya cocok."
+  },
+  "currentCodeLabel": {
+    "message": "Kode hari ini:"
+  },
+  "btnRegenerateCode": {
+    "message": "Hasilkan kode baru"
+  },
+  "currentCodeHelp": {
+    "message": "Kode berubah secara otomatis setiap hari. Anda juga dapat meregenerasinya secara manual."
+  },
+  "modeBannerCodePro1": {
+    "message": "✅ Tidak perlu menghafal"
+  },
+  "modeBannerCodePro2": {
+    "message": "✅ Verifikasi cepat (lencana + banner)"
+  },
+  "modeBannerCodePro3": {
+    "message": "✅ Kode unik setiap kunjungan"
+  },
+  "modeBannerCodePro4": {
+    "message": "✅ Keseimbangan sempurna antara keamanan dan kesederhanaan"
+  },
+  "toastCodeRegenerated": {
+    "message": "Kode berhasil diregenerasi"
+  },
+  "errorRegeneratingCode": {
+    "message": "⚠️ Kesalahan meregenerasi kode."
+  },
+  "showUnknownPages": {
+    "message": "Tampilkan status untuk semua halaman"
+  },
+  "showUnknownPagesDescription": {
+    "message": "Aktifkan untuk melihat lencana bahkan di halaman yang tidak terdaftar: 🔴 (halaman mencurigakan dengan kata sandi) atau ⚪ (halaman tanpa kata sandi)."
+  },
+  "bannerStyleTitle": {
+    "message": "Gaya Banner"
+  },
+  "bannerStyleDescription": {
+    "message": "Sesuaikan tampilan setiap jenis banner (Perusahaan, Komunitas, Pribadi)."
+  },
+  "bannerStyleModeLabel": {
+    "message": "Mode warna:"
+  },
+  "bannerStyleModeSolid": {
+    "message": "Warna solid"
+  },
+  "bannerStyleModeGradient": {
+    "message": "Gradien"
+  },
+  "bannerStyleModeRandom": {
+    "message": "Acak"
+  },
+  "bannerStyleSolidColorLabel": {
+    "message": "Warna solid:"
+  },
+  "bannerStyleGradientStartLabel": {
+    "message": "Gradien awal:"
+  },
+  "bannerStyleGradientEndLabel": {
+    "message": "Gradien akhir:"
+  },
+  "bannerStyleTextColorLabel": {
+    "message": "Warna teks:"
+  },
+  "bannerStyleFontFamilyLabel": {
+    "message": "Font:"
+  },
+  "bannerStyleFontArial": {
+    "message": "Arial"
+  },
+  "bannerStyleFontVerdana": {
+    "message": "Verdana"
+  },
+  "bannerStyleFontGeorgia": {
+    "message": "Georgia"
+  },
+  "bannerStyleFontCourier": {
+    "message": "Courier New"
+  },
+  "bannerStyleFontTimes": {
+    "message": "Times New Roman"
+  },
+  "bannerStylePreviewLabel": {
+    "message": "Pratinjau:"
+  },
+  "bannerStyleRandomNote": {
+    "message": "ℹ️ Dalam mode acak, warna/gradien baru dihasilkan setiap kali banner ditampilkan."
+  },
+  "bannerTypeEnterprise": {
+    "message": "Perusahaan"
+  },
+  "bannerTypeCommunity": {
+    "message": "Komunitas"
+  },
+  "bannerTypePersonal": {
+    "message": "Pribadi"
+  },
+  "popupValidationCodeLabel": {
+    "message": "🔐 Kode validasi:"
+  },
+  "popupCodeInfo": {
+    "message": "Kode acak unik muncul di lencana dan banner setiap kunjungan untuk mengonfirmasi keaslian."
+  },
+  "autoAddUnknownLabel": {
+    "message": "🔐 Saat mengirim formulir di situs yang tidak dikenal:"
+  },
+  "autoAddUnknownNever": {
+    "message": "Tidak melakukan apa-apa"
+  },
+  "autoAddUnknownAlways": {
+    "message": "Tambahkan secara otomatis ke daftar pribadi saya"
+  },
+  "autoAddUnknownPrompt": {
+    "message": "Tanyakan apakah saya ingin menambahkannya"
+  },
+  "autoAddUnknownDescription": {
+    "message": "Pilih bagaimana ShieldSign harus bereaksi ketika Anda login di situs web yang tidak termasuk dalam daftar apa pun."
+  },
+  "notificationAddToPersonal": {
+    "message": "Tambahkan situs ini ke daftar pribadi Anda?"
+  },
+  "notificationAddToPersonalYes": {
+    "message": "Ya, tambahkan"
+  },
+  "notificationAddToPersonalNo": {
+    "message": "Tidak"
+  },
+  "notificationSiteAdded": {
+    "message": "Situs ditambahkan ke daftar pribadi Anda"
+  }
+}

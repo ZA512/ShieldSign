@@ -1,0 +1,807 @@
+{
+  "extName": {
+    "message": "ShieldSign",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "Visuele validatie van veilige inlogpagina's via domein whitelist",
+    "description": "Extension description"
+  },
+  
+  "appTitle": {
+    "message": "ShieldSign"
+  },
+  "settings": {
+    "message": "Instellingen"
+  },
+  "refresh": {
+    "message": "Vernieuwen"
+  },
+  
+  "tabCommunity": {
+    "message": "Gemeenschapsbronnen"
+  },
+  "tabEnterprise": {
+    "message": "Bedrijfsbronnen"
+  },
+  "tabPersonal": {
+    "message": "Persoonlijke bronnen"
+  },
+  "tabSettings": {
+    "message": "Instellingen"
+  },
+  "tabAbout": {
+    "message": "Over"
+  },
+  
+  "officialListTitle": {
+    "message": "Officiële ShieldSign-lijst"
+  },
+  "officialListDescription": {
+    "message": "Officiële lijst beheerd door het ShieldSign-team, met de populairste web- en clouddiensten. Standaard ingeschakeld."
+  },
+  "officialListName": {
+    "message": "Officiële ShieldSign-lijst"
+  },
+  "officialListInfo": {
+    "message": "Officiële lijst (65+ geverifieerde domeinen)"
+  },
+  "disable": {
+    "message": "Uitschakelen"
+  },
+  "enable": {
+    "message": "Inschakelen"
+  },
+  "reinstallOfficialList": {
+    "message": "Officiële lijst opnieuw installeren"
+  },
+  
+  "communityListsTitle": {
+    "message": "Aanvullende gemeenschapslijsten"
+  },
+  "communityListsDescription": {
+    "message": "Voeg andere openbare lijsten toe die door de gemeenschap worden beheerd (optioneel)"
+  },
+  "communityUrlPlaceholder": {
+    "message": "https://example.com/community-list.json"
+  },
+  "add": {
+    "message": "Toevoegen"
+  },
+  "noAdditionalList": {
+    "message": "Geen aanvullende lijsten geconfigureerd"
+  },
+  
+  "enterpriseInfoTitle": {
+    "message": "ℹ️ Over bedrijfsbronnen"
+  },
+  "enterpriseInfoText1": {
+    "message": "Deze functie is bedoeld voor <strong>bedrijfsbeheerders</strong> die een lijst met geverifieerde domeinen aan hun werknemers willen aanbieden."
+  },
+  "enterpriseInfoText2": {
+    "message": "<strong>Domeinformaat:</strong> Gebruik het volledige formaat inclusief subdomein en hoofddomein (wat tussen <code>https://</code> en de eerste <code>/</code> verschijnt)."
+  },
+  "enterpriseInfoExamples": {
+    "message": "<strong>Voorbeelden:</strong>"
+  },
+  "enterpriseInfoSecurity": {
+    "message": "⚠️ <strong>Beveiliging:</strong> Host uw lijst op een interne of privéserver, <strong>niet op een openbare URL</strong>."
+  },
+  "enterpriseInfoFormatLabel": {
+    "message": "Domeinformaat:"
+  },
+  "enterpriseInfoFormatText": {
+    "message": "Gebruik het volledige formaat inclusief subdomein en hoofddomein (wat tussen <code>https://</code> en de eerste <code>/</code> verschijnt)."
+  },
+  "enterpriseInfoExamplesLabel": {
+    "message": "Voorbeelden:"
+  },
+  "enterpriseInfoExample1": {
+    "message": "✅ <code>login.mijnbedrijf.com</code>"
+  },
+  "enterpriseInfoExample2": {
+    "message": "✅ <code>sso.mijnbedrijf.com</code>"
+  },
+  "enterpriseInfoExample3": {
+    "message": "✅ <code>auth.intranet.mijnbedrijf.net</code>"
+  },
+  "enterpriseInfoExample4": {
+    "message": "❌ <code>https://login.mijnbedrijf.com/auth</code> (geen https:// of pad)"
+  },
+  
+  "enterpriseListTitle": {
+    "message": "Bedrijfslijst configureren"
+  },
+  "enterpriseListDescription": {
+    "message": "Voeg een bedrijfsbrede domeinvalidatielijst toe (hoogste prioriteit)"
+  },
+  "enterpriseUrlPlaceholder": {
+    "message": "https://intranet.bedrijf.com/gevalideerde-domeinen.json"
+  },
+  "noEnterpriseList": {
+    "message": "Geen bedrijfslijst geconfigureerd"
+  },
+  
+  "personalDomainsTitle": {
+    "message": "Persoonlijke domeinen beheren"
+  },
+  "personalDomainsDescription": {
+    "message": "Voeg uw eigen vertrouwde domeinen toe (hogere prioriteit dan gemeenschapslijsten)"
+  },
+  "personalDomainPlaceholder": {
+    "message": "login.voorbeeld.com"
+  },
+  "noPersonalDomain": {
+    "message": "Geen persoonlijke domeinen geconfigureerd"
+  },
+  
+  "importExportTitle": {
+    "message": "Importeren / Exporteren"
+  },
+  "importExportDescription": {
+    "message": "Exporteer uw lijst voor back-up of importeer in een andere browser"
+  },
+  "exportList": {
+    "message": "Lijst exporteren"
+  },
+  "importList": {
+    "message": "Lijst importeren"
+  },
+  
+  "generalSettingsTitle": {
+    "message": "Algemene instellingen"
+  },
+  "language": {
+    "message": "Taal"
+  },
+  "languageDescription": {
+    "message": "Selecteer interfacetaal"
+  },
+  "languageAuto": {
+    "message": "Automatisch (browsertaal)"
+  },
+  "languageEn": {
+    "message": "English"
+  },
+  "languageFr": {
+    "message": "Français"
+  },
+  "enterpriseMode": {
+    "message": "Bedrijfsmodus"
+  },
+  "enterpriseModeDescription": {
+    "message": "Schakel deze optie in als u beheerder bent en domeinlijsten voor uw organisatie wilt beheren. Dit toont het tabblad \"Bedrijfsbronnen\"."
+  },
+  "checkCN": {
+    "message": "Controleer certificaat CN-overeenkomst"
+  },
+  "checkCNDescription": {
+    "message": "Toon waarschuwing als certificaat CN niet overeenkomt met domein (alleen Firefox)"
+  },
+  "cacheDuration": {
+    "message": "Lijstcacheduur (uren)"
+  },
+  "cacheDurationDescription": {
+    "message": "Frequentie van automatische updates van externe lijsten (standaard: 24u)"
+  },
+  
+  "bannerColorsTitle": {
+    "message": "Bannerkleuren"
+  },
+  "enterpriseList": {
+    "message": "Bedrijfslijst"
+  },
+  "communityList": {
+    "message": "Gemeenschapslijst"
+  },
+  "personalList": {
+    "message": "Persoonlijke lijst"
+  },
+  
+  "saveSettings": {
+    "message": "Instellingen opslaan"
+  },
+  "resetSettings": {
+    "message": "Resetten"
+  },
+  
+  "aboutTitle": {
+    "message": "Over ShieldSign"
+  },
+  "version": {
+    "message": "Versie"
+  },
+  "license": {
+    "message": "Licentie"
+  },
+  "description": {
+    "message": "Beschrijving"
+  },
+  "aboutDescription": {
+    "message": "Visuele validatie-extensie voor veilige inlogpagina's via domein whitelist"
+  },
+  "githubRepo": {
+    "message": "GitHub-repository"
+  },
+  "reportBug": {
+    "message": "Bug melden"
+  },
+  "documentation": {
+    "message": "Documentatie"
+  },
+  "contributorsTitle": {
+    "message": "Bijdragers"
+  },
+  "contributorsText": {
+    "message": "Bedankt aan alle bijdragers aan het ShieldSign-project"
+  },
+  
+  "pageValidated": {
+    "message": "Pagina gevalideerd door: $LIST_NAME$",
+    "placeholders": {
+      "list_name": {
+        "content": "$1",
+        "example": "Officiële ShieldSign-lijst"
+      }
+    }
+  },
+  "personalListDisplay": {
+    "message": "Persoonlijke lijst"
+  },
+  "enterpriseListDisplay": {
+    "message": "Bedrijfslijst"
+  },
+  
+  "verifying": {
+    "message": "Aan het verifiëren..."
+  },
+  "pageNotContainPasswordField": {
+    "message": "Deze pagina bevat geen wachtwoordveld"
+  },
+  "approveDomain": {
+    "message": "Dit domein goedkeuren"
+  },
+  
+  "settingsSaved": {
+    "message": "Instellingen succesvol opgeslagen"
+  },
+  "settingsReset": {
+    "message": "Instellingen gereset"
+  },
+  "listAdded": {
+    "message": "Lijst succesvol toegevoegd"
+  },
+  "listRemoved": {
+    "message": "Lijst succesvol verwijderd"
+  },
+  "listEnabled": {
+    "message": "Lijst ingeschakeld"
+  },
+  "listDisabled": {
+    "message": "Lijst uitgeschakeld"
+  },
+  "domainAdded": {
+    "message": "Domein succesvol toegevoegd"
+  },
+  "domainRemoved": {
+    "message": "Domein succesvol verwijderd"
+  },
+  "officialListReinstalled": {
+    "message": "Officiële lijst opnieuw geïnstalleerd en bijgewerkt!"
+  },
+  "listExported": {
+    "message": "Lijst succesvol geëxporteerd"
+  },
+  "domainsImported": {
+    "message": "$COUNT$ domeinen geïmporteerd",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  
+  "errorInvalidUrl": {
+    "message": "Ongeldige URL"
+  },
+  "errorInvalidDomain": {
+    "message": "Ongeldig domeinformaat"
+  },
+  "errorAddingList": {
+    "message": "Fout bij toevoegen van lijst"
+  },
+  "errorRemovingList": {
+    "message": "Fout bij verwijderen van lijst"
+  },
+  "errorModifyingList": {
+    "message": "Fout bij wijzigen van lijst"
+  },
+  "errorAddingDomain": {
+    "message": "Fout bij toevoegen van domein"
+  },
+  "errorRemovingDomain": {
+    "message": "Fout bij verwijderen van domein"
+  },
+  "errorLoadingSettings": {
+    "message": "Fout bij laden van instellingen"
+  },
+  "errorSavingSettings": {
+    "message": "Fout bij opslaan van instellingen"
+  },
+  "errorResetting": {
+    "message": "Fout bij resetten"
+  },
+  "errorReinstalling": {
+    "message": "Fout bij opnieuw installeren"
+  },
+  "errorExporting": {
+    "message": "Fout bij exporteren"
+  },
+  "errorImporting": {
+    "message": "Fout bij importeren"
+  },
+  "errorInvalidFile": {
+    "message": "Ongeldig bestandsformaat"
+  },
+  "errorNoValidDomain": {
+    "message": "Geen geldig domein gevonden"
+  },
+  "errorNoPersonalDomain": {
+    "message": "Geen persoonlijke domeinen om te exporteren"
+  },
+  "errorEnterValidUrl": {
+    "message": "Voer een geldige URL in"
+  },
+  "errorEnterValidDomain": {
+    "message": "Voer een geldig domein in"
+  },
+  "errorUpdating": {
+    "message": "Fout bij updaten"
+  },
+  
+  "settingsTitle": {
+    "message": "Instellingen - ShieldSign"
+  },
+  "headerTitle": {
+    "message": "ShieldSign - Instellingen"
+  },
+  "officialListSubtitle": {
+    "message": "Officiële lijst (65+ geverifieerde domeinen)"
+  },
+  "toggleDisable": {
+    "message": "Uitschakelen"
+  },
+  "toggleEnable": {
+    "message": "Inschakelen"
+  },
+  "reinstallOfficial": {
+    "message": "Officiële lijst opnieuw installeren"
+  },
+  "communityListTitle": {
+    "message": "Aanvullende gemeenschapslijsten"
+  },
+  "communityListDescription": {
+    "message": "Voeg andere openbare lijsten toe die door de gemeenschap worden beheerd (optioneel)"
+  },
+  "noListCommunity": {
+    "message": "Geen aanvullende lijsten geconfigureerd"
+  },
+  "noListEnterprise": {
+    "message": "Geen bedrijfslijst geconfigureerd"
+  },
+  "noListPersonal": {
+    "message": "Geen persoonlijke domeinen geconfigureerd"
+  },
+  "btnAdd": {
+    "message": "Toevoegen"
+  },
+  "btnSave": {
+    "message": "Instellingen opslaan"
+  },
+  "btnReset": {
+    "message": "Resetten"
+  },
+  "btnExport": {
+    "message": "Lijst exporteren"
+  },
+  "btnImport": {
+    "message": "Lijst importeren"
+  },
+  "colorEnterprise": {
+    "message": "Bedrijfslijst"
+  },
+  "colorCommunity": {
+    "message": "Gemeenschapslijst"
+  },
+  "colorPersonal": {
+    "message": "Persoonlijke lijst"
+  },
+  "aboutVersion": {
+    "message": "Versie:"
+  },
+  "aboutLicense": {
+    "message": "Licentie:"
+  },
+  "aboutDescriptionText": {
+    "message": "Visuele validatie-extensie voor veilige inlogpagina's via domein whitelist"
+  },
+  "aboutGithub": {
+    "message": "GitHub-repository"
+  },
+  "aboutBugReport": {
+    "message": "Bug melden"
+  },
+  "aboutDocumentation": {
+    "message": "Documentatie"
+  },
+  "aboutContributors": {
+    "message": "Bijdragers"
+  },
+  "aboutContributorsText": {
+    "message": "Bedankt aan alle bijdragers aan het ShieldSign-project"
+  },
+  "aboutPrivacy": {
+    "message": "Privacy"
+  },
+  "aboutPrivacyText": {
+    "message": "ShieldSign verzamelt geen gebruikersgegevens. Alle validatie wordt lokaal in uw browser uitgevoerd."
+  },
+  "btnRemove": {
+    "message": "Verwijderen"
+  },
+  "toastOfficialEnabled": {
+    "message": "Officiële lijst ingeschakeld"
+  },
+  "toastOfficialDisabled": {
+    "message": "Officiële lijst uitgeschakeld"
+  },
+  "toastOfficialReinstalled": {
+    "message": "Officiële lijst opnieuw geïnstalleerd en bijgewerkt!"
+  },
+  "toastEnterpriseModeEnabled": {
+    "message": "Bedrijfsmodus ingeschakeld"
+  },
+  "toastEnterpriseModeDisabled": {
+    "message": "Bedrijfsmodus uitgeschakeld"
+  },
+  "errorLoading": {
+    "message": "Fout bij laden van instellingen"
+  },
+  "toastSettingsSaved": {
+    "message": "Instellingen succesvol opgeslagen"
+  },
+  "errorSaving": {
+    "message": "Fout bij opslaan van instellingen"
+  },
+  "toastSettingsReset": {
+    "message": "Instellingen gereset"
+  },
+  "errorLoadingLists": {
+    "message": "Fout bij laden van lijsten"
+  },
+  "toastListAdded": {
+    "message": "Lijst succesvol toegevoegd"
+  },
+  "toastListRemoved": {
+    "message": "Lijst succesvol verwijderd"
+  },
+  "toastListEnabled": {
+    "message": "Lijst ingeschakeld"
+  },
+  "toastListDisabled": {
+    "message": "Lijst uitgeschakeld"
+  },
+  "errorTogglingList": {
+    "message": "Fout bij schakelen van lijst"
+  },
+  "errorLoadingPersonal": {
+    "message": "Fout bij laden van persoonlijke lijst"
+  },
+  "toastDomainAdded": {
+    "message": "Domein succesvol toegevoegd"
+  },
+  "toastDomainRemoved": {
+    "message": "Domein succesvol verwijderd"
+  },
+  "toastListExported": {
+    "message": "Lijst succesvol geëxporteerd"
+  },
+  "toastDomainsImported": {
+    "message": "{count} domeinen geïmporteerd"
+  },
+  "enterpriseInfoShort": {
+    "message": "Bied een lijst met geverifieerde domeinen aan uw teams aan. Deze lijst heeft de hoogste prioriteit en vergroot het vertrouwen van werknemers."
+  },
+  "btnLearnMore": {
+    "message": "Meer informatie"
+  },
+  "btnDownloadExample": {
+    "message": "Voorbeeld downloaden"
+  },
+  "toastExampleDownloaded": {
+    "message": "Voorbeeld gedownload"
+  },
+  "modalEnterpriseTitle": {
+    "message": "🛡️ Bedrijfsbronnen: Bescherm uw werknemers"
+  },
+  "modalWhyTitle": {
+    "message": "Waarom deze functie gebruiken?"
+  },
+  "modalWhyText": {
+    "message": "Als beheerder kunt u een lijst met geverifieerde inlogdomeinen voor uw organisatie aanbieden. Deze lijst heeft de <strong>hoogste prioriteit</strong> boven alle andere bronnen (gemeenschap, persoonlijk). Uw werknemers zien een speciale groene banner op door het bedrijf geverifieerde pagina's, wat hun vertrouwen vergroot."
+  },
+  "modalSecurityTitle": {
+    "message": "🔒 Bescherming tegen phishing en MITM"
+  },
+  "modalSecurityText": {
+    "message": "Deze functie helpt tegen:"
+  },
+  "modalSecurityPoint1": {
+    "message": "<strong>Phishing:</strong> Uw werknemers zien geen validatiebanner op nepwebsites"
+  },
+  "modalSecurityPoint2": {
+    "message": "<strong>Man-in-the-Middle:</strong> Alleen authentieke domeinen van uw lijst worden gevalideerd"
+  },
+  "modalSecurityPoint3": {
+    "message": "<strong>Identiteitsdiefstal:</strong> De bedrijfsbanner geeft duidelijk aan dat dit een goedgekeurde website is"
+  },
+  "modalFormatTitle": {
+    "message": "📝 Domeinformaat"
+  },
+  "modalFormatText": {
+    "message": "Gebruik alleen het volledige domein (subdomein + hoofddomein), geen protocol of pad:"
+  },
+  "modalHostingTitle": {
+    "message": "🔐 Veilige hosting (belangrijk)"
+  },
+  "modalHostingWarning": {
+    "message": "<strong>⚠️ Host NIET op GitHub, GitLab of openbare diensten!</strong>"
+  },
+  "modalHostingText": {
+    "message": "Voor maximale beveiliging host u uw JSON-lijst op:"
+  },
+  "modalHostingOption1": {
+    "message": "<strong>Alleen interne server</strong> (alleen toegankelijk vanaf bedrijfsnetwerk)"
+  },
+  "modalHostingOption2": {
+    "message": "<strong>Verborgen URL</strong>: Gebruik GUID's voor bestandsnamen en mappen"
+  },
+  "modalHostingExample": {
+    "message": "Voorbeeld: <code>https://cdn.voorbeeld.com/a3f2e8b1-4c5d-6e7f-8a9b-0c1d2e3f4a5b/d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a.json</code>"
+  },
+  "modalMaintenanceTitle": {
+    "message": "🔧 Onderhoud"
+  },
+  "modalMaintenanceText": {
+    "message": "Houd uw lijst up-to-date door nieuwe inlogdomeinen toe te voegen die door uw organisatie worden gebruikt (SSO, interne portals, SaaS-apps, enz.)."
+  },
+  "popupCheckingStatus": {
+    "message": "Aan het verifiëren..."
+  },
+  "popupApproveButton": {
+    "message": "✅ Dit domein goedkeuren"
+  },
+  "popupSettingsButton": {
+    "message": "Instellingen"
+  },
+  "popupRefreshButton": {
+    "message": "Vernieuwen"
+  },
+  "popupNoActivePage": {
+    "message": "Geen actieve pagina"
+  },
+  "popupNoPasswordField": {
+    "message": "Deze pagina bevat geen wachtwoordveld"
+  },
+  "popupValidated": {
+    "message": "Deze pagina is gevalideerd"
+  },
+  "popupUnknown": {
+    "message": "Deze pagina bevat een wachtwoordveld maar staat niet in een vertrouwde bron"
+  },
+  "popupLoadError": {
+    "message": "Laadfout"
+  },
+  "popupValidatedBy": {
+    "message": "Gevalideerd door: {0}"
+  },
+  "contentBannerValidated": {
+    "message": "Pagina gevalideerd door: {0}"
+  },
+  "contentPersonalList": {
+    "message": "Persoonlijke lijst"
+  },
+  "contentEnterpriseList": {
+    "message": "Bedrijfslijst"
+  },
+  "validationSecurityTitle": {
+    "message": "🛡️ Anti-phishing validatie"
+  },
+  "validationSecurityDescription": {
+    "message": "ShieldSign toont een banner op inlogpagina's om ze zichtbaar te maken. Waarschuwing: een phishingpagina kan ook een nepbanner tonen. Om u in 1 seconde te laten controleren of de banner echt is, kiest u hieronder een validatiemethode."
+  },
+  "whyTheseOptions": {
+    "message": "💡 Waarom deze opties?"
+  },
+  "antiPhishingExplanation": {
+    "message": "Als ShieldSign populair wordt, kunnen aanvallers een nep groene banner op hun phishingpagina maken. Deze opties maken imitatie <strong>onmogelijk</strong> omdat alleen UW extensie uw persoonlijke sleutelwoord, dagelijkse code of aangepaste kleur kent."
+  },
+  "imageComingSoon": {
+    "message": "[Illustratieafbeelding binnenkort beschikbaar]"
+  },
+  "modeBadgeOnlyTitle": {
+    "message": "🔵 Alleen badge (discreet)"
+  },
+  "modeBadgeOnlyDescription": {
+    "message": "Geen banner zichtbaar. Een gekleurde stip verschijnt op het extensiepictogram in de werkbalk. Eenvoudig en niet-opdringerig."
+  },
+  "modeBadgeOnlyPro1": {
+    "message": "✅ Discreet, rommelt pagina niet op"
+  },
+  "modeBadgeOnlyCon1": {
+    "message": "⚠️ Vereist kijken naar extensiepictogram"
+  },
+  "modeBannerKeywordTitle": {
+    "message": "🔑 Banner met persoonlijk sleutelwoord"
+  },
+  "modeBannerKeywordDescription": {
+    "message": "Banner toont uw aangepaste sleutelwoord of zin. Alleen u kent dit sleutelwoord, aanvallers kunnen het niet raden."
+  },
+  "customKeywordLabel": {
+    "message": "Uw persoonlijke sleutelwoord:"
+  },
+  "customKeywordPlaceholder": {
+    "message": "bijv: MijnTweeRodeApen2025"
+  },
+  "customKeywordHelp": {
+    "message": "Kies een woord of zin die gemakkelijk te onthouden maar moeilijk te raden is (minimaal 5 tekens aanbevolen)"
+  },
+  "modeBannerKeywordPro1": {
+    "message": "✅ Onmiddellijke en gepersonaliseerde validatie"
+  },
+  "modeBannerKeywordPro2": {
+    "message": "✅ Onmogelijk na te bootsen zonder uw sleutelwoord te kennen"
+  },
+  "modeBannerKeywordCon1": {
+    "message": "⚠️ Vereist onthouden van uw sleutelwoord"
+  },
+  "warningKeywordTooShort": {
+    "message": "Sleutelwoord moet minimaal 5 tekens bevatten"
+  },
+  "modeBannerCodeTitle": {
+    "message": "🎲 Banner met willekeurige code (aanbevolen)"
+  },
+  "modeBannerCodeDescription": {
+    "message": "Een unieke alfanumerieke code van 2 tekens (bijv. A7, H4, 8R) wordt bij elk bezoek gegenereerd en weergegeven op de banner EN op het extensiepictogram. Controleer gewoon of beide overeenkomen."
+  },
+  "currentCodeLabel": {
+    "message": "Code van vandaag:"
+  },
+  "btnRegenerateCode": {
+    "message": "Nieuwe code genereren"
+  },
+  "currentCodeHelp": {
+    "message": "Code verandert automatisch elke dag. U kunt ook handmatig opnieuw genereren."
+  },
+  "modeBannerCodePro1": {
+    "message": "✅ Niets te onthouden"
+  },
+  "modeBannerCodePro2": {
+    "message": "✅ Snelle validatie (badge + banner)"
+  },
+  "modeBannerCodePro3": {
+    "message": "✅ Unieke code bij elk bezoek"
+  },
+  "modeBannerCodePro4": {
+    "message": "✅ Perfecte balans tussen beveiliging en eenvoud"
+  },
+  "toastCodeRegenerated": {
+    "message": "Code succesvol opnieuw gegenereerd"
+  },
+  "errorRegeneratingCode": {
+    "message": "⚠️ Fout bij opnieuw genereren van code"
+  },
+  "showUnknownPages": {
+    "message": "Status weergeven voor alle pagina's"
+  },
+  "showUnknownPagesDescription": {
+    "message": "Schakel in om badge te zien, zelfs op niet-vermelde pagina's: 🔴 (verdachte pagina met wachtwoord) of ⚪ (pagina zonder wachtwoord)"
+  },
+  "bannerStyleTitle": {
+    "message": "Bannerstijl"
+  },
+  "bannerStyleDescription": {
+    "message": "Pas het uiterlijk van elk bannertype aan (Bedrijf, Gemeenschap, Persoonlijk)"
+  },
+  "bannerStyleModeLabel": {
+    "message": "Kleurmodus:"
+  },
+  "bannerStyleModeSolid": {
+    "message": "Effen kleur"
+  },
+  "bannerStyleModeGradient": {
+    "message": "Verloop"
+  },
+  "bannerStyleModeRandom": {
+    "message": "Willekeurig"
+  },
+  "bannerStyleSolidColorLabel": {
+    "message": "Effen kleur:"
+  },
+  "bannerStyleGradientStartLabel": {
+    "message": "Verloop start:"
+  },
+  "bannerStyleGradientEndLabel": {
+    "message": "Verloop einde:"
+  },
+  "bannerStyleTextColorLabel": {
+    "message": "Tekstkleur:"
+  },
+  "bannerStyleFontFamilyLabel": {
+    "message": "Lettertype:"
+  },
+  "bannerStyleFontArial": {
+    "message": "Arial"
+  },
+  "bannerStyleFontVerdana": {
+    "message": "Verdana"
+  },
+  "bannerStyleFontGeorgia": {
+    "message": "Georgia"
+  },
+  "bannerStyleFontCourier": {
+    "message": "Courier New"
+  },
+  "bannerStyleFontTimes": {
+    "message": "Times New Roman"
+  },
+  "bannerStylePreviewLabel": {
+    "message": "Voorbeeld:"
+  },
+  "bannerStyleRandomNote": {
+    "message": "ℹ️ In willekeurige modus wordt elke keer dat de banner wordt weergegeven een nieuwe kleur/verloop gegenereerd"
+  },
+  "bannerTypeEnterprise": {
+    "message": "Bedrijf"
+  },
+  "bannerTypeCommunity": {
+    "message": "Gemeenschap"
+  },
+  "bannerTypePersonal": {
+    "message": "Persoonlijk"
+  },
+  "popupValidationCodeLabel": {
+    "message": "🔐 Validatiecode:"
+  },
+  "popupCodeInfo": {
+    "message": "Een unieke willekeurige code verschijnt in de badge en banner bij elk bezoek om authenticiteit te bevestigen"
+  },
+  "autoAddUnknownLabel": {
+    "message": "🔐 Bij het indienen van een formulier op een onbekende website:"
+  },
+  "autoAddUnknownNever": {
+    "message": "Niets doen"
+  },
+  "autoAddUnknownAlways": {
+    "message": "Automatisch toevoegen aan mijn persoonlijke lijst"
+  },
+  "autoAddUnknownPrompt": {
+    "message": "Vraag mij of ik wil toevoegen"
+  },
+  "autoAddUnknownDescription": {
+    "message": "Kies hoe ShieldSign reageert wanneer u inlogt op een website die niet in een lijst staat"
+  },
+  "notificationAddToPersonal": {
+    "message": "Deze website toevoegen aan uw persoonlijke lijst?"
+  },
+  "notificationAddToPersonalYes": {
+    "message": "Ja, toevoegen"
+  },
+  "notificationAddToPersonalNo": {
+    "message": "Nee"
+  },
+  "notificationSiteAdded": {
+    "message": "Website toegevoegd aan uw persoonlijke lijst"
+  }
+}

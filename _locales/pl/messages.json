@@ -1,0 +1,807 @@
+{
+  "extName": {
+    "message": "ShieldSign",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "Wizualna walidacja bezpiecznych stron logowania za pomocą białej listy domen",
+    "description": "Extension description"
+  },
+  
+  "appTitle": {
+    "message": "ShieldSign"
+  },
+  "settings": {
+    "message": "Ustawienia"
+  },
+  "refresh": {
+    "message": "Odśwież"
+  },
+  
+  "tabCommunity": {
+    "message": "Źródła społecznościowe"
+  },
+  "tabEnterprise": {
+    "message": "Źródła korporacyjne"
+  },
+  "tabPersonal": {
+    "message": "Źródła osobiste"
+  },
+  "tabSettings": {
+    "message": "Ustawienia"
+  },
+  "tabAbout": {
+    "message": "Informacje"
+  },
+  
+  "officialListTitle": {
+    "message": "Oficjalna lista ShieldSign"
+  },
+  "officialListDescription": {
+    "message": "Oficjalna lista utrzymywana przez zespół ShieldSign, zawierająca najpopularniejsze usługi internetowe i chmurowe. Domyślnie włączona."
+  },
+  "officialListName": {
+    "message": "Oficjalna lista ShieldSign"
+  },
+  "officialListInfo": {
+    "message": "Lista oficjalna (65+ zweryfikowanych domen)"
+  },
+  "disable": {
+    "message": "Wyłącz"
+  },
+  "enable": {
+    "message": "Włącz"
+  },
+  "reinstallOfficialList": {
+    "message": "Zainstaluj ponownie oficjalną listę"
+  },
+  
+  "communityListsTitle": {
+    "message": "Dodatkowe listy społecznościowe"
+  },
+  "communityListsDescription": {
+    "message": "Dodaj inne publiczne listy utrzymywane przez społeczność (opcjonalne)"
+  },
+  "communityUrlPlaceholder": {
+    "message": "https://example.com/community-list.json"
+  },
+  "add": {
+    "message": "Dodaj"
+  },
+  "noAdditionalList": {
+    "message": "Brak skonfigurowanych dodatkowych list"
+  },
+  
+  "enterpriseInfoTitle": {
+    "message": "ℹ️ O źródłach korporacyjnych"
+  },
+  "enterpriseInfoText1": {
+    "message": "Ta funkcja jest przeznaczona dla <strong>administratorów korporacyjnych</strong>, którzy chcą zapewnić swoim pracownikom listę zweryfikowanych domen."
+  },
+  "enterpriseInfoText2": {
+    "message": "<strong>Format domeny:</strong> Użyj pełnego formatu zawierającego subdomenę i domenę główną (to, co pojawia się między <code>https://</code> a pierwszym <code>/</code>)."
+  },
+  "enterpriseInfoExamples": {
+    "message": "<strong>Przykłady:</strong>"
+  },
+  "enterpriseInfoSecurity": {
+    "message": "⚠️ <strong>Bezpieczeństwo:</strong> Hostuj swoją listę na wewnętrznym lub prywatnym serwerze, <strong>nie na publicznym URL</strong>."
+  },
+  "enterpriseInfoFormatLabel": {
+    "message": "Format domeny:"
+  },
+  "enterpriseInfoFormatText": {
+    "message": "Użyj pełnego formatu zawierającego subdomenę i domenę główną (to, co pojawia się między <code>https://</code> a pierwszym <code>/</code>)."
+  },
+  "enterpriseInfoExamplesLabel": {
+    "message": "Przykłady:"
+  },
+  "enterpriseInfoExample1": {
+    "message": "✅ <code>login.mojafirma.com</code>"
+  },
+  "enterpriseInfoExample2": {
+    "message": "✅ <code>sso.mojafirma.com</code>"
+  },
+  "enterpriseInfoExample3": {
+    "message": "✅ <code>auth.intranet.mojafirma.net</code>"
+  },
+  "enterpriseInfoExample4": {
+    "message": "❌ <code>https://login.mojafirma.com/auth</code> (bez https:// lub ścieżki)"
+  },
+  
+  "enterpriseListTitle": {
+    "message": "Konfiguracja listy korporacyjnej"
+  },
+  "enterpriseListDescription": {
+    "message": "Dodaj ogólnofirmową listę walidacji domen (najwyższy priorytet)"
+  },
+  "enterpriseUrlPlaceholder": {
+    "message": "https://intranet.firma.com/zweryfikowane-domeny.json"
+  },
+  "noEnterpriseList": {
+    "message": "Brak skonfigurowanej listy korporacyjnej"
+  },
+  
+  "personalDomainsTitle": {
+    "message": "Zarządzaj domenami osobistymi"
+  },
+  "personalDomainsDescription": {
+    "message": "Dodaj własne zaufane domeny (wyższy priorytet niż listy społecznościowe)"
+  },
+  "personalDomainPlaceholder": {
+    "message": "login.przyklad.com"
+  },
+  "noPersonalDomain": {
+    "message": "Brak skonfigurowanych domen osobistych"
+  },
+  
+  "importExportTitle": {
+    "message": "Import / Eksport"
+  },
+  "importExportDescription": {
+    "message": "Eksportuj swoją listę do kopii zapasowej lub zaimportuj do innej przeglądarki"
+  },
+  "exportList": {
+    "message": "Eksportuj listę"
+  },
+  "importList": {
+    "message": "Importuj listę"
+  },
+  
+  "generalSettingsTitle": {
+    "message": "Ustawienia ogólne"
+  },
+  "language": {
+    "message": "Język"
+  },
+  "languageDescription": {
+    "message": "Wybierz język interfejsu"
+  },
+  "languageAuto": {
+    "message": "Automatyczny (język przeglądarki)"
+  },
+  "languageEn": {
+    "message": "English"
+  },
+  "languageFr": {
+    "message": "Français"
+  },
+  "enterpriseMode": {
+    "message": "Tryb korporacyjny"
+  },
+  "enterpriseModeDescription": {
+    "message": "Włącz tę opcję, jeśli jesteś administratorem i chcesz zarządzać listami domen dla swojej organizacji. Wyświetli to zakładkę \"Źródła korporacyjne\"."
+  },
+  "checkCN": {
+    "message": "Sprawdź zgodność CN certyfikatu"
+  },
+  "checkCNDescription": {
+    "message": "Wyświetl ostrzeżenie, jeśli CN certyfikatu nie pasuje do domeny (tylko Firefox)"
+  },
+  "cacheDuration": {
+    "message": "Czas przechowywania listy w pamięci podręcznej (godziny)"
+  },
+  "cacheDurationDescription": {
+    "message": "Częstotliwość automatycznych aktualizacji list zdalnych (domyślnie: 24h)"
+  },
+  
+  "bannerColorsTitle": {
+    "message": "Kolory banera"
+  },
+  "enterpriseList": {
+    "message": "Lista korporacyjna"
+  },
+  "communityList": {
+    "message": "Lista społecznościowa"
+  },
+  "personalList": {
+    "message": "Lista osobista"
+  },
+  
+  "saveSettings": {
+    "message": "Zapisz ustawienia"
+  },
+  "resetSettings": {
+    "message": "Zresetuj"
+  },
+  
+  "aboutTitle": {
+    "message": "O ShieldSign"
+  },
+  "version": {
+    "message": "Wersja"
+  },
+  "license": {
+    "message": "Licencja"
+  },
+  "description": {
+    "message": "Opis"
+  },
+  "aboutDescription": {
+    "message": "Rozszerzenie wizualnej walidacji dla bezpiecznych stron logowania za pomocą białej listy domen"
+  },
+  "githubRepo": {
+    "message": "Repozytorium GitHub"
+  },
+  "reportBug": {
+    "message": "Zgłoś błąd"
+  },
+  "documentation": {
+    "message": "Dokumentacja"
+  },
+  "contributorsTitle": {
+    "message": "Współtwórcy"
+  },
+  "contributorsText": {
+    "message": "Dziękujemy wszystkim współtwórcom projektu ShieldSign"
+  },
+  
+  "pageValidated": {
+    "message": "Strona zweryfikowana przez: $LIST_NAME$",
+    "placeholders": {
+      "list_name": {
+        "content": "$1",
+        "example": "Oficjalna lista ShieldSign"
+      }
+    }
+  },
+  "personalListDisplay": {
+    "message": "Lista osobista"
+  },
+  "enterpriseListDisplay": {
+    "message": "Lista korporacyjna"
+  },
+  
+  "verifying": {
+    "message": "Weryfikowanie..."
+  },
+  "pageNotContainPasswordField": {
+    "message": "Ta strona nie zawiera pola hasła"
+  },
+  "approveDomain": {
+    "message": "Zatwierdź tę domenę"
+  },
+  
+  "settingsSaved": {
+    "message": "Ustawienia zostały pomyślnie zapisane"
+  },
+  "settingsReset": {
+    "message": "Ustawienia zostały zresetowane"
+  },
+  "listAdded": {
+    "message": "Lista została pomyślnie dodana"
+  },
+  "listRemoved": {
+    "message": "Lista została pomyślnie usunięta"
+  },
+  "listEnabled": {
+    "message": "Lista została włączona"
+  },
+  "listDisabled": {
+    "message": "Lista została wyłączona"
+  },
+  "domainAdded": {
+    "message": "Domena została pomyślnie dodana"
+  },
+  "domainRemoved": {
+    "message": "Domena została pomyślnie usunięta"
+  },
+  "officialListReinstalled": {
+    "message": "Oficjalna lista została ponownie zainstalowana i zaktualizowana!"
+  },
+  "listExported": {
+    "message": "Lista została pomyślnie wyeksportowana"
+  },
+  "domainsImported": {
+    "message": "Zaimportowano $COUNT$ domen",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  
+  "errorInvalidUrl": {
+    "message": "Nieprawidłowy URL"
+  },
+  "errorInvalidDomain": {
+    "message": "Nieprawidłowy format domeny"
+  },
+  "errorAddingList": {
+    "message": "Błąd podczas dodawania listy"
+  },
+  "errorRemovingList": {
+    "message": "Błąd podczas usuwania listy"
+  },
+  "errorModifyingList": {
+    "message": "Błąd podczas modyfikowania listy"
+  },
+  "errorAddingDomain": {
+    "message": "Błąd podczas dodawania domeny"
+  },
+  "errorRemovingDomain": {
+    "message": "Błąd podczas usuwania domeny"
+  },
+  "errorLoadingSettings": {
+    "message": "Błąd podczas ładowania ustawień"
+  },
+  "errorSavingSettings": {
+    "message": "Błąd podczas zapisywania ustawień"
+  },
+  "errorResetting": {
+    "message": "Błąd podczas resetowania"
+  },
+  "errorReinstalling": {
+    "message": "Błąd podczas ponownej instalacji"
+  },
+  "errorExporting": {
+    "message": "Błąd podczas eksportowania"
+  },
+  "errorImporting": {
+    "message": "Błąd podczas importowania"
+  },
+  "errorInvalidFile": {
+    "message": "Nieprawidłowy format pliku"
+  },
+  "errorNoValidDomain": {
+    "message": "Nie znaleziono prawidłowej domeny"
+  },
+  "errorNoPersonalDomain": {
+    "message": "Brak domen osobistych do eksportu"
+  },
+  "errorEnterValidUrl": {
+    "message": "Wprowadź prawidłowy URL"
+  },
+  "errorEnterValidDomain": {
+    "message": "Wprowadź prawidłową domenę"
+  },
+  "errorUpdating": {
+    "message": "Błąd podczas aktualizacji"
+  },
+  
+  "settingsTitle": {
+    "message": "Ustawienia - ShieldSign"
+  },
+  "headerTitle": {
+    "message": "ShieldSign - Ustawienia"
+  },
+  "officialListSubtitle": {
+    "message": "Lista oficjalna (65+ zweryfikowanych domen)"
+  },
+  "toggleDisable": {
+    "message": "Wyłącz"
+  },
+  "toggleEnable": {
+    "message": "Włącz"
+  },
+  "reinstallOfficial": {
+    "message": "Zainstaluj ponownie oficjalną listę"
+  },
+  "communityListTitle": {
+    "message": "Dodatkowe listy społecznościowe"
+  },
+  "communityListDescription": {
+    "message": "Dodaj inne publiczne listy utrzymywane przez społeczność (opcjonalne)"
+  },
+  "noListCommunity": {
+    "message": "Brak skonfigurowanych dodatkowych list"
+  },
+  "noListEnterprise": {
+    "message": "Brak skonfigurowanej listy korporacyjnej"
+  },
+  "noListPersonal": {
+    "message": "Brak skonfigurowanych domen osobistych"
+  },
+  "btnAdd": {
+    "message": "Dodaj"
+  },
+  "btnSave": {
+    "message": "Zapisz ustawienia"
+  },
+  "btnReset": {
+    "message": "Zresetuj"
+  },
+  "btnExport": {
+    "message": "Eksportuj listę"
+  },
+  "btnImport": {
+    "message": "Importuj listę"
+  },
+  "colorEnterprise": {
+    "message": "Lista korporacyjna"
+  },
+  "colorCommunity": {
+    "message": "Lista społecznościowa"
+  },
+  "colorPersonal": {
+    "message": "Lista osobista"
+  },
+  "aboutVersion": {
+    "message": "Wersja:"
+  },
+  "aboutLicense": {
+    "message": "Licencja:"
+  },
+  "aboutDescriptionText": {
+    "message": "Rozszerzenie wizualnej walidacji dla bezpiecznych stron logowania za pomocą białej listy domen"
+  },
+  "aboutGithub": {
+    "message": "Repozytorium GitHub"
+  },
+  "aboutBugReport": {
+    "message": "Zgłoś błąd"
+  },
+  "aboutDocumentation": {
+    "message": "Dokumentacja"
+  },
+  "aboutContributors": {
+    "message": "Współtwórcy"
+  },
+  "aboutContributorsText": {
+    "message": "Dziękujemy wszystkim współtwórcom projektu ShieldSign"
+  },
+  "aboutPrivacy": {
+    "message": "Prywatność"
+  },
+  "aboutPrivacyText": {
+    "message": "ShieldSign nie zbiera danych użytkownika. Cała walidacja odbywa się lokalnie w Twojej przeglądarce."
+  },
+  "btnRemove": {
+    "message": "Usuń"
+  },
+  "toastOfficialEnabled": {
+    "message": "Oficjalna lista została włączona"
+  },
+  "toastOfficialDisabled": {
+    "message": "Oficjalna lista została wyłączona"
+  },
+  "toastOfficialReinstalled": {
+    "message": "Oficjalna lista została ponownie zainstalowana i zaktualizowana!"
+  },
+  "toastEnterpriseModeEnabled": {
+    "message": "Tryb korporacyjny został włączony"
+  },
+  "toastEnterpriseModeDisabled": {
+    "message": "Tryb korporacyjny został wyłączony"
+  },
+  "errorLoading": {
+    "message": "Błąd podczas ładowania ustawień"
+  },
+  "toastSettingsSaved": {
+    "message": "Ustawienia zostały pomyślnie zapisane"
+  },
+  "errorSaving": {
+    "message": "Błąd podczas zapisywania ustawień"
+  },
+  "toastSettingsReset": {
+    "message": "Ustawienia zostały zresetowane"
+  },
+  "errorLoadingLists": {
+    "message": "Błąd podczas ładowania list"
+  },
+  "toastListAdded": {
+    "message": "Lista została pomyślnie dodana"
+  },
+  "toastListRemoved": {
+    "message": "Lista została pomyślnie usunięta"
+  },
+  "toastListEnabled": {
+    "message": "Lista została włączona"
+  },
+  "toastListDisabled": {
+    "message": "Lista została wyłączona"
+  },
+  "errorTogglingList": {
+    "message": "Błąd podczas przełączania listy"
+  },
+  "errorLoadingPersonal": {
+    "message": "Błąd podczas ładowania listy osobistej"
+  },
+  "toastDomainAdded": {
+    "message": "Domena została pomyślnie dodana"
+  },
+  "toastDomainRemoved": {
+    "message": "Domena została pomyślnie usunięta"
+  },
+  "toastListExported": {
+    "message": "Lista została pomyślnie wyeksportowana"
+  },
+  "toastDomainsImported": {
+    "message": "Zaimportowano {count} domen"
+  },
+  "enterpriseInfoShort": {
+    "message": "Zapewnij swoim zespołom listę zweryfikowanych domen. Ta lista ma najwyższy priorytet i zwiększa zaufanie pracowników."
+  },
+  "btnLearnMore": {
+    "message": "Dowiedz się więcej"
+  },
+  "btnDownloadExample": {
+    "message": "Pobierz przykład"
+  },
+  "toastExampleDownloaded": {
+    "message": "Przykład został pobrany"
+  },
+  "modalEnterpriseTitle": {
+    "message": "🛡️ Źródła korporacyjne: Chroń swoich pracowników"
+  },
+  "modalWhyTitle": {
+    "message": "Dlaczego warto korzystać z tej funkcji?"
+  },
+  "modalWhyText": {
+    "message": "Jako administrator możesz zapewnić listę zweryfikowanych domen logowania dla swojej organizacji. Ta lista ma <strong>najwyższy priorytet</strong> nad wszystkimi innymi źródłami (społecznościowymi, osobistymi). Twoi pracownicy zobaczą specjalny zielony baner na stronach zweryfikowanych przez firmę, co zwiększy ich zaufanie."
+  },
+  "modalSecurityTitle": {
+    "message": "🔒 Ochrona przed phishingiem i MITM"
+  },
+  "modalSecurityText": {
+    "message": "Ta funkcja pomaga w walce z:"
+  },
+  "modalSecurityPoint1": {
+    "message": "<strong>Phishing:</strong> Twoi pracownicy nie zobaczą banera walidacji na fałszywych stronach"
+  },
+  "modalSecurityPoint2": {
+    "message": "<strong>Atak Man-in-the-Middle:</strong> Tylko autentyczne domeny z Twojej listy są weryfikowane"
+  },
+  "modalSecurityPoint3": {
+    "message": "<strong>Kradzież tożsamości:</strong> Baner korporacyjny wyraźnie wskazuje, że jest to zatwierdzona strona"
+  },
+  "modalFormatTitle": {
+    "message": "📝 Format domeny"
+  },
+  "modalFormatText": {
+    "message": "Używaj tylko pełnej domeny (subdomena + domena główna), bez protokołu lub ścieżki:"
+  },
+  "modalHostingTitle": {
+    "message": "🔐 Bezpieczny hosting (ważne)"
+  },
+  "modalHostingWarning": {
+    "message": "<strong>⚠️ NIE hostuj na GitHub, GitLab ani usługach publicznych!</strong>"
+  },
+  "modalHostingText": {
+    "message": "Aby zmaksymalizować bezpieczeństwo, hostuj swoją listę JSON na:"
+  },
+  "modalHostingOption1": {
+    "message": "<strong>Tylko serwer wewnętrzny</strong> (dostępny tylko z sieci firmowej)"
+  },
+  "modalHostingOption2": {
+    "message": "<strong>Ukryty URL</strong>: Użyj GUID dla nazw plików i folderów"
+  },
+  "modalHostingExample": {
+    "message": "Przykład: <code>https://cdn.przyklad.com/a3f2e8b1-4c5d-6e7f-8a9b-0c1d2e3f4a5b/d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a.json</code>"
+  },
+  "modalMaintenanceTitle": {
+    "message": "🔧 Konserwacja"
+  },
+  "modalMaintenanceText": {
+    "message": "Utrzymuj swoją listę w aktualności, dodając nowe domeny logowania używane przez Twoją organizację (SSO, portale wewnętrzne, aplikacje SaaS itp.)."
+  },
+  "popupCheckingStatus": {
+    "message": "Weryfikowanie..."
+  },
+  "popupApproveButton": {
+    "message": "✅ Zatwierdź tę domenę"
+  },
+  "popupSettingsButton": {
+    "message": "Ustawienia"
+  },
+  "popupRefreshButton": {
+    "message": "Odśwież"
+  },
+  "popupNoActivePage": {
+    "message": "Brak aktywnej strony"
+  },
+  "popupNoPasswordField": {
+    "message": "Ta strona nie zawiera pola hasła"
+  },
+  "popupValidated": {
+    "message": "Ta strona została zweryfikowana"
+  },
+  "popupUnknown": {
+    "message": "Ta strona zawiera pole hasła, ale nie znajduje się w żadnym zaufanym źródle"
+  },
+  "popupLoadError": {
+    "message": "Błąd ładowania"
+  },
+  "popupValidatedBy": {
+    "message": "Zweryfikowane przez: {0}"
+  },
+  "contentBannerValidated": {
+    "message": "Strona zweryfikowana przez: {0}"
+  },
+  "contentPersonalList": {
+    "message": "Lista osobista"
+  },
+  "contentEnterpriseList": {
+    "message": "Lista korporacyjna"
+  },
+  "validationSecurityTitle": {
+    "message": "🛡️ Walidacja anty-phishingowa"
+  },
+  "validationSecurityDescription": {
+    "message": "ShieldSign wyświetla baner na stronach logowania, aby je widoczne. Ostrzeżenie: strona phishingowa może również wyświetlić fałszywy baner. Aby umożliwić Ci weryfikację w 1 sekundę, czy baner jest prawdziwy, wybierz poniżej metodę walidacji."
+  },
+  "whyTheseOptions": {
+    "message": "💡 Dlaczego te opcje?"
+  },
+  "antiPhishingExplanation": {
+    "message": "Jeśli ShieldSign stanie się popularny, atakujący mogą utworzyć fałszywy zielony baner na swojej stronie phishingowej. Te opcje sprawiają, że naśladowanie jest <strong>niemożliwe</strong>, ponieważ tylko TWOJE rozszerzenie zna Twoje osobiste hasło, dzienny kod lub niestandardowy kolor."
+  },
+  "imageComingSoon": {
+    "message": "[Ilustracja już wkrótce]"
+  },
+  "modeBadgeOnlyTitle": {
+    "message": "🔵 Tylko odznaka (dyskretna)"
+  },
+  "modeBadgeOnlyDescription": {
+    "message": "Brak widocznego banera. Kolorowa kropka pojawia się na ikonie rozszerzenia na pasku narzędzi. Prosta i nieinwazyjna."
+  },
+  "modeBadgeOnlyPro1": {
+    "message": "✅ Dyskretna, nie zaśmieca strony"
+  },
+  "modeBadgeOnlyCon1": {
+    "message": "⚠️ Wymaga sprawdzenia ikony rozszerzenia"
+  },
+  "modeBannerKeywordTitle": {
+    "message": "🔑 Baner z osobistym hasłem"
+  },
+  "modeBannerKeywordDescription": {
+    "message": "Baner wyświetla Twoje niestandardowe hasło lub frazę. Tylko Ty znasz to hasło, atakujący nie mogą go odgadnąć."
+  },
+  "customKeywordLabel": {
+    "message": "Twoje osobiste hasło:"
+  },
+  "customKeywordPlaceholder": {
+    "message": "np: MojeDwieCzerwoneMalpy2025"
+  },
+  "customKeywordHelp": {
+    "message": "Wybierz słowo lub frazę, które są łatwe do zapamiętania, ale trudne do odgadnięcia (zalecane minimum 5 znaków)"
+  },
+  "modeBannerKeywordPro1": {
+    "message": "✅ Natychmiastowa i spersonalizowana walidacja"
+  },
+  "modeBannerKeywordPro2": {
+    "message": "✅ Niemożliwe do naśladowania bez znajomości Twojego hasła"
+  },
+  "modeBannerKeywordCon1": {
+    "message": "⚠️ Wymaga zapamiętania Twojego hasła"
+  },
+  "warningKeywordTooShort": {
+    "message": "Hasło musi zawierać co najmniej 5 znaków"
+  },
+  "modeBannerCodeTitle": {
+    "message": "🎲 Baner z losowym kodem (zalecane)"
+  },
+  "modeBannerCodeDescription": {
+    "message": "Unikalny 2-znakowy kod alfanumeryczny (np. A7, H4, 8R) jest generowany przy każdej wizycie i wyświetlany na banerze I na ikonie rozszerzenia. Po prostu sprawdź, czy oba się zgadzają."
+  },
+  "currentCodeLabel": {
+    "message": "Dzisiejszy kod:"
+  },
+  "btnRegenerateCode": {
+    "message": "Wygeneruj nowy kod"
+  },
+  "currentCodeHelp": {
+    "message": "Kod zmienia się automatycznie każdego dnia. Możesz również wygenerować ponownie ręcznie."
+  },
+  "modeBannerCodePro1": {
+    "message": "✅ Nic do zapamiętania"
+  },
+  "modeBannerCodePro2": {
+    "message": "✅ Szybka walidacja (odznaka + baner)"
+  },
+  "modeBannerCodePro3": {
+    "message": "✅ Unikalny kod przy każdej wizycie"
+  },
+  "modeBannerCodePro4": {
+    "message": "✅ Idealna równowaga między bezpieczeństwem a prostotą"
+  },
+  "toastCodeRegenerated": {
+    "message": "Kod został pomyślnie wygenerowany ponownie"
+  },
+  "errorRegeneratingCode": {
+    "message": "⚠️ Błąd podczas ponownego generowania kodu"
+  },
+  "showUnknownPages": {
+    "message": "Pokaż status dla wszystkich stron"
+  },
+  "showUnknownPagesDescription": {
+    "message": "Włącz, aby zobaczyć odznakę nawet na niewymienionych stronach: 🔴 (podejrzana strona z hasłem) lub ⚪ (strona bez hasła)"
+  },
+  "bannerStyleTitle": {
+    "message": "Styl banera"
+  },
+  "bannerStyleDescription": {
+    "message": "Dostosuj wygląd każdego typu banera (Korporacyjny, Społecznościowy, Osobisty)"
+  },
+  "bannerStyleModeLabel": {
+    "message": "Tryb koloru:"
+  },
+  "bannerStyleModeSolid": {
+    "message": "Kolor jednolity"
+  },
+  "bannerStyleModeGradient": {
+    "message": "Gradient"
+  },
+  "bannerStyleModeRandom": {
+    "message": "Losowy"
+  },
+  "bannerStyleSolidColorLabel": {
+    "message": "Kolor jednolity:"
+  },
+  "bannerStyleGradientStartLabel": {
+    "message": "Początek gradientu:"
+  },
+  "bannerStyleGradientEndLabel": {
+    "message": "Koniec gradientu:"
+  },
+  "bannerStyleTextColorLabel": {
+    "message": "Kolor tekstu:"
+  },
+  "bannerStyleFontFamilyLabel": {
+    "message": "Czcionka:"
+  },
+  "bannerStyleFontArial": {
+    "message": "Arial"
+  },
+  "bannerStyleFontVerdana": {
+    "message": "Verdana"
+  },
+  "bannerStyleFontGeorgia": {
+    "message": "Georgia"
+  },
+  "bannerStyleFontCourier": {
+    "message": "Courier New"
+  },
+  "bannerStyleFontTimes": {
+    "message": "Times New Roman"
+  },
+  "bannerStylePreviewLabel": {
+    "message": "Podgląd:"
+  },
+  "bannerStyleRandomNote": {
+    "message": "ℹ️ W trybie losowym nowy kolor/gradient jest generowany za każdym razem, gdy baner jest wyświetlany"
+  },
+  "bannerTypeEnterprise": {
+    "message": "Korporacyjny"
+  },
+  "bannerTypeCommunity": {
+    "message": "Społecznościowy"
+  },
+  "bannerTypePersonal": {
+    "message": "Osobisty"
+  },
+  "popupValidationCodeLabel": {
+    "message": "🔐 Kod walidacji:"
+  },
+  "popupCodeInfo": {
+    "message": "Unikalny losowy kod pojawia się w odznace i banerze przy każdej wizycie, aby potwierdzić autentyczność"
+  },
+  "autoAddUnknownLabel": {
+    "message": "🔐 Przy wysyłaniu formularza na nieznanej stronie:"
+  },
+  "autoAddUnknownNever": {
+    "message": "Nie rób nic"
+  },
+  "autoAddUnknownAlways": {
+    "message": "Automatycznie dodaj do mojej listy osobistej"
+  },
+  "autoAddUnknownPrompt": {
+    "message": "Zapytaj mnie, czy chcę dodać"
+  },
+  "autoAddUnknownDescription": {
+    "message": "Wybierz, jak ShieldSign reaguje, gdy logujesz się na stronie, której nie ma na żadnej liście"
+  },
+  "notificationAddToPersonal": {
+    "message": "Dodać tę stronę do Twojej listy osobistej?"
+  },
+  "notificationAddToPersonalYes": {
+    "message": "Tak, dodaj"
+  },
+  "notificationAddToPersonalNo": {
+    "message": "Nie"
+  },
+  "notificationSiteAdded": {
+    "message": "Strona została dodana do Twojej listy osobistej"
+  }
+}

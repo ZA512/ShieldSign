@@ -1,0 +1,807 @@
+{
+  "extName": {
+    "message": "ShieldSign",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "ドメインホワイトリストによる安全なログインページの視覚的検証",
+    "description": "Extension description"
+  },
+  
+  "appTitle": {
+    "message": "ShieldSign"
+  },
+  "settings": {
+    "message": "設定"
+  },
+  "refresh": {
+    "message": "更新"
+  },
+  
+  "tabCommunity": {
+    "message": "コミュニティソース"
+  },
+  "tabEnterprise": {
+    "message": "エンタープライズソース"
+  },
+  "tabPersonal": {
+    "message": "個人ソース"
+  },
+  "tabSettings": {
+    "message": "設定"
+  },
+  "tabAbout": {
+    "message": "について"
+  },
+  
+  "officialListTitle": {
+    "message": "ShieldSign公式リスト"
+  },
+  "officialListDescription": {
+    "message": "ShieldSignチームが管理する公式リストで、最も人気のあるウェブおよびクラウドサービスが含まれています。デフォルトで有効になっています。"
+  },
+  "officialListName": {
+    "message": "ShieldSign公式リスト"
+  },
+  "officialListInfo": {
+    "message": "公式リスト（65以上の検証済みドメイン）"
+  },
+  "disable": {
+    "message": "無効化"
+  },
+  "enable": {
+    "message": "有効化"
+  },
+  "reinstallOfficialList": {
+    "message": "公式リストを再インストール"
+  },
+  
+  "communityListsTitle": {
+    "message": "追加のコミュニティリスト"
+  },
+  "communityListsDescription": {
+    "message": "コミュニティが管理する他の公開リストを追加（オプション）"
+  },
+  "communityUrlPlaceholder": {
+    "message": "https://example.com/community-list.json"
+  },
+  "add": {
+    "message": "追加"
+  },
+  "noAdditionalList": {
+    "message": "追加リストが設定されていません"
+  },
+  
+  "enterpriseInfoTitle": {
+    "message": "ℹ️ エンタープライズソースについて"
+  },
+  "enterpriseInfoText1": {
+    "message": "この機能は、従業員に検証済みドメインのリストを提供したい<strong>エンタープライズ管理者</strong>向けです。"
+  },
+  "enterpriseInfoText2": {
+    "message": "<strong>ドメイン形式：</strong>サブドメインとメインドメインを含む完全な形式を使用してください（<code>https://</code>と最初の<code>/</code>の間に表示されるもの）。"
+  },
+  "enterpriseInfoExamples": {
+    "message": "<strong>例：</strong>"
+  },
+  "enterpriseInfoSecurity": {
+    "message": "⚠️ <strong>セキュリティ：</strong>リストを内部またはプライベートサーバーにホストし、<strong>公開URLにはホストしないでください</strong>。"
+  },
+  "enterpriseInfoFormatLabel": {
+    "message": "ドメイン形式："
+  },
+  "enterpriseInfoFormatText": {
+    "message": "サブドメインとメインドメインを含む完全な形式を使用してください（<code>https://</code>と最初の<code>/</code>の間に表示されるもの）。"
+  },
+  "enterpriseInfoExamplesLabel": {
+    "message": "例："
+  },
+  "enterpriseInfoExample1": {
+    "message": "✅ <code>login.mycompany.com</code>"
+  },
+  "enterpriseInfoExample2": {
+    "message": "✅ <code>sso.mycompany.com</code>"
+  },
+  "enterpriseInfoExample3": {
+    "message": "✅ <code>auth.intranet.mycompany.net</code>"
+  },
+  "enterpriseInfoExample4": {
+    "message": "❌ <code>https://login.mycompany.com/auth</code>（https://またはパスを含めない）"
+  },
+  
+  "enterpriseListTitle": {
+    "message": "エンタープライズリストの設定"
+  },
+  "enterpriseListDescription": {
+    "message": "会社全体のドメイン検証リストを追加（最優先）"
+  },
+  "enterpriseUrlPlaceholder": {
+    "message": "https://intranet.company.com/validated-domains.json"
+  },
+  "noEnterpriseList": {
+    "message": "エンタープライズリストが設定されていません"
+  },
+  
+  "personalDomainsTitle": {
+    "message": "個人ドメインの管理"
+  },
+  "personalDomainsDescription": {
+    "message": "信頼できる独自のドメインを追加（コミュニティリストより優先）"
+  },
+  "personalDomainPlaceholder": {
+    "message": "login.example.com"
+  },
+  "noPersonalDomain": {
+    "message": "個人ドメインが設定されていません"
+  },
+  
+  "importExportTitle": {
+    "message": "インポート / エクスポート"
+  },
+  "importExportDescription": {
+    "message": "バックアップのためにリストをエクスポートするか、他のブラウザにインポート"
+  },
+  "exportList": {
+    "message": "リストをエクスポート"
+  },
+  "importList": {
+    "message": "リストをインポート"
+  },
+  
+  "generalSettingsTitle": {
+    "message": "一般設定"
+  },
+  "language": {
+    "message": "言語"
+  },
+  "languageDescription": {
+    "message": "インターフェース言語を選択"
+  },
+  "languageAuto": {
+    "message": "自動（ブラウザの言語）"
+  },
+  "languageEn": {
+    "message": "English"
+  },
+  "languageFr": {
+    "message": "Français"
+  },
+  "enterpriseMode": {
+    "message": "エンタープライズモード"
+  },
+  "enterpriseModeDescription": {
+    "message": "管理者で組織のドメインリストを管理する場合は、このオプションを有効にしてください。「エンタープライズソース」タブが表示されます。"
+  },
+  "checkCN": {
+    "message": "証明書CN一致を確認"
+  },
+  "checkCNDescription": {
+    "message": "証明書CNがドメインと一致しない場合に警告を表示（Firefoxのみ）"
+  },
+  "cacheDuration": {
+    "message": "リストキャッシュ期間（時間）"
+  },
+  "cacheDurationDescription": {
+    "message": "リモートリストの自動更新頻度（デフォルト：24時間）"
+  },
+  
+  "bannerColorsTitle": {
+    "message": "バナーの色"
+  },
+  "enterpriseList": {
+    "message": "エンタープライズリスト"
+  },
+  "communityList": {
+    "message": "コミュニティリスト"
+  },
+  "personalList": {
+    "message": "個人リスト"
+  },
+  
+  "saveSettings": {
+    "message": "設定を保存"
+  },
+  "resetSettings": {
+    "message": "リセット"
+  },
+  
+  "aboutTitle": {
+    "message": "ShieldSignについて"
+  },
+  "version": {
+    "message": "バージョン"
+  },
+  "license": {
+    "message": "ライセンス"
+  },
+  "description": {
+    "message": "説明"
+  },
+  "aboutDescription": {
+    "message": "ドメインホワイトリストによる安全なログインページの視覚的検証拡張機能"
+  },
+  "githubRepo": {
+    "message": "GitHubリポジトリ"
+  },
+  "reportBug": {
+    "message": "バグを報告"
+  },
+  "documentation": {
+    "message": "ドキュメント"
+  },
+  "contributorsTitle": {
+    "message": "貢献者"
+  },
+  "contributorsText": {
+    "message": "ShieldSignプロジェクトのすべての貢献者に感謝します"
+  },
+  
+  "pageValidated": {
+    "message": "次によって検証されたページ：$LIST_NAME$",
+    "placeholders": {
+      "list_name": {
+        "content": "$1",
+        "example": "ShieldSign公式リスト"
+      }
+    }
+  },
+  "personalListDisplay": {
+    "message": "個人リスト"
+  },
+  "enterpriseListDisplay": {
+    "message": "エンタープライズリスト"
+  },
+  
+  "verifying": {
+    "message": "検証中..."
+  },
+  "pageNotContainPasswordField": {
+    "message": "このページにはパスワードフィールドがありません"
+  },
+  "approveDomain": {
+    "message": "このドメインを承認"
+  },
+  
+  "settingsSaved": {
+    "message": "設定が正常に保存されました"
+  },
+  "settingsReset": {
+    "message": "設定がリセットされました"
+  },
+  "listAdded": {
+    "message": "リストが正常に追加されました"
+  },
+  "listRemoved": {
+    "message": "リストが正常に削除されました"
+  },
+  "listEnabled": {
+    "message": "リストが有効になりました"
+  },
+  "listDisabled": {
+    "message": "リストが無効になりました"
+  },
+  "domainAdded": {
+    "message": "ドメインが正常に追加されました"
+  },
+  "domainRemoved": {
+    "message": "ドメインが正常に削除されました"
+  },
+  "officialListReinstalled": {
+    "message": "公式リストが再インストールおよび更新されました！"
+  },
+  "listExported": {
+    "message": "リストが正常にエクスポートされました"
+  },
+  "domainsImported": {
+    "message": "$COUNT$個のドメインをインポートしました",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  
+  "errorInvalidUrl": {
+    "message": "無効なURL"
+  },
+  "errorInvalidDomain": {
+    "message": "無効なドメイン形式"
+  },
+  "errorAddingList": {
+    "message": "リストの追加中にエラーが発生しました"
+  },
+  "errorRemovingList": {
+    "message": "リストの削除中にエラーが発生しました"
+  },
+  "errorModifyingList": {
+    "message": "リストの変更中にエラーが発生しました"
+  },
+  "errorAddingDomain": {
+    "message": "ドメインの追加中にエラーが発生しました"
+  },
+  "errorRemovingDomain": {
+    "message": "ドメインの削除中にエラーが発生しました"
+  },
+  "errorLoadingSettings": {
+    "message": "設定の読み込み中にエラーが発生しました"
+  },
+  "errorSavingSettings": {
+    "message": "設定の保存中にエラーが発生しました"
+  },
+  "errorResetting": {
+    "message": "リセット中にエラーが発生しました"
+  },
+  "errorReinstalling": {
+    "message": "再インストール中にエラーが発生しました"
+  },
+  "errorExporting": {
+    "message": "エクスポート中にエラーが発生しました"
+  },
+  "errorImporting": {
+    "message": "インポート中にエラーが発生しました"
+  },
+  "errorInvalidFile": {
+    "message": "無効なファイル形式"
+  },
+  "errorNoValidDomain": {
+    "message": "有効なドメインが見つかりません"
+  },
+  "errorNoPersonalDomain": {
+    "message": "エクスポートする個人ドメインがありません"
+  },
+  "errorEnterValidUrl": {
+    "message": "有効なURLを入力してください"
+  },
+  "errorEnterValidDomain": {
+    "message": "有効なドメインを入力してください"
+  },
+  "errorUpdating": {
+    "message": "更新中にエラーが発生しました"
+  },
+  
+  "settingsTitle": {
+    "message": "設定 - ShieldSign"
+  },
+  "headerTitle": {
+    "message": "ShieldSign - 設定"
+  },
+  "officialListSubtitle": {
+    "message": "公式リスト（65以上の検証済みドメイン）"
+  },
+  "toggleDisable": {
+    "message": "無効化"
+  },
+  "toggleEnable": {
+    "message": "有効化"
+  },
+  "reinstallOfficial": {
+    "message": "公式リストを再インストール"
+  },
+  "communityListTitle": {
+    "message": "追加のコミュニティリスト"
+  },
+  "communityListDescription": {
+    "message": "コミュニティが管理する他の公開リストを追加（オプション）"
+  },
+  "noListCommunity": {
+    "message": "追加リストが設定されていません"
+  },
+  "noListEnterprise": {
+    "message": "エンタープライズリストが設定されていません"
+  },
+  "noListPersonal": {
+    "message": "個人ドメインが設定されていません"
+  },
+  "btnAdd": {
+    "message": "追加"
+  },
+  "btnSave": {
+    "message": "設定を保存"
+  },
+  "btnReset": {
+    "message": "リセット"
+  },
+  "btnExport": {
+    "message": "リストをエクスポート"
+  },
+  "btnImport": {
+    "message": "リストをインポート"
+  },
+  "colorEnterprise": {
+    "message": "エンタープライズリスト"
+  },
+  "colorCommunity": {
+    "message": "コミュニティリスト"
+  },
+  "colorPersonal": {
+    "message": "個人リスト"
+  },
+  "aboutVersion": {
+    "message": "バージョン："
+  },
+  "aboutLicense": {
+    "message": "ライセンス："
+  },
+  "aboutDescriptionText": {
+    "message": "ドメインホワイトリストによる安全なログインページの視覚的検証拡張機能"
+  },
+  "aboutGithub": {
+    "message": "GitHubリポジトリ"
+  },
+  "aboutBugReport": {
+    "message": "バグを報告"
+  },
+  "aboutDocumentation": {
+    "message": "ドキュメント"
+  },
+  "aboutContributors": {
+    "message": "貢献者"
+  },
+  "aboutContributorsText": {
+    "message": "ShieldSignプロジェクトのすべての貢献者に感謝します"
+  },
+  "aboutPrivacy": {
+    "message": "プライバシー"
+  },
+  "aboutPrivacyText": {
+    "message": "ShieldSignはユーザーデータを収集しません。すべての検証はブラウザでローカルに実行されます。"
+  },
+  "btnRemove": {
+    "message": "削除"
+  },
+  "toastOfficialEnabled": {
+    "message": "公式リストが有効になりました"
+  },
+  "toastOfficialDisabled": {
+    "message": "公式リストが無効になりました"
+  },
+  "toastOfficialReinstalled": {
+    "message": "公式リストが再インストールおよび更新されました！"
+  },
+  "toastEnterpriseModeEnabled": {
+    "message": "エンタープライズモードが有効になりました"
+  },
+  "toastEnterpriseModeDisabled": {
+    "message": "エンタープライズモードが無効になりました"
+  },
+  "errorLoading": {
+    "message": "設定の読み込み中にエラーが発生しました"
+  },
+  "toastSettingsSaved": {
+    "message": "設定が正常に保存されました"
+  },
+  "errorSaving": {
+    "message": "設定の保存中にエラーが発生しました"
+  },
+  "toastSettingsReset": {
+    "message": "設定がリセットされました"
+  },
+  "errorLoadingLists": {
+    "message": "リストの読み込み中にエラーが発生しました"
+  },
+  "toastListAdded": {
+    "message": "リストが正常に追加されました"
+  },
+  "toastListRemoved": {
+    "message": "リストが正常に削除されました"
+  },
+  "toastListEnabled": {
+    "message": "リストが有効になりました"
+  },
+  "toastListDisabled": {
+    "message": "リストが無効になりました"
+  },
+  "errorTogglingList": {
+    "message": "リストの切り替え中にエラーが発生しました"
+  },
+  "errorLoadingPersonal": {
+    "message": "個人リストの読み込み中にエラーが発生しました"
+  },
+  "toastDomainAdded": {
+    "message": "ドメインが正常に追加されました"
+  },
+  "toastDomainRemoved": {
+    "message": "ドメインが正常に削除されました"
+  },
+  "toastListExported": {
+    "message": "リストが正常にエクスポートされました"
+  },
+  "toastDomainsImported": {
+    "message": "{count}個のドメインをインポートしました"
+  },
+  "enterpriseInfoShort": {
+    "message": "チームに検証済みドメインのリストを提供します。このリストは最優先され、従業員の信頼を高めます。"
+  },
+  "btnLearnMore": {
+    "message": "詳細を見る"
+  },
+  "btnDownloadExample": {
+    "message": "サンプルをダウンロード"
+  },
+  "toastExampleDownloaded": {
+    "message": "サンプルがダウンロードされました"
+  },
+  "modalEnterpriseTitle": {
+    "message": "🛡️ エンタープライズソース：従業員を保護"
+  },
+  "modalWhyTitle": {
+    "message": "この機能を使用する理由は？"
+  },
+  "modalWhyText": {
+    "message": "管理者として、組織の検証済みログインドメインのリストを提供できます。このリストは、他のすべてのソース（コミュニティ、個人）よりも<strong>最優先</strong>されます。従業員は、会社が検証したページで特別な緑色のバナーを見ることができ、信頼性が向上します。"
+  },
+  "modalSecurityTitle": {
+    "message": "🔒 フィッシングとMITMからの保護"
+  },
+  "modalSecurityText": {
+    "message": "この機能は次のことに対抗します："
+  },
+  "modalSecurityPoint1": {
+    "message": "<strong>フィッシング：</strong>従業員は偽のウェブサイトで検証バナーを見ることができません"
+  },
+  "modalSecurityPoint2": {
+    "message": "<strong>中間者攻撃：</strong>リストの正規のドメインのみが検証されます"
+  },
+  "modalSecurityPoint3": {
+    "message": "<strong>なりすまし：</strong>エンタープライズバナーは、これが承認されたウェブサイトであることを明確に示します"
+  },
+  "modalFormatTitle": {
+    "message": "📝 ドメイン形式"
+  },
+  "modalFormatText": {
+    "message": "プロトコルやパスなしで、完全なドメイン（サブドメイン + メインドメイン）のみを使用してください："
+  },
+  "modalHostingTitle": {
+    "message": "🔐 安全なホスティング（重要）"
+  },
+  "modalHostingWarning": {
+    "message": "<strong>⚠️ GitHub、GitLab、または公開サービスにホストしないでください！</strong>"
+  },
+  "modalHostingText": {
+    "message": "セキュリティを最大化するには、JSONリストを次の場所にホストしてください："
+  },
+  "modalHostingOption1": {
+    "message": "<strong>内部サーバーのみ</strong>（会社のネットワークからのみアクセス可能）"
+  },
+  "modalHostingOption2": {
+    "message": "<strong>隠しURL</strong>：ファイルとフォルダ名にGUIDを使用"
+  },
+  "modalHostingExample": {
+    "message": "例：<code>https://cdn.example.com/a3f2e8b1-4c5d-6e7f-8a9b-0c1d2e3f4a5b/d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a.json</code>"
+  },
+  "modalMaintenanceTitle": {
+    "message": "🔧 メンテナンス"
+  },
+  "modalMaintenanceText": {
+    "message": "組織で使用される新しいログインドメイン（SSO、内部ポータル、SaaSアプリなど）を追加して、リストを最新の状態に保ちます。"
+  },
+  "popupCheckingStatus": {
+    "message": "検証中..."
+  },
+  "popupApproveButton": {
+    "message": "✅ このドメインを承認"
+  },
+  "popupSettingsButton": {
+    "message": "設定"
+  },
+  "popupRefreshButton": {
+    "message": "更新"
+  },
+  "popupNoActivePage": {
+    "message": "アクティブなページがありません"
+  },
+  "popupNoPasswordField": {
+    "message": "このページにはパスワードフィールドがありません"
+  },
+  "popupValidated": {
+    "message": "このページは検証されました"
+  },
+  "popupUnknown": {
+    "message": "このページにはパスワードフィールドがありますが、信頼できるソースにはありません"
+  },
+  "popupLoadError": {
+    "message": "読み込みエラー"
+  },
+  "popupValidatedBy": {
+    "message": "検証者：{0}"
+  },
+  "contentBannerValidated": {
+    "message": "次によって検証されたページ：{0}"
+  },
+  "contentPersonalList": {
+    "message": "個人リスト"
+  },
+  "contentEnterpriseList": {
+    "message": "エンタープライズリスト"
+  },
+  "validationSecurityTitle": {
+    "message": "🛡️ フィッシング対策検証"
+  },
+  "validationSecurityDescription": {
+    "message": "ShieldSignはログインページにバナーを表示して可視性を高めます。警告：フィッシングページも偽のバナーを表示する可能性があります。バナーが本物かどうかを1秒以内に確認できるように、以下から検証方法を選択してください。"
+  },
+  "whyTheseOptions": {
+    "message": "💡 なぜこれらのオプションが必要なのですか？"
+  },
+  "antiPhishingExplanation": {
+    "message": "ShieldSignが人気になると、攻撃者はフィッシングページに偽の緑色のバナーを作成する可能性があります。これらのオプションにより、個人のキーワード、日次コード、またはカスタムカラーを拡張機能のみが知っているため、模倣が<strong>不可能</strong>になります。"
+  },
+  "imageComingSoon": {
+    "message": "[説明画像は近日公開]"
+  },
+  "modeBadgeOnlyTitle": {
+    "message": "🔵 バッジのみ（目立たない）"
+  },
+  "modeBadgeOnlyDescription": {
+    "message": "バナーは表示されません。ツールバーの拡張機能アイコンに色のドットが表示されます。シンプルで邪魔になりません。"
+  },
+  "modeBadgeOnlyPro1": {
+    "message": "✅ 目立たず、ページを乱雑にしない"
+  },
+  "modeBadgeOnlyCon1": {
+    "message": "⚠️ 拡張機能アイコンを確認する必要がある"
+  },
+  "modeBannerKeywordTitle": {
+    "message": "🔑 個人キーワード付きバナー"
+  },
+  "modeBannerKeywordDescription": {
+    "message": "バナーにカスタムキーワードまたはフレーズが表示されます。このキーワードを知っているのはあなただけで、攻撃者は推測できません。"
+  },
+  "customKeywordLabel": {
+    "message": "個人キーワード："
+  },
+  "customKeywordPlaceholder": {
+    "message": "例：私の赤いサル2匹2025"
+  },
+  "customKeywordHelp": {
+    "message": "覚えやすいが推測しにくい単語またはフレーズを選択してください（最低5文字を推奨）"
+  },
+  "modeBannerKeywordPro1": {
+    "message": "✅ 即座にパーソナライズされた検証"
+  },
+  "modeBannerKeywordPro2": {
+    "message": "✅ キーワードを知らなければ模倣不可能"
+  },
+  "modeBannerKeywordCon1": {
+    "message": "⚠️ キーワードを覚えておく必要がある"
+  },
+  "warningKeywordTooShort": {
+    "message": "キーワードは少なくとも5文字である必要があります"
+  },
+  "modeBannerCodeTitle": {
+    "message": "🎲 ランダムコード付きバナー（推奨）"
+  },
+  "modeBannerCodeDescription": {
+    "message": "訪問するたびに一意の2文字の英数字コード（例：A7、H4、8R）が生成され、バナーと拡張機能アイコンに表示されます。両方が一致するか確認するだけです。"
+  },
+  "currentCodeLabel": {
+    "message": "今日のコード："
+  },
+  "btnRegenerateCode": {
+    "message": "新しいコードを生成"
+  },
+  "currentCodeHelp": {
+    "message": "コードは毎日自動的に変更されます。手動で再生成することもできます。"
+  },
+  "modeBannerCodePro1": {
+    "message": "✅ 覚える必要がない"
+  },
+  "modeBannerCodePro2": {
+    "message": "✅ 素早い検証（バッジ + バナー）"
+  },
+  "modeBannerCodePro3": {
+    "message": "✅ 訪問ごとに一意のコード"
+  },
+  "modeBannerCodePro4": {
+    "message": "✅ セキュリティとシンプルさの完璧なバランス"
+  },
+  "toastCodeRegenerated": {
+    "message": "コードが正常に再生成されました"
+  },
+  "errorRegeneratingCode": {
+    "message": "⚠️ コードの再生成中にエラーが発生しました"
+  },
+  "showUnknownPages": {
+    "message": "すべてのページの状態を表示"
+  },
+  "showUnknownPagesDescription": {
+    "message": "リストにないページでもバッジを表示する場合は有効にします：🔴（パスワードがある疑わしいページ）または⚪（パスワードがないページ）"
+  },
+  "bannerStyleTitle": {
+    "message": "バナースタイル"
+  },
+  "bannerStyleDescription": {
+    "message": "各バナータイプ（エンタープライズ、コミュニティ、個人）の外観をカスタマイズ"
+  },
+  "bannerStyleModeLabel": {
+    "message": "カラーモード："
+  },
+  "bannerStyleModeSolid": {
+    "message": "単色"
+  },
+  "bannerStyleModeGradient": {
+    "message": "グラデーション"
+  },
+  "bannerStyleModeRandom": {
+    "message": "ランダム"
+  },
+  "bannerStyleSolidColorLabel": {
+    "message": "単色："
+  },
+  "bannerStyleGradientStartLabel": {
+    "message": "グラデーション開始："
+  },
+  "bannerStyleGradientEndLabel": {
+    "message": "グラデーション終了："
+  },
+  "bannerStyleTextColorLabel": {
+    "message": "テキストカラー："
+  },
+  "bannerStyleFontFamilyLabel": {
+    "message": "フォント："
+  },
+  "bannerStyleFontArial": {
+    "message": "Arial"
+  },
+  "bannerStyleFontVerdana": {
+    "message": "Verdana"
+  },
+  "bannerStyleFontGeorgia": {
+    "message": "Georgia"
+  },
+  "bannerStyleFontCourier": {
+    "message": "Courier New"
+  },
+  "bannerStyleFontTimes": {
+    "message": "Times New Roman"
+  },
+  "bannerStylePreviewLabel": {
+    "message": "プレビュー："
+  },
+  "bannerStyleRandomNote": {
+    "message": "ℹ️ ランダムモードでは、バナーが表示されるたびに新しい色/グラデーションが生成されます"
+  },
+  "bannerTypeEnterprise": {
+    "message": "エンタープライズ"
+  },
+  "bannerTypeCommunity": {
+    "message": "コミュニティ"
+  },
+  "bannerTypePersonal": {
+    "message": "個人"
+  },
+  "popupValidationCodeLabel": {
+    "message": "🔐 検証コード："
+  },
+  "popupCodeInfo": {
+    "message": "訪問するたびに一意のランダムコードがバッジとバナーに表示され、真正性を確認します"
+  },
+  "autoAddUnknownLabel": {
+    "message": "🔐 未知のウェブサイトでフォームを送信する場合："
+  },
+  "autoAddUnknownNever": {
+    "message": "何もしない"
+  },
+  "autoAddUnknownAlways": {
+    "message": "自動的に個人リストに追加"
+  },
+  "autoAddUnknownPrompt": {
+    "message": "追加するか尋ねる"
+  },
+  "autoAddUnknownDescription": {
+    "message": "リストにないウェブサイトにログインしたときにShieldSignがどのように反応するかを選択"
+  },
+  "notificationAddToPersonal": {
+    "message": "このウェブサイトを個人リストに追加しますか？"
+  },
+  "notificationAddToPersonalYes": {
+    "message": "はい、追加"
+  },
+  "notificationAddToPersonalNo": {
+    "message": "いいえ"
+  },
+  "notificationSiteAdded": {
+    "message": "ウェブサイトが個人リストに追加されました"
+  }
+}

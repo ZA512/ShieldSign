@@ -1,0 +1,807 @@
+{
+  "extName": {
+    "message": "ShieldSign",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "Xác thực trực quan các trang đăng nhập an toàn thông qua danh sách trắng tên miền",
+    "description": "Extension description"
+  },
+  
+  "appTitle": {
+    "message": "ShieldSign"
+  },
+  "settings": {
+    "message": "Cài đặt"
+  },
+  "refresh": {
+    "message": "Làm mới"
+  },
+  
+  "tabCommunity": {
+    "message": "Nguồn Cộng đồng"
+  },
+  "tabEnterprise": {
+    "message": "Nguồn Doanh nghiệp"
+  },
+  "tabPersonal": {
+    "message": "Nguồn Cá nhân"
+  },
+  "tabSettings": {
+    "message": "Cài đặt"
+  },
+  "tabAbout": {
+    "message": "Giới thiệu"
+  },
+  
+  "officialListTitle": {
+    "message": "Danh sách Chính thức ShieldSign"
+  },
+  "officialListDescription": {
+    "message": "Danh sách chính thức được duy trì bởi nhóm ShieldSign, chứa các dịch vụ web và đám mây phổ biến nhất. Được bật theo mặc định."
+  },
+  "officialListName": {
+    "message": "Danh sách Chính thức ShieldSign"
+  },
+  "officialListInfo": {
+    "message": "Danh sách chính thức (65+ tên miền đã xác thực)"
+  },
+  "disable": {
+    "message": "Tắt"
+  },
+  "enable": {
+    "message": "Bật"
+  },
+  "reinstallOfficialList": {
+    "message": "Cài đặt lại danh sách chính thức"
+  },
+  
+  "communityListsTitle": {
+    "message": "Danh sách Cộng đồng Bổ sung"
+  },
+  "communityListsDescription": {
+    "message": "Thêm các danh sách công khai khác được duy trì bởi cộng đồng (tùy chọn)"
+  },
+  "communityUrlPlaceholder": {
+    "message": "https://example.com/community-list.json"
+  },
+  "add": {
+    "message": "Thêm"
+  },
+  "noAdditionalList": {
+    "message": "Không có danh sách bổ sung nào được cấu hình"
+  },
+  
+  "enterpriseInfoTitle": {
+    "message": "ℹ️ Giới thiệu về Nguồn Doanh nghiệp"
+  },
+  "enterpriseInfoText1": {
+    "message": "Tính năng này dành cho <strong>quản trị viên doanh nghiệp</strong> muốn cung cấp danh sách tên miền đã xác thực cho nhân viên của họ."
+  },
+  "enterpriseInfoText2": {
+    "message": "<strong>Định dạng tên miền:</strong> Sử dụng định dạng đầy đủ bao gồm tên miền phụ và tên miền chính (những gì xuất hiện giữa <code>https://</code> và dấu <code>/</code> đầu tiên)."
+  },
+  "enterpriseInfoExamples": {
+    "message": "<strong>Ví dụ:</strong>"
+  },
+  "enterpriseInfoSecurity": {
+    "message": "⚠️ <strong>Bảo mật:</strong> Lưu trữ danh sách của bạn trên máy chủ nội bộ hoặc riêng tư, <strong>không phải trên URL công khai</strong>."
+  },
+  "enterpriseInfoFormatLabel": {
+    "message": "Định dạng tên miền:"
+  },
+  "enterpriseInfoFormatText": {
+    "message": "Sử dụng định dạng đầy đủ bao gồm tên miền phụ và tên miền chính (những gì xuất hiện giữa <code>https://</code> và dấu <code>/</code> đầu tiên)."
+  },
+  "enterpriseInfoExamplesLabel": {
+    "message": "Ví dụ:"
+  },
+  "enterpriseInfoExample1": {
+    "message": "✅ <code>login.congtytooi.com</code>"
+  },
+  "enterpriseInfoExample2": {
+    "message": "✅ <code>sso.congtytooi.com</code>"
+  },
+  "enterpriseInfoExample3": {
+    "message": "✅ <code>auth.intranet.congtytooi.net</code>"
+  },
+  "enterpriseInfoExample4": {
+    "message": "❌ <code>https://login.congtytooi.com/auth</code> (không bao gồm https:// hoặc đường dẫn)"
+  },
+  
+  "enterpriseListTitle": {
+    "message": "Cấu hình Danh sách Doanh nghiệp"
+  },
+  "enterpriseListDescription": {
+    "message": "Thêm một danh sách xác thực tên miền trên toàn công ty (ưu tiên cao nhất)"
+  },
+  "enterpriseUrlPlaceholder": {
+    "message": "https://intranet.company.com/validated-domains.json"
+  },
+  "noEnterpriseList": {
+    "message": "Không có danh sách doanh nghiệp nào được cấu hình"
+  },
+  
+  "personalDomainsTitle": {
+    "message": "Quản lý Tên miền Cá nhân"
+  },
+  "personalDomainsDescription": {
+    "message": "Thêm các tên miền đáng tin cậy của riêng bạn (ưu tiên cao hơn danh sách cộng đồng)"
+  },
+  "personalDomainPlaceholder": {
+    "message": "login.example.com"
+  },
+  "noPersonalDomain": {
+    "message": "Không có tên miền cá nhân nào được cấu hình"
+  },
+  
+  "importExportTitle": {
+    "message": "Nhập / Xuất"
+  },
+  "importExportDescription": {
+    "message": "Xuất danh sách của bạn để lưu hoặc nhập vào trình duyệt khác"
+  },
+  "exportList": {
+    "message": "Xuất danh sách"
+  },
+  "importList": {
+    "message": "Nhập danh sách"
+  },
+  
+  "generalSettingsTitle": {
+    "message": "Cài đặt Chung"
+  },
+  "language": {
+    "message": "Ngôn ngữ"
+  },
+  "languageDescription": {
+    "message": "Chọn ngôn ngữ giao diện"
+  },
+  "languageAuto": {
+    "message": "Tự động (ngôn ngữ trình duyệt)"
+  },
+  "languageEn": {
+    "message": "English"
+  },
+  "languageFr": {
+    "message": "Français"
+  },
+  "enterpriseMode": {
+    "message": "Chế độ doanh nghiệp"
+  },
+  "enterpriseModeDescription": {
+    "message": "Bật tùy chọn này nếu bạn là quản trị viên và muốn quản lý danh sách tên miền cho tổ chức của mình. Điều này sẽ hiển thị tab \"Nguồn Doanh nghiệp\"."
+  },
+  "checkCN": {
+    "message": "Kiểm tra khớp CN chứng chỉ"
+  },
+  "checkCNDescription": {
+    "message": "Hiển thị cảnh báo nếu CN chứng chỉ không khớp với tên miền (chỉ Firefox)"
+  },
+  "cacheDuration": {
+    "message": "Thời gian lưu bộ nhớ đệm danh sách (giờ)"
+  },
+  "cacheDurationDescription": {
+    "message": "Tần suất cập nhật tự động các danh sách từ xa (mặc định: 24h)"
+  },
+  
+  "bannerColorsTitle": {
+    "message": "Màu Banner"
+  },
+  "enterpriseList": {
+    "message": "Danh sách doanh nghiệp"
+  },
+  "communityList": {
+    "message": "Danh sách cộng đồng"
+  },
+  "personalList": {
+    "message": "Danh sách cá nhân"
+  },
+  
+  "saveSettings": {
+    "message": "Lưu cài đặt"
+  },
+  "resetSettings": {
+    "message": "Đặt lại"
+  },
+  
+  "aboutTitle": {
+    "message": "Giới thiệu về ShieldSign"
+  },
+  "version": {
+    "message": "Phiên bản"
+  },
+  "license": {
+    "message": "Giấy phép"
+  },
+  "description": {
+    "message": "Mô tả"
+  },
+  "aboutDescription": {
+    "message": "Tiện ích mở rộng xác thực trực quan cho các trang đăng nhập an toàn thông qua danh sách trắng tên miền"
+  },
+  "githubRepo": {
+    "message": "Kho GitHub"
+  },
+  "reportBug": {
+    "message": "Báo cáo lỗi"
+  },
+  "documentation": {
+    "message": "Tài liệu"
+  },
+  "contributorsTitle": {
+    "message": "Người đóng góp"
+  },
+  "contributorsText": {
+    "message": "Cảm ơn tất cả những người đóng góp cho dự án ShieldSign"
+  },
+  
+  "pageValidated": {
+    "message": "Trang được xác thực bởi: $LIST_NAME$",
+    "placeholders": {
+      "list_name": {
+        "content": "$1",
+        "example": "Danh sách Chính thức ShieldSign"
+      }
+    }
+  },
+  "personalListDisplay": {
+    "message": "Danh sách cá nhân"
+  },
+  "enterpriseListDisplay": {
+    "message": "Danh sách doanh nghiệp"
+  },
+  
+  "verifying": {
+    "message": "Đang xác thực..."
+  },
+  "pageNotContainPasswordField": {
+    "message": "Trang này không chứa trường mật khẩu"
+  },
+  "approveDomain": {
+    "message": "Phê duyệt tên miền này"
+  },
+  
+  "settingsSaved": {
+    "message": "Cài đặt đã được lưu thành công"
+  },
+  "settingsReset": {
+    "message": "Cài đặt đã được đặt lại"
+  },
+  "listAdded": {
+    "message": "Danh sách đã được thêm thành công"
+  },
+  "listRemoved": {
+    "message": "Danh sách đã được xóa thành công"
+  },
+  "listEnabled": {
+    "message": "Danh sách đã được bật"
+  },
+  "listDisabled": {
+    "message": "Danh sách đã được tắt"
+  },
+  "domainAdded": {
+    "message": "Tên miền đã được thêm thành công"
+  },
+  "domainRemoved": {
+    "message": "Tên miền đã được xóa thành công"
+  },
+  "officialListReinstalled": {
+    "message": "Danh sách chính thức đã được cài đặt lại và cập nhật!"
+  },
+  "listExported": {
+    "message": "Danh sách đã được xuất thành công"
+  },
+  "domainsImported": {
+    "message": "Đã nhập $COUNT$ tên miền",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  
+  "errorInvalidUrl": {
+    "message": "URL không hợp lệ"
+  },
+  "errorInvalidDomain": {
+    "message": "Định dạng tên miền không hợp lệ"
+  },
+  "errorAddingList": {
+    "message": "Lỗi khi thêm danh sách"
+  },
+  "errorRemovingList": {
+    "message": "Lỗi khi xóa danh sách"
+  },
+  "errorModifyingList": {
+    "message": "Lỗi khi sửa đổi danh sách"
+  },
+  "errorAddingDomain": {
+    "message": "Lỗi khi thêm tên miền"
+  },
+  "errorRemovingDomain": {
+    "message": "Lỗi khi xóa tên miền"
+  },
+  "errorLoadingSettings": {
+    "message": "Lỗi khi tải cài đặt"
+  },
+  "errorSavingSettings": {
+    "message": "Lỗi khi lưu cài đặt"
+  },
+  "errorResetting": {
+    "message": "Lỗi khi đặt lại"
+  },
+  "errorReinstalling": {
+    "message": "Lỗi khi cài đặt lại"
+  },
+  "errorExporting": {
+    "message": "Lỗi khi xuất"
+  },
+  "errorImporting": {
+    "message": "Lỗi khi nhập"
+  },
+  "errorInvalidFile": {
+    "message": "Định dạng tệp không hợp lệ"
+  },
+  "errorNoValidDomain": {
+    "message": "Không tìm thấy tên miền hợp lệ"
+  },
+  "errorNoPersonalDomain": {
+    "message": "Không có tên miền cá nhân để xuất"
+  },
+  "errorEnterValidUrl": {
+    "message": "Vui lòng nhập URL hợp lệ"
+  },
+  "errorEnterValidDomain": {
+    "message": "Vui lòng nhập tên miền hợp lệ"
+  },
+  "errorUpdating": {
+    "message": "Lỗi khi cập nhật"
+  },
+  
+  "settingsTitle": {
+    "message": "Cài đặt - ShieldSign"
+  },
+  "headerTitle": {
+    "message": "ShieldSign - Cài đặt"
+  },
+  "officialListSubtitle": {
+    "message": "Danh sách chính thức (65+ tên miền đã xác thực)"
+  },
+  "toggleDisable": {
+    "message": "Tắt"
+  },
+  "toggleEnable": {
+    "message": "Bật"
+  },
+  "reinstallOfficial": {
+    "message": "Cài đặt lại danh sách chính thức"
+  },
+  "communityListTitle": {
+    "message": "Danh sách Cộng đồng Bổ sung"
+  },
+  "communityListDescription": {
+    "message": "Thêm các danh sách công khai khác được duy trì bởi cộng đồng (tùy chọn)"
+  },
+  "noListCommunity": {
+    "message": "Không có danh sách bổ sung nào được cấu hình"
+  },
+  "noListEnterprise": {
+    "message": "Không có danh sách doanh nghiệp nào được cấu hình"
+  },
+  "noListPersonal": {
+    "message": "Không có tên miền cá nhân nào được cấu hình"
+  },
+  "btnAdd": {
+    "message": "Thêm"
+  },
+  "btnSave": {
+    "message": "Lưu cài đặt"
+  },
+  "btnReset": {
+    "message": "Đặt lại"
+  },
+  "btnExport": {
+    "message": "Xuất danh sách"
+  },
+  "btnImport": {
+    "message": "Nhập danh sách"
+  },
+  "colorEnterprise": {
+    "message": "Danh sách doanh nghiệp"
+  },
+  "colorCommunity": {
+    "message": "Danh sách cộng đồng"
+  },
+  "colorPersonal": {
+    "message": "Danh sách cá nhân"
+  },
+  "aboutVersion": {
+    "message": "Phiên bản:"
+  },
+  "aboutLicense": {
+    "message": "Giấy phép:"
+  },
+  "aboutDescriptionText": {
+    "message": "Tiện ích mở rộng xác thực trực quan cho các trang đăng nhập an toàn thông qua danh sách trắng tên miền"
+  },
+  "aboutGithub": {
+    "message": "Kho GitHub"
+  },
+  "aboutBugReport": {
+    "message": "Báo cáo lỗi"
+  },
+  "aboutDocumentation": {
+    "message": "Tài liệu"
+  },
+  "aboutContributors": {
+    "message": "Người đóng góp"
+  },
+  "aboutContributorsText": {
+    "message": "Cảm ơn tất cả những người đóng góp cho dự án ShieldSign"
+  },
+  "aboutPrivacy": {
+    "message": "Quyền riêng tư"
+  },
+  "aboutPrivacyText": {
+    "message": "ShieldSign không thu thập dữ liệu người dùng. Tất cả các xác thực được thực hiện cục bộ trong trình duyệt của bạn."
+  },
+  "btnRemove": {
+    "message": "Xóa"
+  },
+  "toastOfficialEnabled": {
+    "message": "Danh sách chính thức đã được bật"
+  },
+  "toastOfficialDisabled": {
+    "message": "Danh sách chính thức đã được tắt"
+  },
+  "toastOfficialReinstalled": {
+    "message": "Danh sách chính thức đã được cài đặt lại và cập nhật!"
+  },
+  "toastEnterpriseModeEnabled": {
+    "message": "Chế độ doanh nghiệp đã được bật"
+  },
+  "toastEnterpriseModeDisabled": {
+    "message": "Chế độ doanh nghiệp đã được tắt"
+  },
+  "errorLoading": {
+    "message": "Lỗi khi tải cài đặt"
+  },
+  "toastSettingsSaved": {
+    "message": "Cài đặt đã được lưu thành công"
+  },
+  "errorSaving": {
+    "message": "Lỗi khi lưu cài đặt"
+  },
+  "toastSettingsReset": {
+    "message": "Cài đặt đã được đặt lại"
+  },
+  "errorLoadingLists": {
+    "message": "Lỗi khi tải danh sách"
+  },
+  "toastListAdded": {
+    "message": "Danh sách đã được thêm thành công"
+  },
+  "toastListRemoved": {
+    "message": "Danh sách đã được xóa thành công"
+  },
+  "toastListEnabled": {
+    "message": "Danh sách đã được bật"
+  },
+  "toastListDisabled": {
+    "message": "Danh sách đã được tắt"
+  },
+  "errorTogglingList": {
+    "message": "Lỗi khi chuyển đổi danh sách"
+  },
+  "errorLoadingPersonal": {
+    "message": "Lỗi khi tải danh sách cá nhân"
+  },
+  "toastDomainAdded": {
+    "message": "Tên miền đã được thêm thành công"
+  },
+  "toastDomainRemoved": {
+    "message": "Tên miền đã được xóa thành công"
+  },
+  "toastListExported": {
+    "message": "Danh sách đã được xuất thành công"
+  },
+  "toastDomainsImported": {
+    "message": "Đã nhập {count} tên miền"
+  },
+  "enterpriseInfoShort": {
+    "message": "Cung cấp danh sách tên miền đã xác thực cho các nhóm của bạn. Danh sách này có mức độ ưu tiên cao nhất và tăng cường niềm tin của nhân viên."
+  },
+  "btnLearnMore": {
+    "message": "Tìm hiểu thêm"
+  },
+  "btnDownloadExample": {
+    "message": "Tải xuống ví dụ"
+  },
+  "toastExampleDownloaded": {
+    "message": "Ví dụ đã được tải xuống"
+  },
+  "modalEnterpriseTitle": {
+    "message": "🛡️ Nguồn Doanh nghiệp: Bảo vệ Nhân viên của Bạn"
+  },
+  "modalWhyTitle": {
+    "message": "Tại sao nên sử dụng tính năng này?"
+  },
+  "modalWhyText": {
+    "message": "Với tư cách là quản trị viên, bạn có thể cung cấp danh sách các tên miền đăng nhập đã xác thực cho tổ chức của mình. Danh sách này có <strong>mức độ ưu tiên cao nhất</strong> so với tất cả các nguồn khác (cộng đồng, cá nhân). Nhân viên của bạn sẽ thấy banner xanh đặc biệt trên các trang được công ty xác thực, tăng cường niềm tin của họ."
+  },
+  "modalSecurityTitle": {
+    "message": "🔒 Bảo vệ khỏi Lừa đảo và MITM"
+  },
+  "modalSecurityText": {
+    "message": "Tính năng này giúp chống lại:"
+  },
+  "modalSecurityPoint1": {
+    "message": "<strong>Lừa đảo:</strong> Nhân viên của bạn sẽ không thấy banner xác thực trên các trang web giả mạo"
+  },
+  "modalSecurityPoint2": {
+    "message": "<strong>Man-in-the-Middle:</strong> Chỉ các tên miền chính hãng từ danh sách của bạn mới được xác thực"
+  },
+  "modalSecurityPoint3": {
+    "message": "<strong>Đánh cắp danh tính:</strong> Banner doanh nghiệp chỉ rõ ràng rằng đây là trang web được phê duyệt"
+  },
+  "modalFormatTitle": {
+    "message": "📝 Định dạng Tên miền"
+  },
+  "modalFormatText": {
+    "message": "Chỉ sử dụng tên miền đầy đủ (tên miền phụ + tên miền chính), không có giao thức hoặc đường dẫn:"
+  },
+  "modalHostingTitle": {
+    "message": "🔐 Lưu trữ An toàn (QUAN TRỌNG)"
+  },
+  "modalHostingWarning": {
+    "message": "<strong>⚠️ KHÔNG lưu trữ trên GitHub, GitLab hoặc các dịch vụ công khai!</strong>"
+  },
+  "modalHostingText": {
+    "message": "Để tối đa hóa bảo mật, lưu trữ danh sách JSON của bạn trên:"
+  },
+  "modalHostingOption1": {
+    "message": "<strong>Chỉ máy chủ nội bộ</strong> (chỉ có thể truy cập từ mạng công ty)"
+  },
+  "modalHostingOption2": {
+    "message": "<strong>URL che giấu</strong>: Sử dụng GUID cho tên tệp và thư mục"
+  },
+  "modalHostingExample": {
+    "message": "Ví dụ: <code>https://cdn.example.com/a3f2e8b1-4c5d-6e7f-8a9b-0c1d2e3f4a5b/d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a.json</code>"
+  },
+  "modalMaintenanceTitle": {
+    "message": "🔧 Bảo trì"
+  },
+  "modalMaintenanceText": {
+    "message": "Giữ cho danh sách của bạn được cập nhật bằng cách thêm các tên miền đăng nhập mới được sử dụng bởi tổ chức của bạn (SSO, cổng thông tin nội bộ, ứng dụng SaaS, v.v.)."
+  },
+  "popupCheckingStatus": {
+    "message": "Đang xác thực..."
+  },
+  "popupApproveButton": {
+    "message": "✅ Phê duyệt tên miền này"
+  },
+  "popupSettingsButton": {
+    "message": "Cài đặt"
+  },
+  "popupRefreshButton": {
+    "message": "Làm mới"
+  },
+  "popupNoActivePage": {
+    "message": "Không có trang hoạt động"
+  },
+  "popupNoPasswordField": {
+    "message": "Trang này không chứa trường mật khẩu"
+  },
+  "popupValidated": {
+    "message": "Trang này đã được xác thực"
+  },
+  "popupUnknown": {
+    "message": "Trang này chứa trường mật khẩu nhưng không có trong bất kỳ nguồn đáng tin cậy nào"
+  },
+  "popupLoadError": {
+    "message": "Lỗi tải"
+  },
+  "popupValidatedBy": {
+    "message": "Được xác thực bởi: {0}"
+  },
+  "contentBannerValidated": {
+    "message": "Trang được xác thực bởi: {0}"
+  },
+  "contentPersonalList": {
+    "message": "Danh sách cá nhân"
+  },
+  "contentEnterpriseList": {
+    "message": "Danh sách doanh nghiệp"
+  },
+  "validationSecurityTitle": {
+    "message": "🛡️ Xác thực Chống Lừa đảo"
+  },
+  "validationSecurityDescription": {
+    "message": "ShieldSign hiển thị banner trên các trang đăng nhập để làm cho chúng hiển thị. Cảnh báo: một trang lừa đảo cũng có thể hiển thị banner giả. Để cho phép bạn xác thực trong 1 giây xem banner có thật không, hãy chọn một phương pháp xác thực bên dưới."
+  },
+  "whyTheseOptions": {
+    "message": "💡 Tại sao các tùy chọn này?"
+  },
+  "antiPhishingExplanation": {
+    "message": "Nếu ShieldSign trở nên phổ biến, kẻ tấn công có thể tạo banner xanh giả trên trang lừa đảo của họ. Các tùy chọn này làm cho việc bắt chước <strong>không thể</strong> vì chỉ tiện ích mở rộng của BẠN mới biết từ khóa cá nhân, mã hàng ngày hoặc màu tùy chỉnh của bạn."
+  },
+  "imageComingSoon": {
+    "message": "[Hình ảnh minh họa sắp có]"
+  },
+  "modeBadgeOnlyTitle": {
+    "message": "🔵 Chỉ Huy hiệu (kín đáo)"
+  },
+  "modeBadgeOnlyDescription": {
+    "message": "Không có banner hiển thị. Một chấm màu xuất hiện trên biểu tượng tiện ích mở rộng trên thanh công cụ. Đơn giản và không xâm phạm."
+  },
+  "modeBadgeOnlyPro1": {
+    "message": "✅ Kín đáo, không làm lộn xộn trang"
+  },
+  "modeBadgeOnlyCon1": {
+    "message": "⚠️ Yêu cầu nhìn vào biểu tượng tiện ích mở rộng"
+  },
+  "modeBannerKeywordTitle": {
+    "message": "🔑 Banner với Từ khóa Cá nhân"
+  },
+  "modeBannerKeywordDescription": {
+    "message": "Banner hiển thị từ khóa hoặc cụm từ tùy chỉnh của bạn. Chỉ bạn mới biết từ khóa này, kẻ tấn công không thể đoán."
+  },
+  "customKeywordLabel": {
+    "message": "Từ khóa cá nhân của bạn:"
+  },
+  "customKeywordPlaceholder": {
+    "message": "ví dụ: NgonHaiDangNguyenCuaToi2025"
+  },
+  "customKeywordHelp": {
+    "message": "Chọn một từ hoặc cụm từ dễ nhớ nhưng khó đoán (khuyến nghị tối thiểu 5 ký tự)"
+  },
+  "modeBannerKeywordPro1": {
+    "message": "✅ Xác thực tức thì và cá nhân hóa"
+  },
+  "modeBannerKeywordPro2": {
+    "message": "✅ Không thể bắt chước nếu không biết từ khóa của bạn"
+  },
+  "modeBannerKeywordCon1": {
+    "message": "⚠️ Yêu cầu ghi nhớ từ khóa của bạn"
+  },
+  "warningKeywordTooShort": {
+    "message": "Từ khóa phải chứa ít nhất 5 ký tự"
+  },
+  "modeBannerCodeTitle": {
+    "message": "🎲 Banner với Mã Ngẫu nhiên (khuyến nghị)"
+  },
+  "modeBannerCodeDescription": {
+    "message": "Một mã chữ và số 2 ký tự duy nhất (ví dụ: A7, H4, 8R) được tạo ra mỗi lần truy cập và hiển thị trên banner VÀ biểu tượng tiện ích mở rộng. Chỉ cần kiểm tra xem cả hai có khớp không."
+  },
+  "currentCodeLabel": {
+    "message": "Mã hôm nay:"
+  },
+  "btnRegenerateCode": {
+    "message": "Tạo mã mới"
+  },
+  "currentCodeHelp": {
+    "message": "Mã tự động thay đổi mỗi ngày. Bạn cũng có thể tạo lại thủ công."
+  },
+  "modeBannerCodePro1": {
+    "message": "✅ Không cần ghi nhớ"
+  },
+  "modeBannerCodePro2": {
+    "message": "✅ Xác thực nhanh (huy hiệu + banner)"
+  },
+  "modeBannerCodePro3": {
+    "message": "✅ Mã duy nhất mỗi lần truy cập"
+  },
+  "modeBannerCodePro4": {
+    "message": "✅ Cân bằng hoàn hảo giữa bảo mật và đơn giản"
+  },
+  "toastCodeRegenerated": {
+    "message": "Mã đã được tạo lại thành công"
+  },
+  "errorRegeneratingCode": {
+    "message": "⚠️ Lỗi khi tạo lại mã."
+  },
+  "showUnknownPages": {
+    "message": "Hiển thị trạng thái cho tất cả các trang"
+  },
+  "showUnknownPagesDescription": {
+    "message": "Bật để xem huy hiệu ngay cả trên các trang không được liệt kê: 🔴 (trang đáng ngờ có mật khẩu) hoặc ⚪ (trang không có mật khẩu)."
+  },
+  "bannerStyleTitle": {
+    "message": "Kiểu Banner"
+  },
+  "bannerStyleDescription": {
+    "message": "Tùy chỉnh giao diện của mỗi loại banner (Doanh nghiệp, Cộng đồng, Cá nhân)."
+  },
+  "bannerStyleModeLabel": {
+    "message": "Chế độ màu:"
+  },
+  "bannerStyleModeSolid": {
+    "message": "Màu đặc"
+  },
+  "bannerStyleModeGradient": {
+    "message": "Chuyển màu"
+  },
+  "bannerStyleModeRandom": {
+    "message": "Ngẫu nhiên"
+  },
+  "bannerStyleSolidColorLabel": {
+    "message": "Màu đặc:"
+  },
+  "bannerStyleGradientStartLabel": {
+    "message": "Bắt đầu chuyển màu:"
+  },
+  "bannerStyleGradientEndLabel": {
+    "message": "Kết thúc chuyển màu:"
+  },
+  "bannerStyleTextColorLabel": {
+    "message": "Màu chữ:"
+  },
+  "bannerStyleFontFamilyLabel": {
+    "message": "Phông chữ:"
+  },
+  "bannerStyleFontArial": {
+    "message": "Arial"
+  },
+  "bannerStyleFontVerdana": {
+    "message": "Verdana"
+  },
+  "bannerStyleFontGeorgia": {
+    "message": "Georgia"
+  },
+  "bannerStyleFontCourier": {
+    "message": "Courier New"
+  },
+  "bannerStyleFontTimes": {
+    "message": "Times New Roman"
+  },
+  "bannerStylePreviewLabel": {
+    "message": "Xem trước:"
+  },
+  "bannerStyleRandomNote": {
+    "message": "ℹ️ Ở chế độ ngẫu nhiên, màu/chuyển màu mới được tạo ra mỗi khi banner được hiển thị."
+  },
+  "bannerTypeEnterprise": {
+    "message": "Doanh nghiệp"
+  },
+  "bannerTypeCommunity": {
+    "message": "Cộng đồng"
+  },
+  "bannerTypePersonal": {
+    "message": "Cá nhân"
+  },
+  "popupValidationCodeLabel": {
+    "message": "🔐 Mã xác thực:"
+  },
+  "popupCodeInfo": {
+    "message": "Một mã ngẫu nhiên duy nhất xuất hiện trong huy hiệu và banner mỗi lần truy cập để xác nhận tính xác thực."
+  },
+  "autoAddUnknownLabel": {
+    "message": "🔐 Khi gửi biểu mẫu trên trang web không xác định:"
+  },
+  "autoAddUnknownNever": {
+    "message": "Không làm gì"
+  },
+  "autoAddUnknownAlways": {
+    "message": "Tự động thêm vào danh sách cá nhân của tôi"
+  },
+  "autoAddUnknownPrompt": {
+    "message": "Hỏi tôi có muốn thêm không"
+  },
+  "autoAddUnknownDescription": {
+    "message": "Chọn cách ShieldSign phản ứng khi bạn đăng nhập vào trang web không có trong bất kỳ danh sách nào."
+  },
+  "notificationAddToPersonal": {
+    "message": "Thêm trang web này vào danh sách cá nhân của bạn?"
+  },
+  "notificationAddToPersonalYes": {
+    "message": "Có, thêm"
+  },
+  "notificationAddToPersonalNo": {
+    "message": "Không"
+  },
+  "notificationSiteAdded": {
+    "message": "Trang web đã được thêm vào danh sách cá nhân của bạn"
+  }
+}

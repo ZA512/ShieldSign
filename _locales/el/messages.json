@@ -1,0 +1,807 @@
+{
+  "extName": {
+    "message": "ShieldSign",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "Οπτική επικύρωση ασφαλών σελίδων σύνδεσης μέσω λευκής λίστας τομέων",
+    "description": "Extension description"
+  },
+  
+  "appTitle": {
+    "message": "ShieldSign"
+  },
+  "settings": {
+    "message": "Ρυθμίσεις"
+  },
+  "refresh": {
+    "message": "Ανανέωση"
+  },
+  
+  "tabCommunity": {
+    "message": "Πηγές κοινότητας"
+  },
+  "tabEnterprise": {
+    "message": "Εταιρικές πηγές"
+  },
+  "tabPersonal": {
+    "message": "Προσωπικές πηγές"
+  },
+  "tabSettings": {
+    "message": "Ρυθμίσεις"
+  },
+  "tabAbout": {
+    "message": "Σχετικά"
+  },
+  
+  "officialListTitle": {
+    "message": "Επίσημη λίστα ShieldSign"
+  },
+  "officialListDescription": {
+    "message": "Επίσημη λίστα που διατηρείται από την ομάδα ShieldSign, περιέχει τις πιο δημοφιλείς υπηρεσίες web και cloud. Ενεργοποιημένη από προεπιλογή."
+  },
+  "officialListName": {
+    "message": "Επίσημη λίστα ShieldSign"
+  },
+  "officialListInfo": {
+    "message": "Επίσημη λίστα (65+ επαληθευμένοι τομείς)"
+  },
+  "disable": {
+    "message": "Απενεργοποίηση"
+  },
+  "enable": {
+    "message": "Ενεργοποίηση"
+  },
+  "reinstallOfficialList": {
+    "message": "Επανεγκατάσταση επίσημης λίστας"
+  },
+  
+  "communityListsTitle": {
+    "message": "Πρόσθετες λίστες κοινότητας"
+  },
+  "communityListsDescription": {
+    "message": "Προσθέστε άλλες δημόσιες λίστες που διατηρούνται από την κοινότητα (προαιρετικό)"
+  },
+  "communityUrlPlaceholder": {
+    "message": "https://example.com/community-list.json"
+  },
+  "add": {
+    "message": "Προσθήκη"
+  },
+  "noAdditionalList": {
+    "message": "Δεν έχουν ρυθμιστεί πρόσθετες λίστες"
+  },
+  
+  "enterpriseInfoTitle": {
+    "message": "ℹ️ Σχετικά με τις εταιρικές πηγές"
+  },
+  "enterpriseInfoText1": {
+    "message": "Αυτή η λειτουργία προορίζεται για <strong>διαχειριστές επιχειρήσεων</strong> που θέλουν να παρέχουν στους υπαλλήλους τους μια λίστα επαληθευμένων τομέων."
+  },
+  "enterpriseInfoText2": {
+    "message": "<strong>Μορφή τομέα:</strong> Χρησιμοποιήστε την πλήρη μορφή με υποτομέα και κύριο τομέα (αυτό που εμφανίζεται μεταξύ <code>https://</code> και του πρώτου <code>/</code>)."
+  },
+  "enterpriseInfoExamples": {
+    "message": "<strong>Παραδείγματα:</strong>"
+  },
+  "enterpriseInfoSecurity": {
+    "message": "⚠️ <strong>Ασφάλεια:</strong> Φιλοξενήστε τη λίστα σας σε εσωτερικό ή ιδιωτικό διακομιστή, <strong>όχι σε δημόσιο URL</strong>."
+  },
+  "enterpriseInfoFormatLabel": {
+    "message": "Μορφή τομέα:"
+  },
+  "enterpriseInfoFormatText": {
+    "message": "Χρησιμοποιήστε την πλήρη μορφή με υποτομέα και κύριο τομέα (αυτό που εμφανίζεται μεταξύ <code>https://</code> και του πρώτου <code>/</code>)."
+  },
+  "enterpriseInfoExamplesLabel": {
+    "message": "Παραδείγματα:"
+  },
+  "enterpriseInfoExample1": {
+    "message": "✅ <code>login.mycompany.com</code>"
+  },
+  "enterpriseInfoExample2": {
+    "message": "✅ <code>sso.mycompany.com</code>"
+  },
+  "enterpriseInfoExample3": {
+    "message": "✅ <code>auth.intranet.mycompany.net</code>"
+  },
+  "enterpriseInfoExample4": {
+    "message": "❌ <code>https://login.mycompany.com/auth</code> (χωρίς https:// ή διαδρομή)"
+  },
+  
+  "enterpriseListTitle": {
+    "message": "Διαμόρφωση εταιρικής λίστας"
+  },
+  "enterpriseListDescription": {
+    "message": "Προσθέστε μια λίστα επικύρωσης τομέων σε εταιρικό επίπεδο (υψηλότερη προτεραιότητα)"
+  },
+  "enterpriseUrlPlaceholder": {
+    "message": "https://intranet.company.com/verified-domains.json"
+  },
+  "noEnterpriseList": {
+    "message": "Δεν έχει ρυθμιστεί εταιρική λίστα"
+  },
+  
+  "personalDomainsTitle": {
+    "message": "Διαχείριση προσωπικών τομέων"
+  },
+  "personalDomainsDescription": {
+    "message": "Προσθέστε τους δικούς σας αξιόπιστους τομείς (υψηλότερη προτεραιότητα από τις λίστες κοινότητας)"
+  },
+  "personalDomainPlaceholder": {
+    "message": "login.example.com"
+  },
+  "noPersonalDomain": {
+    "message": "Δεν έχουν ρυθμιστεί προσωπικοί τομείς"
+  },
+  
+  "importExportTitle": {
+    "message": "Εισαγωγή / Εξαγωγή"
+  },
+  "importExportDescription": {
+    "message": "Εξάγετε τη λίστα σας για αντίγραφο ασφαλείας ή εισάγετε σε άλλο πρόγραμμα περιήγησης"
+  },
+  "exportList": {
+    "message": "Εξαγωγή λίστας"
+  },
+  "importList": {
+    "message": "Εισαγωγή λίστας"
+  },
+  
+  "generalSettingsTitle": {
+    "message": "Γενικές ρυθμίσεις"
+  },
+  "language": {
+    "message": "Γλώσσα"
+  },
+  "languageDescription": {
+    "message": "Επιλέξτε γλώσσα διεπαφής"
+  },
+  "languageAuto": {
+    "message": "Αυτόματη (γλώσσα προγράμματος περιήγησης)"
+  },
+  "languageEn": {
+    "message": "English"
+  },
+  "languageFr": {
+    "message": "Français"
+  },
+  "enterpriseMode": {
+    "message": "Εταιρική λειτουργία"
+  },
+  "enterpriseModeDescription": {
+    "message": "Ενεργοποιήστε αυτό εάν είστε διαχειριστής και θέλετε να διαχειριστείτε λίστες τομέων για τον οργανισμό σας. Αυτό εμφανίζει την καρτέλα \"Εταιρικές πηγές\"."
+  },
+  "checkCN": {
+    "message": "Έλεγχος αντιστοίχισης CN πιστοποιητικού"
+  },
+  "checkCNDescription": {
+    "message": "Εμφάνιση προειδοποίησης εάν το CN του πιστοποιητικού δεν ταιριάζει με τον τομέα (μόνο Firefox)"
+  },
+  "cacheDuration": {
+    "message": "Διάρκεια προσωρινής αποθήκευσης λίστας (ώρες)"
+  },
+  "cacheDurationDescription": {
+    "message": "Συχνότητα αυτόματων ενημερώσεων απομακρυσμένων λιστών (προεπιλογή: 24ω)"
+  },
+  
+  "bannerColorsTitle": {
+    "message": "Χρώματα banner"
+  },
+  "enterpriseList": {
+    "message": "Εταιρική λίστα"
+  },
+  "communityList": {
+    "message": "Λίστα κοινότητας"
+  },
+  "personalList": {
+    "message": "Προσωπική λίστα"
+  },
+  
+  "saveSettings": {
+    "message": "Αποθήκευση ρυθμίσεων"
+  },
+  "resetSettings": {
+    "message": "Επαναφορά"
+  },
+  
+  "aboutTitle": {
+    "message": "Σχετικά με το ShieldSign"
+  },
+  "version": {
+    "message": "Έκδοση"
+  },
+  "license": {
+    "message": "Άδεια"
+  },
+  "description": {
+    "message": "Περιγραφή"
+  },
+  "aboutDescription": {
+    "message": "Επέκταση οπτικής επικύρωσης για ασφαλείς σελίδες σύνδεσης μέσω λευκής λίστας τομέων"
+  },
+  "githubRepo": {
+    "message": "Αποθετήριο GitHub"
+  },
+  "reportBug": {
+    "message": "Αναφορά σφάλματος"
+  },
+  "documentation": {
+    "message": "Τεκμηρίωση"
+  },
+  "contributorsTitle": {
+    "message": "Συνεισφέροντες"
+  },
+  "contributorsText": {
+    "message": "Ευχαριστούμε όλους όσοι συνεισφέρουν στο έργο ShieldSign"
+  },
+  
+  "pageValidated": {
+    "message": "Σελίδα επαληθευμένη από: $LIST_NAME$",
+    "placeholders": {
+      "list_name": {
+        "content": "$1",
+        "example": "Επίσημη λίστα ShieldSign"
+      }
+    }
+  },
+  "personalListDisplay": {
+    "message": "Προσωπική λίστα"
+  },
+  "enterpriseListDisplay": {
+    "message": "Εταιρική λίστα"
+  },
+  
+  "verifying": {
+    "message": "Επαλήθευση..."
+  },
+  "pageNotContainPasswordField": {
+    "message": "Αυτή η σελίδα δεν περιέχει πεδίο κωδικού πρόσβασης"
+  },
+  "approveDomain": {
+    "message": "Έγκριση αυτού του τομέα"
+  },
+  
+  "settingsSaved": {
+    "message": "Οι ρυθμίσεις αποθηκεύτηκαν επιτυχώς"
+  },
+  "settingsReset": {
+    "message": "Οι ρυθμίσεις επαναφέρθηκαν"
+  },
+  "listAdded": {
+    "message": "Η λίστα προστέθηκε επιτυχώς"
+  },
+  "listRemoved": {
+    "message": "Η λίστα αφαιρέθηκε επιτυχώς"
+  },
+  "listEnabled": {
+    "message": "Η λίστα ενεργοποιήθηκε"
+  },
+  "listDisabled": {
+    "message": "Η λίστα απενεργοποιήθηκε"
+  },
+  "domainAdded": {
+    "message": "Ο τομέας προστέθηκε επιτυχώς"
+  },
+  "domainRemoved": {
+    "message": "Ο τομέας αφαιρέθηκε επιτυχώς"
+  },
+  "officialListReinstalled": {
+    "message": "Η επίσημη λίστα επανεγκαταστάθηκε και ενημερώθηκε!"
+  },
+  "listExported": {
+    "message": "Η λίστα εξήχθη επιτυχώς"
+  },
+  "domainsImported": {
+    "message": "$COUNT$ τομείς εισήχθησαν",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  
+  "errorInvalidUrl": {
+    "message": "Μη έγκυρο URL"
+  },
+  "errorInvalidDomain": {
+    "message": "Μη έγκυρη μορφή τομέα"
+  },
+  "errorAddingList": {
+    "message": "Σφάλμα κατά την προσθήκη λίστας"
+  },
+  "errorRemovingList": {
+    "message": "Σφάλμα κατά την αφαίρεση λίστας"
+  },
+  "errorModifyingList": {
+    "message": "Σφάλμα κατά την τροποποίηση λίστας"
+  },
+  "errorAddingDomain": {
+    "message": "Σφάλμα κατά την προσθήκη τομέα"
+  },
+  "errorRemovingDomain": {
+    "message": "Σφάλμα κατά την αφαίρεση τομέα"
+  },
+  "errorLoadingSettings": {
+    "message": "Σφάλμα κατά τη φόρτωση ρυθμίσεων"
+  },
+  "errorSavingSettings": {
+    "message": "Σφάλμα κατά την αποθήκευση ρυθμίσεων"
+  },
+  "errorResetting": {
+    "message": "Σφάλμα κατά την επαναφορά"
+  },
+  "errorReinstalling": {
+    "message": "Σφάλμα κατά την επανεγκατάσταση"
+  },
+  "errorExporting": {
+    "message": "Σφάλμα κατά την εξαγωγή"
+  },
+  "errorImporting": {
+    "message": "Σφάλμα κατά την εισαγωγή"
+  },
+  "errorInvalidFile": {
+    "message": "Μη έγκυρη μορφή αρχείου"
+  },
+  "errorNoValidDomain": {
+    "message": "Δεν βρέθηκε έγκυρος τομέας"
+  },
+  "errorNoPersonalDomain": {
+    "message": "Δεν υπάρχουν προσωπικοί τομείς για εξαγωγή"
+  },
+  "errorEnterValidUrl": {
+    "message": "Εισαγάγετε ένα έγκυρο URL"
+  },
+  "errorEnterValidDomain": {
+    "message": "Εισαγάγετε έναν έγκυρο τομέα"
+  },
+  "errorUpdating": {
+    "message": "Σφάλμα κατά την ενημέρωση"
+  },
+  
+  "settingsTitle": {
+    "message": "Ρυθμίσεις - ShieldSign"
+  },
+  "headerTitle": {
+    "message": "ShieldSign - Ρυθμίσεις"
+  },
+  "officialListSubtitle": {
+    "message": "Επίσημη λίστα (65+ επαληθευμένοι τομείς)"
+  },
+  "toggleDisable": {
+    "message": "Απενεργοποίηση"
+  },
+  "toggleEnable": {
+    "message": "Ενεργοποίηση"
+  },
+  "reinstallOfficial": {
+    "message": "Επανεγκατάσταση επίσημης λίστας"
+  },
+  "communityListTitle": {
+    "message": "Πρόσθετες λίστες κοινότητας"
+  },
+  "communityListDescription": {
+    "message": "Προσθέστε άλλες δημόσιες λίστες που διατηρούνται από την κοινότητα (προαιρετικό)"
+  },
+  "noListCommunity": {
+    "message": "Δεν έχουν ρυθμιστεί πρόσθετες λίστες"
+  },
+  "noListEnterprise": {
+    "message": "Δεν έχει ρυθμιστεί εταιρική λίστα"
+  },
+  "noListPersonal": {
+    "message": "Δεν έχουν ρυθμιστεί προσωπικοί τομείς"
+  },
+  "btnAdd": {
+    "message": "Προσθήκη"
+  },
+  "btnSave": {
+    "message": "Αποθήκευση ρυθμίσεων"
+  },
+  "btnReset": {
+    "message": "Επαναφορά"
+  },
+  "btnExport": {
+    "message": "Εξαγωγή λίστας"
+  },
+  "btnImport": {
+    "message": "Εισαγωγή λίστας"
+  },
+  "colorEnterprise": {
+    "message": "Εταιρική λίστα"
+  },
+  "colorCommunity": {
+    "message": "Λίστα κοινότητας"
+  },
+  "colorPersonal": {
+    "message": "Προσωπική λίστα"
+  },
+  "aboutVersion": {
+    "message": "Έκδοση:"
+  },
+  "aboutLicense": {
+    "message": "Άδεια:"
+  },
+  "aboutDescriptionText": {
+    "message": "Επέκταση οπτικής επικύρωσης για ασφαλείς σελίδες σύνδεσης μέσω λευκής λίστας τομέων"
+  },
+  "aboutGithub": {
+    "message": "Αποθετήριο GitHub"
+  },
+  "aboutBugReport": {
+    "message": "Αναφορά σφάλματος"
+  },
+  "aboutDocumentation": {
+    "message": "Τεκμηρίωση"
+  },
+  "aboutContributors": {
+    "message": "Συνεισφέροντες"
+  },
+  "aboutContributorsText": {
+    "message": "Ευχαριστούμε όλους όσοι συνεισφέρουν στο έργο ShieldSign"
+  },
+  "aboutPrivacy": {
+    "message": "Απόρρητο"
+  },
+  "aboutPrivacyText": {
+    "message": "Το ShieldSign δεν συλλέγει δεδομένα χρήστη. Όλη η επικύρωση γίνεται τοπικά στο πρόγραμμα περιήγησής σας."
+  },
+  "btnRemove": {
+    "message": "Αφαίρεση"
+  },
+  "toastOfficialEnabled": {
+    "message": "Η επίσημη λίστα ενεργοποιήθηκε"
+  },
+  "toastOfficialDisabled": {
+    "message": "Η επίσημη λίστα απενεργοποιήθηκε"
+  },
+  "toastOfficialReinstalled": {
+    "message": "Η επίσημη λίστα επανεγκαταστάθηκε και ενημερώθηκε!"
+  },
+  "toastEnterpriseModeEnabled": {
+    "message": "Η εταιρική λειτουργία ενεργοποιήθηκε"
+  },
+  "toastEnterpriseModeDisabled": {
+    "message": "Η εταιρική λειτουργία απενεργοποιήθηκε"
+  },
+  "errorLoading": {
+    "message": "Σφάλμα κατά τη φόρτωση ρυθμίσεων"
+  },
+  "toastSettingsSaved": {
+    "message": "Οι ρυθμίσεις αποθηκεύτηκαν επιτυχώς"
+  },
+  "errorSaving": {
+    "message": "Σφάλμα κατά την αποθήκευση ρυθμίσεων"
+  },
+  "toastSettingsReset": {
+    "message": "Οι ρυθμίσεις επαναφέρθηκαν"
+  },
+  "errorLoadingLists": {
+    "message": "Σφάλμα κατά τη φόρτωση λιστών"
+  },
+  "toastListAdded": {
+    "message": "Η λίστα προστέθηκε επιτυχώς"
+  },
+  "toastListRemoved": {
+    "message": "Η λίστα αφαιρέθηκε επιτυχώς"
+  },
+  "toastListEnabled": {
+    "message": "Η λίστα ενεργοποιήθηκε"
+  },
+  "toastListDisabled": {
+    "message": "Η λίστα απενεργοποιήθηκε"
+  },
+  "errorTogglingList": {
+    "message": "Σφάλμα κατά την εναλλαγή λίστας"
+  },
+  "errorLoadingPersonal": {
+    "message": "Σφάλμα κατά τη φόρτωση προσωπικής λίστας"
+  },
+  "toastDomainAdded": {
+    "message": "Ο τομέας προστέθηκε επιτυχώς"
+  },
+  "toastDomainRemoved": {
+    "message": "Ο τομέας αφαιρέθηκε επιτυχώς"
+  },
+  "toastListExported": {
+    "message": "Η λίστα εξήχθη επιτυχώς"
+  },
+  "toastDomainsImported": {
+    "message": "{count} τομείς εισήχθησαν"
+  },
+  "enterpriseInfoShort": {
+    "message": "Παρέχετε στις ομάδες σας μια λίστα επαληθευμένων τομέων. Αυτή η λίστα έχει την υψηλότερη προτεραιότητα και αυξάνει την εμπιστοσύνη των εργαζομένων."
+  },
+  "btnLearnMore": {
+    "message": "Μάθετε περισσότερα"
+  },
+  "btnDownloadExample": {
+    "message": "Λήψη παραδείγματος"
+  },
+  "toastExampleDownloaded": {
+    "message": "Το παράδειγμα λήφθηκε"
+  },
+  "modalEnterpriseTitle": {
+    "message": "🛡️ Εταιρικές πηγές: Προστατέψτε τους εργαζομένους σας"
+  },
+  "modalWhyTitle": {
+    "message": "Γιατί να χρησιμοποιήσετε αυτή τη λειτουργία;"
+  },
+  "modalWhyText": {
+    "message": "Ως διαχειριστής, μπορείτε να παρέχετε μια λίστα επαληθευμένων τομέων σύνδεσης για τον οργανισμό σας. Αυτή η λίστα έχει <strong>υψηλότερη προτεραιότητα</strong> από όλες τις άλλες πηγές (κοινότητα, προσωπικές). Οι εργαζόμενοί σας θα δουν ένα ειδικό πράσινο banner σε σελίδες επαληθευμένες από την επιχείρηση, αυξάνοντας την εμπιστοσύνη τους."
+  },
+  "modalSecurityTitle": {
+    "message": "🔒 Προστασία από phishing και MITM"
+  },
+  "modalSecurityText": {
+    "message": "Αυτή η λειτουργία βοηθά στην καταπολέμηση:"
+  },
+  "modalSecurityPoint1": {
+    "message": "<strong>Phishing:</strong> Οι εργαζόμενοί σας δεν θα δουν κανένα banner επικύρωσης σε πλαστές σελίδες"
+  },
+  "modalSecurityPoint2": {
+    "message": "<strong>Επίθεση Man-in-the-Middle:</strong> Μόνο γνήσιοι τομείς από τη λίστα σας επαληθεύονται"
+  },
+  "modalSecurityPoint3": {
+    "message": "<strong>Κλοπή ταυτότητας:</strong> Το εταιρικό banner δείχνει σαφώς ότι είναι μια εγκεκριμένη σελίδα"
+  },
+  "modalFormatTitle": {
+    "message": "📝 Μορφή τομέα"
+  },
+  "modalFormatText": {
+    "message": "Χρησιμοποιήστε μόνο πλήρη τομέα (υποτομέας + κύριος τομέας), χωρίς πρωτόκολλο ή διαδρομή:"
+  },
+  "modalHostingTitle": {
+    "message": "🔐 Ασφαλής φιλοξενία (σημαντικό)"
+  },
+  "modalHostingWarning": {
+    "message": "<strong>⚠️ ΜΗΝ φιλοξενείτε σε GitHub, GitLab ή δημόσιες υπηρεσίες!</strong>"
+  },
+  "modalHostingText": {
+    "message": "Για μέγιστη ασφάλεια, φιλοξενήστε τη λίστα JSON σας σε:"
+  },
+  "modalHostingOption1": {
+    "message": "<strong>Μόνο εσωτερικό διακομιστή</strong> (προσβάσιμο μόνο από το εταιρικό δίκτυο)"
+  },
+  "modalHostingOption2": {
+    "message": "<strong>Κρυφό URL</strong>: Χρησιμοποιήστε GUID για ονόματα αρχείων και φακέλων"
+  },
+  "modalHostingExample": {
+    "message": "Παράδειγμα: <code>https://cdn.example.com/a3f2e8b1-4c5d-6e7f-8a9b-0c1d2e3f4a5b/d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a.json</code>"
+  },
+  "modalMaintenanceTitle": {
+    "message": "🔧 Συντήρηση"
+  },
+  "modalMaintenanceText": {
+    "message": "Διατηρήστε τη λίστα σας ενημερωμένη προσθέτοντας νέους τομείς σύνδεσης που χρησιμοποιούνται από τον οργανισμό σας (SSO, εσωτερικές πύλες, εφαρμογές SaaS κ.λπ.)."
+  },
+  "popupCheckingStatus": {
+    "message": "Επαλήθευση..."
+  },
+  "popupApproveButton": {
+    "message": "✅ Έγκριση αυτού του τομέα"
+  },
+  "popupSettingsButton": {
+    "message": "Ρυθμίσεις"
+  },
+  "popupRefreshButton": {
+    "message": "Ανανέωση"
+  },
+  "popupNoActivePage": {
+    "message": "Δεν υπάρχει ενεργή σελίδα"
+  },
+  "popupNoPasswordField": {
+    "message": "Αυτή η σελίδα δεν περιέχει πεδίο κωδικού πρόσβασης"
+  },
+  "popupValidated": {
+    "message": "Αυτή η σελίδα έχει επαληθευτεί"
+  },
+  "popupUnknown": {
+    "message": "Αυτή η σελίδα περιέχει πεδίο κωδικού πρόσβασης αλλά δεν βρίσκεται σε καμία αξιόπιστη πηγή"
+  },
+  "popupLoadError": {
+    "message": "Σφάλμα φόρτωσης"
+  },
+  "popupValidatedBy": {
+    "message": "Επαληθεύτηκε από: {0}"
+  },
+  "contentBannerValidated": {
+    "message": "Σελίδα επαληθευμένη από: {0}"
+  },
+  "contentPersonalList": {
+    "message": "Προσωπική λίστα"
+  },
+  "contentEnterpriseList": {
+    "message": "Εταιρική λίστα"
+  },
+  "validationSecurityTitle": {
+    "message": "🛡️ Επικύρωση κατά του phishing"
+  },
+  "validationSecurityDescription": {
+    "message": "Το ShieldSign εμφανίζει ένα banner σε σελίδες σύνδεσης για να τις κάνει ορατές. Προειδοποίηση: μια σελίδα phishing μπορεί επίσης να εμφανίσει ένα πλαστό banner. Για να μπορέσετε να επαληθεύσετε σε 1 δευτερόλεπτο αν το banner είναι γνήσιο, επιλέξτε μια μέθοδο επικύρωσης παρακάτω."
+  },
+  "whyTheseOptions": {
+    "message": "💡 Γιατί αυτές οι επιλογές;"
+  },
+  "antiPhishingExplanation": {
+    "message": "Εάν το ShieldSign γίνει δημοφιλές, οι επιτιθέμενοι μπορούν να δημιουργήσουν ένα πλαστό πράσινο banner στη σελίδα phishing τους. Αυτές οι επιλογές καθιστούν την απομίμηση <strong>αδύνατη</strong> επειδή μόνο Η ΔΙΚΗ ΣΑΣ επέκταση γνωρίζει τον προσωπικό σας κωδικό πρόσβασης, τον ημερήσιο κωδικό ή το προσαρμοσμένο χρώμα."
+  },
+  "imageComingSoon": {
+    "message": "[Εικονογράφηση σύντομα]"
+  },
+  "modeBadgeOnlyTitle": {
+    "message": "🔵 Μόνο σήμα (διακριτικό)"
+  },
+  "modeBadgeOnlyDescription": {
+    "message": "Χωρίς ορατό banner. Μια έγχρωμη κουκκίδα εμφανίζεται στο εικονίδιο της επέκτασης στη γραμμή εργαλείων. Απλό και διακριτικό."
+  },
+  "modeBadgeOnlyPro1": {
+    "message": "✅ Διακριτικό, δεν επιβαρύνει τη σελίδα"
+  },
+  "modeBadgeOnlyCon1": {
+    "message": "⚠️ Απαιτεί έλεγχο του εικονιδίου της επέκτασης"
+  },
+  "modeBannerKeywordTitle": {
+    "message": "🔑 Banner με προσωπικό κωδικό πρόσβασης"
+  },
+  "modeBannerKeywordDescription": {
+    "message": "Το banner εμφανίζει τον προσαρμοσμένο κωδικό ή φράση σας. Μόνο εσείς γνωρίζετε αυτόν τον κωδικό, οι επιτιθέμενοι δεν μπορούν να τον μαντέψουν."
+  },
+  "customKeywordLabel": {
+    "message": "Προσωπικός σας κωδικός:"
+  },
+  "customKeywordPlaceholder": {
+    "message": "π.χ: ΔυοΚοκκινεςΜαϊμουδες2025"
+  },
+  "customKeywordHelp": {
+    "message": "Επιλέξτε μια λέξη ή φράση που είναι εύκολο να θυμάστε αλλά δύσκολο να μαντέψουν (συνιστώνται τουλάχιστον 5 χαρακτήρες)"
+  },
+  "modeBannerKeywordPro1": {
+    "message": "✅ Άμεση και προσωπική επικύρωση"
+  },
+  "modeBannerKeywordPro2": {
+    "message": "✅ Αδύνατο να απομιμηθεί χωρίς να γνωρίζουν τον κωδικό σας"
+  },
+  "modeBannerKeywordCon1": {
+    "message": "⚠️ Απαιτεί να θυμάστε τον κωδικό σας"
+  },
+  "warningKeywordTooShort": {
+    "message": "Ο κωδικός πρέπει να έχει τουλάχιστον 5 χαρακτήρες"
+  },
+  "modeBannerCodeTitle": {
+    "message": "🎲 Banner με τυχαίο κωδικό (συνιστάται)"
+  },
+  "modeBannerCodeDescription": {
+    "message": "Ένας μοναδικός αλφαριθμητικός κωδικός 2 χαρακτήρων (π.χ. A7, H4, 8R) δημιουργείται σε κάθε επίσκεψη και εμφανίζεται στο banner ΚΑΙ στο εικονίδιο της επέκτασης. Απλά ελέγξτε ότι και τα δύο ταιριάζουν."
+  },
+  "currentCodeLabel": {
+    "message": "Σημερινός κωδικός:"
+  },
+  "btnRegenerateCode": {
+    "message": "Δημιουργία νέου κωδικού"
+  },
+  "currentCodeHelp": {
+    "message": "Ο κωδικός αλλάζει αυτόματα κάθε μέρα. Μπορείτε επίσης να αναδημιουργήσετε χειροκίνητα."
+  },
+  "modeBannerCodePro1": {
+    "message": "✅ Τίποτα να θυμάστε"
+  },
+  "modeBannerCodePro2": {
+    "message": "✅ Γρήγορη επικύρωση (σήμα + banner)"
+  },
+  "modeBannerCodePro3": {
+    "message": "✅ Μοναδικός κωδικός σε κάθε επίσκεψη"
+  },
+  "modeBannerCodePro4": {
+    "message": "✅ Τέλεια ισορροπία μεταξύ ασφάλειας και απλότητας"
+  },
+  "toastCodeRegenerated": {
+    "message": "Ο κωδικός αναδημιουργήθηκε επιτυχώς"
+  },
+  "errorRegeneratingCode": {
+    "message": "⚠️ Σφάλμα κατά την αναδημιουργία κωδικού"
+  },
+  "showUnknownPages": {
+    "message": "Εμφάνιση κατάστασης για όλες τις σελίδες"
+  },
+  "showUnknownPagesDescription": {
+    "message": "Ενεργοποιήστε για να δείτε σήμα ακόμη και σε μη καταχωρημένες σελίδες: 🔴 (ύποπτη σελίδα με κωδικό) ή ⚪ (σελίδα χωρίς κωδικό)"
+  },
+  "bannerStyleTitle": {
+    "message": "Στυλ banner"
+  },
+  "bannerStyleDescription": {
+    "message": "Προσαρμόστε την εμφάνιση κάθε τύπου banner (Εταιρικό, Κοινότητας, Προσωπικό)"
+  },
+  "bannerStyleModeLabel": {
+    "message": "Λειτουργία χρώματος:"
+  },
+  "bannerStyleModeSolid": {
+    "message": "Συμπαγές χρώμα"
+  },
+  "bannerStyleModeGradient": {
+    "message": "Διαβάθμιση"
+  },
+  "bannerStyleModeRandom": {
+    "message": "Τυχαίο"
+  },
+  "bannerStyleSolidColorLabel": {
+    "message": "Συμπαγές χρώμα:"
+  },
+  "bannerStyleGradientStartLabel": {
+    "message": "Αρχή διαβάθμισης:"
+  },
+  "bannerStyleGradientEndLabel": {
+    "message": "Τέλος διαβάθμισης:"
+  },
+  "bannerStyleTextColorLabel": {
+    "message": "Χρώμα κειμένου:"
+  },
+  "bannerStyleFontFamilyLabel": {
+    "message": "Γραμματοσειρά:"
+  },
+  "bannerStyleFontArial": {
+    "message": "Arial"
+  },
+  "bannerStyleFontVerdana": {
+    "message": "Verdana"
+  },
+  "bannerStyleFontGeorgia": {
+    "message": "Georgia"
+  },
+  "bannerStyleFontCourier": {
+    "message": "Courier New"
+  },
+  "bannerStyleFontTimes": {
+    "message": "Times New Roman"
+  },
+  "bannerStylePreviewLabel": {
+    "message": "Προεπισκόπηση:"
+  },
+  "bannerStyleRandomNote": {
+    "message": "ℹ️ Σε τυχαία λειτουργία, δημιουργείται νέο χρώμα/διαβάθμιση κάθε φορά που εμφανίζεται το banner"
+  },
+  "bannerTypeEnterprise": {
+    "message": "Εταιρικό"
+  },
+  "bannerTypeCommunity": {
+    "message": "Κοινότητας"
+  },
+  "bannerTypePersonal": {
+    "message": "Προσωπικό"
+  },
+  "popupValidationCodeLabel": {
+    "message": "🔐 Κωδικός επικύρωσης:"
+  },
+  "popupCodeInfo": {
+    "message": "Ένας μοναδικός τυχαίος κωδικός εμφανίζεται στο σήμα και το banner σε κάθε επίσκεψη για επιβεβαίωση της γνησιότητας"
+  },
+  "autoAddUnknownLabel": {
+    "message": "🔐 Κατά την υποβολή φόρμας σε άγνωστη σελίδα:"
+  },
+  "autoAddUnknownNever": {
+    "message": "Μην κάνετε τίποτα"
+  },
+  "autoAddUnknownAlways": {
+    "message": "Αυτόματη προσθήκη στην προσωπική μου λίστα"
+  },
+  "autoAddUnknownPrompt": {
+    "message": "Ρωτήστε με αν θέλω να προσθέσω"
+  },
+  "autoAddUnknownDescription": {
+    "message": "Επιλέξτε πώς αντιδρά το ShieldSign όταν συνδέεστε σε μια σελίδα που δεν βρίσκεται σε καμία λίστα"
+  },
+  "notificationAddToPersonal": {
+    "message": "Προσθήκη αυτής της σελίδας στην προσωπική σας λίστα;"
+  },
+  "notificationAddToPersonalYes": {
+    "message": "Ναι, προσθήκη"
+  },
+  "notificationAddToPersonalNo": {
+    "message": "Όχι"
+  },
+  "notificationSiteAdded": {
+    "message": "Η σελίδα προστέθηκε στην προσωπική σας λίστα"
+  }
+}

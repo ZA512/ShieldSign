@@ -1,0 +1,807 @@
+{
+  "extName": {
+    "message": "ShieldSign",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "Tabbatar da gani na shafukan shiga masu aminci ta hanyar jerin fari na yanki",
+    "description": "Extension description"
+  },
+  
+  "appTitle": {
+    "message": "ShieldSign"
+  },
+  "settings": {
+    "message": "Saitunan"
+  },
+  "refresh": {
+    "message": "Sabunta"
+  },
+  
+  "tabCommunity": {
+    "message": "Albarkatun Al'umma"
+  },
+  "tabEnterprise": {
+    "message": "Albarkatun Kasuwanci"
+  },
+  "tabPersonal": {
+    "message": "Albarkatun Sirri"
+  },
+  "tabSettings": {
+    "message": "Saitunan"
+  },
+  "tabAbout": {
+    "message": "Game da"
+  },
+  
+  "officialListTitle": {
+    "message": "Jerin ShieldSign na hukuma"
+  },
+  "officialListDescription": {
+    "message": "Jerin hukuma wanda ƙungiyar ShieldSign ke kula da shi, mai ƙunshe shahararrun sabis na yanar gizo da girgije. An kunna shi ta asali."
+  },
+  "officialListName": {
+    "message": "Jerin ShieldSign na hukuma"
+  },
+  "officialListInfo": {
+    "message": "Jerin hukuma (65+ yankuna da aka tabbatar)"
+  },
+  "disable": {
+    "message": "Kashe"
+  },
+  "enable": {
+    "message": "Kunna"
+  },
+  "reinstallOfficialList": {
+    "message": "Sake shigar da jerin hukuma"
+  },
+  
+  "communityListsTitle": {
+    "message": "Ƙarin jerin al'umma"
+  },
+  "communityListsDescription": {
+    "message": "Ƙara wasu jerin jama'a da al'umma ke kula da su (na zaɓi)"
+  },
+  "communityUrlPlaceholder": {
+    "message": "https://example.com/community-list.json"
+  },
+  "add": {
+    "message": "Ƙara"
+  },
+  "noAdditionalList": {
+    "message": "Babu ƙarin jerin da aka saita"
+  },
+  
+  "enterpriseInfoTitle": {
+    "message": "ℹ️ Game da albarkatun kasuwanci"
+  },
+  "enterpriseInfoText1": {
+    "message": "Wannan fasalin an yi shi don <strong>masu gudanar da kasuwanci</strong> waɗanda ke son samar wa ma'aikatansu jerin yankuna da aka tabbatar."
+  },
+  "enterpriseInfoText2": {
+    "message": "<strong>Tsarin yanki:</strong> Yi amfani da cikakken tsari tare da ƙaramin yanki da babban yanki (abin da ke bayyana tsakanin <code>https://</code> da farkon <code>/</code>)."
+  },
+  "enterpriseInfoExamples": {
+    "message": "<strong>Misalai:</strong>"
+  },
+  "enterpriseInfoSecurity": {
+    "message": "⚠️ <strong>Tsaro:</strong> Ajiye jerinku a kan sabar ciki ko mai zaman kanta, <strong>ba a kan URL na jama'a ba</strong>."
+  },
+  "enterpriseInfoFormatLabel": {
+    "message": "Tsarin yanki:"
+  },
+  "enterpriseInfoFormatText": {
+    "message": "Yi amfani da cikakken tsari tare da ƙaramin yanki da babban yanki (abin da ke bayyana tsakanin <code>https://</code> da farkon <code>/</code>)."
+  },
+  "enterpriseInfoExamplesLabel": {
+    "message": "Misalai:"
+  },
+  "enterpriseInfoExample1": {
+    "message": "✅ <code>login.kamfani.com</code>"
+  },
+  "enterpriseInfoExample2": {
+    "message": "✅ <code>sso.kamfani.com</code>"
+  },
+  "enterpriseInfoExample3": {
+    "message": "✅ <code>auth.intranet.kamfani.net</code>"
+  },
+  "enterpriseInfoExample4": {
+    "message": "❌ <code>https://login.kamfani.com/auth</code> (ba tare da https:// ko hanya ba)"
+  },
+  
+  "enterpriseListTitle": {
+    "message": "Tsarin jerin kasuwanci"
+  },
+  "enterpriseListDescription": {
+    "message": "Ƙara jerin tabbatar da yanki na dukan kasuwanci (mafi girman fifiko)"
+  },
+  "enterpriseUrlPlaceholder": {
+    "message": "https://intranet.kamfani.com/yankuna-da-aka-tabbatar.json"
+  },
+  "noEnterpriseList": {
+    "message": "Babu jerin kasuwanci da aka saita"
+  },
+  
+  "personalDomainsTitle": {
+    "message": "Sarrafa yankuna na sirri"
+  },
+  "personalDomainsDescription": {
+    "message": "Ƙara yankuna naku masu aminci (fifiko mafi girma fiye da jerin al'umma)"
+  },
+  "personalDomainPlaceholder": {
+    "message": "login.misali.com"
+  },
+  "noPersonalDomain": {
+    "message": "Babu yankuna na sirri da aka saita"
+  },
+  
+  "importExportTitle": {
+    "message": "Shigo da / Fitarwa"
+  },
+  "importExportDescription": {
+    "message": "Fitar da jerinku don ajiya ko shigo da shi zuwa wani binciken yanar gizo"
+  },
+  "exportList": {
+    "message": "Fitar da jerin"
+  },
+  "importList": {
+    "message": "Shigo da jerin"
+  },
+  
+  "generalSettingsTitle": {
+    "message": "Saitunan gaba ɗaya"
+  },
+  "language": {
+    "message": "Harshe"
+  },
+  "languageDescription": {
+    "message": "Zaɓi harshen dubawa"
+  },
+  "languageAuto": {
+    "message": "Kai tsaye (harshen binciken yanar gizo)"
+  },
+  "languageEn": {
+    "message": "English"
+  },
+  "languageFr": {
+    "message": "Français"
+  },
+  "enterpriseMode": {
+    "message": "Yanayin kasuwanci"
+  },
+  "enterpriseModeDescription": {
+    "message": "Kunna wannan idan kai mai gudanarwa ne kuma kana son sarrafa jerin yankuna don ƙungiyarka. Wannan yana nuna shafin \"Albarkatun Kasuwanci\"."
+  },
+  "checkCN": {
+    "message": "Duba daidaiton CN na takaddun shaida"
+  },
+  "checkCNDescription": {
+    "message": "Nuna gargadi idan CN na takaddun shaida bai dace da yanki ba (Firefox kaɗai)"
+  },
+  "cacheDuration": {
+    "message": "Tsawon lokacin ajiyar jerin (sa'o'i)"
+  },
+  "cacheDurationDescription": {
+    "message": "Yawan sabunta jerin nesa kai tsaye (asali: 24s)"
+  },
+  
+  "bannerColorsTitle": {
+    "message": "Launukan tuta"
+  },
+  "enterpriseList": {
+    "message": "Jerin kasuwanci"
+  },
+  "communityList": {
+    "message": "Jerin al'umma"
+  },
+  "personalList": {
+    "message": "Jerin sirri"
+  },
+  
+  "saveSettings": {
+    "message": "Ajiye saitunan"
+  },
+  "resetSettings": {
+    "message": "Mayar da asali"
+  },
+  
+  "aboutTitle": {
+    "message": "Game da ShieldSign"
+  },
+  "version": {
+    "message": "Sigar"
+  },
+  "license": {
+    "message": "Lasisi"
+  },
+  "description": {
+    "message": "Bayani"
+  },
+  "aboutDescription": {
+    "message": "Ƙarin tabbatar da gani don shafukan shiga masu aminci ta hanyar jerin fari na yanki"
+  },
+  "githubRepo": {
+    "message": "Ma'ajin GitHub"
+  },
+  "reportBug": {
+    "message": "Bayar da rahoton kuskure"
+  },
+  "documentation": {
+    "message": "Takaddun bayanai"
+  },
+  "contributorsTitle": {
+    "message": "Masu ba da gudummawa"
+  },
+  "contributorsText": {
+    "message": "Godiya ga duk waɗanda suka ba da gudummawa ga aikin ShieldSign"
+  },
+  
+  "pageValidated": {
+    "message": "An tabbatar da shafi ta: $LIST_NAME$",
+    "placeholders": {
+      "list_name": {
+        "content": "$1",
+        "example": "Jerin ShieldSign na hukuma"
+      }
+    }
+  },
+  "personalListDisplay": {
+    "message": "Jerin sirri"
+  },
+  "enterpriseListDisplay": {
+    "message": "Jerin kasuwanci"
+  },
+  
+  "verifying": {
+    "message": "Ana tabbatarwa..."
+  },
+  "pageNotContainPasswordField": {
+    "message": "Wannan shafi ba shi da filin kalmar sirri"
+  },
+  "approveDomain": {
+    "message": "Amince da wannan yanki"
+  },
+  
+  "settingsSaved": {
+    "message": "An ajiye saitunan nasara"
+  },
+  "settingsReset": {
+    "message": "An mayar da saitunan zuwa asali"
+  },
+  "listAdded": {
+    "message": "An ƙara jerin nasara"
+  },
+  "listRemoved": {
+    "message": "An cire jerin nasara"
+  },
+  "listEnabled": {
+    "message": "An kunna jerin"
+  },
+  "listDisabled": {
+    "message": "An kashe jerin"
+  },
+  "domainAdded": {
+    "message": "An ƙara yanki nasara"
+  },
+  "domainRemoved": {
+    "message": "An cire yanki nasara"
+  },
+  "officialListReinstalled": {
+    "message": "An sake shigar da jerin hukuma kuma an sabunta shi!"
+  },
+  "listExported": {
+    "message": "An fitar da jerin nasara"
+  },
+  "domainsImported": {
+    "message": "An shigo da yankuna $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  
+  "errorInvalidUrl": {
+    "message": "URL mara inganci"
+  },
+  "errorInvalidDomain": {
+    "message": "Tsarin yanki mara inganci"
+  },
+  "errorAddingList": {
+    "message": "Kuskure wajen ƙara jerin"
+  },
+  "errorRemovingList": {
+    "message": "Kuskure wajen cire jerin"
+  },
+  "errorModifyingList": {
+    "message": "Kuskure wajen gyara jerin"
+  },
+  "errorAddingDomain": {
+    "message": "Kuskure wajen ƙara yanki"
+  },
+  "errorRemovingDomain": {
+    "message": "Kuskure wajen cire yanki"
+  },
+  "errorLoadingSettings": {
+    "message": "Kuskure wajen loda saitunan"
+  },
+  "errorSavingSettings": {
+    "message": "Kuskure wajen ajiye saitunan"
+  },
+  "errorResetting": {
+    "message": "Kuskure wajen mayar da asali"
+  },
+  "errorReinstalling": {
+    "message": "Kuskure wajen sake shigarwa"
+  },
+  "errorExporting": {
+    "message": "Kuskure wajen fitarwa"
+  },
+  "errorImporting": {
+    "message": "Kuskure wajen shigowa"
+  },
+  "errorInvalidFile": {
+    "message": "Tsarin fayil mara inganci"
+  },
+  "errorNoValidDomain": {
+    "message": "Ba a sami yanki mai inganci ba"
+  },
+  "errorNoPersonalDomain": {
+    "message": "Babu yankuna na sirri da za a fitar"
+  },
+  "errorEnterValidUrl": {
+    "message": "Shigar da URL mai inganci"
+  },
+  "errorEnterValidDomain": {
+    "message": "Shigar da yanki mai inganci"
+  },
+  "errorUpdating": {
+    "message": "Kuskure wajen sabuntawa"
+  },
+  
+  "settingsTitle": {
+    "message": "Saitunan - ShieldSign"
+  },
+  "headerTitle": {
+    "message": "ShieldSign - Saitunan"
+  },
+  "officialListSubtitle": {
+    "message": "Jerin hukuma (65+ yankuna da aka tabbatar)"
+  },
+  "toggleDisable": {
+    "message": "Kashe"
+  },
+  "toggleEnable": {
+    "message": "Kunna"
+  },
+  "reinstallOfficial": {
+    "message": "Sake shigar da jerin hukuma"
+  },
+  "communityListTitle": {
+    "message": "Ƙarin jerin al'umma"
+  },
+  "communityListDescription": {
+    "message": "Ƙara wasu jerin jama'a da al'umma ke kula da su (na zaɓi)"
+  },
+  "noListCommunity": {
+    "message": "Babu ƙarin jerin da aka saita"
+  },
+  "noListEnterprise": {
+    "message": "Babu jerin kasuwanci da aka saita"
+  },
+  "noListPersonal": {
+    "message": "Babu yankuna na sirri da aka saita"
+  },
+  "btnAdd": {
+    "message": "Ƙara"
+  },
+  "btnSave": {
+    "message": "Ajiye saitunan"
+  },
+  "btnReset": {
+    "message": "Mayar da asali"
+  },
+  "btnExport": {
+    "message": "Fitar da jerin"
+  },
+  "btnImport": {
+    "message": "Shigo da jerin"
+  },
+  "colorEnterprise": {
+    "message": "Jerin kasuwanci"
+  },
+  "colorCommunity": {
+    "message": "Jerin al'umma"
+  },
+  "colorPersonal": {
+    "message": "Jerin sirri"
+  },
+  "aboutVersion": {
+    "message": "Sigar:"
+  },
+  "aboutLicense": {
+    "message": "Lasisi:"
+  },
+  "aboutDescriptionText": {
+    "message": "Ƙarin tabbatar da gani don shafukan shiga masu aminci ta hanyar jerin fari na yanki"
+  },
+  "aboutGithub": {
+    "message": "Ma'ajin GitHub"
+  },
+  "aboutBugReport": {
+    "message": "Bayar da rahoton kuskure"
+  },
+  "aboutDocumentation": {
+    "message": "Takaddun bayanai"
+  },
+  "aboutContributors": {
+    "message": "Masu ba da gudummawa"
+  },
+  "aboutContributorsText": {
+    "message": "Godiya ga duk waɗanda suka ba da gudummawa ga aikin ShieldSign"
+  },
+  "aboutPrivacy": {
+    "message": "Sirri"
+  },
+  "aboutPrivacyText": {
+    "message": "ShieldSign baya tattara bayanan mai amfani. Duk tabbbatarwa yana faruwa a cikin binciken yanar gizonku."
+  },
+  "btnRemove": {
+    "message": "Cire"
+  },
+  "toastOfficialEnabled": {
+    "message": "An kunna jerin hukuma"
+  },
+  "toastOfficialDisabled": {
+    "message": "An kashe jerin hukuma"
+  },
+  "toastOfficialReinstalled": {
+    "message": "An sake shigar da jerin hukuma kuma an sabunta shi!"
+  },
+  "toastEnterpriseModeEnabled": {
+    "message": "An kunna yanayin kasuwanci"
+  },
+  "toastEnterpriseModeDisabled": {
+    "message": "An kashe yanayin kasuwanci"
+  },
+  "errorLoading": {
+    "message": "Kuskure wajen loda saitunan"
+  },
+  "toastSettingsSaved": {
+    "message": "An ajiye saitunan nasara"
+  },
+  "errorSaving": {
+    "message": "Kuskure wajen ajiye saitunan"
+  },
+  "toastSettingsReset": {
+    "message": "An mayar da saitunan zuwa asali"
+  },
+  "errorLoadingLists": {
+    "message": "Kuskure wajen loda jerin"
+  },
+  "toastListAdded": {
+    "message": "An ƙara jerin nasara"
+  },
+  "toastListRemoved": {
+    "message": "An cire jerin nasara"
+  },
+  "toastListEnabled": {
+    "message": "An kunna jerin"
+  },
+  "toastListDisabled": {
+    "message": "An kashe jerin"
+  },
+  "errorTogglingList": {
+    "message": "Kuskure wajen canza jerin"
+  },
+  "errorLoadingPersonal": {
+    "message": "Kuskure wajen loda jerin sirri"
+  },
+  "toastDomainAdded": {
+    "message": "An ƙara yanki nasara"
+  },
+  "toastDomainRemoved": {
+    "message": "An cire yanki nasara"
+  },
+  "toastListExported": {
+    "message": "An fitar da jerin nasara"
+  },
+  "toastDomainsImported": {
+    "message": "An shigo da yankuna {count}"
+  },
+  "enterpriseInfoShort": {
+    "message": "Bada ƙungiyarka jerin yankuna da aka tabbatar. Wannan jerin yana da fifiko mafi girma kuma yana ƙara amincewa ga ma'aikata."
+  },
+  "btnLearnMore": {
+    "message": "Koyi ƙari"
+  },
+  "btnDownloadExample": {
+    "message": "Sauke misali"
+  },
+  "toastExampleDownloaded": {
+    "message": "An sauke misali"
+  },
+  "modalEnterpriseTitle": {
+    "message": "🛡️ Albarkatun kasuwanci: Kare ma'aikatanka"
+  },
+  "modalWhyTitle": {
+    "message": "Me yasa za a yi amfani da wannan fasali?"
+  },
+  "modalWhyText": {
+    "message": "A matsayin mai gudanarwa, zaka iya samar da jerin yankuna na shiga da aka tabbatar don ƙungiyarka. Wannan jerin yana da <strong>fifiko mafi girma</strong> akan duk sauran albarkatun (al'umma, sirri). Ma'aikatanka za su ga tuta ta musamman kore a kan shafukan da kasuwanci ta tabbatar, yana ƙara amincewa da su."
+  },
+  "modalSecurityTitle": {
+    "message": "🔒 Kariya daga phishing da MITM"
+  },
+  "modalSecurityText": {
+    "message": "Wannan fasali yana taimakawa yaƙi:"
+  },
+  "modalSecurityPoint1": {
+    "message": "<strong>Phishing:</strong> Ma'aikatanka ba za su ga tuta na tabbatarwa a kan shafukan karya ba"
+  },
+  "modalSecurityPoint2": {
+    "message": "<strong>Hare-haren Man-in-the-Middle:</strong> Yankuna na gaske kawai daga jerinku ake tabbatarwa"
+  },
+  "modalSecurityPoint3": {
+    "message": "<strong>Satar ainihi:</strong> Tutan kasuwanci tana nuna a fili cewa shafi ne da aka amince"
+  },
+  "modalFormatTitle": {
+    "message": "📝 Tsarin yanki"
+  },
+  "modalFormatText": {
+    "message": "Yi amfani da cikakken yanki kawai (ƙaramin yanki + babban yanki), ba tare da yarjejeniya ko hanya ba:"
+  },
+  "modalHostingTitle": {
+    "message": "🔐 Ajiyar aminci (muhimmi)"
+  },
+  "modalHostingWarning": {
+    "message": "<strong>⚠️ KAR a ajiye a kan GitHub, GitLab ko sabis na jama'a!</strong>"
+  },
+  "modalHostingText": {
+    "message": "Don iyakar tsaro, ajiye jerin JSON naku a kan:"
+  },
+  "modalHostingOption1": {
+    "message": "<strong>Sabar ciki kawai</strong> (ana samun damar shiga daga hanyar sadarwa ta kasuwanci kawai)"
+  },
+  "modalHostingOption2": {
+    "message": "<strong>URL ɓoye</strong>: Yi amfani da GUIDs don sunayen fayil da foldoci"
+  },
+  "modalHostingExample": {
+    "message": "Misali: <code>https://cdn.misali.com/a3f2e8b1-4c5d-6e7f-8a9b-0c1d2e3f4a5b/d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a.json</code>"
+  },
+  "modalMaintenanceTitle": {
+    "message": "🔧 Kulawa"
+  },
+  "modalMaintenanceText": {
+    "message": "Kiyaye jerinku ya zama na zamani ta ƙara sababbin yankuna na shiga da ƙungiyarku ke amfani da su (SSO, shafuka na ciki, aikace-aikacen SaaS, da dai sauransu)."
+  },
+  "popupCheckingStatus": {
+    "message": "Ana tabbatarwa..."
+  },
+  "popupApproveButton": {
+    "message": "✅ Amince da wannan yanki"
+  },
+  "popupSettingsButton": {
+    "message": "Saitunan"
+  },
+  "popupRefreshButton": {
+    "message": "Sabunta"
+  },
+  "popupNoActivePage": {
+    "message": "Babu shafi mai aiki"
+  },
+  "popupNoPasswordField": {
+    "message": "Wannan shafi ba shi da filin kalmar sirri"
+  },
+  "popupValidated": {
+    "message": "An tabbatar da wannan shafi"
+  },
+  "popupUnknown": {
+    "message": "Wannan shafi yana da filin kalmar sirri amma ba ya cikin kowane albarkatu mai aminci"
+  },
+  "popupLoadError": {
+    "message": "Kuskuren lodawa"
+  },
+  "popupValidatedBy": {
+    "message": "An tabbatar da shi ta: {0}"
+  },
+  "contentBannerValidated": {
+    "message": "An tabbatar da shafi ta: {0}"
+  },
+  "contentPersonalList": {
+    "message": "Jerin sirri"
+  },
+  "contentEnterpriseList": {
+    "message": "Jerin kasuwanci"
+  },
+  "validationSecurityTitle": {
+    "message": "🛡️ Tabbatar da anti-phishing"
+  },
+  "validationSecurityDescription": {
+    "message": "ShieldSign yana nuna tuta a kan shafukan shiga don sanya su a bayyane. Gargaɗi: shafin phishing kuma zai iya nuna tuta ta ƙarya. Don ba ku damar tabbatar a cikin daƙiƙa 1 ko tutan na gaske ne, zaɓi hanyar tabbatarwa a ƙasa."
+  },
+  "whyTheseOptions": {
+    "message": "💡 Me yasa waɗannan zaɓuɓɓukan?"
+  },
+  "antiPhishingExplanation": {
+    "message": "Idan ShieldSign ya shahara, mahara na iya ƙirƙirar tuta ta ƙarya kore a kan shafin phishing nasu. Waɗannan zaɓuɓɓukan suna sa kwaikwayo ya zama <strong>ba zai yiwu ba</strong> saboda ƙarin KU kawai ne ke san kalmar sirrinku ta sirri, lambar yau da kullun ko launin da aka keɓance."
+  },
+  "imageComingSoon": {
+    "message": "[Hoto zai zo nan ba da daɗewa ba]"
+  },
+  "modeBadgeOnlyTitle": {
+    "message": "🔵 Lamba kawai (a ɓoye)"
+  },
+  "modeBadgeOnlyDescription": {
+    "message": "Babu tuta a bayyane. Ana bayyana ɗigo mai launi akan alamar ƙarin a cikin mashigin kayan aiki. Mai sauƙi kuma a ɓoye."
+  },
+  "modeBadgeOnlyPro1": {
+    "message": "✅ A ɓoye, baya ɗaukar nauyin shafi"
+  },
+  "modeBadgeOnlyCon1": {
+    "message": "⚠️ Yana buƙatar dubawa na alamar ƙarin"
+  },
+  "modeBannerKeywordTitle": {
+    "message": "🔑 Tuta tare da kalmar sirri ta sirri"
+  },
+  "modeBannerKeywordDescription": {
+    "message": "Tutan tana nuna kalmar sirri ko jimlar ku da aka keɓance. Kai kaɗai ne ke san wannan kalmar sirri, mahara ba zasu iya tunaninta ba."
+  },
+  "customKeywordLabel": {
+    "message": "Kalmar sirrinku ta sirri:"
+  },
+  "customKeywordPlaceholder": {
+    "message": "misali: KyanKyanJa2025"
+  },
+  "customKeywordHelp": {
+    "message": "Zaɓi kalma ko jimla mai sauƙin tunawa amma da wuya a tuna (ana bada shawarar aƙalla haruffa 5)"
+  },
+  "modeBannerKeywordPro1": {
+    "message": "✅ Tabbatarwa ta nan take kuma ta sirri"
+  },
+  "modeBannerKeywordPro2": {
+    "message": "✅ Ba zai yiwu a kwaikwayo ba tare da sanin kalmar sirrinku ba"
+  },
+  "modeBannerKeywordCon1": {
+    "message": "⚠️ Yana buƙatar ku tuna kalmar sirrinku"
+  },
+  "warningKeywordTooShort": {
+    "message": "Kalmar sirri dole ta kasance aƙalla haruffa 5"
+  },
+  "modeBannerCodeTitle": {
+    "message": "🎲 Tuta tare da lambar bazuwa (ana bada shawara)"
+  },
+  "modeBannerCodeDescription": {
+    "message": "Lambar alfanumeric ta musamman ta haruffa 2 (misali A7, H4, 8R) ana samar da ita a kowane ziyara kuma ana nuna ta a kan tuta DA a kan alamar ƙarin. Duba kawai cewa duka biyun sun dace."
+  },
+  "currentCodeLabel": {
+    "message": "Lambar yau:"
+  },
+  "btnRegenerateCode": {
+    "message": "Samar da sabuwar lambar"
+  },
+  "currentCodeHelp": {
+    "message": "Lambar tana canzawa kai tsaye kowace rana. Kuna iya sake samarwa da hannu kuma."
+  },
+  "modeBannerCodePro1": {
+    "message": "✅ Babu abin tunawa"
+  },
+  "modeBannerCodePro2": {
+    "message": "✅ Tabbatarwa mai sauri (lamba + tuta)"
+  },
+  "modeBannerCodePro3": {
+    "message": "✅ Lambar musamman a kowane ziyara"
+  },
+  "modeBannerCodePro4": {
+    "message": "✅ Daidaiton cikakke tsakanin tsaro da sauƙi"
+  },
+  "toastCodeRegenerated": {
+    "message": "An sake samar da lambar nasara"
+  },
+  "errorRegeneratingCode": {
+    "message": "⚠️ Kuskure wajen sake samar da lambar"
+  },
+  "showUnknownPages": {
+    "message": "Nuna matsayi ga duk shafuka"
+  },
+  "showUnknownPagesDescription": {
+    "message": "Kunna don ganin lamba ko da a kan shafukan da ba a jera ba: 🔴 (shafi mai shakka tare da kalmar sirri) ko ⚪ (shafi ba tare da kalmar sirri ba)"
+  },
+  "bannerStyleTitle": {
+    "message": "Salon tuta"
+  },
+  "bannerStyleDescription": {
+    "message": "Daidaita kamannin kowane nau'in tuta (Kasuwanci, Al'umma, Sirri)"
+  },
+  "bannerStyleModeLabel": {
+    "message": "Yanayin launi:"
+  },
+  "bannerStyleModeSolid": {
+    "message": "Launi mai ƙarfi"
+  },
+  "bannerStyleModeGradient": {
+    "message": "Gradient"
+  },
+  "bannerStyleModeRandom": {
+    "message": "Bazuwa"
+  },
+  "bannerStyleSolidColorLabel": {
+    "message": "Launi mai ƙarfi:"
+  },
+  "bannerStyleGradientStartLabel": {
+    "message": "Farkon gradient:"
+  },
+  "bannerStyleGradientEndLabel": {
+    "message": "Ƙarshen gradient:"
+  },
+  "bannerStyleTextColorLabel": {
+    "message": "Launin rubutu:"
+  },
+  "bannerStyleFontFamilyLabel": {
+    "message": "Fon:"
+  },
+  "bannerStyleFontArial": {
+    "message": "Arial"
+  },
+  "bannerStyleFontVerdana": {
+    "message": "Verdana"
+  },
+  "bannerStyleFontGeorgia": {
+    "message": "Georgia"
+  },
+  "bannerStyleFontCourier": {
+    "message": "Courier New"
+  },
+  "bannerStyleFontTimes": {
+    "message": "Times New Roman"
+  },
+  "bannerStylePreviewLabel": {
+    "message": "Duba kafin:"
+  },
+  "bannerStyleRandomNote": {
+    "message": "ℹ️ A yanayin bazuwa, ana samar da sabon launi/gradient duk lokacin da ake nuna tuta"
+  },
+  "bannerTypeEnterprise": {
+    "message": "Kasuwanci"
+  },
+  "bannerTypeCommunity": {
+    "message": "Al'umma"
+  },
+  "bannerTypePersonal": {
+    "message": "Sirri"
+  },
+  "popupValidationCodeLabel": {
+    "message": "🔐 Lambar tabbatarwa:"
+  },
+  "popupCodeInfo": {
+    "message": "Lambar bazuwa ta musamman tana bayyana a cikin lamba da tuta a kowane ziyara don tabbatar da gaskiya"
+  },
+  "autoAddUnknownLabel": {
+    "message": "🔐 Lokacin ƙaddamar da fom a kan shafi maras sani:"
+  },
+  "autoAddUnknownNever": {
+    "message": "Kada ka yi kome"
+  },
+  "autoAddUnknownAlways": {
+    "message": "Ƙara kai tsaye zuwa jerina na sirri"
+  },
+  "autoAddUnknownPrompt": {
+    "message": "Tambaye ni idan ina son ƙarawa"
+  },
+  "autoAddUnknownDescription": {
+    "message": "Zaɓi yadda ShieldSign ke mayar da martani lokacin da kuka shiga zuwa shafin da ba ya cikin kowane jerin"
+  },
+  "notificationAddToPersonal": {
+    "message": "Ƙara wannan shafi zuwa jerinku na sirri?"
+  },
+  "notificationAddToPersonalYes": {
+    "message": "Ee, ƙara"
+  },
+  "notificationAddToPersonalNo": {
+    "message": "A'a"
+  },
+  "notificationSiteAdded": {
+    "message": "An ƙara shafin zuwa jerinku na sirri"
+  }
+}

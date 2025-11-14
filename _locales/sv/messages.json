@@ -1,0 +1,807 @@
+{
+  "extName": {
+    "message": "ShieldSign",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "Visuell validering av säkra inloggningssidor via vitlista för domäner",
+    "description": "Extension description"
+  },
+  
+  "appTitle": {
+    "message": "ShieldSign"
+  },
+  "settings": {
+    "message": "Inställningar"
+  },
+  "refresh": {
+    "message": "Uppdatera"
+  },
+  
+  "tabCommunity": {
+    "message": "Gemenskapskällor"
+  },
+  "tabEnterprise": {
+    "message": "Företagskällor"
+  },
+  "tabPersonal": {
+    "message": "Personliga källor"
+  },
+  "tabSettings": {
+    "message": "Inställningar"
+  },
+  "tabAbout": {
+    "message": "Om"
+  },
+  
+  "officialListTitle": {
+    "message": "Officiell ShieldSign-lista"
+  },
+  "officialListDescription": {
+    "message": "Officiell lista som underhålls av ShieldSign-teamet och innehåller de populäraste webb- och molntjänsterna. Aktiverad som standard."
+  },
+  "officialListName": {
+    "message": "Officiell ShieldSign-lista"
+  },
+  "officialListInfo": {
+    "message": "Officiell lista (65+ verifierade domäner)"
+  },
+  "disable": {
+    "message": "Inaktivera"
+  },
+  "enable": {
+    "message": "Aktivera"
+  },
+  "reinstallOfficialList": {
+    "message": "Installera om officiell lista"
+  },
+  
+  "communityListsTitle": {
+    "message": "Ytterligare gemenskapslistor"
+  },
+  "communityListsDescription": {
+    "message": "Lägg till andra publika listor som underhålls av gemenskapen (valfritt)"
+  },
+  "communityUrlPlaceholder": {
+    "message": "https://example.com/community-list.json"
+  },
+  "add": {
+    "message": "Lägg till"
+  },
+  "noAdditionalList": {
+    "message": "Inga ytterligare listor konfigurerade"
+  },
+  
+  "enterpriseInfoTitle": {
+    "message": "ℹ️ Om företagskällor"
+  },
+  "enterpriseInfoText1": {
+    "message": "Denna funktion är avsedd för <strong>företagsadministratörer</strong> som vill tillhandahålla sina anställda en lista över verifierade domäner."
+  },
+  "enterpriseInfoText2": {
+    "message": "<strong>Domänformat:</strong> Använd det fullständiga formatet med subdomän och huvuddomän (det som visas mellan <code>https://</code> och första <code>/</code>)."
+  },
+  "enterpriseInfoExamples": {
+    "message": "<strong>Exempel:</strong>"
+  },
+  "enterpriseInfoSecurity": {
+    "message": "⚠️ <strong>Säkerhet:</strong> Hosta din lista på en intern eller privat server, <strong>inte på en publik URL</strong>."
+  },
+  "enterpriseInfoFormatLabel": {
+    "message": "Domänformat:"
+  },
+  "enterpriseInfoFormatText": {
+    "message": "Använd det fullständiga formatet med subdomän och huvuddomän (det som visas mellan <code>https://</code> och första <code>/</code>)."
+  },
+  "enterpriseInfoExamplesLabel": {
+    "message": "Exempel:"
+  },
+  "enterpriseInfoExample1": {
+    "message": "✅ <code>login.mittforetag.com</code>"
+  },
+  "enterpriseInfoExample2": {
+    "message": "✅ <code>sso.mittforetag.com</code>"
+  },
+  "enterpriseInfoExample3": {
+    "message": "✅ <code>auth.intranet.mittforetag.net</code>"
+  },
+  "enterpriseInfoExample4": {
+    "message": "❌ <code>https://login.mittforetag.com/auth</code> (utan https:// eller sökväg)"
+  },
+  
+  "enterpriseListTitle": {
+    "message": "Konfiguration av företagslista"
+  },
+  "enterpriseListDescription": {
+    "message": "Lägg till en företagsövergripande domänvalideringslista (högsta prioritet)"
+  },
+  "enterpriseUrlPlaceholder": {
+    "message": "https://intranet.foretag.com/verifierade-domaner.json"
+  },
+  "noEnterpriseList": {
+    "message": "Ingen företagslista konfigurerad"
+  },
+  
+  "personalDomainsTitle": {
+    "message": "Hantera personliga domäner"
+  },
+  "personalDomainsDescription": {
+    "message": "Lägg till dina egna betrodda domäner (högre prioritet än gemenskapslistor)"
+  },
+  "personalDomainPlaceholder": {
+    "message": "login.exempel.com"
+  },
+  "noPersonalDomain": {
+    "message": "Inga personliga domäner konfigurerade"
+  },
+  
+  "importExportTitle": {
+    "message": "Import / Export"
+  },
+  "importExportDescription": {
+    "message": "Exportera din lista för säkerhetskopiering eller importera till en annan webbläsare"
+  },
+  "exportList": {
+    "message": "Exportera lista"
+  },
+  "importList": {
+    "message": "Importera lista"
+  },
+  
+  "generalSettingsTitle": {
+    "message": "Allmänna inställningar"
+  },
+  "language": {
+    "message": "Språk"
+  },
+  "languageDescription": {
+    "message": "Välj gränssnittsspråk"
+  },
+  "languageAuto": {
+    "message": "Automatisk (webbläsarspråk)"
+  },
+  "languageEn": {
+    "message": "English"
+  },
+  "languageFr": {
+    "message": "Français"
+  },
+  "enterpriseMode": {
+    "message": "Företagsläge"
+  },
+  "enterpriseModeDescription": {
+    "message": "Aktivera detta om du är administratör och vill hantera domänlistor för din organisation. Detta visar fliken \"Företagskällor\"."
+  },
+  "checkCN": {
+    "message": "Kontrollera certifikat CN-matchning"
+  },
+  "checkCNDescription": {
+    "message": "Visa varning om certifikatets CN inte matchar domänen (endast Firefox)"
+  },
+  "cacheDuration": {
+    "message": "Cache-varaktighet för lista (timmar)"
+  },
+  "cacheDurationDescription": {
+    "message": "Frekvens för automatiska uppdateringar av fjärrlistor (standard: 24h)"
+  },
+  
+  "bannerColorsTitle": {
+    "message": "Banderollfärger"
+  },
+  "enterpriseList": {
+    "message": "Företagslista"
+  },
+  "communityList": {
+    "message": "Gemenskapslista"
+  },
+  "personalList": {
+    "message": "Personlig lista"
+  },
+  
+  "saveSettings": {
+    "message": "Spara inställningar"
+  },
+  "resetSettings": {
+    "message": "Återställ"
+  },
+  
+  "aboutTitle": {
+    "message": "Om ShieldSign"
+  },
+  "version": {
+    "message": "Version"
+  },
+  "license": {
+    "message": "Licens"
+  },
+  "description": {
+    "message": "Beskrivning"
+  },
+  "aboutDescription": {
+    "message": "Visuellt valideringstillägg för säkra inloggningssidor via vitlista för domäner"
+  },
+  "githubRepo": {
+    "message": "GitHub-repositorium"
+  },
+  "reportBug": {
+    "message": "Rapportera bugg"
+  },
+  "documentation": {
+    "message": "Dokumentation"
+  },
+  "contributorsTitle": {
+    "message": "Bidragsgivare"
+  },
+  "contributorsText": {
+    "message": "Tack till alla som bidrar till ShieldSign-projektet"
+  },
+  
+  "pageValidated": {
+    "message": "Sida verifierad av: $LIST_NAME$",
+    "placeholders": {
+      "list_name": {
+        "content": "$1",
+        "example": "Officiell ShieldSign-lista"
+      }
+    }
+  },
+  "personalListDisplay": {
+    "message": "Personlig lista"
+  },
+  "enterpriseListDisplay": {
+    "message": "Företagslista"
+  },
+  
+  "verifying": {
+    "message": "Verifierar..."
+  },
+  "pageNotContainPasswordField": {
+    "message": "Denna sida innehåller inget lösenordsfält"
+  },
+  "approveDomain": {
+    "message": "Godkänn denna domän"
+  },
+  
+  "settingsSaved": {
+    "message": "Inställningarna har sparats"
+  },
+  "settingsReset": {
+    "message": "Inställningarna har återställts"
+  },
+  "listAdded": {
+    "message": "Listan har lagts till"
+  },
+  "listRemoved": {
+    "message": "Listan har tagits bort"
+  },
+  "listEnabled": {
+    "message": "Listan har aktiverats"
+  },
+  "listDisabled": {
+    "message": "Listan har inaktiverats"
+  },
+  "domainAdded": {
+    "message": "Domänen har lagts till"
+  },
+  "domainRemoved": {
+    "message": "Domänen har tagits bort"
+  },
+  "officialListReinstalled": {
+    "message": "Den officiella listan har installerats om och uppdaterats!"
+  },
+  "listExported": {
+    "message": "Listan har exporterats"
+  },
+  "domainsImported": {
+    "message": "$COUNT$ domäner importerade",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  
+  "errorInvalidUrl": {
+    "message": "Ogiltig URL"
+  },
+  "errorInvalidDomain": {
+    "message": "Ogiltigt domänformat"
+  },
+  "errorAddingList": {
+    "message": "Fel vid tillägg av lista"
+  },
+  "errorRemovingList": {
+    "message": "Fel vid borttagning av lista"
+  },
+  "errorModifyingList": {
+    "message": "Fel vid ändring av lista"
+  },
+  "errorAddingDomain": {
+    "message": "Fel vid tillägg av domän"
+  },
+  "errorRemovingDomain": {
+    "message": "Fel vid borttagning av domän"
+  },
+  "errorLoadingSettings": {
+    "message": "Fel vid inläsning av inställningar"
+  },
+  "errorSavingSettings": {
+    "message": "Fel vid sparande av inställningar"
+  },
+  "errorResetting": {
+    "message": "Fel vid återställning"
+  },
+  "errorReinstalling": {
+    "message": "Fel vid ominstallation"
+  },
+  "errorExporting": {
+    "message": "Fel vid export"
+  },
+  "errorImporting": {
+    "message": "Fel vid import"
+  },
+  "errorInvalidFile": {
+    "message": "Ogiltigt filformat"
+  },
+  "errorNoValidDomain": {
+    "message": "Ingen giltig domän hittades"
+  },
+  "errorNoPersonalDomain": {
+    "message": "Inga personliga domäner att exportera"
+  },
+  "errorEnterValidUrl": {
+    "message": "Ange en giltig URL"
+  },
+  "errorEnterValidDomain": {
+    "message": "Ange en giltig domän"
+  },
+  "errorUpdating": {
+    "message": "Fel vid uppdatering"
+  },
+  
+  "settingsTitle": {
+    "message": "Inställningar - ShieldSign"
+  },
+  "headerTitle": {
+    "message": "ShieldSign - Inställningar"
+  },
+  "officialListSubtitle": {
+    "message": "Officiell lista (65+ verifierade domäner)"
+  },
+  "toggleDisable": {
+    "message": "Inaktivera"
+  },
+  "toggleEnable": {
+    "message": "Aktivera"
+  },
+  "reinstallOfficial": {
+    "message": "Installera om officiell lista"
+  },
+  "communityListTitle": {
+    "message": "Ytterligare gemenskapslistor"
+  },
+  "communityListDescription": {
+    "message": "Lägg till andra publika listor som underhålls av gemenskapen (valfritt)"
+  },
+  "noListCommunity": {
+    "message": "Inga ytterligare listor konfigurerade"
+  },
+  "noListEnterprise": {
+    "message": "Ingen företagslista konfigurerad"
+  },
+  "noListPersonal": {
+    "message": "Inga personliga domäner konfigurerade"
+  },
+  "btnAdd": {
+    "message": "Lägg till"
+  },
+  "btnSave": {
+    "message": "Spara inställningar"
+  },
+  "btnReset": {
+    "message": "Återställ"
+  },
+  "btnExport": {
+    "message": "Exportera lista"
+  },
+  "btnImport": {
+    "message": "Importera lista"
+  },
+  "colorEnterprise": {
+    "message": "Företagslista"
+  },
+  "colorCommunity": {
+    "message": "Gemenskapslista"
+  },
+  "colorPersonal": {
+    "message": "Personlig lista"
+  },
+  "aboutVersion": {
+    "message": "Version:"
+  },
+  "aboutLicense": {
+    "message": "Licens:"
+  },
+  "aboutDescriptionText": {
+    "message": "Visuellt valideringstillägg för säkra inloggningssidor via vitlista för domäner"
+  },
+  "aboutGithub": {
+    "message": "GitHub-repositorium"
+  },
+  "aboutBugReport": {
+    "message": "Rapportera bugg"
+  },
+  "aboutDocumentation": {
+    "message": "Dokumentation"
+  },
+  "aboutContributors": {
+    "message": "Bidragsgivare"
+  },
+  "aboutContributorsText": {
+    "message": "Tack till alla som bidrar till ShieldSign-projektet"
+  },
+  "aboutPrivacy": {
+    "message": "Integritet"
+  },
+  "aboutPrivacyText": {
+    "message": "ShieldSign samlar ingen användardata. All validering sker lokalt i din webbläsare."
+  },
+  "btnRemove": {
+    "message": "Ta bort"
+  },
+  "toastOfficialEnabled": {
+    "message": "Den officiella listan har aktiverats"
+  },
+  "toastOfficialDisabled": {
+    "message": "Den officiella listan har inaktiverats"
+  },
+  "toastOfficialReinstalled": {
+    "message": "Den officiella listan har installerats om och uppdaterats!"
+  },
+  "toastEnterpriseModeEnabled": {
+    "message": "Företagsläget har aktiverats"
+  },
+  "toastEnterpriseModeDisabled": {
+    "message": "Företagsläget har inaktiverats"
+  },
+  "errorLoading": {
+    "message": "Fel vid inläsning av inställningar"
+  },
+  "toastSettingsSaved": {
+    "message": "Inställningarna har sparats"
+  },
+  "errorSaving": {
+    "message": "Fel vid sparande av inställningar"
+  },
+  "toastSettingsReset": {
+    "message": "Inställningarna har återställts"
+  },
+  "errorLoadingLists": {
+    "message": "Fel vid inläsning av listor"
+  },
+  "toastListAdded": {
+    "message": "Listan har lagts till"
+  },
+  "toastListRemoved": {
+    "message": "Listan har tagits bort"
+  },
+  "toastListEnabled": {
+    "message": "Listan har aktiverats"
+  },
+  "toastListDisabled": {
+    "message": "Listan har inaktiverats"
+  },
+  "errorTogglingList": {
+    "message": "Fel vid växling av lista"
+  },
+  "errorLoadingPersonal": {
+    "message": "Fel vid inläsning av personlig lista"
+  },
+  "toastDomainAdded": {
+    "message": "Domänen har lagts till"
+  },
+  "toastDomainRemoved": {
+    "message": "Domänen har tagits bort"
+  },
+  "toastListExported": {
+    "message": "Listan har exporterats"
+  },
+  "toastDomainsImported": {
+    "message": "{count} domäner importerade"
+  },
+  "enterpriseInfoShort": {
+    "message": "Ge dina team en lista över verifierade domäner. Denna lista har högsta prioritet och ökar förtroendet hos anställda."
+  },
+  "btnLearnMore": {
+    "message": "Läs mer"
+  },
+  "btnDownloadExample": {
+    "message": "Ladda ner exempel"
+  },
+  "toastExampleDownloaded": {
+    "message": "Exemplet har laddats ner"
+  },
+  "modalEnterpriseTitle": {
+    "message": "🛡️ Företagskällor: Skydda dina anställda"
+  },
+  "modalWhyTitle": {
+    "message": "Varför använda denna funktion?"
+  },
+  "modalWhyText": {
+    "message": "Som administratör kan du tillhandahålla en lista över verifierade inloggningsdomäner för din organisation. Denna lista har <strong>högsta prioritet</strong> över alla andra källor (gemenskaps-, personliga). Dina anställda kommer att se en speciell grön banderoll på företagsverifierade sidor, vilket ökar deras förtroende."
+  },
+  "modalSecurityTitle": {
+    "message": "🔒 Skydd mot nätfiske och MITM"
+  },
+  "modalSecurityText": {
+    "message": "Denna funktion hjälper till att bekämpa:"
+  },
+  "modalSecurityPoint1": {
+    "message": "<strong>Nätfiske:</strong> Dina anställda kommer inte att se någon valideringsbanderoll på falska sidor"
+  },
+  "modalSecurityPoint2": {
+    "message": "<strong>Man-in-the-Middle-attack:</strong> Endast äkta domäner från din lista verifieras"
+  },
+  "modalSecurityPoint3": {
+    "message": "<strong>Identitetsstöld:</strong> Företagsbanderollen visar tydligt att det är en godkänd sida"
+  },
+  "modalFormatTitle": {
+    "message": "📝 Domänformat"
+  },
+  "modalFormatText": {
+    "message": "Använd endast fullständig domän (subdomän + huvuddomän), utan protokoll eller sökväg:"
+  },
+  "modalHostingTitle": {
+    "message": "🔐 Säker hosting (viktigt)"
+  },
+  "modalHostingWarning": {
+    "message": "<strong>⚠️ HOSTA INTE på GitHub, GitLab eller publika tjänster!</strong>"
+  },
+  "modalHostingText": {
+    "message": "För maximal säkerhet, hosta din JSON-lista på:"
+  },
+  "modalHostingOption1": {
+    "message": "<strong>Endast intern server</strong> (endast tillgänglig från företagsnätverket)"
+  },
+  "modalHostingOption2": {
+    "message": "<strong>Dold URL</strong>: Använd GUID för fil- och mappnamn"
+  },
+  "modalHostingExample": {
+    "message": "Exempel: <code>https://cdn.exempel.com/a3f2e8b1-4c5d-6e7f-8a9b-0c1d2e3f4a5b/d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a.json</code>"
+  },
+  "modalMaintenanceTitle": {
+    "message": "🔧 Underhåll"
+  },
+  "modalMaintenanceText": {
+    "message": "Håll din lista uppdaterad genom att lägga till nya inloggningsdomäner som används av din organisation (SSO, interna portaler, SaaS-appar, etc.)."
+  },
+  "popupCheckingStatus": {
+    "message": "Verifierar..."
+  },
+  "popupApproveButton": {
+    "message": "✅ Godkänn denna domän"
+  },
+  "popupSettingsButton": {
+    "message": "Inställningar"
+  },
+  "popupRefreshButton": {
+    "message": "Uppdatera"
+  },
+  "popupNoActivePage": {
+    "message": "Ingen aktiv sida"
+  },
+  "popupNoPasswordField": {
+    "message": "Denna sida innehåller inget lösenordsfält"
+  },
+  "popupValidated": {
+    "message": "Denna sida har verifierats"
+  },
+  "popupUnknown": {
+    "message": "Denna sida innehåller ett lösenordsfält men finns inte i någon betrodd källa"
+  },
+  "popupLoadError": {
+    "message": "Inläsningsfel"
+  },
+  "popupValidatedBy": {
+    "message": "Verifierad av: {0}"
+  },
+  "contentBannerValidated": {
+    "message": "Sida verifierad av: {0}"
+  },
+  "contentPersonalList": {
+    "message": "Personlig lista"
+  },
+  "contentEnterpriseList": {
+    "message": "Företagslista"
+  },
+  "validationSecurityTitle": {
+    "message": "🛡️ Anti-nätfiske-validering"
+  },
+  "validationSecurityDescription": {
+    "message": "ShieldSign visar en banderoll på inloggningssidor för att göra dem synliga. Varning: en nätfiskesida kan också visa en falsk banderoll. För att du ska kunna verifiera på 1 sekund om banderollen är äkta, välj en valideringsmetod nedan."
+  },
+  "whyTheseOptions": {
+    "message": "💡 Varför dessa alternativ?"
+  },
+  "antiPhishingExplanation": {
+    "message": "Om ShieldSign blir populärt kan angripare skapa en falsk grön banderoll på sin nätfiskesida. Dessa alternativ gör det <strong>omöjligt</strong> att imitera eftersom endast DITT tillägg känner till ditt personliga lösenord, dagliga kod eller anpassade färg."
+  },
+  "imageComingSoon": {
+    "message": "[Illustration kommer snart]"
+  },
+  "modeBadgeOnlyTitle": {
+    "message": "🔵 Endast märke (diskret)"
+  },
+  "modeBadgeOnlyDescription": {
+    "message": "Ingen synlig banderoll. En färgad prick visas på tilläggsikonen i verktygsfältet. Enkelt och diskret."
+  },
+  "modeBadgeOnlyPro1": {
+    "message": "✅ Diskret, överbelastar inte sidan"
+  },
+  "modeBadgeOnlyCon1": {
+    "message": "⚠️ Kräver kontroll av tilläggsikonen"
+  },
+  "modeBannerKeywordTitle": {
+    "message": "🔑 Banderoll med personligt lösenord"
+  },
+  "modeBannerKeywordDescription": {
+    "message": "Banderollen visar ditt anpassade lösenord eller fras. Endast du känner till detta lösenord, angripare kan inte gissa det."
+  },
+  "customKeywordLabel": {
+    "message": "Ditt personliga lösenord:"
+  },
+  "customKeywordPlaceholder": {
+    "message": "t.ex: MinaTvåRödaApor2025"
+  },
+  "customKeywordHelp": {
+    "message": "Välj ett ord eller en fras som är lätt att komma ihåg men svår att gissa (minst 5 tecken rekommenderas)"
+  },
+  "modeBannerKeywordPro1": {
+    "message": "✅ Omedelbar och personlig validering"
+  },
+  "modeBannerKeywordPro2": {
+    "message": "✅ Omöjligt att imitera utan att känna till ditt lösenord"
+  },
+  "modeBannerKeywordCon1": {
+    "message": "⚠️ Kräver att du kommer ihåg ditt lösenord"
+  },
+  "warningKeywordTooShort": {
+    "message": "Lösenordet måste vara minst 5 tecken"
+  },
+  "modeBannerCodeTitle": {
+    "message": "🎲 Banderoll med slumpmässig kod (rekommenderas)"
+  },
+  "modeBannerCodeDescription": {
+    "message": "En unik 2-teckens alfanumerisk kod (t.ex. A7, H4, 8R) genereras vid varje besök och visas på banderollen OCH på tilläggsikonen. Kontrollera bara att båda matchar."
+  },
+  "currentCodeLabel": {
+    "message": "Dagens kod:"
+  },
+  "btnRegenerateCode": {
+    "message": "Generera ny kod"
+  },
+  "currentCodeHelp": {
+    "message": "Koden ändras automatiskt varje dag. Du kan också regenerera manuellt."
+  },
+  "modeBannerCodePro1": {
+    "message": "✅ Inget att komma ihåg"
+  },
+  "modeBannerCodePro2": {
+    "message": "✅ Snabb validering (märke + banderoll)"
+  },
+  "modeBannerCodePro3": {
+    "message": "✅ Unik kod vid varje besök"
+  },
+  "modeBannerCodePro4": {
+    "message": "✅ Perfekt balans mellan säkerhet och enkelhet"
+  },
+  "toastCodeRegenerated": {
+    "message": "Koden har regenererats"
+  },
+  "errorRegeneratingCode": {
+    "message": "⚠️ Fel vid regenerering av kod"
+  },
+  "showUnknownPages": {
+    "message": "Visa status för alla sidor"
+  },
+  "showUnknownPagesDescription": {
+    "message": "Aktivera för att se märke även på olistade sidor: 🔴 (misstänkt sida med lösenord) eller ⚪ (sida utan lösenord)"
+  },
+  "bannerStyleTitle": {
+    "message": "Banderollstil"
+  },
+  "bannerStyleDescription": {
+    "message": "Anpassa utseendet på varje banderolltyp (Företag, Gemenskap, Personlig)"
+  },
+  "bannerStyleModeLabel": {
+    "message": "Färgläge:"
+  },
+  "bannerStyleModeSolid": {
+    "message": "Enfärgad"
+  },
+  "bannerStyleModeGradient": {
+    "message": "Gradient"
+  },
+  "bannerStyleModeRandom": {
+    "message": "Slumpmässig"
+  },
+  "bannerStyleSolidColorLabel": {
+    "message": "Enfärgad färg:"
+  },
+  "bannerStyleGradientStartLabel": {
+    "message": "Gradientstart:"
+  },
+  "bannerStyleGradientEndLabel": {
+    "message": "Gradientslut:"
+  },
+  "bannerStyleTextColorLabel": {
+    "message": "Textfärg:"
+  },
+  "bannerStyleFontFamilyLabel": {
+    "message": "Teckensnitt:"
+  },
+  "bannerStyleFontArial": {
+    "message": "Arial"
+  },
+  "bannerStyleFontVerdana": {
+    "message": "Verdana"
+  },
+  "bannerStyleFontGeorgia": {
+    "message": "Georgia"
+  },
+  "bannerStyleFontCourier": {
+    "message": "Courier New"
+  },
+  "bannerStyleFontTimes": {
+    "message": "Times New Roman"
+  },
+  "bannerStylePreviewLabel": {
+    "message": "Förhandsvisning:"
+  },
+  "bannerStyleRandomNote": {
+    "message": "ℹ️ I slumpmässigt läge genereras en ny färg/gradient varje gång banderollen visas"
+  },
+  "bannerTypeEnterprise": {
+    "message": "Företag"
+  },
+  "bannerTypeCommunity": {
+    "message": "Gemenskap"
+  },
+  "bannerTypePersonal": {
+    "message": "Personlig"
+  },
+  "popupValidationCodeLabel": {
+    "message": "🔐 Valideringskod:"
+  },
+  "popupCodeInfo": {
+    "message": "En unik slumpmässig kod visas i märket och banderollen vid varje besök för att bekräfta äktheten"
+  },
+  "autoAddUnknownLabel": {
+    "message": "🔐 Vid formulärinlämning på en okänd sida:"
+  },
+  "autoAddUnknownNever": {
+    "message": "Gör ingenting"
+  },
+  "autoAddUnknownAlways": {
+    "message": "Lägg automatiskt till i min personliga lista"
+  },
+  "autoAddUnknownPrompt": {
+    "message": "Fråga mig om jag vill lägga till"
+  },
+  "autoAddUnknownDescription": {
+    "message": "Välj hur ShieldSign reagerar när du loggar in på en sida som inte finns i någon lista"
+  },
+  "notificationAddToPersonal": {
+    "message": "Lägga till denna sida i din personliga lista?"
+  },
+  "notificationAddToPersonalYes": {
+    "message": "Ja, lägg till"
+  },
+  "notificationAddToPersonalNo": {
+    "message": "Nej"
+  },
+  "notificationSiteAdded": {
+    "message": "Sidan har lagts till i din personliga lista"
+  }
+}

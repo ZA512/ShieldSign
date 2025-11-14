@@ -1,0 +1,807 @@
+{
+  "extName": {
+    "message": "ShieldSign",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "Domain beyaz listeleri aracılığıyla güvenli oturum açma sayfalarının görsel doğrulaması",
+    "description": "Extension description"
+  },
+  
+  "appTitle": {
+    "message": "ShieldSign"
+  },
+  "settings": {
+    "message": "Ayarlar"
+  },
+  "refresh": {
+    "message": "Yenile"
+  },
+  
+  "tabCommunity": {
+    "message": "Topluluk Kaynakları"
+  },
+  "tabEnterprise": {
+    "message": "Kurumsal Kaynak"
+  },
+  "tabPersonal": {
+    "message": "Kişisel Kaynaklar"
+  },
+  "tabSettings": {
+    "message": "Ayarlar"
+  },
+  "tabAbout": {
+    "message": "Hakkında"
+  },
+  
+  "officialListTitle": {
+    "message": "Resmi ShieldSign Listesi"
+  },
+  "officialListDescription": {
+    "message": "ShieldSign ekibi tarafından yönetilen, en popüler web ve bulut hizmetlerini içeren resmi liste. Varsayılan olarak etkindir."
+  },
+  "officialListName": {
+    "message": "Resmi ShieldSign Listesi"
+  },
+  "officialListInfo": {
+    "message": "Resmi liste (65+ doğrulanmış domain)"
+  },
+  "disable": {
+    "message": "Devre Dışı Bırak"
+  },
+  "enable": {
+    "message": "Etkinleştir"
+  },
+  "reinstallOfficialList": {
+    "message": "Resmi listeyi yeniden yükle"
+  },
+  
+  "communityListsTitle": {
+    "message": "Ek Topluluk Listeleri"
+  },
+  "communityListsDescription": {
+    "message": "Topluluk tarafından yönetilen diğer genel listeleri ekleyin (isteğe bağlı)"
+  },
+  "communityUrlPlaceholder": {
+    "message": "https://ornek.com/topluluk-listesi.json"
+  },
+  "add": {
+    "message": "Ekle"
+  },
+  "noAdditionalList": {
+    "message": "Ek liste yapılandırılmamış"
+  },
+  
+  "enterpriseInfoTitle": {
+    "message": "ℹ️ Kurumsal Kaynak Hakkında"
+  },
+  "enterpriseInfoText1": {
+    "message": "Bu özellik, çalışanları için doğrulanmış bir domain listesi sağlamak isteyen <strong>kurumsal yöneticiler</strong> içindir."
+  },
+  "enterpriseInfoText2": {
+    "message": "<strong>Domain formatı:</strong> Alt domain ve ana domain dahil tam formatı kullanın (<code>https://</code> ile ilk <code>/</code> arasında görünen)."
+  },
+  "enterpriseInfoExamples": {
+    "message": "<strong>Örnekler:</strong>"
+  },
+  "enterpriseInfoSecurity": {
+    "message": "⚠️ <strong>Güvenlik:</strong> Listenizi dahili veya özel bir sunucuda barındırın, <strong>genel bir URL'de değil</strong>."
+  },
+  "enterpriseInfoFormatLabel": {
+    "message": "Domain formatı:"
+  },
+  "enterpriseInfoFormatText": {
+    "message": "Alt domain ve ana domain dahil tam formatı kullanın (<code>https://</code> ile ilk <code>/</code> arasında görünen)."
+  },
+  "enterpriseInfoExamplesLabel": {
+    "message": "Örnekler:"
+  },
+  "enterpriseInfoExample1": {
+    "message": "✅ <code>login.sirketim.com</code>"
+  },
+  "enterpriseInfoExample2": {
+    "message": "✅ <code>sso.sirketim.com</code>"
+  },
+  "enterpriseInfoExample3": {
+    "message": "✅ <code>auth.intranet.sirketim.net</code>"
+  },
+  "enterpriseInfoExample4": {
+    "message": "❌ <code>https://login.sirketim.com/auth</code> (https:// veya yol dahil etmeyin)"
+  },
+  
+  "enterpriseListTitle": {
+    "message": "Kurumsal Liste Yapılandır"
+  },
+  "enterpriseListDescription": {
+    "message": "Tek bir şirket çapında domain doğrulama listesi ekleyin (en yüksek öncelik)"
+  },
+  "enterpriseUrlPlaceholder": {
+    "message": "https://intranet.sirket.com/dogrulanmis-domainler.json"
+  },
+  "noEnterpriseList": {
+    "message": "Kurumsal liste yapılandırılmamış"
+  },
+  
+  "personalDomainsTitle": {
+    "message": "Kişisel Domain Yönetimi"
+  },
+  "personalDomainsDescription": {
+    "message": "Kendi güvenilir domainlerinizi ekleyin (topluluk listelerinden daha yüksek öncelik)"
+  },
+  "personalDomainPlaceholder": {
+    "message": "login.ornek.com"
+  },
+  "noPersonalDomain": {
+    "message": "Kişisel domain yapılandırılmamış"
+  },
+  
+  "importExportTitle": {
+    "message": "İçe Aktar / Dışa Aktar"
+  },
+  "importExportDescription": {
+    "message": "Listenizi kaydetmek veya başka bir tarayıcıya aktarmak için dışa aktarın"
+  },
+  "exportList": {
+    "message": "Listeyi dışa aktar"
+  },
+  "importList": {
+    "message": "Listeyi içe aktar"
+  },
+  
+  "generalSettingsTitle": {
+    "message": "Genel Ayarlar"
+  },
+  "language": {
+    "message": "Dil"
+  },
+  "languageDescription": {
+    "message": "Arayüz dilini seçin"
+  },
+  "languageAuto": {
+    "message": "Otomatik (tarayıcı dili)"
+  },
+  "languageEn": {
+    "message": "English"
+  },
+  "languageFr": {
+    "message": "Français"
+  },
+  "enterpriseMode": {
+    "message": "Kurumsal mod"
+  },
+  "enterpriseModeDescription": {
+    "message": "Yöneticiyseniz ve kuruluşunuz için bir domain listesi yönetmek istiyorsanız bu seçeneği etkinleştirin. Bu, \"Kurumsal Kaynak\" sekmesini gösterecektir."
+  },
+  "checkCN": {
+    "message": "Sertifika CN eşleşmesini kontrol et"
+  },
+  "checkCNDescription": {
+    "message": "Sertifika CN'si domain ile eşleşmiyorsa uyarı göster (sadece Firefox)"
+  },
+  "cacheDuration": {
+    "message": "Liste önbellek süresi (saat)"
+  },
+  "cacheDurationDescription": {
+    "message": "Uzak listelerin otomatik güncelleme sıklığı (varsayılan: 24s)"
+  },
+  
+  "bannerColorsTitle": {
+    "message": "Banner Renkleri"
+  },
+  "enterpriseList": {
+    "message": "Kurumsal liste"
+  },
+  "communityList": {
+    "message": "Topluluk listesi"
+  },
+  "personalList": {
+    "message": "Kişisel liste"
+  },
+  
+  "saveSettings": {
+    "message": "Ayarları kaydet"
+  },
+  "resetSettings": {
+    "message": "Sıfırla"
+  },
+  
+  "aboutTitle": {
+    "message": "ShieldSign Hakkında"
+  },
+  "version": {
+    "message": "Sürüm"
+  },
+  "license": {
+    "message": "Lisans"
+  },
+  "description": {
+    "message": "Açıklama"
+  },
+  "aboutDescription": {
+    "message": "Domain beyaz listeleri aracılığıyla güvenli oturum açma sayfaları için görsel doğrulama eklentisi"
+  },
+  "githubRepo": {
+    "message": "GitHub Deposu"
+  },
+  "reportBug": {
+    "message": "Hata bildir"
+  },
+  "documentation": {
+    "message": "Dokümantasyon"
+  },
+  "contributorsTitle": {
+    "message": "Katkıda Bulunanlar"
+  },
+  "contributorsText": {
+    "message": "ShieldSign projesine katkıda bulunan herkese teşekkürler"
+  },
+  
+  "pageValidated": {
+    "message": "Sayfa şu kaynak tarafından doğrulandı: $LIST_NAME$",
+    "placeholders": {
+      "list_name": {
+        "content": "$1",
+        "example": "Resmi ShieldSign Listesi"
+      }
+    }
+  },
+  "personalListDisplay": {
+    "message": "Kişisel liste"
+  },
+  "enterpriseListDisplay": {
+    "message": "Kurumsal liste"
+  },
+  
+  "verifying": {
+    "message": "Doğrulanıyor..."
+  },
+  "pageNotContainPasswordField": {
+    "message": "Bu sayfa şifre alanı içermiyor"
+  },
+  "approveDomain": {
+    "message": "Bu domaini onayla"
+  },
+  
+  "settingsSaved": {
+    "message": "Ayarlar başarıyla kaydedildi"
+  },
+  "settingsReset": {
+    "message": "Ayarlar sıfırlandı"
+  },
+  "listAdded": {
+    "message": "Liste başarıyla eklendi"
+  },
+  "listRemoved": {
+    "message": "Liste başarıyla kaldırıldı"
+  },
+  "listEnabled": {
+    "message": "Liste etkinleştirildi"
+  },
+  "listDisabled": {
+    "message": "Liste devre dışı bırakıldı"
+  },
+  "domainAdded": {
+    "message": "Domain başarıyla eklendi"
+  },
+  "domainRemoved": {
+    "message": "Domain başarıyla kaldırıldı"
+  },
+  "officialListReinstalled": {
+    "message": "Resmi liste yeniden yüklendi ve güncellendi!"
+  },
+  "listExported": {
+    "message": "Liste başarıyla dışa aktarıldı"
+  },
+  "domainsImported": {
+    "message": "$COUNT$ domain içe aktarıldı",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  
+  "errorInvalidUrl": {
+    "message": "Geçersiz URL"
+  },
+  "errorInvalidDomain": {
+    "message": "Geçersiz domain formatı"
+  },
+  "errorAddingList": {
+    "message": "Liste eklenirken hata"
+  },
+  "errorRemovingList": {
+    "message": "Liste kaldırılırken hata"
+  },
+  "errorModifyingList": {
+    "message": "Liste değiştirilirken hata"
+  },
+  "errorAddingDomain": {
+    "message": "Domain eklenirken hata"
+  },
+  "errorRemovingDomain": {
+    "message": "Domain kaldırılırken hata"
+  },
+  "errorLoadingSettings": {
+    "message": "Ayarlar yüklenirken hata"
+  },
+  "errorSavingSettings": {
+    "message": "Ayarlar kaydedilirken hata"
+  },
+  "errorResetting": {
+    "message": "Sıfırlanırken hata"
+  },
+  "errorReinstalling": {
+    "message": "Yeniden yüklenirken hata"
+  },
+  "errorExporting": {
+    "message": "Dışa aktarılırken hata"
+  },
+  "errorImporting": {
+    "message": "İçe aktarılırken hata"
+  },
+  "errorInvalidFile": {
+    "message": "Geçersiz dosya formatı"
+  },
+  "errorNoValidDomain": {
+    "message": "Geçerli domain bulunamadı"
+  },
+  "errorNoPersonalDomain": {
+    "message": "Dışa aktarılacak kişisel domain yok"
+  },
+  "errorEnterValidUrl": {
+    "message": "Lütfen geçerli bir URL girin"
+  },
+  "errorEnterValidDomain": {
+    "message": "Lütfen geçerli bir domain girin"
+  },
+  "errorUpdating": {
+    "message": "Güncellenirken hata"
+  },
+  
+  "settingsTitle": {
+    "message": "Ayarlar - ShieldSign"
+  },
+  "headerTitle": {
+    "message": "ShieldSign - Ayarlar"
+  },
+  "officialListSubtitle": {
+    "message": "Resmi liste (65+ doğrulanmış domain)"
+  },
+  "toggleDisable": {
+    "message": "Devre Dışı Bırak"
+  },
+  "toggleEnable": {
+    "message": "Etkinleştir"
+  },
+  "reinstallOfficial": {
+    "message": "Resmi listeyi yeniden yükle"
+  },
+  "communityListTitle": {
+    "message": "Ek Topluluk Listeleri"
+  },
+  "communityListDescription": {
+    "message": "Topluluk tarafından yönetilen diğer genel listeleri ekleyin (isteğe bağlı)"
+  },
+  "noListCommunity": {
+    "message": "Ek liste yapılandırılmamış"
+  },
+  "noListEnterprise": {
+    "message": "Kurumsal liste yapılandırılmamış"
+  },
+  "noListPersonal": {
+    "message": "Kişisel domain yapılandırılmamış"
+  },
+  "btnAdd": {
+    "message": "Ekle"
+  },
+  "btnSave": {
+    "message": "Ayarları kaydet"
+  },
+  "btnReset": {
+    "message": "Sıfırla"
+  },
+  "btnExport": {
+    "message": "Listeyi dışa aktar"
+  },
+  "btnImport": {
+    "message": "Listeyi içe aktar"
+  },
+  "colorEnterprise": {
+    "message": "Kurumsal liste"
+  },
+  "colorCommunity": {
+    "message": "Topluluk listesi"
+  },
+  "colorPersonal": {
+    "message": "Kişisel liste"
+  },
+  "aboutVersion": {
+    "message": "Sürüm:"
+  },
+  "aboutLicense": {
+    "message": "Lisans:"
+  },
+  "aboutDescriptionText": {
+    "message": "Domain beyaz listeleri aracılığıyla güvenli oturum açma sayfaları için görsel doğrulama eklentisi"
+  },
+  "aboutGithub": {
+    "message": "GitHub Deposu"
+  },
+  "aboutBugReport": {
+    "message": "Hata bildir"
+  },
+  "aboutDocumentation": {
+    "message": "Dokümantasyon"
+  },
+  "aboutContributors": {
+    "message": "Katkıda Bulunanlar"
+  },
+  "aboutContributorsText": {
+    "message": "ShieldSign projesine katkıda bulunan herkese teşekkürler"
+  },
+  "aboutPrivacy": {
+    "message": "Gizlilik"
+  },
+  "aboutPrivacyText": {
+    "message": "ShieldSign kullanıcı verisi toplamaz. Tüm doğrulamalar tarayıcınızda yerel olarak gerçekleştirilir."
+  },
+  "btnRemove": {
+    "message": "Kaldır"
+  },
+  "toastOfficialEnabled": {
+    "message": "Resmi liste etkinleştirildi"
+  },
+  "toastOfficialDisabled": {
+    "message": "Resmi liste devre dışı bırakıldı"
+  },
+  "toastOfficialReinstalled": {
+    "message": "Resmi liste yeniden yüklendi ve güncellendi!"
+  },
+  "toastEnterpriseModeEnabled": {
+    "message": "Kurumsal mod etkinleştirildi"
+  },
+  "toastEnterpriseModeDisabled": {
+    "message": "Kurumsal mod devre dışı bırakıldı"
+  },
+  "errorLoading": {
+    "message": "Ayarlar yüklenirken hata"
+  },
+  "toastSettingsSaved": {
+    "message": "Ayarlar başarıyla kaydedildi"
+  },
+  "errorSaving": {
+    "message": "Ayarlar kaydedilirken hata"
+  },
+  "toastSettingsReset": {
+    "message": "Ayarlar sıfırlandı"
+  },
+  "errorLoadingLists": {
+    "message": "Listeler yüklenirken hata"
+  },
+  "toastListAdded": {
+    "message": "Liste başarıyla eklendi"
+  },
+  "toastListRemoved": {
+    "message": "Liste başarıyla kaldırıldı"
+  },
+  "toastListEnabled": {
+    "message": "Liste etkinleştirildi"
+  },
+  "toastListDisabled": {
+    "message": "Liste devre dışı bırakıldı"
+  },
+  "errorTogglingList": {
+    "message": "Liste değiştirilirken hata"
+  },
+  "errorLoadingPersonal": {
+    "message": "Kişisel liste yüklenirken hata"
+  },
+  "toastDomainAdded": {
+    "message": "Domain başarıyla eklendi"
+  },
+  "toastDomainRemoved": {
+    "message": "Domain başarıyla kaldırıldı"
+  },
+  "toastListExported": {
+    "message": "Liste başarıyla dışa aktarıldı"
+  },
+  "toastDomainsImported": {
+    "message": "{count} domain içe aktarıldı"
+  },
+  "enterpriseInfoShort": {
+    "message": "Ekipleriniz için doğrulanmış bir domain listesi sağlayın. Bu liste en yüksek önceliğe sahiptir ve çalışanlarınızın güvenini artırır."
+  },
+  "btnLearnMore": {
+    "message": "Daha fazla bilgi"
+  },
+  "btnDownloadExample": {
+    "message": "Örnek indir"
+  },
+  "toastExampleDownloaded": {
+    "message": "Örnek indirildi"
+  },
+  "modalEnterpriseTitle": {
+    "message": "🛡️ Kurumsal Kaynak: Çalışanlarınızı Koruyun"
+  },
+  "modalWhyTitle": {
+    "message": "Bu özellik neden kullanılmalı?"
+  },
+  "modalWhyText": {
+    "message": "Yönetici olarak, kuruluşunuz için doğrulanmış oturum açma domainlerinin bir listesini sağlayabilirsiniz. Bu liste tüm diğer kaynakların (topluluk, kişisel) <strong>en yüksek önceliğine</strong> sahiptir. Çalışanlarınız şirket tarafından doğrulanmış sayfalarda belirgin bir yeşil banner görecek ve bu da güvenlerini artıracaktır."
+  },
+  "modalSecurityTitle": {
+    "message": "🔒 Kimlik Avı ve MITM'ye Karşı Koruma"
+  },
+  "modalSecurityText": {
+    "message": "Bu özellik şunlarla mücadeleye yardımcı olur:"
+  },
+  "modalSecurityPoint1": {
+    "message": "<strong>Kimlik avı:</strong> Çalışanlarınız sahte web sitelerinde doğrulama bannerını görmeyecek"
+  },
+  "modalSecurityPoint2": {
+    "message": "<strong>Ortadaki Adam:</strong> Yalnızca listenizden gerçek domainler doğrulanacak"
+  },
+  "modalSecurityPoint3": {
+    "message": "<strong>Kimlik hırsızlığı:</strong> Kurumsal banner bunun onaylanmış bir web sitesi olduğunu açıkça gösterir"
+  },
+  "modalFormatTitle": {
+    "message": "📝 Domain Formatı"
+  },
+  "modalFormatText": {
+    "message": "Yalnızca tam domaini (alt domain + ana domain) kullanın, protokol veya yol olmadan:"
+  },
+  "modalHostingTitle": {
+    "message": "🔐 Güvenli Barındırma (KRİTİK)"
+  },
+  "modalHostingWarning": {
+    "message": "<strong>⚠️ GitHub, GitLab veya genel hizmetlerde barındırmayın!</strong>"
+  },
+  "modalHostingText": {
+    "message": "Güvenliği en üst düzeye çıkarmak için JSON listenizi şurada barındırın:"
+  },
+  "modalHostingOption1": {
+    "message": "<strong>Yalnızca dahili sunucu</strong> (yalnızca şirket ağından erişilebilir)"
+  },
+  "modalHostingOption2": {
+    "message": "<strong>Gizlenmiş URL</strong>: Dosya adı ve klasörler için bir GUID kullanın"
+  },
+  "modalHostingExample": {
+    "message": "Örnek: <code>https://cdn.ornek.com/a3f2e8b1-4c5d-6e7f-8a9b-0c1d2e3f4a5b/d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a.json</code>"
+  },
+  "modalMaintenanceTitle": {
+    "message": "🔧 Bakım"
+  },
+  "modalMaintenanceText": {
+    "message": "Kuruluşunuz tarafından kullanılan yeni oturum açma domainlerini ekleyerek listenizi güncel tutun (SSO, dahili portallar, SaaS uygulamaları vb.)."
+  },
+  "popupCheckingStatus": {
+    "message": "Doğrulanıyor..."
+  },
+  "popupApproveButton": {
+    "message": "✅ Bu domaini onayla"
+  },
+  "popupSettingsButton": {
+    "message": "Ayarlar"
+  },
+  "popupRefreshButton": {
+    "message": "Yenile"
+  },
+  "popupNoActivePage": {
+    "message": "Aktif sayfa yok"
+  },
+  "popupNoPasswordField": {
+    "message": "Bu sayfa şifre alanı içermiyor"
+  },
+  "popupValidated": {
+    "message": "Bu sayfa doğrulanmış"
+  },
+  "popupUnknown": {
+    "message": "Bu sayfa şifre alanı içeriyor ancak güvenilir hiçbir kaynakta listelenmemiş"
+  },
+  "popupLoadError": {
+    "message": "Yükleme hatası"
+  },
+  "popupValidatedBy": {
+    "message": "Doğrulayan: {0}"
+  },
+  "contentBannerValidated": {
+    "message": "Sayfa şu kaynak tarafından doğrulandı: {0}"
+  },
+  "contentPersonalList": {
+    "message": "Kişisel liste"
+  },
+  "contentEnterpriseList": {
+    "message": "Kurumsal liste"
+  },
+  "validationSecurityTitle": {
+    "message": "🛡️ Kimlik Avı Önleme Doğrulaması"
+  },
+  "validationSecurityDescription": {
+    "message": "ShieldSign oturum açma sayfalarında onları görünür kılmak için bir banner gösterir. Uyarı: Bir kimlik avı sitesi de sahte bir banner gösterebilir. Bannerin gerçek olup olmadığını 1 saniyede doğrulamanızı sağlamak için aşağıdan bir doğrulama yöntemi seçin."
+  },
+  "whyTheseOptions": {
+    "message": "💡 Bu seçenekler neden?"
+  },
+  "antiPhishingExplanation": {
+    "message": "ShieldSign popüler hale gelirse, bir saldırgan kimlik avı sayfasında sahte bir yeşil banner oluşturabilir. Bu seçenekler taklidi <strong>imkansız</strong> hale getirir çünkü yalnızca SİZİN eklentiniz kişisel anahtar kelimenizi, günlük kodunuzu veya özel renklerinizi bilir."
+  },
+  "imageComingSoon": {
+    "message": "[Açıklayıcı görsel yakında]"
+  },
+  "modeBadgeOnlyTitle": {
+    "message": "🔵 Yalnızca Rozet (göze çarpmayan)"
+  },
+  "modeBadgeOnlyDescription": {
+    "message": "Görünür banner yok. Araç çubuğundaki eklenti simgesinde renkli bir nokta görünür. Basit ve rahatsız edici değil."
+  },
+  "modeBadgeOnlyPro1": {
+    "message": "✅ Göze çarpmayan, sayfayı kirletmiyor"
+  },
+  "modeBadgeOnlyCon1": {
+    "message": "⚠️ Eklenti simgesine bakmayı gerektirir"
+  },
+  "modeBannerKeywordTitle": {
+    "message": "🔑 Kişisel Anahtar Kelime ile Banner"
+  },
+  "modeBannerKeywordDescription": {
+    "message": "Banner özel anahtar kelimenizi veya ifadenizi gösterir. Yalnızca siz bu anahtar kelimeyi bilirsiniz, bir saldırgan tahmin edemez."
+  },
+  "customKeywordLabel": {
+    "message": "Kişisel anahtar kelimeniz:"
+  },
+  "customKeywordPlaceholder": {
+    "message": "örn: BenimGuvenDenizFenerim2025"
+  },
+  "customKeywordHelp": {
+    "message": "Hatırlaması kolay ancak tahmin edilmesi zor bir kelime veya ifade seçin (en az 5 karakter önerilir)"
+  },
+  "modeBannerKeywordPro1": {
+    "message": "✅ Anında ve kişiselleştirilmiş doğrulama"
+  },
+  "modeBannerKeywordPro2": {
+    "message": "✅ Anahtar kelimenizi bilmeden taklit edilemez"
+  },
+  "modeBannerKeywordCon1": {
+    "message": "⚠️ Anahtar kelimenizi ezberlemeyi gerektirir"
+  },
+  "warningKeywordTooShort": {
+    "message": "Anahtar kelime en az 5 karakter içermelidir"
+  },
+  "modeBannerCodeTitle": {
+    "message": "🎲 Rastgele Kod ile Banner (önerilen)"
+  },
+  "modeBannerCodeDescription": {
+    "message": "Her ziyarette benzersiz 2 karakterli alfasayısal bir kod (örn. A7, H4, 8R) oluşturulur ve hem bannerde HEM DE eklenti simgesinde gösterilir. İkisinin eşleşip eşleşmediğini kontrol etmeniz yeterlidir."
+  },
+  "currentCodeLabel": {
+    "message": "Günün kodu:"
+  },
+  "btnRegenerateCode": {
+    "message": "Yeni kod oluştur"
+  },
+  "currentCodeHelp": {
+    "message": "Kod her gün otomatik olarak değişir. Manuel olarak da yeniden oluşturabilirsiniz."
+  },
+  "modeBannerCodePro1": {
+    "message": "✅ Ezberleme gerekmez"
+  },
+  "modeBannerCodePro2": {
+    "message": "✅ Hızlı doğrulama (rozet + banner)"
+  },
+  "modeBannerCodePro3": {
+    "message": "✅ Her ziyarette benzersiz kod"
+  },
+  "modeBannerCodePro4": {
+    "message": "✅ Güvenlik ve basitlik arasında mükemmel denge"
+  },
+  "toastCodeRegenerated": {
+    "message": "Kod başarıyla yeniden oluşturuldu"
+  },
+  "errorRegeneratingCode": {
+    "message": "⚠️ Kod yeniden oluşturulurken hata."
+  },
+  "showUnknownPages": {
+    "message": "Tüm sayfalar için durumu göster"
+  },
+  "showUnknownPagesDescription": {
+    "message": "Listelenmemiş sayfalarda da bir rozet görmek için etkinleştirin: 🔴 (şifreli şüpheli sayfa) veya ⚪ (şifresiz sayfa)."
+  },
+  "bannerStyleTitle": {
+    "message": "Banner Stili"
+  },
+  "bannerStyleDescription": {
+    "message": "Her banner türünün görünümünü özelleştirin (Kurumsal, Topluluk, Kişisel)."
+  },
+  "bannerStyleModeLabel": {
+    "message": "Renk modu:"
+  },
+  "bannerStyleModeSolid": {
+    "message": "Düz renk"
+  },
+  "bannerStyleModeGradient": {
+    "message": "Gradyan"
+  },
+  "bannerStyleModeRandom": {
+    "message": "Rastgele"
+  },
+  "bannerStyleSolidColorLabel": {
+    "message": "Düz renk:"
+  },
+  "bannerStyleGradientStartLabel": {
+    "message": "Gradyan başlangıç:"
+  },
+  "bannerStyleGradientEndLabel": {
+    "message": "Gradyan bitiş:"
+  },
+  "bannerStyleTextColorLabel": {
+    "message": "Metin rengi:"
+  },
+  "bannerStyleFontFamilyLabel": {
+    "message": "Yazı tipi:"
+  },
+  "bannerStyleFontArial": {
+    "message": "Arial"
+  },
+  "bannerStyleFontVerdana": {
+    "message": "Verdana"
+  },
+  "bannerStyleFontGeorgia": {
+    "message": "Georgia"
+  },
+  "bannerStyleFontCourier": {
+    "message": "Courier New"
+  },
+  "bannerStyleFontTimes": {
+    "message": "Times New Roman"
+  },
+  "bannerStylePreviewLabel": {
+    "message": "Önizleme:"
+  },
+  "bannerStyleRandomNote": {
+    "message": "ℹ️ Rastgele modda, banner her gösterildiğinde yeni bir renk/gradyan oluşturulur."
+  },
+  "bannerTypeEnterprise": {
+    "message": "Kurumsal"
+  },
+  "bannerTypeCommunity": {
+    "message": "Topluluk"
+  },
+  "bannerTypePersonal": {
+    "message": "Kişisel"
+  },
+  "popupValidationCodeLabel": {
+    "message": "🔐 Doğrulama kodu:"
+  },
+  "popupCodeInfo": {
+    "message": "Her ziyarette benzersiz bir rastgele kod, özgünlüğü onaylamak için rozet ve bannerde görünür."
+  },
+  "autoAddUnknownLabel": {
+    "message": "🔐 Bilinmeyen bir sitede form gönderildiğinde:"
+  },
+  "autoAddUnknownNever": {
+    "message": "Hiçbir şey yapma"
+  },
+  "autoAddUnknownAlways": {
+    "message": "Otomatik olarak kişisel listeme ekle"
+  },
+  "autoAddUnknownPrompt": {
+    "message": "Eklemek isteyip istemediğimi sor"
+  },
+  "autoAddUnknownDescription": {
+    "message": "Herhangi bir listede bulunmayan bir web sitesinde oturum açtığınızda ShieldSign'ın nasıl tepki vermesi gerektiğini seçin."
+  },
+  "notificationAddToPersonal": {
+    "message": "Bu siteyi kişisel listenize eklemek istiyor musunuz?"
+  },
+  "notificationAddToPersonalYes": {
+    "message": "Evet, ekle"
+  },
+  "notificationAddToPersonalNo": {
+    "message": "Hayır"
+  },
+  "notificationSiteAdded": {
+    "message": "Site kişisel listenize eklendi"
+  }
+}
