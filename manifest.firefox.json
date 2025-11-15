@@ -1,5 +1,5 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "__MSG_extName__",
   "version": "1.0.0",
   "description": "__MSG_extDescription__",
@@ -7,22 +7,20 @@
   "author": "ShieldSign Contributors",
   "browser_specific_settings": {
     "gecko": {
+      "id": "shieldsign@shieldsign",
       "strict_min_version": "109.0"
     }
   },
   "permissions": [
     "storage",
     "activeTab",
-    "scripting",
-    "declarativeNetRequest",
     "webRequest",
-    "alarms"
-  ],
-  "host_permissions": [
+    "alarms",
     "<all_urls>"
   ],
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["background.js"],
+    "persistent": true
   },
   "content_scripts": [
     {
@@ -31,7 +29,7 @@
       "run_at": "document_end"
     }
   ],
-  "action": {
+  "browser_action": {
     "default_popup": "popup/popup.html",
     "default_icon": {
       "16": "icons/icon16.png",
@@ -51,9 +49,6 @@
     "128": "icons/icon128.png"
   },
   "web_accessible_resources": [
-    {
-      "resources": ["icons/icon56ssf.png"],
-      "matches": ["<all_urls>"]
-    }
+    "icons/icon56ssf.png"
   ]
 }

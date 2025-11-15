@@ -1,5 +1,7 @@
 // ShieldSign - Popup Script
 
+// ShieldSign - Popup Script
+
 let currentHostname = '';
 let currentStatus = null;
 
@@ -45,11 +47,38 @@ async function loadValidationInfo() {
   }
 }
 
+// Helper to get active tab in a cross-browser way
+async function getActiveTab() {
+  try {
+    // Prefer Compat if available
+    if (window.Compat && Compat.getActiveTab) return await Compat.getActiveTab();
+  } catch (e) {}
+  return new Promise((resolve) => {
+    try {
+      chrome.runtime.sendMessage({ action: 'GET_ACTIVE_TAB' }, (tab) => { resolve(tab); });
+    } catch (e) { resolve(null); }
+  });
+}
+
+// Helper storageGet for popup (callback vs promise)
+function storageGet(keys) {
+  try { if (window.Compat && Compat.storageGet) return Compat.storageGet(keys); } catch (e) {}
+  return new Promise((resolve) => {
+    try {
+      chrome.storage.local.get(keys, (res) => { resolve(res || {}); });
+    } catch (e) {
+      try {
+        browser.storage.local.get(keys).then(res => resolve(res)).catch(() => resolve({}));
+      } catch (err) { resolve({}); }
+    }
+  });
+}
+
 // Charger le statut de la page courante
 async function loadCurrentPageStatus() {
   try {
-    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-    
+    const tab = await getActiveTab();
+
     if (!tab || !tab.url) {
       updateStatus('none', chrome.i18n.getMessage('popupNoActivePage'), null, false);
       return;
@@ -68,14 +97,13 @@ async function loadCurrentPageStatus() {
     }
     
     // Vérifier le statut avec toutes les listes
-    const response = await chrome.runtime.sendMessage({
-      action: 'CHECK_PAGE',
-      hostname: currentHostname
+    const response = await new Promise((resolve) => {
+      chrome.runtime.sendMessage({ action: 'CHECK_PAGE', hostname: currentHostname }, (res) => resolve(res));
     });
     
     currentStatus = response;
     
-    if (response.status === 'VALIDATED') {
+    if (response && response.status === 'VALIDATED') {
       // Récupérer toutes les listes qui valident ce domaine
       const allValidatingLists = await getAllValidatingLists(currentHostname);
       updateStatus('validated', chrome.i18n.getMessage('popupValidated'), allValidatingLists, true);
@@ -94,7 +122,7 @@ async function loadCurrentPageStatus() {
 // Récupérer toutes les listes qui valident un domaine
 async function getAllValidatingLists(hostname) {
   try {
-    const { lists, user_whitelist } = await chrome.storage.local.get(['lists', 'user_whitelist']);
+    const { lists, user_whitelist } = await storageGet(['lists', 'user_whitelist']);
     const validatingLists = [];
     
     // Vérifier la liste personnelle
@@ -127,14 +155,26 @@ async function getAllValidatingLists(hostname) {
 // Vérifier si la page a un champ password
 async function checkForPasswordField(tabId) {
   try {
-    const results = await chrome.scripting.executeScript({
-      target: { tabId: tabId },
-      func: () => {
-        return !!document.querySelector('input[type="password"]');
-      }
-    });
-    
-    return results && results[0] && results[0].result;
+    let results = null;
+    // Prefer Compat wrapper if available
+    if (window.Compat && Compat.executeScriptCompat) {
+      results = await Compat.executeScriptCompat(tabId, () => !!document.querySelector('input[type="password"]'));
+    } else if (chrome.scripting && chrome.scripting.executeScript) {
+      results = await chrome.scripting.executeScript({ target: { tabId }, func: () => !!document.querySelector('input[type="password"]') });
+    } else {
+      // Fallback to string-based executeScript
+      results = await new Promise((resolve) => {
+        try {
+          chrome.tabs.executeScript(tabId, { code: '!!document.querySelector("input[type=\\"password\\"]")' }, (res) => resolve(res));
+        } catch (e) { resolve(null); }
+      });
+    }
+
+    if (!results) return false;
+    const first = Array.isArray(results) ? results[0] : results;
+    if (first && typeof first.result !== 'undefined') return first.result;
+    if (typeof first === 'boolean') return first;
+    return !!first;
   } catch (error) {
     console.error('[ShieldSign] Erreur lors de la vérification du champ password:', error);
     return false;
@@ -213,9 +253,9 @@ async function approveDomain() {
     await loadCurrentPageStatus();
     
     // Recharger la page pour injecter le bandeau
-    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-    if (tab) {
-      chrome.tabs.reload(tab.id);
+    const tab = await getActiveTab();
+    if (tab && tab.id) {
+      try { chrome.tabs.reload(tab.id); } catch (e) { try { browser.tabs.reload(tab.id); } catch (err) {} }
     }
   } catch (error) {
     console.error('[ShieldSign] Erreur lors de l\'approbation du domaine:', error);

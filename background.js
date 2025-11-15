@@ -1,6 +1,9 @@
 // ShieldSign - Background Service Worker
 // Gestion du cache des listes, mise à jour, et vérification des domaines
 
+// Import compat layer for cross-browser API helpers
+try { importScripts('compat.js'); } catch (e) { console.warn('[ShieldSign] compat import failed', e); }
+
 const DEFAULT_SETTINGS = {
   checkCN: false,
   ttl: 86400000, // 24h en millisecondes
@@ -66,13 +69,22 @@ function generateRandomCode() {
   return code;
 }
 
+// Use Compat layer for storage to handle Firefox/Chrome differences
+function storageGet(keys) { return Compat.storageGet(keys); }
+function storageSet(obj) { return Compat.storageSet(obj); }
+
+async function actionSetBadgeText(text, tabId) { return Compat.setBadgeText(text, tabId); }
+async function actionSetBadgeBackgroundColor(color, tabId) { return Compat.setBadgeBg(color, tabId); }
+
+async function executeScriptCompat(tabId, func) { return Compat.executeScriptCompat(tabId, func); }
+
 // Initialisation au démarrage
 chrome.runtime.onInstalled.addListener(async () => {
   // Initialiser le storage si vide
-  const data = await chrome.storage.local.get(['lists', 'user_whitelist', 'settings']);
+  const data = await storageGet(['lists', 'user_whitelist', 'settings']);
   
   if (!data.lists) {
-    await chrome.storage.local.set({ lists: {} });
+    await storageSet({ lists: {} });
   }
   
   // Ajouter la liste officielle si pas déjà présente
@@ -86,7 +98,7 @@ chrome.runtime.onInstalled.addListener(async () => {
       isOfficial: true,
       enabled: true
     };
-    await chrome.storage.local.set({ lists });
+    await storageSet({ lists });
   }
   
   // Migrer les anciens settings et générer le premier code
@@ -96,11 +108,11 @@ chrome.runtime.onInstalled.addListener(async () => {
   chrome.alarms.create('regenerateCode', { periodInMinutes: 1440 }); // 24h
   
   if (!data.user_whitelist) {
-    await chrome.storage.local.set({ user_whitelist: [] });
+    await storageSet({ user_whitelist: [] });
   }
-  
+
   if (!data.settings) {
-    await chrome.storage.local.set({ settings: DEFAULT_SETTINGS });
+    await storageSet({ settings: DEFAULT_SETTINGS });
   }
   
   // Lancer la première mise à jour des listes (avec await pour garantir le téléchargement)
@@ -109,7 +121,7 @@ chrome.runtime.onInstalled.addListener(async () => {
 
 // Fonction de migration des settings pour compatibilité avec anciennes versions
 async function migrateSettings() {
-  const { settings } = await chrome.storage.local.get(['settings']);
+  const { settings } = await storageGet(['settings']);
   let currentSettings = settings || {};
   
   // Fusionner avec DEFAULT_SETTINGS pour ajouter les nouveaux champs
@@ -153,7 +165,7 @@ async function migrateSettings() {
     };
   }
   
-  await chrome.storage.local.set({ settings: migratedSettings });
+  await storageSet({ settings: migratedSettings });
   return migratedSettings;
 }
 
@@ -167,7 +179,7 @@ function isDomainMatch(hostname, domain) {
 
 // Récupération de toutes les listes actives avec priorité
 async function getAllActiveDomains() {
-  const { lists, user_whitelist } = await chrome.storage.local.get(['lists', 'user_whitelist']);
+  const { lists, user_whitelist } = await storageGet(['lists', 'user_whitelist']);
   
   const domainsMap = {
     enterprise: new Map(),
@@ -228,7 +240,7 @@ async function checkDomain(hostname) {
 
 // Mettre à jour le badge de l'extension
 async function updateBadge(tabId, status, listType = null, uniqueCode = null) {
-  const { settings } = await chrome.storage.local.get(['settings']);
+  const { settings } = await storageGet(['settings']);
   const currentSettings = settings || DEFAULT_SETTINGS;
   const validationMode = currentSettings.validationMode || 'banner-code';
   const showUnknownPages = currentSettings.showUnknownPages || false;
@@ -243,33 +255,33 @@ async function updateBadge(tabId, status, listType = null, uniqueCode = null) {
       if (validationMode === 'badge-only') {
 
         // Mode badge uniquement : badge vert sans texte (juste la couleur verte visible)
-        await chrome.action.setBadgeBackgroundColor({ color: '#28A745', tabId: tabId }); // Vert vif
-        await chrome.action.setBadgeText({ text: '✓', tabId: tabId }); // Check mark pour badge visible
+        await actionSetBadgeBackgroundColor('#28A745', tabId); // Vert vif
+        await actionSetBadgeText('✓', tabId); // Check mark pour badge visible
       } else if (validationMode === 'banner-code') {
 
         // Mode code : afficher le code unique avec badge vert (toujours vert)
         const code = uniqueCode || generateRandomCode();
 
-        await chrome.action.setBadgeBackgroundColor({ color: '#28A745', tabId: tabId }); // Vert vif
-        await chrome.action.setBadgeText({ text: code, tabId: tabId });
+        await actionSetBadgeBackgroundColor('#28A745', tabId); // Vert vif
+        await actionSetBadgeText(code, tabId);
       } else {
 
         // Mode keyword : badge vert uni sans texte
-        await chrome.action.setBadgeBackgroundColor({ color: '#28A745', tabId: tabId }); // Vert vif
-        await chrome.action.setBadgeText({ text: '✓', tabId: tabId }); // Check mark pour badge visible
+        await actionSetBadgeBackgroundColor('#28A745', tabId); // Vert vif
+        await actionSetBadgeText('✓', tabId); // Check mark pour badge visible
       }
 
     } else if (status === 'UNKNOWN' && showUnknownPages) {
       // Page non listée avec option activée
-      await chrome.action.setBadgeBackgroundColor({ color: '#DC3545', tabId: tabId }); // Rouge
-      await chrome.action.setBadgeText({ text: '?', tabId: tabId });
+      await actionSetBadgeBackgroundColor('#DC3545', tabId); // Rouge
+      await actionSetBadgeText('?', tabId);
     } else if (status === 'NO_PASSWORD' && showUnknownPages) {
       // Page sans password avec option activée
-      await chrome.action.setBadgeBackgroundColor({ color: '#6C757D', tabId: tabId }); // Gris
-      await chrome.action.setBadgeText({ text: '○', tabId: tabId });
+      await actionSetBadgeBackgroundColor('#6C757D', tabId); // Gris
+      await actionSetBadgeText('○', tabId);
     } else {
       // Pas de badge
-      await chrome.action.setBadgeText({ text: '', tabId: tabId });
+      await actionSetBadgeText('', tabId);
     }
   } catch (error) {
     console.error('[ShieldSign] Erreur lors de la mise à jour du badge:', error);
@@ -294,9 +306,25 @@ function getBadgeColorForType(listType, settings) {
 // Écouter les changements d'onglets pour mettre à jour le badge
 chrome.tabs.onActivated.addListener(async (activeInfo) => {
   try {
-    const tab = await chrome.tabs.get(activeInfo.tabId);
-    if (tab.url) {
+    let tab = null;
+    try { tab = await Compat.getTab(activeInfo.tabId); } catch (e) { tab = null; }
+    if (!tab) {
+      try { tab = await new Promise((resolve) => chrome.tabs.get(activeInfo.tabId, resolve)); } catch (e) { tab = null; }
+    }
+    if (tab && tab.url) {
       await updateBadgeForTab(tab);
+    } else {
+      const lastErr = (chrome.runtime && chrome.runtime.lastError) ? (chrome.runtime.lastError.message || chrome.runtime.lastError) : null;
+      if (lastErr) {
+        console.warn('[ShieldSign] onActivated: no tab returned for id', activeInfo.tabId, 'lastError=', lastErr);
+      } else {
+        console.debug('[ShieldSign] onActivated: no tab returned for id', activeInfo.tabId, 'lastError=null');
+      }
+      try {
+        chrome.tabs.query({ currentWindow: true }, (tabs) => {
+          console.debug('[ShieldSign] onActivated: currentWindow tabs count=', Array.isArray(tabs) ? tabs.length : 0);
+        });
+      } catch (e) {}
     }
   } catch (error) {
     console.error('[ShieldSign] Erreur lors de la mise à jour du badge:', error);
@@ -305,8 +333,34 @@ chrome.tabs.onActivated.addListener(async (activeInfo) => {
 
 // Écouter les mises à jour d'URL dans les onglets
 chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
-  if (changeInfo.status === 'complete' && tab.url) {
-    await updateBadgeForTab(tab);
+  try {
+    if (changeInfo.status === 'complete' && tab && tab.url) {
+      await updateBadgeForTab(tab);
+    } else if (changeInfo.status === 'complete') {
+      // try to get a fresh tab object via Compat
+      try {
+        let fresh = null; try { fresh = await Compat.getTab(tabId); } catch (e) { fresh = null; }
+        if (!fresh) { try { fresh = await new Promise((resolve) => chrome.tabs.get(tabId, resolve)); } catch (err) { fresh = null; } }
+        if (fresh && fresh.url) await updateBadgeForTab(fresh);
+        else {
+          const lastErr = (chrome.runtime && chrome.runtime.lastError) ? (chrome.runtime.lastError.message || chrome.runtime.lastError) : null;
+          if (lastErr) {
+            console.warn('[ShieldSign] onUpdated: no fresh tab for id', tabId, 'lastError=', lastErr);
+          } else {
+            console.debug('[ShieldSign] onUpdated: no fresh tab for id', tabId, 'lastError=null');
+          }
+          try {
+            chrome.tabs.query({ currentWindow: true }, (tabs) => {
+              console.debug('[ShieldSign] onUpdated: currentWindow tabs count=', Array.isArray(tabs) ? tabs.length : 0);
+            });
+          } catch (e) {}
+        }
+      } catch (e) {
+        console.warn('[ShieldSign] onUpdated: error fetching fresh tab', e);
+      }
+    }
+  } catch (e) {
+    console.error('[ShieldSign] onUpdated listener error:', e);
   }
 });
 
@@ -315,13 +369,26 @@ const tabCodes = new Map(); // Stocker les codes par onglet
 
 async function updateBadgeForTab(tab) {
   try {
-    const url = new URL(tab.url);
-    const hostname = url.hostname;
+    if (!tab || !tab.url) return;
+    let hostname;
+    try {
+      const url = new URL(tab.url);
+      hostname = url.hostname;
+    } catch (e) {
+      return;
+    }
     
 
     
     // Vérifier si la page a un champ password
-    const hasPassword = await checkForPasswordField(tab.id);
+    const hasPassword = await (async () => {
+      try {
+        const r = await executeScriptCompat(tab.id, () => !!document.querySelector('input[type="password"]'));
+        if (r && r[0] && typeof r[0].result !== 'undefined') return r[0].result;
+        if (Array.isArray(r) && r.length > 0) return r[0];
+      } catch (e) {}
+      return false;
+    })();
     
  
     
@@ -354,22 +421,20 @@ async function updateBadgeForTab(tab) {
   } catch (error) {
     console.error('[ShieldSign] Erreur dans updateBadgeForTab:', error);
     // URL invalide ou autre erreur, pas de badge
-    await updateBadge(tab.id, 'NO_PASSWORD');
-    tabCodes.delete(tab.id);
+    if (tab && tab.id) {
+      await updateBadge(tab.id, 'NO_PASSWORD');
+      tabCodes.delete(tab.id);
+    }
   }
 }
 
 // Vérifier si un onglet a un champ password
 async function checkForPasswordField(tabId) {
   try {
-    const results = await chrome.scripting.executeScript({
-      target: { tabId: tabId },
-      func: () => {
-        return !!document.querySelector('input[type="password"]');
-      }
-    });
-    
-    return results && results[0] && results[0].result;
+    const results = await executeScriptCompat(tabId, () => !!document.querySelector('input[type="password"]'));
+    if (results && results[0] && typeof results[0].result !== 'undefined') return results[0].result;
+    if (Array.isArray(results) && results.length > 0) return results[0];
+    return false;
   } catch (error) {
     return false;
   }
@@ -381,7 +446,7 @@ async function checkForPasswordField(tabId) {
 
 // Mise à jour des listes distantes
 async function updateLists() {
-  const { lists, settings } = await chrome.storage.local.get(['lists', 'settings']);
+  const { lists, settings } = await storageGet(['lists', 'settings']);
   const ttl = settings?.ttl || DEFAULT_SETTINGS.ttl;
   const now = Date.now();
   
@@ -394,21 +459,26 @@ async function updateLists() {
     }
     
     try {
+      console.log('[ShieldSign] updateLists: fetching', url, 'etag=', listData.etag);
       const headers = {};
       if (listData.etag) {
         headers['If-None-Match'] = listData.etag;
       }
       
       const response = await fetch(url, { headers });
+      console.log('[ShieldSign] updateLists:', url, 'status', response.status);
       
       if (response.status === 304) {
         // Non modifié, mettre à jour lastFetch seulement (préserver enabled et isOfficial)
         lists[url].lastFetch = now;
+        console.log('[ShieldSign] updateLists:', url, 'not modified, updated lastFetch');
       } else if (response.ok) {
         const data = await response.json();
         
         // Valider le schéma
-        if (validateListSchema(data)) {
+        const valid = validateListSchema(data);
+        console.log('[ShieldSign] updateLists:', url, 'schema valid=', valid, 'domains_count=', (data.domains||[]).length);
+        if (valid) {
           lists[url] = {
             etag: response.headers.get('ETag') || listData.etag,
             lastFetch: now,
@@ -418,15 +488,21 @@ async function updateLists() {
             isOfficial: listData.isOfficial,
             enabled: listData.enabled
           };
+          console.log('[ShieldSign] updateLists:', url, 'updated in-memory lists with', (data.domains||[]).length, 'domains');
+        } else {
+          console.warn('[ShieldSign] updateLists: schema invalid for', url);
         }
+      } else {
+        console.warn('[ShieldSign] updateLists: non-ok response for', url, response.status);
       }
     } catch (error) {
+      console.error('[ShieldSign] updateLists: fetch error for', url, error);
       
       // Retry après 5 secondes
       setTimeout(async () => {
         try {
           const response = await fetch(url);
-          if (response.ok) {
+              if (response.ok) {
             const data = await response.json();
             if (validateListSchema(data)) {
               lists[url] = {
@@ -435,9 +511,11 @@ async function updateLists() {
                 data: data,
                 localType: listData.localType || 'community',
                 isOfficial: listData.isOfficial || false,
-                enabled: 'enabled' in listData ? listData.enabled : true
-              };
-              await chrome.storage.local.set({ lists });
+                    enabled: 'enabled' in listData ? listData.enabled : true
+                  };
+              // Persist immediately the updated 'lists' partially to avoid race conditions
+              console.log('[ShieldSign] updateLists: persisting lists after retry for', url);
+              await storageSet({ lists });
             }
           }
         } catch (retryError) {
@@ -447,7 +525,7 @@ async function updateLists() {
   }
   
   // Re-lire le storage avant de sauvegarder pour éviter d'écraser les modifications concurrentes
-  const { lists: freshLists } = await chrome.storage.local.get(['lists']);
+  const { lists: freshLists } = await storageGet(['lists']);
   
   // Fusionner les mises à jour (lastFetch, data) avec les propriétés actuelles (enabled, isOfficial)
   for (const [url, updatedData] of Object.entries(lists)) {
@@ -458,10 +536,14 @@ async function updateLists() {
         enabled: freshLists[url].enabled !== undefined ? freshLists[url].enabled : updatedData.enabled,
         isOfficial: freshLists[url].isOfficial !== undefined ? freshLists[url].isOfficial : updatedData.isOfficial
       };
+    } else {
+      // Si la liste n'existe pas encore dans le storage frais, on l'ajoute intégralement
+      freshLists[url] = updatedData;
     }
   }
   
-  await chrome.storage.local.set({ lists: freshLists });
+  console.log('[ShieldSign] updateLists: saving merged lists, count=', Object.keys(freshLists || {}).length);
+  await storageSet({ lists: freshLists });
 }
 
 // Gérer la soumission d'un formulaire sur un site inconnu
@@ -476,7 +558,7 @@ async function handleFormSubmission(hostname) {
     }
     
     // Récupérer les paramètres
-    const { settings } = await chrome.storage.local.get(['settings']);
+    const { settings } = await storageGet(['settings']);
     const autoAddUnknown = settings?.autoAddUnknown || 'prompt';
     
 
@@ -514,11 +596,33 @@ function validateListSchema(data) {
   if (typeof data.maintainer !== 'string' || data.maintainer.length === 0) return false;
   
   // Vérifier le format des domaines
-  const domainRegex = /^[a-z0-9.-]+\.[a-z]{2,}$/;
-  for (const domain of data.domains) {
-    if (typeof domain !== 'string' || !domainRegex.test(domain)) {
-      return false;
+  // Normaliser et valider les domaines : trim, lowercase, dédupliquer
+  if (!Array.isArray(data.domains)) return false;
+  const cleaned = [];
+  const seen = new Set();
+  const domainRegex = /^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,63}$/i; // TLD 2..63
+  const removed = [];
+  for (let domain of data.domains) {
+    if (typeof domain !== 'string') { removed.push(domain); continue; }
+    domain = domain.trim().toLowerCase();
+    // remove any trailing commas or stray characters
+    domain = domain.replace(/[\s,]+$/,'');
+    if (!domain) continue;
+    if (!domainRegex.test(domain)) { removed.push(domain); continue; }
+    if (!seen.has(domain)) {
+      seen.add(domain);
+      cleaned.push(domain);
     }
+  }
+  if (removed.length > 0) {
+    console.warn('[ShieldSign] validateListSchema: removed invalid domains:', removed);
+  }
+  // Replace domains with cleaned list for downstream use
+  data.domains = cleaned;
+  // Accept list as long as at least one domain remains
+  if (data.domains.length === 0) {
+    console.warn('[ShieldSign] validateListSchema: no valid domains remain after cleaning');
+    return false;
   }
   
   return true;
@@ -529,7 +633,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === 'CHECK_PAGE') {
     checkDomain(message.hostname).then(async (result) => {
       // Ajouter les informations de settings pour le content script
-      const { settings } = await chrome.storage.local.get(['settings']);
+      const { settings } = await storageGet(['settings']);
       result.settings = settings || DEFAULT_SETTINGS;
       
       // Générer un code unique pour cette page et le stocker
@@ -550,6 +654,22 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       sendResponse(result);
     });
     return true; // Permet la réponse asynchrone
+  }
+
+  if (message.action === 'GET_ACTIVE_TAB') {
+    // Use promise style to keep sendResponse port open synchronously
+    Compat.getActiveTab().then((tab) => {
+      sendResponse(tab || null);
+    }).catch(() => {
+      try {
+        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+          sendResponse(tabs && tabs[0] ? tabs[0] : null);
+        });
+      } catch (err) {
+        sendResponse(null);
+      }
+    });
+    return true;
   }
   
   if (message.action === 'ADD_PERSONAL_DOMAIN') {
@@ -602,14 +722,222 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
   
   if (message.action === 'GET_SETTINGS') {
-    chrome.storage.local.get(['settings']).then(data => {
+    storageGet(['settings']).then(data => {
       sendResponse(data.settings || DEFAULT_SETTINGS);
     });
     return true;
   }
+
+  if (message.action === 'GET_ALL_ACTIVE_DOMAINS') {
+    getAllActiveDomains().then(domainsMap => {
+      const res = {
+        enterprise: Array.from(domainsMap.enterprise.keys()),
+        community: Array.from(domainsMap.community.keys()),
+        personal: Array.from(domainsMap.personal.keys())
+      };
+      sendResponse(res);
+    }).catch(() => {
+      sendResponse({ enterprise: [], community: [], personal: [] });
+    });
+    return true;
+  }
+
+  if (message.action === 'DETECT_FORM_ENTRY') {
+    (async () => {
+      try {
+        const rawFormUrl = message.formUrl;
+        // Normalize: remove query and fragment to avoid special dialog modes that render empty
+        let fetchUrl;
+        try {
+          const u = new URL(rawFormUrl);
+          u.search = '';
+          u.hash = '';
+          // Ensure we fetch the canonical viewform path
+          fetchUrl = u.href;
+        } catch (e) {
+          fetchUrl = rawFormUrl;
+        }
+
+        
+        const resp = await fetch(fetchUrl);
+        if (!resp.ok) {
+          sendResponse({ entryId: null, error: `fetch ${resp.status}` });
+          return;
+        }
+        const html = await resp.text();
+        // Try multiple heuristics to find the entry id
+        let m = html.match(/name="(entry\.\d+)"/);
+        if (!m) m = html.match(/data-params="[^"]*?(entry\.\d+)[^\"]*?"/);
+        if (!m) m = html.match(/\bentry\.(\d+)\b/);
+        if (m) {
+          const entry = m[1].startsWith('entry.') ? m[1] : `entry.${m[1]}`;
+          sendResponse({ entryId: entry });
+        } else {
+          sendResponse({ entryId: null });
+        }
+      } catch (e) {
+        
+        sendResponse({ entryId: null, error: e.message });
+      }
+    })();
+    return true;
+  }
+
+  if (message.action === 'POST_TO_GOOGLE_FORM') {
+    (async () => {
+      try {
+        const rawFormBase = message.formBaseUrl;
+        const entryId = message.entryId;
+        const domain = message.domain;
+
+        // Normalize base so we can build /formResponse reliably
+        let base;
+        try {
+          const u = new URL(rawFormBase);
+          u.search = '';
+          u.hash = '';
+          // Keep only the /forms/d/e/<id> prefix
+          const m = u.pathname.match(/^(?:\/forms)?\/d\/e\/[^\/]+/);
+          if (m) base = `${u.protocol}//${u.host}${m[0]}`;
+          else base = `${u.protocol}//${u.host}${u.pathname}`;
+        } catch (e) {
+          // fallback: try regex
+          const m2 = rawFormBase.match(/^(https:\/\/docs.google.com\/forms\/d\/e\/[^\/]+)/);
+          base = m2 ? m2[1] : null;
+        }
+
+        if (!base) {
+        
+          sendResponse({ ok: false, error: 'invalid_form_url' });
+          return;
+        }
+
+        const action = `${base}/formResponse`;
+        
+
+        const params = new URLSearchParams();
+        params.append(entryId, domain);
+        const resp = await fetch(action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: params.toString(),
+          redirect: 'follow'
+        });
+
+        const ok = resp.ok || resp.status === 302 || resp.status === 200;
+        
+        sendResponse({ ok, status: resp.status });
+      } catch (e) {
+        
+        sendResponse({ ok: false, error: e.message });
+      }
+    })();
+    return true;
+  }
+
+  if (message.action === 'DETECT_FORM_ENTRY_VIA_TAB') {
+    (async () => {
+      const rawUrl = message.formUrl;
+      // Normalize URL
+      let urlToOpen = rawUrl;
+      try { const u = new URL(rawUrl); u.search = ''; u.hash = ''; urlToOpen = u.href; } catch (e) { urlToOpen = rawUrl; }
+
+      try {
+        // Create a new tab (in background if possible)
+        const created = await new Promise((resolve, reject) => {
+          try {
+            chrome.tabs.create({ url: urlToOpen, active: false }, (tab) => {
+              if (chrome.runtime.lastError) return reject(chrome.runtime.lastError);
+              resolve(tab);
+            });
+          } catch (e) { reject(e); }
+        });
+
+        const tabId = created.id;
+
+        // Wait for tab to finish loading (timeout after 10s)
+        await new Promise((resolve, reject) => {
+          const timeout = setTimeout(() => {
+            chrome.tabs.remove(tabId).catch(()=>{});
+            reject(new Error('tab_load_timeout'));
+          }, 10000);
+
+          const listener = (tid, changeInfo) => {
+            if (tid === tabId && changeInfo.status === 'complete') {
+              clearTimeout(timeout);
+              chrome.tabs.onUpdated.removeListener(listener);
+              resolve();
+            }
+          };
+
+          chrome.tabs.onUpdated.addListener(listener);
+        });
+
+        // Execute script to find entry id in page DOM
+        const results = await new Promise((resolve, reject) => {
+          try {
+            chrome.scripting.executeScript({
+              target: { tabId: tabId },
+              func: () => {
+                try {
+                  // 1) look for inputs/selects/textarea with name=entry.<digits>
+                  const el = document.querySelector('[name^="entry."]');
+                  if (el && el.getAttribute) {
+                    return { entryId: el.getAttribute('name') };
+                  }
+
+                  // 2) fallback: scan scripts for FB_PUBLIC_LOAD_DATA_
+                  const scripts = Array.from(document.scripts || []);
+                  for (const s of scripts) {
+                    if (!s.textContent) continue;
+                    if (s.textContent.indexOf('FB_PUBLIC_LOAD_DATA_') !== -1) {
+                      // try to find numeric ids that could be field ids
+                      const m = s.textContent.match(/entry\.(\d+)/g);
+                      if (m && m.length > 0) return { entryId: m[0].replace('entry.', 'entry.') };
+                      // last resort: find numbers of 6-12 digits
+                      const m2 = s.textContent.match(/(\d{6,12})/g);
+                      if (m2 && m2.length > 0) return { entryId: 'entry.' + m2[0] };
+                    }
+                  }
+
+                  // 3) scan all inputs for data-params or aria-label containing 'entry.'
+                  const all = Array.from(document.querySelectorAll('input,textarea,select'));
+                  for (const i of all) {
+                    const name = i.getAttribute && i.getAttribute('name');
+                    if (name && /^entry\.\d+$/.test(name)) return { entryId: name };
+                    const dp = i.getAttribute && i.getAttribute('data-params');
+                    if (dp && dp.indexOf('entry.') !== -1) {
+                      const mm = dp.match(/entry\.(\d+)/);
+                      if (mm) return { entryId: 'entry.' + mm[1] };
+                    }
+                  }
+
+                  return { entryId: null };
+                } catch (e) {
+                  return { entryId: null, error: e && e.message };
+                }
+              }
+            }, (injectionResults) => {
+              if (chrome.runtime.lastError) return reject(chrome.runtime.lastError);
+              resolve(injectionResults && injectionResults[0] && injectionResults[0].result ? injectionResults[0].result : { entryId: null });
+            });
+          } catch (e) { reject(e); }
+        });
+
+        // Close the temporary tab
+        try { chrome.tabs.remove(tabId); } catch (e) {}
+
+        sendResponse({ entryId: results.entryId || null, error: results.error || null });
+      } catch (e) {
+        console.warn('[ShieldSign] DETECT_FORM_ENTRY_VIA_TAB error', e && e.message);
+        sendResponse({ entryId: null, error: e && e.message });
+      }
+    })();
+    return true;
+  }
   
   if (message.action === 'UPDATE_SETTINGS') {
-    chrome.storage.local.set({ settings: message.settings }).then(() => {
+    storageSet({ settings: message.settings }).then(() => {
       sendResponse({ success: true });
     });
     return true;
@@ -664,30 +992,30 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
 // Ajouter un domaine à la liste personnelle
 async function addPersonalDomain(domain) {
-  const { user_whitelist } = await chrome.storage.local.get(['user_whitelist']);
+  const { user_whitelist } = await storageGet(['user_whitelist']);
   const list = user_whitelist || [];
   
   if (!list.includes(domain)) {
     list.push(domain);
-    await chrome.storage.local.set({ user_whitelist: list });
+    await storageSet({ user_whitelist: list });
   }
 }
 
 // Retirer un domaine de la liste personnelle
 async function removePersonalDomain(domain) {
-  const { user_whitelist } = await chrome.storage.local.get(['user_whitelist']);
+  const { user_whitelist } = await storageGet(['user_whitelist']);
   const list = user_whitelist || [];
   
   const index = list.indexOf(domain);
   if (index > -1) {
     list.splice(index, 1);
-    await chrome.storage.local.set({ user_whitelist: list });
+    await storageSet({ user_whitelist: list });
   }
 }
 
 // Ajouter une liste distante
 async function addList(url, type = 'community') {
-  const { lists } = await chrome.storage.local.get(['lists']);
+  const { lists } = await storageGet(['lists']);
   const allLists = lists || {};
   
   // Vérifier si une liste enterprise existe déjà
@@ -717,7 +1045,7 @@ async function addList(url, type = 'community') {
       localType: type
     };
     
-    await chrome.storage.local.set({ lists: allLists });
+    await storageSet({ lists: allLists });
     
     return { success: true };
   } catch (error) {
@@ -727,7 +1055,7 @@ async function addList(url, type = 'community') {
 
 // Supprimer une liste
 async function removeList(url) {
-  const { lists } = await chrome.storage.local.get(['lists']);
+  const { lists } = await storageGet(['lists']);
   
   if (lists && lists[url]) {
     // Empêcher la suppression de la liste officielle
@@ -736,7 +1064,7 @@ async function removeList(url) {
     }
     
     delete lists[url];
-    await chrome.storage.local.set({ lists });
+    await storageSet({ lists });
     return { success: true };
   }
   
@@ -745,7 +1073,7 @@ async function removeList(url) {
 
 // Activer/désactiver une liste
 async function toggleList(url, enabled) {
-  const { lists } = await chrome.storage.local.get(['lists']);
+  const { lists } = await storageGet(['lists']);
   
   if (lists && lists[url]) {
     // Si enabled n'est pas fourni, inverser l'état actuel
@@ -754,7 +1082,7 @@ async function toggleList(url, enabled) {
     }
     
     lists[url].enabled = enabled;
-    await chrome.storage.local.set({ lists });
+    await storageSet({ lists });
     
     return { success: true, enabled };
   }

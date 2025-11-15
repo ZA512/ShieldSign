@@ -23,12 +23,15 @@ async function checkPageSecurity() {
   const hostname = window.location.hostname;
   
   try {
-    const response = await chrome.runtime.sendMessage({
-      action: 'CHECK_PAGE',
-      hostname: hostname
+    const response = await new Promise((resolve) => {
+      try {
+        chrome.runtime.sendMessage({ action: 'CHECK_PAGE', hostname: hostname }, (res) => { resolve(res); });
+      } catch (e) {
+        resolve(null);
+      }
     });
-    
-    if (response.status === 'VALIDATED' && response.settings) {
+
+    if (response && response.status === 'VALIDATED' && response.settings) {
       const validationMode = response.settings.validationMode || 'banner-code';
       
       // N'injecter le bandeau que si le mode n'est pas badge-only
