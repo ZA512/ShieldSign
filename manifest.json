@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "__MSG_extName__",
   "version": "1.0.0",
   "description": "__MSG_extDescription__",
@@ -16,11 +16,13 @@
     "activeTab",
     "webRequest",
     "alarms",
+    "scripting"
+  ],
+  "host_permissions": [
     "<all_urls>"
   ],
   "background": {
-    "scripts": ["background.js"],
-    "persistent": true
+    "service_worker": "background.js"
   },
   "content_scripts": [
     {
@@ -29,7 +31,7 @@
       "run_at": "document_end"
     }
   ],
-  "browser_action": {
+  "action": {
     "default_popup": "popup/popup.html",
     "default_icon": {
       "16": "icons/icon16.png",
@@ -49,7 +51,9 @@
     "128": "icons/icon128.png"
   },
   "web_accessible_resources": [
-    "icons/icon56ssf.png",
-    "compat.js"
+    {
+      "resources": ["icons/icon56ssf.png", "compat.js"],
+      "matches": ["<all_urls>"]
+    }
   ]
 }

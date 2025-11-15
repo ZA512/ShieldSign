@@ -3,6 +3,26 @@
 
 // Import compat layer for cross-browser API helpers
 // We try importScripts (Chrome), otherwise fetch+eval the file so Firefox service worker works too.
+// Lightweight logger: safe to call early. Reads `settings.debug` from chrome.storage when available.
+const SSLog = (function(){
+  let DEBUG = false;
+  function setDebugFromStorage() {
+    try {
+      if (chrome && chrome.storage && chrome.storage.local && chrome.storage.local.get) {
+        chrome.storage.local.get(['settings'], (res) => {
+          try { const settings = (res && res.settings) || {}; DEBUG = !!settings.debug; } catch(e) { DEBUG = false; }
+        });
+      }
+    } catch (e) { DEBUG = false; }
+  }
+  setDebugFromStorage();
+  function debug(...args) { if (DEBUG) console.debug('[ShieldSign]', ...args); }
+  function info(...args) { if (DEBUG) console.info('[ShieldSign]', ...args); }
+  function warn(...args) { console.warn('[ShieldSign]', ...args); }
+  function error(...args) { console.error('[ShieldSign]', ...args); }
+  return { init: setDebugFromStorage, debug, info, warn, error };
+})();
+
 let CompatReady = (async () => {
   try {
     if (typeof importScripts === 'function') {
@@ -10,7 +30,7 @@ let CompatReady = (async () => {
       return;
     }
   } catch (e) {
-    console.warn('[ShieldSign] compat import failed', e);
+    SSLog.warn('[ShieldSign] compat import failed', e);
   }
 
   try {
@@ -22,7 +42,7 @@ let CompatReady = (async () => {
       return;
     }
   } catch (e) {
-    console.warn('[ShieldSign] compat fetch+eval failed', e);
+    SSLog.debug('[ShieldSign] compat fetch+eval failed', e);
   }
 
   // Final fallback: provide a fuller compat layer using chrome.* APIs so
@@ -128,7 +148,7 @@ let CompatReady = (async () => {
 
       return { storageGet, storageSet, getActiveTab, getTab, setBadgeText, setBadgeBg, executeScriptCompat };
     })();
-    console.warn('[ShieldSign] Using embedded Compat fallback (chrome.* wrappers)');
+    SSLog.debug('[ShieldSign] Using embedded Compat fallback (chrome.* wrappers)');
   }
 })();
 
@@ -205,6 +225,8 @@ async function actionSetBadgeText(text, tabId) { await CompatReady; return Compa
 async function actionSetBadgeBackgroundColor(color, tabId) { await CompatReady; return Compat.setBadgeBg(color, tabId); }
 
 async function executeScriptCompat(tabId, func) { await CompatReady; return Compat.executeScriptCompat(tabId, func); }
+
+// SSLog is defined earlier (safe, minimal implementation). No-op here.
 
 // Initialisation au démarrage
 chrome.runtime.onInstalled.addListener(async () => {
@@ -444,13 +466,13 @@ chrome.tabs.onActivated.addListener(async (activeInfo) => {
     } else {
       const lastErr = (chrome.runtime && chrome.runtime.lastError) ? (chrome.runtime.lastError.message || chrome.runtime.lastError) : null;
       if (lastErr) {
-        console.warn('[ShieldSign] onActivated: no tab returned for id', activeInfo.tabId, 'lastError=', lastErr);
+        SSLog.warn('[ShieldSign] onActivated: no tab returned for id', activeInfo.tabId, 'lastError=', lastErr);
       } else {
-        console.debug('[ShieldSign] onActivated: no tab returned for id', activeInfo.tabId, 'lastError=null');
+        SSLog.debug('onActivated: no tab returned for id', activeInfo.tabId, 'lastError=null');
       }
       try {
-        chrome.tabs.query({ currentWindow: true }, (tabs) => {
-          console.debug('[ShieldSign] onActivated: currentWindow tabs count=', Array.isArray(tabs) ? tabs.length : 0);
+          chrome.tabs.query({ currentWindow: true }, (tabs) => {
+          SSLog.debug('onActivated: currentWindow tabs count=', Array.isArray(tabs) ? tabs.length : 0);
         });
       } catch (e) {}
     }
@@ -469,22 +491,22 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
       try {
         let fresh = null; try { fresh = await Compat.getTab(tabId); } catch (e) { fresh = null; }
         if (!fresh) { try { fresh = await new Promise((resolve) => chrome.tabs.get(tabId, resolve)); } catch (err) { fresh = null; } }
-        if (fresh && fresh.url) await updateBadgeForTab(fresh);
+            if (fresh && fresh.url) await updateBadgeForTab(fresh);
         else {
           const lastErr = (chrome.runtime && chrome.runtime.lastError) ? (chrome.runtime.lastError.message || chrome.runtime.lastError) : null;
           if (lastErr) {
-            console.warn('[ShieldSign] onUpdated: no fresh tab for id', tabId, 'lastError=', lastErr);
+            SSLog.warn('onUpdated: no fresh tab for id', tabId, 'lastError=', lastErr);
           } else {
-            console.debug('[ShieldSign] onUpdated: no fresh tab for id', tabId, 'lastError=null');
+            SSLog.debug('onUpdated: no fresh tab for id', tabId, 'lastError=null');
           }
           try {
             chrome.tabs.query({ currentWindow: true }, (tabs) => {
-              console.debug('[ShieldSign] onUpdated: currentWindow tabs count=', Array.isArray(tabs) ? tabs.length : 0);
+              SSLog.debug('onUpdated: currentWindow tabs count=', Array.isArray(tabs) ? tabs.length : 0);
             });
           } catch (e) {}
         }
       } catch (e) {
-        console.warn('[ShieldSign] onUpdated: error fetching fresh tab', e);
+          SSLog.warn('[ShieldSign] onUpdated: error fetching fresh tab', e);
       }
     }
   } catch (e) {
@@ -613,10 +635,10 @@ async function updateLists() {
             enabled: listData.enabled
           };
         } else {
-          console.warn('[ShieldSign] updateLists: schema invalid for', url);
+          SSLog.warn('[ShieldSign] updateLists: schema invalid for', url);
         }
       } else {
-        console.warn('[ShieldSign] updateLists: non-ok response for', url, response.status);
+        SSLog.warn('[ShieldSign] updateLists: non-ok response for', url, response.status);
       }
     } catch (error) {
       console.error('[ShieldSign] updateLists: fetch error for', url, error);
@@ -736,13 +758,13 @@ function validateListSchema(data) {
     }
   }
   if (removed.length > 0) {
-    console.warn('[ShieldSign] validateListSchema: removed invalid domains:', removed);
+    SSLog.warn('[ShieldSign] validateListSchema: removed invalid domains:', removed);
   }
   // Replace domains with cleaned list for downstream use
   data.domains = cleaned;
   // Accept list as long as at least one domain remains
   if (data.domains.length === 0) {
-    console.warn('[ShieldSign] validateListSchema: no valid domains remain after cleaning');
+    SSLog.warn('[ShieldSign] validateListSchema: no valid domains remain after cleaning');
     return false;
   }
   
@@ -1087,7 +1109,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
         sendResponse({ entryId: results.entryId || null, error: results.error || null });
       } catch (e) {
-        console.warn('[ShieldSign] DETECT_FORM_ENTRY_VIA_TAB error', e && e.message);
+        SSLog.warn('[ShieldSign] DETECT_FORM_ENTRY_VIA_TAB error', e && e.message);
         sendResponse({ entryId: null, error: e && e.message });
       }
     })();
@@ -1233,11 +1255,11 @@ async function removeList(url) {
 async function toggleList(url, enabled) {
   const { lists } = await storageGet(['lists']);
 
-  console.debug('[ShieldSign] toggleList called', { url, enabled });
-  if (lists) console.debug('[ShieldSign] toggleList: current keys', Object.keys(lists));
+  SSLog.debug('toggleList called', { url, enabled });
+  if (lists) SSLog.debug('toggleList: current keys', Object.keys(lists));
 
   if (!lists) {
-    console.warn('[ShieldSign] toggleList: no lists present in storage');
+    SSLog.warn('[ShieldSign] toggleList: no lists present in storage');
     return { success: false, error: 'Liste non trouvée.' };
   }
 
@@ -1246,7 +1268,7 @@ async function toggleList(url, enabled) {
     if (enabled === undefined) enabled = !(lists[url].enabled !== false);
     lists[url].enabled = enabled;
     await storageSet({ lists });
-    console.debug('[ShieldSign] toggleList: matched exact key', url);
+    SSLog.debug('toggleList: matched exact key', url);
     // Notify listeners as a broadcast (fallback for callers that don't receive the direct response)
     try { chrome.runtime.sendMessage({ action: 'TOGGLE_LIST_RESULT', url, success: true, enabled }); } catch (e) {}
     return { success: true, enabled };
@@ -1275,11 +1297,11 @@ async function toggleList(url, enabled) {
     if (enabled === undefined) enabled = !(lists[foundKey].enabled !== false);
     lists[foundKey].enabled = enabled;
     await storageSet({ lists });
-    console.debug('[ShieldSign] toggleList: matched normalized key', foundKey);
+    SSLog.debug('toggleList: matched normalized key', foundKey);
     try { chrome.runtime.sendMessage({ action: 'TOGGLE_LIST_RESULT', url: foundKey, success: true, enabled }); } catch (e) {}
     return { success: true, enabled };
   }
-  console.warn('[ShieldSign] toggleList: no matching key found for', url);
+  SSLog.warn('[ShieldSign] toggleList: no matching key found for', url);
   try { chrome.runtime.sendMessage({ action: 'TOGGLE_LIST_RESULT', url, success: false, error: 'Liste non trouvée.' }); } catch (e) {}
   return { success: false, error: 'Liste non trouvée.' };
 }

@@ -179,6 +179,23 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 });
 
+// Lightweight logger (mirrors background SSLog): debug controlled by settings.debug
+const SSLog = (function(){
+  let DEBUG = false;
+  async function init() {
+    try {
+      const { settings } = await storageGet(['settings']);
+      DEBUG = !!(settings && settings.debug);
+    } catch (e) { DEBUG = false; }
+  }
+  function debug(...args) { if (DEBUG) console.debug('[ShieldSign]', ...args); }
+  function info(...args) { if (DEBUG) console.info('[ShieldSign]', ...args); }
+  function warn(...args) { console.warn('[ShieldSign]', ...args); }
+  function error(...args) { console.error('[ShieldSign]', ...args); }
+  init().catch(()=>{});
+  return { init, debug, info, warn, error };
+})();
+
 // Gestion des onglets
 function setupTabs() {
   const tabBtns = document.querySelectorAll('.tab-btn');
@@ -472,14 +489,14 @@ async function toggleList(url, enabled) {
     const cleanUrl = (url || '').trim();
     let response = await new Promise((resolve) => chrome.runtime.sendMessage({ action: 'TOGGLE_LIST', url: cleanUrl, enabled }, (r) => resolve(r)));
 
-    console.debug('[ShieldSign] options.toggleList: initial response', { url: cleanUrl, response });
+    SSLog.debug('options.toggleList: initial response', { url: cleanUrl, response });
 
     // If the runtime message returned no response (rare in some Firefox contexts), retry once briefly
     if (!response) {
       await new Promise((res) => setTimeout(res, 250));
-      console.warn('[ShieldSign] options.toggleList: no response, retrying once', { url: cleanUrl });
+      SSLog.warn('[ShieldSign] options.toggleList: no response, retrying once', { url: cleanUrl });
       response = await new Promise((resolve) => chrome.runtime.sendMessage({ action: 'TOGGLE_LIST', url: cleanUrl, enabled }, (r) => resolve(r)));
-      console.debug('[ShieldSign] options.toggleList: retry response', { url: cleanUrl, response });
+      SSLog.debug('options.toggleList: retry response', { url: cleanUrl, response });
     }
 
     // If first attempt failed, try normalized variant (strip query/hash/trailing slash)
@@ -495,7 +512,7 @@ async function toggleList(url, enabled) {
       }
 
       if (norm !== cleanUrl) {
-        console.warn('[ShieldSign] toggleList: retrying with normalized URL', { original: cleanUrl, normalized: norm });
+        SSLog.warn('[ShieldSign] toggleList: retrying with normalized URL', { original: cleanUrl, normalized: norm });
         response = await new Promise((resolve) => chrome.runtime.sendMessage({ action: 'TOGGLE_LIST', url: norm, enabled }, (r) => resolve(r)));
       }
     }
@@ -734,7 +751,7 @@ async function loadOfficialList() {
 chrome.runtime.onMessage.addListener((msg) => {
   try {
     if (msg && msg.action === 'TOGGLE_LIST_RESULT') {
-      console.debug('[ShieldSign] options received TOGGLE_LIST_RESULT', msg);
+      SSLog.debug('options received TOGGLE_LIST_RESULT', msg);
       // Refresh lists UI to reflect the change
       loadLists().catch(() => {});
       // Update official toggle state if applicable
@@ -761,13 +778,13 @@ async function toggleOfficialList() {
   try {
     // Envoyer le toggle (le background.js gère l'inversion automatique)
     let response = await new Promise((resolve) => chrome.runtime.sendMessage({ action: 'TOGGLE_LIST', url: 'https://raw.githubusercontent.com/ZA512/ShieldSign/refs/heads/main/shieldsign_public_list_v1.json' }, (r) => resolve(r)));
-    console.debug('[ShieldSign] options.toggleOfficialList: initial response', response);
+    SSLog.debug('[ShieldSign] options.toggleOfficialList: initial response', response);
     if (!response) {
       // brief retry
       await new Promise((res) => setTimeout(res, 200));
-      console.warn('[ShieldSign] options.toggleOfficialList: no response, retrying once');
+      SSLog.warn('[ShieldSign] options.toggleOfficialList: no response, retrying once');
       response = await new Promise((resolve) => chrome.runtime.sendMessage({ action: 'TOGGLE_LIST', url: 'https://raw.githubusercontent.com/ZA512/ShieldSign/refs/heads/main/shieldsign_public_list_v1.json' }, (r) => resolve(r)));
-      console.debug('[ShieldSign] options.toggleOfficialList: retry response', response);
+      SSLog.debug('[ShieldSign] options.toggleOfficialList: retry response', response);
     }
     
     if (response && response.success) {
@@ -979,10 +996,10 @@ async function sharePersonalToFormInternal(formUrl) {
             successCount++;
             sharedSet.add(domain);
           } else {
-            console.warn('POST_TO_GOOGLE_FORM failed', resp);
+            SSLog.warn('POST_TO_GOOGLE_FORM failed', resp);
           }
         } catch (e) {
-          console.warn('Failed to post', domain, e);
+          SSLog.warn('Failed to post', domain, e);
         }
       }
 
