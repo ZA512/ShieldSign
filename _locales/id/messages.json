@@ -806,5 +806,62 @@
   },
   "notificationSiteAdded": {
     "message": "Situs ditambahkan ke daftar pribadi Anda"
+  },
+  "shareToFormsTitle": {
+    "message": "Bagikan ke Google Forms"
+  },
+  "shareToFormsDescription": {
+    "message": "Tempelkan URL formulir Google Anda (halaman tampilan) di sini. Ekstensi akan secara otomatis mengirimkan domain dari daftar pribadi Anda yang belum ada di daftar komunitas."
+  },
+  "shareToFormsPlaceholder": {
+    "message": "https://docs.google.com/forms/d/e/…/viewform"
+  },
+  "shareToFormsBtn": {
+    "message": "Bagikan ke Sheets"
+  },
+  "shareToFormsBtnAbout": {
+    "message": "Bagikan daftar saya"
+  },
+  "shareToFormsNote": {
+    "message": "Pengiriman pertama akan mendeteksi kolom formulir secara otomatis jika memungkinkan."
+  },
+  "shareToFormsTipAbout": {
+    "message": "Tip: tempelkan URL formulir di sini sekali lalu klik \"Bagikan\" dari layar ini atau dari tab Sumber Pribadi."
+  },
+  "sharedDomainsCount": {
+    "message": "Domain yang sudah dibagikan: {count}"
+  },
+  "clearSharedBtn": {
+    "message": "Hapus riwayat"
+  },
+  "toastPreparingSubmission": {
+    "message": "Mempersiapkan pengiriman..."
+  },
+  "toastNoDomainsToShare": {
+    "message": "Tidak ada domain pribadi untuk dibagikan"
+  },
+  "toastNoNewDomainsToShare": {
+    "message": "Tidak ada domain baru untuk dibagikan"
+  },
+  "toastFormUrlRequired": {
+    "message": "Harap tempelkan URL formulir"
+  },
+  "toastFormUrlRequiredAbout": {
+    "message": "Harap tempelkan URL formulir di bagian Tentang"
+  },
+  "toastFormFieldDetectionFailed": {
+    "message": "Tidak dapat mendeteksi kolom formulir secara otomatis. Ekstensi akan membuka halaman untuk pengiriman manual."
+  },
+  "toastDomainsShared": {
+    "message": "Terima kasih — {count} domain dibagikan."
+  },
+  "toastShareError": {
+    "message": "Kesalahan saat berbagi ke Google Forms"
+  },
+  "toastSharedHistoryCleared": {
+    "message": "Riwayat dihapus."
+  },
+  "confirmClearSharedHistory": {
+    "message": "Hapus riwayat domain yang dibagikan secara lokal?"
   }
 }

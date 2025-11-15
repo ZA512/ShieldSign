@@ -121,6 +121,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('learnMoreBtn').addEventListener('click', showLearnMoreModal);
   document.getElementById('downloadExampleBtn').addEventListener('click', downloadExample);
   document.getElementById('closeModal').addEventListener('click', closeLearnMoreModal);
+  document.getElementById('sharePersonalOneClickBtn')?.addEventListener('click', sharePersonalOneClick);
+  document.getElementById('sharePersonalAssistBtn')?.addEventListener('click', shareViaGistAssist);
+  document.getElementById('shareToFormBtn')?.addEventListener('click', sharePersonalToForm);
+  document.getElementById('shareToFormAboutBtn')?.addEventListener('click', sharePersonalToFormFromAbout);
+  document.getElementById('clearSharedBtn')?.addEventListener('click', clearSharedHistory);
   
   // Auto-sauvegarde sur changements
   document.getElementById('checkCN')?.addEventListener('change', saveSettings);
@@ -726,6 +731,216 @@ async function exportPersonalList() {
     showToast(chrome.i18n.getMessage('toastListExported'));
   } catch (error) {
     showToast(chrome.i18n.getMessage('errorExporting'), true);
+  }
+}
+
+// Helper: POST a single domain to Google Form (constructed formResponse URL and entry id)
+async function postToGoogleForm(formBaseUrl, entryId, domain) {
+  // formBaseUrl should be like https://docs.google.com/forms/d/e/<ID>/viewform
+  // transform to formResponse endpoint
+  const match = formBaseUrl.match(/^(https:\/\/docs.google.com\/forms\/d\/e\/[^\/]+)\/viewform/);
+  if (!match) throw new Error('URL de formulaire invalide');
+  const action = `${match[1]}/formResponse`;
+
+  const params = new URLSearchParams();
+  params.append(entryId, domain);
+
+  const resp = await fetch(action, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: params.toString()
+  });
+
+  return resp.ok || resp.status === 302 || resp.status === 200;
+}
+
+// Try to detect entry id by fetching the form HTML and searching for the first input name like entry.xxxxx
+async function detectFormEntryId(formUrl) {
+  const resp = await fetch(formUrl);
+  if (!resp.ok) throw new Error('Impossible de récupérer le formulaire');
+  const html = await resp.text();
+  const m = html.match(/name="(entry\.\d+)"/);
+  if (m) return m[1];
+  // fallback: try to find input with aria-label 'Domain' (not reliable)
+  const m2 = html.match(/aria-label="([^"]*domain[^"]*)"/i);
+  return null;
+}
+
+// Share personal list to Google Form (from personal tab)
+async function sharePersonalToForm() {
+  const formUrl = document.getElementById('googleFormUrl')?.value?.trim();
+  if (!formUrl) { showToast(chrome.i18n.getMessage('toastFormUrlRequired'), true); return; }
+  await sharePersonalToFormInternal(formUrl);
+}
+
+async function sharePersonalToFormFromAbout() {
+  const formUrl = document.getElementById('googleFormUrlAbout')?.value?.trim();
+  if (!formUrl) { showToast(chrome.i18n.getMessage('toastFormUrlRequiredAbout'), true); return; }
+  await sharePersonalToFormInternal(formUrl);
+}
+
+async function sharePersonalToFormInternal(formUrl) {
+  try {
+    showToast(chrome.i18n.getMessage('toastPreparingSubmission'));
+
+    // Récupérer les domaines personnels
+    const { user_whitelist } = await chrome.storage.local.get(['user_whitelist']);
+    const personal = user_whitelist || [];
+
+    if (personal.length === 0) { showToast(chrome.i18n.getMessage('toastNoDomainsToShare'), true); return; }
+
+    // Récupérer les domaines existants (toutes listes)
+    const allDomainsMap = await getAllActiveDomains();
+    const existing = new Set([
+      ...allDomainsMap.enterprise.keys(),
+      ...allDomainsMap.community.keys(),
+      ...allDomainsMap.personal.keys()
+    ]);
+
+    // Normaliser et filtrer
+    const normalized = personal.map(d => d.toLowerCase().trim().replace(/^www\./, '')).filter(Boolean);
+
+    // Charger historique des partages pour éviter double envoi
+    const { shared_to_form } = await chrome.storage.local.get(['shared_to_form']);
+    const sharedSet = new Set(shared_to_form || []);
+
+    const toSend = normalized.filter(d => !existing.has(d) && !sharedSet.has(d));
+
+    if (toSend.length === 0) { showToast(chrome.i18n.getMessage('toastNoNewDomainsToShare'), true); return; }
+
+    // Detect entry id
+    let entryId = null;
+    try { entryId = await detectFormEntryId(formUrl); } catch (e) { entryId = null; }
+
+    if (!entryId) {
+      // If cannot detect, try a default common field name: entry.123456
+      showToast(chrome.i18n.getMessage('toastFormFieldDetectionFailed'), true);
+      // Open the form and let user paste domains (fast path): copy to clipboard and open
+      await navigator.clipboard.writeText(toSend.join('\n'));
+      window.open(formUrl, '_blank');
+      return;
+    }
+
+    // Post each domain sequentially
+    let successCount = 0;
+    for (const domain of toSend) {
+      try {
+        await postToGoogleForm(formUrl, entryId, domain);
+        successCount++;
+        // mark as shared locally
+        sharedSet.add(domain);
+      } catch (e) {
+        console.warn('Failed to post', domain, e);
+      }
+    }
+
+    // Save updated shared list
+    await chrome.storage.local.set({ shared_to_form: Array.from(sharedSet) });
+    updateSharedCountUI(sharedSet.size);
+
+    showToast(chrome.i18n.getMessage('toastDomainsShared').replace('{count}', successCount));
+  } catch (err) {
+    console.error('Erreur sharePersonalToFormInternal', err);
+    showToast(chrome.i18n.getMessage('toastShareError'), true);
+  }
+}
+
+async function updateSharedCountUI(count) {
+  const el = document.getElementById('sharedCount');
+  if (el) el.textContent = chrome.i18n.getMessage('sharedDomainsCount').replace('{count}', count);
+}
+
+async function clearSharedHistory() {
+  if (!confirm(chrome.i18n.getMessage('confirmClearSharedHistory'))) return;
+  await chrome.storage.local.remove('shared_to_form');
+  updateSharedCountUI(0);
+  showToast(chrome.i18n.getMessage('toastSharedHistoryCleared'));
+}
+
+// Initialiser l'état du compteur de partages
+(async function initSharedUI(){
+  const { shared_to_form } = await chrome.storage.local.get(['shared_to_form']);
+  updateSharedCountUI((shared_to_form || []).length);
+})();
+
+// Préparer le payload de contribution (JSON standardisé)
+async function prepareContributionPayload(maintainer) {
+  const { user_whitelist } = await chrome.storage.local.get(['user_whitelist']);
+  const domains = user_whitelist || [];
+  const manifest = chrome.runtime.getManifest();
+
+  return {
+    schema_version: 1,
+    list_name: `Contribution personnelle ShieldSign (${domains.length} domaines)`,
+    maintainer: maintainer || 'anonymous',
+    export_date: new Date().toISOString(),
+    domains: domains,
+    source: 'extension-shieldsign',
+    notes: `Generated by ShieldSign ${manifest.version}`
+  };
+}
+
+// Partage assisté : copie dans le presse-papier et ouvre la page de création Gist
+async function shareViaGistAssist() {
+  try {
+    const payload = await prepareContributionPayload();
+    const content = JSON.stringify(payload, null, 2);
+
+    // Copier dans le presse-papier (doit être déclenché par click)
+    await navigator.clipboard.writeText(content);
+
+    // Ouvrir la page de création Gist
+    window.open('https://gist.github.com/new', '_blank');
+
+    showToast('JSON copié dans le presse‑papier. Collez dans la page Gist et cliquez sur "Create public gist".');
+  } catch (err) {
+    console.error('Erreur shareViaGistAssist', err);
+    showToast('Erreur lors de la préparation du partage', true);
+  }
+}
+
+// Partage 1-clic : option proxy ou fallback assist
+async function sharePersonalOneClick() {
+  try {
+    const proxyUrl = document.getElementById('contribProxyUrl')?.value?.trim();
+    const payload = await prepareContributionPayload();
+
+    // Si proxy fourni, tenter de POST vers le proxy
+    if (proxyUrl && proxyUrl.length > 0) {
+      try {
+        const resp = await fetch(proxyUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ payload })
+        });
+
+        if (!resp.ok) {
+          const text = await resp.text().catch(()=>null);
+          throw new Error(`Proxy error: ${resp.status} ${text || resp.statusText}`);
+        }
+
+        const data = await resp.json().catch(()=>null);
+        if (data && data.success && data.url) {
+          window.open(data.url, '_blank');
+          showToast('Partage réussi — ouverture du lien.');
+          return;
+        } else {
+          throw new Error('Proxy did not return success with url');
+        }
+      } catch (proxyErr) {
+        console.warn('Proxy failed, falling back to assist', proxyErr);
+        showToast('Le partage automatique a échoué, ouverture de l’assistant...', true);
+        await shareViaGistAssist();
+        return;
+      }
+    }
+
+    // Pas de proxy : on ne peut pas créer un Gist sans token côté client de façon fiable
+    // Fallback : copier+ouvrir (assisté)
+    await shareViaGistAssist();
+  } catch (err) {
+    console.error('Erreur sharePersonalOneClick', err);
+    showToast('Erreur lors du partage 1‑clic', true);
   }
 }
 

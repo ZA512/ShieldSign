@@ -499,9 +499,35 @@ Les contributions sont les bienvenues ! Consultez le [guide de contribution](CON
 - **Commentaires** : expliquer le "pourquoi", pas le "quoi"
 - **Auto-sauvegarde** : tous les nouveaux paramètres doivent s'auto-sauvegarder
 
+### Partager vos domaines personnels
+
+Vous pouvez contribuer à la liste communautaire officielle en partageant les domaines que vous avez validés dans votre liste personnelle !
+
+**Comment ça marche ?**
+
+1. **Collecte automatique** : Allez dans l'onglet **Sources personnelles** ou **À propos**
+2. **Collez l'URL du formulaire** : `https://docs.google.com/forms/d/e/1FAIpQLSce_bowurxHSWmiYqRa-QrTu2OEnHCdKFdx1AvqE0CqmHqxEg/viewform`
+3. **Cliquez sur "Partager"** : l'extension envoie automatiquement vos domaines
+4. **C'est terminé !** : merci pour votre contribution 🙏
+
+**Ce qui est partagé :**
+- ✅ Uniquement les domaines (ex: `login.example.com`)
+- ✅ Filtrage automatique des domaines déjà dans la liste communautaire
+- ✅ Filtrage automatique des domaines internes (.local, .lan, IPs privées)
+- ✅ Aucune donnée personnelle, aucune métadonnée
+- ✅ Contribution 100% anonyme
+
+**Avantages :**
+- 🌐 Aide la communauté à avoir une liste plus complète
+- 🔒 Renforce la sécurité pour tous les utilisateurs
+- ⚡ Partage en 1 clic, sans compte GitHub requis
+- 📊 Historique local pour éviter les doublons
+
+**Note :** L'extension garde un historique local des domaines déjà partagés pour éviter les ré-soumissions. Vous pouvez vider cet historique si besoin via le bouton "Vider historique partagé".
+
 ### Listes communautaires
 
-Pour proposer une liste communautaire :
+Pour proposer une liste communautaire complète :
 1. **Héberger votre liste** au format JSON (voir Format des listes)
 2. **Ouvrir une issue** avec :
    - URL de votre liste

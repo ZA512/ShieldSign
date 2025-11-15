@@ -806,5 +806,62 @@
   },
   "notificationSiteAdded": {
     "message": "Sivu on lisätty henkilökohtaiselle listallesi"
+  },
+  "shareToFormsTitle": {
+    "message": "Jaa Google Formsiin"
+  },
+  "shareToFormsDescription": {
+    "message": "Liitä tähän Google-lomakkeen URL (katselusivu). Laajennus lähettää automaattisesti henkilökohtaisen luettelosi verkkotunnukset, joita ei vielä ole yhteisöluetteloissa."
+  },
+  "shareToFormsPlaceholder": {
+    "message": "https://docs.google.com/forms/d/e/…/viewform"
+  },
+  "shareToFormsBtn": {
+    "message": "Jaa Sheetsiin"
+  },
+  "shareToFormsBtnAbout": {
+    "message": "Jaa luetteloni"
+  },
+  "shareToFormsNote": {
+    "message": "Ensimmäinen lähetys havaitsee lomakkeen kentän automaattisesti, jos mahdollista."
+  },
+  "shareToFormsTipAbout": {
+    "message": "Vinkki: liitä lomakkeen URL tähän kerran ja napsauta sitten \"Jaa\" tältä näytöltä tai Henkilökohtaiset lähteet -välilehdeltä."
+  },
+  "sharedDomainsCount": {
+    "message": "Jo jaetut verkkotunnukset: {count}"
+  },
+  "clearSharedBtn": {
+    "message": "Tyhjennä historia"
+  },
+  "toastPreparingSubmission": {
+    "message": "Valmistellaan lähetystä..."
+  },
+  "toastNoDomainsToShare": {
+    "message": "Ei henkilökohtaisia verkkotunnuksia jaettavaksi"
+  },
+  "toastNoNewDomainsToShare": {
+    "message": "Ei uusia verkkotunnuksia jaettavaksi"
+  },
+  "toastFormUrlRequired": {
+    "message": "Liitä lomakkeen URL"
+  },
+  "toastFormUrlRequiredAbout": {
+    "message": "Liitä lomakkeen URL Tietoja-osioon"
+  },
+  "toastFormFieldDetectionFailed": {
+    "message": "Lomakkeen kenttää ei voida havaita automaattisesti. Laajennus avaa sivun manuaalista lähetystä varten."
+  },
+  "toastDomainsShared": {
+    "message": "Kiitos — {count} verkkotunnusta jaettu."
+  },
+  "toastShareError": {
+    "message": "Virhe jaettaessa Google Formsiin"
+  },
+  "toastSharedHistoryCleared": {
+    "message": "Historia tyhjennetty."
+  },
+  "confirmClearSharedHistory": {
+    "message": "Poistetaanko paikallisesti jaettujen verkkotunnusten historia?"
   }
 }

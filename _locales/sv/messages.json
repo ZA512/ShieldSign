@@ -805,6 +805,63 @@
     "message": "Nej"
   },
   "notificationSiteAdded": {
-    "message": "Sidan har lagts till i din personliga lista"
+    "message": "Webbplatsen har lagts till i din personliga lista"
+  },
+  "shareToFormsTitle": {
+    "message": "Dela till Google Forms"
+  },
+  "shareToFormsDescription": {
+    "message": "Klistra in URL:en till ditt Google-formulär (visningssida) här. Tillägget skickar automatiskt domäner från din personliga lista som inte redan finns i gemenskapslistorna."
+  },
+  "shareToFormsPlaceholder": {
+    "message": "https://docs.google.com/forms/d/e/…/viewform"
+  },
+  "shareToFormsBtn": {
+    "message": "Dela till Sheets"
+  },
+  "shareToFormsBtnAbout": {
+    "message": "Dela min lista"
+  },
+  "shareToFormsNote": {
+    "message": "Den första inlämningen kommer automatiskt att upptäcka formulärfältet om möjligt."
+  },
+  "shareToFormsTipAbout": {
+    "message": "Tips: klistra in formulär-URL:en här en gång och klicka sedan på \"Dela\" från denna skärm eller från fliken Personliga källor."
+  },
+  "sharedDomainsCount": {
+    "message": "Redan delade domäner: {count}"
+  },
+  "clearSharedBtn": {
+    "message": "Rensa historik"
+  },
+  "toastPreparingSubmission": {
+    "message": "Förbereder inlämning..."
+  },
+  "toastNoDomainsToShare": {
+    "message": "Inga personliga domäner att dela"
+  },
+  "toastNoNewDomainsToShare": {
+    "message": "Inga nya domäner att dela"
+  },
+  "toastFormUrlRequired": {
+    "message": "Vänligen klistra in formulär-URL"
+  },
+  "toastFormUrlRequiredAbout": {
+    "message": "Vänligen klistra in formulär-URL i avsnittet Om"
+  },
+  "toastFormFieldDetectionFailed": {
+    "message": "Kan inte automatiskt upptäcka formulärfältet. Tillägget öppnar sidan för manuell inlämning."
+  },
+  "toastDomainsShared": {
+    "message": "Tack — {count} domäner delade."
+  },
+  "toastShareError": {
+    "message": "Fel vid delning till Google Forms"
+  },
+  "toastSharedHistoryCleared": {
+    "message": "Historik rensad."
+  },
+  "confirmClearSharedHistory": {
+    "message": "Ta bort historiken över lokalt delade domäner?"
   }
 }

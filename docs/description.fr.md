@@ -1,15 +1,13 @@
-# ⭐ **DESCRIPTION COURTE (Chrome Web Store – tagline + 1 paragraphe)**
+# ⭐ **DESCRIPTION COURTE (Chrome Web Store – tagline + 1 paragraphe)** NE PAS TRADUIRE ET LAISSER EN FRANÇAIS CETTE LIGNE
 
-*(Cette partie est la plus importante : c’est ce que les utilisateurs lisent avant tout.)*
 
 **Protégez vos mots de passe en un coup d’œil.**
 ShieldSign affiche un bandeau de confiance sur vos vraies pages de connexion pour rendre le phishing instantanément visible. Gratuit, open-source, aucune donnée ne sort de votre navigateur.
 
 ---
 
-# ⭐ **DESCRIPTION LONGUE (Chrome/Firefox stores)**
+# ⭐ **DESCRIPTION LONGUE (Chrome/Firefox stores)** NE PAS TRADUIRE ET LAISSER EN FRANÇAIS CETTE LIGNE
 
-*(Optimisée pour convaincre sans noyer l’utilisateur, avec rythme, bénéfices clairs, et éléments différenciants.)*
 
 ## 🛡️ ShieldSign — La manière la plus simple de **savoir où vous pouvez saisir votre mot de passe**
 
@@ -121,7 +119,7 @@ ShieldSign ne remplace pas votre vigilance, mais il supprime l’incertitude —
 
 ---
 
-# ⭐ **BULLET POINTS (Chrome store “Features”)**
+# **BULLET POINTS ( “Features”)**
 
 * Détection automatique des pages de connexion
 * Bandeau de validation impossible à imiter
@@ -136,7 +134,7 @@ ShieldSign ne remplace pas votre vigilance, mais il supprime l’incertitude —
 
 ---
 
-# ⭐ Texte ultra-court (pour “Short summary” Firefox Add-ons)
+# ⭐ Texte ultra-court (pour “Short summary” Firefox Add-ons) NE PAS TRADUIRE ET LAISSER EN FRANÇAIS CETTE LIGNE
 
 **Validation visuelle des vraies pages de connexion.
 Évitez le phishing en un coup d’œil : code anti-imitation, listes de confiance, 100% privé et open-source.**

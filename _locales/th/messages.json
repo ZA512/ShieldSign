@@ -806,5 +806,62 @@
   },
   "notificationSiteAdded": {
     "message": "เพิ่มเว็บไซต์ในรายการส่วนตัวของคุณแล้ว"
+  },
+  "shareToFormsTitle": {
+    "message": "แชร์ไปยัง Google Forms"
+  },
+  "shareToFormsDescription": {
+    "message": "วาง URL ของแบบฟอร์ม Google ของคุณ (หน้าดู) ที่นี่ ส่วนขยายจะส่งโดเมนจากรายการส่วนตัวของคุณที่ยังไม่อยู่ในรายการชุมชนโดยอัตโนมัติ"
+  },
+  "shareToFormsPlaceholder": {
+    "message": "https://docs.google.com/forms/d/e/…/viewform"
+  },
+  "shareToFormsBtn": {
+    "message": "แชร์ไปยัง Sheets"
+  },
+  "shareToFormsBtnAbout": {
+    "message": "แชร์รายการของฉัน"
+  },
+  "shareToFormsNote": {
+    "message": "การส่งครั้งแรกจะตรวจจับฟิลด์แบบฟอร์มโดยอัตโนมัติหากเป็นไปได้"
+  },
+  "shareToFormsTipAbout": {
+    "message": "เคล็ดลับ: วาง URL แบบฟอร์มที่นี่หนึ่งครั้ง จากนั้นคลิก \"แชร์\" จากหน้าจอนี้หรือจากแท็บแหล่งที่มาส่วนตัว"
+  },
+  "sharedDomainsCount": {
+    "message": "โดเมนที่แชร์แล้ว: {count}"
+  },
+  "clearSharedBtn": {
+    "message": "ล้างประวัติ"
+  },
+  "toastPreparingSubmission": {
+    "message": "กำลังเตรียมการส่ง..."
+  },
+  "toastNoDomainsToShare": {
+    "message": "ไม่มีโดเมนส่วนตัวให้แชร์"
+  },
+  "toastNoNewDomainsToShare": {
+    "message": "ไม่มีโดเมนใหม่ให้แชร์"
+  },
+  "toastFormUrlRequired": {
+    "message": "โปรดวาง URL แบบฟอร์ม"
+  },
+  "toastFormUrlRequiredAbout": {
+    "message": "โปรดวาง URL แบบฟอร์มในส่วนเกี่ยวกับ"
+  },
+  "toastFormFieldDetectionFailed": {
+    "message": "ไม่สามารถตรวจจับฟิลด์แบบฟอร์มโดยอัตโนมัติ ส่วนขยายจะเปิดหน้าสำหรับการส่งด้วยตนเอง"
+  },
+  "toastDomainsShared": {
+    "message": "ขอบคุณ — แชร์โดเมน {count} โดเมนแล้ว"
+  },
+  "toastShareError": {
+    "message": "ข้อผิดพลาดในการแชร์ไปยัง Google Forms"
+  },
+  "toastSharedHistoryCleared": {
+    "message": "ล้างประวัติแล้ว"
+  },
+  "confirmClearSharedHistory": {
+    "message": "ลบประวัติโดเมนที่แชร์ในเครื่องหรือไม่?"
   }
 }

@@ -805,6 +805,63 @@
     "message": "Όχι"
   },
   "notificationSiteAdded": {
-    "message": "Η σελίδα προστέθηκε στην προσωπική σας λίστα"
+    "message": "Η ιστοσελίδα προστέθηκε στην προσωπική σας λίστα"
+  },
+  "shareToFormsTitle": {
+    "message": "Κοινοποίηση στο Google Forms"
+  },
+  "shareToFormsDescription": {
+    "message": "Επικολλήστε εδώ τη διεύθυνση URL της φόρμας Google σας (σελίδα προβολής). Η επέκταση θα στείλει αυτόματα τους τομείς από την προσωπική σας λίστα που δεν υπάρχουν ήδη στις λίστες της κοινότητας."
+  },
+  "shareToFormsPlaceholder": {
+    "message": "https://docs.google.com/forms/d/e/…/viewform"
+  },
+  "shareToFormsBtn": {
+    "message": "Κοινοποίηση στο Sheets"
+  },
+  "shareToFormsBtnAbout": {
+    "message": "Κοινοποίηση της λίστας μου"
+  },
+  "shareToFormsNote": {
+    "message": "Η πρώτη υποβολή θα ανιχνεύσει αυτόματα το πεδίο φόρμας αν είναι δυνατό."
+  },
+  "shareToFormsTipAbout": {
+    "message": "Συμβουλή: επικολλήστε τη διεύθυνση URL της φόρμας εδώ μία φορά και κάντε κλικ στο \"Κοινοποίηση\" από αυτήν την οθόνη ή από την καρτέλα Προσωπικές Πηγές."
+  },
+  "sharedDomainsCount": {
+    "message": "Τομείς που έχουν ήδη κοινοποιηθεί: {count}"
+  },
+  "clearSharedBtn": {
+    "message": "Εκκαθάριση ιστορικού"
+  },
+  "toastPreparingSubmission": {
+    "message": "Προετοιμασία υποβολής..."
+  },
+  "toastNoDomainsToShare": {
+    "message": "Δεν υπάρχουν προσωπικοί τομείς για κοινοποίηση"
+  },
+  "toastNoNewDomainsToShare": {
+    "message": "Δεν υπάρχουν νέοι τομείς για κοινοποίηση"
+  },
+  "toastFormUrlRequired": {
+    "message": "Επικολλήστε τη διεύθυνση URL της φόρμας"
+  },
+  "toastFormUrlRequiredAbout": {
+    "message": "Επικολλήστε τη διεύθυνση URL της φόρμας στην ενότητα Σχετικά"
+  },
+  "toastFormFieldDetectionFailed": {
+    "message": "Αδυναμία αυτόματης ανίχνευσης πεδίου φόρμας. Η επέκταση θα ανοίξει τη σελίδα για χειροκίνητη υποβολή."
+  },
+  "toastDomainsShared": {
+    "message": "Ευχαριστώ — {count} τομείς κοινοποιήθηκαν."
+  },
+  "toastShareError": {
+    "message": "Σφάλμα κατά την κοινοποίηση στο Google Forms"
+  },
+  "toastSharedHistoryCleared": {
+    "message": "Ιστορικό εκκαθαρίστηκε."
+  },
+  "confirmClearSharedHistory": {
+    "message": "Διαγραφή του ιστορικού των τοπικώς κοινοποιημένων τομέων;"
   }
 }

@@ -806,5 +806,62 @@
   },
   "notificationSiteAdded": {
     "message": "Website zu Ihrer persönlichen Liste hinzugefügt"
+  },
+  "shareToFormsTitle": {
+    "message": "Zu Google Forms teilen"
+  },
+  "shareToFormsDescription": {
+    "message": "Fügen Sie hier die URL Ihres Google-Formulars ein (Ansichtsseite). Die Erweiterung sendet automatisch Domains aus Ihrer persönlichen Liste, die nicht bereits in den Community-Listen vorhanden sind."
+  },
+  "shareToFormsPlaceholder": {
+    "message": "https://docs.google.com/forms/d/e/…/viewform"
+  },
+  "shareToFormsBtn": {
+    "message": "Zu Sheets teilen"
+  },
+  "shareToFormsBtnAbout": {
+    "message": "Meine Liste teilen"
+  },
+  "shareToFormsNote": {
+    "message": "Die erste Übermittlung erkennt das Formularfeld automatisch, wenn möglich."
+  },
+  "shareToFormsTipAbout": {
+    "message": "Tipp: Fügen Sie die Formular-URL hier einmal ein und klicken Sie dann auf \"Teilen\" von diesem Bildschirm oder von der Registerkarte Persönliche Quellen."
+  },
+  "sharedDomainsCount": {
+    "message": "Bereits geteilte Domains: {count}"
+  },
+  "clearSharedBtn": {
+    "message": "Verlauf löschen"
+  },
+  "toastPreparingSubmission": {
+    "message": "Übermittlung wird vorbereitet..."
+  },
+  "toastNoDomainsToShare": {
+    "message": "Keine persönlichen Domains zum Teilen"
+  },
+  "toastNoNewDomainsToShare": {
+    "message": "Keine neuen Domains zum Teilen"
+  },
+  "toastFormUrlRequired": {
+    "message": "Bitte fügen Sie die Formular-URL ein"
+  },
+  "toastFormUrlRequiredAbout": {
+    "message": "Bitte fügen Sie die Formular-URL im Abschnitt Info ein"
+  },
+  "toastFormFieldDetectionFailed": {
+    "message": "Das Formularfeld kann nicht automatisch erkannt werden. Die Erweiterung öffnet die Seite für die manuelle Übermittlung."
+  },
+  "toastDomainsShared": {
+    "message": "Danke — {count} Domains geteilt."
+  },
+  "toastShareError": {
+    "message": "Fehler beim Teilen zu Google Forms"
+  },
+  "toastSharedHistoryCleared": {
+    "message": "Verlauf gelöscht."
+  },
+  "confirmClearSharedHistory": {
+    "message": "Den Verlauf der lokal geteilten Domains löschen?"
   }
 }

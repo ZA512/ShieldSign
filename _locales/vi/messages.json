@@ -806,5 +806,62 @@
   },
   "notificationSiteAdded": {
     "message": "Trang web đã được thêm vào danh sách cá nhân của bạn"
+  },
+  "shareToFormsTitle": {
+    "message": "Chia sẻ lên Google Forms"
+  },
+  "shareToFormsDescription": {
+    "message": "Dán URL của biểu mẫu Google của bạn (trang xem) tại đây. Tiện ích sẽ tự động gửi các tên miền từ danh sách cá nhân của bạn chưa có trong danh sách cộng đồng."
+  },
+  "shareToFormsPlaceholder": {
+    "message": "https://docs.google.com/forms/d/e/…/viewform"
+  },
+  "shareToFormsBtn": {
+    "message": "Chia sẻ lên Sheets"
+  },
+  "shareToFormsBtnAbout": {
+    "message": "Chia sẻ danh sách của tôi"
+  },
+  "shareToFormsNote": {
+    "message": "Lần gửi đầu tiên sẽ tự động phát hiện trường biểu mẫu nếu có thể."
+  },
+  "shareToFormsTipAbout": {
+    "message": "Mẹo: dán URL biểu mẫu tại đây một lần, sau đó nhấp \"Chia sẻ\" từ màn hình này hoặc từ tab Nguồn cá nhân."
+  },
+  "sharedDomainsCount": {
+    "message": "Tên miền đã chia sẻ: {count}"
+  },
+  "clearSharedBtn": {
+    "message": "Xóa lịch sử"
+  },
+  "toastPreparingSubmission": {
+    "message": "Đang chuẩn bị gửi..."
+  },
+  "toastNoDomainsToShare": {
+    "message": "Không có tên miền cá nhân để chia sẻ"
+  },
+  "toastNoNewDomainsToShare": {
+    "message": "Không có tên miền mới để chia sẻ"
+  },
+  "toastFormUrlRequired": {
+    "message": "Vui lòng dán URL biểu mẫu"
+  },
+  "toastFormUrlRequiredAbout": {
+    "message": "Vui lòng dán URL biểu mẫu trong phần Giới thiệu"
+  },
+  "toastFormFieldDetectionFailed": {
+    "message": "Không thể tự động phát hiện trường biểu mẫu. Tiện ích sẽ mở trang để gửi thủ công."
+  },
+  "toastDomainsShared": {
+    "message": "Cảm ơn — đã chia sẻ {count} tên miền."
+  },
+  "toastShareError": {
+    "message": "Lỗi khi chia sẻ lên Google Forms"
+  },
+  "toastSharedHistoryCleared": {
+    "message": "Lịch sử đã được xóa."
+  },
+  "confirmClearSharedHistory": {
+    "message": "Xóa lịch sử tên miền đã chia sẻ cục bộ?"
   }
 }

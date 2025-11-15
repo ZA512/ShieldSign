@@ -805,6 +805,63 @@
     "message": "Nee"
   },
   "notificationSiteAdded": {
-    "message": "Website toegevoegd aan uw persoonlijke lijst"
+    "message": "Site toegevoegd aan uw persoonlijke lijst"
+  },
+  "shareToFormsTitle": {
+    "message": "Delen naar Google Forms"
+  },
+  "shareToFormsDescription": {
+    "message": "Plak hier de URL van uw Google-formulier (weergavepagina). De extensie stuurt automatisch domeinen uit uw persoonlijke lijst die nog niet in de gemeenschapslijsten staan."
+  },
+  "shareToFormsPlaceholder": {
+    "message": "https://docs.google.com/forms/d/e/…/viewform"
+  },
+  "shareToFormsBtn": {
+    "message": "Delen naar Sheets"
+  },
+  "shareToFormsBtnAbout": {
+    "message": "Mijn lijst delen"
+  },
+  "shareToFormsNote": {
+    "message": "De eerste inzending detecteert automatisch het formulierveld indien mogelijk."
+  },
+  "shareToFormsTipAbout": {
+    "message": "Tip: plak de formulier-URL hier eenmaal en klik vervolgens op \"Delen\" vanaf dit scherm of vanaf het tabblad Persoonlijke bronnen."
+  },
+  "sharedDomainsCount": {
+    "message": "Reeds gedeelde domeinen: {count}"
+  },
+  "clearSharedBtn": {
+    "message": "Geschiedenis wissen"
+  },
+  "toastPreparingSubmission": {
+    "message": "Inzending voorbereiden..."
+  },
+  "toastNoDomainsToShare": {
+    "message": "Geen persoonlijke domeinen om te delen"
+  },
+  "toastNoNewDomainsToShare": {
+    "message": "Geen nieuwe domeinen om te delen"
+  },
+  "toastFormUrlRequired": {
+    "message": "Plak alstublieft de formulier-URL"
+  },
+  "toastFormUrlRequiredAbout": {
+    "message": "Plak alstublieft de formulier-URL in het gedeelte Over"
+  },
+  "toastFormFieldDetectionFailed": {
+    "message": "Kan het formulierveld niet automatisch detecteren. De extensie opent de pagina voor handmatige inzending."
+  },
+  "toastDomainsShared": {
+    "message": "Bedankt — {count} domeinen gedeeld."
+  },
+  "toastShareError": {
+    "message": "Fout bij delen naar Google Forms"
+  },
+  "toastSharedHistoryCleared": {
+    "message": "Geschiedenis gewist."
+  },
+  "confirmClearSharedHistory": {
+    "message": "De geschiedenis van lokaal gedeelde domeinen verwijderen?"
   }
 }

@@ -805,6 +805,63 @@
     "message": "아니오"
   },
   "notificationSiteAdded": {
-    "message": "웹사이트가 개인 목록에 추가되었습니다"
+    "message": "사이트가 개인 목록에 추가되었습니다"
+  },
+  "shareToFormsTitle": {
+    "message": "Google Forms에 공유"
+  },
+  "shareToFormsDescription": {
+    "message": "여기에 Google 양식 URL(보기 페이지)을 붙여넣으세요. 확장 프로그램은 커뮤니티 목록에 아직 없는 개인 목록의 도메인을 자동으로 전송합니다."
+  },
+  "shareToFormsPlaceholder": {
+    "message": "https://docs.google.com/forms/d/e/…/viewform"
+  },
+  "shareToFormsBtn": {
+    "message": "Sheets에 공유"
+  },
+  "shareToFormsBtnAbout": {
+    "message": "내 목록 공유"
+  },
+  "shareToFormsNote": {
+    "message": "첫 번째 제출은 가능한 경우 양식 필드를 자동으로 감지합니다."
+  },
+  "shareToFormsTipAbout": {
+    "message": "팁: 양식 URL을 여기에 한 번 붙여넣은 다음 이 화면이나 개인 소스 탭에서 \"공유\"를 클릭하세요."
+  },
+  "sharedDomainsCount": {
+    "message": "이미 공유된 도메인: {count}"
+  },
+  "clearSharedBtn": {
+    "message": "기록 지우기"
+  },
+  "toastPreparingSubmission": {
+    "message": "제출 준비 중..."
+  },
+  "toastNoDomainsToShare": {
+    "message": "공유할 개인 도메인이 없습니다"
+  },
+  "toastNoNewDomainsToShare": {
+    "message": "공유할 새 도메인이 없습니다"
+  },
+  "toastFormUrlRequired": {
+    "message": "양식 URL을 붙여넣으세요"
+  },
+  "toastFormUrlRequiredAbout": {
+    "message": "정보 섹션에 양식 URL을 붙여넣으세요"
+  },
+  "toastFormFieldDetectionFailed": {
+    "message": "양식 필드를 자동으로 감지할 수 없습니다. 확장 프로그램이 수동 제출을 위한 페이지를 엽니다."
+  },
+  "toastDomainsShared": {
+    "message": "감사합니다 — {count}개의 도메인이 공유되었습니다."
+  },
+  "toastShareError": {
+    "message": "Google Forms 공유 오류"
+  },
+  "toastSharedHistoryCleared": {
+    "message": "기록이 지워졌습니다."
+  },
+  "confirmClearSharedHistory": {
+    "message": "로컬로 공유된 도메인의 기록을 삭제하시겠습니까?"
   }
 }

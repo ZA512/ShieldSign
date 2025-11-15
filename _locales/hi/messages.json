@@ -805,6 +805,63 @@
     "message": "नहीं"
   },
   "notificationSiteAdded": {
-    "message": "साइट आपकी व्यक्तिगत सूची में जोड़ी गई"
+    "message": "साइट आपकी व्यक्तिगत सूची में जोड़ी गई"
+  },
+  "shareToFormsTitle": {
+    "message": "Google Forms पर साझा करें"
+  },
+  "shareToFormsDescription": {
+    "message": "अपने Google फॉर्म का URL (दृश्य पृष्ठ) यहां चिपकाएं। एक्सटेंशन आपकी व्यक्तिगत सूची से उन डोमेन को स्वचालित रूप से भेजेगा जो समुदाय सूचियों में नहीं हैं।"
+  },
+  "shareToFormsPlaceholder": {
+    "message": "https://docs.google.com/forms/d/e/…/viewform"
+  },
+  "shareToFormsBtn": {
+    "message": "Sheets पर साझा करें"
+  },
+  "shareToFormsBtnAbout": {
+    "message": "मेरी सूची साझा करें"
+  },
+  "shareToFormsNote": {
+    "message": "पहली प्रस्तुति स्वचालित रूप से फॉर्म फील्ड का पता लगाएगी यदि संभव हो।"
+  },
+  "shareToFormsTipAbout": {
+    "message": "सुझाव: फॉर्म URL को यहां एक बार चिपकाएं और फिर इस स्क्रीन या व्यक्तिगत स्रोत टैब से \"साझा करें\" पर क्लिक करें।"
+  },
+  "sharedDomainsCount": {
+    "message": "पहले से साझा किए गए डोमेन: {count}"
+  },
+  "clearSharedBtn": {
+    "message": "इतिहास साफ़ करें"
+  },
+  "toastPreparingSubmission": {
+    "message": "प्रस्तुति तैयार की जा रही है..."
+  },
+  "toastNoDomainsToShare": {
+    "message": "साझा करने के लिए कोई व्यक्तिगत डोमेन नहीं"
+  },
+  "toastNoNewDomainsToShare": {
+    "message": "साझा करने के लिए कोई नए डोमेन नहीं"
+  },
+  "toastFormUrlRequired": {
+    "message": "कृपया फॉर्म URL चिपकाएं"
+  },
+  "toastFormUrlRequiredAbout": {
+    "message": "कृपया फॉर्म URL को परिचय अनुभाग में चिपकाएं"
+  },
+  "toastFormFieldDetectionFailed": {
+    "message": "फॉर्म फील्ड का स्वचालित पता नहीं लगाया जा सकता। एक्सटेंशन मैन्युअल प्रस्तुति के लिए पृष्ठ खोलेगा।"
+  },
+  "toastDomainsShared": {
+    "message": "धन्यवाद — {count} डोमेन साझा किए गए।"
+  },
+  "toastShareError": {
+    "message": "Google Forms पर साझा करते समय त्रुटि"
+  },
+  "toastSharedHistoryCleared": {
+    "message": "इतिहास साया कर दिया गया।"
+  },
+  "confirmClearSharedHistory": {
+    "message": "स्थानीय रूप से साझा किए गए डोमेन का इतिहास हटाएं?"
   }
 }

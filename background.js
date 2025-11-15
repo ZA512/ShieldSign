@@ -614,6 +614,50 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     });
     return true;
   }
+
+  // Création d'un Gist via token (option avancée) - retourne l'URL du gist
+  if (message.action === 'CREATE_GIST') {
+    (async () => {
+      try {
+        const filename = `shieldsign_contribution_${Date.now()}.json`;
+        const body = {
+          public: true,
+          description: `ShieldSign contribution ${new Date().toISOString()}`,
+          files: {}
+        };
+        body.files[filename] = { content: JSON.stringify(message.payload, null, 2) };
+
+        const headers = {
+          'Accept': 'application/vnd.github+json',
+          'Content-Type': 'application/json'
+        };
+        if (message.token) {
+          headers['Authorization'] = `token ${message.token}`;
+        }
+
+        const resp = await fetch('https://api.github.com/gists', {
+          method: 'POST',
+          headers,
+          body: JSON.stringify(body)
+        });
+
+        if (!resp.ok) {
+          const errBody = await resp.json().catch(() => null);
+          // Répondre via sendResponse n'est pas possible ici (async), on envoie un message
+          chrome.runtime.sendMessage({ action: 'CREATE_GIST_RESULT', success: false, error: errBody?.message || resp.statusText });
+          return;
+        }
+
+        const data = await resp.json();
+        chrome.runtime.sendMessage({ action: 'CREATE_GIST_RESULT', success: true, url: data.html_url });
+      } catch (e) {
+        chrome.runtime.sendMessage({ action: 'CREATE_GIST_RESULT', success: false, error: e.message });
+      }
+    })();
+
+    sendResponse({ success: true, info: 'started' });
+    return true;
+  }
   
   // Note: GET_CURRENT_CODE et REGENERATE_CODE supprimés car le code est maintenant généré à chaque affichage
 });

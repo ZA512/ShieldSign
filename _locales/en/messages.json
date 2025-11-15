@@ -815,5 +815,63 @@
   },
   "popupSupportLink": {
     "message": "Support the project"
+  },
+  
+  "shareToFormsTitle": {
+    "message": "Share to Google Forms"
+  },
+  "shareToFormsDescription": {
+    "message": "Paste your Google Form URL here (viewform page). The extension will automatically send domains from your personal list that are not already in the community lists."
+  },
+  "shareToFormsPlaceholder": {
+    "message": "https://docs.google.com/forms/d/e/…/viewform"
+  },
+  "shareToFormsBtn": {
+    "message": "Share to Sheets"
+  },
+  "shareToFormsBtnAbout": {
+    "message": "Share my list"
+  },
+  "shareToFormsNote": {
+    "message": "The first submission will automatically detect the form field if possible."
+  },
+  "shareToFormsTipAbout": {
+    "message": "Tip: Paste the form URL here once, then click \"Share\" from this screen or from the Personal Sources tab."
+  },
+  "sharedDomainsCount": {
+    "message": "Domains already shared: {count}"
+  },
+  "clearSharedBtn": {
+    "message": "Clear shared history"
+  },
+  "toastPreparingSubmission": {
+    "message": "Preparing submission..."
+  },
+  "toastNoDomainsToShare": {
+    "message": "No personal domains to share"
+  },
+  "toastNoNewDomainsToShare": {
+    "message": "No new domains to share"
+  },
+  "toastFormUrlRequired": {
+    "message": "Please paste the form URL"
+  },
+  "toastFormUrlRequiredAbout": {
+    "message": "Please paste the form URL in About section"
+  },
+  "toastFormFieldDetectionFailed": {
+    "message": "Unable to automatically detect the form field. The extension will open the page for manual submission."
+  },
+  "toastDomainsShared": {
+    "message": "Thank you — {count} domains shared."
+  },
+  "toastShareError": {
+    "message": "Error while sharing to Google Forms"
+  },
+  "toastSharedHistoryCleared": {
+    "message": "Shared history cleared."
+  },
+  "confirmClearSharedHistory": {
+    "message": "Delete the history of locally shared domains?"
   }
 }

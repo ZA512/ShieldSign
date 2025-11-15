@@ -806,5 +806,62 @@
   },
   "notificationSiteAdded": {
     "message": "Bladsy is by u persoonlike lys gevoeg"
+  },
+  "shareToFormsTitle": {
+    "message": "Deel na Google Forms"
+  },
+  "shareToFormsDescription": {
+    "message": "Plak die URL van jou Google-vorm (kykbladsy) hier. Die uitbreiding sal outomaties domeine van jou persoonlike lys stuur wat nog nie in die gemeenskapslys is nie."
+  },
+  "shareToFormsPlaceholder": {
+    "message": "https://docs.google.com/forms/d/e/…/viewform"
+  },
+  "shareToFormsBtn": {
+    "message": "Deel na Sheets"
+  },
+  "shareToFormsBtnAbout": {
+    "message": "Deel my lys"
+  },
+  "shareToFormsNote": {
+    "message": "Die eerste indiening sal die vormveld outomaties opspoor indien moontlik."
+  },
+  "shareToFormsTipAbout": {
+    "message": "Wenk: plak die vorm-URL hier een keer en klik dan \"Deel\" vanaf hierdie skerm of vanaf die Persoonlike Bronne-oortjie."
+  },
+  "sharedDomainsCount": {
+    "message": "Reeds gedeelde domeine: {count}"
+  },
+  "clearSharedBtn": {
+    "message": "Maak geskiedenis skoon"
+  },
+  "toastPreparingSubmission": {
+    "message": "Berei indiening voor..."
+  },
+  "toastNoDomainsToShare": {
+    "message": "Geen persoonlike domeine om te deel nie"
+  },
+  "toastNoNewDomainsToShare": {
+    "message": "Geen nuwe domeine om te deel nie"
+  },
+  "toastFormUrlRequired": {
+    "message": "Plak asseblief die vorm-URL"
+  },
+  "toastFormUrlRequiredAbout": {
+    "message": "Plak asseblief die vorm-URL in die Oor-afdeling"
+  },
+  "toastFormFieldDetectionFailed": {
+    "message": "Kan nie die vormveld outomaties opspoor nie. Die uitbreiding sal die bladsy oopmaak vir handmatige indiening."
+  },
+  "toastDomainsShared": {
+    "message": "Dankie — {count} domeine gedeel."
+  },
+  "toastShareError": {
+    "message": "Fout by deel na Google Forms"
+  },
+  "toastSharedHistoryCleared": {
+    "message": "Geskiedenis skoongemaak."
+  },
+  "confirmClearSharedHistory": {
+    "message": "Verwyder die geskiedenis van plaaslik gedeelde domeine?"
   }
 }

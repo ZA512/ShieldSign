@@ -806,5 +806,62 @@
   },
   "notificationSiteAdded": {
     "message": "Sito aggiunto alla tua lista personale"
+  },
+  "shareToFormsTitle": {
+    "message": "Condividi su Google Forms"
+  },
+  "shareToFormsDescription": {
+    "message": "Incolla qui l'URL del tuo modulo Google (pagina di visualizzazione). L'estensione invierà automaticamente i domini della tua lista personale che non sono già nelle liste della comunità."
+  },
+  "shareToFormsPlaceholder": {
+    "message": "https://docs.google.com/forms/d/e/…/viewform"
+  },
+  "shareToFormsBtn": {
+    "message": "Condividi su Sheets"
+  },
+  "shareToFormsBtnAbout": {
+    "message": "Condividi la mia lista"
+  },
+  "shareToFormsNote": {
+    "message": "Il primo invio rileverà automaticamente il campo del modulo, se possibile."
+  },
+  "shareToFormsTipAbout": {
+    "message": "Suggerimento: incolla l'URL del modulo qui una volta, quindi fai clic su \"Condividi\" da questa schermata o dalla scheda Fonti personali."
+  },
+  "sharedDomainsCount": {
+    "message": "Domini già condivisi: {count}"
+  },
+  "clearSharedBtn": {
+    "message": "Cancella cronologia"
+  },
+  "toastPreparingSubmission": {
+    "message": "Preparazione invio..."
+  },
+  "toastNoDomainsToShare": {
+    "message": "Nessun dominio personale da condividere"
+  },
+  "toastNoNewDomainsToShare": {
+    "message": "Nessun nuovo dominio da condividere"
+  },
+  "toastFormUrlRequired": {
+    "message": "Si prega di incollare l'URL del modulo"
+  },
+  "toastFormUrlRequiredAbout": {
+    "message": "Si prega di incollare l'URL del modulo nella sezione Informazioni"
+  },
+  "toastFormFieldDetectionFailed": {
+    "message": "Impossibile rilevare automaticamente il campo del modulo. L'estensione aprirà la pagina per l'invio manuale."
+  },
+  "toastDomainsShared": {
+    "message": "Grazie — {count} domini condivisi."
+  },
+  "toastShareError": {
+    "message": "Errore durante la condivisione su Google Forms"
+  },
+  "toastSharedHistoryCleared": {
+    "message": "Cronologia cancellata."
+  },
+  "confirmClearSharedHistory": {
+    "message": "Eliminare la cronologia dei domini condivisi localmente?"
   }
 }

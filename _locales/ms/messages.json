@@ -805,6 +805,63 @@
     "message": "Tidak"
   },
   "notificationSiteAdded": {
-    "message": "Halaman telah ditambah ke senarai peribadi anda"
+    "message": "Tapak ditambah ke senarai peribadi anda"
+  },
+  "shareToFormsTitle": {
+    "message": "Kongsi ke Google Forms"
+  },
+  "shareToFormsDescription": {
+    "message": "Tampal URL borang Google anda (halaman paparan) di sini. Sambungan akan menghantar domain secara automatik dari senarai peribadi anda yang belum ada dalam senarai komuniti."
+  },
+  "shareToFormsPlaceholder": {
+    "message": "https://docs.google.com/forms/d/e/…/viewform"
+  },
+  "shareToFormsBtn": {
+    "message": "Kongsi ke Sheets"
+  },
+  "shareToFormsBtnAbout": {
+    "message": "Kongsi senarai saya"
+  },
+  "shareToFormsNote": {
+    "message": "Penghantaran pertama akan mengesan medan borang secara automatik jika boleh."
+  },
+  "shareToFormsTipAbout": {
+    "message": "Petua: tampal URL borang di sini sekali kemudian klik \"Kongsi\" dari skrin ini atau dari tab Sumber Peribadi."
+  },
+  "sharedDomainsCount": {
+    "message": "Domain yang sudah dikongsi: {count}"
+  },
+  "clearSharedBtn": {
+    "message": "Kosongkan sejarah"
+  },
+  "toastPreparingSubmission": {
+    "message": "Menyediakan penghantaran..."
+  },
+  "toastNoDomainsToShare": {
+    "message": "Tiada domain peribadi untuk dikongsi"
+  },
+  "toastNoNewDomainsToShare": {
+    "message": "Tiada domain baru untuk dikongsi"
+  },
+  "toastFormUrlRequired": {
+    "message": "Sila tampal URL borang"
+  },
+  "toastFormUrlRequiredAbout": {
+    "message": "Sila tampal URL borang dalam bahagian Perihal"
+  },
+  "toastFormFieldDetectionFailed": {
+    "message": "Tidak dapat mengesan medan borang secara automatik. Sambungan akan membuka halaman untuk penghantaran manual."
+  },
+  "toastDomainsShared": {
+    "message": "Terima kasih — {count} domain dikongsi."
+  },
+  "toastShareError": {
+    "message": "Ralat semasa berkongsi ke Google Forms"
+  },
+  "toastSharedHistoryCleared": {
+    "message": "Sejarah dikosongkan."
+  },
+  "confirmClearSharedHistory": {
+    "message": "Padam sejarah domain yang dikongsi secara tempatan?"
   }
 }

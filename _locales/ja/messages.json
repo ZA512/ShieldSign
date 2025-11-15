@@ -805,6 +805,63 @@
     "message": "いいえ"
   },
   "notificationSiteAdded": {
-    "message": "ウェブサイトが個人リストに追加されました"
+    "message": "サイトが個人リストに追加されました"
+  },
+  "shareToFormsTitle": {
+    "message": "Google Formsに共有"
+  },
+  "shareToFormsDescription": {
+    "message": "ここにGoogleフォームのURL(表示ページ)を貼り付けてください。拡張機能は、コミュニティリストにまだない個人リストのドメインを自動的に送信します。"
+  },
+  "shareToFormsPlaceholder": {
+    "message": "https://docs.google.com/forms/d/e/…/viewform"
+  },
+  "shareToFormsBtn": {
+    "message": "Sheetsに共有"
+  },
+  "shareToFormsBtnAbout": {
+    "message": "マイリストを共有"
+  },
+  "shareToFormsNote": {
+    "message": "最初の送信は、可能であればフォームフィールドを自動的に検出します。"
+  },
+  "shareToFormsTipAbout": {
+    "message": "ヒント:フォームのURLをここに一度貼り付けてから、この画面または個人ソースタブから「共有」をクリックしてください。"
+  },
+  "sharedDomainsCount": {
+    "message": "すでに共有されたドメイン:{count}"
+  },
+  "clearSharedBtn": {
+    "message": "履歴をクリア"
+  },
+  "toastPreparingSubmission": {
+    "message": "送信を準備中..."
+  },
+  "toastNoDomainsToShare": {
+    "message": "共有する個人ドメインがありません"
+  },
+  "toastNoNewDomainsToShare": {
+    "message": "共有する新しいドメインがありません"
+  },
+  "toastFormUrlRequired": {
+    "message": "フォームのURLを貼り付けてください"
+  },
+  "toastFormUrlRequiredAbout": {
+    "message": "「について」セクションにフォームのURLを貼り付けてください"
+  },
+  "toastFormFieldDetectionFailed": {
+    "message": "フォームフィールドを自動的に検出できません。拡張機能は手動送信用のページを開きます。"
+  },
+  "toastDomainsShared": {
+    "message": "ありがとうございます — {count}個のドメインが共有されました。"
+  },
+  "toastShareError": {
+    "message": "Google Formsへの共有エラー"
+  },
+  "toastSharedHistoryCleared": {
+    "message": "履歴がクリアされました。"
+  },
+  "confirmClearSharedHistory": {
+    "message": "ローカルに共有されたドメインの履歴を削除しますか?"
   }
 }

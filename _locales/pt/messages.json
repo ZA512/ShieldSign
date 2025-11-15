@@ -806,5 +806,62 @@
   },
   "notificationSiteAdded": {
     "message": "Site adicionado à sua lista pessoal"
+  },
+  "shareToFormsTitle": {
+    "message": "Compartilhar no Google Forms"
+  },
+  "shareToFormsDescription": {
+    "message": "Cole aqui a URL do seu formulário do Google (página de visualização). A extensão enviará automaticamente os domínios da sua lista pessoal que ainda não estão nas listas da comunidade."
+  },
+  "shareToFormsPlaceholder": {
+    "message": "https://docs.google.com/forms/d/e/…/viewform"
+  },
+  "shareToFormsBtn": {
+    "message": "Compartilhar no Sheets"
+  },
+  "shareToFormsBtnAbout": {
+    "message": "Compartilhar minha lista"
+  },
+  "shareToFormsNote": {
+    "message": "O primeiro envio detectará automaticamente o campo do formulário, se possível."
+  },
+  "shareToFormsTipAbout": {
+    "message": "Dica: cole a URL do formulário aqui uma vez e clique em \"Compartilhar\" desta tela ou da aba Fontes Pessoais."
+  },
+  "sharedDomainsCount": {
+    "message": "Domínios já compartilhados: {count}"
+  },
+  "clearSharedBtn": {
+    "message": "Limpar histórico"
+  },
+  "toastPreparingSubmission": {
+    "message": "Preparando envio..."
+  },
+  "toastNoDomainsToShare": {
+    "message": "Nenhum domínio pessoal para compartilhar"
+  },
+  "toastNoNewDomainsToShare": {
+    "message": "Nenhum domínio novo para compartilhar"
+  },
+  "toastFormUrlRequired": {
+    "message": "Por favor, cole a URL do formulário"
+  },
+  "toastFormUrlRequiredAbout": {
+    "message": "Por favor, cole a URL do formulário na seção Sobre"
+  },
+  "toastFormFieldDetectionFailed": {
+    "message": "Não foi possível detectar automaticamente o campo do formulário. A extensão abrirá a página para envio manual."
+  },
+  "toastDomainsShared": {
+    "message": "Obrigado — {count} domínios compartilhados."
+  },
+  "toastShareError": {
+    "message": "Erro ao compartilhar no Google Forms"
+  },
+  "toastSharedHistoryCleared": {
+    "message": "Histórico limpo."
+  },
+  "confirmClearSharedHistory": {
+    "message": "Excluir o histórico de domínios compartilhados localmente?"
   }
 }

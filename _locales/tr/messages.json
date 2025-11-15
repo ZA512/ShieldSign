@@ -806,5 +806,62 @@
   },
   "notificationSiteAdded": {
     "message": "Site kişisel listenize eklendi"
+  },
+  "shareToFormsTitle": {
+    "message": "Google Forms'a Paylaş"
+  },
+  "shareToFormsDescription": {
+    "message": "Google formunuzun URL'sini (görüntüleme sayfası) buraya yapıştırın. Uzantı, henüz topluluk listelerinde olmayan kişisel listenizdeki alanları otomatik olarak gönderir."
+  },
+  "shareToFormsPlaceholder": {
+    "message": "https://docs.google.com/forms/d/e/…/viewform"
+  },
+  "shareToFormsBtn": {
+    "message": "Sheets'e Paylaş"
+  },
+  "shareToFormsBtnAbout": {
+    "message": "Listemi Paylaş"
+  },
+  "shareToFormsNote": {
+    "message": "İlk gönderim, mümkünse form alanını otomatik olarak algılayacaktır."
+  },
+  "shareToFormsTipAbout": {
+    "message": "İpucu: form URL'sini buraya bir kez yapıştırın ve ardından bu ekrandan veya Kişisel Kaynaklar sekmesinden \"Paylaş\"a tıklayın."
+  },
+  "sharedDomainsCount": {
+    "message": "Zaten paylaşılan alanlar: {count}"
+  },
+  "clearSharedBtn": {
+    "message": "Geçmişi Temizle"
+  },
+  "toastPreparingSubmission": {
+    "message": "Gönderim hazırlanıyor..."
+  },
+  "toastNoDomainsToShare": {
+    "message": "Paylaşılacak kişisel alan yok"
+  },
+  "toastNoNewDomainsToShare": {
+    "message": "Paylaşılacak yeni alan yok"
+  },
+  "toastFormUrlRequired": {
+    "message": "Lütfen form URL'sini yapıştırın"
+  },
+  "toastFormUrlRequiredAbout": {
+    "message": "Lütfen form URL'sini Hakkında bölümüne yapıştırın"
+  },
+  "toastFormFieldDetectionFailed": {
+    "message": "Form alanı otomatik olarak algılanamıyor. Uzantı manuel gönderim için sayfayı açacak."
+  },
+  "toastDomainsShared": {
+    "message": "Teşekkürler — {count} alan paylaşıldı."
+  },
+  "toastShareError": {
+    "message": "Google Forms'a paylaşımda hata"
+  },
+  "toastSharedHistoryCleared": {
+    "message": "Geçmiş temizlendi."
+  },
+  "confirmClearSharedHistory": {
+    "message": "Yerel olarak paylaşılan alanların geçmişi silinsin mi?"
   }
 }

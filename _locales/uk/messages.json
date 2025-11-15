@@ -805,6 +805,63 @@
     "message": "Ні"
   },
   "notificationSiteAdded": {
-    "message": "Сторінку додано до вашого особистого списку"
+    "message": "Сайт додано до вашого особистого списку"
+  },
+  "shareToFormsTitle": {
+    "message": "Поділитися в Google Forms"
+  },
+  "shareToFormsDescription": {
+    "message": "Вставте сюди URL вашої форми Google (сторінка перегляду). Розширення автоматично надішле домени з вашого особистого списку, які ще не представлені в списках спільноти."
+  },
+  "shareToFormsPlaceholder": {
+    "message": "https://docs.google.com/forms/d/e/…/viewform"
+  },
+  "shareToFormsBtn": {
+    "message": "Поділитися в Sheets"
+  },
+  "shareToFormsBtnAbout": {
+    "message": "Поділитися моїм списком"
+  },
+  "shareToFormsNote": {
+    "message": "Перше надсилання автоматично виявить поле форми, якщо це можливо."
+  },
+  "shareToFormsTipAbout": {
+    "message": "Порада: вставте URL форми сюди один раз, а потім натисніть \"Поділитися\" з цього екрану або з вкладки Особисті джерела."
+  },
+  "sharedDomainsCount": {
+    "message": "Вже поділені домени: {count}"
+  },
+  "clearSharedBtn": {
+    "message": "Очистити історію"
+  },
+  "toastPreparingSubmission": {
+    "message": "Підготовка надсилання..."
+  },
+  "toastNoDomainsToShare": {
+    "message": "Немає особистих доменів для поділу"
+  },
+  "toastNoNewDomainsToShare": {
+    "message": "Немає нових доменів для поділу"
+  },
+  "toastFormUrlRequired": {
+    "message": "Будь ласка, вставте URL форми"
+  },
+  "toastFormUrlRequiredAbout": {
+    "message": "Будь ласка, вставте URL форми в розділі Про програму"
+  },
+  "toastFormFieldDetectionFailed": {
+    "message": "Не вдалося автоматично виявити поле форми. Розширення відкриє сторінку для ручного надсилання."
+  },
+  "toastDomainsShared": {
+    "message": "Дякую — {count} доменів поділено."
+  },
+  "toastShareError": {
+    "message": "Помилка при поділі в Google Forms"
+  },
+  "toastSharedHistoryCleared": {
+    "message": "Історію очищено."
+  },
+  "confirmClearSharedHistory": {
+    "message": "Видалити історію локально поділених доменів?"
   }
 }

@@ -805,6 +805,63 @@
     "message": "No"
   },
   "notificationSiteAdded": {
-    "message": "Sitio añadido a su lista personal"
+    "message": "Sitio agregado a su lista personal"
+  },
+  "shareToFormsTitle": {
+    "message": "Compartir en Google Forms"
+  },
+  "shareToFormsDescription": {
+    "message": "Pegue aquí la URL de su formulario de Google (página de vista). La extensión enviará automáticamente los dominios de su lista personal que no estén ya en las listas de la comunidad."
+  },
+  "shareToFormsPlaceholder": {
+    "message": "https://docs.google.com/forms/d/e/…/viewform"
+  },
+  "shareToFormsBtn": {
+    "message": "Compartir en Sheets"
+  },
+  "shareToFormsBtnAbout": {
+    "message": "Compartir mi lista"
+  },
+  "shareToFormsNote": {
+    "message": "La primera presentación detectará el campo del formulario automáticamente si es posible."
+  },
+  "shareToFormsTipAbout": {
+    "message": "Consejo: pegue la URL del formulario aquí una vez y luego haga clic en \"Compartir\" desde esta pantalla o desde la pestaña Fuentes personales."
+  },
+  "sharedDomainsCount": {
+    "message": "Dominios ya compartidos: {count}"
+  },
+  "clearSharedBtn": {
+    "message": "Borrar historial"
+  },
+  "toastPreparingSubmission": {
+    "message": "Preparando envío..."
+  },
+  "toastNoDomainsToShare": {
+    "message": "No hay dominios personales para compartir"
+  },
+  "toastNoNewDomainsToShare": {
+    "message": "No hay dominios nuevos para compartir"
+  },
+  "toastFormUrlRequired": {
+    "message": "Por favor, pegue la URL del formulario"
+  },
+  "toastFormUrlRequiredAbout": {
+    "message": "Por favor, pegue la URL del formulario en la sección Acerca de"
+  },
+  "toastFormFieldDetectionFailed": {
+    "message": "No se puede detectar automáticamente el campo del formulario. La extensión abrirá la página para envío manual."
+  },
+  "toastDomainsShared": {
+    "message": "Gracias — {count} dominios compartidos."
+  },
+  "toastShareError": {
+    "message": "Error al compartir en Google Forms"
+  },
+  "toastSharedHistoryCleared": {
+    "message": "Historial borrado."
+  },
+  "confirmClearSharedHistory": {
+    "message": "¿Eliminar el historial de dominios compartidos localmente?"
   }
 }

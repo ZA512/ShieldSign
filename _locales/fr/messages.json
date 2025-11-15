@@ -815,5 +815,63 @@
   },
   "popupSupportLink": {
     "message": "Soutenir le projet"
+  },
+  
+  "shareToFormsTitle": {
+    "message": "Partager vers Google Forms"
+  },
+  "shareToFormsDescription": {
+    "message": "Collez ici l'URL de votre Google Form (page de saisie). L'extension enverra automatiquement les domaines de votre liste personnelle qui ne figurent pas déjà dans les listes communautaires."
+  },
+  "shareToFormsPlaceholder": {
+    "message": "https://docs.google.com/forms/d/e/…/viewform"
+  },
+  "shareToFormsBtn": {
+    "message": "Partager vers Sheets"
+  },
+  "shareToFormsBtnAbout": {
+    "message": "Partager ma liste"
+  },
+  "shareToFormsNote": {
+    "message": "La première soumission détectera le champ du formulaire automatiquement si possible."
+  },
+  "shareToFormsTipAbout": {
+    "message": "Astuce : collez l'URL du formulaire ici une fois, puis cliquez sur \"Partager\" depuis cet écran ou depuis l'onglet Sources personnelles."
+  },
+  "sharedDomainsCount": {
+    "message": "Domaines déjà partagés : {count}"
+  },
+  "clearSharedBtn": {
+    "message": "Vider historique partagé"
+  },
+  "toastPreparingSubmission": {
+    "message": "Préparation de la soumission..."
+  },
+  "toastNoDomainsToShare": {
+    "message": "Aucun domaine personnel à partager"
+  },
+  "toastNoNewDomainsToShare": {
+    "message": "Aucun domaine nouveau à partager"
+  },
+  "toastFormUrlRequired": {
+    "message": "Veuillez coller l'URL du formulaire"
+  },
+  "toastFormUrlRequiredAbout": {
+    "message": "Veuillez coller l'URL du formulaire dans À propos"
+  },
+  "toastFormFieldDetectionFailed": {
+    "message": "Impossible de détecter automatiquement le champ du formulaire. L'extension va ouvrir la page pour soumission manuelle."
+  },
+  "toastDomainsShared": {
+    "message": "Merci — {count} domaines partagés."
+  },
+  "toastShareError": {
+    "message": "Erreur lors du partage vers Google Forms"
+  },
+  "toastSharedHistoryCleared": {
+    "message": "Historique partagé vidé."
+  },
+  "confirmClearSharedHistory": {
+    "message": "Supprimer l'historique des domaines partagés localement ?"
   }
 }

@@ -805,6 +805,63 @@
     "message": "A'a"
   },
   "notificationSiteAdded": {
-    "message": "An ƙara shafin zuwa jerinku na sirri"
+    "message": "An ƙara shafin yanar gizo a jerin ku na sirri"
+  },
+  "shareToFormsTitle": {
+    "message": "Raba zuwa Google Forms"
+  },
+  "shareToFormsDescription": {
+    "message": "Manna URL ɗin fom ɗin Google naka (shafin kallo) a nan. Ƙarin zai aika da yankuna daga jerin ku na sirri da ba su cikin jerin al'umma ba ta atomatik."
+  },
+  "shareToFormsPlaceholder": {
+    "message": "https://docs.google.com/forms/d/e/…/viewform"
+  },
+  "shareToFormsBtn": {
+    "message": "Raba zuwa Sheets"
+  },
+  "shareToFormsBtnAbout": {
+    "message": "Raba jerin ta"
+  },
+  "shareToFormsNote": {
+    "message": "Aikawa na farko zai gano filin fom ta atomatik idan zai yiwu."
+  },
+  "shareToFormsTipAbout": {
+    "message": "Shawara: manna URL ɗin fom a nan sau ɗaya sannan danna \"Raba\" daga wannan allo ko daga shafin Tushen Sirri."
+  },
+  "sharedDomainsCount": {
+    "message": "Yankuna da aka riga aka raba: {count}"
+  },
+  "clearSharedBtn": {
+    "message": "Share tarihi"
+  },
+  "toastPreparingSubmission": {
+    "message": "Ana shirya aikawa..."
+  },
+  "toastNoDomainsToShare": {
+    "message": "Babu yankuna na sirri don rabawa"
+  },
+  "toastNoNewDomainsToShare": {
+    "message": "Babu sabbin yankuna don rabawa"
+  },
+  "toastFormUrlRequired": {
+    "message": "Don Allah manna URL ɗin fom"
+  },
+  "toastFormUrlRequiredAbout": {
+    "message": "Don Allah manna URL ɗin fom a sashin Game da"
+  },
+  "toastFormFieldDetectionFailed": {
+    "message": "Ba za a iya gano filin fom ta atomatik ba. Ƙarin zai buɗe shafin don aikawa da hannu."
+  },
+  "toastDomainsShared": {
+    "message": "Na gode — an raba yankuna {count}."
+  },
+  "toastShareError": {
+    "message": "Kuskure wajen rabawa zuwa Google Forms"
+  },
+  "toastSharedHistoryCleared": {
+    "message": "An share tarihi."
+  },
+  "confirmClearSharedHistory": {
+    "message": "Share tarihin yankuna da aka raba a gida?"
   }
 }

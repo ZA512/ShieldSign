@@ -805,6 +805,63 @@
     "message": "Nei"
   },
   "notificationSiteAdded": {
-    "message": "Siden er lagt til i din personlige liste"
+    "message": "Nettsted lagt til i din personlige liste"
+  },
+  "shareToFormsTitle": {
+    "message": "Del til Google Forms"
+  },
+  "shareToFormsDescription": {
+    "message": "Lim inn URL-en til Google-skjemaet ditt (visningsside) her. Utvidelsen vil automatisk sende domener fra din personlige liste som ennå ikke er i fellesskapslistene."
+  },
+  "shareToFormsPlaceholder": {
+    "message": "https://docs.google.com/forms/d/e/…/viewform"
+  },
+  "shareToFormsBtn": {
+    "message": "Del til Sheets"
+  },
+  "shareToFormsBtnAbout": {
+    "message": "Del listen min"
+  },
+  "shareToFormsNote": {
+    "message": "Første innsending vil automatisk oppdage skjemafeltet hvis mulig."
+  },
+  "shareToFormsTipAbout": {
+    "message": "Tips: lim inn skjema-URL-en her én gang og klikk deretter \"Del\" fra denne skjermen eller fra fanen Personlige kilder."
+  },
+  "sharedDomainsCount": {
+    "message": "Allerede delte domener: {count}"
+  },
+  "clearSharedBtn": {
+    "message": "Tøm historikk"
+  },
+  "toastPreparingSubmission": {
+    "message": "Forbereder innsending..."
+  },
+  "toastNoDomainsToShare": {
+    "message": "Ingen personlige domener å dele"
+  },
+  "toastNoNewDomainsToShare": {
+    "message": "Ingen nye domener å dele"
+  },
+  "toastFormUrlRequired": {
+    "message": "Vennligst lim inn skjema-URL"
+  },
+  "toastFormUrlRequiredAbout": {
+    "message": "Vennligst lim inn skjema-URL i Om-seksjonen"
+  },
+  "toastFormFieldDetectionFailed": {
+    "message": "Kan ikke automatisk oppdage skjemafeltet. Utvidelsen vil åpne siden for manuell innsending."
+  },
+  "toastDomainsShared": {
+    "message": "Takk — {count} domener delt."
+  },
+  "toastShareError": {
+    "message": "Feil ved deling til Google Forms"
+  },
+  "toastSharedHistoryCleared": {
+    "message": "Historikk tømt."
+  },
+  "confirmClearSharedHistory": {
+    "message": "Slette historikken over lokalt delte domener?"
   }
 }

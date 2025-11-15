@@ -806,5 +806,62 @@
   },
   "notificationSiteAdded": {
     "message": "Strona została dodana do Twojej listy osobistej"
+  },
+  "shareToFormsTitle": {
+    "message": "Udostępnij w Google Forms"
+  },
+  "shareToFormsDescription": {
+    "message": "Wklej tutaj adres URL swojego formularza Google (strona widoku). Rozszerzenie automatycznie wyśle domeny z Twojej osobistej listy, które nie znajdują się jeszcze na listach społeczności."
+  },
+  "shareToFormsPlaceholder": {
+    "message": "https://docs.google.com/forms/d/e/…/viewform"
+  },
+  "shareToFormsBtn": {
+    "message": "Udostępnij w Sheets"
+  },
+  "shareToFormsBtnAbout": {
+    "message": "Udostępnij moją listę"
+  },
+  "shareToFormsNote": {
+    "message": "Pierwsze przesłanie automatycznie wykryje pole formularza, jeśli to możliwe."
+  },
+  "shareToFormsTipAbout": {
+    "message": "Wskazówka: wklej adres URL formularza tutaj raz, a następnie kliknij \"Udostępnij\" z tego ekranu lub z zakładki Źródła osobiste."
+  },
+  "sharedDomainsCount": {
+    "message": "Już udostępnione domeny: {count}"
+  },
+  "clearSharedBtn": {
+    "message": "Wyczyść historię"
+  },
+  "toastPreparingSubmission": {
+    "message": "Przygotowywanie przesłania..."
+  },
+  "toastNoDomainsToShare": {
+    "message": "Brak osobistych domen do udostępnienia"
+  },
+  "toastNoNewDomainsToShare": {
+    "message": "Brak nowych domen do udostępnienia"
+  },
+  "toastFormUrlRequired": {
+    "message": "Proszę wkleić adres URL formularza"
+  },
+  "toastFormUrlRequiredAbout": {
+    "message": "Proszę wkleić adres URL formularza w sekcji O programie"
+  },
+  "toastFormFieldDetectionFailed": {
+    "message": "Nie można automatycznie wykryć pola formularza. Rozszerzenie otworzy stronę do ręcznego przesłania."
+  },
+  "toastDomainsShared": {
+    "message": "Dziękuję — {count} domen udostępnionych."
+  },
+  "toastShareError": {
+    "message": "Błąd podczas udostępniania w Google Forms"
+  },
+  "toastSharedHistoryCleared": {
+    "message": "Historia wyczyszczona."
+  },
+  "confirmClearSharedHistory": {
+    "message": "Usunąć historię lokalnie udostępnionych domen?"
   }
 }
