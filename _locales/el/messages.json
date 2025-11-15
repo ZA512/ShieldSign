@@ -837,6 +837,21 @@
   "toastPreparingSubmission": {
     "message": "Προετοιμασία υποβολής..."
   },
+  "toastDomainsSharedShort": {
+    "message": "Merci pour le partage"
+  },
+  "toastFormFieldCopyOpen": {
+    "message": "Δεν ήταν δυνατή η αυτόματη ανίχνευση ή συμπλήρωση του πεδίου της φόρμας. Αντέγραψα τα δεδομένα και ανοίγω τη φόρμα για χειροκίνητη επικόλληση."
+  },
+  "toastAutoPostFailedCopyOpen": {
+    "message": "Η αυτόματη αποστολή απέτυχε. Αντέγραψα τα δεδομένα και ανοίγω τη φόρμα για χειροκίνητη επικόλληση."
+  },
+  "toastAutoPostErrorCopyOpen": {
+    "message": "Σφάλμα κατά την αυτόματη αποστολή. Αντέγραψα τα δεδομένα και ανοίγω τη φόρμα για χειροκίνητη επικόλληση."
+  },
+  "toastSendingCount": {
+    "message": "Αποστολή {count} domain..."
+  },
   "toastNoDomainsToShare": {
     "message": "Δεν υπάρχουν προσωπικοί τομείς για κοινοποίηση"
   },

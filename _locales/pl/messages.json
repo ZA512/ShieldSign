@@ -837,6 +837,21 @@
   "toastPreparingSubmission": {
     "message": "Przygotowywanie przesłania..."
   },
+  "toastDomainsSharedShort": {
+    "message": "Merci pour le partage"
+  },
+  "toastFormFieldCopyOpen": {
+    "message": "Nie można automatycznie wykryć lub wypełnić pola formularza. Skopiowano dane i otwieram formularz do ręcznego wklejenia."
+  },
+  "toastAutoPostFailedCopyOpen": {
+    "message": "Automatyczne przesyłanie nie powiodło się. Skopiowano dane i otwieram formularz do ręcznego wklejenia."
+  },
+  "toastAutoPostErrorCopyOpen": {
+    "message": "Wystąpił błąd podczas automatycznego wysyłania. Skopiowano dane i otwieram formularz do ręcznego wklejenia."
+  },
+  "toastSendingCount": {
+    "message": "Wysyłanie {count} domen..."
+  },
   "toastNoDomainsToShare": {
     "message": "Brak osobistych domen do udostępnienia"
   },

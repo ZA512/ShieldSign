@@ -864,4 +864,18 @@
   "confirmClearSharedHistory": {
     "message": "ローカルに共有されたドメインの履歴を削除しますか?"
   }
+  ,
+  "toastFormFieldCopyOpen": {
+    "message": "フォームフィールドを自動検出できませんでした。ドメインはコピーされました。開いているフォームに貼り付けてください。"
+  },
+  "toastAutoPostFailedCopyOpen": {
+    "message": "自動送信できませんでした。ドメインはコピーされました。開いているフォームに貼り付けてください。"
+  },
+  "toastAutoPostErrorCopyOpen": {
+    "message": "自動送信中にエラーが発生しました。ドメインはコピーされました。開いているフォームに貼り付けてください。"
+  },
+  "toastSendingCount": {
+    "message": "{count} 件のドメインを送信中...",
+    "placeholders": { "count": { "content": "$1" } }
+  }
 }

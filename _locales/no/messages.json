@@ -837,6 +837,21 @@
   "toastPreparingSubmission": {
     "message": "Forbereder innsending..."
   },
+  "toastDomainsSharedShort": {
+    "message": "Merci pour le partage"
+  },
+  "toastFormFieldCopyOpen": {
+    "message": "Kunne ikke automatisk oppdage eller fylle skjemaet. Kopierte data og åpner skjemaet for manuell liming."
+  },
+  "toastAutoPostFailedCopyOpen": {
+    "message": "Automatisk innsending mislyktes. Kopierte data og åpner skjemaet for manuell liming."
+  },
+  "toastAutoPostErrorCopyOpen": {
+    "message": "Feil under automatisk innsending. Kopierte data og åpner skjemaet for manuell liming."
+  },
+  "toastSendingCount": {
+    "message": "Sender {count} domener..."
+  },
   "toastNoDomainsToShare": {
     "message": "Ingen personlige domener å dele"
   },

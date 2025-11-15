@@ -855,6 +855,19 @@
   "toastDomainsShared": {
     "message": "Obrigado — {count} domínios compartilhados."
   },
+  "toastFormFieldCopyOpen": {
+    "message": "Campo do formulário não detectado automaticamente. Os domínios foram copiados. Cole-os no formulário aberto."
+  },
+  "toastAutoPostFailedCopyOpen": {
+    "message": "Não foi possível enviar automaticamente. Os domínios foram copiados. Cole-os no formulário aberto."
+  },
+  "toastAutoPostErrorCopyOpen": {
+    "message": "Erro durante o envio automático. Os domínios foram copiados; cole-os no formulário aberto."
+  },
+  "toastSendingCount": {
+    "message": "Enviando {count} domínio(s)...",
+    "placeholders": { "count": { "content": "$1" } }
+  },
   "toastShareError": {
     "message": "Erro ao compartilhar no Google Forms"
   },

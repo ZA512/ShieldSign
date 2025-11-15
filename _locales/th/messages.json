@@ -864,4 +864,18 @@
   "confirmClearSharedHistory": {
     "message": "ลบประวัติโดเมนที่แชร์ในเครื่องหรือไม่?"
   }
+  ,
+  "toastFormFieldCopyOpen": {
+    "message": "ไม่สามารถตรวจจับฟิลด์แบบฟอร์มโดยอัตโนมัติ โดเมนถูกคัดลอกแล้ว วางในแบบฟอร์มที่เปิดอยู่"
+  },
+  "toastAutoPostFailedCopyOpen": {
+    "message": "ไม่สามารถส่งโดยอัตโนมัติ โดเมนถูกคัดลอกแล้ว วางในแบบฟอร์มที่เปิดอยู่"
+  },
+  "toastAutoPostErrorCopyOpen": {
+    "message": "เกิดข้อผิดพลาดระหว่างการส่งอัตโนมัติ โดเมนถูกคัดลอกแล้ว; วางในแบบฟอร์มที่เปิดอยู่"
+  },
+  "toastSendingCount": {
+    "message": "กำลังส่ง {count} โดเมน...",
+    "placeholders": { "count": { "content": "$1" } }
+  }
 }

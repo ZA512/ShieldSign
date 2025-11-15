@@ -864,4 +864,18 @@
   "confirmClearSharedHistory": {
     "message": "Poistetaanko paikallisesti jaettujen verkkotunnusten historia?"
   }
+  ,
+  "toastFormFieldCopyOpen": {
+    "message": "Lomakkeen kenttää ei löydetty automaattisesti. Toimialueet kopioitiin. Liitä ne avattuun lomakkeeseen."
+  },
+  "toastAutoPostFailedCopyOpen": {
+    "message": "Automaattista lähettämistä ei voitu suorittaa. Toimialueet kopioitiin. Liitä ne avattuun lomakkeeseen."
+  },
+  "toastAutoPostErrorCopyOpen": {
+    "message": "Virhe automaattisessa lähetyksessä. Toimialueet kopioitiin; liitä ne avattuun lomakkeeseen."
+  },
+  "toastSendingCount": {
+    "message": "Lähetetään {count} toimialuetta...",
+    "placeholders": { "count": { "content": "$1" } }
+  }
 }

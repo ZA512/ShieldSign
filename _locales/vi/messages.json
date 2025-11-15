@@ -864,4 +864,18 @@
   "confirmClearSharedHistory": {
     "message": "Xóa lịch sử tên miền đã chia sẻ cục bộ?"
   }
+  ,
+  "toastFormFieldCopyOpen": {
+    "message": "Không phát hiện tự động trường biểu mẫu. Các tên miền đã được sao chép. Dán chúng vào biểu mẫu đã mở."
+  },
+  "toastAutoPostFailedCopyOpen": {
+    "message": "Không thể gửi tự động. Các tên miền đã được sao chép. Dán chúng vào biểu mẫu đã mở."
+  },
+  "toastAutoPostErrorCopyOpen": {
+    "message": "Lỗi khi gửi tự động. Các tên miền đã được sao chép; dán chúng vào biểu mẫu đã mở."
+  },
+  "toastSendingCount": {
+    "message": "Đang gửi {count} tên miền...",
+    "placeholders": { "count": { "content": "$1" } }
+  }
 }

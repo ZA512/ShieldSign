@@ -864,4 +864,18 @@
   "confirmClearSharedHistory": {
     "message": "Видалити історію локально поділених доменів?"
   }
+  ,
+  "toastFormFieldCopyOpen": {
+    "message": "Поле форми не виявлено автоматично. Домени скопійовано. Вставте їх у відкриту форму."
+  },
+  "toastAutoPostFailedCopyOpen": {
+    "message": "Не вдалося відправити автоматично. Домени скопійовано. Вставте їх у відкриту форму."
+  },
+  "toastAutoPostErrorCopyOpen": {
+    "message": "Помилка під час автоматичної відправки. Домени скопійовано; вставте їх у відкриту форму."
+  },
+  "toastSendingCount": {
+    "message": "Надсилання {count} доменів...",
+    "placeholders": { "count": { "content": "$1" } }
+  }
 }

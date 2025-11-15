@@ -837,6 +837,21 @@
   "toastPreparingSubmission": {
     "message": "प्रस्तुति तैयार की जा रही है..."
   },
+  "toastDomainsSharedShort": {
+    "message": "Merci pour le partage"
+  },
+  "toastFormFieldCopyOpen": {
+    "message": "फ़ॉर्म फ़ील्ड का स्वत: पता या भराई संभव नहीं हुई। डेटा कॉपी कर दिया गया है और मैन्युअल पेस्ट के लिए फ़ॉर्म खोल रहा हूँ।"
+  },
+  "toastAutoPostFailedCopyOpen": {
+    "message": "स्वचालित प्रेषण विफल हुआ। डेटा कॉपी कर दिया गया है और मैन्युअल पेस्ट के लिए फ़ॉर्म खोल रहा हूँ।"
+  },
+  "toastAutoPostErrorCopyOpen": {
+    "message": "स्वचालित प्रेषण के दौरान त्रुटि। डेटा कॉपी कर दिया गया है और मैन्युअल पेस्ट के लिए फ़ॉर्म खोल रहा हूँ।"
+  },
+  "toastSendingCount": {
+    "message": "{count} डोमेन भेजे जा रहे हैं..."
+  },
   "toastNoDomainsToShare": {
     "message": "साझा करने के लिए कोई व्यक्तिगत डोमेन नहीं"
   },

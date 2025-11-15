@@ -864,4 +864,18 @@
   "confirmClearSharedHistory": {
     "message": "Padam sejarah domain yang dikongsi secara tempatan?"
   }
+  ,
+  "toastFormFieldCopyOpen": {
+    "message": "Medan borang tidak dikesan secara automatik. Domain telah disalin. Tampal ke dalam borang yang dibuka."
+  },
+  "toastAutoPostFailedCopyOpen": {
+    "message": "Tidak dapat menghantar secara automatik. Domain telah disalin. Tampal ke dalam borang yang dibuka."
+  },
+  "toastAutoPostErrorCopyOpen": {
+    "message": "Ralat semasa hantar automatik. Domain telah disalin; tampal ke dalam borang yang dibuka."
+  },
+  "toastSendingCount": {
+    "message": "Menghantar {count} domain...",
+    "placeholders": { "count": { "content": "$1" } }
+  }
 }

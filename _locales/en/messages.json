@@ -862,6 +862,19 @@
   "toastFormFieldDetectionFailed": {
     "message": "Unable to automatically detect the form field. The extension will open the page for manual submission."
   },
+    "toastFormFieldCopyOpen": {
+      "message": "Form field not auto-detected. Domains were copied. Paste into the opened form."
+    },
+    "toastAutoPostFailedCopyOpen": {
+      "message": "Unable to auto-submit. Domains were copied. Paste into the opened form."
+    },
+    "toastAutoPostErrorCopyOpen": {
+      "message": "Error during auto-submit. Domains were copied; paste into the opened form."
+    },
+    "toastSendingCount": {
+      "message": "Sending {count} domain(s)...",
+      "placeholders": { "count": { "content": "$1" } }
+    },
   "toastDomainsShared": {
     "message": "Thank you — {count} domains shared."
   },

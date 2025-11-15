@@ -855,6 +855,19 @@
   "toastDomainsShared": {
     "message": "Tack — {count} domäner delade."
   },
+  "toastFormFieldCopyOpen": {
+    "message": "Formulärfält kunde inte upptäckas automatiskt. Domäner kopierades. Klistra in dem i det öppnade formuläret."
+  },
+  "toastAutoPostFailedCopyOpen": {
+    "message": "Kunde inte skicka automatiskt. Domäner kopierades. Klistra in dem i det öppnade formuläret."
+  },
+  "toastAutoPostErrorCopyOpen": {
+    "message": "Fel vid automatisk inlämning. Domäner kopierades; klistra in dem i det öppnade formuläret."
+  },
+  "toastSendingCount": {
+    "message": "Skickar {count} domän(er)...",
+    "placeholders": { "count": { "content": "$1" } }
+  },
   "toastShareError": {
     "message": "Fel vid delning till Google Forms"
   },

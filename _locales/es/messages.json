@@ -864,4 +864,19 @@
   "confirmClearSharedHistory": {
     "message": "¿Eliminar el historial de dominios compartidos localmente?"
   }
+  ,
+  "toastFormFieldCopyOpen": {
+    "message": "Campo del formulario no detectado automáticamente. Los dominios fueron copiados. Pégalos en el formulario abierto."
+  },
+  "toastAutoPostFailedCopyOpen": {
+    "message": "No se pudo enviar automáticamente. Los dominios fueron copiados. Pégalos en el formulario abierto."
+  },
+  "toastAutoPostErrorCopyOpen": {
+    "message": "Error al enviar automáticamente. Los dominios fueron copiados; pégalos en el formulario abierto."
+  },
+  "toastSendingCount": {
+    "message": "Enviando {count} dominio(s)...",
+    "placeholders": { "count": { "content": "$1" } }
+  }
 }
+

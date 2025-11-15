@@ -864,4 +864,18 @@
   "confirmClearSharedHistory": {
     "message": "Hapus riwayat domain yang dibagikan secara lokal?"
   }
+  ,
+  "toastFormFieldCopyOpen": {
+    "message": "Field formulir tidak terdeteksi otomatis. Domain disalin. Tempelkan ke formulir yang terbuka."
+  },
+  "toastAutoPostFailedCopyOpen": {
+    "message": "Gagal mengirim otomatis. Domain disalin. Tempelkan ke formulir yang terbuka."
+  },
+  "toastAutoPostErrorCopyOpen": {
+    "message": "Kesalahan saat pengiriman otomatis. Domain disalin; tempelkan ke formulir yang terbuka."
+  },
+  "toastSendingCount": {
+    "message": "Mengirim {count} domain...",
+    "placeholders": { "count": { "content": "$1" } }
+  }
 }

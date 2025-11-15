@@ -864,4 +864,18 @@
   "confirmClearSharedHistory": {
     "message": "Yerel olarak paylaşılan alanların geçmişi silinsin mi?"
   }
+  ,
+  "toastFormFieldCopyOpen": {
+    "message": "Form alanı otomatik olarak tespit edilemedi. Alan adları kopyalandı. Açılan forma yapıştırın."
+  },
+  "toastAutoPostFailedCopyOpen": {
+    "message": "Otomatik gönderim yapılamadı. Alan adları kopyalandı. Açılan forma yapıştırın."
+  },
+  "toastAutoPostErrorCopyOpen": {
+    "message": "Otomatik gönderim sırasında hata oluştu. Alan adları kopyalandı; açılan forma yapıştırın."
+  },
+  "toastSendingCount": {
+    "message": "Gönderiliyor: {count} alan adı...",
+    "placeholders": { "count": { "content": "$1" } }
+  }
 }

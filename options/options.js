@@ -97,6 +97,36 @@ function translatePage() {
   });
 }
 
+// Promisified storage helpers to unify callback vs promise behavior
+function storageGet(keys) {
+  return new Promise((resolve) => {
+    try {
+      chrome.storage.local.get(keys, (res) => { resolve(res || {}); });
+    } catch (e) {
+      resolve({});
+    }
+  });
+}
+
+function storageSet(obj) {
+  return new Promise((resolve, reject) => {
+    try {
+      chrome.storage.local.set(obj, () => {
+        if (chrome.runtime && chrome.runtime.lastError) return reject(chrome.runtime.lastError);
+        resolve();
+      });
+    } catch (e) { resolve(); }
+  });
+}
+
+function storageRemove(key) {
+  return new Promise((resolve) => {
+    try {
+      chrome.storage.local.remove(key, () => { resolve(); });
+    } catch (e) { resolve(); }
+  });
+}
+
 // Initialisation
 document.addEventListener('DOMContentLoaded', async () => {
   translatePage();
@@ -172,8 +202,8 @@ function setupTabs() {
 // Charger les paramètres
 async function loadSettings() {
   try {
-    const { settings } = await chrome.storage.local.get(['settings']);
-    const currentSettings = settings || DEFAULT_SETTINGS;
+    const { settings } = await storageGet(['settings']);
+      const currentSettings = settings || DEFAULT_SETTINGS;
     
     document.getElementById('checkCN').checked = currentSettings.checkCN || false;
     document.getElementById('ttl').value = (currentSettings.ttl || DEFAULT_SETTINGS.ttl) / 3600000; // Convertir ms en heures
@@ -222,8 +252,8 @@ async function loadSettings() {
 // Sauvegarder les paramètres
 async function saveSettings() {
   try {
-    const { settings } = await chrome.storage.local.get(['settings']);
-    const currentSettings = settings || DEFAULT_SETTINGS;
+    const { settings } = await storageGet(['settings']);
+      const currentSettings = settings || DEFAULT_SETTINGS;
     
     // Récupérer le mode de validation sélectionné
     const validationMode = document.querySelector('input[name="validationMode"]:checked')?.value || 'banner-code';
@@ -260,7 +290,7 @@ async function saveSettings() {
       }
     };
     
-    await chrome.storage.local.set({ settings: newSettings });
+    await storageSet({ settings: newSettings });
     updateEnterpriseTabVisibility(newSettings.enterpriseMode);
     showToast(chrome.i18n.getMessage('toastSettingsSaved'));
   } catch (error) {
@@ -271,7 +301,7 @@ async function saveSettings() {
 // Réinitialiser les paramètres
 async function resetSettings() {
   try {
-    await chrome.storage.local.set({ settings: DEFAULT_SETTINGS });
+    await storageSet({ settings: DEFAULT_SETTINGS });
     await loadSettings();
     showToast(chrome.i18n.getMessage('toastSettingsReset'));
   } catch (error) {
@@ -282,7 +312,7 @@ async function resetSettings() {
 // Charger les listes
 async function loadLists() {
   try {
-    const { lists } = await chrome.storage.local.get(['lists']);
+    const { lists } = await storageGet(['lists']);
     
     const enterpriseList = document.getElementById('enterpriseList');
     const communityLists = document.getElementById('communityLists');
@@ -439,17 +469,48 @@ async function removeList(url) {
 // Activer/désactiver une liste
 async function toggleList(url, enabled) {
   try {
-    const response = await chrome.runtime.sendMessage({
-      action: 'TOGGLE_LIST',
-      url: url,
-      enabled: enabled
-    });
-    
-    if (response.success) {
+    const cleanUrl = (url || '').trim();
+    let response = await new Promise((resolve) => chrome.runtime.sendMessage({ action: 'TOGGLE_LIST', url: cleanUrl, enabled }, (r) => resolve(r)));
+
+    console.debug('[ShieldSign] options.toggleList: initial response', { url: cleanUrl, response });
+
+    // If the runtime message returned no response (rare in some Firefox contexts), retry once briefly
+    if (!response) {
+      await new Promise((res) => setTimeout(res, 250));
+      console.warn('[ShieldSign] options.toggleList: no response, retrying once', { url: cleanUrl });
+      response = await new Promise((resolve) => chrome.runtime.sendMessage({ action: 'TOGGLE_LIST', url: cleanUrl, enabled }, (r) => resolve(r)));
+      console.debug('[ShieldSign] options.toggleList: retry response', { url: cleanUrl, response });
+    }
+
+    // If first attempt failed, try normalized variant (strip query/hash/trailing slash)
+    if (!response || !response.success) {
+      let norm = cleanUrl;
+      try {
+        const u = new URL(cleanUrl);
+        u.search = '';
+        u.hash = '';
+        norm = u.href.replace(/\/$/, '');
+      } catch (e) {
+        norm = cleanUrl.replace(/\/$/, '');
+      }
+
+      if (norm !== cleanUrl) {
+        console.warn('[ShieldSign] toggleList: retrying with normalized URL', { original: cleanUrl, normalized: norm });
+        response = await new Promise((resolve) => chrome.runtime.sendMessage({ action: 'TOGGLE_LIST', url: norm, enabled }, (r) => resolve(r)));
+      }
+    }
+
+    if (response && response.success) {
       showToast(enabled ? chrome.i18n.getMessage('toastListEnabled') : chrome.i18n.getMessage('toastListDisabled'));
       await loadLists();
     } else {
-      showToast(response.error || chrome.i18n.getMessage('errorTogglingList'), true);
+      console.error('[ShieldSign] toggleList failed', { url, cleanUrl, response });
+      // If response is completely missing, give a specific hint to the user
+      if (!response) {
+        showToast(chrome.i18n.getMessage('errorUpdating') || 'Erreur de communication avec l’arrière-plan', true);
+      } else {
+        showToast(response?.error || chrome.i18n.getMessage('errorTogglingList'), true);
+      }
     }
   } catch (error) {
     showToast(chrome.i18n.getMessage('errorTogglingList'), true);
@@ -459,7 +520,7 @@ async function toggleList(url, enabled) {
 // Charger la liste personnelle
 async function loadPersonalDomains() {
   try {
-    const { user_whitelist } = await chrome.storage.local.get(['user_whitelist']);
+    const { user_whitelist } = await storageGet(['user_whitelist']);
     const personalDomainsList = document.getElementById('personalDomainsList');
     
     personalDomainsList.innerHTML = '';
@@ -498,6 +559,46 @@ async function loadPersonalDomains() {
   }
 }
 
+// Render personal domains list from provided array (used to update UI immediately)
+async function renderPersonalDomains(user_whitelist) {
+  try {
+    const personalDomainsList = document.getElementById('personalDomainsList');
+    personalDomainsList.innerHTML = '';
+
+    if (!user_whitelist || user_whitelist.length === 0) {
+      personalDomainsList.innerHTML = `<p class="no-list">${chrome.i18n.getMessage('noListPersonal')}</p>`;
+      return;
+    }
+
+    for (const domain of user_whitelist) {
+      const listItem = document.createElement('div');
+      listItem.className = 'list-item';
+
+      const listInfo = document.createElement('div');
+      listInfo.className = 'list-info';
+
+      const listName = document.createElement('div');
+      listName.className = 'list-name';
+      listName.textContent = domain;
+
+      listInfo.appendChild(listName);
+
+      const removeBtn = document.createElement('button');
+      removeBtn.className = 'remove-btn';
+      removeBtn.innerHTML = '<i class="fas fa-times"></i>';
+      removeBtn.title = chrome.i18n.getMessage('btnRemove') || 'Supprimer';
+      removeBtn.addEventListener('click', () => removePersonalDomain(domain));
+
+      listItem.appendChild(listInfo);
+      listItem.appendChild(removeBtn);
+
+      personalDomainsList.appendChild(listItem);
+    }
+  } catch (error) {
+    showToast(chrome.i18n.getMessage('errorLoadingPersonal'), true);
+  }
+}
+
 // Ajouter un domaine personnel
 async function addPersonalDomain() {
   const input = document.getElementById('personalDomain');
@@ -518,9 +619,14 @@ async function addPersonalDomain() {
       action: 'ADD_PERSONAL_DOMAIN',
       domain: domain
     });
-    
+    const resp = await new Promise((resolve) => chrome.runtime.sendMessage({ action: 'ADD_PERSONAL_DOMAIN', domain }, (r) => resolve(r)));
     showToast(chrome.i18n.getMessage('toastDomainAdded'));
     input.value = '';
+    if (resp && resp.user_whitelist) {
+      // Update UI directly
+      await renderPersonalDomains(resp.user_whitelist);
+      return;
+    }
     await loadPersonalDomains();
   } catch (error) {
     showToast(chrome.i18n.getMessage('errorAddingDomain'), true);
@@ -530,12 +636,12 @@ async function addPersonalDomain() {
 // Supprimer un domaine personnel
 async function removePersonalDomain(domain) {
   try {
-    await chrome.runtime.sendMessage({
-      action: 'REMOVE_PERSONAL_DOMAIN',
-      domain: domain
-    });
-    
+    const resp = await new Promise((resolve) => chrome.runtime.sendMessage({ action: 'REMOVE_PERSONAL_DOMAIN', domain }, (r) => resolve(r)));
     showToast(chrome.i18n.getMessage('toastDomainRemoved'));
+    if (resp && resp.user_whitelist) {
+      await renderPersonalDomains(resp.user_whitelist);
+      return;
+    }
     await loadPersonalDomains();
   } catch (error) {
     showToast(chrome.i18n.getMessage('errorRemovingDomain'), true);
@@ -559,15 +665,15 @@ function isValidDomain(domain) {
 }
 
 // Afficher un toast
-function showToast(message, isError = false) {
+function showToast(message, isError = false, durationMs = 3000) {
   const toast = document.getElementById('toast');
   toast.textContent = message;
   toast.classList.toggle('error', isError);
   toast.classList.add('show');
-  
+
   setTimeout(() => {
     toast.classList.remove('show');
-  }, 3000);
+  }, durationMs);
 }
 
 // Gérer la liste officielle en dur
@@ -579,7 +685,7 @@ async function loadOfficialList() {
   }
   
   try {
-    const { lists } = await chrome.storage.local.get(['lists']);
+    const { lists } = await storageGet(['lists']);
     
     // lists est un objet {url: listData}, pas un tableau
     const officialUrl = 'https://raw.githubusercontent.com/ZA512/ShieldSign/refs/heads/main/shieldsign_public_list_v1.json';
@@ -616,9 +722,37 @@ async function loadOfficialList() {
       toggle.innerHTML = '<i class="fas fa-times-circle"></i>';
       toggle.title = chrome.i18n.getMessage('toggleEnable');
     }
+    // Ensure subtitle text is empty (we don't display an approximate count)
+    const subtitleEl = document.querySelector('#officialListItem .list-url');
+    if (subtitleEl) subtitleEl.textContent = '';
   } catch (error) {
   }
 }
+
+// Fallback listener: sometimes Firefox's sendMessage callback can be unreliable.
+// Listen for TOGGLE_LIST_RESULT broadcasts from the background as a backup.
+chrome.runtime.onMessage.addListener((msg) => {
+  try {
+    if (msg && msg.action === 'TOGGLE_LIST_RESULT') {
+      console.debug('[ShieldSign] options received TOGGLE_LIST_RESULT', msg);
+      // Refresh lists UI to reflect the change
+      loadLists().catch(() => {});
+      // Update official toggle state if applicable
+      const officialUrl = 'https://raw.githubusercontent.com/ZA512/ShieldSign/refs/heads/main/shieldsign_public_list_v1.json';
+      if (msg.url === officialUrl) {
+        // Update the toggle UI
+        const toggle = document.getElementById('officialListToggle');
+        if (toggle) {
+          const enabled = !!msg.enabled;
+          toggle.classList.toggle('enabled', enabled);
+          toggle.classList.toggle('disabled', !enabled);
+          toggle.innerHTML = enabled ? '<i class="fas fa-check-circle"></i>' : '<i class="fas fa-times-circle"></i>';
+          toggle.title = enabled ? chrome.i18n.getMessage('toggleDisable') : chrome.i18n.getMessage('toggleEnable');
+        }
+      }
+    }
+  } catch (e) { /* ignore */ }
+});
 
 // Toggle liste officielle
 async function toggleOfficialList() {
@@ -626,10 +760,15 @@ async function toggleOfficialList() {
   
   try {
     // Envoyer le toggle (le background.js gère l'inversion automatique)
-    const response = await chrome.runtime.sendMessage({
-      action: 'TOGGLE_LIST',
-      url: 'https://raw.githubusercontent.com/ZA512/ShieldSign/refs/heads/main/shieldsign_public_list_v1.json'
-    });
+    let response = await new Promise((resolve) => chrome.runtime.sendMessage({ action: 'TOGGLE_LIST', url: 'https://raw.githubusercontent.com/ZA512/ShieldSign/refs/heads/main/shieldsign_public_list_v1.json' }, (r) => resolve(r)));
+    console.debug('[ShieldSign] options.toggleOfficialList: initial response', response);
+    if (!response) {
+      // brief retry
+      await new Promise((res) => setTimeout(res, 200));
+      console.warn('[ShieldSign] options.toggleOfficialList: no response, retrying once');
+      response = await new Promise((resolve) => chrome.runtime.sendMessage({ action: 'TOGGLE_LIST', url: 'https://raw.githubusercontent.com/ZA512/ShieldSign/refs/heads/main/shieldsign_public_list_v1.json' }, (r) => resolve(r)));
+      console.debug('[ShieldSign] options.toggleOfficialList: retry response', response);
+    }
     
     if (response && response.success) {
       // Mettre à jour l'affichage avec le nouvel état
@@ -654,7 +793,7 @@ async function reinstallOfficialList() {
     const url = 'https://raw.githubusercontent.com/ZA512/ShieldSign/refs/heads/main/shieldsign_public_list_v1.json';
     
     // Récupérer les listes actuelles
-    const { lists } = await chrome.storage.local.get(['lists']);
+    const { lists } = await storageGet(['lists']);
     const currentLists = lists || {};
     
     // Réinstaller la liste officielle
@@ -667,7 +806,7 @@ async function reinstallOfficialList() {
       enabled: true
     };
     
-    await chrome.storage.local.set({ lists: currentLists });
+    await storageSet({ lists: currentLists });
     
     // Forcer la mise à jour immédiate
     await chrome.runtime.sendMessage({ action: 'UPDATE_LISTS' });
@@ -704,7 +843,7 @@ async function toggleEnterpriseMode(e) {
 // Exporter la liste personnelle
 async function exportPersonalList() {
   try {
-    const { user_whitelist } = await chrome.storage.local.get(['user_whitelist']);
+    const { user_whitelist } = await storageGet(['user_whitelist']);
     
     if (!user_whitelist || user_whitelist.length === 0) {
       showToast(chrome.i18n.getMessage('errorNoPersonalDomain'), true);
@@ -748,7 +887,7 @@ async function sharePersonalToFormInternal(formUrl) {
     showToast(chrome.i18n.getMessage('toastPreparingSubmission'));
 
     // Récupérer les domaines personnels
-    const { user_whitelist } = await chrome.storage.local.get(['user_whitelist']);
+    const { user_whitelist } = await storageGet(['user_whitelist']);
     const personal = user_whitelist || [];
 
     if (personal.length === 0) { showToast(chrome.i18n.getMessage('toastNoDomainsToShare'), true); return; }
@@ -771,7 +910,7 @@ async function sharePersonalToFormInternal(formUrl) {
     const normalized = personal.map(d => d.toLowerCase().trim().replace(/^www\./, '')).filter(Boolean);
 
     // Charger historique des partages pour éviter double envoi
-    const { shared_to_form } = await chrome.storage.local.get(['shared_to_form']);
+    const { shared_to_form } = await storageGet(['shared_to_form']);
     const sharedSet = new Set(shared_to_form || []);
 
     const filteredByExisting = normalized.filter(d => existing.has(d));
@@ -780,14 +919,14 @@ async function sharePersonalToFormInternal(formUrl) {
 
     if (toSend.length === 0) {
       if (filteredByExisting.length > 0) {
-        showToast(`Aucun domaine nouveau à partager — ${filteredByExisting.length} domaine(s) existent déjà dans les listes communautaires.`, true);
+        showToast(`Aucun domaine nouveau à partager — ${filteredByExisting.length} domaine(s) existent déjà dans les listes communautaires.`, true, 6500);
         return;
       }
       if (filteredByShared.length > 0) {
-        showToast(`Aucun domaine nouveau à partager — ${filteredByShared.length} domaine(s) ont déjà été partagés localement.`, true);
+        showToast(`Aucun domaine nouveau à partager — ${filteredByShared.length} domaine(s) ont déjà été partagés localement.`, true, 6500);
         return;
       }
-      showToast(chrome.i18n.getMessage('toastNoNewDomainsToShare'), true);
+      showToast(chrome.i18n.getMessage('toastNoNewDomainsToShare'), true, 6500);
       return;
     }
 
@@ -853,8 +992,9 @@ async function sharePersonalToFormInternal(formUrl) {
         try { let openUrl = formUrl; try { const u = new URL(formUrl); u.search = ''; u.hash = ''; openUrl = u.href; } catch (e) { openUrl = formUrl; } window.open(openUrl, '_blank'); } catch (e) { window.open(formUrl, '_blank'); }
         showToast('Impossible d’envoyer automatiquement. Les domaines ont été copiés. Collez-les dans le formulaire ouvert.');
       } else {
-        await chrome.storage.local.set({ shared_to_form: Array.from(sharedSet) });
-        showToast(chrome.i18n.getMessage('toastDomainsShared').replace('{count}', successCount));
+        await storageSet({ shared_to_form: Array.from(sharedSet) });
+        // Short, polite success message
+        showToast(chrome.i18n.getMessage('toastDomainsSharedShort') || 'Merci pour le partage');
       }
     } catch (postErr) {
       console.error('Posting to Google Form failed', postErr);
@@ -873,7 +1013,7 @@ async function sharePersonalToFormInternal(formUrl) {
 async function clearSharedHistory() {
   // clearSharedHistory kept for backward compatibility but UI removed
   if (!confirm(chrome.i18n.getMessage('confirmClearSharedHistory'))) return;
-  await chrome.storage.local.remove('shared_to_form');
+  await storageRemove('shared_to_form');
   showToast(chrome.i18n.getMessage('toastSharedHistoryCleared'));
 }
 
@@ -882,8 +1022,8 @@ async function clearSharedHistory() {
   // No UI counter for shared history. Keep storage initialized if needed.
   try {
     // noop: ensure key exists
-    const data = await new Promise((resolve) => chrome.storage.local.get(['shared_to_form'], (res) => resolve(res || {})));
-    if (!data.shared_to_form) await chrome.storage.local.set({ shared_to_form: [] });
+    const data = await storageGet(['shared_to_form']);
+    if (!data.shared_to_form) await storageSet({ shared_to_form: [] });
   } catch (e) {
     // ignore
   }
@@ -891,7 +1031,7 @@ async function clearSharedHistory() {
 
 // Préparer le payload de contribution (JSON standardisé)
 async function prepareContributionPayload(maintainer) {
-  const { user_whitelist } = await chrome.storage.local.get(['user_whitelist']);
+  const { user_whitelist } = await storageGet(['user_whitelist']);
   const domains = user_whitelist || [];
   const manifest = chrome.runtime.getManifest();
 
@@ -931,10 +1071,10 @@ async function importPersonalList(e) {
     }
     
     // Fusionner avec les domaines existants
-    const { user_whitelist = [] } = await chrome.storage.local.get(['user_whitelist']);
+    const { user_whitelist = [] } = await storageGet(['user_whitelist']);
     const mergedDomains = [...new Set([...user_whitelist, ...validDomains])];
-    
-    await chrome.storage.local.set({ user_whitelist: mergedDomains });
+
+    await storageSet({ user_whitelist: mergedDomains });
     await loadPersonalDomains();
     
     showToast(chrome.i18n.getMessage('toastDomainsImported').replace('{count}', validDomains.length));

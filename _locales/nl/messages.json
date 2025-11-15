@@ -861,6 +861,19 @@
   "toastSharedHistoryCleared": {
     "message": "Geschiedenis gewist."
   },
+  "toastFormFieldCopyOpen": {
+    "message": "Formulierveld niet automatisch gedetecteerd. Domeinen zijn gekopieerd. Plak ze in het geopende formulier."
+  },
+  "toastAutoPostFailedCopyOpen": {
+    "message": "Automatisch verzenden niet mogelijk. Domeinen zijn gekopieerd. Plak ze in het geopende formulier."
+  },
+  "toastAutoPostErrorCopyOpen": {
+    "message": "Fout bij automatisch verzenden. Domeinen zijn gekopieerd; plak ze in het geopende formulier."
+  },
+  "toastSendingCount": {
+    "message": "Verzenden van {count} domein(en)...",
+    "placeholders": { "count": { "content": "$1" } }
+  },
   "confirmClearSharedHistory": {
     "message": "De geschiedenis van lokaal gedeelde domeinen verwijderen?"
   }

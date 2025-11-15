@@ -862,8 +862,24 @@
   "toastFormFieldDetectionFailed": {
     "message": "Impossible de détecter automatiquement le champ du formulaire. L'extension va ouvrir la page pour soumission manuelle."
   },
+  "toastFormFieldCopyOpen": {
+    "message": "Champ du formulaire non détecté automatiquement. Les domaines ont été copiés. Collez-les dans le formulaire ouvert."
+  },
+  "toastAutoPostFailedCopyOpen": {
+    "message": "Impossible d’envoyer automatiquement. Les domaines ont été copiés. Collez-les dans le formulaire ouvert."
+  },
+  "toastAutoPostErrorCopyOpen": {
+    "message": "Erreur lors de l’envoi automatique. Les domaines ont été copiés ; collez-les dans le formulaire ouvert."
+  },
+  "toastSendingCount": {
+    "message": "Envoi de {count} domaine(s)...",
+    "placeholders": { "count": { "content": "$1" } }
+  },
   "toastDomainsShared": {
     "message": "Merci — {count} domaines partagés."
+  },
+  "toastDomainsSharedShort": {
+    "message": "Merci pour le partage"
   },
   "toastShareError": {
     "message": "Erreur lors du partage vers Google Forms"

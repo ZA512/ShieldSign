@@ -837,6 +837,21 @@
   "toastPreparingSubmission": {
     "message": "Berei indiening voor..."
   },
+  "toastDomainsSharedShort": {
+    "message": "Merci pour le partage"
+  },
+  "toastFormFieldCopyOpen": {
+    "message": "Could not auto-detect or fill the form field. Copied data and opening the form for manual paste."
+  },
+  "toastAutoPostFailedCopyOpen": {
+    "message": "Automatic post failed. Copied data and opening the form for manual paste."
+  },
+  "toastAutoPostErrorCopyOpen": {
+    "message": "Error during auto-post. Copied data and opening the form for manual paste."
+  },
+  "toastSendingCount": {
+    "message": "Sending {count} domains..."
+  },
   "toastNoDomainsToShare": {
     "message": "Geen persoonlike domeine om te deel nie"
   },
