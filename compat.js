@@ -58,13 +58,23 @@ const Compat = (function(){
 
   // Action / browserAction
   async function setBadgeText(text, tabId) {
-    try { if (chrome.action && chrome.action.setBadgeText) { await chrome.action.setBadgeText({ text: String(text), tabId }); return; } } catch(e) {}
-    try { if (chrome.browserAction && chrome.browserAction.setBadgeText) { chrome.browserAction.setBadgeText({ text: String(text), tabId }); return; } } catch(e) {}
+    try {
+      const actionApi = (typeof chrome !== 'undefined') ? (chrome['action'] || chrome['browserAction']) : null;
+      if (actionApi && actionApi.setBadgeText) {
+        try { return await actionApi.setBadgeText({ text: String(text), tabId }); } catch(e) {}
+      }
+    } catch (e) {}
+    return;
   }
 
   async function setBadgeBg(color, tabId) {
-    try { if (chrome.action && chrome.action.setBadgeBackgroundColor) { await chrome.action.setBadgeBackgroundColor({ color, tabId }); return; } } catch(e) {}
-    try { if (chrome.browserAction && chrome.browserAction.setBadgeBackgroundColor) { chrome.browserAction.setBadgeBackgroundColor({ color, tabId }); return; } } catch(e) {}
+    try {
+      const actionApi = (typeof chrome !== 'undefined') ? (chrome['action'] || chrome['browserAction']) : null;
+      if (actionApi && actionApi.setBadgeBackgroundColor) {
+        try { return await actionApi.setBadgeBackgroundColor({ color, tabId }); } catch(e) {}
+      }
+    } catch (e) {}
+    return;
   }
 
   // ExecuteScript compat

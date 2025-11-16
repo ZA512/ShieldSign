@@ -16,7 +16,8 @@ function translatePage() {
       } else if (element.tagName === 'OPTION') {
         element.textContent = message;
       } else {
-        element.innerHTML = message;
+        // Use textContent to avoid injecting HTML from translations
+        element.textContent = message;
       }
     }
   });

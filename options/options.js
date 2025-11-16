@@ -73,8 +73,8 @@ function translatePage() {
     const key = element.getAttribute('data-i18n');
     const message = chrome.i18n.getMessage(key);
     if (message) {
-      // Utiliser innerHTML pour supporter les balises HTML dans les traductions
-      element.innerHTML = message;
+      // Prefer textContent for safety; messages that require HTML should be reviewed
+      element.textContent = message;
     }
   });
   
@@ -338,8 +338,10 @@ async function loadLists() {
       return;
     }
     
-    enterpriseList.innerHTML = `<p class="no-list">${chrome.i18n.getMessage('noListEnterprise')}</p>`;
-    communityLists.innerHTML = `<p class="no-list">${chrome.i18n.getMessage('noListCommunity')}</p>`;
+    enterpriseList.textContent = '';
+    communityLists.textContent = '';
+    const p1 = document.createElement('p'); p1.className = 'no-list'; p1.textContent = chrome.i18n.getMessage('noListEnterprise'); enterpriseList.appendChild(p1);
+    const p2 = document.createElement('p'); p2.className = 'no-list'; p2.textContent = chrome.i18n.getMessage('noListCommunity'); communityLists.appendChild(p2);
     
     if (!lists || Object.keys(lists).length === 0) {
       return;
@@ -359,13 +361,13 @@ async function loadLists() {
       
       if (listData.localType === 'enterprise') {
         if (!hasEnterprise) {
-          enterpriseList.innerHTML = '';
+          enterpriseList.textContent = '';
           hasEnterprise = true;
         }
         enterpriseList.appendChild(listItem);
       } else {
         if (!hasCommunity) {
-          communityLists.innerHTML = '';
+          communityLists.textContent = '';
           hasCommunity = true;
         }
         communityLists.appendChild(listItem);
@@ -407,7 +409,10 @@ function createListItem(url, listData) {
   // Bouton activer/désactiver
   const toggleBtn = document.createElement('button');
   toggleBtn.className = `toggle-btn ${listData.enabled !== false ? 'enabled' : 'disabled'}`;
-  toggleBtn.innerHTML = listData.enabled !== false ? '<i class="fas fa-check-circle"></i>' : '<i class="fas fa-times-circle"></i>';
+  // create icon element instead of innerHTML to avoid HTML injection
+  const icon = document.createElement('i');
+  icon.className = listData.enabled !== false ? 'fas fa-check-circle' : 'fas fa-times-circle';
+  toggleBtn.appendChild(icon);
   toggleBtn.title = listData.enabled !== false ? chrome.i18n.getMessage('toggleDisable') : chrome.i18n.getMessage('toggleEnable');
   toggleBtn.addEventListener('click', () => toggleList(url, listData.enabled === false));
   
@@ -417,7 +422,7 @@ function createListItem(url, listData) {
   if (!listData.isOfficial) {
     const removeBtn = document.createElement('button');
     removeBtn.className = 'remove-btn';
-    removeBtn.innerHTML = '<i class="fas fa-times"></i>';
+    const remIcon = document.createElement('i'); remIcon.className = 'fas fa-times'; removeBtn.appendChild(remIcon);
     removeBtn.title = chrome.i18n.getMessage('btnRemove') || 'Supprimer';
     removeBtn.addEventListener('click', () => removeList(url));
     actions.appendChild(removeBtn);
@@ -540,10 +545,10 @@ async function loadPersonalDomains() {
     const { user_whitelist } = await storageGet(['user_whitelist']);
     const personalDomainsList = document.getElementById('personalDomainsList');
     
-    personalDomainsList.innerHTML = '';
+    personalDomainsList.textContent = '';
     
     if (!user_whitelist || user_whitelist.length === 0) {
-      personalDomainsList.innerHTML = `<p class="no-list">${chrome.i18n.getMessage('noListPersonal')}</p>`;
+      const p3 = document.createElement('p'); p3.className = 'no-list'; p3.textContent = chrome.i18n.getMessage('noListPersonal'); personalDomainsList.appendChild(p3);
       return;
     }
     
@@ -562,7 +567,7 @@ async function loadPersonalDomains() {
       
       const removeBtn = document.createElement('button');
       removeBtn.className = 'remove-btn';
-      removeBtn.innerHTML = '<i class="fas fa-times"></i>';
+      const remIcon2 = document.createElement('i'); remIcon2.className = 'fas fa-times'; removeBtn.appendChild(remIcon2);
       removeBtn.title = chrome.i18n.getMessage('btnRemove') || 'Supprimer';
       removeBtn.addEventListener('click', () => removePersonalDomain(domain));
       
@@ -580,10 +585,10 @@ async function loadPersonalDomains() {
 async function renderPersonalDomains(user_whitelist) {
   try {
     const personalDomainsList = document.getElementById('personalDomainsList');
-    personalDomainsList.innerHTML = '';
+    personalDomainsList.textContent = '';
 
     if (!user_whitelist || user_whitelist.length === 0) {
-      personalDomainsList.innerHTML = `<p class="no-list">${chrome.i18n.getMessage('noListPersonal')}</p>`;
+      const p4 = document.createElement('p'); p4.className = 'no-list'; p4.textContent = chrome.i18n.getMessage('noListPersonal'); personalDomainsList.appendChild(p4);
       return;
     }
 
@@ -602,7 +607,7 @@ async function renderPersonalDomains(user_whitelist) {
 
       const removeBtn = document.createElement('button');
       removeBtn.className = 'remove-btn';
-      removeBtn.innerHTML = '<i class="fas fa-times"></i>';
+      const remIcon3 = document.createElement('i'); remIcon3.className = 'fas fa-times'; removeBtn.appendChild(remIcon3);
       removeBtn.title = chrome.i18n.getMessage('btnRemove') || 'Supprimer';
       removeBtn.addEventListener('click', () => removePersonalDomain(domain));
 
@@ -732,11 +737,14 @@ async function loadOfficialList() {
     // Ajouter la bonne classe
     if (isEnabled) {
       toggle.classList.add('enabled');
-      toggle.innerHTML = '<i class="fas fa-check-circle"></i>';
+      // create icon safely
+      while (toggle.firstChild) toggle.removeChild(toggle.firstChild);
+      const iconEl = document.createElement('i'); iconEl.className = 'fas fa-check-circle'; toggle.appendChild(iconEl);
       toggle.title = chrome.i18n.getMessage('toggleDisable');
     } else {
       toggle.classList.add('disabled');
-      toggle.innerHTML = '<i class="fas fa-times-circle"></i>';
+      while (toggle.firstChild) toggle.removeChild(toggle.firstChild);
+      const iconEl2 = document.createElement('i'); iconEl2.className = 'fas fa-times-circle'; toggle.appendChild(iconEl2);
       toggle.title = chrome.i18n.getMessage('toggleEnable');
     }
     // Ensure subtitle text is empty (we don't display an approximate count)
@@ -763,7 +771,8 @@ chrome.runtime.onMessage.addListener((msg) => {
           const enabled = !!msg.enabled;
           toggle.classList.toggle('enabled', enabled);
           toggle.classList.toggle('disabled', !enabled);
-          toggle.innerHTML = enabled ? '<i class="fas fa-check-circle"></i>' : '<i class="fas fa-times-circle"></i>';
+          while (toggle.firstChild) toggle.removeChild(toggle.firstChild);
+          const iconToggle = document.createElement('i'); iconToggle.className = enabled ? 'fas fa-check-circle' : 'fas fa-times-circle'; toggle.appendChild(iconToggle);
           toggle.title = enabled ? chrome.i18n.getMessage('toggleDisable') : chrome.i18n.getMessage('toggleEnable');
         }
       }
@@ -792,7 +801,8 @@ async function toggleOfficialList() {
       const newEnabled = response.enabled;
       toggle.classList.toggle('enabled', newEnabled);
       toggle.classList.toggle('disabled', !newEnabled);
-      toggle.innerHTML = newEnabled ? '<i class="fas fa-check-circle"></i>' : '<i class="fas fa-times-circle"></i>';
+      while (toggle.firstChild) toggle.removeChild(toggle.firstChild);
+      const newToggleIcon = document.createElement('i'); newToggleIcon.className = newEnabled ? 'fas fa-check-circle' : 'fas fa-times-circle'; toggle.appendChild(newToggleIcon);
       toggle.title = newEnabled ? chrome.i18n.getMessage('toggleDisable') : chrome.i18n.getMessage('toggleEnable');
       
       showToast(newEnabled ? chrome.i18n.getMessage('toastOfficialEnabled') : chrome.i18n.getMessage('toastOfficialDisabled'));

@@ -38,8 +38,20 @@ let CompatReady = (async () => {
     const resp = await fetch(url);
     if (resp.ok) {
       const text = await resp.text();
-      (0, eval)(text);
-      return;
+      try {
+        // Avoid eval() by creating a blob and importScripts the blob URL
+        const blob = new Blob([text], { type: 'application/javascript' });
+        const blobUrl = URL.createObjectURL(blob);
+        try {
+          importScripts(blobUrl);
+        } finally {
+          // revoke the blob URL
+          try { URL.revokeObjectURL(blobUrl); } catch (e) {}
+        }
+        return;
+      } catch (e) {
+        SSLog.debug('[ShieldSign] compat blob import failed', e);
+      }
     }
   } catch (e) {
     SSLog.debug('[ShieldSign] compat fetch+eval failed', e);
@@ -99,14 +111,9 @@ let CompatReady = (async () => {
       // Action / browserAction (badge)
       function setBadgeText(text, tabId) {
         try {
-          if (chrome.action && chrome.action.setBadgeText) {
-            chrome.action.setBadgeText({ text: String(text), tabId });
-            return Promise.resolve();
-          }
-        } catch (e) {}
-        try {
-          if (chrome.browserAction && chrome.browserAction.setBadgeText) {
-            chrome.browserAction.setBadgeText({ text: String(text), tabId });
+          const actionApi = (typeof chrome !== 'undefined') ? (chrome['action'] || chrome['browserAction']) : null;
+          if (actionApi && actionApi.setBadgeText) {
+            try { actionApi.setBadgeText({ text: String(text), tabId }); } catch (e) {}
             return Promise.resolve();
           }
         } catch (e) {}
@@ -115,14 +122,9 @@ let CompatReady = (async () => {
 
       function setBadgeBg(color, tabId) {
         try {
-          if (chrome.action && chrome.action.setBadgeBackgroundColor) {
-            chrome.action.setBadgeBackgroundColor({ color, tabId });
-            return Promise.resolve();
-          }
-        } catch (e) {}
-        try {
-          if (chrome.browserAction && chrome.browserAction.setBadgeBackgroundColor) {
-            chrome.browserAction.setBadgeBackgroundColor({ color, tabId });
+          const actionApi = (typeof chrome !== 'undefined') ? (chrome['action'] || chrome['browserAction']) : null;
+          if (actionApi && actionApi.setBadgeBackgroundColor) {
+            try { actionApi.setBadgeBackgroundColor({ color, tabId }); } catch (e) {}
             return Promise.resolve();
           }
         } catch (e) {}
@@ -1306,5 +1308,23 @@ async function toggleList(url, enabled) {
   return { success: false, error: 'Liste non trouvée.' };
 }
 
-// Mise à jour périodique des listes (toutes les heures)
-setInterval(updateLists, 3600000); // 1 heure
+// Mise à jour périodique des listes (toutes les heures) - utiliser chrome.alarms (compatible MV2 & MV3)
+try {
+  if (chrome && chrome.alarms && chrome.alarms.create) {
+    // create alarm at install (onInstalled handler already creates 'regenerateCode')
+    chrome.alarms.create('updateListsHourly', { periodInMinutes: 60 });
+    chrome.alarms.onAlarm.addListener((alarm) => {
+      try {
+        if (alarm && alarm.name === 'updateListsHourly') {
+          updateLists().catch(e => SSLog.warn('[ShieldSign] updateLists alarm failed', e));
+        }
+      } catch (e) {}
+    });
+  } else {
+    // Fallback for very old runtimes
+    setInterval(updateLists, 3600000);
+  }
+} catch (e) {
+  // If alarms are not available for any reason, fallback
+  setInterval(updateLists, 3600000);
+}
