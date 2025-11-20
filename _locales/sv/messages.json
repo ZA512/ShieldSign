@@ -828,6 +828,9 @@
   "shareToFormsTipAbout": {
     "message": "Tips: klistra in formulär-URL:en här en gång och klicka sedan på \"Dela\" från denna skärm eller från fliken Personliga källor."
   },
+  "shareToFormsAboutDescription": {
+    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+  },
   "sharedDomainsCount": {
     "message": "Redan delade domäner: {count}"
   },

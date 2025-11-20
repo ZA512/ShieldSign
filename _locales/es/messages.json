@@ -828,6 +828,9 @@
   "shareToFormsTipAbout": {
     "message": "Consejo: pegue la URL del formulario aquí una vez y luego haga clic en \"Compartir\" desde esta pantalla o desde la pestaña Fuentes personales."
   },
+  "shareToFormsAboutDescription": {
+    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+  },
   "sharedDomainsCount": {
     "message": "Dominios ya compartidos: {count}"
   },

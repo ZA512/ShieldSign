@@ -828,6 +828,9 @@
   "shareToFormsTipAbout": {
     "message": "Dica: cole a URL do formulário aqui uma vez e clique em \"Compartilhar\" desta tela ou da aba Fontes Pessoais."
   },
+  "shareToFormsAboutDescription": {
+    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+  },
   "sharedDomainsCount": {
     "message": "Domínios já compartilhados: {count}"
   },

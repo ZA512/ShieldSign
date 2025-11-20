@@ -825,6 +825,9 @@
   "shareToFormsNote": {
     "message": "最初の送信は、可能であればフォームフィールドを自動的に検出します。"
   },
+  "shareToFormsAboutDescription": {
+    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+  },
   "shareToFormsTipAbout": {
     "message": "ヒント:フォームのURLをここに一度貼り付けてから、この画面または個人ソースタブから「共有」をクリックしてください。"
   },

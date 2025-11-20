@@ -828,6 +828,9 @@
   "shareToFormsTipAbout": {
     "message": "Порада: вставте URL форми сюди один раз, а потім натисніть \"Поділитися\" з цього екрану або з вкладки Особисті джерела."
   },
+  "shareToFormsAboutDescription": {
+    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+  },
   "sharedDomainsCount": {
     "message": "Вже поділені домени: {count}"
   },

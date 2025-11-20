@@ -828,6 +828,9 @@
   "shareToFormsTipAbout": {
     "message": "Petua: tampal URL borang di sini sekali kemudian klik \"Kongsi\" dari skrin ini atau dari tab Sumber Peribadi."
   },
+  "shareToFormsAboutDescription": {
+    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+  },
   "sharedDomainsCount": {
     "message": "Domain yang sudah dikongsi: {count}"
   },

@@ -828,6 +828,9 @@
   "shareToFormsTipAbout": {
     "message": "Shawara: manna URL ɗin fom a nan sau ɗaya sannan danna \"Raba\" daga wannan allo ko daga shafin Tushen Sirri."
   },
+  "shareToFormsAboutDescription": {
+    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+  },
   "sharedDomainsCount": {
     "message": "Yankuna da aka riga aka raba: {count}"
   },

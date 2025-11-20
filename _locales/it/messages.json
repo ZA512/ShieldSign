@@ -825,6 +825,9 @@
   "shareToFormsNote": {
     "message": "Il primo invio rileverà automaticamente il campo del modulo, se possibile."
   },
+  "shareToFormsAboutDescription": {
+    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+  },
   "shareToFormsTipAbout": {
     "message": "Suggerimento: incolla l'URL del modulo qui una volta, quindi fai clic su \"Condividi\" da questa schermata o dalla scheda Fonti personali."
   },

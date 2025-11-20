@@ -822,6 +822,9 @@
   "shareToFormsBtnAbout": {
     "message": "Deel my lys"
   },
+    "shareToFormsAboutDescription": {
+      "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+    },
   "shareToFormsNote": {
     "message": "Die eerste indiening sal die vormveld outomaties opspoor indien moontlik."
   },

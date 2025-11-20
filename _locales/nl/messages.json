@@ -825,6 +825,9 @@
   "shareToFormsNote": {
     "message": "De eerste inzending detecteert automatisch het formulierveld indien mogelijk."
   },
+  "shareToFormsAboutDescription": {
+    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+  },
   "shareToFormsTipAbout": {
     "message": "Tip: plak de formulier-URL hier eenmaal en klik vervolgens op \"Delen\" vanaf dit scherm of vanaf het tabblad Persoonlijke bronnen."
   },

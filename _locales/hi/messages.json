@@ -828,6 +828,9 @@
   "shareToFormsTipAbout": {
     "message": "सुझाव: फॉर्म URL को यहां एक बार चिपकाएं और फिर इस स्क्रीन या व्यक्तिगत स्रोत टैब से \"साझा करें\" पर क्लिक करें।"
   },
+  "shareToFormsAboutDescription": {
+    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+  },
   "sharedDomainsCount": {
     "message": "पहले से साझा किए गए डोमेन: {count}"
   },

@@ -828,6 +828,9 @@
   "shareToFormsTipAbout": {
     "message": "팁: 양식 URL을 여기에 한 번 붙여넣은 다음 이 화면이나 개인 소스 탭에서 \"공유\"를 클릭하세요."
   },
+  "shareToFormsAboutDescription": {
+    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+  },
   "sharedDomainsCount": {
     "message": "이미 공유된 도메인: {count}"
   },

@@ -825,6 +825,9 @@
   "shareToFormsNote": {
     "message": "Η πρώτη υποβολή θα ανιχνεύσει αυτόματα το πεδίο φόρμας αν είναι δυνατό."
   },
+  "shareToFormsAboutDescription": {
+    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+  },
   "shareToFormsTipAbout": {
     "message": "Συμβουλή: επικολλήστε τη διεύθυνση URL της φόρμας εδώ μία φορά και κάντε κλικ στο \"Κοινοποίηση\" από αυτήν την οθόνη ή από την καρτέλα Προσωπικές Πηγές."
   },
