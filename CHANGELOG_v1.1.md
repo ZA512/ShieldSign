@@ -6,7 +6,7 @@
 - **Ajoutée automatiquement** à l'installation
 - **Non supprimable** (bouton de suppression absent)
 - **Activable/désactivable** via un bouton toggle (✓/✗)
-- URL : `https://raw.githubusercontent.com/ZA512/ShieldSign/refs/heads/main/shieldsign_public_list_v1.json`
+- URL : `https://raw.githubusercontent.com/ZA512/ShieldSign/main/shieldsign_public_list_v1.json`
 - Nom : **"ShieldSign Official List"**
 
 ### 2. Affichage des noms de listes

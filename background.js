@@ -207,7 +207,7 @@ const DEFAULT_SETTINGS = {
 };
 
 // Liste officielle ShieldSign (non supprimable)
-const OFFICIAL_LIST_URL = 'https://raw.githubusercontent.com/ZA512/ShieldSign/refs/heads/main/shieldsign_public_list_v1.json';
+const OFFICIAL_LIST_URL = 'https://raw.githubusercontent.com/ZA512/ShieldSign/main/shieldsign_public_list_v1.json';
 
 // Fonction pour générer un code aléatoire de 2 caractères (lettres majuscules + chiffres)
 function generateRandomCode() {

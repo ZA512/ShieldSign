@@ -347,7 +347,7 @@ async function loadLists() {
       return;
     }
     
-    const OFFICIAL_URL = 'https://raw.githubusercontent.com/ZA512/ShieldSign/refs/heads/main/shieldsign_public_list_v1.json';
+    const OFFICIAL_URL = 'https://raw.githubusercontent.com/ZA512/ShieldSign/main/shieldsign_public_list_v1.json';
     let hasEnterprise = false;
     let hasCommunity = false;
     
@@ -710,7 +710,7 @@ async function loadOfficialList() {
     const { lists } = await storageGet(['lists']);
     
     // lists est un objet {url: listData}, pas un tableau
-    const officialUrl = 'https://raw.githubusercontent.com/ZA512/ShieldSign/refs/heads/main/shieldsign_public_list_v1.json';
+    const officialUrl = 'https://raw.githubusercontent.com/ZA512/ShieldSign/main/shieldsign_public_list_v1.json';
     let officialList = null;
     
     if (lists) {
@@ -763,7 +763,7 @@ chrome.runtime.onMessage.addListener((msg) => {
       // Refresh lists UI to reflect the change
       loadLists().catch(() => {});
       // Update official toggle state if applicable
-      const officialUrl = 'https://raw.githubusercontent.com/ZA512/ShieldSign/refs/heads/main/shieldsign_public_list_v1.json';
+      const officialUrl = 'https://raw.githubusercontent.com/ZA512/ShieldSign/main/shieldsign_public_list_v1.json';
       if (msg.url === officialUrl) {
         // Update the toggle UI
         const toggle = document.getElementById('officialListToggle');
@@ -786,13 +786,13 @@ async function toggleOfficialList() {
   
   try {
     // Envoyer le toggle (le background.js gère l'inversion automatique)
-    let response = await new Promise((resolve) => chrome.runtime.sendMessage({ action: 'TOGGLE_LIST', url: 'https://raw.githubusercontent.com/ZA512/ShieldSign/refs/heads/main/shieldsign_public_list_v1.json' }, (r) => resolve(r)));
+    let response = await new Promise((resolve) => chrome.runtime.sendMessage({ action: 'TOGGLE_LIST', url: 'https://raw.githubusercontent.com/ZA512/ShieldSign/main/shieldsign_public_list_v1.json' }, (r) => resolve(r)));
     SSLog.debug('[ShieldSign] options.toggleOfficialList: initial response', response);
     if (!response) {
       // brief retry
       await new Promise((res) => setTimeout(res, 200));
       SSLog.warn('[ShieldSign] options.toggleOfficialList: no response, retrying once');
-      response = await new Promise((resolve) => chrome.runtime.sendMessage({ action: 'TOGGLE_LIST', url: 'https://raw.githubusercontent.com/ZA512/ShieldSign/refs/heads/main/shieldsign_public_list_v1.json' }, (r) => resolve(r)));
+      response = await new Promise((resolve) => chrome.runtime.sendMessage({ action: 'TOGGLE_LIST', url: 'https://raw.githubusercontent.com/ZA512/ShieldSign/main/shieldsign_public_list_v1.json' }, (r) => resolve(r)));
       SSLog.debug('[ShieldSign] options.toggleOfficialList: retry response', response);
     }
     
@@ -817,7 +817,7 @@ async function toggleOfficialList() {
 // Réinstaller la liste officielle
 async function reinstallOfficialList() {
   try {
-    const url = 'https://raw.githubusercontent.com/ZA512/ShieldSign/refs/heads/main/shieldsign_public_list_v1.json';
+    const url = 'https://raw.githubusercontent.com/ZA512/ShieldSign/main/shieldsign_public_list_v1.json';
     
     // Récupérer les listes actuelles
     const { lists } = await storageGet(['lists']);
