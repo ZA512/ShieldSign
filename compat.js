@@ -93,11 +93,71 @@ const Compat = (function(){
     });
   }
 
+  // Platform detection for Firefox Android / mobile
+  let _platformCache = null;
+  
+  async function detectPlatform() {
+    if (_platformCache) return _platformCache;
+    
+    _platformCache = {
+      isMobile: false,
+      isAndroid: false,
+      isFirefoxMobile: false,
+      os: 'unknown'
+    };
+    
+    // Method 1: chrome.runtime.getPlatformInfo (most reliable)
+    try {
+      if (chrome && chrome.runtime && chrome.runtime.getPlatformInfo) {
+        const info = await new Promise((resolve, reject) => {
+          chrome.runtime.getPlatformInfo((info) => {
+            if (chrome.runtime.lastError) reject(chrome.runtime.lastError);
+            else resolve(info);
+          });
+        });
+        _platformCache.os = info.os || 'unknown';
+        _platformCache.isAndroid = info.os === 'android';
+        _platformCache.isMobile = info.os === 'android';
+      }
+    } catch (e) {
+      // Fallback to user agent
+    }
+    
+    // Method 2: User Agent fallback
+    if (typeof navigator !== 'undefined' && navigator.userAgent) {
+      const ua = navigator.userAgent;
+      const isFirefox = /Firefox/i.test(ua);
+      const isAndroidUA = /Android/i.test(ua);
+      const isMobileUA = /Mobile|Tablet/i.test(ua);
+      
+      _platformCache.isFirefoxMobile = isFirefox && (isAndroidUA || isMobileUA);
+      
+      if (!_platformCache.isMobile) {
+        _platformCache.isMobile = isAndroidUA || isMobileUA;
+        _platformCache.isAndroid = isAndroidUA;
+      }
+    }
+    
+    return _platformCache;
+  }
+  
+  // Synchronous check (uses cached value, or returns false if not yet detected)
+  function isMobile() {
+    return _platformCache ? _platformCache.isMobile : false;
+  }
+  
+  function isFirefoxMobile() {
+    return _platformCache ? _platformCache.isFirefoxMobile : false;
+  }
+
   return {
     storageGet, storageSet,
     getActiveTab, getTab,
     setBadgeText, setBadgeBg,
-    executeScriptCompat
+    executeScriptCompat,
+    detectPlatform,
+    isMobile,
+    isFirefoxMobile
   };
 })();
 

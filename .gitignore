@@ -16,3 +16,9 @@ venv/
 
 # Logs
 *.log
+
+# Snyk Security Extension - AI Rules (auto-generated)
+.github/instructions/snyk_rules.instructions.md
+releases/ShieldSign_v1.0.1_chrome.zip
+releases/ShieldSign_v1.0.1_firefox.zip
+releases/ShieldSign_v1.0.1.xpi

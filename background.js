@@ -167,6 +167,13 @@ const DEFAULT_SETTINGS = {
   currentCode: '', // Code alphanumérique 2 caractères (regénéré quotidiennement)
   showUnknownPages: false, // Afficher badge rouge/gris pour pages non listées
   
+  // Banner size: 'auto' | 'small' | 'medium' | 'large'
+  // 'auto' resolves to 'small' on mobile, 'large' on desktop
+  bannerSize: 'auto',
+  
+  // Platform detection done flag (to apply defaults only once)
+  platformDefaultsApplied: false,
+  
   // Banner colors configuration
   bannerColors: {
     enterprise: '#2ECC71',
@@ -217,6 +224,16 @@ function generateRandomCode() {
     code += chars.charAt(Math.floor(Math.random() * chars.length));
   }
   return code;
+}
+
+// Fonction pour générer un mot-clé aléatoire format Lettre/Chiffre/Lettre/Chiffre (ex: K7X9)
+function generateRandomKeyword() {
+  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const digits = '0123456789';
+  return letters.charAt(Math.floor(Math.random() * letters.length)) +
+         digits.charAt(Math.floor(Math.random() * digits.length)) +
+         letters.charAt(Math.floor(Math.random() * letters.length)) +
+         digits.charAt(Math.floor(Math.random() * digits.length));
 }
 
 // Use Compat layer for storage to handle Firefox/Chrome differences
@@ -282,6 +299,30 @@ async function migrateSettings() {
   // Générer un code initial si pas déjà présent
   if (!migratedSettings.currentCode) {
     migratedSettings.currentCode = generateRandomCode();
+  }
+  
+  // Apply platform-specific defaults only once (first launch)
+  if (!migratedSettings.platformDefaultsApplied) {
+    await CompatReady;
+    const platform = await Compat.detectPlatform();
+    
+    if (platform.isMobile || platform.isFirefoxMobile) {
+      // Mobile defaults:
+      // - bannerSize: 'small'
+      // - validationMode: 'banner-keyword' (badge not visible on mobile)
+      // - Generate random keyword if empty
+      migratedSettings.bannerSize = 'small';
+      migratedSettings.validationMode = 'banner-keyword';
+      if (!migratedSettings.customKeyword || migratedSettings.customKeyword.length < 4) {
+        migratedSettings.customKeyword = generateRandomKeyword();
+      }
+    } else {
+      // Desktop defaults:
+      // - bannerSize: 'large' (current default)
+      migratedSettings.bannerSize = 'large';
+    }
+    
+    migratedSettings.platformDefaultsApplied = true;
   }
   
   // Migrer anciennes couleurs vers nouveau format si nécessaire

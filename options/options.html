@@ -247,6 +247,26 @@
             <p class="setting-description" data-i18n="showUnknownPagesDescription">Activez pour voir un badge même sur les pages non listées : 🔴 (page suspecte avec mot de passe) ou ⚪ (page sans mot de passe).</p>
           </div>
           
+          <!-- Taille du bandeau -->
+          <div class="setting-item" style="margin-top: 24px;">
+            <label class="setting-label">
+              <span data-i18n="bannerSizeLabel">📐 Taille du bandeau :</span>
+            </label>
+            <select id="bannerSize" class="select-field" style="margin-top: 8px;">
+              <option value="small" data-i18n="bannerSizeSmall">Petit (compact)</option>
+              <option value="medium" data-i18n="bannerSizeMedium">Moyen</option>
+              <option value="large" data-i18n="bannerSizeLarge" selected>Grand (standard)</option>
+            </select>
+            <p class="setting-description" data-i18n="bannerSizeDescription">Ajustez la taille du bandeau selon vos préférences. Sur mobile, la taille est automatiquement réduite au premier lancement.</p>
+          </div>
+          
+          <!-- Avertissement mobile -->
+          <div class="info-box mobile-warning" id="mobileWarningBox" style="display: none; margin-top: 16px; background: #FEF3CD; border: 1px solid #F6C23E;">
+            <p style="margin: 0; color: #856404;">
+              <strong>📱</strong> <span data-i18n="mobileWarningText">Vous utilisez Firefox Mobile. Le badge sur l'icône de l'extension n'est pas visible sur cette plateforme. Les modes "Badge uniquement" et "Code aléatoire" sont désactivés.</span>
+            </p>
+          </div>
+          
           <!-- Option ajout automatique sites inconnus -->
           <div class="setting-item" style="margin-top: 24px;">
             <label class="setting-label">

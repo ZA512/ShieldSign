@@ -889,5 +889,27 @@
   },
   "confirmClearSharedHistory": {
     "message": "Delete the history of locally shared domains?"
+  },
+  
+  "bannerSizeLabel": {
+    "message": "📐 Banner size:"
+  },
+  "bannerSizeSmall": {
+    "message": "Small (compact)"
+  },
+  "bannerSizeMedium": {
+    "message": "Medium"
+  },
+  "bannerSizeLarge": {
+    "message": "Large (standard)"
+  },
+  "bannerSizeDescription": {
+    "message": "Adjust the banner size according to your preferences. On mobile, the size is automatically reduced on first launch."
+  },
+  "mobileWarningText": {
+    "message": "You are using Firefox Mobile. The badge on the extension icon is not visible on this platform. The \"Badge only\" and \"Random code\" modes are disabled."
+  },
+  "contentChangeMePrefix": {
+    "message": "Change me:"
   }
 }

@@ -24,6 +24,7 @@ $includeItems = @(
     "manifest.json",
     "background.js",
     "content.js",
+    "compat.js",
     "icons",
     "popup",
     "options",
@@ -37,9 +38,11 @@ Write-Host "[Chrome] Création du paquet..." -ForegroundColor Yellow
 $chromeZip = Join-Path $outputDir "${projectName}_v${version}_chrome.zip"
 if (Test-Path $chromeZip) { Remove-Item $chromeZip -Force }
 # Staging dossier pour garantir séparateurs POSIX dans l'archive
-$chromeStaging = Join-Path $env:TEMP "${projectName}_chrome_staging"
-if (Test-Path $chromeStaging) { Remove-Item $chromeStaging -Recurse -Force }
-New-Item -ItemType Directory -Path $chromeStaging | Out-Null
+# Utiliser le chemin complet résolu pour éviter les problèmes avec les noms courts 8.3
+$tempPath = [System.IO.Path]::GetTempPath()
+$chromeStaging = Join-Path $tempPath "${projectName}_chrome_staging"
+try { if (Test-Path $chromeStaging) { Remove-Item $chromeStaging -Recurse -Force } } catch { }
+New-Item -ItemType Directory -Path $chromeStaging -Force | Out-Null
 foreach($item in $includeItems){
     Copy-Item $item -Destination $chromeStaging -Recurse -Force
 }
@@ -63,13 +66,14 @@ try {
     $zip.Dispose()
     $zipStream.Dispose()
 }
-Remove-Item $chromeStaging -Recurse -Force
+try { if (Test-Path $chromeStaging) { Remove-Item $chromeStaging -Recurse -Force } } catch { }
 $chromeSize = [math]::Round((Get-Item $chromeZip).Length / 1KB, 2)
 Write-Host "[Chrome] Cree: $chromeSize KB" -ForegroundColor Green
 Write-Host ""
 
 # === PAQUET FIREFOX ===
 Write-Host "[Firefox] Création du paquet..." -ForegroundColor Yellow
+Write-Host "[Firefox] Note: Ce paquet inclut le support Firefox Mobile (Android 113+)" -ForegroundColor DarkYellow
 
 # Sauvegarder le manifest original
 $originalManifest = "manifest.json"
@@ -81,9 +85,9 @@ Copy-Item $firefoxManifest $originalManifest -Force
 
 $firefoxZip = Join-Path $outputDir "${projectName}_v${version}_firefox.zip"
 if (Test-Path $firefoxZip) { Remove-Item $firefoxZip -Force }
-$firefoxStaging = Join-Path $env:TEMP "${projectName}_firefox_staging"
-if (Test-Path $firefoxStaging) { Remove-Item $firefoxStaging -Recurse -Force }
-New-Item -ItemType Directory -Path $firefoxStaging | Out-Null
+$firefoxStaging = Join-Path $tempPath "${projectName}_firefox_staging"
+try { if (Test-Path $firefoxStaging) { Remove-Item $firefoxStaging -Recurse -Force } } catch { }
+New-Item -ItemType Directory -Path $firefoxStaging -Force | Out-Null
 foreach($item in $includeItems){
     Copy-Item $item -Destination $firefoxStaging -Recurse -Force
 }
@@ -133,9 +137,10 @@ try {
     $zipStream.Dispose()
 }
 
-Remove-Item $firefoxStaging -Recurse -Force
+try { if (Test-Path $firefoxStaging) { Remove-Item $firefoxStaging -Recurse -Force } } catch { }
 $firefoxSize = [math]::Round((Get-Item $firefoxZip).Length / 1KB, 2)
 Write-Host "[Firefox] Cree: $firefoxSize KB (xpi: $firefoxXpi)" -ForegroundColor Green
+Write-Host "[Firefox] Supporte: Firefox Desktop 109+ et Firefox Android 113+" -ForegroundColor DarkGreen
 # Restaurer le manifest original
 Copy-Item $manifestBackup $originalManifest -Force
 Remove-Item $manifestBackup -Force

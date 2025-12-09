@@ -27,6 +27,12 @@ const DEFAULT_SETTINGS = {
   showUnknownPages: false, // Afficher badge rouge/gris pour pages non listées
   autoAddUnknown: 'prompt', // 'never' | 'always' | 'prompt' - Comportement lors de la soumission d'un formulaire sur un site inconnu
   
+  // Banner size: 'small' | 'medium' | 'large'
+  bannerSize: 'large',
+  
+  // Platform detection done flag
+  platformDefaultsApplied: false,
+  
   // Banner colors configuration
   bannerColors: {
     enterprise: '#2ECC71',
@@ -97,6 +103,70 @@ function translatePage() {
   });
 }
 
+// Platform detection using Compat layer
+let _platformInfo = { isMobile: false, isFirefoxMobile: false };
+
+async function detectPlatformForOptions() {
+  try {
+    if (typeof Compat !== 'undefined' && Compat.detectPlatform) {
+      _platformInfo = await Compat.detectPlatform();
+    }
+  } catch (e) {
+    // Fallback: use user agent
+    if (typeof navigator !== 'undefined' && navigator.userAgent) {
+      const ua = navigator.userAgent;
+      _platformInfo.isMobile = /Android|Mobile|Tablet/i.test(ua);
+      _platformInfo.isFirefoxMobile = /Firefox/i.test(ua) && _platformInfo.isMobile;
+    }
+  }
+  return _platformInfo;
+}
+
+// Apply mobile restrictions: disable badge-only and banner-code modes
+function applyMobileRestrictions() {
+  if (!_platformInfo.isMobile && !_platformInfo.isFirefoxMobile) {
+    return; // Desktop, no restrictions
+  }
+  
+  // Show mobile warning
+  const warningBox = document.getElementById('mobileWarningBox');
+  if (warningBox) {
+    warningBox.style.display = 'block';
+  }
+  
+  // Disable and grey out badge-only option
+  const badgeOnlyRadio = document.getElementById('modeBadgeOnly');
+  const bannerCodeRadio = document.getElementById('modeBannerCode');
+  
+  if (badgeOnlyRadio) {
+    badgeOnlyRadio.disabled = true;
+    const parentOption = badgeOnlyRadio.closest('.validation-mode-option');
+    if (parentOption) {
+      parentOption.style.opacity = '0.5';
+      parentOption.style.pointerEvents = 'none';
+    }
+  }
+  
+  if (bannerCodeRadio) {
+    bannerCodeRadio.disabled = true;
+    const parentOption = bannerCodeRadio.closest('.validation-mode-option');
+    if (parentOption) {
+      parentOption.style.opacity = '0.5';
+      parentOption.style.pointerEvents = 'none';
+    }
+  }
+  
+  // If currently on a disabled mode, switch to banner-keyword
+  const currentMode = document.querySelector('input[name="validationMode"]:checked');
+  if (currentMode && (currentMode.value === 'badge-only' || currentMode.value === 'banner-code')) {
+    const keywordRadio = document.getElementById('modeBannerKeyword');
+    if (keywordRadio) {
+      keywordRadio.checked = true;
+      handleValidationModeChange();
+    }
+  }
+}
+
 // Promisified storage helpers to unify callback vs promise behavior
 function storageGet(keys) {
   return new Promise((resolve) => {
@@ -130,11 +200,18 @@ function storageRemove(key) {
 // Initialisation
 document.addEventListener('DOMContentLoaded', async () => {
   translatePage();
+  
+  // Detect platform first for mobile restrictions
+  await detectPlatformForOptions();
+  
   setupTabs();
   await loadSettings();
   await loadOfficialList();
   await loadLists();
   await loadPersonalDomains();
+  
+  // Apply mobile restrictions after settings are loaded
+  applyMobileRestrictions();
   
   // Gestionnaires d'événements
   document.getElementById('officialListToggle').addEventListener('click', toggleOfficialList);
@@ -162,6 +239,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('cacheDuration')?.addEventListener('change', saveSettings);
   document.getElementById('customKeyword')?.addEventListener('input', debounce(saveSettings, 500));
   document.getElementById('autoAddUnknown')?.addEventListener('change', saveSettings);
+  document.getElementById('bannerSize')?.addEventListener('change', saveSettings);
   
   // Nouveaux gestionnaires pour validation de sécurité
   setupValidationModeListeners();
@@ -250,6 +328,11 @@ async function loadSettings() {
       document.getElementById('autoAddUnknown').value = currentSettings.autoAddUnknown || 'prompt';
     }
     
+    // Charger la taille du bandeau
+    if (document.getElementById('bannerSize')) {
+      document.getElementById('bannerSize').value = currentSettings.bannerSize || 'large';
+    }
+    
     // Charger et afficher le code actuel
     await loadCurrentCode();
     
@@ -295,6 +378,12 @@ async function saveSettings() {
       currentCode: currentSettings.currentCode || '', // Conserver le code existant
       showUnknownPages: document.getElementById('showUnknownPages')?.checked || false,
       autoAddUnknown: document.getElementById('autoAddUnknown')?.value || 'prompt',
+      
+      // Taille du bandeau
+      bannerSize: document.getElementById('bannerSize')?.value || 'large',
+      
+      // Platform defaults already applied
+      platformDefaultsApplied: currentSettings.platformDefaultsApplied || false,
       
       // Sauvegarder les nouveaux paramètres de style des bandeaux
       bannerStyle: saveBannerStyleSettings(),

@@ -60,6 +60,39 @@ async function injectBanner(listName, type, settings, uniqueCode) {
   // Utiliser le code reçu depuis le background, ou générer en fallback
   const currentCode = uniqueCode || generateRandomCode();
   
+  // Déterminer la taille du bandeau
+  const bannerSize = settings?.bannerSize || 'large';
+  
+  // Profils de taille
+  const sizeProfiles = {
+    small: {
+      padding: '6px 10px',
+      fontSize: '11px',
+      iconSize: '16px',
+      codeSize: '12px',
+      codePadding: '2px 8px',
+      gap: '6px'
+    },
+    medium: {
+      padding: '9px 15px',
+      fontSize: '12px',
+      iconSize: '20px',
+      codeSize: '14px',
+      codePadding: '3px 10px',
+      gap: '8px'
+    },
+    large: {
+      padding: '12px 20px',
+      fontSize: '14px',
+      iconSize: '24px',
+      codeSize: '16px',
+      codePadding: '4px 12px',
+      gap: '10px'
+    }
+  };
+  
+  const sizeProfile = sizeProfiles[bannerSize] || sizeProfiles.large;
+  
   // Récupérer les paramètres de style configurés
   const bannerStyle = settings?.bannerStyle || {
     enterprise: { mode: 'solid', solidColor: '#2ECC71', textColor: '#FFFFFF', fontFamily: 'Arial, sans-serif' },
@@ -96,9 +129,9 @@ async function injectBanner(listName, type, settings, uniqueCode) {
     width: 100%;
     background: ${background};
     color: ${textColor};
-    padding: 12px 20px;
+    padding: ${sizeProfile.padding};
     font-family: ${fontFamily};
-    font-size: 14px;
+    font-size: ${sizeProfile.fontSize};
     font-weight: 500;
     text-align: center;
     z-index: 2147483647;
@@ -106,7 +139,7 @@ async function injectBanner(listName, type, settings, uniqueCode) {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: ${sizeProfile.gap};
   `;
   
   // Icône du phare (image PNG au lieu d'emoji)
@@ -114,8 +147,8 @@ async function injectBanner(listName, type, settings, uniqueCode) {
   icon.src = chrome.runtime.getURL('icons/icon56ssf.png');
   icon.alt = '🗼';
   icon.style.cssText = `
-    width: 24px;
-    height: 24px;
+    width: ${sizeProfile.iconSize};
+    height: ${sizeProfile.iconSize};
     filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
   `;
   
@@ -133,11 +166,11 @@ async function injectBanner(listName, type, settings, uniqueCode) {
     codeBadge.textContent = currentCode;
     codeBadge.style.cssText = `
       background: rgba(255, 255, 255, 0.3);
-      padding: 4px 12px;
+      padding: ${sizeProfile.codePadding};
       border-radius: 4px;
       font-family: 'Courier New', monospace;
       font-weight: bold;
-      font-size: 16px;
+      font-size: ${sizeProfile.codeSize};
       letter-spacing: 2px;
       margin-left: 12px;
       border: 1px solid rgba(255, 255, 255, 0.5);
@@ -145,12 +178,15 @@ async function injectBanner(listName, type, settings, uniqueCode) {
     banner.appendChild(codeBadge);
   } else if (validationMode === 'banner-keyword' && customKeyword) {
     const keywordBadge = document.createElement('span');
-    keywordBadge.textContent = `🔑 ${customKeyword}`;
+    // Afficher "Change moi : [keyword]" traduit
+    const changeMeText = chrome.i18n.getMessage('contentChangeMePrefix') || 'Change moi :';
+    keywordBadge.textContent = `🔑 ${changeMeText} ${customKeyword}`;
     keywordBadge.style.cssText = `
       background: rgba(255, 255, 255, 0.3);
-      padding: 4px 12px;
+      padding: ${sizeProfile.codePadding};
       border-radius: 4px;
       font-weight: bold;
+      font-size: ${sizeProfile.codeSize};
       margin-left: 12px;
       border: 1px solid rgba(255, 255, 255, 0.5);
     `;

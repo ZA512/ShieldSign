@@ -892,5 +892,27 @@
   },
   "confirmClearSharedHistory": {
     "message": "Supprimer l'historique des domaines partagés localement ?"
+  },
+  
+  "bannerSizeLabel": {
+    "message": "📐 Taille du bandeau :"
+  },
+  "bannerSizeSmall": {
+    "message": "Petit (compact)"
+  },
+  "bannerSizeMedium": {
+    "message": "Moyen"
+  },
+  "bannerSizeLarge": {
+    "message": "Grand (standard)"
+  },
+  "bannerSizeDescription": {
+    "message": "Ajustez la taille du bandeau selon vos préférences. Sur mobile, la taille est automatiquement réduite au premier lancement."
+  },
+  "mobileWarningText": {
+    "message": "Vous utilisez Firefox Mobile. Le badge sur l'icône de l'extension n'est pas visible sur cette plateforme. Les modes \"Badge uniquement\" et \"Code aléatoire\" sont désactivés."
+  },
+  "contentChangeMePrefix": {
+    "message": "Change moi :"
   }
 }
