@@ -4,6 +4,80 @@
 // Drapeau pour éviter les vérifications multiples
 let checkedOnThisPage = false;
 let bannerInjected = false;
+let originalPaddingTop = null; // Memoize initial body padding-top to restore on collapse/remove
+let bannerRecordedHeight = 0;
+
+const COLLAPSE_STORAGE_KEY = 'collapsedBanners';
+const COLLAPSE_TTL = 6 * 60 * 60 * 1000; // 6h
+const COLLAPSED_TAB_WIDTH = 50; // px visible when banner is rolled up
+
+// Extraire le domaine principal (ex: cdiscount.com depuis order.cdiscount.com)
+function getMainDomain(host) {
+  try {
+    const parts = (host || '').split('.').filter(Boolean);
+    if (parts.length > 2) return parts.slice(-2).join('.');
+    return host || '';
+  } catch (e) {
+    return host || '';
+  }
+}
+
+function ensureOriginalPaddingTop() {
+  if (originalPaddingTop === null) {
+    const raw = window.getComputedStyle(document.body).paddingTop;
+    const parsed = parseFloat(raw);
+    originalPaddingTop = isNaN(parsed) ? 0 : parsed;
+  }
+}
+
+function applyCollapsedPadding() {
+  ensureOriginalPaddingTop();
+  document.body.style.paddingTop = `${originalPaddingTop}px`;
+}
+
+function applyExpandedPadding(extra) {
+  ensureOriginalPaddingTop();
+  document.body.style.paddingTop = `${originalPaddingTop + (extra || 0)}px`;
+}
+
+async function shouldCollapseForDomain(hostname) {
+  try {
+    const main = getMainDomain(hostname);
+    const { [COLLAPSE_STORAGE_KEY]: collapsedBanners = {} } = await chrome.storage.local.get([COLLAPSE_STORAGE_KEY]);
+    const now = Date.now();
+    let mutated = false;
+
+    // Purge expirés
+    for (const [domain, entry] of Object.entries(collapsedBanners)) {
+      if (!entry || !entry.timestamp || (now - entry.timestamp) > COLLAPSE_TTL) {
+        delete collapsedBanners[domain];
+        mutated = true;
+      }
+    }
+    if (mutated) {
+      await chrome.storage.local.set({ [COLLAPSE_STORAGE_KEY]: collapsedBanners });
+    }
+
+    const state = collapsedBanners[main];
+    return !!(state && state.collapsed && (now - state.timestamp) <= COLLAPSE_TTL);
+  } catch (e) {
+    return false;
+  }
+}
+
+async function persistCollapseState(hostname, collapsed) {
+  const main = getMainDomain(hostname);
+  const payload = await chrome.storage.local.get([COLLAPSE_STORAGE_KEY]).catch(() => ({}));
+  const collapsedBanners = payload[COLLAPSE_STORAGE_KEY] || {};
+
+  if (collapsed) {
+    collapsedBanners[main] = { collapsed: true, timestamp: Date.now() };
+  } else {
+    delete collapsedBanners[main];
+  }
+
+  await chrome.storage.local.set({ [COLLAPSE_STORAGE_KEY]: collapsedBanners });
+}
 
 // Détection des champs password
 function detectLoginPage() {
@@ -118,6 +192,9 @@ async function injectBanner(listName, type, settings, uniqueCode) {
   const textColor = style.textColor || '#FFFFFF';
   const fontFamily = style.fontFamily || 'Arial, sans-serif';
   
+  const hostname = window.location.hostname;
+  const startCollapsed = await shouldCollapseForDomain(hostname);
+
   // Créer le bandeau
   const banner = document.createElement('div');
   banner.id = 'ShieldSign-banner';
@@ -129,7 +206,6 @@ async function injectBanner(listName, type, settings, uniqueCode) {
     width: 100%;
     background: ${background};
     color: ${textColor};
-    padding: ${sizeProfile.padding};
     font-family: ${fontFamily};
     font-size: ${sizeProfile.fontSize};
     font-weight: 500;
@@ -137,9 +213,24 @@ async function injectBanner(listName, type, settings, uniqueCode) {
     z-index: 2147483647;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: ${sizeProfile.gap};
+    transition: transform 0.25s ease;
+    overflow: visible;
+    position: fixed;
+  `;
+
+  const contentWrapper = document.createElement('div');
+  contentWrapper.style.cssText = `
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: ${sizeProfile.gap};
+    padding: ${sizeProfile.padding};
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
   `;
   
   // Icône du phare (image PNG au lieu d'emoji)
@@ -157,10 +248,11 @@ async function injectBanner(listName, type, settings, uniqueCode) {
   const message = chrome.i18n.getMessage('contentBannerValidated') || 'Ce site est validé - {0}';
   text.textContent = message.replace('{0}', listDisplayName);
   
-  banner.appendChild(icon);
-  banner.appendChild(text);
+  contentWrapper.appendChild(icon);
+  contentWrapper.appendChild(text);
   
   // Ajouter le code ou le mot-clé selon le mode
+  let tabLabel = 'i';
   if (validationMode === 'banner-code' && currentCode) {
     const codeBadge = document.createElement('span');
     codeBadge.textContent = currentCode;
@@ -175,12 +267,11 @@ async function injectBanner(listName, type, settings, uniqueCode) {
       margin-left: 12px;
       border: 1px solid rgba(255, 255, 255, 0.5);
     `;
-    banner.appendChild(codeBadge);
+    contentWrapper.appendChild(codeBadge);
+    tabLabel = currentCode;
   } else if (validationMode === 'banner-keyword' && customKeyword) {
     const keywordBadge = document.createElement('span');
-    // Afficher "Change moi : [keyword]" traduit
-    const changeMeText = chrome.i18n.getMessage('contentChangeMePrefix') || 'Change moi :';
-    keywordBadge.textContent = `🔑 ${changeMeText} ${customKeyword}`;
+    keywordBadge.textContent = `🔑 ${customKeyword}`;
     keywordBadge.style.cssText = `
       background: rgba(255, 255, 255, 0.3);
       padding: ${sizeProfile.codePadding};
@@ -190,17 +281,157 @@ async function injectBanner(listName, type, settings, uniqueCode) {
       margin-left: 12px;
       border: 1px solid rgba(255, 255, 255, 0.5);
     `;
-    banner.appendChild(keywordBadge);
+    contentWrapper.appendChild(keywordBadge);
+    tabLabel = 'i';
   }
+
+  // Bouton de repli
+  const collapseButton = document.createElement('button');
+  collapseButton.textContent = '<<';
+  collapseButton.setAttribute('aria-label', 'Réduire le bandeau');
+  collapseButton.style.cssText = `
+    position: absolute;
+    top: 50%;
+    right: ${COLLAPSED_TAB_WIDTH + 12}px;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: ${textColor};
+    border-radius: 4px;
+    width: 32px;
+    height: 28px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 24px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `;
+  contentWrapper.appendChild(collapseButton);
+
+  // Languette visible en mode replié
+  const collapsedTab = document.createElement('div');
+  if (validationMode === 'banner-keyword' && customKeyword) {
+    collapsedTab.title = customKeyword; // Afficher le mot-clé au survol
+  }
+  if (validationMode === 'banner-code' && tabLabel) {
+    collapsedTab.title = tabLabel;
+  }
+  collapsedTab.style.cssText = `
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: ${COLLAPSED_TAB_WIDTH}px;
+    height: 100%;
+    background: ${background};
+    color: ${textColor};
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 700;
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    box-sizing: border-box;
+    padding: 4px;
+    gap: 6px;
+  `;
+
+  if (validationMode === 'banner-code') {
+    const codeTab = document.createElement('span');
+    codeTab.textContent = tabLabel;
+    codeTab.style.cssText = `
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 6px;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: ${textColor};
+      background: rgba(255, 255, 255, 0.15);
+    `;
+    collapsedTab.appendChild(codeTab);
+  } else {
+    const tabIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    tabIcon.setAttribute('viewBox', '0 0 24 24');
+    tabIcon.setAttribute('width', '22');
+    tabIcon.setAttribute('height', '22');
+    tabIcon.style.cssText = `
+      color: ${textColor};
+    `;
+
+    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    circle.setAttribute('cx', '12');
+    circle.setAttribute('cy', '12');
+    circle.setAttribute('r', '10');
+    circle.setAttribute('stroke', 'currentColor');
+    circle.setAttribute('stroke-width', '2');
+    circle.setAttribute('fill', 'none');
+
+    const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    dot.setAttribute('cx', '12');
+    dot.setAttribute('cy', '7');
+    dot.setAttribute('r', '1.25');
+    dot.setAttribute('fill', 'currentColor');
+
+    const stem = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    stem.setAttribute('x', '11');
+    stem.setAttribute('y', '10');
+    stem.setAttribute('width', '2');
+    stem.setAttribute('height', '7');
+    stem.setAttribute('rx', '1');
+    stem.setAttribute('fill', 'currentColor');
+
+    tabIcon.appendChild(circle);
+    tabIcon.appendChild(dot);
+    tabIcon.appendChild(stem);
+    collapsedTab.appendChild(tabIcon);
+  }
+
+  banner.appendChild(contentWrapper);
+  banner.appendChild(collapsedTab);
   
   // Injecter dans la page
   document.body.insertBefore(banner, document.body.firstChild);
   bannerInjected = true;
-  
-  // Ajuster le padding du body pour éviter le chevauchement
-  const bannerHeight = banner.offsetHeight;
-  const originalPadding = window.getComputedStyle(document.body).paddingTop;
-  document.body.style.paddingTop = `${parseInt(originalPadding) + bannerHeight}px`;
+  ensureOriginalPaddingTop();
+  bannerRecordedHeight = banner.offsetHeight;
+  applyExpandedPadding(bannerRecordedHeight);
+
+  const setCollapsed = async (collapse, persist = true) => {
+    if (collapse) {
+      banner.setAttribute('data-collapsed', 'true');
+      banner.style.transform = `translateX(calc(-100% + ${COLLAPSED_TAB_WIDTH}px))`;
+      contentWrapper.style.opacity = '0';
+      contentWrapper.style.pointerEvents = 'none';
+      collapseButton.style.display = 'none';
+      collapsedTab.style.display = 'flex';
+      applyCollapsedPadding();
+    } else {
+      banner.setAttribute('data-collapsed', 'false');
+      banner.style.transform = 'translateX(0)';
+      contentWrapper.style.opacity = '1';
+      contentWrapper.style.pointerEvents = 'auto';
+      collapseButton.style.display = 'flex';
+      collapsedTab.style.display = 'none';
+      applyExpandedPadding(bannerRecordedHeight);
+    }
+    if (persist) {
+      await persistCollapseState(hostname, collapse);
+    }
+  };
+
+  collapseButton.addEventListener('click', () => setCollapsed(true));
+  collapsedTab.addEventListener('click', () => setCollapsed(false));
+
+  if (startCollapsed) {
+    setCollapsed(true, false);
+  }
   
 
 }
@@ -327,16 +558,6 @@ async function checkPendingPrompt() {
     if (pendingPrompt) {
       const hostname = window.location.hostname;
       const timeDiff = Date.now() - pendingPrompt.timestamp;
-      
-      // Extraire le domaine principal (ex: cdiscount.com depuis order.cdiscount.com ou clients.cdiscount.com)
-      const getMainDomain = (host) => {
-        const parts = host.split('.');
-        if (parts.length > 2) {
-          // Garder les 2 dernières parties (ex: cdiscount.com)
-          return parts.slice(-2).join('.');
-        }
-        return host;
-      };
       
       const currentMainDomain = getMainDomain(hostname);
       const pendingMainDomain = getMainDomain(pendingPrompt.hostname);
