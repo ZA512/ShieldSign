@@ -808,28 +808,25 @@
     "message": "Webbplatsen har lagts till i din personliga lista"
   },
   "shareToFormsTitle": {
-    "message": "Dela till Google Forms"
+    "message": "Dela"
   },
   "shareToFormsDescription": {
-    "message": "Klistra in URL:en till ditt Google-formulär (visningssida) här. Tillägget skickar automatiskt domäner från din personliga lista som inte redan finns i gemenskapslistorna."
+    "message": "Dela dina domäner med communityn"
   },
   "shareToFormsPlaceholder": {
     "message": "https://docs.google.com/forms/d/e/…/viewform"
   },
   "shareToFormsBtn": {
-    "message": "Dela till Sheets"
+    "message": "Dela"
   },
   "shareToFormsBtnAbout": {
-    "message": "Dela min lista"
-  },
-  "shareToFormsNote": {
-    "message": "Den första inlämningen kommer automatiskt att upptäcka formulärfältet om möjligt."
+    "message": "Dela"
   },
   "shareToFormsTipAbout": {
-    "message": "Tips: klistra in formulär-URL:en här en gång och klicka sedan på \"Dela\" från denna skärm eller från fliken Personliga källor."
+    "message": "Tips: klistra in formulär-URL:en här en gång och klicka sedan på \"Dela\" från den här vyn eller fliken Personliga källor."
   },
   "shareToFormsAboutDescription": {
-    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+    "message": "Dela dina domäner med communityn"
   },
   "sharedDomainsCount": {
     "message": "Redan delade domäner: {count}"
@@ -879,5 +876,44 @@
   },
   "confirmClearSharedHistory": {
     "message": "Ta bort historiken över lokalt delade domäner?"
+  },
+  "autoAddUnknownNeverCaption": {
+    "message": "Never save on unknown sites."
+  },
+  "autoAddUnknownPromptCaption": {
+    "message": "Show a confirmation popup."
+  },
+  "autoAddUnknownAlwaysCaption": {
+    "message": "Save automatically and confirm."
+  },
+  "autoAddUnknownCardNever": {
+    "message": "No prompt will appear on unknown sites."
+  },
+  "autoAddUnknownCardAlways": {
+    "message": "Automatic save with a confirmation toast."
+  },
+  "bannerSizeLabel": {
+    "message": "📐 Banner size:"
+  },
+  "bannerSizeSmall": {
+    "message": "Small (compact)"
+  },
+  "bannerSizeSmallHint": {
+    "message": "Most discreet height."
+  },
+  "bannerSizeMedium": {
+    "message": "Medium"
+  },
+  "bannerSizeMediumHint": {
+    "message": "Balanced height."
+  },
+  "bannerSizeLarge": {
+    "message": "Large (standard)"
+  },
+  "bannerSizeLargeHint": {
+    "message": "Full default height."
+  },
+  "bannerSizeDescription": {
+    "message": "Adjust the banner size to your preferences. On mobile, the size is automatically reduced on first launch."
   }
 }

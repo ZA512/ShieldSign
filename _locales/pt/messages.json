@@ -808,28 +808,25 @@
     "message": "Site adicionado à sua lista pessoal"
   },
   "shareToFormsTitle": {
-    "message": "Compartilhar no Google Forms"
+    "message": "Compartilhar"
   },
   "shareToFormsDescription": {
-    "message": "Cole aqui a URL do seu formulário do Google (página de visualização). A extensão enviará automaticamente os domínios da sua lista pessoal que ainda não estão nas listas da comunidade."
+    "message": "Compartilhe seus domínios com a comunidade"
   },
   "shareToFormsPlaceholder": {
     "message": "https://docs.google.com/forms/d/e/…/viewform"
   },
   "shareToFormsBtn": {
-    "message": "Compartilhar no Sheets"
+    "message": "Compartilhar"
   },
   "shareToFormsBtnAbout": {
-    "message": "Compartilhar minha lista"
-  },
-  "shareToFormsNote": {
-    "message": "O primeiro envio detectará automaticamente o campo do formulário, se possível."
+    "message": "Compartilhar"
   },
   "shareToFormsTipAbout": {
-    "message": "Dica: cole a URL do formulário aqui uma vez e clique em \"Compartilhar\" desta tela ou da aba Fontes Pessoais."
+    "message": "Dica: cole a URL do formulário aqui uma vez e depois clique em \"Compartilhar\" nesta tela ou na aba Fontes pessoais."
   },
   "shareToFormsAboutDescription": {
-    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+    "message": "Compartilhe seus domínios com a comunidade"
   },
   "sharedDomainsCount": {
     "message": "Domínios já compartilhados: {count}"
@@ -879,5 +876,44 @@
   },
   "confirmClearSharedHistory": {
     "message": "Excluir o histórico de domínios compartilhados localmente?"
+  },
+  "autoAddUnknownNeverCaption": {
+    "message": "Never save on unknown sites."
+  },
+  "autoAddUnknownPromptCaption": {
+    "message": "Show a confirmation popup."
+  },
+  "autoAddUnknownAlwaysCaption": {
+    "message": "Save automatically and confirm."
+  },
+  "autoAddUnknownCardNever": {
+    "message": "No prompt will appear on unknown sites."
+  },
+  "autoAddUnknownCardAlways": {
+    "message": "Automatic save with a confirmation toast."
+  },
+  "bannerSizeLabel": {
+    "message": "📐 Banner size:"
+  },
+  "bannerSizeSmall": {
+    "message": "Small (compact)"
+  },
+  "bannerSizeSmallHint": {
+    "message": "Most discreet height."
+  },
+  "bannerSizeMedium": {
+    "message": "Medium"
+  },
+  "bannerSizeMediumHint": {
+    "message": "Balanced height."
+  },
+  "bannerSizeLarge": {
+    "message": "Large (standard)"
+  },
+  "bannerSizeLargeHint": {
+    "message": "Full default height."
+  },
+  "bannerSizeDescription": {
+    "message": "Adjust the banner size to your preferences. On mobile, the size is automatically reduced on first launch."
   }
 }

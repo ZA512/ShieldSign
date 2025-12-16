@@ -817,22 +817,16 @@
     "message": "https://docs.google.com/forms/d/e/…/viewform"
   },
   "shareToFormsBtn": {
-    "message": "Sheetsに共有"
+    "message": "共有"
   },
   "shareToFormsBtnAbout": {
-    "message": "マイリストを共有"
-  },
-  "shareToFormsNote": {
-    "message": "最初の送信は、可能であればフォームフィールドを自動的に検出します。"
-  },
-  "shareToFormsAboutDescription": {
-    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+    "message": "共有"
   },
   "shareToFormsTipAbout": {
-    "message": "ヒント:フォームのURLをここに一度貼り付けてから、この画面または個人ソースタブから「共有」をクリックしてください。"
+    "message": "ヒント: フォームURLをここに一度貼り付け、この画面または個人ソースタブから\"共有\"をクリックしてください。"
   },
   "sharedDomainsCount": {
-    "message": "すでに共有されたドメイン:{count}"
+    "message": "すでに共有されたドメイン: {count}"
   },
   "clearSharedBtn": {
     "message": "履歴をクリア"
@@ -866,6 +860,45 @@
   },
   "confirmClearSharedHistory": {
     "message": "ローカルに共有されたドメインの履歴を削除しますか?"
+  },
+  "autoAddUnknownNeverCaption": {
+    "message": "Never save on unknown sites."
+  },
+  "autoAddUnknownPromptCaption": {
+    "message": "Show a confirmation popup."
+  },
+  "autoAddUnknownAlwaysCaption": {
+    "message": "Save automatically and confirm."
+  },
+  "autoAddUnknownCardNever": {
+    "message": "No prompt will appear on unknown sites."
+  },
+  "autoAddUnknownCardAlways": {
+    "message": "Automatic save with a confirmation toast."
+  },
+  "bannerSizeLabel": {
+    "message": "📐 Banner size:"
+  },
+  "bannerSizeSmall": {
+    "message": "Small (compact)"
+  },
+  "bannerSizeSmallHint": {
+    "message": "Most discreet height."
+  },
+  "bannerSizeMedium": {
+    "message": "Medium"
+  },
+  "bannerSizeMediumHint": {
+    "message": "Balanced height."
+  },
+  "bannerSizeLarge": {
+    "message": "Large (standard)"
+  },
+  "bannerSizeLargeHint": {
+    "message": "Full default height."
+  },
+  "bannerSizeDescription": {
+    "message": "Adjust the banner size to your preferences. On mobile, the size is automatically reduced on first launch."
   }
   ,
   "toastFormFieldCopyOpen": {

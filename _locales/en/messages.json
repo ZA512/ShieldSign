@@ -792,6 +792,21 @@
   "autoAddUnknownDescription": {
     "message": "Choose how ShieldSign should react when you log in to a site that is not in any list."
   },
+  "autoAddUnknownNeverCaption": {
+    "message": "Never save on unknown sites."
+  },
+  "autoAddUnknownPromptCaption": {
+    "message": "Show a confirmation popup."
+  },
+  "autoAddUnknownAlwaysCaption": {
+    "message": "Save automatically and confirm."
+  },
+  "autoAddUnknownCardNever": {
+    "message": "No prompt will appear on unknown sites."
+  },
+  "autoAddUnknownCardAlways": {
+    "message": "Automatic save with a confirmation toast."
+  },
   "notificationAddToPersonal": {
     "message": "Add this site to your personal list?"
   },
@@ -818,28 +833,25 @@
   },
   
   "shareToFormsTitle": {
-    "message": "Share to Google Forms"
+    "message": "Share"
   },
   "shareToFormsDescription": {
-    "message": "Paste your Google Form URL here (viewform page). The extension will automatically send domains from your personal list that are not already in the community lists."
+    "message": "Share your domains with the community"
   },
   "shareToFormsPlaceholder": {
     "message": "https://docs.google.com/forms/d/e/…/viewform"
   },
   "shareToFormsBtn": {
-    "message": "Share to Sheets"
+    "message": "Share"
   },
   "shareToFormsBtnAbout": {
-    "message": "Share my list"
-  },
-  "shareToFormsNote": {
-    "message": "The first submission will automatically detect the form field if possible."
+    "message": "Share"
   },
   "shareToFormsTipAbout": {
     "message": "Tip: Paste the form URL here once, then click \"Share\" from this screen or from the Personal Sources tab."
   },
   "shareToFormsAboutDescription": {
-    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+    "message": "Share your domains with the community"
   },
   "sharedDomainsCount": {
     "message": "Domains already shared: {count}"
@@ -897,11 +909,20 @@
   "bannerSizeSmall": {
     "message": "Small (compact)"
   },
+  "bannerSizeSmallHint": {
+    "message": "Most discreet height."
+  },
   "bannerSizeMedium": {
     "message": "Medium"
   },
+  "bannerSizeMediumHint": {
+    "message": "Balanced height."
+  },
   "bannerSizeLarge": {
     "message": "Large (standard)"
+  },
+  "bannerSizeLargeHint": {
+    "message": "Full default height."
   },
   "bannerSizeDescription": {
     "message": "Adjust the banner size according to your preferences. On mobile, the size is automatically reduced on first launch."

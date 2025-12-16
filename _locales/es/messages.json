@@ -808,28 +808,25 @@
     "message": "Sitio agregado a su lista personal"
   },
   "shareToFormsTitle": {
-    "message": "Compartir en Google Forms"
+    "message": "Compartir"
   },
   "shareToFormsDescription": {
-    "message": "Pegue aquí la URL de su formulario de Google (página de vista). La extensión enviará automáticamente los dominios de su lista personal que no estén ya en las listas de la comunidad."
+    "message": "Comparte tus dominios con la comunidad"
   },
   "shareToFormsPlaceholder": {
     "message": "https://docs.google.com/forms/d/e/…/viewform"
   },
   "shareToFormsBtn": {
-    "message": "Compartir en Sheets"
+    "message": "Compartir"
   },
   "shareToFormsBtnAbout": {
-    "message": "Compartir mi lista"
-  },
-  "shareToFormsNote": {
-    "message": "La primera presentación detectará el campo del formulario automáticamente si es posible."
+    "message": "Compartir"
   },
   "shareToFormsTipAbout": {
     "message": "Consejo: pegue la URL del formulario aquí una vez y luego haga clic en \"Compartir\" desde esta pantalla o desde la pestaña Fuentes personales."
   },
   "shareToFormsAboutDescription": {
-    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+    "message": "Comparte tus dominios con la comunidad"
   },
   "sharedDomainsCount": {
     "message": "Dominios ya compartidos: {count}"
@@ -866,6 +863,45 @@
   },
   "confirmClearSharedHistory": {
     "message": "¿Eliminar el historial de dominios compartidos localmente?"
+  },
+  "autoAddUnknownNeverCaption": {
+    "message": "Never save on unknown sites."
+  },
+  "autoAddUnknownPromptCaption": {
+    "message": "Show a confirmation popup."
+  },
+  "autoAddUnknownAlwaysCaption": {
+    "message": "Save automatically and confirm."
+  },
+  "autoAddUnknownCardNever": {
+    "message": "No prompt will appear on unknown sites."
+  },
+  "autoAddUnknownCardAlways": {
+    "message": "Automatic save with a confirmation toast."
+  },
+  "bannerSizeLabel": {
+    "message": "📐 Banner size:"
+  },
+  "bannerSizeSmall": {
+    "message": "Small (compact)"
+  },
+  "bannerSizeSmallHint": {
+    "message": "Most discreet height."
+  },
+  "bannerSizeMedium": {
+    "message": "Medium"
+  },
+  "bannerSizeMediumHint": {
+    "message": "Balanced height."
+  },
+  "bannerSizeLarge": {
+    "message": "Large (standard)"
+  },
+  "bannerSizeLargeHint": {
+    "message": "Full default height."
+  },
+  "bannerSizeDescription": {
+    "message": "Adjust the banner size to your preferences. On mobile, the size is automatically reduced on first launch."
   }
   ,
   "toastFormFieldCopyOpen": {

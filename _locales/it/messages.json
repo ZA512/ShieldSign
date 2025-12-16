@@ -817,16 +817,13 @@
     "message": "https://docs.google.com/forms/d/e/…/viewform"
   },
   "shareToFormsBtn": {
-    "message": "Condividi su Sheets"
+    "message": "Condividi"
   },
   "shareToFormsBtnAbout": {
-    "message": "Condividi la mia lista"
-  },
-  "shareToFormsNote": {
-    "message": "Il primo invio rileverà automaticamente il campo del modulo, se possibile."
+    "message": "Condividi"
   },
   "shareToFormsAboutDescription": {
-    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+    "message": "Condividi i tuoi domini con la community"
   },
   "shareToFormsTipAbout": {
     "message": "Suggerimento: incolla l'URL del modulo qui una volta, quindi fai clic su \"Condividi\" da questa schermata o dalla scheda Fonti personali."
@@ -879,5 +876,44 @@
   },
   "confirmClearSharedHistory": {
     "message": "Eliminare la cronologia dei domini condivisi localmente?"
+  },
+  "autoAddUnknownNeverCaption": {
+    "message": "Never save on unknown sites."
+  },
+  "autoAddUnknownPromptCaption": {
+    "message": "Show a confirmation popup."
+  },
+  "autoAddUnknownAlwaysCaption": {
+    "message": "Save automatically and confirm."
+  },
+  "autoAddUnknownCardNever": {
+    "message": "No prompt will appear on unknown sites."
+  },
+  "autoAddUnknownCardAlways": {
+    "message": "Automatic save with a confirmation toast."
+  },
+  "bannerSizeLabel": {
+    "message": "📐 Banner size:"
+  },
+  "bannerSizeSmall": {
+    "message": "Small (compact)"
+  },
+  "bannerSizeSmallHint": {
+    "message": "Most discreet height."
+  },
+  "bannerSizeMedium": {
+    "message": "Medium"
+  },
+  "bannerSizeMediumHint": {
+    "message": "Balanced height."
+  },
+  "bannerSizeLarge": {
+    "message": "Large (standard)"
+  },
+  "bannerSizeLargeHint": {
+    "message": "Full default height."
+  },
+  "bannerSizeDescription": {
+    "message": "Adjust the banner size to your preferences. On mobile, the size is automatically reduced on first launch."
   }
 }

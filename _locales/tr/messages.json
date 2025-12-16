@@ -808,31 +808,28 @@
     "message": "Site kişisel listenize eklendi"
   },
   "shareToFormsTitle": {
-    "message": "Google Forms'a Paylaş"
+    "message": "Paylaş"
   },
   "shareToFormsDescription": {
-    "message": "Google formunuzun URL'sini (görüntüleme sayfası) buraya yapıştırın. Uzantı, henüz topluluk listelerinde olmayan kişisel listenizdeki alanları otomatik olarak gönderir."
+    "message": "Alan adlarınızı toplulukla paylaşın"
   },
   "shareToFormsPlaceholder": {
     "message": "https://docs.google.com/forms/d/e/…/viewform"
   },
   "shareToFormsBtn": {
-    "message": "Sheets'e Paylaş"
+    "message": "Paylaş"
   },
   "shareToFormsBtnAbout": {
-    "message": "Listemi Paylaş"
-  },
-  "shareToFormsNote": {
-    "message": "İlk gönderim, mümkünse form alanını otomatik olarak algılayacaktır."
+    "message": "Paylaş"
   },
   "shareToFormsTipAbout": {
     "message": "İpucu: form URL'sini buraya bir kez yapıştırın ve ardından bu ekrandan veya Kişisel Kaynaklar sekmesinden \"Paylaş\"a tıklayın."
   },
   "sharedDomainsCount": {
-    "message": "Zaten paylaşılan alanlar: {count}"
+    "message": "Paylaşılan alanlar: {count}"
   },
   "shareToFormsAboutDescription": {
-    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+    "message": "Alan adlarınızı toplulukla paylaşın"
   },
   "clearSharedBtn": {
     "message": "Geçmişi Temizle"
@@ -866,8 +863,7 @@
   },
   "confirmClearSharedHistory": {
     "message": "Yerel olarak paylaşılan alanların geçmişi silinsin mi?"
-  }
-  ,
+  },
   "toastFormFieldCopyOpen": {
     "message": "Form alanı otomatik olarak tespit edilemedi. Alan adları kopyalandı. Açılan forma yapıştırın."
   },
@@ -880,5 +876,44 @@
   "toastSendingCount": {
     "message": "Gönderiliyor: {count} alan adı...",
     "placeholders": { "count": { "content": "$1" } }
+  },
+  "autoAddUnknownNeverCaption": {
+    "message": "Never save on unknown sites."
+  },
+  "autoAddUnknownPromptCaption": {
+    "message": "Show a confirmation popup."
+  },
+  "autoAddUnknownAlwaysCaption": {
+    "message": "Save automatically and confirm."
+  },
+  "autoAddUnknownCardNever": {
+    "message": "No prompt will appear on unknown sites."
+  },
+  "autoAddUnknownCardAlways": {
+    "message": "Automatic save with a confirmation toast."
+  },
+  "bannerSizeLabel": {
+    "message": "📐 Banner size:"
+  },
+  "bannerSizeSmall": {
+    "message": "Small (compact)"
+  },
+  "bannerSizeSmallHint": {
+    "message": "Most discreet height."
+  },
+  "bannerSizeMedium": {
+    "message": "Medium"
+  },
+  "bannerSizeMediumHint": {
+    "message": "Balanced height."
+  },
+  "bannerSizeLarge": {
+    "message": "Large (standard)"
+  },
+  "bannerSizeLargeHint": {
+    "message": "Full default height."
+  },
+  "bannerSizeDescription": {
+    "message": "Adjust the banner size to your preferences. On mobile, the size is automatically reduced on first launch."
   }
 }

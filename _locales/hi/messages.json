@@ -808,28 +808,25 @@
     "message": "साइट आपकी व्यक्तिगत सूची में जोड़ी गई"
   },
   "shareToFormsTitle": {
-    "message": "Google Forms पर साझा करें"
+    "message": "साझा करें"
   },
   "shareToFormsDescription": {
-    "message": "अपने Google फॉर्म का URL (दृश्य पृष्ठ) यहां चिपकाएं। एक्सटेंशन आपकी व्यक्तिगत सूची से उन डोमेन को स्वचालित रूप से भेजेगा जो समुदाय सूचियों में नहीं हैं।"
+    "message": "अपनी डोमेन समुदाय के साथ साझा करें"
   },
   "shareToFormsPlaceholder": {
     "message": "https://docs.google.com/forms/d/e/…/viewform"
   },
   "shareToFormsBtn": {
-    "message": "Sheets पर साझा करें"
+    "message": "साझा करें"
   },
   "shareToFormsBtnAbout": {
-    "message": "मेरी सूची साझा करें"
-  },
-  "shareToFormsNote": {
-    "message": "पहली प्रस्तुति स्वचालित रूप से फॉर्म फील्ड का पता लगाएगी यदि संभव हो।"
+    "message": "साझा करें"
   },
   "shareToFormsTipAbout": {
     "message": "सुझाव: फॉर्म URL को यहां एक बार चिपकाएं और फिर इस स्क्रीन या व्यक्तिगत स्रोत टैब से \"साझा करें\" पर क्लिक करें।"
   },
   "shareToFormsAboutDescription": {
-    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+    "message": "अपनी डोमेन समुदाय के साथ साझा करें"
   },
   "sharedDomainsCount": {
     "message": "पहले से साझा किए गए डोमेन: {count}"
@@ -881,5 +878,44 @@
   },
   "confirmClearSharedHistory": {
     "message": "स्थानीय रूप से साझा किए गए डोमेन का इतिहास हटाएं?"
+  },
+  "autoAddUnknownNeverCaption": {
+    "message": "Never save on unknown sites."
+  },
+  "autoAddUnknownPromptCaption": {
+    "message": "Show a confirmation popup."
+  },
+  "autoAddUnknownAlwaysCaption": {
+    "message": "Save automatically and confirm."
+  },
+  "autoAddUnknownCardNever": {
+    "message": "No prompt will appear on unknown sites."
+  },
+  "autoAddUnknownCardAlways": {
+    "message": "Automatic save with a confirmation toast."
+  },
+  "bannerSizeLabel": {
+    "message": "📐 Banner size:"
+  },
+  "bannerSizeSmall": {
+    "message": "Small (compact)"
+  },
+  "bannerSizeSmallHint": {
+    "message": "Most discreet height."
+  },
+  "bannerSizeMedium": {
+    "message": "Medium"
+  },
+  "bannerSizeMediumHint": {
+    "message": "Balanced height."
+  },
+  "bannerSizeLarge": {
+    "message": "Large (standard)"
+  },
+  "bannerSizeLargeHint": {
+    "message": "Full default height."
+  },
+  "bannerSizeDescription": {
+    "message": "Adjust the banner size to your preferences. On mobile, the size is automatically reduced on first launch."
   }
 }

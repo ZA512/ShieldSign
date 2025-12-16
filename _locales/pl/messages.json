@@ -808,28 +808,25 @@
     "message": "Strona została dodana do Twojej listy osobistej"
   },
   "shareToFormsTitle": {
-    "message": "Udostępnij w Google Forms"
+    "message": "Udostępnij"
   },
   "shareToFormsDescription": {
-    "message": "Wklej tutaj adres URL swojego formularza Google (strona widoku). Rozszerzenie automatycznie wyśle domeny z Twojej osobistej listy, które nie znajdują się jeszcze na listach społeczności."
+    "message": "Udostępnij swoje domeny społeczności"
   },
   "shareToFormsPlaceholder": {
     "message": "https://docs.google.com/forms/d/e/…/viewform"
   },
   "shareToFormsBtn": {
-    "message": "Udostępnij w Sheets"
+      "message": "Udostępnij"
   },
   "shareToFormsBtnAbout": {
-    "message": "Udostępnij moją listę"
-  },
-  "shareToFormsNote": {
-    "message": "Pierwsze przesłanie automatycznie wykryje pole formularza, jeśli to możliwe."
+    "message": "Udostępnij"
   },
   "shareToFormsTipAbout": {
-    "message": "Wskazówka: wklej adres URL formularza tutaj raz, a następnie kliknij \"Udostępnij\" z tego ekranu lub z zakładki Źródła osobiste."
+      "message": "Wskazówka: wklej raz URL formularza tutaj, a następnie kliknij \"Udostępnij\" z tego ekranu lub karty Źródła osobiste."
   },
   "shareToFormsAboutDescription": {
-    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+    "message": "Udostępnij swoje domeny społeczności"
   },
   "sharedDomainsCount": {
     "message": "Już udostępnione domeny: {count}"
@@ -881,5 +878,44 @@
   },
   "confirmClearSharedHistory": {
     "message": "Usunąć historię lokalnie udostępnionych domen?"
+  },
+  "autoAddUnknownNeverCaption": {
+    "message": "Never save on unknown sites."
+  },
+  "autoAddUnknownPromptCaption": {
+    "message": "Show a confirmation popup."
+  },
+  "autoAddUnknownAlwaysCaption": {
+    "message": "Save automatically and confirm."
+  },
+  "autoAddUnknownCardNever": {
+    "message": "No prompt will appear on unknown sites."
+  },
+  "autoAddUnknownCardAlways": {
+    "message": "Automatic save with a confirmation toast."
+  },
+  "bannerSizeLabel": {
+    "message": "📐 Banner size:"
+  },
+  "bannerSizeSmall": {
+    "message": "Small (compact)"
+  },
+  "bannerSizeSmallHint": {
+    "message": "Most discreet height."
+  },
+  "bannerSizeMedium": {
+    "message": "Medium"
+  },
+  "bannerSizeMediumHint": {
+    "message": "Balanced height."
+  },
+  "bannerSizeLarge": {
+    "message": "Large (standard)"
+  },
+  "bannerSizeLargeHint": {
+    "message": "Full default height."
+  },
+  "bannerSizeDescription": {
+    "message": "Adjust the banner size to your preferences. On mobile, the size is automatically reduced on first launch."
   }
 }

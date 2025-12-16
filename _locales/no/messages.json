@@ -817,19 +817,16 @@
     "message": "https://docs.google.com/forms/d/e/…/viewform"
   },
   "shareToFormsBtn": {
-    "message": "Del til Sheets"
+    "message": "Del"
   },
   "shareToFormsBtnAbout": {
-    "message": "Del listen min"
-  },
-  "shareToFormsNote": {
-    "message": "Første innsending vil automatisk oppdage skjemafeltet hvis mulig."
+    "message": "Del"
   },
   "shareToFormsTipAbout": {
-    "message": "Tips: lim inn skjema-URL-en her én gang og klikk deretter \"Del\" fra denne skjermen eller fra fanen Personlige kilder."
+    "message": "Tips: lim inn skjemalenken her én gang, og klikk deretter \"Del\" fra denne skjermen eller fanen Personlige kilder."
   },
   "shareToFormsAboutDescription": {
-    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+    "message": "Del domenene dine med fellesskapet"
   },
   "sharedDomainsCount": {
     "message": "Allerede delte domener: {count}"
@@ -839,9 +836,6 @@
   },
   "toastPreparingSubmission": {
     "message": "Forbereder innsending..."
-  },
-  "toastDomainsSharedShort": {
-    "message": "Merci pour le partage"
   },
   "toastFormFieldCopyOpen": {
     "message": "Kunne ikke automatisk oppdage eller fylle skjemaet. Kopierte data og åpner skjemaet for manuell liming."
@@ -881,5 +875,44 @@
   },
   "confirmClearSharedHistory": {
     "message": "Slette historikken over lokalt delte domener?"
+  },
+  "autoAddUnknownNeverCaption": {
+    "message": "Never save on unknown sites."
+  },
+  "autoAddUnknownPromptCaption": {
+    "message": "Show a confirmation popup."
+  },
+  "autoAddUnknownAlwaysCaption": {
+    "message": "Save automatically and confirm."
+  },
+  "autoAddUnknownCardNever": {
+    "message": "No prompt will appear on unknown sites."
+  },
+  "autoAddUnknownCardAlways": {
+    "message": "Automatic save with a confirmation toast."
+  },
+  "bannerSizeLabel": {
+    "message": "📐 Banner size:"
+  },
+  "bannerSizeSmall": {
+    "message": "Small (compact)"
+  },
+  "bannerSizeSmallHint": {
+    "message": "Most discreet height."
+  },
+  "bannerSizeMedium": {
+    "message": "Medium"
+  },
+  "bannerSizeMediumHint": {
+    "message": "Balanced height."
+  },
+  "bannerSizeLarge": {
+    "message": "Large (standard)"
+  },
+  "bannerSizeLargeHint": {
+    "message": "Full default height."
+  },
+  "bannerSizeDescription": {
+    "message": "Adjust the banner size to your preferences. On mobile, the size is automatically reduced on first launch."
   }
 }

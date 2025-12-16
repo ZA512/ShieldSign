@@ -817,16 +817,13 @@
     "message": "https://docs.google.com/forms/d/e/…/viewform"
   },
   "shareToFormsBtn": {
-    "message": "Deel na Sheets"
+    "message": "Deel"
   },
   "shareToFormsBtnAbout": {
-    "message": "Deel my lys"
+    "message": "Deel"
   },
-    "shareToFormsAboutDescription": {
-      "message": "Share your personal domains anonymously to help the community. No personal data is collected."
-    },
-  "shareToFormsNote": {
-    "message": "Die eerste indiening sal die vormveld outomaties opspoor indien moontlik."
+  "shareToFormsAboutDescription": {
+    "message": "Deel jou domeine met die gemeenskap"
   },
   "shareToFormsTipAbout": {
     "message": "Wenk: plak die vorm-URL hier een keer en klik dan \"Deel\" vanaf hierdie skerm of vanaf die Persoonlike Bronne-oortjie."
@@ -881,5 +878,44 @@
   },
   "confirmClearSharedHistory": {
     "message": "Verwyder die geskiedenis van plaaslik gedeelde domeine?"
+  },
+  "autoAddUnknownNeverCaption": {
+    "message": "Never save on unknown sites."
+  },
+  "autoAddUnknownPromptCaption": {
+    "message": "Show a confirmation popup."
+  },
+  "autoAddUnknownAlwaysCaption": {
+    "message": "Save automatically and confirm."
+  },
+  "autoAddUnknownCardNever": {
+    "message": "No prompt will appear on unknown sites."
+  },
+  "autoAddUnknownCardAlways": {
+    "message": "Automatic save with a confirmation toast."
+  },
+  "bannerSizeLabel": {
+    "message": "📐 Banner size:"
+  },
+  "bannerSizeSmall": {
+    "message": "Small (compact)"
+  },
+  "bannerSizeSmallHint": {
+    "message": "Most discreet height."
+  },
+  "bannerSizeMedium": {
+    "message": "Medium"
+  },
+  "bannerSizeMediumHint": {
+    "message": "Balanced height."
+  },
+  "bannerSizeLarge": {
+    "message": "Large (standard)"
+  },
+  "bannerSizeLargeHint": {
+    "message": "Full default height."
+  },
+  "bannerSizeDescription": {
+    "message": "Adjust the banner size to your preferences. On mobile, the size is automatically reduced on first launch."
   }
 }

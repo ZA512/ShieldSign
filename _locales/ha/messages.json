@@ -808,28 +808,25 @@
     "message": "An ƙara shafin yanar gizo a jerin ku na sirri"
   },
   "shareToFormsTitle": {
-    "message": "Raba zuwa Google Forms"
+    "message": "Raba"
   },
   "shareToFormsDescription": {
-    "message": "Manna URL ɗin fom ɗin Google naka (shafin kallo) a nan. Ƙarin zai aika da yankuna daga jerin ku na sirri da ba su cikin jerin al'umma ba ta atomatik."
+    "message": "Raba yankunan ku da al'umma"
   },
   "shareToFormsPlaceholder": {
     "message": "https://docs.google.com/forms/d/e/…/viewform"
   },
   "shareToFormsBtn": {
-    "message": "Raba zuwa Sheets"
+    "message": "Raba"
   },
   "shareToFormsBtnAbout": {
-    "message": "Raba jerin ta"
-  },
-  "shareToFormsNote": {
-    "message": "Aikawa na farko zai gano filin fom ta atomatik idan zai yiwu."
+    "message": "Raba"
   },
   "shareToFormsTipAbout": {
     "message": "Shawara: manna URL ɗin fom a nan sau ɗaya sannan danna \"Raba\" daga wannan allo ko daga shafin Tushen Sirri."
   },
   "shareToFormsAboutDescription": {
-    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+    "message": "Raba yankunan ku da al'umma"
   },
   "sharedDomainsCount": {
     "message": "Yankuna da aka riga aka raba: {count}"
@@ -881,5 +878,44 @@
   },
   "confirmClearSharedHistory": {
     "message": "Share tarihin yankuna da aka raba a gida?"
+  },
+  "autoAddUnknownNeverCaption": {
+    "message": "Never save on unknown sites."
+  },
+  "autoAddUnknownPromptCaption": {
+    "message": "Show a confirmation popup."
+  },
+  "autoAddUnknownAlwaysCaption": {
+    "message": "Save automatically and confirm."
+  },
+  "autoAddUnknownCardNever": {
+    "message": "No prompt will appear on unknown sites."
+  },
+  "autoAddUnknownCardAlways": {
+    "message": "Automatic save with a confirmation toast."
+  },
+  "bannerSizeLabel": {
+    "message": "📐 Banner size:"
+  },
+  "bannerSizeSmall": {
+    "message": "Small (compact)"
+  },
+  "bannerSizeSmallHint": {
+    "message": "Most discreet height."
+  },
+  "bannerSizeMedium": {
+    "message": "Medium"
+  },
+  "bannerSizeMediumHint": {
+    "message": "Balanced height."
+  },
+  "bannerSizeLarge": {
+    "message": "Large (standard)"
+  },
+  "bannerSizeLargeHint": {
+    "message": "Full default height."
+  },
+  "bannerSizeDescription": {
+    "message": "Adjust the banner size to your preferences. On mobile, the size is automatically reduced on first launch."
   }
 }

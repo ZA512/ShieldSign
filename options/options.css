@@ -200,6 +200,152 @@ main {
   color: white;
 }
 
+/* Radio card grids for visual choices */
+.radio-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.radio-card {
+  position: relative;
+  display: block;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  padding: 12px;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+  min-height: 120px;
+}
+
+.radio-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.radio-card input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.radio-card input[type="radio"]:focus-visible + .radio-card-body {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+.radio-card input[type="radio"]:checked + .radio-card-body {
+  border-color: #667eea;
+  box-shadow: 0 8px 18px rgba(102, 126, 234, 0.18);
+  transform: translateY(-1px);
+}
+
+.radio-card-body {
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 12px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: inherit;
+}
+
+.radio-card-title {
+  font-weight: 600;
+  color: #2d2d2d;
+}
+
+.radio-card-desc {
+  font-size: 12px;
+  color: #555;
+  margin: 0;
+}
+
+.banner-size-preview {
+  width: 100%;
+  background: #f3f4ff;
+  border: 1px dashed #cbd2ff;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-size-bar {
+  width: 100%;
+  background: linear-gradient(90deg, #667eea, #5cc9f5);
+  border-radius: 6px;
+}
+
+.banner-size-preview.size-small .banner-size-bar {
+  height: 28px; /* matches compact banner ~16px icon + 2*6px padding */
+}
+
+.banner-size-preview.size-medium .banner-size-bar {
+  height: 38px; /* matches medium banner ~20px icon + 2*9px padding */
+}
+
+.banner-size-preview.size-large .banner-size-bar {
+  height: 48px; /* matches large banner ~24px icon + 2*12px padding */
+}
+
+.popup-preview {
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  background: #fff;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #2d2d2d;
+  min-height: 80px;
+}
+
+.popup-preview .popup-header {
+  font-weight: 600;
+  color: #4a4a4a;
+}
+
+.popup-preview .popup-body {
+  font-size: 12px;
+  color: #555;
+}
+
+.popup-preview .popup-actions {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  color: #667eea;
+  justify-content: flex-end;
+}
+
+.popup-preview.muted {
+  background: #f8f8f8;
+  color: #666;
+}
+
+.popup-preview.success {
+  border-color: #b7e4c7;
+  background: #f3fbf6;
+}
+
+.popup-preview .popup-toast {
+  font-size: 12px;
+  color: #2f855a;
+  background: #e6ffed;
+  border: 1px solid #c6f6d5;
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+
+.auto-add-grid .radio-card {
+  min-height: 160px;
+}
+
 .btn-secondary:hover {
   background-color: #7f8c8d;
 }

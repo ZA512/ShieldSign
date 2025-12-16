@@ -817,19 +817,16 @@
     "message": "https://docs.google.com/forms/d/e/…/viewform"
   },
   "shareToFormsBtn": {
-    "message": "Sheets에 공유"
+    "message": "공유"
   },
   "shareToFormsBtnAbout": {
-    "message": "내 목록 공유"
-  },
-  "shareToFormsNote": {
-    "message": "첫 번째 제출은 가능한 경우 양식 필드를 자동으로 감지합니다."
+    "message": "공유"
   },
   "shareToFormsTipAbout": {
-    "message": "팁: 양식 URL을 여기에 한 번 붙여넣은 다음 이 화면이나 개인 소스 탭에서 \"공유\"를 클릭하세요."
+    "message": "팁: 여기 한 번 양식 URL을 붙여넣고 이 화면이나 개인 소스 탭에서 \"공유\"를 클릭하세요."
   },
   "shareToFormsAboutDescription": {
-    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+    "message": "도메인을 커뮤니티와 공유하세요"
   },
   "sharedDomainsCount": {
     "message": "이미 공유된 도메인: {count}"
@@ -866,8 +863,7 @@
   },
   "confirmClearSharedHistory": {
     "message": "로컬로 공유된 도메인의 기록을 삭제하시겠습니까?"
-  }
-  ,
+  },
   "toastFormFieldCopyOpen": {
     "message": "양식 필드를 자동으로 감지하지 못했습니다. 도메인이 복사되었습니다. 열린 양식에 붙여넣으세요."
   },
@@ -880,5 +876,44 @@
   "toastSendingCount": {
     "message": "{count}개의 도메인 전송 중...",
     "placeholders": { "count": { "content": "$1" } }
+  },
+  "autoAddUnknownNeverCaption": {
+    "message": "Never save on unknown sites."
+  },
+  "autoAddUnknownPromptCaption": {
+    "message": "Show a confirmation popup."
+  },
+  "autoAddUnknownAlwaysCaption": {
+    "message": "Save automatically and confirm."
+  },
+  "autoAddUnknownCardNever": {
+    "message": "No prompt will appear on unknown sites."
+  },
+  "autoAddUnknownCardAlways": {
+    "message": "Automatic save with a confirmation toast."
+  },
+  "bannerSizeLabel": {
+    "message": "📐 Banner size:"
+  },
+  "bannerSizeSmall": {
+    "message": "Small (compact)"
+  },
+  "bannerSizeSmallHint": {
+    "message": "Most discreet height."
+  },
+  "bannerSizeMedium": {
+    "message": "Medium"
+  },
+  "bannerSizeMediumHint": {
+    "message": "Balanced height."
+  },
+  "bannerSizeLarge": {
+    "message": "Large (standard)"
+  },
+  "bannerSizeLargeHint": {
+    "message": "Full default height."
+  },
+  "bannerSizeDescription": {
+    "message": "Adjust the banner size to your preferences. On mobile, the size is automatically reduced on first launch."
   }
 }

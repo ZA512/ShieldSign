@@ -808,28 +808,25 @@
     "message": "Sivu on lisätty henkilökohtaiselle listallesi"
   },
   "shareToFormsTitle": {
-    "message": "Jaa Google Formsiin"
+    "message": "Jaa"
   },
   "shareToFormsDescription": {
-    "message": "Liitä tähän Google-lomakkeen URL (katselusivu). Laajennus lähettää automaattisesti henkilökohtaisen luettelosi verkkotunnukset, joita ei vielä ole yhteisöluetteloissa."
+    "message": "Jaa verkkotunnuksesi yhteisön kanssa"
   },
   "shareToFormsPlaceholder": {
     "message": "https://docs.google.com/forms/d/e/…/viewform"
   },
   "shareToFormsBtn": {
-    "message": "Jaa Sheetsiin"
+    "message": "Jaa"
   },
   "shareToFormsBtnAbout": {
-    "message": "Jaa luetteloni"
-  },
-  "shareToFormsNote": {
-    "message": "Ensimmäinen lähetys havaitsee lomakkeen kentän automaattisesti, jos mahdollista."
+    "message": "Jaa"
   },
   "shareToFormsTipAbout": {
     "message": "Vinkki: liitä lomakkeen URL tähän kerran ja napsauta sitten \"Jaa\" tältä näytöltä tai Henkilökohtaiset lähteet -välilehdeltä."
   },
   "shareToFormsAboutDescription": {
-    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+    "message": "Jaa verkkotunnuksesi yhteisön kanssa"
   },
   "sharedDomainsCount": {
     "message": "Jo jaetut verkkotunnukset: {count}"
@@ -866,6 +863,45 @@
   },
   "confirmClearSharedHistory": {
     "message": "Poistetaanko paikallisesti jaettujen verkkotunnusten historia?"
+  },
+  "autoAddUnknownNeverCaption": {
+    "message": "Never save on unknown sites."
+  },
+  "autoAddUnknownPromptCaption": {
+    "message": "Show a confirmation popup."
+  },
+  "autoAddUnknownAlwaysCaption": {
+    "message": "Save automatically and confirm."
+  },
+  "autoAddUnknownCardNever": {
+    "message": "No prompt will appear on unknown sites."
+  },
+  "autoAddUnknownCardAlways": {
+    "message": "Automatic save with a confirmation toast."
+  },
+  "bannerSizeLabel": {
+    "message": "📐 Banner size:"
+  },
+  "bannerSizeSmall": {
+    "message": "Small (compact)"
+  },
+  "bannerSizeSmallHint": {
+    "message": "Most discreet height."
+  },
+  "bannerSizeMedium": {
+    "message": "Medium"
+  },
+  "bannerSizeMediumHint": {
+    "message": "Balanced height."
+  },
+  "bannerSizeLarge": {
+    "message": "Large (standard)"
+  },
+  "bannerSizeLargeHint": {
+    "message": "Full default height."
+  },
+  "bannerSizeDescription": {
+    "message": "Adjust the banner size to your preferences. On mobile, the size is automatically reduced on first launch."
   }
   ,
   "toastFormFieldCopyOpen": {

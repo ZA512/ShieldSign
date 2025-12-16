@@ -7,7 +7,6 @@
     "message": "Validation visuelle des pages de connexion sûres via listes blanches de domaines",
     "description": "Description de l'extension"
   },
-  
   "appTitle": {
     "message": "ShieldSign"
   },
@@ -17,7 +16,6 @@
   "refresh": {
     "message": "Actualiser"
   },
-  
   "tabCommunity": {
     "message": "Sources communautaires"
   },
@@ -33,7 +31,6 @@
   "tabAbout": {
     "message": "À propos"
   },
-  
   "officialListTitle": {
     "message": "Liste officielle ShieldSign"
   },
@@ -55,7 +52,6 @@
   "reinstallOfficialList": {
     "message": "Réinstaller la liste officielle"
   },
-  
   "communityListsTitle": {
     "message": "Listes communautaires additionnelles"
   },
@@ -71,7 +67,6 @@
   "noAdditionalList": {
     "message": "Aucune liste additionnelle configurée"
   },
-  
   "enterpriseInfoTitle": {
     "message": "ℹ️ À propos de la source entreprise"
   },
@@ -108,7 +103,6 @@
   "enterpriseInfoExample4": {
     "message": "❌ <code>https://login.monentreprise.com/auth</code> (ne pas inclure https:// ni le chemin)"
   },
-  
   "enterpriseListTitle": {
     "message": "Configurer la liste entreprise"
   },
@@ -121,7 +115,6 @@
   "noEnterpriseList": {
     "message": "Aucune liste entreprise configurée"
   },
-  
   "personalDomainsTitle": {
     "message": "Gestion des domaines personnels"
   },
@@ -134,7 +127,6 @@
   "noPersonalDomain": {
     "message": "Aucun domaine personnel configuré"
   },
-  
   "importExportTitle": {
     "message": "Import / Export"
   },
@@ -147,7 +139,6 @@
   "importList": {
     "message": "Importer une liste"
   },
-  
   "generalSettingsTitle": {
     "message": "Paramètres généraux"
   },
@@ -184,7 +175,6 @@
   "cacheDurationDescription": {
     "message": "Fréquence de mise à jour automatique des listes distantes (par défaut: 24h)"
   },
-  
   "bannerColorsTitle": {
     "message": "Couleurs des bandeaux"
   },
@@ -197,14 +187,12 @@
   "personalList": {
     "message": "Liste personnelle"
   },
-  
   "saveSettings": {
     "message": "Enregistrer les paramètres"
   },
   "resetSettings": {
     "message": "Réinitialiser"
   },
-  
   "aboutTitle": {
     "message": "À propos de ShieldSign"
   },
@@ -235,7 +223,6 @@
   "contributorsText": {
     "message": "Merci à tous les contributeurs du projet ShieldSign"
   },
-  
   "pageValidated": {
     "message": "Page validée par : $LIST_NAME$",
     "placeholders": {
@@ -251,7 +238,6 @@
   "enterpriseListDisplay": {
     "message": "Liste entreprise"
   },
-  
   "verifying": {
     "message": "Vérification en cours..."
   },
@@ -261,7 +247,6 @@
   "approveDomain": {
     "message": "Approuver ce domaine"
   },
-  
   "settingsSaved": {
     "message": "Paramètres enregistrés avec succès"
   },
@@ -301,7 +286,6 @@
       }
     }
   },
-  
   "errorInvalidUrl": {
     "message": "URL invalide"
   },
@@ -792,6 +776,21 @@
   "autoAddUnknownDescription": {
     "message": "Choisissez comment ShieldSign doit réagir lorsque vous vous connectez sur un site qui n'est dans aucune liste."
   },
+  "autoAddUnknownNeverCaption": {
+    "message": "Ne jamais enregistrer sur un site inconnu."
+  },
+  "autoAddUnknownPromptCaption": {
+    "message": "Afficher une popup de confirmation."
+  },
+  "autoAddUnknownAlwaysCaption": {
+    "message": "Enregistrer automatiquement avec confirmation."
+  },
+  "autoAddUnknownCardNever": {
+    "message": "Aucune demande n'apparaîtra sur les sites inconnus."
+  },
+  "autoAddUnknownCardAlways": {
+    "message": "Enregistrement automatique avec toast de confirmation."
+  },
   "notificationAddToPersonal": {
     "message": "Ajouter ce site à votre liste personnelle ?"
   },
@@ -818,28 +817,25 @@
   },
   
   "shareToFormsTitle": {
-    "message": "Partager vers Google Forms"
+    "message": "Partager"
   },
   "shareToFormsDescription": {
-    "message": "Collez ici l'URL de votre Google Form (page de saisie). L'extension enverra automatiquement les domaines de votre liste personnelle qui ne figurent pas déjà dans les listes communautaires."
+    "message": "Partager vos domaines à la communauté"
   },
   "shareToFormsPlaceholder": {
     "message": "https://docs.google.com/forms/d/e/…/viewform"
   },
   "shareToFormsBtn": {
-    "message": "Partager vers Sheets"
+    "message": "Partager"
   },
   "shareToFormsBtnAbout": {
-    "message": "Partager ma liste"
-  },
-  "shareToFormsNote": {
-    "message": "La première soumission détectera le champ du formulaire automatiquement si possible."
+    "message": "Partager"
   },
   "shareToFormsTipAbout": {
     "message": "Astuce : collez l'URL du formulaire ici une fois, puis cliquez sur \"Partager\" depuis cet écran ou depuis l'onglet Sources personnelles."
   },
   "shareToFormsAboutDescription": {
-    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+    "message": "Partager vos domaines à la communauté"
   },
   "sharedDomainsCount": {
     "message": "Domaines déjà partagés : {count}"
@@ -900,11 +896,20 @@
   "bannerSizeSmall": {
     "message": "Petit (compact)"
   },
+  "bannerSizeSmallHint": {
+    "message": "Hauteur la plus discrète."
+  },
   "bannerSizeMedium": {
     "message": "Moyen"
   },
+  "bannerSizeMediumHint": {
+    "message": "Hauteur équilibrée."
+  },
   "bannerSizeLarge": {
     "message": "Grand (standard)"
+  },
+  "bannerSizeLargeHint": {
+    "message": "Hauteur complète par défaut."
   },
   "bannerSizeDescription": {
     "message": "Ajustez la taille du bandeau selon vos préférences. Sur mobile, la taille est automatiquement réduite au premier lancement."

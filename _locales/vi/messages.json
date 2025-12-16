@@ -817,19 +817,13 @@
     "message": "https://docs.google.com/forms/d/e/…/viewform"
   },
   "shareToFormsBtn": {
-    "message": "Chia sẻ lên Sheets"
+    "message": "Chia sẻ"
   },
   "shareToFormsBtnAbout": {
-    "message": "Chia sẻ danh sách của tôi"
-  },
-  "shareToFormsNote": {
-    "message": "Lần gửi đầu tiên sẽ tự động phát hiện trường biểu mẫu nếu có thể."
+    "message": "Chia sẻ"
   },
   "shareToFormsTipAbout": {
-    "message": "Mẹo: dán URL biểu mẫu tại đây một lần, sau đó nhấp \"Chia sẻ\" từ màn hình này hoặc từ tab Nguồn cá nhân."
-  },
-  "shareToFormsAboutDescription": {
-    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+    "message": "Mẹo: dán URL biểu mẫu vào đây một lần rồi bấm \"Chia sẻ\" từ màn hình này hoặc tab Nguồn cá nhân."
   },
   "sharedDomainsCount": {
     "message": "Tên miền đã chia sẻ: {count}"
@@ -866,7 +860,46 @@
   },
   "confirmClearSharedHistory": {
     "message": "Xóa lịch sử tên miền đã chia sẻ cục bộ?"
-  }
+  },
+    "autoAddUnknownNeverCaption": {
+      "message": "Never save on unknown sites."
+    },
+    "autoAddUnknownPromptCaption": {
+      "message": "Show a confirmation popup."
+    },
+    "autoAddUnknownAlwaysCaption": {
+      "message": "Save automatically and confirm."
+    },
+    "autoAddUnknownCardNever": {
+      "message": "No prompt will appear on unknown sites."
+    },
+    "autoAddUnknownCardAlways": {
+      "message": "Automatic save with a confirmation toast."
+    },
+    "bannerSizeLabel": {
+      "message": "📐 Banner size:"
+    },
+    "bannerSizeSmall": {
+      "message": "Small (compact)"
+    },
+    "bannerSizeSmallHint": {
+      "message": "Most discreet height."
+    },
+    "bannerSizeMedium": {
+      "message": "Medium"
+    },
+    "bannerSizeMediumHint": {
+      "message": "Balanced height."
+    },
+    "bannerSizeLarge": {
+      "message": "Large (standard)"
+    },
+    "bannerSizeLargeHint": {
+      "message": "Full default height."
+    },
+    "bannerSizeDescription": {
+      "message": "Adjust the banner size to your preferences. On mobile, the size is automatically reduced on first launch."
+    }
   ,
   "toastFormFieldCopyOpen": {
     "message": "Không phát hiện tự động trường biểu mẫu. Các tên miền đã được sao chép. Dán chúng vào biểu mẫu đã mở."

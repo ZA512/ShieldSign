@@ -808,28 +808,25 @@
     "message": "Tapak ditambah ke senarai peribadi anda"
   },
   "shareToFormsTitle": {
-    "message": "Kongsi ke Google Forms"
+    "message": "Kongsi"
   },
   "shareToFormsDescription": {
-    "message": "Tampal URL borang Google anda (halaman paparan) di sini. Sambungan akan menghantar domain secara automatik dari senarai peribadi anda yang belum ada dalam senarai komuniti."
+    "message": "Kongsi domain anda dengan komuniti"
   },
   "shareToFormsPlaceholder": {
     "message": "https://docs.google.com/forms/d/e/…/viewform"
   },
   "shareToFormsBtn": {
-    "message": "Kongsi ke Sheets"
+    "message": "Kongsi"
   },
   "shareToFormsBtnAbout": {
-    "message": "Kongsi senarai saya"
-  },
-  "shareToFormsNote": {
-    "message": "Penghantaran pertama akan mengesan medan borang secara automatik jika boleh."
+    "message": "Kongsi"
   },
   "shareToFormsTipAbout": {
     "message": "Petua: tampal URL borang di sini sekali kemudian klik \"Kongsi\" dari skrin ini atau dari tab Sumber Peribadi."
   },
   "shareToFormsAboutDescription": {
-    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+    "message": "Kongsi domain anda dengan komuniti"
   },
   "sharedDomainsCount": {
     "message": "Domain yang sudah dikongsi: {count}"
@@ -866,6 +863,45 @@
   },
   "confirmClearSharedHistory": {
     "message": "Padam sejarah domain yang dikongsi secara tempatan?"
+  },
+  "autoAddUnknownNeverCaption": {
+    "message": "Never save on unknown sites."
+  },
+  "autoAddUnknownPromptCaption": {
+    "message": "Show a confirmation popup."
+  },
+  "autoAddUnknownAlwaysCaption": {
+    "message": "Save automatically and confirm."
+  },
+  "autoAddUnknownCardNever": {
+    "message": "No prompt will appear on unknown sites."
+  },
+  "autoAddUnknownCardAlways": {
+    "message": "Automatic save with a confirmation toast."
+  },
+  "bannerSizeLabel": {
+    "message": "📐 Banner size:"
+  },
+  "bannerSizeSmall": {
+    "message": "Small (compact)"
+  },
+  "bannerSizeSmallHint": {
+    "message": "Most discreet height."
+  },
+  "bannerSizeMedium": {
+    "message": "Medium"
+  },
+  "bannerSizeMediumHint": {
+    "message": "Balanced height."
+  },
+  "bannerSizeLarge": {
+    "message": "Large (standard)"
+  },
+  "bannerSizeLargeHint": {
+    "message": "Full default height."
+  },
+  "bannerSizeDescription": {
+    "message": "Adjust the banner size to your preferences. On mobile, the size is automatically reduced on first launch."
   }
   ,
   "toastFormFieldCopyOpen": {

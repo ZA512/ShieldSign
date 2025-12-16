@@ -113,7 +113,6 @@
             <!-- URL masquée ; l'URL du Google Form est définie en dur dans l'extension -->
             <button id="shareToFormBtn" class="btn btn-primary" data-i18n="shareToFormsBtn">Share to Sheets</button>
           </div>
-          <p class="setting-description" data-i18n="shareToFormsNote">The first submission will automatically detect the form field if possible.</p>
           <!-- compteur d'historique partagé supprimé (flux anonymisé uniquement) -->
         </section>
         
@@ -252,11 +251,38 @@
             <label class="setting-label">
               <span data-i18n="bannerSizeLabel">📐 Taille du bandeau :</span>
             </label>
-            <select id="bannerSize" class="select-field" style="margin-top: 8px;">
-              <option value="small" data-i18n="bannerSizeSmall">Petit (compact)</option>
-              <option value="medium" data-i18n="bannerSizeMedium">Moyen</option>
-              <option value="large" data-i18n="bannerSizeLarge" selected>Grand (standard)</option>
-            </select>
+            <div class="radio-card-grid" id="bannerSizeChoices" role="radiogroup" aria-label="banner size">
+              <label class="radio-card" for="bannerSizeSmall">
+                <input type="radio" name="bannerSize" id="bannerSizeSmall" value="small">
+                <div class="radio-card-body">
+                  <div class="radio-card-title" data-i18n="bannerSizeSmall">Petit (compact)</div>
+                  <div class="banner-size-preview size-small" aria-hidden="true">
+                    <div class="banner-size-bar"></div>
+                  </div>
+                  <p class="radio-card-desc" data-i18n="bannerSizeSmallHint">Hauteur la plus discrète.</p>
+                </div>
+              </label>
+              <label class="radio-card" for="bannerSizeMedium">
+                <input type="radio" name="bannerSize" id="bannerSizeMedium" value="medium">
+                <div class="radio-card-body">
+                  <div class="radio-card-title" data-i18n="bannerSizeMedium">Moyen</div>
+                  <div class="banner-size-preview size-medium" aria-hidden="true">
+                    <div class="banner-size-bar"></div>
+                  </div>
+                  <p class="radio-card-desc" data-i18n="bannerSizeMediumHint">Hauteur équilibrée.</p>
+                </div>
+              </label>
+              <label class="radio-card" for="bannerSizeLarge">
+                <input type="radio" name="bannerSize" id="bannerSizeLarge" value="large">
+                <div class="radio-card-body">
+                  <div class="radio-card-title" data-i18n="bannerSizeLarge">Grand (standard)</div>
+                  <div class="banner-size-preview size-large" aria-hidden="true">
+                    <div class="banner-size-bar"></div>
+                  </div>
+                  <p class="radio-card-desc" data-i18n="bannerSizeLargeHint">Hauteur complète par défaut.</p>
+                </div>
+              </label>
+            </div>
             <p class="setting-description" data-i18n="bannerSizeDescription">Ajustez la taille du bandeau selon vos préférences. Sur mobile, la taille est automatiquement réduite au premier lancement.</p>
           </div>
           
@@ -272,11 +298,43 @@
             <label class="setting-label">
               <span data-i18n="autoAddUnknownLabel">🔐 Lors de la soumission d'un formulaire sur un site inconnu :</span>
             </label>
-            <select id="autoAddUnknown" class="select-field" style="margin-top: 8px;">
-              <option value="never" data-i18n="autoAddUnknownNever">Ne rien faire</option>
-              <option value="always" data-i18n="autoAddUnknownAlways">Ajouter automatiquement à ma liste personnelle</option>
-              <option value="prompt" data-i18n="autoAddUnknownPrompt" selected>Me demander si je veux l'ajouter</option>
-            </select>
+            <div class="radio-card-grid auto-add-grid" id="autoAddUnknownChoices" role="radiogroup" aria-label="auto add unknown">
+              <label class="radio-card" for="autoAddNever">
+                <input type="radio" name="autoAddUnknown" id="autoAddNever" value="never">
+                <div class="radio-card-body">
+                  <div class="radio-card-title" data-i18n="autoAddUnknownNever">Ne rien faire</div>
+                  <div class="popup-preview muted" aria-hidden="true">
+                    <div class="popup-header">ShieldSign</div>
+                    <div class="popup-body" data-i18n="autoAddUnknownCardNever">Aucune demande n'apparaîtra sur les sites inconnus.</div>
+                  </div>
+                </div>
+              </label>
+              <label class="radio-card" for="autoAddPrompt">
+                <input type="radio" name="autoAddUnknown" id="autoAddPrompt" value="prompt">
+                <div class="radio-card-body">
+                  <div class="radio-card-title" data-i18n="autoAddUnknownPrompt">Me demander si je veux l'ajouter</div>
+                  <div class="popup-preview" aria-hidden="true">
+                    <div class="popup-header">ShieldSign</div>
+                    <div class="popup-body" data-i18n="notificationAddToPersonal">Ajouter ce site à votre liste personnelle ?</div>
+                    <div class="popup-actions">
+                      <span data-i18n="notificationAddToPersonalNo">Non</span>
+                      <span data-i18n="notificationAddToPersonalYes">Oui, ajouter</span>
+                    </div>
+                  </div>
+                </div>
+              </label>
+              <label class="radio-card" for="autoAddAlways">
+                <input type="radio" name="autoAddUnknown" id="autoAddAlways" value="always">
+                <div class="radio-card-body">
+                  <div class="radio-card-title" data-i18n="autoAddUnknownAlways">Ajouter automatiquement à ma liste personnelle</div>
+                  <div class="popup-preview success" aria-hidden="true">
+                    <div class="popup-header">ShieldSign</div>
+                    <div class="popup-body" data-i18n="autoAddUnknownCardAlways">Ajout automatique avec toast de confirmation.</div>
+                    <div class="popup-toast" data-i18n="notificationSiteAdded">Site ajouté à votre liste personnelle</div>
+                  </div>
+                </div>
+              </label>
+            </div>
             <p class="setting-description" data-i18n="autoAddUnknownDescription">Choisissez comment ShieldSign doit réagir lorsque vous vous connectez sur un site qui n'est dans aucune liste.</p>
           </div>
         </section>

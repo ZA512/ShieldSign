@@ -817,19 +817,16 @@
     "message": "https://docs.google.com/forms/d/e/…/viewform"
   },
   "shareToFormsBtn": {
-    "message": "แชร์ไปยัง Sheets"
+    "message": "แชร์"
   },
   "shareToFormsBtnAbout": {
-    "message": "แชร์รายการของฉัน"
-  },
-  "shareToFormsNote": {
-    "message": "การส่งครั้งแรกจะตรวจจับฟิลด์แบบฟอร์มโดยอัตโนมัติหากเป็นไปได้"
+    "message": "แชร์"
   },
   "shareToFormsTipAbout": {
-    "message": "เคล็ดลับ: วาง URL แบบฟอร์มที่นี่หนึ่งครั้ง จากนั้นคลิก \"แชร์\" จากหน้าจอนี้หรือจากแท็บแหล่งที่มาส่วนตัว"
+    "message": "เคล็ดลับ: วางลิงก์ฟอร์มไว้ที่นี่ครั้งเดียว แล้วคลิก \"แชร์\" จากหน้าจอนี้หรือแท็บแหล่งข้อมูลส่วนบุคคล"
   },
   "shareToFormsAboutDescription": {
-    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+    "message": "แชร์โดเมนของคุณกับชุมชน"
   },
   "sharedDomainsCount": {
     "message": "โดเมนที่แชร์แล้ว: {count}"
@@ -839,9 +836,6 @@
   },
   "toastPreparingSubmission": {
     "message": "กำลังเตรียมการส่ง..."
-  },
-  "toastNoDomainsToShare": {
-    "message": "ไม่มีโดเมนส่วนตัวให้แชร์"
   },
   "toastNoNewDomainsToShare": {
     "message": "ไม่มีโดเมนใหม่ให้แชร์"
@@ -866,8 +860,46 @@
   },
   "confirmClearSharedHistory": {
     "message": "ลบประวัติโดเมนที่แชร์ในเครื่องหรือไม่?"
-  }
-  ,
+  },
+  "autoAddUnknownNeverCaption": {
+    "message": "Never save on unknown sites."
+  },
+  "autoAddUnknownPromptCaption": {
+    "message": "Show a confirmation popup."
+  },
+  "autoAddUnknownAlwaysCaption": {
+    "message": "Save automatically and confirm."
+  },
+  "autoAddUnknownCardNever": {
+    "message": "No prompt will appear on unknown sites."
+  },
+  "autoAddUnknownCardAlways": {
+    "message": "Automatic save with a confirmation toast."
+  },
+  "bannerSizeLabel": {
+    "message": "📐 Banner size:"
+  },
+  "bannerSizeSmall": {
+    "message": "Small (compact)"
+  },
+  "bannerSizeSmallHint": {
+    "message": "Most discreet height."
+  },
+  "bannerSizeMedium": {
+    "message": "Medium"
+  },
+  "bannerSizeMediumHint": {
+    "message": "Balanced height."
+  },
+  "bannerSizeLarge": {
+    "message": "Large (standard)"
+  },
+  "bannerSizeLargeHint": {
+    "message": "Full default height."
+  },
+  "bannerSizeDescription": {
+    "message": "Adjust the banner size to your preferences. On mobile, the size is automatically reduced on first launch."
+  },
   "toastFormFieldCopyOpen": {
     "message": "ไม่สามารถตรวจจับฟิลด์แบบฟอร์มโดยอัตโนมัติ โดเมนถูกคัดลอกแล้ว วางในแบบฟอร์มที่เปิดอยู่"
   },

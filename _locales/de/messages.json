@@ -795,6 +795,21 @@
   "autoAddUnknownDescription": {
     "message": "Wählen Sie, wie ShieldSign reagieren soll, wenn Sie sich auf einer Website anmelden, die in keiner Liste enthalten ist."
   },
+  "autoAddUnknownNeverCaption": {
+    "message": "Nie auf unbekannten Seiten speichern."
+  },
+  "autoAddUnknownPromptCaption": {
+    "message": "Bestätigungs-Popup anzeigen."
+  },
+  "autoAddUnknownAlwaysCaption": {
+    "message": "Automatisch speichern und bestätigen."
+  },
+  "autoAddUnknownCardNever": {
+    "message": "Keine Nachfrage auf unbekannten Seiten."
+  },
+  "autoAddUnknownCardAlways": {
+    "message": "Automatisches Speichern mit Bestätigung."
+  },
   "notificationAddToPersonal": {
     "message": "Diese Website zu Ihrer persönlichen Liste hinzufügen?"
   },
@@ -808,28 +823,25 @@
     "message": "Website zu Ihrer persönlichen Liste hinzugefügt"
   },
   "shareToFormsTitle": {
-    "message": "Zu Google Forms teilen"
+    "message": "Teilen"
   },
   "shareToFormsDescription": {
-    "message": "Fügen Sie hier die URL Ihres Google-Formulars ein (Ansichtsseite). Die Erweiterung sendet automatisch Domains aus Ihrer persönlichen Liste, die nicht bereits in den Community-Listen vorhanden sind."
+    "message": "Teilen Sie Ihre Domains mit der Community"
   },
   "shareToFormsPlaceholder": {
     "message": "https://docs.google.com/forms/d/e/…/viewform"
   },
   "shareToFormsBtn": {
-    "message": "Zu Sheets teilen"
+    "message": "Teilen"
   },
   "shareToFormsBtnAbout": {
-    "message": "Meine Liste teilen"
-  },
-  "shareToFormsNote": {
-    "message": "Die erste Übermittlung erkennt das Formularfeld automatisch, wenn möglich."
+    "message": "Teilen"
   },
   "shareToFormsTipAbout": {
     "message": "Tipp: Fügen Sie die Formular-URL hier einmal ein und klicken Sie dann auf \"Teilen\" von diesem Bildschirm oder von der Registerkarte Persönliche Quellen."
   },
   "shareToFormsAboutDescription": {
-    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+    "message": "Teile deine Domains mit der Community"
   },
   "sharedDomainsCount": {
     "message": "Bereits geteilte Domains: {count}"
@@ -879,5 +891,29 @@
   },
   "confirmClearSharedHistory": {
     "message": "Den Verlauf der lokal geteilten Domains löschen?"
+  },
+  "bannerSizeLabel": {
+    "message": "📐 Bannergröße:"
+  },
+  "bannerSizeSmall": {
+    "message": "Klein (kompakt)"
+  },
+  "bannerSizeSmallHint": {
+    "message": "Niedrigste Höhe."
+  },
+  "bannerSizeMedium": {
+    "message": "Mittel"
+  },
+  "bannerSizeMediumHint": {
+    "message": "Ausgewogene Höhe."
+  },
+  "bannerSizeLarge": {
+    "message": "Groß (Standard)"
+  },
+  "bannerSizeLargeHint": {
+    "message": "Volle Standardhöhe."
+  },
+  "bannerSizeDescription": {
+    "message": "Passen Sie die Bannergröße an Ihre Vorlieben an. Auf Mobilgeräten wird die Größe beim ersten Start automatisch reduziert."
   }
 }

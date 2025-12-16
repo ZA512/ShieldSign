@@ -197,6 +197,23 @@ function storageRemove(key) {
   });
 }
 
+function setRadioGroupValue(name, value, fallback) {
+  const target = document.querySelector(`input[name="${name}"][value="${value}"]`) || document.querySelector(`input[name="${name}"][value="${fallback}"]`);
+  if (target) {
+    target.checked = true;
+  }
+}
+
+function getRadioGroupValue(name, fallback) {
+  return document.querySelector(`input[name="${name}"]:checked`)?.value || fallback;
+}
+
+function attachRadioGroupChange(name, handler) {
+  document.querySelectorAll(`input[name="${name}"]`).forEach(input => {
+    input.addEventListener('change', handler);
+  });
+}
+
 // Initialisation
 document.addEventListener('DOMContentLoaded', async () => {
   translatePage();
@@ -238,8 +255,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('showUnknownPages')?.addEventListener('change', saveSettings);
   document.getElementById('cacheDuration')?.addEventListener('change', saveSettings);
   document.getElementById('customKeyword')?.addEventListener('input', debounce(saveSettings, 500));
-  document.getElementById('autoAddUnknown')?.addEventListener('change', saveSettings);
-  document.getElementById('bannerSize')?.addEventListener('change', saveSettings);
+  attachRadioGroupChange('autoAddUnknown', saveSettings);
+  attachRadioGroupChange('bannerSize', saveSettings);
   
   // Nouveaux gestionnaires pour validation de sécurité
   setupValidationModeListeners();
@@ -324,14 +341,10 @@ async function loadSettings() {
       document.getElementById('showUnknownPages').checked = currentSettings.showUnknownPages || false;
     }
     
-    if (document.getElementById('autoAddUnknown')) {
-      document.getElementById('autoAddUnknown').value = currentSettings.autoAddUnknown || 'prompt';
-    }
+    setRadioGroupValue('autoAddUnknown', currentSettings.autoAddUnknown || 'prompt', 'prompt');
     
     // Charger la taille du bandeau
-    if (document.getElementById('bannerSize')) {
-      document.getElementById('bannerSize').value = currentSettings.bannerSize || 'large';
-    }
+    setRadioGroupValue('bannerSize', currentSettings.bannerSize || 'large', 'large');
     
     // Charger et afficher le code actuel
     await loadCurrentCode();
@@ -377,10 +390,10 @@ async function saveSettings() {
       customKeyword: customKeyword,
       currentCode: currentSettings.currentCode || '', // Conserver le code existant
       showUnknownPages: document.getElementById('showUnknownPages')?.checked || false,
-      autoAddUnknown: document.getElementById('autoAddUnknown')?.value || 'prompt',
+      autoAddUnknown: getRadioGroupValue('autoAddUnknown', 'prompt'),
       
       // Taille du bandeau
-      bannerSize: document.getElementById('bannerSize')?.value || 'large',
+      bannerSize: getRadioGroupValue('bannerSize', 'large'),
       
       // Platform defaults already applied
       platformDefaultsApplied: currentSettings.platformDefaultsApplied || false,

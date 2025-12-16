@@ -808,25 +808,22 @@
     "message": "Η ιστοσελίδα προστέθηκε στην προσωπική σας λίστα"
   },
   "shareToFormsTitle": {
-    "message": "Κοινοποίηση στο Google Forms"
+    "message": "Κοινοποίηση"
   },
   "shareToFormsDescription": {
-    "message": "Επικολλήστε εδώ τη διεύθυνση URL της φόρμας Google σας (σελίδα προβολής). Η επέκταση θα στείλει αυτόματα τους τομείς από την προσωπική σας λίστα που δεν υπάρχουν ήδη στις λίστες της κοινότητας."
+    "message": "Μοιραστείτε τα domains σας με την κοινότητα"
   },
   "shareToFormsPlaceholder": {
     "message": "https://docs.google.com/forms/d/e/…/viewform"
   },
   "shareToFormsBtn": {
-    "message": "Κοινοποίηση στο Sheets"
+    "message": "Κοινοποίηση"
   },
   "shareToFormsBtnAbout": {
-    "message": "Κοινοποίηση της λίστας μου"
-  },
-  "shareToFormsNote": {
-    "message": "Η πρώτη υποβολή θα ανιχνεύσει αυτόματα το πεδίο φόρμας αν είναι δυνατό."
+    "message": "Κοινοποίηση"
   },
   "shareToFormsAboutDescription": {
-    "message": "Share your personal domains anonymously to help the community. No personal data is collected."
+    "message": "Μοιραστείτε τα domains σας με την κοινότητα"
   },
   "shareToFormsTipAbout": {
     "message": "Συμβουλή: επικολλήστε τη διεύθυνση URL της φόρμας εδώ μία φορά και κάντε κλικ στο \"Κοινοποίηση\" από αυτήν την οθόνη ή από την καρτέλα Προσωπικές Πηγές."
@@ -881,5 +878,44 @@
   },
   "confirmClearSharedHistory": {
     "message": "Διαγραφή του ιστορικού των τοπικώς κοινοποιημένων τομέων;"
+  },
+  "autoAddUnknownNeverCaption": {
+    "message": "Never save on unknown sites."
+  },
+  "autoAddUnknownPromptCaption": {
+    "message": "Show a confirmation popup."
+  },
+  "autoAddUnknownAlwaysCaption": {
+    "message": "Save automatically and confirm."
+  },
+  "autoAddUnknownCardNever": {
+    "message": "No prompt will appear on unknown sites."
+  },
+  "autoAddUnknownCardAlways": {
+    "message": "Automatic save with a confirmation toast."
+  },
+  "bannerSizeLabel": {
+    "message": "📐 Banner size:"
+  },
+  "bannerSizeSmall": {
+    "message": "Small (compact)"
+  },
+  "bannerSizeSmallHint": {
+    "message": "Most discreet height."
+  },
+  "bannerSizeMedium": {
+    "message": "Medium"
+  },
+  "bannerSizeMediumHint": {
+    "message": "Balanced height."
+  },
+  "bannerSizeLarge": {
+    "message": "Large (standard)"
+  },
+  "bannerSizeLargeHint": {
+    "message": "Full default height."
+  },
+  "bannerSizeDescription": {
+    "message": "Adjust the banner size to your preferences. On mobile, the size is automatically reduced on first launch."
   }
 }
