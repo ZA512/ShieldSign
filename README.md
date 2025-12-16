@@ -425,7 +425,14 @@ Write-Host "Allez dans chrome://extensions et cliquez sur le bouton Recharger" -
 Start-Process "chrome://extensions"
 ```
 
-**Bash (Linux/Mac)** :
+**Build scripts** :
+
+- Windows : `./build.ps1`
+- Linux/macOS : `bash ./build.sh`
+
+Ces scripts produisent les archives dans `./releases` en utilisant Manifest V3 pour Chrome/Edge et Manifest V2 pour Firefox.
+
+**Bash (Linux/Mac)** (méthode manuelle) :
 ```bash
 # Package pour distribution
 zip -r ShieldSign-v1.0.0.zip manifest.json *.js popup/ options/ _locales/ schemas/ icons/ -x "*.git*" -x "*node_modules*"
