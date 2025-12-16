@@ -862,43 +862,43 @@
     "message": "Hapus riwayat domain yang dibagikan secara lokal?"
   },
   "autoAddUnknownNeverCaption": {
-    "message": "Never save on unknown sites."
+    "message": "Jangan pernah menyimpan di situs tidak dikenal."
   },
   "autoAddUnknownPromptCaption": {
-    "message": "Show a confirmation popup."
+    "message": "Tampilkan popup konfirmasi."
   },
   "autoAddUnknownAlwaysCaption": {
-    "message": "Save automatically and confirm."
+    "message": "Simpan otomatis dan konfirmasi."
   },
   "autoAddUnknownCardNever": {
-    "message": "No prompt will appear on unknown sites."
+    "message": "Tidak ada permintaan yang muncul di situs tidak dikenal."
   },
   "autoAddUnknownCardAlways": {
-    "message": "Automatic save with a confirmation toast."
+    "message": "Penyimpanan otomatis dengan toast konfirmasi."
   },
   "bannerSizeLabel": {
-    "message": "📐 Banner size:"
+    "message": "📐 Ukuran banner:"
   },
   "bannerSizeSmall": {
-    "message": "Small (compact)"
+    "message": "Kecil (ringkas)"
   },
   "bannerSizeSmallHint": {
-    "message": "Most discreet height."
+    "message": "Tinggi paling ringkas."
   },
   "bannerSizeMedium": {
-    "message": "Medium"
+    "message": "Sedang"
   },
   "bannerSizeMediumHint": {
-    "message": "Balanced height."
+    "message": "Tinggi seimbang."
   },
   "bannerSizeLarge": {
-    "message": "Large (standard)"
+    "message": "Besar (standar)"
   },
   "bannerSizeLargeHint": {
-    "message": "Full default height."
+    "message": "Tinggi penuh bawaan."
   },
   "bannerSizeDescription": {
-    "message": "Adjust the banner size to your preferences. On mobile, the size is automatically reduced on first launch."
+    "message": "Atur ukuran banner sesuai preferensi Anda. Di seluler, ukurannya otomatis diperkecil saat pertama kali dijalankan."
   }
   ,
   "toastFormFieldCopyOpen": {

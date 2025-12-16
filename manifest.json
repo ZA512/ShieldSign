@@ -1,5 +1,5 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "__MSG_extName__",
   "version": "1.2.5",
   "description": "__MSG_extDescription__",
@@ -8,21 +8,25 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "shieldsign@shieldsign",
-      "strict_min_version": "109.0"
+      "data_collection_permissions": {
+        "required": ["none"]
+      },
+      "strict_min_version": "140.0"
+    },
+    "gecko_android": {
+      "strict_min_version": "142.0"
     }
   },
   "permissions": [
     "storage",
     "activeTab",
+    "webRequest",
     "alarms",
-    "scripting",
-    "tabs"
-  ],
-  "host_permissions": [
     "<all_urls>"
   ],
   "background": {
-    "service_worker": "background.js"
+    "scripts": ["background.js"],
+    "persistent": true
   },
   "content_scripts": [
     {
@@ -31,7 +35,7 @@
       "run_at": "document_end"
     }
   ],
-  "action": {
+  "browser_action": {
     "default_popup": "popup/popup.html",
     "default_icon": {
       "16": "icons/icon16.png",
@@ -51,9 +55,7 @@
     "128": "icons/icon128.png"
   },
   "web_accessible_resources": [
-    {
-      "resources": ["icons/icon56ssf.png", "compat.js"],
-      "matches": ["<all_urls>"]
-    }
+    "icons/icon56ssf.png",
+    "compat.js"
   ]
 }
